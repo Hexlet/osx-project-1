@@ -36,10 +36,11 @@
     for (id mIndex in mutateIndexArray) {
         // удаляем текущий нуклеотид из массива для замены,
         // чтобы нуклеотид в позиции был гарантированно заменен на другой
-        NSMutableArray *copyOfNucleotides = [NSMutableArray arrayWithArray:self.nucleotides];
-        [copyOfNucleotides removeObject:[DNA objectAtIndex:[mIndex integerValue]]];
-        int nucleotides_index = arc4random() % [copyOfNucleotides count];
-        id newNucleotide = copyOfNucleotides[nucleotides_index];
+        id currentNuke = [DNA objectAtIndex:[mIndex integerValue]];
+        id newNucleotide = currentNuke;
+        while ([newNucleotide isEqual: currentNuke]) {
+            newNucleotide = self.nucleotides[arc4random() % [self.nucleotides count]];
+        }
         [DNA replaceObjectAtIndex:[mIndex integerValue] withObject:newNucleotide];
     }
  }
