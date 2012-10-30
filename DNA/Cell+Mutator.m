@@ -3,7 +3,7 @@
 
 static NSString* mutateDNAItem(NSString *item)
 {
-    NSMutableArray *allowedDNAItems = [[NSMutableArray alloc] initWithCapacity: (kMaxDNAItems - 1)];
+    NSMutableArray *allowedDNAItems = [NSMutableArray arrayWithCapacity: (kMaxDNAItems - 1)];
     for(int i = 0; i < kMaxDNAItems; i++)
     {
         if(DNAItems[i] != item)
