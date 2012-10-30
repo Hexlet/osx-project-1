@@ -3,13 +3,12 @@
 
 static NSString* mutateDNAItem(NSString *item)
 {
-    unichar c = [item characterAtIndex: 0];
     NSMutableArray *allowedDNAItems = [[NSMutableArray alloc] initWithCapacity: (kMaxDNAItems - 1)];
     for(int i = 0; i < kMaxDNAItems; i++)
     {
-        if(DNAItems[i] != c)
+        if(DNAItems[i] != item)
         {
-            [allowedDNAItems addObject: [NSString stringWithFormat: @"%c", DNAItems[i]]];
+            [allowedDNAItems addObject: DNAItems[i]];
         }
             
     }

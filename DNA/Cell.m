@@ -1,7 +1,7 @@
 #import "Cell.h"
 
 
-const unichar DNAItems[kMaxDNAItems] = {'A', 'T', 'G', 'C'};
+const NSString *DNAItems[kMaxDNAItems] = {@"A", @"T", @"G", @"C"};
 
 @implementation Cell
 
@@ -15,7 +15,7 @@ const unichar DNAItems[kMaxDNAItems] = {'A', 'T', 'G', 'C'};
         
         for(int i = 0; i < kDNALength; i++)
         {
-            [dna addObject: [NSString stringWithFormat: @"%c", DNAItems[arc4random()%kMaxDNAItems]]];
+            [dna addObject: DNAItems[arc4random()%kMaxDNAItems]];
         }
     }
     

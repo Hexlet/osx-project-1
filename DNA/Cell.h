@@ -3,7 +3,7 @@
 
 #define kDNALength 100
 #define kMaxDNAItems 4
-extern const unichar DNAItems[kMaxDNAItems];
+extern const NSString *DNAItems[kMaxDNAItems];
 
 @interface Cell : NSObject
 {
