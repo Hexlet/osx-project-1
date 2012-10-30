@@ -14,9 +14,7 @@
     if (self){
         _dnkArrayLength = 100;
         _nucleotides = [NSMutableArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-        if (!DNA) {
-            DNA = [[NSMutableArray alloc] initWithCapacity:_dnkArrayLength];
-        }
+        DNA = [[NSMutableArray alloc] initWithCapacity:_dnkArrayLength];
         for (int x=0;x<100;x++) {
             int nucleotides_index = arc4random() % [_nucleotides count];
             id newNucleotide = _nucleotides[nucleotides_index];

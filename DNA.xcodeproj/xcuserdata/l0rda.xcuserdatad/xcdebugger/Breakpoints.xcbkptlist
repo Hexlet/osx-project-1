@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373329896.205622"
+         timestampString = "373332336.611161"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "40"
+         endingLineNumber = "40"
          landmarkName = "@implementation Cell"
          landmarkType = "3">
       </FileBreakpoint>
