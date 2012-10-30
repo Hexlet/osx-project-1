@@ -10,6 +10,7 @@
 		70789FAB164034BA00CD8538 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70789FAA164034BA00CD8538 /* Foundation.framework */; };
 		70789FAE164034BA00CD8538 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70789FAD164034BA00CD8538 /* main.m */; };
 		70789FB2164034BA00CD8538 /* FunnyBiologist.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70789FB1164034BA00CD8538 /* FunnyBiologist.1 */; };
+		70789FBA164034ED00CD8538 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70789FB9164034ED00CD8538 /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		70789FAD164034BA00CD8538 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70789FB0164034BA00CD8538 /* FunnyBiologist-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FunnyBiologist-Prefix.pch"; sourceTree = "<group>"; };
 		70789FB1164034BA00CD8538 /* FunnyBiologist.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = FunnyBiologist.1; sourceTree = "<group>"; };
+		70789FB8164034ED00CD8538 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		70789FB9164034ED00CD8538 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				70789FAD164034BA00CD8538 /* main.m */,
+				70789FB8164034ED00CD8538 /* Cell.h */,
+				70789FB9164034ED00CD8538 /* Cell.m */,
 				70789FB1164034BA00CD8538 /* FunnyBiologist.1 */,
 				70789FAF164034BA00CD8538 /* Supporting Files */,
 			);
@@ -140,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70789FAE164034BA00CD8538 /* main.m in Sources */,
+				70789FBA164034ED00CD8538 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
