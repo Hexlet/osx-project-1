@@ -2,11 +2,11 @@
 
 @interface Cell : NSObject {
     NSMutableArray *DNA;
-    NSArray *elements;
+    NSArray *DNAItems;
 }
 
 @property NSMutableArray *DNA;
-@property (readonly) NSArray *elements;
+@property (readonly) NSArray *DNAItems;
 
 - (int)hammingDistance:(Cell *)dna;
 
