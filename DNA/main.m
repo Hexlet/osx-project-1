@@ -39,7 +39,7 @@
         NSMutableArray *copyOfNucleotides = [NSMutableArray arrayWithArray:self.nucleotides];
         [copyOfNucleotides removeObject:[DNA objectAtIndex:[mIndex integerValue]]];
         int nucleotides_index = arc4random() % [copyOfNucleotides count];
-        id newNucleotide = self.nucleotides[nucleotides_index];
+        id newNucleotide = copyOfNucleotides[nucleotides_index];
         [DNA replaceObjectAtIndex:[mIndex integerValue] withObject:newNucleotide];
     }
  }
