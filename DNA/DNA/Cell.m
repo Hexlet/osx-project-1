@@ -16,7 +16,7 @@
                 int amino;
                 _DNA = [[NSMutableArray alloc] initWithCapacity:100];
                 for (int i=0; i<100; i++) {
-                        amino = arc4random()%3;
+                        amino = arc4random()%4;
                         switch (amino) {
                                     case 0:
                                         [_DNA addObject:@"A"];
