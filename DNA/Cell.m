@@ -45,7 +45,7 @@ const NSString *DNAItems[kMaxDNAItems] = {@"A", @"T", @"G", @"C"};
     
     for(int i = 0; i < kDNALength; i++)
     {
-        if(![[dna objectAtIndex: i] isEqual: [cell.dna objectAtIndex: i]])
+        if([dna objectAtIndex: i] != [cell.dna objectAtIndex: i])
         {
             dist++;
         }
