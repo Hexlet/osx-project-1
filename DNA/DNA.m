@@ -8,15 +8,25 @@
 
 @implementation Cell (Mutator)
 -(void) mutate:(int) percent {
+
+	if ((percent > 100) || (percent < 0))
+		return;
+
 	int capacity = [[self dnaArray] count];
 	for (int i = 0; i < capacity*percent/100; i++) {
-        
+
+		// index -  случайный индекс
 	        int index = arc4random()%capacity;
+		// object - случайный ген
 	        NSString* object =  [symbols objectAtIndex:arc4random()%[symbols count]];
 	        
+		// проверка на совпадение старого и нового значения
 	        if (![[[self dnaArray] objectAtIndex:index] isEqualToString:object]) {
+		    // замена на новое значение
 	            [[self dnaArray] replaceObjectAtIndex:index withObject:object];
 	        } else {
+		    // если значения совпадают - вызываем текущий метод (рекурсию)
+		    // (int)100/capacity - процент для одного цикла
 	            [self mutate:(int)100/capacity];
 	        }
                              
