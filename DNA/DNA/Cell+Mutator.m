@@ -15,6 +15,7 @@
 {
     NSUInteger counter;
     NSUInteger dnaCount = [self.DNA count];
+    NSUInteger dnaKeysCount = [self.dnaKeys count];
     NSUInteger randInsertIndex;
     NSUInteger randKeyIndex;
     
@@ -22,11 +23,15 @@
     
     for (counter = 0; counter < percents; counter++) {
         
-        randKeyIndex = (NSUInteger)(arc4random() % 4);
+        randKeyIndex = (NSUInteger)(arc4random() % dnaKeysCount);
         randInsertIndex = (NSUInteger)(arc4random() % dnaCount);
         
         while ([indexes containsIndex:randInsertIndex]) {
             randInsertIndex = (NSUInteger)(arc4random() % dnaCount);
+        }
+        
+        while ([[self.DNA objectAtIndex:randInsertIndex] isEqual:[self.dnaKeys objectAtIndex:randKeyIndex]]) {
+            randKeyIndex = (NSUInteger)(arc4random() % dnaKeysCount);
         }
 
         [self.DNA replaceObjectAtIndex:randInsertIndex
