@@ -19,7 +19,7 @@
             X++;
             continue;
         }
-        [self.DNA replaceObjectAtIndex:randNumber withObject:[self randomSymbol]];
+        [self.dna replaceObjectAtIndex:randNumber withObject:[self randomSymbol]];
         [replacedPositions addObject:@(randNumber)];
     }
 }

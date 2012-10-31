@@ -10,7 +10,7 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA;
+@property NSMutableArray *dna;
 
 - (int) hammingDistance: (Cell*)cell;
 - (NSString*) randomSymbol;
