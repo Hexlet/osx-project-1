@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Core/Cell.h"
-#import "Extends/CellMutator.h"
+#import "Extends/Cell+Mutator.h"
 
 int main(int argc, const char * argv[])
 {
@@ -16,10 +16,10 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         Cell *firstCell = [[Cell alloc] init];
-        //NSLog(@"Cell 1: %@", [firstCell dnaAsString]);
+        //NSLog(@"Cell 1: %@", firstCell);
         
         Cell *secondCell = [[Cell alloc] init];
-        //NSLog(@"Cell 2: %@", [secondCell dnaAsString]);
+        //NSLog(@"Cell 2: %@", secondCell);
         
         NSLog(@"Haming distance: %d", [firstCell hammingDistance:secondCell]);
         

@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
-@interface Cell (mutator)
+@interface Cell (Mutator)
 -(void)mutateDNAWithPercentage:(int)thePercentage;
 @end

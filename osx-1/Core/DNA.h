@@ -10,6 +10,6 @@
 #define osx_1_DNA_h
 
 static const int DNALength = 4;
-static NSString * const DNATypes[DNALength] = { @"A", @"T", @"G", @"C" };
+static NSString * const DNASymbols[DNALength] = { @"A", @"T", @"G", @"C" };
 
 #endif

@@ -6,17 +6,17 @@
 //  Copyright (c) 2012 TurchenkoAlex. All rights reserved.
 //
 
-#import "CellMutator.h"
+#import "Cell+Mutator.h"
 #import "DNA.h"
 
-@implementation Cell (mutator)
+@implementation Cell (Mutator)
 
--(NSString *)mutateDNAElement:(NSString *)theElement{
+-(NSString *)mutateDNASymbol:(NSString *)theSymbol{
     int randomShift = random() % DNALength;
-    if ([theElement isEqual:DNATypes[randomShift]]){
+    if ([theSymbol isEqual:DNASymbols[randomShift]]){
         randomShift = (randomShift + 1) % DNALength;
     }
-    return DNATypes[randomShift];
+    return DNASymbols[randomShift];
 }
 
 -(void)mutateDNAWithPercentage:(int)thePercentage{
@@ -32,6 +32,7 @@
         mutation[i] = NO;
     }
     
+    // Создаем схему мутации
     for(NSUInteger i = 0; i < mutationCount; ++i){
         NSUInteger randomIndex = random() % length;
         BOOL setted = NO;
@@ -44,9 +45,12 @@
             }
         }
     }
+    
+    // Накладываем схему мутации
     for(NSUInteger i = 0; i < length; ++i){
         if(mutation[i]){
-            [[self DNA] replaceObjectAtIndex:i withObject:[self mutateDNAElement:[self DNA][i]]];
+            // Мутируем символ - случайным другим символом
+            [[self DNA] replaceObjectAtIndex:i withObject:[self mutateDNASymbol:[self DNA][i]]];
         }
     }
 }

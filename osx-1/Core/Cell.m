@@ -15,10 +15,14 @@
     return random() % DNALength;
 }
 
+-(NSString *)randomDNASymbol{
+    return DNASymbols[[self randomDNAIndex]];
+}
+
 -(NSMutableArray *)createDNAArrayWithCapacity:(NSUInteger)theCapacity{
     NSMutableArray *dnaArray = [[NSMutableArray alloc] initWithCapacity:theCapacity];
     for (int i = 0; i < theCapacity; ++i) {
-        [dnaArray setObject:DNATypes[[self randomDNAIndex]] atIndexedSubscript:i];
+        [dnaArray setObject:[self randomDNASymbol] atIndexedSubscript:i];
     }
     return dnaArray;
 }
@@ -31,12 +35,8 @@
     return self;
 }
 
--(NSString *)dnaAsString{
-    NSString *items = [NSString string];
-    for(NSString * item in _DNA){
-        items = [items stringByAppendingString:item];
-    }
-    return items;
+-(NSString *)description{
+    return [_DNA componentsJoinedByString:@""];
 }
 
 -(int)hammingDistance:(Cell *)otherCell{

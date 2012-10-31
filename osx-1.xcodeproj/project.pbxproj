@@ -11,7 +11,7 @@
 		111EB03216405F940070AF1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 111EB03116405F940070AF1D /* main.m */; };
 		111EB03616405F940070AF1D /* osx_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 111EB03516405F940070AF1D /* osx_1.1 */; };
 		111EB03F1640601D0070AF1D /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 111EB03E1640601D0070AF1D /* Cell.m */; };
-		118E556A16419B280005BEDB /* CellMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E556916419B280005BEDB /* CellMutator.m */; };
+		118E556A16419B280005BEDB /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 118E556916419B280005BEDB /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,8 +36,8 @@
 		111EB03D1640601D0070AF1D /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = Core/Cell.h; sourceTree = "<group>"; };
 		111EB03E1640601D0070AF1D /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = Core/Cell.m; sourceTree = "<group>"; };
 		118E5562164181030005BEDB /* DNA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DNA.h; path = Core/DNA.h; sourceTree = "<group>"; };
-		118E556816419B280005BEDB /* CellMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellMutator.h; path = Extends/CellMutator.h; sourceTree = "<group>"; };
-		118E556916419B280005BEDB /* CellMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellMutator.m; path = Extends/CellMutator.m; sourceTree = "<group>"; };
+		118E556816419B280005BEDB /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+Mutator.h"; path = "Extends/Cell+Mutator.h"; sourceTree = "<group>"; };
+		118E556916419B280005BEDB /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+Mutator.m"; path = "Extends/Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +110,8 @@
 		118E556716419A9B0005BEDB /* Extends */ = {
 			isa = PBXGroup;
 			children = (
-				118E556816419B280005BEDB /* CellMutator.h */,
-				118E556916419B280005BEDB /* CellMutator.m */,
+				118E556816419B280005BEDB /* Cell+Mutator.h */,
+				118E556916419B280005BEDB /* Cell+Mutator.m */,
 			);
 			name = Extends;
 			sourceTree = "<group>";
@@ -169,7 +169,7 @@
 			files = (
 				111EB03216405F940070AF1D /* main.m in Sources */,
 				111EB03F1640601D0070AF1D /* Cell.m in Sources */,
-				118E556A16419B280005BEDB /* CellMutator.m in Sources */,
+				118E556A16419B280005BEDB /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
