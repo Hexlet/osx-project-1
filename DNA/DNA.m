@@ -3,17 +3,17 @@
 
 
 @interface Cell (Mutator)
--(void) mutate:(int) procent;
+-(void) mutate:(float) procent;
 @end
 
 @implementation Cell (Mutator)
--(void) mutate:(int) percent {
+-(void) mutate:(float) percent {
 
-	if ((percent > 100) || (percent < 0))
+	if ((percent > 100.0f) || (percent < 0.0f))
 		return;
 
 	int capacity = [[self dnaArray] count];
-	for (int i = 0; i < capacity*percent/100; i++) {
+	for (int i = 0; i < capacity*percent/100.0f; i++) {
 
 		// index -  случайный индекс
 	        int index = arc4random()%capacity;
@@ -26,8 +26,8 @@
 	            [[self dnaArray] replaceObjectAtIndex:index withObject:object];
 	        } else {
 		    // если значения совпадают - вызываем текущий метод (рекурсию)
-		    // (int)100/capacity - процент для одного цикла
-	            [self mutate:(int)100/capacity];
+		    // 100/capacity - процент для одного цикла
+	            [self mutate:100/capacity];
 	        }
                              
 		
