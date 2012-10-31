@@ -1,13 +1,13 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject {
-    NSMutableArray *DNA;
-    NSArray *DNAItems;
+    NSMutableArray *dna;
+    NSArray *dnaItems;
 }
 
-@property NSMutableArray *DNA;
-@property (readonly) NSArray *DNAItems;
+@property NSMutableArray *dna;
+@property (readonly) NSArray *dnaItems;
 
-- (int)hammingDistance:(Cell *)dna;
+- (int)hammingDistance:(Cell *)cell;
 
 @end
