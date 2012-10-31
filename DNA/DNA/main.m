@@ -17,14 +17,21 @@
 -(void) mutate:(int)X{
         int amino;
         int number;
+        int oldamino;
         NSMutableArray *numbers = [[NSMutableArray alloc] initWithCapacity:100];
         for (int i=0; i<100; i++) { //создаю массив номеров от 0 до 99
                 [numbers    addObject:[NSNumber numberWithInt:i]];
             }
-        for (int i=0; i<X; i++) {
-                number = arc4random()%(100-i); //выбираем случайной элемент из массива с номерами
-            
-                amino = arc4random()%4;
+    for (int i=0; i<X; i++) {
+        number = arc4random()%(100-i); //выбираем случайной элемент из массива с номерами
+        
+        if ([[self.DNA objectAtIndex:number] isEqual:@"A"] ) {oldamino=0;}//так неэлегантным способом выясняю номер
+        if ([[self.DNA objectAtIndex:number] isEqual:@"T"] ) {oldamino=1;}//аминокислоты которая была в ячейке
+        if ([[self.DNA objectAtIndex:number] isEqual:@"G"] ) {oldamino=2;}
+        if ([[self.DNA objectAtIndex:number] isEqual:@"C"] ) {oldamino=3;}
+        
+                amino = (arc4random()%3+oldamino+1)%4; // случайным образом выбираю новую, но так, чтоб не совпала со старой
+        
                 switch (amino) {
                             case 0:
                                 [self.DNA replaceObjectAtIndex:[[numbers objectAtIndex:number] integerValue] withObject:@"A"];
