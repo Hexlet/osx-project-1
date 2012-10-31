@@ -14,8 +14,11 @@ int main(int argc, const char * argv[])
 {
     @autoreleasepool {
         int distance;
-        Cell *myCell1 = [[Cell alloc] init];
-        Cell *myCell2 = [[Cell alloc] init];
+        Cell *myCell1, *myCell2;
+        myCell1 = [[Cell alloc] init];
+        myCell2 = [[Cell alloc] init];
+        
+        //myCell1.DNA = @"xxxx";
         //NSLog(@"%@",myCell1);
         //NSLog(@"%@",myCell2);
         distance = [myCell1 hammingDistance:myCell2];

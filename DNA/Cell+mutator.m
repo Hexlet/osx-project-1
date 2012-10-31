@@ -10,12 +10,12 @@
 
 @implementation Cell(mutator)
 -(void)mutate: (int) mutatePercent {
-    // mutatePercent - не может быть больше 100%
     NSAssert(mutatePercent < 100 && mutatePercent > 0, @"invalid percent");
     
-    NSMutableArray *mutateIndexArray = [[NSMutableArray alloc] initWithCapacity:mutatePercent];
-    NSMutableArray *dnaIndexArray = [[NSMutableArray alloc] initWithCapacity:[self dnkArrayLength]];
-    for (NSInteger i = 0; i < [DNA count]; i++)
+    NSMutableArray *mutateIndexArray, *dnaIndexArray;
+    mutateIndexArray = [[NSMutableArray alloc] initWithCapacity:mutatePercent];
+    dnaIndexArray = [[NSMutableArray alloc] initWithCapacity:DNA_LEN];
+    for (NSInteger i = 0; i < DNA_LEN; i++)
         [dnaIndexArray addObject:[NSNumber numberWithInteger:i]];
 
     while (mutatePercent > 0) {
@@ -29,10 +29,10 @@
     for (id mIndex in mutateIndexArray) {
         // удаляем текущий нуклеотид из массива для замены,
         // чтобы нуклеотид в позиции был гарантированно заменен на другой
-        id currentNuke = [DNA objectAtIndex:[mIndex integerValue]];
-        id newNucleotide = currentNuke;
+        NSString *currentNuke = [DNA objectAtIndex:[mIndex integerValue]];
+        NSString *newNucleotide = currentNuke;
         while ([newNucleotide isEqual: currentNuke]) {
-            newNucleotide = self.nucleotides[arc4random() % [self.nucleotides count]];
+            newNucleotide = self.possibleNucleotides[arc4random() % NUKE_LEN];
         }
         [DNA replaceObjectAtIndex:[mIndex integerValue] withObject:newNucleotide];
     }

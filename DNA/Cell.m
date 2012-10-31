@@ -12,18 +12,22 @@
 -(id)init {
     self = [super init];
     if (self){
-        _dnkArrayLength = 100;
-        _nucleotides = [NSMutableArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-        DNA = [[NSMutableArray alloc] initWithCapacity:_dnkArrayLength];
+        DNA = [[NSMutableArray alloc] initWithCapacity:DNA_LEN];
         for (int x=0;x<100;x++) {
-            [DNA addObject:_nucleotides[arc4random() % [_nucleotides count]]];
+            [DNA addObject:self.possibleNucleotides[arc4random() % NUKE_LEN]];
         }
     }
     return self;
 }
+-(NSArray*) possibleNucleotides {
+    return [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
+}
+-(void) setDNA: (NSMutableArray *)obj {
+    NSAssert([obj isEqual: DNA],@"you cannot overwrite DNA");
+}
 -(int) hammingDistance: (Cell *)obj {
     int distance = 0;
-    for (int i=0;i<self.dnkArrayLength;i++){
+    for (int i=0;i<DNA_LEN;i++){
         if([[DNA objectAtIndex:i] isEqual: [obj->DNA objectAtIndex:i]])
             distance++;
     }

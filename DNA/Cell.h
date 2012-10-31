@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#define DNA_LEN     100
+#define NUKE_LEN    4
+
+extern NSMutableArray *nucleotides;
 
 @interface Cell : NSObject {
     NSMutableArray *DNA;
 }
-
-@property (readonly) int dnkArrayLength;
-@property (readonly) NSMutableArray *nucleotides;
-
+-(NSArray *) possibleNucleotides;
+-(void) setDNA: var;
 -(NSString *) description;
 -(int) hammingDistance: (Cell *)obj;
 @end
