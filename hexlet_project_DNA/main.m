@@ -17,17 +17,17 @@ int main(int argc, const char * argv[])
     c1 = [[Cell alloc] initWithLength: len];
     c2 = [[Cell alloc] initWithLength: len];
     
-    [c1 print];
-    [c2 print];
-    NSLog(@"%d", [c1 hammingDistance: c2]);
+    NSLog(@"DNA1: %@", c1);
+    NSLog(@"DNA2: %@", c2);
+    NSLog(@"hammingDistance: %d", [c1 hammingDistance: c2]);
     
     int X = 30;
     [c1 mutate: X];
     [c2 mutate: X];
     
-    [c1 print];
-    [c2 print];
-    NSLog(@"%d", [c1 hammingDistance: c2]);
+    NSLog(@"DNA1: %@", c1);
+    NSLog(@"DNA2: %@", c2);
+    NSLog(@"hammingDistance: %d", [c1 hammingDistance: c2]);
 
     return 0;
 }

@@ -14,7 +14,6 @@
 
 - (Cell *) initWithLength: (int) len;
 - (int) hammingDistance: (Cell *) aCell;
-- (void) print;
 
 @end
 

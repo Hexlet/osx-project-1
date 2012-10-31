@@ -34,8 +34,8 @@
 }
 
 // печатаем днк
-- (void) print {
-    NSLog(@"%@", [self.DNA componentsJoinedByString: @""]);
+- (NSString *) description {
+    return [self.DNA componentsJoinedByString: @""];
 }
 
 // сравнение днк
@@ -57,25 +57,30 @@
 // мутация
 - (void) mutate: (int) x {
     int c = x * self.DNA.count / 100; // количество элементов для мутации
-    NSMutableArray * indexes = [NSMutableArray array]; // отобранные элементы
-    int idx;
-    NSString *s1, *s2; // для варианта 2 (см. ниже)
+    NSMutableArray * indexes = [NSMutableArray arrayWithCapacity: self.DNA.count]; // отобранные элементы
+    
+    for (int i = 0; i < self.DNA.count; i++) {
+        [indexes addObject: [NSNumber numberWithInt: i]];
+    }
+    
+    NSInteger idx;
+    NSInteger val;
+    NSString *s1, *s2;
     
     for (int i = 0; i < c; i++) {
         // выбираем случайный элемент ДНК, который еще не мутировал
-        do {
-            idx = arc4random() % self.DNA.count;
-        } while ([indexes indexOfObjectIdenticalTo: [NSNumber numberWithInt: idx]] != NSNotFound);
+        idx = arc4random() % indexes.count;
+        val = [[indexes objectAtIndex: idx] integerValue];
         
-        // добавляем в список исключений для следующих мутаций
-        [indexes addObject: [NSNumber numberWithInt: idx]];
+        // удаляем его из списка "кандидатов на мутацию"
+        [indexes removeObjectAtIndex: idx];
         
         // убеждаемся, что новый элемент отличен от старого
-        s1 = [self.DNA objectAtIndex: idx];
+        s1 = [self.DNA objectAtIndex: val];
         do {
             s2 = [self getRandomPart];
         } while ([s1 isEqualToString: s2]);
-        [self.DNA replaceObjectAtIndex: idx withObject: s2];
+        [self.DNA replaceObjectAtIndex: val withObject: s2];
     }
 }
 
