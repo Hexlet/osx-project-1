@@ -18,14 +18,18 @@
 
 
 -(void)mutator:(int)x{
-    NSMutableArray *done=[[NSMutableArray alloc]init]; // здесь будем хранить массив уже замененных элементов
+    //NSMutableArray *done=[[NSMutableArray alloc]initWithCapacity:x]; // здесь будем хранить массив уже замененных элементов
+    int cDone[x];
     int counter=0;//заведем счетчик уже замененных элементов
     
     while(counter<x){ //замена еще в процессе
         int index=arc4random() % 100; //получим случайный индекс
         BOOL isContains=NO;
-        for(id item in done){
-            if([item integerValue]==index)isContains=YES; //индекс уже использован
+        for(int cc=0;cc<index;cc++){
+            if(cDone[cc]==index){
+                isContains=YES; //индекс уже использован
+                break;
+            }
         }
         if(isContains==NO){ //еще не использован
             // получим новый элемент
@@ -37,7 +41,8 @@
             [self.dna replaceObjectAtIndex:index withObject:newValue];
             
             // добавим в список уже использованных индексов
-            [done addObject:[NSNumber numberWithInt:index]];
+            //[done addObject:[NSNumber numberWithInt:index]];
+            cDone[x]=index;
             counter++;
         }
         
