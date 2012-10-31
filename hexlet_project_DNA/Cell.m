@@ -35,11 +35,7 @@
 
 // печатаем днк
 - (void) print {
-    NSMutableString *s = [NSMutableString string];
-    for (int i = 0; i < self.DNA.count; i++)  {
-        [s appendString: [self.DNA objectAtIndex: i]];
-    }
-    NSLog(@"%@", s);
+    NSLog(@"%@", [self.DNA componentsJoinedByString: @""]);
 }
 
 // сравнение днк
