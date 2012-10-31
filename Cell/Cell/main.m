@@ -20,6 +20,7 @@
 -(void)mutator:(int)x{
     //NSMutableArray *done=[[NSMutableArray alloc]initWithCapacity:x]; // здесь будем хранить массив уже замененных элементов
     int cDone[x];
+    for(int cc=0;cc<x;cDone[cc++]=-1); // первоначальная инициализация в -1
     int counter=0;//заведем счетчик уже замененных элементов
     
     while(counter<x){ //замена еще в процессе
