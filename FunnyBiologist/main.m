@@ -18,11 +18,11 @@ int main(int argc, const char * argv[])
         cell1 = [[Cell alloc] init];
         cell2 = [[Cell alloc] init];
         
-        NSLog(@"%i", [cell1 hammingDistance: cell2]);
+        NSLog(@"%li", [cell1 hammingDistance: cell2]);
         
         [cell1 mutate:10];
         [cell2 mutate:10];
-        NSLog(@"%i", [cell1 hammingDistance: cell2]);
+        NSLog(@"%li", [cell1 hammingDistance: cell2]);
     }
     return 0;
 }
