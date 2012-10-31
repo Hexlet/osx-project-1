@@ -10,7 +10,17 @@
 -(void) mutate:(int) procent {
 	int capacity = [[self dnaArray] count];
 	for (int i = 0; i < capacity*procent/100; i++) {
-		[[self dnaArray] replaceObjectAtIndex:arc4random()%capacity withObject:[symbols objectAtIndex:arc4random()%[symbols count]]];
+        
+        int index = arc4random()%capacity;
+        NSString* object =  [symbols objectAtIndex:arc4random()%[symbols count]];
+        
+        if (![[[self dnaArray] objectAtIndex:index] isEqualToString:object]) {
+            [[self dnaArray] replaceObjectAtIndex:index withObject:object];
+        } else {
+            [self mutate:(int)100/capacity];
+        }
+                             
+		
 	}
 }
 
