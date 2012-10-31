@@ -3,10 +3,22 @@
 
 
 @interface Cell (Mutator)
--(void) mutate:(float) procent;
+-(void) mutate:(float) percent;
+-(NSString*) differentObjectsAtIndex:(int) index;
 @end
 
 @implementation Cell (Mutator)
+-(NSString*) differentObjectsAtIndex:(int) index {
+    
+    // object - случайный ген
+    NSString* object =  [symbols objectAtIndex:arc4random()%[symbols count]];
+    // если значения совпали вызываем текущий метод
+    if ([[[self dnaArray] objectAtIndex:index] isEqualToString:object]) {
+        object =  [self differentObjectsAtIndex:index];
+    }
+    return object;
+}
+
 -(void) mutate:(float) percent {
 
 	if ((percent > 100.0f) || (percent < 0.0f))
@@ -18,7 +30,11 @@
 		// index -  случайный индекс
 	        int index = arc4random()%capacity;
 		// object - случайный ген
-	        NSString* object =  [symbols objectAtIndex:arc4random()%[symbols count]];
+	        NSString* object = [self differentObjectsAtIndex:index];
+        
+        	[[self dnaArray] replaceObjectAtIndex:index withObject:object]; 
+
+		/*NSString* object =  [symbols objectAtIndex:arc4random()%[symbols count]];
 	        
 		// проверка на совпадение старого и нового значения
 	        if (![[[self dnaArray] objectAtIndex:index] isEqualToString:object]) {
@@ -29,7 +45,7 @@
 		    // 100/capacity - процент для одного цикла
 	            [self mutate:100/capacity];
 	        }
-                             
+                */             
 		
 	}
 }
