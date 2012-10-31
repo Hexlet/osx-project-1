@@ -12,9 +12,9 @@
     NSMutableArray *DNA;
 }
 
-@property int dnkArrayLength;
-@property NSMutableArray *nucleotides;
+@property (readonly) int dnkArrayLength;
+@property (readonly) NSMutableArray *nucleotides;
 
--(void) printDNA;
+-(NSString *) description;
 -(int) hammingDistance: (Cell *)obj;
 @end

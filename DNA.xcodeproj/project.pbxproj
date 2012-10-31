@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DB5042E16419B8B0005748D /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB5042D16419B8B0005748D /* Cell+mutator.m */; };
 		8DD4BDD21640539300F9DE1C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD4BDD11640539300F9DE1C /* Foundation.framework */; };
 		8DD4BDD51640539300F9DE1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD4BDD41640539300F9DE1C /* main.m */; };
 		8DD4BDD91640539300F9DE1C /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DD4BDD81640539300F9DE1C /* DNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8DB5042C16419B8B0005748D /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		8DB5042D16419B8B0005748D /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 		8DD4BDCD1640539300F9DE1C /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD4BDD11640539300F9DE1C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8DD4BDD41640539300F9DE1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 				8DD4BDD61640539300F9DE1C /* Supporting Files */,
 				8DD4BDDF164053DB00F9DE1C /* Cell.h */,
 				8DD4BDE0164053DB00F9DE1C /* Cell.m */,
+				8DB5042C16419B8B0005748D /* Cell+mutator.h */,
+				8DB5042D16419B8B0005748D /* Cell+mutator.m */,
 			);
 			path = DNA;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			files = (
 				8DD4BDD51640539300F9DE1C /* main.m in Sources */,
 				8DD4BDE1164053DB00F9DE1C /* Cell.m in Sources */,
+				8DB5042E16419B8B0005748D /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				8DD4BDDE1640539300F9DE1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

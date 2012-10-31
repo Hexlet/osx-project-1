@@ -16,9 +16,7 @@
         _nucleotides = [NSMutableArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
         DNA = [[NSMutableArray alloc] initWithCapacity:_dnkArrayLength];
         for (int x=0;x<100;x++) {
-            int nucleotides_index = arc4random() % [_nucleotides count];
-            id newNucleotide = _nucleotides[nucleotides_index];
-            [DNA insertObject:newNucleotide atIndex:x];
+            [DNA addObject:_nucleotides[arc4random() % [_nucleotides count]]];
         }
     }
     return self;
@@ -31,10 +29,7 @@
     }
     return distance;
 }
--(void)printDNA {
-    for(id n in DNA) {
-        printf("%s",[n UTF8String]);
-    }
-    printf("\n");
+-(NSString *) description {
+    return [NSString stringWithFormat:@"DNA: %@", [DNA componentsJoinedByString:@""]];
 }
 @end
