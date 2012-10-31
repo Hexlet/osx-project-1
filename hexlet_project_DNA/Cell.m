@@ -59,7 +59,7 @@
     int c = x * self.DNA.count / 100; // количество элементов для мутации
     NSMutableArray * indexes = [NSMutableArray array]; // отобранные элементы
     int idx;
-    // NSString *s1, *s2; // для варианта 2 (см. ниже)
+    NSString *s1, *s2; // для варианта 2 (см. ниже)
     
     for (int i = 0; i < c; i++) {
         // выбираем случайный элемент ДНК, который еще не мутировал
@@ -70,16 +70,12 @@
         // добавляем в список исключений для следующих мутаций
         [indexes addObject: [NSNumber numberWithInt: idx]];
         
-        // вариант 1, просто замена на случайный элемент
-        [self.DNA replaceObjectAtIndex: idx withObject: [self getRandomPart]];
-        
-        // вариант 2, в задании не очевидно что есть такое "заменить ячейку"
         // убеждаемся, что новый элемент отличен от старого
-        // s1 = [self.DNA objectAtIndex: idx];
-        // do {
-        //     s2 = [self getRandomPart];
-        // } while ([s1 isEqualToString: s2]);
-        // [self.DNA replaceObjectAtIndex: idx withObject: s2];
+        s1 = [self.DNA objectAtIndex: idx];
+        do {
+            s2 = [self getRandomPart];
+        } while ([s1 isEqualToString: s2]);
+        [self.DNA replaceObjectAtIndex: idx withObject: s2];
     }
 }
 
