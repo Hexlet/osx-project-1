@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#define DNA_CAPACITY 100 // размер массива
-#define LETTERS @"ATGC" // возможные значения элемента клетки 
+#define DNA_CAPACITY 100 // размер массива DNA
+#define LETTERS @"ATGC" // возможные значения элемента клетки (использовать uppercase)
 
 @interface Cell : NSObject
 
 @property NSMutableArray *DNA;
 
 -(int) hammingDistance: (Cell*) c;
+-(NSString*) generateRandomNucletoid;
 -(void) print;
 @end

@@ -10,18 +10,21 @@
 
 @implementation Cell
 
+// генерирует случ. элемент клетки
+-(NSString*) generateRandomNucletoid {
+    return [LETTERS substringWithRange: NSMakeRange(arc4random() % LETTERS.length, 1)];
+}
+
 // инициализация
 -(id) init {
     self = [super init];
     
     if (self) {
         _DNA = [[NSMutableArray alloc] initWithCapacity: DNA_CAPACITY];
-        NSString *letter;
         
         // random init array from our possible letters
-        for (int i = 0; i < DNA_CAPACITY; i++) {
-            letter = [LETTERS substringWithRange: NSMakeRange(arc4random() % LETTERS.length, 1)];
-            [_DNA addObject: letter];
+        for (int i = 0; i < DNA_CAPACITY; i++) {         
+            [_DNA addObject: [self generateRandomNucletoid]];
         }
     }
     return self;
@@ -31,8 +34,8 @@
 -(int) hammingDistance: (Cell *) c {
     int distance = 0;
     
-    for (int i = 0; i < DNA_CAPACITY; i++) {
-        if ([self.DNA objectAtIndex: i] != [c.DNA objectAtIndex: i])
+    for (int i = 0; i < DNA_CAPACITY; i++) {    
+        if ([[self.DNA objectAtIndex: i] isNotEqualTo: [c.DNA objectAtIndex: i]])
             distance++;
     }
     return distance;
