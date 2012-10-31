@@ -18,7 +18,7 @@
 -(id)init{
     self = [super init];
     if(self){
-        lengthDNA = 100; // размер цепочки ДНК
+        lengthDNA = 10; // размер цепочки ДНК
         DNA = [NSMutableArray arrayWithCapacity:lengthDNA];
         for(int i = 0; i < lengthDNA ; i++){
             // Заполение массива случайными допустимыми занчениями
@@ -89,10 +89,9 @@
                     if([tempStr isNotEqualTo:[DNA objectAtIndex:rnd]])
                         break; // Заменили 
                 }
-                // Отмечаем эллемент как замененный
+                // Отмечаем элемент как замененный
                 updateArray[rnd] = YES;
                 i++;
-                    
             }
             else{
                 // Уже заменяли. Следующая попытка
