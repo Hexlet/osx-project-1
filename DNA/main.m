@@ -8,7 +8,7 @@
 
 int main (int argc, const char * argv[])
 {
-    @autoreleasepool
+    @autoreleasepool 
     {
         Cell *c0 = [Cell cell];
         Cell *c1 = [Cell cell];

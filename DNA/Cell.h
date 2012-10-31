@@ -10,6 +10,7 @@ extern const NSString *DNAItems[kMaxDNAItems];
     NSMutableArray *dna;
 }
 
+// делаем тру-ридонли свойство с именем dna
 @property (nonatomic, readonly) NSArray *dna;
 
 + (id) cell;
