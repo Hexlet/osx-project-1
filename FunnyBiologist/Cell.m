@@ -11,8 +11,7 @@
 @implementation Cell
 
 -(id) init {
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         _DNA = [[NSMutableArray alloc] init];
         
         for (int i=0; i<DNA_SIZE; i++) {
@@ -23,12 +22,15 @@
 }
 
 +(NSString*)getRandomDNA {
-    NSArray* symbols = @[@"A", @"T", @"G", @"C"];
-    NSUInteger randKey = arc4random() % [symbols count];
-    return symbols[randKey];
+    static NSArray* dnaSymbols;
+    if (!dnaSymbols) {
+        dnaSymbols = @[@"A", @"T", @"G", @"C"];
+    }
+    NSUInteger randKey = arc4random() % [dnaSymbols count];
+    return dnaSymbols[randKey];
 }
 
--(int)hammingDistance:(Cell*) other {
+-(NSUInteger)hammingDistance:(Cell*) other {
     int result = 0;
     for (int i=0; i<DNA_SIZE; i++) {
         if (self.DNA[i]!=other.DNA[i]) {
@@ -36,11 +38,6 @@
         }
     }
     return result;
-}
-
-
--(void)print{
-    NSLog(@"%@", _DNA);
 }
 
 @end

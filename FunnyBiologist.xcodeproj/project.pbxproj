@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7007FA04164186AB0021ADBF /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7007FA03164186AB0021ADBF /* Cell+Mutator.m */; };
 		70789FAB164034BA00CD8538 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70789FAA164034BA00CD8538 /* Foundation.framework */; };
 		70789FAE164034BA00CD8538 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70789FAD164034BA00CD8538 /* main.m */; };
 		70789FB2164034BA00CD8538 /* FunnyBiologist.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70789FB1164034BA00CD8538 /* FunnyBiologist.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7007FA02164186AB0021ADBF /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		7007FA03164186AB0021ADBF /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 		70789FA6164034BA00CD8538 /* FunnyBiologist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FunnyBiologist; sourceTree = BUILT_PRODUCTS_DIR; };
 		70789FAA164034BA00CD8538 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		70789FAD164034BA00CD8538 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				70789FAD164034BA00CD8538 /* main.m */,
+				7007FA02164186AB0021ADBF /* Cell+Mutator.h */,
+				7007FA03164186AB0021ADBF /* Cell+Mutator.m */,
 				70789FB8164034ED00CD8538 /* Cell.h */,
 				70789FB9164034ED00CD8538 /* Cell.m */,
 				70789FB1164034BA00CD8538 /* FunnyBiologist.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				70789FAE164034BA00CD8538 /* main.m in Sources */,
 				70789FBA164034ED00CD8538 /* Cell.m in Sources */,
+				7007FA04164186AB0021ADBF /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				70789FB7164034BA00CD8538 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
