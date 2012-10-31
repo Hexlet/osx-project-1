@@ -24,7 +24,7 @@
         }
         do {
             replaceSymbol = [self randomSymbol];
-        } while ([self.dna[randNumber] isEqualToString:replaceSymbol]);
+        } while ([self.dna[randNumber] isEqualTo:replaceSymbol]);
         [self.dna replaceObjectAtIndex:randNumber withObject:replaceSymbol];
         [replacedPositions addObject:@(randNumber)];
     }
