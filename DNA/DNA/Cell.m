@@ -14,6 +14,7 @@
     self = [super init];
     if(self){
         _DNA = [[NSMutableArray alloc] init];
+        _tmpArr = [[NSMutableArray alloc] init];
         for (NSUInteger i = 0; i < 100; i++) {
             [_DNA addObject:[Cell genLatter:arc4random()%3]];
         }
@@ -40,7 +41,7 @@
     return tmp;
 }
 -(void)print{
-    NSLog(@"%@", _DNA);
+    NSLog(@"DNA %@", _DNA);
 }
 -(NSInteger) hammingDistance:(Cell *)alienDNA{
     NSInteger counter = 0;
