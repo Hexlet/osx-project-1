@@ -21,13 +21,26 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNAProject/main.m"
-         timestampString = "373309405.107579"
+         timestampString = "373360909.999047"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "main()"
          landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNAProject/main.m"
+         timestampString = "373359692.684699"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "18"
+         endingLineNumber = "18"
+         landmarkName = "-mutate:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
    <ExceptionBreakpoints>

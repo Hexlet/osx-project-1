@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject
+{
+    NSArray *ATGC;
+}
 
 @property (nonatomic, strong) NSMutableArray *DNA;
 

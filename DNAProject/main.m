@@ -19,12 +19,19 @@
         NSException *e = [NSException exceptionWithName:@"WrongNumberPercent" reason:@"Wrong Number Percent" userInfo:nil];
         @throw e;
     }
-    else{
-        NSArray *ATGC = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
+    else{        
+        //Если я не делаю mutableCopy, то метод replaceObjectAtIndex:withObject: не доступен 8-(
         NSMutableArray *mmm = [[self DNA] mutableCopy];
+        
         for (int i = 1 ; i <= percentM; i++) {
-            [mmm replaceObjectAtIndex:(arc4random()%[[self DNA] count]) withObject:[ATGC objectAtIndex:(arc4random()%[ATGC count])]];
+            int index1 = arc4random()%[[self DNA] count];
+            int index2 = arc4random()%[ATGC count];
+            while ([[mmm objectAtIndex:index1] isEqual: [ATGC objectAtIndex:index2]]) {
+                index2 = arc4random()%[ATGC count];
+            }
+            [mmm replaceObjectAtIndex:index1 withObject:[ATGC objectAtIndex:index2]];
         }
+        
         [self setDNA: mmm];
     }
 }
@@ -40,12 +47,11 @@ int main(int argc, const char * argv[])
         Cell *c1 = [[Cell alloc] init];
         Cell *c2 = [[Cell alloc] init];
         
-        NSLog(@"#1 difernce number = %i", [c1 hammingDistance:c2]);
+        NSLog(@"#1 = %i", [c1 hammingDistance:c2]);
 
         [c1 mutate:10];
         
-        NSLog(@"#2 difernce number = %i", [c1 hammingDistance:c2]);
-
+        NSLog(@"#2 = %i", [c1 hammingDistance:c2]);
     }
     return 0;
 }

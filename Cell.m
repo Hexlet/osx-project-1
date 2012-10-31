@@ -13,7 +13,7 @@
 - (id)init{
     self = [super init];
     if (self) {
-        NSArray *ATGC = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
+        ATGC = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
         _DNA = [NSMutableArray arrayWithCapacity:100];
         NSMutableArray *temp = [NSMutableArray arrayWithCapacity:100];
         for (int i=1; i<=100; i++) {
