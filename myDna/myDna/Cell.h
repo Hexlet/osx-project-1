@@ -14,6 +14,7 @@
 }
 
 -(id) init;
+-(id) initWithCapacity:(int)count;
 
 -(NSString*) getRandom;
 -(NSMutableArray*) getDNA;

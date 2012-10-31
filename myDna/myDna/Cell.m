@@ -22,6 +22,18 @@
     return self;
 }
 
+-(id) initWithCapacity:(int)count
+{
+    self = [super init];
+    
+    DNA = [[NSMutableArray alloc] initWithCapacity:count];
+    for (NSInteger i = 0; i < count; ++i) {
+        [DNA addObject: [self getRandom]];
+    }
+    
+    return self;
+}
+
 -(NSString*) getRandom
 {
     NSString *randomDNA = @"ATGC";

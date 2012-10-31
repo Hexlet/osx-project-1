@@ -18,10 +18,13 @@
    
     NSMutableArray *uniqNumbers = [[NSMutableArray alloc] init];
     
-    while ([uniqNumbers count] < percent) {
-        int r = arc4random() % 100;
+    // Calculate items count according to percents
+    while ([uniqNumbers count] < (int)round([DNA count] * percent / 100)) {
+        int r = arc4random() % [DNA count];
         if (![uniqNumbers containsObject:[NSNumber numberWithInteger:r]]) {
+            // Populate array of unique elements
             [uniqNumbers addObject: [NSNumber numberWithInteger:r]];
+            // Randomize choosen DNA element
             [DNA setObject:[self getRandom] atIndexedSubscript:r];
         }
     }
@@ -33,13 +36,13 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        Cell *myCell1 = [[Cell alloc] init];
-        Cell *myCell2 = [[Cell alloc] init];
+        Cell *myCell1 = [[Cell alloc] initWithCapacity:243];
+        Cell *myCell2 = [[Cell alloc] initWithCapacity:243];
         
         NSLog(@"Normal hammingDistance: %i", [myCell1 hammingDistance:[myCell2 getDNA]]);
         
-        [myCell1 mutate:50];
-        [myCell2 mutate:50];
+        [myCell1 mutate:30];
+        [myCell2 mutate:30];
         
         NSLog(@"Mutated hammingDistance: %i", [myCell1 hammingDistance:[myCell2 getDNA]]);
         
