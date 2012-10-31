@@ -19,7 +19,7 @@
 @implementation Cell
 
 
-@synthesize dnaArray;
+//@synthesize dnaArray;
 
 -(id) init {
 	
@@ -35,9 +35,9 @@
 -(void) initDna {
 	
 	symbols = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-	self.dnaArray = [NSMutableArray arrayWithCapacity:CAPACITY];
+	dnaArray = [NSMutableArray arrayWithCapacity:CAPACITY];
 	for (int i = 0; i < CAPACITY; i++) {
-		[self.dnaArray addObject:[symbols objectAtIndex:arc4random()%[symbols count]]];
+		[[self dnaArray] addObject:[symbols objectAtIndex:arc4random()%[symbols count]]];
 	}
 	
 }
@@ -45,10 +45,15 @@
 -(int) hammingDistance:(Cell*) aDna {
 	int count = 0;
 	for (int i = 0; i < CAPACITY; i++) {
-		if (![[self.dnaArray objectAtIndex:i] isEqualToString:[[aDna dnaArray] objectAtIndex:i]])
+		if (![[[self dnaArray] objectAtIndex:i] isEqualToString:[[aDna dnaArray] objectAtIndex:i]])
 			count++;
 	}
 	return count;
+}
+
+#pragma mark - Getter for dnaArray
+-(NSMutableArray*) dnaArray {
+    return dnaArray;
 }
 
 -(void) dealloc {
