@@ -16,6 +16,10 @@
 @implementation Cell (Mutator) // имплементация категории Mutator
 // Метод mutate нам нужен, чтобы сформировать новую ДНК, изменив х% исходной последовательности
 -(void)mutate:(int)x{
+    // если неверно задан процент изменения, дальнейшие действия бессмысленны
+    if (x<0||x>100) {
+        @throw [NSException exceptionWithName:@"InvalidXInMutator" reason:[NSString stringWithFormat:@"Invalid value %i!",x] userInfo:nil];
+    }
     NSUInteger generated = 0; //индекс заменяемого символа
     NSUInteger amount = lroundf((capacityOfDNA*x)/100.0f); // кол-во символов для изменения (x - процентный показатель)
     id sourceGene,modifiedGene; //переменные для анализа исходного символа и модифицированного символа
@@ -30,7 +34,7 @@
         sourceGene = [DNA objectAtIndex:generated]; // запоминаем исходное значение в последовательности по индексу
         // и меняем значение символа, помня о том, что оно в любом случае должно отличаться от исходного!
         do {
-            modifiedGene = [gene objectAtIndex:(arc4random() % [gene count])];
+            modifiedGene = gene[(arc4random() % capacityOfGene)];
         } while ([sourceGene isEqualToString:modifiedGene]);
         [DNA replaceObjectAtIndex:generated withObject:modifiedGene];
     } while ([setOfDNA count]<amount);
@@ -49,10 +53,24 @@ int main(int argc, const char * argv[])
         Cell *myCell2 = [[Cell alloc] init]; // вторая ДНК
         NSLog(@"%@",myCell2);
         NSLog(@"Hamming distance: %d",[myCell hammingDistance:myCell2]);
-        [myCell mutate:12];
-        NSLog(@"%@",myCell);
-        [myCell2 mutate:73];
-        NSLog(@"%@",myCell2);
+        @try {
+            [myCell mutate:12];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Error while mutating myCell1! %@",exception);
+        }
+        @finally {
+            NSLog(@"%@",myCell);
+        }
+        @try {
+            [myCell2 mutate:37];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Error while mutating myCell2! %@",exception);
+        }
+        @finally {
+            NSLog(@"%@",myCell2);
+        }
         NSLog(@"Hamming distance: %d",[myCell hammingDistance:myCell2]);
         
     }

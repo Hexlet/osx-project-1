@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#define capacityOfDNA 100 //количество генов в последовательности ДНК
+#define capacityOfGene 4 //количество генов в одной ячейке ДНК
+
+extern const NSString *gene[capacityOfGene]; // чтобы не создавать каждый раз новые для каждого объекта
+
 @interface Cell : NSObject {
     NSMutableArray *DNA; //собственно, ДНК
-    NSUInteger capacityOfDNA; //вспомогательная переменная, для хранения количества символов в последовательности
-    NSArray *gene; //набор генов
 }
 /* метод, определяющий, насколько одна последовательность отличается от другой,
    возвращает количество позиций, на которых есть несоответствие */

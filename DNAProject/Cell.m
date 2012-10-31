@@ -8,20 +8,19 @@
 
 #import "Cell.h"
 
+const NSString *gene[capacityOfGene] = {@"A",@"T",@"G",@"C"};
+
 @implementation Cell
 
 -(id)init // переписываем метод для нашего класса, т.к. необходима инициализация собственных переменных
 {
     self = [super init]; // сам объект обязан проинициализироваться методом родителя
     if (self) {
-        capacityOfDNA = 100; // по условию, последовательность из 100 символов
-        DNA = [[NSMutableArray alloc] initWithCapacity:capacityOfDNA]; // необязательно, но по условию в массиве должно быть 100 символов
-        gene = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil]; // каждый элемент последовательности может быть любым из 4 символов: A, T, G или C
-        //srandom(time(0));
+        DNA = [[NSMutableArray alloc] initWithCapacity:capacityOfDNA]; // готовим массив для ДНК
         NSUInteger generated; // для сгенерированного индекса нужной буквы
         for (int i=0; i<capacityOfDNA; i++) {
-            generated = arc4random() % [gene count];
-            [DNA addObject:[gene objectAtIndex:generated]];
+            generated = arc4random() % capacityOfGene;
+            [DNA addObject:gene[generated]];
         }
     }
     return self;
@@ -29,17 +28,16 @@
 
 -(NSString *)description //этот метод позволит выводить ДНК в виде NSLog(@"%@",myCell)
 {
-    NSString *descr = [[NSString alloc] init]; // хочу, чтобы всё выводилось в одну строку!
-    for (id elem in DNA) {
-        descr = [descr stringByAppendingString:elem];
-    }
-    return descr;
+    return [DNA componentsJoinedByString:@""];
 }
 
 -(int)hammingDistance:(Cell *)someCell {
     int ham = 0;
     /* долго думал, и пришёл к выводу, что так сравнивать лучше всего, так как 
-     у нас нет прямого доступа к массиву DNA объекта someCell */
+     у нас нет прямого доступа к массиву DNA объекта someCell, а давать доступ 
+     к модификации последовательности "вручную" я не хочу. Если сделать 
+     @property (nonatomic,readonly), то метод в категории не сможет ничего сделать
+     с моей последовательностью ДНК */
     NSString *sourceString = [[NSString alloc] initWithString:[self description]];
     NSString *compareString = [[NSString alloc] initWithString:[someCell description]];
     for (int i=0; i<capacityOfDNA; i++) {
