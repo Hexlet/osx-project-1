@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define ATGC @[@"A", @"T", @"G", @"C"]
+
 @interface Cell : NSObject
-{
-    NSArray *ATGC;
-}
 
 @property (nonatomic, strong) NSMutableArray *DNA;
 
