@@ -34,6 +34,7 @@
 		395ACCC21641DA9200BD0B95 /* osx_project_1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = osx_project_1.1; sourceTree = "<group>"; };
 		395ACCC91641DBBF00BD0B95 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		395ACCCA1641DBBF00BD0B95 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		395ACCD01641EAF500BD0B95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +52,7 @@
 		395ACCAC1641DA9200BD0B95 = {
 			isa = PBXGroup;
 			children = (
+				395ACCD01641EAF500BD0B95 /* README.md */,
 				395ACCBD1641DA9200BD0B95 /* osx-project-1 */,
 				395ACCBA1641DA9200BD0B95 /* Frameworks */,
 				395ACCB81641DA9200BD0B95 /* Products */,
@@ -242,6 +244,7 @@
 				395ACCC81641DA9200BD0B95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
