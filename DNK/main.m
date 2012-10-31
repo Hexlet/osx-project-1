@@ -59,29 +59,24 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
  
-        Cell *myCell, *myCell1, *myCell2;
+        Cell *myCell, *myCell1;
         
         //Инициализируем наши ДНК
         myCell  = [[Cell alloc] init];
         myCell1 = [[Cell alloc] init];
-        myCell2 = [[Cell alloc] init];
         
-        //Выведем полученные результаты
-        NSLog(@"myCell \n%@", [myCell debugDescription]);
-        NSLog(@"myCell1 \n%@", [myCell1 debugDescription]);
+        
+        // Выведем полученные результаты
+        // NSLog(@"myCell \n%@", [myCell debugDescription]);
+        // NSLog(@"myCell1 \n%@", [myCell1 debugDescription]);
 
         //Сравним ДНК myCell и myCell1
         NSLog(@"Hamming distance = %i",[myCell hammingDistance:myCell1]);
-        
-        //Сохраним ДНК myCell1 до мутации в myCell2
-        [myCell2 setDnk:[[myCell1 dnk] copy]];
-        
-        [myCell1 mutator:100];
 
-        //Выведем значиние ДНК myCell1 до и после мутации и сравним их 
-        NSLog(@"myCell1 before mutation \n%@", [myCell2 debugDescription]);
-        NSLog(@"MyCell1 after mutation \n%@", [myCell1 debugDescription]);
-        NSLog(@"Hamming distance before mutation = %i",[myCell1 hammingDistance:myCell2]);
+        [myCell mutator:30];
+        [myCell1 mutator:40];
+        NSLog(@"New Hamming distance after mutation = %i",[myCell hammingDistance:myCell1]);
+
     }
     
     return 0;
