@@ -7,13 +7,11 @@
 //
 
 #import "Cell+mutator.h"
-#include <assert.h>
 
 @implementation Cell(mutator)
 -(void)mutate: (int) mutatePercent {
     // mutatePercent - не может быть больше 100%
-    assert(mutatePercent < 100);
-    assert(mutatePercent > 0);
+    NSAssert(mutatePercent < 100 && mutatePercent > 0, @"invalid percent");
     
     NSMutableArray *mutateIndexArray = [[NSMutableArray alloc] initWithCapacity:mutatePercent];
     NSMutableArray *dnaIndexArray = [NSMutableArray array];
