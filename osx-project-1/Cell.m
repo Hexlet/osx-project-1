@@ -29,7 +29,7 @@
 }
 
 /*
-    Вычислить рассояние менжу цепочками
+    Вычислить рассояние между цепочками
  */
 -(int)hammingDistance:(Cell*)otherCell{
     int distance = 0;
@@ -59,7 +59,7 @@
 @implementation Cell (Mutator)
 
 /*
-    Выполняет мутацию
+    Выполнить мутацию
 */
 -(void)mutate:(int)persent{
 
