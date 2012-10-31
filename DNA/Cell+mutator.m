@@ -14,7 +14,7 @@
     NSAssert(mutatePercent < 100 && mutatePercent > 0, @"invalid percent");
     
     NSMutableArray *mutateIndexArray = [[NSMutableArray alloc] initWithCapacity:mutatePercent];
-    NSMutableArray *dnaIndexArray = [NSMutableArray array];
+    NSMutableArray *dnaIndexArray = [[NSMutableArray alloc] initWithCapacity:[self dnkArrayLength]];
     for (NSInteger i = 0; i < [DNA count]; i++)
         [dnaIndexArray addObject:[NSNumber numberWithInteger:i]];
 
