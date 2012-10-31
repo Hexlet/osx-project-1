@@ -13,8 +13,8 @@
 - (id) init {
     self = [super init];
     if (self) {
-        self.dna = [NSMutableArray array];
-        for (int i = 0; i < 100; i ++) {
+        self.dna = [NSMutableArray arrayWithCapacity:SIZE_OF_DNA_ARRAY];
+        for (int i = 0; i < SIZE_OF_DNA_ARRAY; i ++) {
             [self.dna addObject: [self randomSymbol]];
         }
     }
@@ -22,8 +22,8 @@
 }
 
 - (NSString*) randomSymbol {
-    static NSString *alphabet = @"ATGC";
-    return [NSString stringWithFormat:@"%C", [alphabet characterAtIndex:arc4random() % 4]];
+    static NSString *alphabet[4] = {@"A", @"T", @"G", @"C"};
+    return alphabet[arc4random()%4];
 }
 
 - (int) hammingDistance:(Cell *)cell {

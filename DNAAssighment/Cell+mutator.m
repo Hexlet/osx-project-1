@@ -10,16 +10,22 @@
 
 @implementation Cell (mutator)
 
-- (void) mutate:(int)X {
-    // x percent of 100 = x
+- (void) mutate:(int)percent {
+    NSAssert(percent <= 100 && percent > 0, @"percentage outside the boundaries 0 till 100");
+    int X = SIZE_OF_DNA_ARRAY * percent / 100;
     NSMutableArray *replacedPositions = [NSMutableArray arrayWithCapacity:X];
-    while (X--) {
-        int randNumber = arc4random() % 100;
+    int randNumber;
+    NSString *replaceSymbol = nil;
+    for (int i = 0; i < X; i ++) {
+        randNumber = arc4random() % SIZE_OF_DNA_ARRAY;
         if ([replacedPositions containsObject:@(randNumber)]) {
-            X++;
+            i--;
             continue;
         }
-        [self.dna replaceObjectAtIndex:randNumber withObject:[self randomSymbol]];
+        do {
+            replaceSymbol = [self randomSymbol];
+        } while ([self.dna[randNumber] isEqualToString:replaceSymbol]);
+        [self.dna replaceObjectAtIndex:randNumber withObject:replaceSymbol];
         [replacedPositions addObject:@(randNumber)];
     }
 }

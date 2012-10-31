@@ -10,6 +10,6 @@
 
 @interface Cell (mutator)
 
-- (void) mutate: (int) X;
+- (void) mutate: (int) percent;
 
 @end

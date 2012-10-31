@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#define SIZE_OF_DNA_ARRAY 100
+
 
 @interface Cell : NSObject
 
