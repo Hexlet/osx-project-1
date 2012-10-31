@@ -12,9 +12,11 @@
 @interface Cell : NSObject 
 {
 	NSArray* symbols;
+    NSMutableArray* dnaArray;
 }
-@property (nonatomic, retain) NSMutableArray* dnaArray;
+//@property (nonatomic, retain) NSMutableArray* dnaArray; 
 
+-(NSMutableArray*) dnaArray;
 -(int) hammingDistance:(Cell*) aDna;
 
 @end
