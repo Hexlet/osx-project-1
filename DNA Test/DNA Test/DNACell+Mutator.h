@@ -10,6 +10,4 @@
 
 @interface DNACell (Mutator)
 
--(void) mutate: (int) x;
-
 @end
