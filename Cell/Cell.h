@@ -21,4 +21,6 @@
 
 - (void) print;
 - (int)  hammingDistance: (Cell *) anotherDna;
+- (void) initDNA;
+- (void) initProperty;
 @end

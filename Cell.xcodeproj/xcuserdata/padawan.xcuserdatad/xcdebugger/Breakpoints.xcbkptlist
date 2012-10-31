@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Cell/Cell.h"
-         timestampString = "373375414.499264"
+         timestampString = "373376851.454473"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "21"
-         endingLineNumber = "21"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
          landmarkName = "-hammingDistance:"
          landmarkType = "4">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Cell/Cell.m"
-         timestampString = "373375085.687273"
+         timestampString = "373376806.288634"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "52"
-         endingLineNumber = "52"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
       </FileBreakpoint>

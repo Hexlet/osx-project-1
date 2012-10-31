@@ -59,6 +59,5 @@
     
     // Проверка замены
     NSLog(@"%@ => %@", currentNucleotid, newNucleotid);
-    
 }
 @end

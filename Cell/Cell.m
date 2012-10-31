@@ -14,20 +14,26 @@
     self = [super init];
     
     if(self) {
-        // Задаем длину
-        lengthOfDna = 100;
-        
-        // Задаем нуклеотиды
-        nucleotides = [[NSArray alloc] initWithObjects: @"T", @"A", @"G", @"C", nil];
-        
-        // Инициализируем DNA
-        DNA = [NSMutableArray arrayWithCapacity:lengthOfDna];
-        
-        for (int i = 0; i < lengthOfDna; i++) {
-            [DNA addObject: [nucleotides objectAtIndex:arc4random()%[nucleotides count]]];
-        }
+        [self initProperty];
+        [self initDNA];
     }
     return self;
+}
+
+- (void) initProperty {
+    // Задаем длину
+    lengthOfDna = 100;
+    
+    // Задаем нуклеотиды
+    nucleotides = [[NSArray alloc] initWithObjects: @"T", @"A", @"G", @"C", nil];
+}
+
+- (void) initDNA {
+    // Инициализируем DNA
+    DNA = [NSMutableArray arrayWithCapacity:lengthOfDna];
+    for (int i = 0; i < lengthOfDna; i++) {
+        [DNA addObject: [nucleotides objectAtIndex:arc4random()%[nucleotides count]]];
+    }
 }
 
 - (void) print {
