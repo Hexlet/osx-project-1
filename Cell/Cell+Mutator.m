@@ -12,15 +12,15 @@
 - (void) mutate:(int)percent {
     NSLog(@"=====================");
     // Количество элементов для замены
-    int itemsForReplace = percent * lengthOfDna / 100;
+    int itemsForReplace = percent * [self lengthOfDna] / 100;
     NSLog(@"Будет мутировать нуклеотидов %iшт(%i%%)", itemsForReplace, percent);
     
     // Массив индексов для DNA.
     // Каждый индекс указывает на один нуклеотид в DNA
-    NSMutableArray *ind = [[NSMutableArray alloc] initWithCapacity:lengthOfDna];
+    NSMutableArray *ind = [[NSMutableArray alloc] initWithCapacity:[self lengthOfDna]];
     
     // Создаем индексы
-    for (int i = 0; i < lengthOfDna; i++) {
+    for (int i = 0; i < [self lengthOfDna]; i++) {
         [ind addObject: [NSNumber numberWithInt:i]];
     }
     
@@ -45,17 +45,17 @@
 
 - (void) replace: (int)index {
     // Старый
-    NSString *currentNucleotid = [DNA objectAtIndex:index];
+    NSString *currentNucleotid = [[self DNA] objectAtIndex:index];
     // Новый
     NSString *newNucleotid;
     
     // Замена
     // Пока новый равен старому
     do {
-        newNucleotid = [nucleotides objectAtIndex:arc4random()%[nucleotides count]];
+        newNucleotid = [[self nucleotides] objectAtIndex:arc4random()%[[self nucleotides] count]];
     } while (newNucleotid == currentNucleotid);
     
-    [DNA replaceObjectAtIndex:index withObject:newNucleotid];
+    [[self DNA] replaceObjectAtIndex:index withObject:newNucleotid];
     
     // Проверка замены
     NSLog(@"%@ => %@", currentNucleotid, newNucleotid);

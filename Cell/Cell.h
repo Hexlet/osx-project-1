@@ -8,18 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject {
-    // Структура ДНК
-    NSMutableArray *DNA;
-    
-    // Нуклеотиды
-    NSArray *nucleotides;
-@private
-    // длина DNA
-    int lengthOfDna;
-}
+@interface Cell : NSObject
+
+// Структура ДНК
+@property (nonatomic, readonly) NSMutableArray *DNA;
+
+// Нуклеотиды
+@property (nonatomic, readonly) NSArray *nucleotides;
+
+// длина DNA
+@property (readonly) int lengthOfDna;
 
 - (void) print;
 - (int)  hammingDistance: (Cell *) anotherDna;
-- (id) getDNA;
 @end

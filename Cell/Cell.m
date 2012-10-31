@@ -9,12 +9,12 @@
 #import "Cell.h"
 
 @implementation Cell
-
+    @synthesize DNA, lengthOfDna, nucleotides;
 - (id) init {
     self = [super init];
     
     if(self) {
-        
+        // Задаем длину
         lengthOfDna = 100;
         
         // Задаем нуклеотиды
@@ -46,7 +46,7 @@
     // Сравнение DNA
     for (int i = 0; i < lengthOfDna; i++) {
         left    = [DNA objectAtIndex:i];
-        right   = [[anotherDna getDNA] objectAtIndex:i];
+        right   = [[anotherDna DNA] objectAtIndex:i];
         if(![left isEqualTo:right]) {
             // Выводит неидентичные элементы
             NSLog(@"%@ <> %@ (позиция %i)", left, right, i);
@@ -56,9 +56,5 @@
     // Выводим результат
     NSLog(@"Несовпадений: %i", k);
     return k;
-}
-
--(id) getDNA {
-    return DNA;
 }
 @end
