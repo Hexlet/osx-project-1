@@ -10,20 +10,15 @@
 
 @implementation Cell
 
-- (NSString *) getRandomDNASymbol{
-    //Вспомогательный метод, возвращает один случайный символ ДНК из возможных
-    NSArray *DNASymbols = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
-    return [DNASymbols objectAtIndex:(arc4random() % [DNASymbols count])];
-}
-
 - (id)init
 {
     self = [super init];
     if (self) {
-        self.DNA = [NSMutableArray arrayWithCapacity:100];
-        //Заполним цепочку ДНК
-        for (int i=0; i<100; i++) {
-            [self.DNA addObject:[self getRandomDNASymbol]];
+        self.DNA = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
+        //Заполним цепочку ДНК случайными символами
+        NSArray *DNASymbols = DNA_SYMBOLS;
+        for (int i=0; i<DNA_LENGHT; i++) {
+            [self.DNA addObject:DNASymbols[arc4random() % DNA_SYMBOLS_COUNT]];
         }
     }
     return self;
@@ -41,23 +36,5 @@
 }
 @end
 
-@implementation Cell (mutator)
-
-- (void) mutate:(int)percent{
-    //Создать массив уникальных индексов для изменения
-    NSMutableArray *uniqueIndexes = [NSMutableArray arrayWithCapacity:percent];
-    while ([uniqueIndexes count] != percent) {
-        NSNumber *index = [NSNumber numberWithInt: arc4random() % 100];
-        //Нелинейное время, но для массива из 100 чисел имхо достаточно=)
-        if ( ! [uniqueIndexes containsObject: index]){
-            [uniqueIndexes addObject:index];
-        }
-    }
-    //Меняем обьекты по полученным индексам
-    for (NSNumber *index in uniqueIndexes){
-        [self.DNA replaceObjectAtIndex:[index intValue] withObject:[self getRandomDNASymbol]];
-    }
-}
-@end
 
 

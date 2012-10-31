@@ -8,17 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#define DNA_LENGHT 100                          //Длина цепочки ДНК
+#define DNA_SYMBOLS @[@"A", @"T", @"G", @"C"]   //Азотистые основания
+#define DNA_SYMBOLS_COUNT 4                     //Количество DNA_SYMBOL
+
 @interface Cell : NSObject
 
 @property NSMutableArray *DNA;
-
-- (NSString *) getRandomDNASymbol;
 - (int) hammingDistance: (Cell *) anCell;
 
-@end
-
-@interface Cell (mutator)
-- (void) mutate: (int) percent;
 @end
 
 
