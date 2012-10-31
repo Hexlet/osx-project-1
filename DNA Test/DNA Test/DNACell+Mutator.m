@@ -10,4 +10,8 @@
 
 @implementation DNACell (Mutator)
 
+-(void) mutate:(int)X {
+    
+}
+
 @end
