@@ -11,20 +11,25 @@
 
 int main(int argc, const char * argv[])
 {
-    Cell *c1, *c2;
-    int len = 100;
+    Cell *c1, *c2; // наши ДНК
+    int len = 100; // и их длина
     
+    // создаем пару
     c1 = [[Cell alloc] initWithLength: len];
     c2 = [[Cell alloc] initWithLength: len];
     
+    // выводим
     NSLog(@"DNA1: %@", c1);
     NSLog(@"DNA2: %@", c2);
     NSLog(@"hammingDistance: %d", [c1 hammingDistance: c2]);
     
-    int X = 30;
+    int X = 30; // % мутации
+
+    // мутируем
     [c1 mutate: X];
     [c2 mutate: X];
     
+    // результат
     NSLog(@"DNA1: %@", c1);
     NSLog(@"DNA2: %@", c2);
     NSLog(@"hammingDistance: %d", [c1 hammingDistance: c2]);

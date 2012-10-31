@@ -10,7 +10,7 @@
 
 @implementation Cell
 
-// выбор значения ячейки ДНК
+// выбор случайного значения элемента ДНК
 - (NSString *) getRandomPart {
     switch (arc4random() % 4) {
         case 0: return @"A";
@@ -23,6 +23,9 @@
 
 // инициализация с длиной
 - (Cell *) initWithLength: (int) len {
+    // вот кстати, вопрос. я так или иначе сталкивался с ним, реализуя различные идеи:
+    // а, может, все-таки в обособленных инициализаторах надо
+    // [self init] вместо [super init]?
     self = [super init];
     if (self) {
         self.DNA = [NSMutableArray array];
@@ -33,7 +36,7 @@
     return self;
 }
 
-// печатаем днк
+// строка днк для NSLog(...)
 - (NSString *) description {
     return [self.DNA componentsJoinedByString: @""];
 }
@@ -57,14 +60,15 @@
 // мутация
 - (void) mutate: (int) x {
     int c = x * self.DNA.count / 100; // количество элементов для мутации
-    NSMutableArray * indexes = [NSMutableArray arrayWithCapacity: self.DNA.count]; // отобранные элементы
+    NSMutableArray * indexes = [[NSMutableArray alloc] init]; // отобранные элементы
     
+    // создаем массив из индексов всех элементов
+    // потом будем удалять оттуда использованные в ходе мутации
     for (int i = 0; i < self.DNA.count; i++) {
         [indexes addObject: [NSNumber numberWithInt: i]];
     }
     
-    NSInteger idx;
-    NSInteger val;
+    NSInteger idx, val;
     NSString *s1, *s2;
     
     for (int i = 0; i < c; i++) {
