@@ -7,18 +7,18 @@
 @end
 
 @implementation Cell (Mutator)
--(void) mutate:(int) procent {
+-(void) mutate:(int) percent {
 	int capacity = [[self dnaArray] count];
-	for (int i = 0; i < capacity*procent/100; i++) {
+	for (int i = 0; i < capacity*percent/100; i++) {
         
-        int index = arc4random()%capacity;
-        NSString* object =  [symbols objectAtIndex:arc4random()%[symbols count]];
-        
-        if (![[[self dnaArray] objectAtIndex:index] isEqualToString:object]) {
-            [[self dnaArray] replaceObjectAtIndex:index withObject:object];
-        } else {
-            [self mutate:(int)100/capacity];
-        }
+	        int index = arc4random()%capacity;
+	        NSString* object =  [symbols objectAtIndex:arc4random()%[symbols count]];
+	        
+	        if (![[[self dnaArray] objectAtIndex:index] isEqualToString:object]) {
+	            [[self dnaArray] replaceObjectAtIndex:index withObject:object];
+	        } else {
+	            [self mutate:(int)100/capacity];
+	        }
                              
 		
 	}
