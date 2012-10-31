@@ -13,6 +13,7 @@
     NSMutableArray *DNA;
 }
 
+// overrided init & custom initWithCapacity
 -(id) init;
 -(id) initWithCapacity:(int)count;
 
