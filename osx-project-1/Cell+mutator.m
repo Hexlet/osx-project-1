@@ -13,11 +13,13 @@
 - (void)mutate:(int)numElements
 {
     int rnd;
+    //An array that contains a list of indexes(of code) which were updated
     NSMutableArray *dnaIndexes = [NSMutableArray new];
     for (int j = 0; j < numElements; j++)
     {
         rnd = arc4random() % [self.DNA count];
 
+        // Make sure that current index(code) wasn't updated yet
         while ([dnaIndexes containsObject:[NSNumber numberWithInt:rnd]])
         {
             rnd = arc4random() % [self.DNA count];

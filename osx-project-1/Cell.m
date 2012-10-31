@@ -27,6 +27,9 @@ const NSString *DNA_CODES[] = {@"A", @"T", @"G", @"C"};
     return self;
 }
 
+/**
+* returns a number of mismatched codes
+*/
 - (int)hammingDistance:(Cell *)cell
 {
     int wrongPos = 0;
@@ -40,6 +43,10 @@ const NSString *DNA_CODES[] = {@"A", @"T", @"G", @"C"};
     return wrongPos;
 }
 
+/**
+* returns new code using
+* current code value
+*/
 - (id)getAnotherDNACode:(NSString *)code
 {
     NSString *newCode = (NSString *) DNA_CODES[(NSUInteger) arc4random() % 4];
