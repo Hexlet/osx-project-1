@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'hexlet_dna' target in the 'hexlet_dna' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
