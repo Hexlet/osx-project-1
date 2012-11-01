@@ -14,7 +14,7 @@
     NSNumber *valueIndex;
     for (int i = 0; i < X; i++) {
         while (YES) {
-            NSNumber *valueIndex = [NSNumber numberWithInt:arc4random() % 100];
+            NSNumber *valueIndex = [NSNumber numberWithInt:arc4random() % N];
             if (![set containsObject: valueIndex ]) break;
         }
         [set addObject:valueIndex];

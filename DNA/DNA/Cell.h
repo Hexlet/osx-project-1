@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#define N 100
 @interface Cell : NSObject
 -(int) hammingDistance:(Cell*)DNA2;
 @property NSMutableArray *DNA;

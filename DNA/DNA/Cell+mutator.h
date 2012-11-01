@@ -7,7 +7,7 @@
 //
 
 #import "Cell.h"
-
+#define N 100
 @interface Cell (mutator)
 -(void) mutate:(int)X;
 @end

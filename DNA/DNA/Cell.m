@@ -13,8 +13,8 @@
 -(id) init {
     self = [super init];
     if (self) {
-        _DNA = [NSMutableArray arrayWithCapacity:100];
-        for (int i = 0; i < 100; i++) {
+        _DNA = [NSMutableArray arrayWithCapacity:N];
+        for (int i = 0; i < N; i++) {
             int letterValue = arc4random() % 4;
             switch (letterValue) {
                 case 0:
@@ -37,7 +37,7 @@
 
 -(int) hammingDistance:(Cell *)DNA2 {
     int distance = 0;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < N; i++) {
         if ([self.DNA objectAtIndex:i] == [DNA2.DNA objectAtIndex:i]) distance++;
         //NSLog(@"%@ %@ \n", [self.DNA objectAtIndex:i], [DNA2.DNA objectAtIndex:i]);
     }
