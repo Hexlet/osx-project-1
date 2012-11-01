@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#define ATGC @[@"A", @"T", @"G", @"C"]
+NSArray const *ATGC;
 
 @interface Cell : NSObject
 
 @property (nonatomic, strong) NSMutableArray *DNA;
+    -(int) hammingDistance: (Cell *)c;
 
--(int) hammingDistance: (Cell *)c;
+@end
 
+@interface Cell (mutator)
+- (void)mutate:(int) percentM;
 @end
