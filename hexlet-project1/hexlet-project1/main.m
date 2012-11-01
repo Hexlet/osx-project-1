@@ -44,7 +44,7 @@
 
         }
         
-        [dna replaceObjectAtIndex:position withObject:[alphabet objectAtIndex:arc4random() % [alphabet count]]];
+        [self.dna replaceObjectAtIndex:position withObject:[self.alphabet objectAtIndex:arc4random() % [self.alphabet count]]];
     }
     return;
 }
@@ -58,7 +58,7 @@ int main(int argc, const char * argv[])
         Cell *cell1, *cell2;
         cell1 = [[Cell alloc] init];
         cell2 = [[Cell alloc] init];
-
+        
         NSLog(@"%i",[cell1 hammingDistance:cell2]);
         
         [cell1 mutate:42];

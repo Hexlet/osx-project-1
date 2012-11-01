@@ -12,12 +12,10 @@
 #define DNALength 100
 
 @interface Cell : NSObject
-{
-    NSMutableArray *dna;
-    NSMutableArray *alphabet;
-}
+
+@property NSMutableArray *alphabet, *dna;
 
 -(int)hammingDistance:(Cell *)c;
-
 -(void)printDNA;
+
 @end
