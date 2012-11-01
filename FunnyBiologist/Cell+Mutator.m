@@ -15,6 +15,8 @@
     NSCAssert((percent>0) && (percent<=100), @"Invalid percentage!");
     // calculate, how many DNA letters we need to mutate (handle custom DNA_SIZE)
     NSUInteger needToMutate = lround(percent/100.0 * DNA_SIZE);
+    // we can drop this variable and use [alreadyMutated count], but it's and extra method call
+    // I don't think it makes a lot of difference, but I prefer to save some milliseconds 
     NSUInteger mutated = 0;
     // if we randomly chose different letters, we can chose some letters more then once
     // so we need to store already mutated letters in set
