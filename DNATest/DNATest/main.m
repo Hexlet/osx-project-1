@@ -33,7 +33,6 @@ int main(int argc, const char * argv[])
         NSLog(@"Cell1 %@", cell1);
         NSLog(@"Cell2 %@", cell2);
         NSLog(@"Hamming distance %i", distance);
-        
     }
     return 0;
 }
