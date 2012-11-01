@@ -19,7 +19,7 @@ int main(int argc, const char * argv[])
         
         NSLog(@"%li", [cell1 hammingDistance: cell2]);
         
-        [cell1 mutate:17];
+        [cell1 mutate:100];
         [cell2 mutate:19];
         NSLog(@"%li", [cell1 hammingDistance: cell2]);
     }
