@@ -61,7 +61,7 @@
     NSMutableArray *usedIndexes = [[NSMutableArray alloc] init];
     
     int i, replaceIndex;
-    int replaceChars = (int) (_dna.count * percent / 100);
+    long replaceChars = lroundf(_dna.count * percent / 100);
     for (i = 0; i < replaceChars; i++) {
         while (YES) {
             replaceIndex = arc4random()%_dna.count;
