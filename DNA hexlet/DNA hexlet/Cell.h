@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
+@interface Cell : NSObject{
+    NSMutableArray *dna;
+}
 
+
+
+@property(nonatomic,retain) NSMutableArray *dna;
+
+-(void)print;
+-(int)hammingDistance:(Cell*)cell;
 @end
