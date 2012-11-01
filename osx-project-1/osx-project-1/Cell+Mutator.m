@@ -44,8 +44,6 @@
     @catch (NSException* ex) {
         NSLog(@"An error occured: %@", [ex reason]);
     }
-
 }
-
 
 @end
