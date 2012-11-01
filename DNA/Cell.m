@@ -25,7 +25,7 @@ static NSArray *nucleotidesArray;
     self = [super init];
     if (self){
         DNA = [[NSMutableArray alloc] initWithCapacity:DNA_LEN];
-        for (int x=0;x<100;x++) {            
+        for (int x=0;x<DNA_LEN;x++) {
             [DNA addObject:[[Cell nucleotides] objectAtIndex:arc4random() % NUKE_LEN]];
         }
     }

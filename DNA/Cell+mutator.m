@@ -11,6 +11,9 @@
 @implementation Cell(mutator)
 -(void)mutate: (int) mutatePercent {
     NSAssert(mutatePercent < 100 && mutatePercent > 0, @"invalid percent");
+    // вычисляем примерное кол-во индексов для замены, если кол-во элементов DNA != 100
+    float dna_length = DNA_LEN;
+    int numberIndexesToReplace = dna_length / 100 * mutatePercent;
     
     NSMutableArray *mutateIndexArray, *dnaIndexArray;
     mutateIndexArray = [[NSMutableArray alloc] initWithCapacity:mutatePercent];
@@ -18,12 +21,12 @@
     for (NSInteger i = 0; i < DNA_LEN; i++)
         [dnaIndexArray addObject:[NSNumber numberWithInteger:i]];
 
-    while (mutatePercent > 0) {
+    while (numberIndexesToReplace > 0) {
         // добавляем только уникальные индексы, по которым будем мутировать
         int random_index = arc4random() % [dnaIndexArray count];
         [mutateIndexArray addObject:dnaIndexArray[random_index]];
         [dnaIndexArray removeObjectAtIndex:random_index];
-        mutatePercent--;
+        numberIndexesToReplace--;
     }
     
     for (id mIndex in mutateIndexArray) {
