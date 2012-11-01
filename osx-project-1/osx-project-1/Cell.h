@@ -17,5 +17,7 @@
 
 - (int) hammingDistance:(Cell*) cell;
 - (void) print;
+- (NSString*) getRandomDnaChar;
+- (int) getRandomNumber:(int) topBound;
 
 @end

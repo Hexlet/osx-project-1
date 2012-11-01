@@ -19,10 +19,8 @@
         dnaChars = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         dna = [NSMutableArray arrayWithCapacity:DNA_LENGTH];
         
-        int randomCharPosition = 0;
         for (int i = 0; i < DNA_LENGTH; i++) {
-            randomCharPosition = (int)(arc4random() % [dnaChars count]);
-            id dnaChar = [dnaChars objectAtIndex: randomCharPosition];
+            id dnaChar = [self getRandomDnaChar];
             
             [dna insertObject:dnaChar atIndex:i];
         }
@@ -38,6 +36,15 @@
         }
     }
     return hammingDistance;
+}
+
+- (NSString*) getRandomDnaChar {
+    int index = [self getRandomNumber:(int)[dnaChars count]];
+    return [dnaChars objectAtIndex:index];
+}
+
+- (int) getRandomNumber:(int)topBound {
+    return (int)(arc4random() % topBound);
 }
 
 - (void) print {

@@ -20,18 +20,16 @@
         
         NSMutableSet* mutatedCharactersPositions = [NSMutableSet set]; // set of mutated dna positions - this is needed to be sure that every dna character mutate only once
         
-        int randomCharPosition = 0;
         int randomDnaPosition = 0;
         
         // do mutation unless we have required amount of dna characters mutated
         while ([mutatedCharactersPositions count] != percents) {
-            randomCharPosition = (int)(arc4random() % [dnaChars count]);
-            randomDnaPosition = (int)(arc4random() % [[self dna] count]);
+            randomDnaPosition = [self getRandomNumber:(int)[[self dna] count]];
             
             // check if current dna character is mutaded. if it is mutaded then move to next character, if not - mutate it
             if (![mutatedCharactersPositions containsObject:[NSNumber numberWithInt:randomDnaPosition]])
             {
-                id randomDnaChar = [dnaChars objectAtIndex:randomCharPosition];
+                id randomDnaChar = [self getRandomDnaChar];
                 id randomDna = [[self dna] objectAtIndex:randomDnaPosition];
                 
                 if (randomDnaChar != randomDna) {
