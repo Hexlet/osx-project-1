@@ -21,12 +21,12 @@ int main(int argc, const char * argv[])
         NSLog(@"hamming distance after mutation: %i", [cell1 hammingDistance:cell2]);
 
         // тестируем правильность расчетов: берем два одинаковых и мутируем один на 10%
-        /*
+        /**
         Cell *cell3 = [Cell copyCell:cell1];
         NSLog(@"hamming distance: %i", [cell1 hammingDistance:cell3]);
         [cell1 mutate:10];
         NSLog(@"hamming distance after mutation: %i", [cell1 hammingDistance:cell3]);
-        */
+        **/
     }
     return 0;
 }

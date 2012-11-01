@@ -12,15 +12,24 @@
 
 -(void) mutate: (int)X
 {
-    for (int i = 0; i < DNA.count; i++) {
-        // заменяем X процентов элементов в массиве DNA другими элементами
-        if (arc4random()%100 <= X) {
-            // запоминаем, что у нас на этом месте стояло
-            NSString *prev = [DNA objectAtIndex:i];
-            // и заменяем на другой(!) элемент
-            while ([prev isEqualToString:[DNA objectAtIndex:i]]) {
-                [DNA replaceObjectAtIndex:i withObject:[DNAElements objectAtIndex:arc4random()%4]];
-            }
+    // количество ячеек, которые нужно заменить
+    int n = (int)floor(DNA.count*X/100);
+    NSMutableArray *exists = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < n; i++) {
+        // следим, чтобы не воткнуть новый элемент в уже измененную ячейку
+        int k = arc4random()%DNA.count;
+        while ([exists containsObject:[NSNumber numberWithInteger:k]]) {
+            k = arc4random()%DNA.count;
+        }
+        // добавляем номер ячейки в список измененных
+        [exists addObject:[NSNumber numberWithInteger:k]];
+        
+        // запоминаем, что у нас на этом месте стояло
+        NSString *prev = [DNA objectAtIndex:k];
+        // и заменяем на другой(!) элемент
+        while ([prev isEqualToString:[DNA objectAtIndex:k]]) {
+            [DNA replaceObjectAtIndex:k withObject:[DNAElements objectAtIndex:arc4random()%4]];
         }
     }
 }
