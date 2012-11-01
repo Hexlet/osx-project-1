@@ -31,7 +31,7 @@
         // if we got the same letter as we have - got another one
         do {
             new_letter = [Cell getRandomDNA];
-        } while (new_letter==self.DNA[randIndex]);
+        } while ([new_letter isEqualToString: self.DNA[randIndex]]);
         
         self.DNA[randIndex] = new_letter;
     }

@@ -33,7 +33,7 @@
 -(NSUInteger)hammingDistance:(Cell*) other {
     int result = 0;
     for (int i=0; i<DNA_SIZE; i++) {
-        if (self.DNA[i]!=other.DNA[i]) {
+        if (![self.DNA[i] isEqualToString: other.DNA[i]]) {
             result++;
         }
     }
