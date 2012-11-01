@@ -13,10 +13,13 @@
 }
 
 @property NSMutableArray* DNA;
+@property (readonly) NSArray* elements_dna;
 
 -(id) init;
 
 -(int) hummingDistance: (Cell *) second_cell;
+
+-(NSString *) generateNewElement;
 
 
 @end

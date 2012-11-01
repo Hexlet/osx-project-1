@@ -12,27 +12,25 @@
 
 -(void) mutate: (int) n {
     int amount;
-    // Calculate the number of mutated cell
+    // Calculate the number of mutated cells
     amount = (int)round((CELL_SIZE / 100.0f) * n);
     
     // Set of indices to mutate
-    NSMutableSet *mutate_indices = [[NSMutableSet alloc] init];
+    NSMutableSet* mutate_indices = [[NSMutableSet alloc] initWithCapacity:amount];
     
     // Fill in the mutate_indices with unique random indices
-    while ([mutate_indices count] < amount) {
-        // Wrap up an integer into NSNumber object to add it to the mu
-        NSNumber *random_index = [[NSNumber alloc] initWithInt:arc4random_uniform(CELL_SIZE)];
-        [mutate_indices addObject:random_index];
-    }
+    while ([mutate_indices count] < amount)
+        [mutate_indices addObject:[NSNumber numberWithInt:arc4random_uniform(CELL_SIZE)]];
     
-    // Create an enumerator to iterate through the whole set of indices
-    NSEnumerator *enumerator = [mutate_indices objectEnumerator];
-    id value;
-    
-    NSArray *elements_dna = [[NSArray alloc] initWithObjects:@"A", @"G", @"T", @"C", nil];
-    
-    while ((value = [enumerator nextObject])) {
-        [self.DNA replaceObjectAtIndex:[value intValue] withObject:[elements_dna objectAtIndex:arc4random_uniform(4)]];
+    // Replace elements in DNA at "mutate" indices
+    for (NSNumber* num in mutate_indices) {
+        NSString* new_element = [self generateNewElement];
+        
+        // Generate new random element if the old element equals the new one 
+        while ([[[self DNA] objectAtIndex:[num intValue]] isEqual: new_element])
+            new_element = [self generateNewElement];
+        
+        [self.DNA replaceObjectAtIndex:[num intValue] withObject:new_element];
     }
 }
 

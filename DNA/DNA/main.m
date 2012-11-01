@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Humming distance is %i", [first_cell hummingDistance:second_cell]);
         
-        NSLog(@"Mutating 15%% of first_cell...");
+        NSLog(@"Mutating 35%% of first_cell...");
         [first_cell mutate:35];
         
         NSLog(@"Mutating 25%% of second_cell...");
