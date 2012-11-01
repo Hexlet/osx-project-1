@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[Cell hammingDistance:]:Cell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "i &lt; [cell.dna count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Cell(Mutator) mutate:]:main.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dna.count">
+            </PersistentString>
+            <PersistentString
+               value = "randomIndex &gt;= self.dna.count">
+            </PersistentString>
+            <PersistentString
+               value = "self.dna[randomIndex]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
