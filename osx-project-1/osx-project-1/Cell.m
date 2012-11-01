@@ -18,7 +18,6 @@
 
         DNA = [[NSMutableArray alloc] initWithCapacity:capacity];
         for (int i = 0; i<capacity; ++i) {
-
             [DNA insertObject:[Cell getRandGen] atIndex:i ];
         }
     }
@@ -38,11 +37,11 @@
 }
 
 +(id) getRandGen {
-    NSString *letters = @"ATGC";
-    u_int8_t r = arc4random() % [letters length];
-    NSMutableString *gen = [NSMutableString stringWithCapacity:1];
-    [gen appendFormat:@"%C",[letters characterAtIndex:r]];
-    return gen;
+    
+    NSArray *arr = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
+    u_int8_t r = arc4random() % [arr count];
+    return [arr objectAtIndex:r];
+
 }
 
 @end
