@@ -32,7 +32,7 @@
     NSMutableArray *firstDNA = _DNA;
     NSMutableArray *anotherDNA= cell.DNA;
     for (int i=0; i<100; i++){
-        if ([firstDNA objectAtIndex:i]==[anotherDNA objectAtIndex:i])
+        if ([firstDNA objectAtIndex:i]!=[anotherDNA objectAtIndex:i])
             distance++;
     }
     return distance;
