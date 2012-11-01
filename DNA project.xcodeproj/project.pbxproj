@@ -10,6 +10,8 @@
 		A5DEDFD0164305DB00C8738A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DEDFCF164305DB00C8738A /* Foundation.framework */; };
 		A5DEDFD3164305DB00C8738A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DEDFD2164305DB00C8738A /* main.m */; };
 		A5DEDFD7164305DB00C8738A /* DNA_project.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5DEDFD6164305DB00C8738A /* DNA_project.1 */; };
+		A5DEDFE81643083200C8738A /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DEDFE71643083200C8738A /* Cell.m */; };
+		A5DEDFEC1643184200C8738A /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DEDFEB1643184200C8738A /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		A5DEDFD2164305DB00C8738A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A5DEDFD5164305DB00C8738A /* DNA project-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNA project-Prefix.pch"; sourceTree = "<group>"; };
 		A5DEDFD6164305DB00C8738A /* DNA_project.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA_project.1; sourceTree = "<group>"; };
+		A5DEDFE61643083200C8738A /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		A5DEDFE71643083200C8738A /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		A5DEDFEA1643184200C8738A /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		A5DEDFEB1643184200C8738A /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				A5DEDFD2164305DB00C8738A /* main.m */,
+				A5DEDFE61643083200C8738A /* Cell.h */,
+				A5DEDFE71643083200C8738A /* Cell.m */,
+				A5DEDFEA1643184200C8738A /* Cell+mutator.h */,
+				A5DEDFEB1643184200C8738A /* Cell+mutator.m */,
 				A5DEDFD6164305DB00C8738A /* DNA_project.1 */,
 				A5DEDFD4164305DB00C8738A /* Supporting Files */,
 			);
@@ -140,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5DEDFD3164305DB00C8738A /* main.m in Sources */,
+				A5DEDFE81643083200C8738A /* Cell.m in Sources */,
+				A5DEDFEC1643184200C8738A /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

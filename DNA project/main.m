@@ -7,14 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#include <stdlib.h>
+#import "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        sranddev();
+        Cell *firstCell, *secondCell;
+        firstCell = [[Cell alloc] init];
+        secondCell = [[Cell alloc] init];
+        NSLog(@"hamming distance before mutation:%d", [firstCell hammingDistance:secondCell]);
+        [firstCell mutate:5];
+        [secondCell mutate:10];
+        NSLog(@"hamming distance after mutation:%d", [firstCell hammingDistance:secondCell]);
         
     }
     return 0;
