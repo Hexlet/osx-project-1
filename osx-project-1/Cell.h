@@ -13,4 +13,7 @@
 - (int)hammingDistance:(Cell *)cell;
 
 - (id)getAnotherDNACode:(NSString *)code;
+
+- (NSString *)print;
+
 @end

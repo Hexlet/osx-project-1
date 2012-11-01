@@ -9,5 +9,5 @@
 #import "Cell.h"
 
 @interface Cell (mutator)
-- (void)mutate:(int)numElements;
+- (void)mutate:(int)percent;
 @end

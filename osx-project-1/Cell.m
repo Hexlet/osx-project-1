@@ -12,13 +12,14 @@
 @implementation Cell
 
 const NSString *DNA_CODES[] = {@"A", @"T", @"G", @"C"};
+const int numCodes = 100;
 
 - (id)init
 {
     self = [super init];
 
-    _DNA = [NSMutableArray new];
-    for (int j = 0; j < 100; j++)
+    _DNA = [NSMutableArray arrayWithCapacity:numCodes];
+    for (int j = 0; j < numCodes; j++)
     {
         const NSString *dnaItem = DNA_CODES[(NSUInteger) arc4random() % 4];
         [_DNA addObject:dnaItem];
@@ -55,6 +56,11 @@ const NSString *DNA_CODES[] = {@"A", @"T", @"G", @"C"};
         return newCode;
     }
     return [self getAnotherDNACode:code];
+}
+
+- (NSString *)print
+{
+    return [_DNA componentsJoinedByString:@""];
 }
 
 

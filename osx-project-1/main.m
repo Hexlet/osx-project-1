@@ -16,11 +16,15 @@ int main(int argc, const char *argv[])
         Cell *cell = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
 
+        NSLog(@"cell 1:%@", [cell print]);
+        NSLog(@"cell 2:%@", [cell2 print]);
         NSLog(@"Hamming distance = %i", [cell hammingDistance:cell2]);
 
         [cell mutate:45];
         [cell2 mutate:45];
 
+        NSLog(@"cell 1:%@", [cell print]);
+        NSLog(@"cell 2:%@", [cell2 print]);
         NSLog(@"Hamming distance = %i", [cell hammingDistance:cell2]);
     }
     return 0;

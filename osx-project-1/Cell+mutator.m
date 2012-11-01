@@ -10,11 +10,13 @@
 
 @implementation Cell (mutator)
 
-- (void)mutate:(int)numElements
+- (void)mutate:(int)percent
 {
+    int numElements = [self.DNA count] / 100 * percent;
     int rnd;
+
     //An array that contains a list of indexes(of code) which were updated
-    NSMutableArray *dnaIndexes = [NSMutableArray new];
+    NSMutableArray *dnaIndexes = [NSMutableArray arrayWithCapacity:(NSUInteger) numElements];
     for (int j = 0; j < numElements; j++)
     {
         rnd = arc4random() % [self.DNA count];
