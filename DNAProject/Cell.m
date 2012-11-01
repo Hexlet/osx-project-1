@@ -12,6 +12,8 @@ const NSString *gene[capacityOfGene] = {@"A",@"T",@"G",@"C"};
 
 @implementation Cell
 
+@synthesize DNA; // мне необходимо _обязательно_ синтезировать свою переменную, не полагаясь на автоматику моей версии Xcode. Иначе свойство и переменная будут жить отдельно друг от друга
+
 -(id)init // переписываем метод для нашего класса, т.к. необходима инициализация собственных переменных
 {
     self = [super init]; // сам объект обязан проинициализироваться методом родителя
@@ -38,10 +40,8 @@ const NSString *gene[capacityOfGene] = {@"A",@"T",@"G",@"C"};
      к модификации последовательности "вручную" я не хочу. Если сделать 
      @property (nonatomic,readonly), то метод в категории не сможет ничего сделать
      с моей последовательностью ДНК */
-    NSString *sourceString = [[NSString alloc] initWithString:[self description]];
-    NSString *compareString = [[NSString alloc] initWithString:[someCell description]];
     for (int i=0; i<capacityOfDNA; i++) {
-        if ([sourceString characterAtIndex:i]!=[compareString characterAtIndex:i]) ham++;
+        if (![[DNA objectAtIndex:i] isEqualTo:[[someCell DNA] objectAtIndex:i]]) ham++;
     }
     return ham;
 }

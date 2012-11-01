@@ -16,6 +16,9 @@ extern const NSString *gene[capacityOfGene]; // чтобы не создават
 @interface Cell : NSObject {
     NSMutableArray *DNA; //собственно, ДНК
 }
+
+@property (nonatomic,readonly) NSArray *DNA; // ридонли свойство для доступа извне
+
 /* метод, определяющий, насколько одна последовательность отличается от другой,
    возвращает количество позиций, на которых есть несоответствие */
 -(int)hammingDistance:(Cell *)someCell;

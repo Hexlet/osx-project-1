@@ -31,7 +31,7 @@
             generated = arc4random() % capacityOfDNA;
         } while ([setOfDNA containsIndex:generated]);
         [setOfDNA addIndex:generated]; // запоминаем изменяемый индекс
-        sourceGene = [DNA objectAtIndex:generated]; // запоминаем исходное значение в последовательности по индексу
+        sourceGene = [[self DNA] objectAtIndex:generated]; // запоминаем исходное значение в последовательности по индексу
         // и меняем значение символа, помня о том, что оно в любом случае должно отличаться от исходного!
         do {
             modifiedGene = gene[(arc4random() % capacityOfGene)];
