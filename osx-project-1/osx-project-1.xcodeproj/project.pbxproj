@@ -11,6 +11,7 @@
 		8A2F93E81640777600EF6A77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F93E71640777600EF6A77 /* main.m */; };
 		8A2F93EC1640777600EF6A77 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2F93EB1640777600EF6A77 /* osx_project_1.1 */; };
 		8A2F93F7164077E700EF6A77 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2F93F6164077E700EF6A77 /* Cell.m */; };
+		8AC2ED4E164306E6003B7851 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2ED4D164306E6003B7851 /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		8A2F93EB1640777600EF6A77 /* osx_project_1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = osx_project_1.1; sourceTree = "<group>"; };
 		8A2F93F5164077E700EF6A77 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		8A2F93F6164077E700EF6A77 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		8AC2ED4C164306E6003B7851 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		8AC2ED4D164306E6003B7851 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				8A2F93E91640777600EF6A77 /* Supporting Files */,
 				8A2F93F5164077E700EF6A77 /* Cell.h */,
 				8A2F93F6164077E700EF6A77 /* Cell.m */,
+				8AC2ED4C164306E6003B7851 /* Cell+Mutator.h */,
+				8AC2ED4D164306E6003B7851 /* Cell+Mutator.m */,
 			);
 			path = "osx-project-1";
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			files = (
 				8A2F93E81640777600EF6A77 /* main.m in Sources */,
 				8A2F93F7164077E700EF6A77 /* Cell.m in Sources */,
+				8AC2ED4E164306E6003B7851 /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +241,7 @@
 				8A2F93F11640777600EF6A77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

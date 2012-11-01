@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "osx-project-1/Cell.m"
-         timestampString = "373488605.713082"
+         timestampString = "373491658.500321"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
+         startingLineNumber = "44"
+         endingLineNumber = "44"
          landmarkName = "-print"
          landmarkType = "5">
       </FileBreakpoint>
