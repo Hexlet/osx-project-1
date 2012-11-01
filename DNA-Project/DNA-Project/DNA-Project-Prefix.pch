@@ -1,0 +1,9 @@
+//
+// Prefix header for all source files of the 'DNA-Project' target in the 'DNA-Project' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
+
+#define maxLenght 100
