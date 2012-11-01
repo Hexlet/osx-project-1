@@ -30,7 +30,7 @@
             i += 1;
         }
     }
-    // replace random dna nucleotids
+    // Replace random dna nucleotids with random values;
     for(id index in uniqueIndexes){
         self.dnaArray[[index intValue]] = [self randomNucleotid];
     }
