@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #define DNA_LEN     100
 #define NUKE_LEN    4
-#define NUKE_ARR    @[@"A",@"T",@"G",@"C"]
 
 extern NSMutableArray *nucleotides;
 
 @interface Cell : NSObject {
     NSMutableArray *DNA;
 }
++(NSArray *) nucleotides;
 -(int) hammingDistance: (Cell *)obj;
 @end

@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373461664.556449"
+         timestampString = "373464236.520424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "33"
-         endingLineNumber = "33"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
          landmarkName = "@implementation Cell"
          landmarkType = "3">
       </FileBreakpoint>
@@ -32,11 +32,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373461664.556449"
+         timestampString = "373464236.520424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "-description"
          landmarkType = "5">
       </FileBreakpoint>
@@ -45,7 +45,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell+mutator.m"
-         timestampString = "373416439.254028"
+         timestampString = "373464236.520424"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "36"
@@ -64,6 +64,19 @@
          startingLineNumber = "28"
          endingLineNumber = "28"
          landmarkName = "-mutate:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNA/Cell.m"
+         timestampString = "373464236.520424"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "28"
+         endingLineNumber = "28"
+         landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

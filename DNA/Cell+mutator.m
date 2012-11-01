@@ -32,7 +32,7 @@
         NSString *currentNuke = [DNA objectAtIndex:[mIndex integerValue]];
         NSString *newNucleotide = currentNuke;
         while ([newNucleotide isEqual: currentNuke]) {
-            newNucleotide = NUKE_ARR[arc4random() % NUKE_LEN];
+            newNucleotide = [[Cell nucleotides] objectAtIndex:arc4random() % NUKE_LEN];
         }
         [DNA replaceObjectAtIndex:[mIndex integerValue] withObject:newNucleotide];
     }
