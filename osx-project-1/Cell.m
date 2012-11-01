@@ -17,12 +17,12 @@ NSString * const dna[] = {@"A", @"T", @"G", @"C"};
 
 	NSMutableArray *mutatedIndexs = [[NSMutableArray alloc] init]; // store mutated indexes here
 
-	for (int i = 0; i < iterateTimes; ++i)
+	for (int i = 0; i < iterateTimes; i++)
 	{
     do
     {
-      index1 = arc4random()%(self.DNA.count-1); // generate first index
-      index2 = arc4random()%(self.DNA.count-1); // generate second index
+      index1 = arc4random()%self.DNA.count; // generate first index
+      index2 = arc4random()%self.DNA.count; // generate second index
 
       // if mutatedIndexes is empty add into array generated indexes
       if (mutatedIndexs.count == 0)
