@@ -12,7 +12,7 @@
 
 -(id) init {
     if (self = [super init]) {
-        _DNA = [[NSMutableArray alloc] init];
+        _DNA = [NSMutableArray arrayWithCapacity: DNA_SIZE];
         
         for (int i=0; i<DNA_SIZE; i++) {
             [_DNA addObject: [Cell getRandomDNA]];

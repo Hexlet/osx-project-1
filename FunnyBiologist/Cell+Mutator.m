@@ -19,7 +19,7 @@
     // we need to avoid repeated mutations of the same cells, so we'll create another array
     // filled with indexes, take it's random elements, use them as keys to DNA array
     // and remove this key from indexes array
-    NSMutableArray *indexes = [NSMutableArray array];
+    NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:DNA_SIZE];
     for (NSUInteger i=0; i<DNA_SIZE; i++) {
         [indexes addObject:@(i)];
     }
