@@ -27,8 +27,7 @@ NSString * const dna[] = {@"A", @"T", @"G", @"C"};
       // if mutatedIndexes is empty add into array generated indexes
       if (mutatedIndexs.count == 0)
       {
-        [mutatedIndexs addObject:[NSNumber numberWithInt:index1]];
-        [mutatedIndexs addObject:[NSNumber numberWithInt:index2]];
+        break;
       }
   	}
 		while (![mutatedIndexs containsObject:[NSNumber numberWithInt:index1]] && ![mutatedIndexs containsObject:[NSNumber numberWithInt:index2]]);
