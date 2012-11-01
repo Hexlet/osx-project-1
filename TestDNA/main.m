@@ -21,7 +21,6 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        
         Cell *cell = [[Cell alloc]init];
         Cell *cell2 = [[Cell alloc]init];
         NSLog(@"Hamming distance:%d",[cell hammingDistance:cell2]);
