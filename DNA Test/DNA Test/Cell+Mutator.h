@@ -6,10 +6,11 @@
 //  Copyright (c) 2012 Evgeny Golubev. All rights reserved.
 //
 
-#import "DNACell.h"
+#import "Cell.h"
 
-@interface DNACell (Mutator)
+@interface Cell (Mutator)
 
--(void) mutate: (int) x;
+// Описываем наличие метода мутирования
+-(void) mutate: (int) mutatePercent;
 
 @end

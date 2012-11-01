@@ -10,8 +10,8 @@
 		7E7BB72716406AA100A16E98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7BB72616406AA100A16E98 /* Foundation.framework */; };
 		7E7BB72A16406AA100A16E98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BB72916406AA100A16E98 /* main.m */; };
 		7E7BB72E16406AA100A16E98 /* DNA_Test.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E7BB72D16406AA100A16E98 /* DNA_Test.1 */; };
-		7E7BB73616406B6E00A16E98 /* DNACell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BB73516406B6E00A16E98 /* DNACell.m */; };
-		7E7BB7391640808300A16E98 /* DNACell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BB7381640808300A16E98 /* DNACell+Mutator.m */; };
+		7E7BB73616406B6E00A16E98 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BB73516406B6E00A16E98 /* Cell.m */; };
+		7E7BB7391640808300A16E98 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BB7381640808300A16E98 /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,10 +33,10 @@
 		7E7BB72916406AA100A16E98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E7BB72C16406AA100A16E98 /* DNA Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNA Test-Prefix.pch"; sourceTree = "<group>"; };
 		7E7BB72D16406AA100A16E98 /* DNA_Test.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA_Test.1; sourceTree = "<group>"; };
-		7E7BB73416406B6E00A16E98 /* DNACell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNACell.h; sourceTree = "<group>"; };
-		7E7BB73516406B6E00A16E98 /* DNACell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNACell.m; sourceTree = "<group>"; };
-		7E7BB7371640808300A16E98 /* DNACell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNACell+Mutator.h"; sourceTree = "<group>"; };
-		7E7BB7381640808300A16E98 /* DNACell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DNACell+Mutator.m"; sourceTree = "<group>"; };
+		7E7BB73416406B6E00A16E98 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		7E7BB73516406B6E00A16E98 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		7E7BB7371640808300A16E98 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		7E7BB7381640808300A16E98 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +79,10 @@
 		7E7BB72816406AA100A16E98 /* DNA Test */ = {
 			isa = PBXGroup;
 			children = (
-				7E7BB73416406B6E00A16E98 /* DNACell.h */,
-				7E7BB73516406B6E00A16E98 /* DNACell.m */,
-				7E7BB7371640808300A16E98 /* DNACell+Mutator.h */,
-				7E7BB7381640808300A16E98 /* DNACell+Mutator.m */,
+				7E7BB73416406B6E00A16E98 /* Cell.h */,
+				7E7BB73516406B6E00A16E98 /* Cell.m */,
+				7E7BB7371640808300A16E98 /* Cell+Mutator.h */,
+				7E7BB7381640808300A16E98 /* Cell+Mutator.m */,
 				7E7BB72916406AA100A16E98 /* main.m */,
 				7E7BB72D16406AA100A16E98 /* DNA_Test.1 */,
 				7E7BB72B16406AA100A16E98 /* Supporting Files */,
@@ -150,8 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E7BB72A16406AA100A16E98 /* main.m in Sources */,
-				7E7BB73616406B6E00A16E98 /* DNACell.m in Sources */,
-				7E7BB7391640808300A16E98 /* DNACell+Mutator.m in Sources */,
+				7E7BB73616406B6E00A16E98 /* Cell.m in Sources */,
+				7E7BB7391640808300A16E98 /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +248,7 @@
 				7E7BB73316406AA100A16E98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -6,29 +6,42 @@
 //  Copyright (c) 2012 Evgeny Golubev. All rights reserved.
 //
 
-#import "DNACell.h"
+#import "Cell.h"
 
-@implementation DNACell
+@implementation Cell;
 
 -(id) init {
     self = [super init];
-    
-    if(self){
-        _DNATypes = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-        _DNA = [NSMutableArray arrayWithCapacity:100];
-        for (int i=0; i<100; i++) {
-            [_DNA addObject:[_DNATypes objectAtIndex:arc4random_uniform(4)]];
+
+    if (self) {
+        //Инициализируем ДНК необходимой длинны
+        DNA = [[NSMutableArray alloc] initWithCapacity:DNA_LENGHT];
+        
+        for (int i=0; i<DNA_LENGHT; i++) {
+            //Заполняем случайным нуклеоидом, для генерации случайного индекса используем arc4random_uniform (позволяет задать границу для генерации)
+            [DNA addObject:[self.getNucleotides objectAtIndex:arc4random_uniform(NUKLEOTIDES_LENGHT)]];
         }
     }
     
     return self;
 }
 
--(int) hammingDistance:(DNACell *)DNAForHamming{
+-(NSMutableArray*) getDNA {
+    return DNA;
+}
+
+-(NSArray*) getNucleotides {
+	//Возвращаем массив с нуклотидами
+    return [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
+}
+
+-(int) hammingDistance: (Cell *) DNAForHamming {
+    //Инициализируем счётчик несоответствий
     int hamming = 0;
     
-    for (int i=1; i<100; i++) {
-        if([_DNA objectAtIndex:i] != [[DNAForHamming DNA] objectAtIndex:i]){
+    for (int i=1; i<DNA_LENGHT; i++) {
+        //Сравниваем поэлементно и в случае несоответствия увеличиваем счётчик
+        if([[DNA objectAtIndex:i] isEqual: [[DNAForHamming getDNA] objectAtIndex:i]]) {
             hamming++;
         }
     }

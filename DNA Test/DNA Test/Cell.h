@@ -8,11 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DNACell : NSObject
+//Определяем константы: длинну ДНК и длинну нуклеотидов
+#define DNA_LENGHT 100
+#define NUKLEOTIDES_LENGHT 4
 
-@property (readonly) NSMutableArray *DNA;
-@property (readonly) NSArray *DNATypes;
+@interface Cell : NSObject {
+	//Описываем переменную для хранения ДНК с типом "изменяемый массив"
+    NSMutableArray *DNA;
+}
 
--(int) hammingDistance: (DNACell *)DNAForHamming;
+
+//Описываем наличие гетор для ДНК
+-(NSMutableArray*) getDNA;
+
+//Описываем наличие метода возвращающего нуклеотиды
+-(NSArray*) getNucleotides;
+
+//Описываем наличие метода сравнения
+-(int) hammingDistance: (Cell *) DNAForHamming;
 
 @end
