@@ -10,33 +10,29 @@
 #import "Cell.h"
 
 @interface Cell (mutator)
--(void) mutate:(int)x;
+-(void) mutate:(int)viruses;
 @end
 
 @implementation Cell (mutator)
--(void) mutate:(int)x {
+-(void) mutate:(int)viruses {
     
-    NSMutableArray *xArray = [[NSMutableArray alloc] init];
+    NSMutableArray *viruseBase = [[NSMutableArray alloc] init];
     
-    while ([xArray count] < x) {
-        //create random number object from 0 to 100 (dna array length)
-        NSNumber *rand = [NSNumber numberWithInteger:arc4random() % [[self dna] count] ];
-        //check the xArray rand object uniqueness
-        if (![xArray containsObject:rand]) {
-            //add rand number to xArray
-            [xArray addObject:rand];
+    while ([viruseBase count] < viruses) {
+        NSNumber *randomVirusNumber = [NSNumber numberWithInteger:arc4random() % [[self dna] count] ];
+        if (![viruseBase containsObject:randomVirusNumber]) {
+            [viruseBase addObject:randomVirusNumber];
         }
     }
     
-    for (int i = 0; i < [xArray count]; i++) {
-        //replace objects in dna with random nucleobases from nucleobases array, random indexes are taken from xArray
+    for (int i = 0; i < [viruseBase count]; i++) {
         [
          [self dna]
-            replaceObjectAtIndex:[[xArray objectAtIndex:i] intValue]
-            withObject:[[self nucleobases] objectAtIndex:arc4random() % [[self nucleobases] count]]
+            replaceObjectAtIndex:[[viruseBase objectAtIndex:i] intValue]
+            withObject:[[self nucleobase] objectAtIndex:arc4random() % [[self nucleobase] count]]
          ];
     }
-//    NSLog(@"_dna %@",[self dna]);
+    
 }
 @end
 

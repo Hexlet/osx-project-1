@@ -15,30 +15,23 @@ const int capacity = 100;
 -(id) init {
     self = [super init];
     if (self) {
-        //create empty array with required capacity
         _dna = [NSMutableArray arrayWithCapacity:capacity];
-        //create nucleobases array
-        _nucleobases = [NSMutableArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
-        //add random objects from nucleobases array to dna array
+        _nucleobase = [NSMutableArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
         for (int i = 0; i < capacity; i++) {
-            [_dna addObject:[_nucleobases objectAtIndex:(arc4random() % [_nucleobases count])]];
+            [_dna addObject:[_nucleobase objectAtIndex:(arc4random() % [_nucleobase count])]];
         }
-//        NSLog(@"_dna %@",_dna);
     }
     return  self;
 }
 
-
--(int) hammingDistance:(Cell *)d {
-    int diff = 0;
-    //compare objects in arrays
+-(int) hammingDistance:(Cell *)cell {
+    int length = 0;
     for (int i = 0; i<capacity; i++) {
-        if (![[[d dna] objectAtIndex:i] isEqual: [_dna objectAtIndex:i]]) {
-            diff++;
+        if (![[[cell dna] objectAtIndex:i] isEqual: [_dna objectAtIndex:i]]) {
+            length++;
         }
     }
-//    NSLog(@"diff %i",diff);
-    return diff;
+    return length;
 };
 
 
