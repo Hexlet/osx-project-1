@@ -15,22 +15,10 @@
         if (self){
                 int amino;
                 _DNA = [[NSMutableArray alloc] initWithCapacity:100];
+                _DNAtypes = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil]; //массив типов ДНК
                 for (int i=0; i<100; i++) {
                         amino = arc4random()%4;
-                        switch (amino) {
-                                    case 0:
-                                        [_DNA addObject:@"A"];
-                                        break;
-                                    case 1:
-                                        [_DNA addObject:@"T"];
-                                        break;
-                                    case 2:
-                                        [_DNA addObject:@"G"];
-                                        break;
-                                    case 3:
-                                        [_DNA addObject:@"C"];
-                                        break;
-                            }
+                        [_DNA addObject:[_DNAtypes objectAtIndex:amino]];
                     }
             }
         return self;

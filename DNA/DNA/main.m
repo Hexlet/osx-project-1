@@ -15,45 +15,33 @@
 @implementation Cell(mutator)
 
 -(void) mutate:(int)X{
-        int amino;
-        int number;
-        int oldamino;
-        NSMutableArray *numbers = [[NSMutableArray alloc] initWithCapacity:100];
-        for (int i=0; i<100; i++) { //создаю массив номеров от 0 до 99
-                [numbers    addObject:[NSNumber numberWithInt:i]];
-            }
-    for (int i=0; i<X; i++) {
-        number = arc4random()%(100-i); //выбираем случайной элемент из массива с номерами
-        
-        if ([[self.DNA objectAtIndex:[[numbers objectAtIndex:number] integerValue]] isEqual:@"A"] ) {oldamino=0;}
-        //таким неэлегантным способом выясняю номер
-        //аминокислоты которая была в ячейке
-        if ([[self.DNA objectAtIndex:[[numbers objectAtIndex:number] integerValue]] isEqual:@"T"] ) {oldamino=1;}
-        if ([[self.DNA objectAtIndex:[[numbers objectAtIndex:number] integerValue]] isEqual:@"G"] ) {oldamino=2;}
-        if ([[self.DNA objectAtIndex:[[numbers objectAtIndex:number] integerValue]] isEqual:@"C"] ) {oldamino=3;}
-        
-                amino = (arc4random()%3+oldamino+1)%4; // случайным образом выбираю новую, но так, чтоб не совпала со старой
-        
-                switch (amino) {
-                            case 0:
-                                [self.DNA replaceObjectAtIndex:[[numbers objectAtIndex:number] integerValue] withObject:@"A"];
-                                break;
-                            case 1:
-                                [self.DNA replaceObjectAtIndex:[[numbers objectAtIndex:number] integerValue] withObject:@"T"];
-                                break;
-                            case 2:
-                                [self.DNA replaceObjectAtIndex:[[numbers objectAtIndex:number] integerValue] withObject:@"G"];
-                                break;
-                            case 3:
-                                [self.DNA replaceObjectAtIndex:[[numbers objectAtIndex:number] integerValue] withObject:@"C"];
-                                break;
-                    }
-        
-                [numbers removeObjectAtIndex:number]; //убираем использованный элемент, чтобы номер не повторился
-        
-            }
+    int amino;
+    int RandomNumber;
+    int oldamino;
+    long numberOfAminoToChange;
     
+    NSMutableArray *numbers = [[NSMutableArray alloc] initWithCapacity:100];
+    for (int i=0; i<100; i++) { //инициализирую массив номеров от 0 до 99
+        [numbers    addObject:[NSNumber numberWithInt:i]];
     }
+    
+    for (int i=0; i<X; i++) {
+        RandomNumber = arc4random()%(100-i); //выбираем случайной элемент из массива с номерами
+        numberOfAminoToChange = [[numbers objectAtIndex:RandomNumber] integerValue];//из массива с номерами получаем номер ячейки в ДНК, которую будем менять
+        
+        for (int a=0; a<4; a++) {
+            if ([[self.DNA objectAtIndex:numberOfAminoToChange] isEqual:[self.DNAtypes objectAtIndex:a]] ) {oldamino=a;break;}//выясняю какая аминокислота была в этой ячейке
+        }
+        
+        amino = (arc4random()%3+oldamino+1)%4; // случайным образом выбираю новую, но так, чтоб не совпала со старой
+        
+        [self.DNA replaceObjectAtIndex:numberOfAminoToChange withObject:[self.DNAtypes objectAtIndex:amino]]; //заменяю значение ячейки в ДНК
+        
+        [numbers removeObjectAtIndex:RandomNumber]; //убираем использованный номер ячейки, чтобы небыло повторений
+        
+    }
+    
+}
 
 @end
 
