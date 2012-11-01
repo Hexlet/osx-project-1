@@ -16,6 +16,8 @@ extern int const DNA_SIZE;
 @property NSMutableArray *dna;
 // Генератор случайного элемента ДНК ATGC
 +(NSString *)getRandomElement;
+// Генератор случайного элемента ДНКза исключением заданного
++(NSString *)getAnotherRandomElement: (NSString *) element;
 // Метод, вычисляющий расхождение в ДНК
 -(int)hammingDistance: (Cell *)c;
 // Вывод ДНК

@@ -22,6 +22,23 @@ static const NSArray *DNATypes;
     return DNATypes[arc4random() % [DNATypes count]];
 }
 
++(NSString *) getAnotherRandomElement:(NSString *)element {
+    // получаем новый элемент
+    NSString *newElement = [self getRandomElement];
+    // Если новый элемент совпадает с предыдущим
+    if (newElement == element) {
+
+        if (newElement == [DNATypes lastObject]){
+            // Если это последний элемент, то берем первый
+            newElement = DNATypes[0];
+        } else {
+            // Если нет, то берем следущий
+            newElement = DNATypes[ ([DNATypes indexOfObject:newElement]+1)];
+        }
+    }
+    return newElement;
+}
+
 // инициализация
 -(id) init{
 

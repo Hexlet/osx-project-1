@@ -18,12 +18,23 @@
 
 // Мутация цепочки
 -(void)mutate:(int)percent {
+    // Ничего не делаем, если процент в некорректном диапазоне
+    if(percent < 0 || percent > 100 ) return;
+
+    int replaceElementsCount = percent * DNA_SIZE / 100;
+    NSMutableArray *unreplaced_indexes = [NSMutableArray arrayWithCapacity:DNA_SIZE];
+    for (int i = 0; i < DNA_SIZE; i++) {
+        [unreplaced_indexes addObject:@(i)];
+    }
     // заданное кол-во раз изменяем случайный элемент
-    for (int mutate_i = 0; mutate_i < percent; mutate_i++) {
+    for (int mutate_i = replaceElementsCount; mutate_i > 0; mutate_i--) {
         // получаем случайный индекс элемента
-        int replaceIndex = arc4random() % DNA_SIZE;
+        int newReplaceIndex = arc4random() % unreplaced_indexes.count;
         // заменяем элемент с этим индексом на случайный
-        [self.dna replaceObjectAtIndex:replaceIndex withObject:[Cell getRandomElement]];
+        int element_index = [[unreplaced_indexes objectAtIndex: newReplaceIndex] intValue];
+        [self.dna replaceObjectAtIndex: element_index withObject:[Cell getAnotherRandomElement: self.dna[element_index]]];
+        // Удаляем изменный индекс
+        [unreplaced_indexes removeObjectAtIndex:newReplaceIndex];
     }
 }
 @end
