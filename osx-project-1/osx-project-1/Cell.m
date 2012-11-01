@@ -17,7 +17,7 @@
     
     if (self) {
         dnaChars = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-        dna = [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
+        dna = [NSMutableArray arrayWithCapacity:DNA_LENGTH];
         
         int randomCharPosition = 0;
         for (int i = 0; i < DNA_LENGTH; i++) {
