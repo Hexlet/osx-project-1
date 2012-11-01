@@ -10,7 +10,6 @@
 
 @interface Cell (mutator)
 
-- (NSArray *) shuffleArray: (NSArray *) anArray anCount: (int) count;
 - (void) mutate: (int) percent;
 
 @end

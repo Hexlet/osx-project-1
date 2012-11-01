@@ -9,40 +9,41 @@
 #import "Cell+mutator.h"
 
 @implementation Cell (mutator)
-- (NSArray *) shuffleArray: (NSArray *) anArray anCount: (int) count{
-    // Случайно перемешать массив
-    NSMutableArray *tmpArray = [NSMutableArray arrayWithArray:anArray];
-    for (int i = 0; i < count; i++) {
-        int j = i + arc4random() % ([anArray count] - i);
-        [tmpArray exchangeObjectAtIndex:i withObjectAtIndex:j];
-    }
-    return tmpArray;
-}
 
 - (void) mutate:(int)percent{
-    NSMutableArray *tmpArray = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
-    for (int i = 0; i < DNA_LENGHT; i++) {
-        [tmpArray addObject:[NSNumber numberWithInt:i]];
-    }
     
+    static NSMutableArray *tmpArray = nil;
+    
+    //Переводим процент в количество элементов
     int count = DNA_LENGHT * percent / 100;
     
-    //Перемешиваем массив чисел от 1 до 100 и получаем срез массива необходимого размера count
-    NSArray *uniqueIndexes = [[NSArray arrayWithArray:[self shuffleArray:tmpArray anCount:count]]
-                              subarrayWithRange: NSMakeRange(0, count)];
+    //Массив создается только при первом вызове метода
+    if (!tmpArray) {
+        tmpArray = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
+        
+        for (int i = 0; i < DNA_LENGHT; i++) {
+            [tmpArray addObject:[NSNumber numberWithInt:i]];
+        }
+    }
     
-    NSMutableArray *DNASymbols;
+    // Перемешиваем массив
+    for (int i = 0; i < count; i++) {
+        int j = i + arc4random() % (DNA_LENGHT - i);
+        [tmpArray exchangeObjectAtIndex:i withObjectAtIndex:j];
+    }
+
+    // Получаем срез массива необходимого размера count
+    NSArray *uniqueIndexes = [tmpArray subarrayWithRange: NSMakeRange(0, count)];
+    
+    // Заменим элементы по случайным индексам
     for (NSNumber *index in uniqueIndexes){
-        //На каждом шаге берем случайно перемешанный массив символов ДНК
-        DNASymbols = [NSArray arrayWithArray:[self shuffleArray:DNA_SYMBOLS anCount:DNA_SYMBOLS_COUNT]];
-        // Если 0-й элемент не такойже, что и в _DNA - заменяем 0-м иначе 1-м.
-        if ( ! [self.DNA[[index integerValue]] isEqualToString:DNASymbols[0]]){
-            [self.DNA replaceObjectAtIndex:[index integerValue] withObject:DNASymbols[0]];
+        // Ищем случайный символ и меняем, проверяя на не совпадение со старым
+        int rnd_index = arc4random() % 4;
+        while ([self.DNA[[index integerValue]] isEqualToString:self.DNASymbols[rnd_index]]) {
+            rnd_index = arc4random() % 4;
         }
-        else
-        {
-            [self.DNA replaceObjectAtIndex:[index integerValue] withObject:DNASymbols[1]];
-        }
+        // DEBUG: NSLog(@"at index: %li %@ replace to %@", [index integerValue], self.DNA[[index integerValue]], self.DNASymbols[rnd_index]);
+        [self.DNA replaceObjectAtIndex:[index integerValue] withObject:self.DNASymbols[rnd_index]];
     }
 }
 @end

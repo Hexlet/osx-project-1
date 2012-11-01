@@ -10,15 +10,21 @@
 
 @implementation Cell
 
-- (id)init
-{
+- (id)init{
+    return [self initWithRandomDNA];
+}
+
+- (id) initWithRandomDNA{
     self = [super init];
     if (self) {
+        
         self.DNA = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
-        //Заполним цепочку ДНК случайными символами
-        NSArray *DNASymbols = DNA_SYMBOLS;
-        for (int i=0; i<DNA_LENGHT; i++) {
-            [self.DNA addObject:DNASymbols[arc4random() % DNA_SYMBOLS_COUNT]];
+        
+        self.DNASymbols = @[@"A", @"T", @"G", @"C"];
+        
+        // Заполним цепочку ДНК случайными символами
+        for (int i = 0; i < DNA_LENGHT; i++) {
+            [self.DNA addObject:self.DNASymbols[arc4random() % [self.DNASymbols count]]];
         }
     }
     return self;
@@ -26,7 +32,8 @@
 
 - (int) hammingDistance:(Cell *)anCell{
     int distance = 0;
-    for (int i=0; i<100; i++) {
+    
+    for (int i = 0; i < DNA_LENGHT; i++) {
         //Если элементы с одинаковыми индексами НЕ совпадают, наращиваем счетчик
         if ( ! [[anCell.DNA objectAtIndex: i] isEqualToString:[self.DNA objectAtIndex: i]]){
             distance++;
