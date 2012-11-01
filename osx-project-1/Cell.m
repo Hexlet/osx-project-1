@@ -9,42 +9,34 @@ NSString * const dna[] = {@"A", @"T", @"G", @"C"};
 - (void)mutate:(int)percents
 {
 	// we know have 100 objects and they are 100%. 1% ~ 1 object.
-  NSMutableSet *set = [[NSMutableSet alloc] init];
 
   int iterateTimes = self.DNA.count*percents/100;
 
   int index1 = 0;
   int index2 = 0;
 
-  id temp1 = nil;
-  id temp2 = nil;
+	NSMutableArray *mutatedIndexs = [[NSMutableArray alloc] init]; // store mutated indexes here
 
 	for (int i = 0; i < iterateTimes; ++i)
 	{
-		/* code */
     do
     {
-      index1 = arc4random()%(self.DNA.count-1);
-      index2 = arc4random()%(self.DNA.count-1);
+      index1 = arc4random()%(self.DNA.count-1); // generate first index
+      index2 = arc4random()%(self.DNA.count-1); // generate second index
 
-  		temp1 = [self.DNA objectAtIndex:index1];
-      temp2 = [self.DNA objectAtIndex:index2];
-      if (set.count == 0)
+      // if mutatedIndexes is empty add into array generated indexes
+      if (mutatedIndexs.count == 0)
       {
-        [set addObject:temp1];
-        [set addObject:temp2];
+        [mutatedIndexs addObject:[NSNumber numberWithInt:index1]];
+        [mutatedIndexs addObject:[NSNumber numberWithInt:index2]];
       }
   	}
-		while (![set containsObject:temp1] && ![set containsObject:temp2]);
+		while (![mutatedIndexs containsObject:[NSNumber numberWithInt:index1]] && ![mutatedIndexs containsObject:[NSNumber numberWithInt:index2]]);
+
+    [mutatedIndexs addObject:[NSNumber numberWithInt:index1]];
+    [mutatedIndexs addObject:[NSNumber numberWithInt:index2]];
   
-    [set addObject:temp1];
-    [set addObject:temp2];
-
-    [self.DNA removeObjectAtIndex:index1];
-		[self.DNA insertObject:[self.DNA objectAtIndex:index2] atIndex:index1];
-
-    [self.DNA removeObjectAtIndex:index2];
-		[self.DNA insertObject:temp1 atIndex:index2];
+    [self.DNA exchangeObjectAtIndex:index1 withObjectAtIndex:index2];
 	}
 }
 @end

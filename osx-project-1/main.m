@@ -4,17 +4,23 @@
 
 int main(int argc, char *argv[])
 {
-	Cell *obj1 = [[Cell alloc] init];
-	Cell *obj2 = [[Cell alloc] init];
+  @autoreleasepool
+  {
+    Cell *obj1 = [[Cell alloc] init];
+    Cell *obj2 = [[Cell alloc] init];
 
-	int hamming1 = [obj1 hammingDistance:obj2];
-	NSLog(@"hamming1:%i", hamming1);
+    int hamming1 = [obj1 hammingDistance:obj2];
+    NSLog(@"hamming1:%i", hamming1);
+    NSLog(@"\nobj1:%@ \nobj2:%@", [obj1 description], [obj2 description]);
 
-	[obj2 mutate:23];
-	[obj1 mutate:11];
+    [obj2 mutate:25];
+    [obj1 mutate:50];
 
-	int hamming2 = [obj1 hammingDistance:obj2];
-	NSLog(@"hamming2:%i", hamming2);
+    int hamming2 = [obj1 hammingDistance:obj2];
+    NSLog(@"\nobj1:%@ \nobj2:%@", [obj1 description], [obj2 description]);
+
+    NSLog(@"hamming2:%i", hamming2);
+  }
 	
 	return 0;
 }
