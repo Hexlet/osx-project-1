@@ -10,8 +10,6 @@
 #define DNA_LEN     100
 #define NUKE_LEN    4
 
-extern NSMutableArray *nucleotides;
-
 @interface Cell : NSObject {
     NSMutableArray *DNA;
 }
