@@ -10,6 +10,8 @@
 		761E23BE164186DB0050ADF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 761E23BD164186DB0050ADF6 /* Foundation.framework */; };
 		761E23C1164186DB0050ADF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 761E23C0164186DB0050ADF6 /* main.m */; };
 		761E23C5164186DB0050ADF6 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 761E23C4164186DB0050ADF6 /* osx_project_1.1 */; };
+		761E23CD164188170050ADF6 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 761E23CC164188170050ADF6 /* Cell.m */; };
+		76AEDC711642FDC800AA638C /* Cell_Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 76AEDC701642FDC800AA638C /* Cell_Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		761E23C0164186DB0050ADF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		761E23C3164186DB0050ADF6 /* osx-project-1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-project-1-Prefix.pch"; sourceTree = "<group>"; };
 		761E23C4164186DB0050ADF6 /* osx_project_1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = osx_project_1.1; sourceTree = "<group>"; };
+		761E23CB164188170050ADF6 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		761E23CC164188170050ADF6 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		76AEDC6F1642FDC800AA638C /* Cell_Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell_Mutator.h; sourceTree = "<group>"; };
+		76AEDC701642FDC800AA638C /* Cell_Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell_Mutator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,10 @@
 			children = (
 				761E23C0164186DB0050ADF6 /* main.m */,
 				761E23C4164186DB0050ADF6 /* osx_project_1.1 */,
+				761E23CB164188170050ADF6 /* Cell.h */,
+				761E23CC164188170050ADF6 /* Cell.m */,
+				76AEDC6F1642FDC800AA638C /* Cell_Mutator.h */,
+				76AEDC701642FDC800AA638C /* Cell_Mutator.m */,
 				761E23C2164186DB0050ADF6 /* Supporting Files */,
 			);
 			path = "osx-project-1";
@@ -140,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				761E23C1164186DB0050ADF6 /* main.m in Sources */,
+				761E23CD164188170050ADF6 /* Cell.m in Sources */,
+				76AEDC711642FDC800AA638C /* Cell_Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +248,7 @@
 				761E23CA164186DB0050ADF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
