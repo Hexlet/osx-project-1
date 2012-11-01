@@ -11,6 +11,7 @@
 @implementation Cell(Mutator)
 -(void) mutate:(int)percent
 {
+    percent=percent*maxLenght/100;
     NSLog(@"Mutating %d elements",percent);
     NSMutableArray *mutatedArray=[[NSMutableArray alloc] initWithCapacity:maxLenght];
     for (i=0; i<maxLenght; i++) [mutatedArray addObject:[NSNumber numberWithBool:NO]];
