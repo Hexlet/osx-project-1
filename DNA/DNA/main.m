@@ -2,16 +2,20 @@
 #import "Cell.h"
 
 
-@interface Cell(mutator)
+@interface Cell(Mutator)
 
 -(void) mutate:(int)percent;
 
 @end
 
 
-@implementation Cell(mutator)
+@implementation Cell(Mutator)
 
 -(void) mutate:(int)percent {
+    // Если хотят мутировать на более чем сто процентов, то ничего с ДНК не делаем
+    if (percent > 100) {
+        return;
+    }
     NSLog(@"Mutating for %i percents", percent);
     // В нашем конкретном случае можно было бы и не вычислять проценты, у нас
     // как раз 100 элементов.
@@ -26,9 +30,16 @@
             NSLog(@"Nucleotide at index %i has mutated. Trying get another index.", position);
             position = arc4random() % [self.DNA count];
         }
-        int nucleotide = arc4random() % [self.nucleotides length];
         
-        [self.DNA replaceObjectAtIndex:position withObject:[NSString stringWithFormat:@"%C", [self.nucleotides characterAtIndex:nucleotide]]];
+        // Заменяем нуклеотид
+        int nucleotide_position = arc4random() % [self.nucleotides length];
+        NSString *nucleotide = [NSString stringWithFormat:@"%C", [self.nucleotides characterAtIndex:nucleotide_position]];
+        while ([self.DNA[position] isEqualTo:nucleotide]) {
+            nucleotide_position = arc4random() % [self.nucleotides length];
+            nucleotide = [NSString stringWithFormat:@"%C", [self.nucleotides characterAtIndex:nucleotide_position]];
+        }
+        
+        [self.DNA replaceObjectAtIndex:position withObject:nucleotide];
         [changed addObject:[NSNumber numberWithInt:position]];
     }
 }
