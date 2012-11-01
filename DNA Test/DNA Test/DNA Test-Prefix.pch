@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'DNA Test' target in the 'DNA Test' project
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif
