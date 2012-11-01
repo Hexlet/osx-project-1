@@ -22,7 +22,7 @@
 -(int) hammingDistance: (Cell *)obj {
     int distance = 0;
     for (int i=0;i<DNA_LEN;i++){
-        if([[DNA objectAtIndex:i] isEqual: [obj->DNA objectAtIndex:i]])
+        if(![[DNA objectAtIndex:i] isEqual: [obj->DNA objectAtIndex:i]])
             distance++;
     }
     return distance;
