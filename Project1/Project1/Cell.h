@@ -18,3 +18,13 @@
 
 
 @end
+
+
+#pragma mark - Category "mutator"
+
+
+@interface Cell (mutator)
+
+-(void)mutate:(int)count;
+
+@end
