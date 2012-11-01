@@ -16,12 +16,13 @@ NSString * const Codes[] = {@"A", @"T", @"G", @"C"};
 - (id) init {
     self = [super init];
     
-    _dna = [[NSMutableArray alloc] init];
+    if (self) {
+        _dna = [[NSMutableArray alloc] init];
     
-    for (int i=0; i<100; i++) {
-        [_dna insertObject: [self getCode] atIndex:i];
+        for (int i=0; i<100; i++) {
+            [_dna insertObject: [self getCode] atIndex:i];
+        }
     }
-    
     return self;
 }
 
