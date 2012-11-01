@@ -19,7 +19,7 @@
 {
     if ((self = [super init]))
     {
-        DNA = [[NSMutableArray alloc] initWithCapacity:100];
+        DNA = [[NSMutableArray alloc] initWithCapacity:CHAIN_LENGTH];
         
         int i=0;
         for (i = 0; i < CHAIN_LENGTH; i++)
