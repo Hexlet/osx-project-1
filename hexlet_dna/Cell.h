@@ -15,6 +15,7 @@
 -(void) print;
 -(void) populateArray;
 -(NSString *) randomNucleotid;
--(void) hammingDistance: (Cell *) cell;
+-(NSString *) replaceCurrentNucleotid: (NSString *) c_n;
+-(void) hammingDistance: (Cell *) cell; 
 
 @end

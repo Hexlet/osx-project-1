@@ -40,6 +40,13 @@
     return dnaNucleotids[r_number];
 }
 
+//replace random element
+-(NSString *) replaceCurrentNucleotid:(NSString *)c_n {
+    NSMutableArray *newNucleotids = [[NSMutableArray alloc]initWithArray:dnaNucleotids];
+    [newNucleotids removeObjectIdenticalTo:c_n];
+    return newNucleotids[arc4random() % [newNucleotids count]];
+}
+
 -(void) hammingDistance: (Cell *) cell{
     hammingDist = 0;
     for(counter=0; counter<[cell.dnaArray count];counter++ ){
