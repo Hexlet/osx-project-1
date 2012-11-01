@@ -13,7 +13,8 @@
 
 -(void) mutate:(int)percent {
     // Если хотят мутировать на более чем сто процентов, то ничего с ДНК не делаем
-    if (percent > 100) {
+    if (percent > 100 || percent < 1) {
+        [NSException raise:@"Invalid percent value" format:@"percent of %d is invalid", percent];
         return;
     }
     NSLog(@"Mutating for %i percents", percent);
