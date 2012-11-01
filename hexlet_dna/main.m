@@ -19,19 +19,20 @@
 @implementation Cell (Mutator)
 
 -(void)mutate: (int) x {
-    int uniqueIndexes[x];
-    int r_number = 0, i=0;
+    NSMutableArray *uniqueIndexes = [[NSMutableArray alloc]initWithCapacity:x];
+    int i=0;
+    NSNumber *r_number = [[NSNumber alloc]init];
     // generation if unique indexes for raplacement;
     while (i < x) {
-        r_number = arc4random() % 100;
-        if (uniqueIndexes[i] != r_number) {
-            uniqueIndexes[i] = r_number;
+        r_number = [NSNumber numberWithInt:arc4random() % 100];
+        if ([uniqueIndexes containsObject:r_number] == NO) {
+            [uniqueIndexes addObject:r_number];
             i += 1;
         }
     }
-    // replace random nucleotids
-    for(i=0; i<x; i++){
-        self.dnaArray[uniqueIndexes[i]] = [self randomNucleotid];
+    // replace random dna nucleotids
+    for(id index in uniqueIndexes){
+        self.dnaArray[[index intValue]] = [self randomNucleotid];
     }
     
 }
