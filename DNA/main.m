@@ -18,7 +18,6 @@ int main(int argc, const char * argv[])
         myCell1 = [[Cell alloc] init];
         myCell2 = [[Cell alloc] init];
         
-        //myCell1.DNA = @"xxxx";
         //NSLog(@"%@",myCell1);
         //NSLog(@"%@",myCell2);
         distance = [myCell1 hammingDistance:myCell2];

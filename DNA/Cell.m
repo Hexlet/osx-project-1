@@ -14,16 +14,10 @@
     if (self){
         DNA = [[NSMutableArray alloc] initWithCapacity:DNA_LEN];
         for (int x=0;x<100;x++) {
-            [DNA addObject:self.possibleNucleotides[arc4random() % NUKE_LEN]];
+            [DNA addObject:NUKE_ARR[arc4random() % NUKE_LEN]];
         }
     }
     return self;
-}
--(NSArray*) possibleNucleotides {
-    return [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
-}
--(void) setDNA: (NSMutableArray *)obj {
-    NSAssert([obj isEqual: DNA],@"you cannot overwrite DNA");
 }
 -(int) hammingDistance: (Cell *)obj {
     int distance = 0;
