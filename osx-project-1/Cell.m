@@ -8,29 +8,23 @@
 
 #import "Cell.h"
 
-@implementation Cell {
-    NSMutableArray *dna;
-}
+@implementation Cell
 
 - (id)init {
     self = [super init];
     if (self) {
-        dna = [[NSMutableArray alloc] init];
+        _dna = [[NSMutableArray alloc] init];
         
         int i;
         for (i = 0; i < 100; i++) {
-            [dna insertObject:[Cell getRandomChar] atIndex:i];
+            [_dna insertObject:[Cell getRandomChar] atIndex:i];
         }
     }
     return self;
 }
 
-- (NSMutableArray *)dna {
-    return dna;
-}
-
 - (void)print {
-    NSLog(@"%@", [dna componentsJoinedByString:@""]);
+    NSLog(@"%@", [_dna componentsJoinedByString:@""]);
 }
 
 - (int)hammingDistance:(Cell *)cell {
@@ -40,8 +34,8 @@
     hammingDistance = 0;
     dna2 = [cell dna];
     
-    for (i = 0; i < 100; i++) {
-        if ([dna objectAtIndex:i] != [dna2 objectAtIndex:i]) {
+    for (i = 0; i < _dna.count; i++) {
+        if ([_dna objectAtIndex:i] != [dna2 objectAtIndex:i]) {
             hammingDistance++;
         }
     }
@@ -52,7 +46,7 @@
 + (NSString *)getRandomChar {
     NSArray *values = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
                        
-    return [values objectAtIndex:arc4random()%[values count]];
+    return [values objectAtIndex:arc4random()%values.count];
 }
 
 @end
@@ -67,15 +61,22 @@
     NSMutableArray *usedIndexes = [[NSMutableArray alloc] init];
     
     int i, replaceIndex;
-    for (i = 0; i < percent; i++) {
+    int replaceChars = (int) (_dna.count * percent / 100);
+    for (i = 0; i < replaceChars; i++) {
         while (YES) {
-            replaceIndex = arc4random()%[dna count];
+            replaceIndex = arc4random()%_dna.count;
             if (![usedIndexes containsObject:[NSNumber numberWithInt:replaceIndex]]) {
                 [usedIndexes addObject:[NSNumber numberWithInt:replaceIndex]];
                 break;
             }
         }
-        [dna replaceObjectAtIndex:replaceIndex withObject:[Cell getRandomChar]];
+        while (YES) {
+            NSString *newChar = [Cell getRandomChar];
+            if ([_dna objectAtIndex:replaceIndex] != newChar) {
+                [_dna replaceObjectAtIndex:replaceIndex withObject:newChar];
+                break;
+            }
+        }
     }
     srand((unsigned)time(NULL));
 }
