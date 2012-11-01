@@ -18,9 +18,9 @@
     //replace random (percentage) characters from DNA
     //with new random characters
     for (int i=0; i<percentage; i++) {
-        random = arc4random() % 4;
+        random = arc4random() % [self.genes length];
         random_char = [self.genes characterAtIndex:random];
-        [self.DNA replaceObjectAtIndex:arc4random()%100 withObject:[[NSString class] stringWithCharacters:&(random_char) length:1]];
+        [self.DNA replaceObjectAtIndex:arc4random() % [self.DNA count] withObject:[[NSString class] stringWithCharacters:&(random_char) length:1]];
     }
     
 }

@@ -28,7 +28,7 @@
     
     //fill DNA array with random characters from genes 
     for (int i=0; i<capacity; i++) {
-        random = arc4random() % 4;
+        random = arc4random() % [_genes length];
         random_char = [_genes characterAtIndex:random];
         [_DNA addObject:[[NSString class] stringWithCharacters:&(random_char) length:1]];
     }
@@ -50,17 +50,5 @@
     return difference;
 }
 
--(NSMutableString*) print {
-    //initialize result string
-    NSMutableString *result;
-    result = [[NSMutableString class] stringWithCapacity:capacity];
-    
-    //fill result string with characters from DNA
-    for (int i=0; i<capacity; i++) {
-        [result appendString:[_DNA objectAtIndex:i]];
-    }
-    
-    return result;
-}
 
 @end

@@ -15,6 +15,5 @@
 @property NSString *genes;
 
 -(int) hammingDistance: (Cell*) secondCell;
--(NSMutableString*) print;
 
 @end
