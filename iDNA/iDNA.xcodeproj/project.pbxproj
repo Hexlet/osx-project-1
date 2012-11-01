@@ -10,6 +10,8 @@
 		D6997A111642FDA100E9559F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6997A101642FDA100E9559F /* Foundation.framework */; };
 		D6997A141642FDA100E9559F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6997A131642FDA100E9559F /* main.m */; };
 		D6997A181642FDA100E9559F /* iDNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D6997A171642FDA100E9559F /* iDNA.1 */; };
+		D6997A201642FE3000E9559F /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6997A1F1642FE3000E9559F /* Cell.m */; };
+		D6997A2316431F2300E9559F /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = D6997A2216431F2300E9559F /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		D6997A131642FDA100E9559F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6997A161642FDA100E9559F /* iDNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iDNA-Prefix.pch"; sourceTree = "<group>"; };
 		D6997A171642FDA100E9559F /* iDNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = iDNA.1; sourceTree = "<group>"; };
+		D6997A1E1642FE3000E9559F /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		D6997A1F1642FE3000E9559F /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		D6997A2116431F2300E9559F /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		D6997A2216431F2300E9559F /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				D6997A131642FDA100E9559F /* main.m */,
+				D6997A1E1642FE3000E9559F /* Cell.h */,
+				D6997A1F1642FE3000E9559F /* Cell.m */,
+				D6997A2116431F2300E9559F /* Cell+Mutator.h */,
+				D6997A2216431F2300E9559F /* Cell+Mutator.m */,
 				D6997A171642FDA100E9559F /* iDNA.1 */,
 				D6997A151642FDA100E9559F /* Supporting Files */,
 			);
@@ -140,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6997A141642FDA100E9559F /* main.m in Sources */,
+				D6997A201642FE3000E9559F /* Cell.m in Sources */,
+				D6997A2316431F2300E9559F /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
