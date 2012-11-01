@@ -18,10 +18,11 @@
 -(void)mutate: (int)p {
 
     int position;
+    int percent = DNALength * p / 100;
     NSMutableArray *replaced;
     replaced = [[NSMutableArray alloc] initWithCapacity:p];
 
-    for (int i = 0; i < p; i++) {
+    for (int i = 0; i < percent; i++) {
         for (;;) {
             boolean_t done = NO;
             position = arc4random() % 100;
