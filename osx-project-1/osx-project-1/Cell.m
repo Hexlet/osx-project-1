@@ -17,11 +17,11 @@
     
     if (self) {
         dnaChars = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-        dna = [[NSMutableArray alloc] init];
+        dna = [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
         
         int randomCharPosition = 0;
-        for (int i = 0; i < 100; i++) {
-            randomCharPosition = arc4random() % 4;
+        for (int i = 0; i < DNA_LENGTH; i++) {
+            randomCharPosition = (int)(arc4random() % [dnaChars count]);
             id dnaChar = [dnaChars objectAtIndex: randomCharPosition];
             
             [dna insertObject:dnaChar atIndex:i];

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Constants.h"
 
 @interface Cell : NSObject {
     NSArray* dnaChars;

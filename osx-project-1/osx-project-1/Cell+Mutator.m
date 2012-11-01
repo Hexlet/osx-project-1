@@ -20,7 +20,7 @@
     
     // do mutation unless we have required amount of dna characters mutated
     while ([mutatedCharactersPositions count] != percents) {
-        randomCharPosition = arc4random() % 4;
+        randomCharPosition = (int)(arc4random() % [dnaChars count]);
         randomDnaPosition = (int)(arc4random() % [[self dna] count]);
         
         // check if current dna character is mutaded. if it is mutaded then move to next character, if not - mutate it
