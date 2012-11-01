@@ -15,38 +15,26 @@
 @end
 
 @implementation Cell (mutator)
--(void)mutate: (int)p {
+-(void)mutate: (int)percent {
 
-    int position;
-    int percent = DNALength * p / 100;
-    NSMutableArray *replaced;
-    replaced = [[NSMutableArray alloc] initWithCapacity:p];
-
-    for (int i = 0; i < percent; i++) {
-        for (;;) {
-            boolean_t done = NO;
-            position = arc4random() % 100;
-            
-            if ([replaced count] == 0) {
-                [replaced addObject:[NSNumber numberWithInt:position]];
-                break;
-            }
-            
-            for (id obj in replaced) {
-                if (![obj isEqualToNumber:[NSNumber numberWithInt:position]] ) {
-                    done = YES;
-                }
-            }
-
-            if (done) {
-                [replaced addObject:[NSNumber numberWithInt:position]];
-                break;
-            }
-
-        }
-        
-        [self.dna replaceObjectAtIndex:position withObject:[self.alphabet objectAtIndex:arc4random() % [self.alphabet count]]];
+    int qnt = DNALength * percent / 100; //Количество элементов для замены
+    
+    NSMutableArray *idx; 
+    idx = [[NSMutableArray alloc] initWithCapacity:[self.dna count]];
+    for (int i = 0; i < [self.dna count]; i++) [idx addObject:[NSNumber numberWithInt:i]];
+    
+    NSMutableArray *shuffle; // Создается массив случайных индексов для замены
+    shuffle = [[NSMutableArray alloc] initWithCapacity:qnt];
+    for  (int i = 0; i < qnt; i++) {
+        int index = arc4random() % [idx count];
+        [shuffle addObject:[idx objectAtIndex:index]];
+        [idx removeObjectAtIndex:index];
     }
+    
+    for (id obj in shuffle) {
+        [self.dna replaceObjectAtIndex:[obj intValue] withObject:[self.alphabet objectAtIndex:arc4random() % [self.alphabet count]]];
+    }
+        
     return;
 }
 @end
@@ -62,7 +50,7 @@ int main(int argc, const char * argv[])
         
         NSLog(@"%i",[cell1 hammingDistance:cell2]);
         
-        [cell1 mutate:42];
+        [cell1 mutate:53];
         [cell2 mutate:13];
         
         NSLog(@"%i",[cell1 hammingDistance:cell2]);
