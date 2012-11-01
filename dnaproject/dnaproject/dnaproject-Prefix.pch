@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'dnaproject' target in the 'dnaproject' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import "Cell.h"
+#endif
