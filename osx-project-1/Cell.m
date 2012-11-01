@@ -18,7 +18,7 @@
 -(id)init{
     self = [super init];
     if(self){
-        lengthDNA = 10; // размер цепочки ДНК
+        lengthDNA = 100; // размер цепочки ДНК
         DNA = [NSMutableArray arrayWithCapacity:lengthDNA];
         for(int i = 0; i < lengthDNA ; i++){
             // Заполение массива случайными допустимыми занчениями
