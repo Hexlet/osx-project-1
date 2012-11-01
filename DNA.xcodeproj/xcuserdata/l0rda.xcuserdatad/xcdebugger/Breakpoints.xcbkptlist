@@ -45,19 +45,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell+mutator.m"
-         timestampString = "373464236.520424"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
-         landmarkName = "-mutate:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "DNA/Cell+mutator.m"
          timestampString = "373416741.754568"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"

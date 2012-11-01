@@ -30,9 +30,13 @@
         // удаляем текущий нуклеотид из массива для замены,
         // чтобы нуклеотид в позиции был гарантированно заменен на другой
         NSString *currentNuke = [DNA objectAtIndex:[mIndex integerValue]];
-        NSString *newNucleotide = currentNuke;
-        while ([newNucleotide isEqual: currentNuke]) {
-            newNucleotide = [[Cell nucleotides] objectAtIndex:arc4random() % NUKE_LEN];
+        NSUInteger current_nuke_index = [[Cell nucleotides] indexOfObject:currentNuke];
+        id newNucleotide;
+        // index может быть только 0,1,2,3, проверяем кратность двойки и меняем его в большую или меньшую сторону
+        if (current_nuke_index % 2 == 0) {
+            newNucleotide = [[Cell nucleotides] objectAtIndex:++current_nuke_index];
+        } else {
+            newNucleotide = [[Cell nucleotides] objectAtIndex:--current_nuke_index];
         }
         [DNA replaceObjectAtIndex:[mIndex integerValue] withObject:newNucleotide];
     }
