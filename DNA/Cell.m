@@ -16,7 +16,7 @@ const int capacity = 100;
     self = [super init];
     if (self) {
         _dna = [NSMutableArray arrayWithCapacity:capacity];
-        _nucleobase = [NSMutableArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
+        _nucleobase = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
         for (int i = 0; i < capacity; i++) {
             [_dna addObject:[_nucleobase objectAtIndex:(arc4random() % [_nucleobase count])]];
         }
