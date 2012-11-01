@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66438276164265C9007C7D0A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 66438275164265C9007C7D0A /* main.c */; };
+		66438276164265C9007C7D0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66438275164265C9007C7D0A /* main.m */; };
 		66438278164265C9007C7D0A /* HexletDNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66438277164265C9007C7D0A /* HexletDNA.1 */; };
+		66438280164266AF007C7D0A /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6643827F164266AF007C7D0A /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +27,10 @@
 
 /* Begin PBXFileReference section */
 		66438271164265C9007C7D0A /* HexletDNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HexletDNA; sourceTree = BUILT_PRODUCTS_DIR; };
-		66438275164265C9007C7D0A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		66438275164265C9007C7D0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66438277164265C9007C7D0A /* HexletDNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HexletDNA.1; sourceTree = "<group>"; };
+		6643827E164266AF007C7D0A /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		6643827F164266AF007C7D0A /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,8 @@
 		66438266164265C9007C7D0A = {
 			isa = PBXGroup;
 			children = (
+				6643827E164266AF007C7D0A /* Cell.h */,
+				6643827F164266AF007C7D0A /* Cell.m */,
 				66438274164265C9007C7D0A /* HexletDNA */,
 				66438272164265C9007C7D0A /* Products */,
 			);
@@ -60,7 +65,7 @@
 		66438274164265C9007C7D0A /* HexletDNA */ = {
 			isa = PBXGroup;
 			children = (
-				66438275164265C9007C7D0A /* main.c */,
+				66438275164265C9007C7D0A /* main.m */,
 				66438277164265C9007C7D0A /* HexletDNA.1 */,
 			);
 			path = HexletDNA;
@@ -117,7 +122,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66438276164265C9007C7D0A /* main.c in Sources */,
+				66438276164265C9007C7D0A /* main.m in Sources */,
+				66438280164266AF007C7D0A /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +216,7 @@
 				6643827D164265C9007C7D0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
