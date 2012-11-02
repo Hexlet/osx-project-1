@@ -20,12 +20,20 @@
 
 -(void)mutate:(int)value{
     NSArray *lettersArray=@[@"A",@"T",@"C",@"G"];
+    NSMutableArray *usedIndexes=[[NSMutableArray alloc]initWithCapacity:100];
     int randomIndex=0;
     int randomIndex2=0;
     for(int index=0;index<value;index++){
         randomIndex =(int)(arc4random() % dna.count);
         randomIndex2=(int)(arc4random() % lettersArray.count);
-        [self.dna replaceObjectAtIndex:randomIndex withObject:[lettersArray objectAtIndex:randomIndex2]];
+        if(![usedIndexes containsObject:[NSNumber numberWithInt:randomIndex]]){
+           [self.dna replaceObjectAtIndex:randomIndex withObject:[lettersArray objectAtIndex:randomIndex2]];
+            [usedIndexes addObject:[NSNumber numberWithInt:randomIndex]];
+            //NSLog(@"New index");
+        }else{
+            index--;
+            //NSLog(@"Contains!");
+        }
     }
 }
 
