@@ -11,34 +11,34 @@
 @implementation Cell(Mutator)
 -(void) mutate:(int)percent
 {
-    percent=percent*maxLenght/100;
-    NSLog(@"Mutating %d elements",percent);
-    NSMutableArray *mutatedArray=[[NSMutableArray alloc] initWithCapacity:maxLenght];
-    for (i=0; i<maxLenght; i++) [mutatedArray addObject:[NSNumber numberWithBool:NO]];
-    NSMutableArray *cellMutatedDNA=[self getDNA];
-    
-    if (percent<=maxLenght )
+    if ( percent > 0 && percent<=100 )
     {
-        while (percent)  //количество оставкшихся замен
-        {  
-            int changePosition=arc4random()%maxLenght;
-            NSString *mutatedChar =[NSString stringWithString:[self makeGen]];
+        int replaceNumber=percent*maxLenght/100;
+        NSLog(@"Mutating %d elements",replaceNumber);
+        NSMutableArray *mutatedArray=[[NSMutableArray alloc] initWithCapacity:maxLenght];
+        for (i=0; i<maxLenght; i++) [mutatedArray addObject:[NSNumber numberWithBool:NO]];
+        NSMutableArray *cellMutatedDNA=[self getDNA];
             
-            //если в этом месте еще не меняли ячейку сгенерированная должна отличаться от текущей
-            if ([[mutatedArray objectAtIndex:changePosition] isEqual:[NSNumber numberWithBool:NO]] && ![mutatedChar isEqual:[cellMutatedDNA objectAtIndex:changePosition]])
-            {
-                [cellMutatedDNA replaceObjectAtIndex:changePosition withObject:mutatedChar];
-                [mutatedArray replaceObjectAtIndex:changePosition withObject:[NSNumber numberWithBool:YES]];
-                percent--;
-                //NSLog(@"changed to %@ in %d position",cellMutatedDNA,changePosition);
+            while (replaceNumber)  //количество оставкшихся замен
+            {  
+                int changePosition=arc4random()%maxLenght;
+                NSString *mutatedChar =[NSString stringWithString:[self makeGen]];
+                
+                if ([[mutatedArray objectAtIndex:changePosition] isEqual:[NSNumber numberWithBool:NO]] && ![mutatedChar isEqual:[cellMutatedDNA objectAtIndex:changePosition]])
+                {
+                    [cellMutatedDNA replaceObjectAtIndex:changePosition withObject:mutatedChar];
+                    [mutatedArray replaceObjectAtIndex:changePosition withObject:[NSNumber numberWithBool:YES]];
+                    replaceNumber--;
+                    //NSLog(@"changed to %@ in %d position",cellMutatedDNA,changePosition);
+                }
             }
-        }
+        [self setDNA:cellMutatedDNA];
     }
     else
     {
         NSLog(@"Incorrect number of mutations");
     }
     //NSLog(@"mutation complite %@",cellMutatedDNA);
-    [self setDNA:cellMutatedDNA];
+    
 }
 @end

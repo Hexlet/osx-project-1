@@ -8,7 +8,6 @@
 
 #import "Cell.h"
 
-
 @implementation Cell
 
 -(id) init
@@ -21,31 +20,15 @@
         {
             [DNA addObject:[self makeGen]];
         }
-        //NSLog(@"Init successful Array %@",DNA);
-        
     }
     return self;
 }
 
 -(NSString*) makeGen
 {
+    NSArray *gens=[NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
     int r_number=arc4random()%4;
-    NSString *rand_Gen;
-    switch (r_number) {
-        case 0:
-            rand_Gen=@"A";
-            break;
-        case 1:
-            rand_Gen=@"T";
-            break;
-        case 2:
-            rand_Gen=@"G";
-            break;
-        case 3:
-            rand_Gen=@"C";
-            break;
-    }
-    return rand_Gen;
+    return  [gens objectAtIndex:r_number];
 }
 
 -(int) hammingDistance:(Cell *) cell
@@ -62,7 +45,7 @@
     return distance;
 }
 
-// setter and getter of DNA instance for changing
+// setter and getter of DNA instance for changing value
 -(NSMutableArray*) getDNA
 {
     return DNA;
