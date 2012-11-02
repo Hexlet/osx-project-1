@@ -23,7 +23,7 @@ int main(int argc, const char * argv[])
         NSLog(@"hamming distance: %ld", [firstCell hammingDistance:secondCell]);
         
         NSLog(@"--= MUTATE =--");
-        [firstCell mutate:35];
+        [firstCell mutate:15];
         [secondCell mutate:75];
        
         NSLog(@"first cell  [%@]", firstCell);
