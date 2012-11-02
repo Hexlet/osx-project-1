@@ -30,6 +30,7 @@ int main(int argc, const char * argv[])
         NSLog(@"second cell [%@]", secondCell);
         
         NSLog(@"hamming distance after mutate: %ld", [firstCell hammingDistance:secondCell]);
+                
     }
     return 0;
 }

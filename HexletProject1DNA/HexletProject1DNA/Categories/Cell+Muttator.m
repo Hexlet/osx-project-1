@@ -18,11 +18,15 @@
         [indexes_of_cells addObject: [NSNumber numberWithInt:i]];                           // заполняем массив индексов
     
     NSInteger count_replaced_symbols = DNA_SIZE / 100.0 * persents;   // вычисляем количество символов которое необходимо заменить
+    
     while (count_replaced_symbols--) {
         NSInteger idx_of_cells_idx = arc4random() % [indexes_of_cells count];
         NSInteger replaced_idx = [[indexes_of_cells objectAtIndex:idx_of_cells_idx] intValue];
         [indexes_of_cells removeObjectAtIndex:idx_of_cells_idx];
-        [self.DNA replaceObjectAtIndex:replaced_idx withObject:[self randomDNASymbol]];
+        
+        NSMutableString * dna_pattern_string = [NSMutableString stringWithString:DNA_SYMBOLS_ALLOWED];
+        [dna_pattern_string deleteCharactersInRange:[dna_pattern_string rangeOfString:[self.DNA objectAtIndex:replaced_idx]]];        
+        [self.DNA replaceObjectAtIndex:replaced_idx withObject: [dna_pattern_string substringWithRange:NSMakeRange(arc4random() % [dna_pattern_string length], 1)] ];
     }
 }
 @end
