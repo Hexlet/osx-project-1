@@ -10,6 +10,7 @@
 		B34E3DEA164041B3000D686F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B34E3DE9164041B3000D686F /* main.m */; };
 		B34E3DEC164041B3000D686F /* hexlet_project_DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B34E3DEB164041B3000D686F /* hexlet_project_DNA.1 */; };
 		B34E3DF4164041D4000D686F /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = B34E3DF3164041D4000D686F /* Cell.m */; };
+		B34E3E0A164432F7000D686F /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = B34E3E09164432F7000D686F /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		B34E3DEB164041B3000D686F /* hexlet_project_DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = hexlet_project_DNA.1; sourceTree = "<group>"; };
 		B34E3DF2164041D4000D686F /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		B34E3DF3164041D4000D686F /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		B34E3E08164432F7000D686F /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		B34E3E09164432F7000D686F /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,8 @@
 				B34E3DE9164041B3000D686F /* main.m */,
 				B34E3DF2164041D4000D686F /* Cell.h */,
 				B34E3DF3164041D4000D686F /* Cell.m */,
+				B34E3E08164432F7000D686F /* Cell+Mutator.h */,
+				B34E3E09164432F7000D686F /* Cell+Mutator.m */,
 				B34E3DEB164041B3000D686F /* hexlet_project_DNA.1 */,
 			);
 			path = hexlet_project_DNA;
@@ -124,6 +129,7 @@
 			files = (
 				B34E3DEA164041B3000D686F /* main.m in Sources */,
 				B34E3DF4164041D4000D686F /* Cell.m in Sources */,
+				B34E3E0A164432F7000D686F /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +222,7 @@
 				B34E3DF1164041B3000D686F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

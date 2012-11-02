@@ -8,17 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface Cell : NSObject
 
 @property NSMutableArray *DNA;
 
 - (Cell *) initWithLength: (int) len;
 - (int) hammingDistance: (Cell *) aCell;
-
-@end
-
-@interface Cell (mutator)
-
-- (void) mutate: (int) x;
+- (NSString *) getRandomPart;
 
 @end

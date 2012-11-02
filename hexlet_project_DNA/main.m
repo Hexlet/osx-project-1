@@ -8,15 +8,17 @@
 
 #include <stdio.h>
 #import "Cell.h"
+#import "Cell+Mutator.h"
+
+const int DNALength = 100;
 
 int main(int argc, const char * argv[])
 {
     Cell *c1, *c2; // наши ДНК
-    int len = 100; // и их длина
     
     // создаем пару
-    c1 = [[Cell alloc] initWithLength: len];
-    c2 = [[Cell alloc] initWithLength: len];
+    c1 = [[Cell alloc] initWithLength: DNALength];
+    c2 = [[Cell alloc] initWithLength: DNALength];
     
     // выводим
     NSLog(@"DNA1: %@", c1);
