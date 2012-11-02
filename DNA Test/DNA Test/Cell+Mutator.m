@@ -10,30 +10,48 @@
 
 @implementation Cell (Mutator)
 
--(void) mutate: (int) mutatePercent {
+-(void) mutate:(int) mutatePercent {
 	//Проверяем процент мутации и запускаем мутацию только в случае его корректности
     if (mutatePercent>0 && mutatePercent<=100) {
 		//Определяем колличество элементов для мутации в случае если длинна ДНК больше 100
-        int mutateIndexesCount = DNA_LENGHT*mutatePercent/100;
-        
-		//Для получения уникального набора индексов создаём изменяемое множество
-        NSMutableSet *mutateIndexes = [[NSMutableSet alloc] initWithCapacity:mutateIndexesCount];
+        NSUInteger mutateIndexesCount = lround(DNA_LENGHT*mutatePercent/100);
 		
-		//Пока множество не заполниться генерируем туда случайный индекс по длинне ДНК, особенность уникальности элеменов в множестве не даст дублировать индекс
-        while ([mutateIndexes count]<mutateIndexesCount) {
-            [mutateIndexes addObject:[NSNumber numberWithInteger:arc4random_uniform(DNA_LENGHT)]];
-        }
+		//Используем метод генерации случайного надора индексов через 2 массива
+		NSMutableArray *tmpIndexes, *mutateIndexes;
+		
+		//Один массив для индексов, второй для хранилища всех индексов
+		tmpIndexes = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
+		mutateIndexes = [NSMutableArray arrayWithCapacity:mutateIndexesCount];
+		
+		//Наполняем хранилище
+		for (int i=0; i<DNA_LENGHT; i++) {
+			[tmpIndexes addObject:[NSNumber numberWithInteger:i]];
+		}
+		
+		//Проводим сам процесс выдора случайных индексов из хранилища
+		while (mutateIndexesCount > 0) {
+			int change = arc4random()%[tmpIndexes count];
+			[mutateIndexes addObject:tmpIndexes[change]];
+			[tmpIndexes removeObjectAtIndex:change];
+			
+			mutateIndexesCount--;
+		}
+		
+		NSString *currentNucleotide, *newNucleotide;
 		
 		//Проходим по всем элементам в множестве
         for (id mutateIndex in mutateIndexes) {
-			//Создаём изменяемый массив на основе наших нуклиотидов
-            NSMutableArray *nucleotidesForMutate = [[NSMutableArray alloc] initWithArray:self.getNucleotides copyItems:YES];
+			//Выделяем текущий и генерируем новый нуклеотид
+            currentNucleotide = [DNA objectAtIndex:[mutateIndex integerValue]];
+			newNucleotide = [Cell getRandomNucleotide];
 			
-			//Удаляем из него текущий нуклеотид для данного индекса в ДНК
-            [nucleotidesForMutate removeObjectIdenticalTo:[DNA objectAtIndex:[mutateIndex integerValue]]];
+			//Пока новый нуклеотид равен текущему генерируем новый
+			while ([currentNucleotide isEqual:newNucleotide]) {
+				newNucleotide = [Cell getRandomNucleotide];
+			}
 			
 			//Выбираем из оставшихся случайный и заменяем на него
-            [DNA replaceObjectAtIndex:[mutateIndex integerValue] withObject:[nucleotidesForMutate objectAtIndex:arc4random_uniform(NUKLEOTIDES_LENGHT-1)]];
+            [DNA replaceObjectAtIndex:[mutateIndex integerValue] withObject:newNucleotide];
         }
     }
 }

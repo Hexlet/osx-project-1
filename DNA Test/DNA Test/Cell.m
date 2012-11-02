@@ -15,11 +15,11 @@
 
     if (self) {
         //Инициализируем ДНК необходимой длинны
-        DNA = [[NSMutableArray alloc] initWithCapacity:DNA_LENGHT];
+        DNA = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
         
         for (int i=0; i<DNA_LENGHT; i++) {
-            //Заполняем случайным нуклеоидом, для генерации случайного индекса используем arc4random_uniform (позволяет задать границу для генерации)
-            [DNA addObject:[self.getNucleotides objectAtIndex:arc4random_uniform(NUKLEOTIDES_LENGHT)]];
+            //Заполняем случайным нуклеоидом
+            [DNA addObject:[Cell getRandomNucleotide]];
         }
     }
     
@@ -30,18 +30,27 @@
     return DNA;
 }
 
--(NSArray*) getNucleotides {
-	//Возвращаем массив с нуклотидами
-    return [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
++(NSString*) getRandomNucleotide {
+	//Определяем статический массив
+	static NSArray *nucleotides;
+	
+	//Если массив не инициализирован, инитим и наполняем
+	if (!nucleotides)
+	{
+		nucleotides = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
+	}
+	
+	//Возвращаем случайный нуклеотид
+    return [nucleotides objectAtIndex:arc4random()%NUKLEOTIDES_LENGHT];
 }
 
--(int) hammingDistance: (Cell *) DNAForHamming {
+-(int) hammingDistance:(Cell *) DNAForHamming {
     //Инициализируем счётчик несоответствий
     int hamming = 0;
     
     for (int i=1; i<DNA_LENGHT; i++) {
         //Сравниваем поэлементно и в случае несоответствия увеличиваем счётчик
-        if([[DNA objectAtIndex:i] isEqual: [[DNAForHamming getDNA] objectAtIndex:i]]) {
+        if([[DNA objectAtIndex:i] isEqual:[[DNAForHamming getDNA] objectAtIndex:i]]) {
             hamming++;
         }
     }

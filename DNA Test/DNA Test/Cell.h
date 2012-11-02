@@ -21,10 +21,10 @@
 //Описываем наличие гетор для ДНК
 -(NSMutableArray*) getDNA;
 
-//Описываем наличие метода возвращающего нуклеотиды
--(NSArray*) getNucleotides;
+//Описываем наличие метода класса возвращающего нуклеотид
++(NSString*) getRandomNucleotide;
 
 //Описываем наличие метода сравнения
--(int) hammingDistance: (Cell *) DNAForHamming;
+-(int) hammingDistance:(Cell *) DNAForHamming;
 
 @end
