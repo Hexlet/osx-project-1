@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5B2FD7516444F3F000BC821 /* NSSet+Randomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B2FD7416444F3F000BC821 /* NSSet+Randomizer.m */; };
 		A5DEDFD0164305DB00C8738A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DEDFCF164305DB00C8738A /* Foundation.framework */; };
 		A5DEDFD3164305DB00C8738A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DEDFD2164305DB00C8738A /* main.m */; };
 		A5DEDFD7164305DB00C8738A /* DNA_project.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5DEDFD6164305DB00C8738A /* DNA_project.1 */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A5B2FD7316444F3F000BC821 /* NSSet+Randomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Randomizer.h"; sourceTree = "<group>"; };
+		A5B2FD7416444F3F000BC821 /* NSSet+Randomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Randomizer.m"; sourceTree = "<group>"; };
 		A5DEDFCB164305DB00C8738A /* DNA project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "DNA project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5DEDFCF164305DB00C8738A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5DEDFD2164305DB00C8738A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				A5DEDFE71643083200C8738A /* Cell.m */,
 				A5DEDFEA1643184200C8738A /* Cell+mutator.h */,
 				A5DEDFEB1643184200C8738A /* Cell+mutator.m */,
+				A5B2FD7316444F3F000BC821 /* NSSet+Randomizer.h */,
+				A5B2FD7416444F3F000BC821 /* NSSet+Randomizer.m */,
 				A5DEDFD6164305DB00C8738A /* DNA_project.1 */,
 				A5DEDFD4164305DB00C8738A /* Supporting Files */,
 			);
@@ -152,6 +157,7 @@
 				A5DEDFD3164305DB00C8738A /* main.m in Sources */,
 				A5DEDFE81643083200C8738A /* Cell.m in Sources */,
 				A5DEDFEC1643184200C8738A /* Cell+mutator.m in Sources */,
+				A5B2FD7516444F3F000BC821 /* NSSet+Randomizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

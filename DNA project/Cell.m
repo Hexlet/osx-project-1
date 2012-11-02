@@ -7,6 +7,7 @@
 //
 
 #import "Cell.h"
+#import "NSSet+Randomizer.h"
 
 @interface Cell ()
 
@@ -16,10 +17,13 @@
 
 @implementation Cell
 
-// выбор случайного символа из множества вынесен в метод класса чтобы не дублировать этод код в категории
-+ (id)getRandomElement {
-    NSArray *elements = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-    return [elements objectAtIndex:(rand() % 4)];
+// возвращаем множество возможных элементов ДНК
++ (NSSet *)possibleElements {
+    static NSSet *elements;
+    if (!elements) {
+        elements = [NSSet setWithObjects:@"A", @"T", @"G", @"C", nil];
+    }
+    return elements;
 }
 
 // отложенная инициализация массива на 100 элементов
@@ -34,7 +38,7 @@
     self = [super init];
     if (self) {
         for (int i = 0; i < kLengthOfDNA; i++) {
-            [self.dna addObject:[Cell getRandomElement]];
+            [self.dna addObject:[[Cell possibleElements] randomObject]];
         }
     }
     return self;
