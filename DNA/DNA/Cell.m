@@ -40,7 +40,7 @@
     @try {
         for (NSUInteger i = 0; i < dna.count; i++) {
 //            NSLog(@"Comparing %@ and %@", [dna objectAtIndex:i], [cell.dna objectAtIndex:i]);
-            if ([[dna objectAtIndex:i] isEqualToString:[cell.dna objectAtIndex:i]]) {
+            if (![[dna objectAtIndex:i] isEqualToString:[cell.dna objectAtIndex:i]]) {
                 result++;
             }
         }
