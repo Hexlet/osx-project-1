@@ -15,21 +15,13 @@
     self = [super init];
     if (self) {
         _DNA = [NSMutableArray arrayWithCapacity:100];
-        for (int i = 0; i <100; i++) {
-            int letterIntValue;
-            letterIntValue = arc4random() %4;
-            if (letterIntValue == 0) {
-                [_DNA addObject:@"A"];
-            }
-            else if (letterIntValue == 1) {
-                [_DNA addObject:@"T"];
-            }
-            else if (letterIntValue == 2) {
-                [_DNA addObject:@"G"];
-            }
-            else {
-                [_DNA addObject:@"C"];
-            }
+        
+        NSArray *lettersArray = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
+        int i;
+        for (i = 0; i <100; i++) {
+            int randomIndex = arc4random() %4;
+            [_DNA insertObject:lettersArray[randomIndex] atIndex:i];
+
         }
     }
     return self; 
