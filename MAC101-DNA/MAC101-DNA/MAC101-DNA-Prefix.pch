@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'MAC101-DNA' target in the 'MAC101-DNA' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

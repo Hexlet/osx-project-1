@@ -1,0 +1,276 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		610E48B016416415002A9389 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 610E48AF16416415002A9389 /* Foundation.framework */; };
+		610E48B316416415002A9389 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 610E48B216416415002A9389 /* main.m */; };
+		610E48B716416415002A9389 /* MAC101_DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 610E48B616416415002A9389 /* MAC101_DNA.1 */; };
+		610E48C316416455002A9389 /* NKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 610E48C216416455002A9389 /* NKCell.m */; };
+		610E48C7164164E2002A9389 /* NKDNASymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 610E48C6164164E2002A9389 /* NKDNASymbol.m */; };
+		61893ED116427DF50009D17B /* NKCell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 61893ED016427DF50009D17B /* NKCell+Mutator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		610E48A916416415002A9389 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				610E48B716416415002A9389 /* MAC101_DNA.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		610E48AB16416415002A9389 /* MAC101-DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "MAC101-DNA"; sourceTree = BUILT_PRODUCTS_DIR; };
+		610E48AF16416415002A9389 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		610E48B216416415002A9389 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		610E48B516416415002A9389 /* MAC101-DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAC101-DNA-Prefix.pch"; sourceTree = "<group>"; };
+		610E48B616416415002A9389 /* MAC101_DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MAC101_DNA.1; sourceTree = "<group>"; };
+		610E48C116416455002A9389 /* NKCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKCell.h; sourceTree = "<group>"; };
+		610E48C216416455002A9389 /* NKCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKCell.m; sourceTree = "<group>"; };
+		610E48C5164164E2002A9389 /* NKDNASymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKDNASymbol.h; sourceTree = "<group>"; };
+		610E48C6164164E2002A9389 /* NKDNASymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKDNASymbol.m; sourceTree = "<group>"; };
+		61893ECF16427DF50009D17B /* NKCell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NKCell+Mutator.h"; sourceTree = "<group>"; };
+		61893ED016427DF50009D17B /* NKCell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NKCell+Mutator.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		610E48A816416415002A9389 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				610E48B016416415002A9389 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		610E48A016416415002A9389 = {
+			isa = PBXGroup;
+			children = (
+				610E48B116416415002A9389 /* MAC101-DNA */,
+				610E48AE16416415002A9389 /* Frameworks */,
+				610E48AC16416415002A9389 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		610E48AC16416415002A9389 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				610E48AB16416415002A9389 /* MAC101-DNA */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		610E48AE16416415002A9389 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				610E48AF16416415002A9389 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		610E48B116416415002A9389 /* MAC101-DNA */ = {
+			isa = PBXGroup;
+			children = (
+				61893ECE16427DC70009D17B /* Categories */,
+				61893ECD16427DBD0009D17B /* Model */,
+				610E48B216416415002A9389 /* main.m */,
+				610E48B616416415002A9389 /* MAC101_DNA.1 */,
+				610E48B416416415002A9389 /* Supporting Files */,
+			);
+			path = "MAC101-DNA";
+			sourceTree = "<group>";
+		};
+		610E48B416416415002A9389 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				610E48B516416415002A9389 /* MAC101-DNA-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		61893ECD16427DBD0009D17B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				610E48C116416455002A9389 /* NKCell.h */,
+				610E48C216416455002A9389 /* NKCell.m */,
+				610E48C5164164E2002A9389 /* NKDNASymbol.h */,
+				610E48C6164164E2002A9389 /* NKDNASymbol.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		61893ECE16427DC70009D17B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				61893ECF16427DF50009D17B /* NKCell+Mutator.h */,
+				61893ED016427DF50009D17B /* NKCell+Mutator.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		610E48AA16416415002A9389 /* MAC101-DNA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 610E48BA16416415002A9389 /* Build configuration list for PBXNativeTarget "MAC101-DNA" */;
+			buildPhases = (
+				610E48A716416415002A9389 /* Sources */,
+				610E48A816416415002A9389 /* Frameworks */,
+				610E48A916416415002A9389 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MAC101-DNA";
+			productName = "MAC101-DNA";
+			productReference = 610E48AB16416415002A9389 /* MAC101-DNA */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		610E48A216416415002A9389 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Hexlet;
+			};
+			buildConfigurationList = 610E48A516416415002A9389 /* Build configuration list for PBXProject "MAC101-DNA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 610E48A016416415002A9389;
+			productRefGroup = 610E48AC16416415002A9389 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				610E48AA16416415002A9389 /* MAC101-DNA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		610E48A716416415002A9389 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				610E48B316416415002A9389 /* main.m in Sources */,
+				610E48C316416455002A9389 /* NKCell.m in Sources */,
+				610E48C7164164E2002A9389 /* NKDNASymbol.m in Sources */,
+				61893ED116427DF50009D17B /* NKCell+Mutator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		610E48B816416415002A9389 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		610E48B916416415002A9389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		610E48BB16416415002A9389 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MAC101-DNA/MAC101-DNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		610E48BC16416415002A9389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MAC101-DNA/MAC101-DNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		610E48A516416415002A9389 /* Build configuration list for PBXProject "MAC101-DNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				610E48B816416415002A9389 /* Debug */,
+				610E48B916416415002A9389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		610E48BA16416415002A9389 /* Build configuration list for PBXNativeTarget "MAC101-DNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				610E48BB16416415002A9389 /* Debug */,
+				610E48BC16416415002A9389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 610E48A216416415002A9389 /* Project object */;
+}
