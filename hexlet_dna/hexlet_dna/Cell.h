@@ -12,6 +12,7 @@
 
 @property NSMutableArray *dna;
 @property NSArray *nucleotides;
+@property uint dnaLength;
 
 - (int) hammingDistance: (id)cell;
 

@@ -14,14 +14,16 @@
     self = [super init];
     
     if(self){
-        _dna = [NSMutableArray arrayWithCapacity:100];
+        _dnaLength = 100;
+        _dna = [NSMutableArray arrayWithCapacity:_dnaLength];
         _nucleotides = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         
-        for(int i = 0; i < 100; i++){
-            int nucleotideIndex = arc4random() % 4;
-            
+        int nucleotideIndex;
+        
+        for(int i = 0; i < _dnaLength; i++){
+            //заполняем ДНК случайными нуклеотидами
+            nucleotideIndex = arc4random() % 4;
             [_dna insertObject:[_nucleotides objectAtIndex:nucleotideIndex] atIndex:i];
-            
          }
         
     }
