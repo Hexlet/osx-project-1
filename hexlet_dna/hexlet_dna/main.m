@@ -28,7 +28,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Mutating....");
         
         [cell1 mutate:55];
-        [cell1 mutate:38];
+        [cell2 mutate:38];
         
         NSLog(@"DNA1: %@",[cell1.dna componentsJoinedByString:@""]);
         NSLog(@"DNA2: %@",[cell2.dna componentsJoinedByString:@""]);

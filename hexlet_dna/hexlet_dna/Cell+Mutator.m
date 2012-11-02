@@ -21,10 +21,10 @@
         int indexToReplace = arc4random() % 100; //индекс для замены
         
         //проверяем не обработали ли мы уже этот индекс
-        if([replacedIndexes containsObject:[NSString stringWithFormat:@"%d",indexToReplace]]) continue;
+        if([replacedIndexes containsObject:[NSNumber numberWithInteger:indexToReplace]]) continue;
         
         //если нет, добавляем индекс в массив с отработаными индексами
-        [replacedIndexes addObject:[NSString stringWithFormat:@"%d",indexToReplace]];
+        [replacedIndexes addObject:[NSNumber numberWithInteger:indexToReplace]];
         
         //заменяем нуклеотид по индексу indexToReplace
         int nucleotideIndex = arc4random() % 4;
