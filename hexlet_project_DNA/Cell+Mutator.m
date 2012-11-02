@@ -14,7 +14,7 @@
 
 // мутация
 - (void) mutate: (int) x {
-    int c = x / 100.0f * self.DNA.count; // количество элементов для мутации
+    int c = round(x / 100.0f * self.DNA.count); // количество элементов для мутации
     NSMutableArray * indexes = [[NSMutableArray alloc] init]; // отобранные элементы
     
     // создаем массив из индексов всех элементов
