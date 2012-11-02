@@ -8,7 +8,7 @@
 
 #import "Cell.h"
 
-#define dnaChars [NSArray arrayWithObjects: @"A",@"T",@"G",@"C",nil]
+#define dnaChars @[@"A", @"T", @"G", @"C"]
 #define CHAIN_LENGTH 10
 
 @implementation Cell
