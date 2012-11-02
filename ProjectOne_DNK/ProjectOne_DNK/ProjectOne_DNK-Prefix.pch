@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'ProjectOne_DNK' target in the 'ProjectOne_DNK' project
-//
-
-#ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-#endif
