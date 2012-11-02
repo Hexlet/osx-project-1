@@ -18,6 +18,8 @@ int main(int argc, const char * argv[])
         NSLog(@"Hello, World!");
         Cell *cell1 = [[Cell alloc] init];
         [cell1 print];
+        Cell *cell2 = [[Cell alloc] init];
+        NSLog(@"Hamming disctance=%d", [cell1 hammingDistance:cell2]);
     }
     return 0;
 }

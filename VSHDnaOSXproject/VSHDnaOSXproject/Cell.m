@@ -8,24 +8,29 @@
 
 #import "Cell.h"
 
-@implementation Cell {
-    NSMutableArray *dna;
-}
-
+@implementation Cell
 -(Cell*)init
 {
     self = [super init];
-    dna = [[NSMutableArray alloc] init];
+    _dna = [[NSMutableArray alloc] init];
     for ( int i = 0; i < 100; i++ ) {
-        NSInteger value = (arc4random()%4);
-        [dna addObject:[[NSNumber alloc] initWithInteger:value]];
+        [_dna addObject:[NSNumber numberWithInt:(arc4random()%4)]];
     }
     return self;
 }
 -(void)print {
-    for(NSObject *item in dna ) {
+    for(NSObject *item in _dna ) {
         NSLog(@"%@", item);
     }
 }
 
+-(int)hammingDistance:(Cell *)secondCell{
+    int diff = 0;
+    for ( int i = 0; i < _dna.count; i++) {
+        if ( ! [_dna[i] isEqualToNumber:secondCell.dna[i]]) {
+            diff++;
+        }
+    }
+    return diff;
+}
 @end
