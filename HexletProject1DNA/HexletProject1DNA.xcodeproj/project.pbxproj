@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A62FC87C16443D9E003B49A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62FC87B16443D9E003B49A5 /* Foundation.framework */; };
+		A62FC87F16443D9E003B49A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A62FC87E16443D9E003B49A5 /* main.m */; };
+		A62FC88316443D9E003B49A5 /* HexletProject1DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A62FC88216443D9E003B49A5 /* HexletProject1DNA.1 */; };
+		A62FC88C16443DDE003B49A5 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A62FC88B16443DDE003B49A5 /* Cell.m */; };
+		A62FC895164459D1003B49A5 /* Cell+Muttator.m in Sources */ = {isa = PBXBuildFile; fileRef = A62FC894164459D1003B49A5 /* Cell+Muttator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A62FC87516443D9E003B49A5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				A62FC88316443D9E003B49A5 /* HexletProject1DNA.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A62FC87716443D9E003B49A5 /* HexletProject1DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HexletProject1DNA; sourceTree = BUILT_PRODUCTS_DIR; };
+		A62FC87B16443D9E003B49A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A62FC87E16443D9E003B49A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A62FC88116443D9E003B49A5 /* HexletProject1DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HexletProject1DNA-Prefix.pch"; sourceTree = "<group>"; };
+		A62FC88216443D9E003B49A5 /* HexletProject1DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HexletProject1DNA.1; sourceTree = "<group>"; };
+		A62FC88A16443DDE003B49A5 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = classes/Cell.h; sourceTree = "<group>"; };
+		A62FC88B16443DDE003B49A5 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = classes/Cell.m; sourceTree = "<group>"; };
+		A62FC893164459D1003B49A5 /* Cell+Muttator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+Muttator.h"; path = "Categories/Cell+Muttator.h"; sourceTree = "<group>"; };
+		A62FC894164459D1003B49A5 /* Cell+Muttator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+Muttator.m"; path = "Categories/Cell+Muttator.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A62FC87416443D9E003B49A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A62FC87C16443D9E003B49A5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A62FC86C16443D9D003B49A5 = {
+			isa = PBXGroup;
+			children = (
+				A62FC87D16443D9E003B49A5 /* HexletProject1DNA */,
+				A62FC87A16443D9E003B49A5 /* Frameworks */,
+				A62FC87816443D9E003B49A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A62FC87816443D9E003B49A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A62FC87716443D9E003B49A5 /* HexletProject1DNA */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A62FC87A16443D9E003B49A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A62FC87B16443D9E003B49A5 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A62FC87D16443D9E003B49A5 /* HexletProject1DNA */ = {
+			isa = PBXGroup;
+			children = (
+				A62FC89116445996003B49A5 /* Categories */,
+				A62FC88916443DB5003B49A5 /* classes */,
+				A62FC87E16443D9E003B49A5 /* main.m */,
+				A62FC88216443D9E003B49A5 /* HexletProject1DNA.1 */,
+				A62FC88016443D9E003B49A5 /* Supporting Files */,
+			);
+			path = HexletProject1DNA;
+			sourceTree = "<group>";
+		};
+		A62FC88016443D9E003B49A5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A62FC88116443D9E003B49A5 /* HexletProject1DNA-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A62FC88916443DB5003B49A5 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				A62FC88A16443DDE003B49A5 /* Cell.h */,
+				A62FC88B16443DDE003B49A5 /* Cell.m */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
+		A62FC89116445996003B49A5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A62FC893164459D1003B49A5 /* Cell+Muttator.h */,
+				A62FC894164459D1003B49A5 /* Cell+Muttator.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A62FC87616443D9E003B49A5 /* HexletProject1DNA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A62FC88616443D9E003B49A5 /* Build configuration list for PBXNativeTarget "HexletProject1DNA" */;
+			buildPhases = (
+				A62FC87316443D9E003B49A5 /* Sources */,
+				A62FC87416443D9E003B49A5 /* Frameworks */,
+				A62FC87516443D9E003B49A5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HexletProject1DNA;
+			productName = HexletProject1DNA;
+			productReference = A62FC87716443D9E003B49A5 /* HexletProject1DNA */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A62FC86E16443D9D003B49A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = A62FC87116443D9D003B49A5 /* Build configuration list for PBXProject "HexletProject1DNA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A62FC86C16443D9D003B49A5;
+			productRefGroup = A62FC87816443D9E003B49A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A62FC87616443D9E003B49A5 /* HexletProject1DNA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A62FC87316443D9E003B49A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A62FC87F16443D9E003B49A5 /* main.m in Sources */,
+				A62FC88C16443DDE003B49A5 /* Cell.m in Sources */,
+				A62FC895164459D1003B49A5 /* Cell+Muttator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A62FC88416443D9E003B49A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A62FC88516443D9E003B49A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A62FC88716443D9E003B49A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HexletProject1DNA/HexletProject1DNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A62FC88816443D9E003B49A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HexletProject1DNA/HexletProject1DNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A62FC87116443D9D003B49A5 /* Build configuration list for PBXProject "HexletProject1DNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A62FC88416443D9E003B49A5 /* Debug */,
+				A62FC88516443D9E003B49A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A62FC88616443D9E003B49A5 /* Build configuration list for PBXNativeTarget "HexletProject1DNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A62FC88716443D9E003B49A5 /* Debug */,
+				A62FC88816443D9E003B49A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A62FC86E16443D9D003B49A5 /* Project object */;
+}
