@@ -11,7 +11,7 @@
 #define CELL_CAPACITY 100
 
 @interface Cell : NSObject {
-    NSArray *fillChars;
+    NSArray *geneticMaterial;
 }
 
 @property NSMutableArray *DNA;

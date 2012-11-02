@@ -14,12 +14,12 @@
     self = [super init];
     
     if(self){
-        fillChars = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
+        geneticMaterial = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil]; //возможные значения генов
         
         _DNA = [[NSMutableArray alloc] initWithCapacity:(CELL_CAPACITY)];
         
         for (int i=0; i < CELL_CAPACITY; i++) {
-            [_DNA insertObject:[fillChars objectAtIndex: arc4random() % [fillChars count]] atIndex:i];
+            [_DNA insertObject:[geneticMaterial objectAtIndex: arc4random() % [geneticMaterial count]] atIndex:i]; // заполняем клетку рандомными генами
         }
     }
     
