@@ -30,6 +30,8 @@
         
         int xCount = (int) dnaLenght * xPercentMutator / 100; //кол-во ячеек ДНК, подлежащих изменению
         
+        NSString *newCell = [[NSString alloc] init]; //здесь будем хранить новое значение ячейки ДНК
+        
         NSMutableArray *cellMutator = [NSMutableArray arrayWithCapacity:xCount]; //массив хранения номеров измененных ячеек ДНК
         
         int i = 0;
@@ -45,7 +47,19 @@
                 [cellMutator addObject:[NSString stringWithFormat:@"%d", randomIndex]];
                 
                 //меняем ячейку ДНК
-                [self.DNA replaceObjectAtIndex:randomIndex withObject:[self randomCellValueATGC]];
+                BOOL changeCellRun = YES;//метка о выходе из цикла по смене ячейки ДНК
+                
+                do {
+                    newCell = [self randomCellValueATGC];
+                                
+                    if (![newCell isEqualToString:[self.DNA objectAtIndex:randomIndex]]) {//если ячейка меняется
+                        [self.DNA replaceObjectAtIndex:randomIndex withObject:newCell]; //меняем ячейку ДНК
+                        changeCellRun = NO;//метка о выходе
+                    }
+
+                } while (changeCellRun);
+                
+                                
                 
                 i++; //увеличиваем счетчик уже измененных ячеек ДНК
                 
