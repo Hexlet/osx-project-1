@@ -40,7 +40,12 @@
 }
 
 - (void)mutateAtPosition:(int)index {
-	[_DNA replaceObjectAtIndex:index withObject:[self getRandomChar]];
+	NSString *current_char = [_DNA objectAtIndex:index];
+	NSString *new_char = [self getRandomChar];
+	while (current_char == new_char) {
+		new_char = [self getRandomChar];
+	}
+	[_DNA replaceObjectAtIndex:index withObject:new_char];
 }
 
 @end

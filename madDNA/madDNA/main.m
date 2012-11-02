@@ -18,14 +18,15 @@
 @implementation Cell (mutator)
 
 - (void)mutate:(int)percent {
-	NSMutableSet *mutated = [NSMutableSet set];
-	NSNumber *idx;
-	while ([mutated count] < percent) {
-		idx = [NSNumber numberWithInt:arc4random() % 100];
-		if (![mutated containsObject:idx]) {
-			[self mutateAtPosition:[idx intValue]];
-			[mutated addObject:idx];
-		}
+	int i;
+	NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:100];
+	for (i = 0; i < 100; i++) {
+		[indexes insertObject:[NSNumber numberWithInt:i] atIndex:i];
+	}
+	while ((100 - [indexes count]) < percent) {
+		int idx = arc4random() % [indexes count];
+		[self mutateAtPosition:[[indexes objectAtIndex:idx] intValue]];
+		[indexes removeObjectAtIndex:idx];
 	}
 }
 
