@@ -1,0 +1,249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7932E761642F81F0045B729 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7932E751642F81F0045B729 /* Foundation.framework */; };
+		C7932E791642F81F0045B729 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7932E781642F81F0045B729 /* main.m */; };
+		C7932E7D1642F81F0045B729 /* Lab_DNK_Shpilevoy.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7932E7C1642F81F0045B729 /* Lab_DNK_Shpilevoy.1 */; };
+		C7932E851642F8380045B729 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7932E841642F8380045B729 /* Cell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C7932E6F1642F81F0045B729 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				C7932E7D1642F81F0045B729 /* Lab_DNK_Shpilevoy.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C7932E711642F81F0045B729 /* Lab_DNK_Shpilevoy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab_DNK_Shpilevoy; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7932E751642F81F0045B729 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C7932E781642F81F0045B729 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C7932E7B1642F81F0045B729 /* Lab_DNK_Shpilevoy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lab_DNK_Shpilevoy-Prefix.pch"; sourceTree = "<group>"; };
+		C7932E7C1642F81F0045B729 /* Lab_DNK_Shpilevoy.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Lab_DNK_Shpilevoy.1; sourceTree = "<group>"; };
+		C7932E831642F8380045B729 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		C7932E841642F8380045B729 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7932E6E1642F81F0045B729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7932E761642F81F0045B729 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7932E661642F81F0045B729 = {
+			isa = PBXGroup;
+			children = (
+				C7932E771642F81F0045B729 /* Lab_DNK_Shpilevoy */,
+				C7932E741642F81F0045B729 /* Frameworks */,
+				C7932E721642F81F0045B729 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7932E721642F81F0045B729 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7932E711642F81F0045B729 /* Lab_DNK_Shpilevoy */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7932E741642F81F0045B729 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7932E751642F81F0045B729 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7932E771642F81F0045B729 /* Lab_DNK_Shpilevoy */ = {
+			isa = PBXGroup;
+			children = (
+				C7932E781642F81F0045B729 /* main.m */,
+				C7932E7C1642F81F0045B729 /* Lab_DNK_Shpilevoy.1 */,
+				C7932E7A1642F81F0045B729 /* Supporting Files */,
+				C7932E831642F8380045B729 /* Cell.h */,
+				C7932E841642F8380045B729 /* Cell.m */,
+			);
+			path = Lab_DNK_Shpilevoy;
+			sourceTree = "<group>";
+		};
+		C7932E7A1642F81F0045B729 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7932E7B1642F81F0045B729 /* Lab_DNK_Shpilevoy-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7932E701642F81F0045B729 /* Lab_DNK_Shpilevoy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7932E801642F81F0045B729 /* Build configuration list for PBXNativeTarget "Lab_DNK_Shpilevoy" */;
+			buildPhases = (
+				C7932E6D1642F81F0045B729 /* Sources */,
+				C7932E6E1642F81F0045B729 /* Frameworks */,
+				C7932E6F1642F81F0045B729 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lab_DNK_Shpilevoy;
+			productName = Lab_DNK_Shpilevoy;
+			productReference = C7932E711642F81F0045B729 /* Lab_DNK_Shpilevoy */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7932E681642F81F0045B729 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Stanislav Shpilevoy";
+			};
+			buildConfigurationList = C7932E6B1642F81F0045B729 /* Build configuration list for PBXProject "Lab_DNK_Shpilevoy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C7932E661642F81F0045B729;
+			productRefGroup = C7932E721642F81F0045B729 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7932E701642F81F0045B729 /* Lab_DNK_Shpilevoy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7932E6D1642F81F0045B729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7932E791642F81F0045B729 /* main.m in Sources */,
+				C7932E851642F8380045B729 /* Cell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C7932E7E1642F81F0045B729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C7932E7F1642F81F0045B729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C7932E811642F81F0045B729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lab_DNK_Shpilevoy/Lab_DNK_Shpilevoy-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C7932E821642F81F0045B729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Lab_DNK_Shpilevoy/Lab_DNK_Shpilevoy-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7932E6B1642F81F0045B729 /* Build configuration list for PBXProject "Lab_DNK_Shpilevoy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7932E7E1642F81F0045B729 /* Debug */,
+				C7932E7F1642F81F0045B729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7932E801642F81F0045B729 /* Build configuration list for PBXNativeTarget "Lab_DNK_Shpilevoy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7932E811642F81F0045B729 /* Debug */,
+				C7932E821642F81F0045B729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7932E681642F81F0045B729 /* Project object */;
+}

@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Lab_DNK_Shpilevoy' target in the 'Lab_DNK_Shpilevoy' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
