@@ -30,7 +30,7 @@
     if (self) {
         self.DNA = [NSMutableArray arrayWithCapacity: len];
         for (int i = 0; i < len; i++) {
-            [self.DNA replaceObjectAtIndex: i withObject: [self getRandomPart]];
+            [self.DNA setObject:[self getRandomPart] atIndexedSubscript:i];
         }
     }
     return self;
