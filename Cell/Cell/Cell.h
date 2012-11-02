@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Header.h"
 
 
 @interface Cell : NSObject{
@@ -16,6 +16,5 @@
 @property NSMutableArray* dna;
 -(int)hammingDistance: (Cell*)theCell;
 -(NSString*)getRandomChar;
--(BOOL)isEqualItem:(NSString*)theItem atIndex: (int)theIndex;
 
 @end

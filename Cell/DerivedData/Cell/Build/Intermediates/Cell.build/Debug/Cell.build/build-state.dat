@@ -3,13 +3,14 @@ v5
 r1
 cCheck dependencies
 cProcessPCH /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/PrecompiledHeaders/Cell-Prefix-fdhqhidwfjatriejltfbkcqklcav/Cell-Prefix.pch.pth Cell/Cell-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell+mutator.o /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.o /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.o /Users/igor/work/xcode/osx-project-1/Cell/Cell/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cLd /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/Cell normal x86_64
 
 N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
-c00000000506D00D900000000000000AA
-t1349320921
+c000000005092D57300000000000000AA
+t1351800179
 s170
 
 N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Foundation.framework/Foundation
@@ -22,6 +23,16 @@ c00000000505A901E00000000000015F7
 t1348112414
 s5623
 
+N/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.h
+c0000000050941F2200000000000000FB
+t1351884578
+s251
+
+N/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.m
+c0000000050942A1000000000000005C7
+t1351887376
+s1479
+
 N/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell-Prefix.pch
 c0000000050904A5C0000000000000095
 t1351633500
@@ -29,40 +40,52 @@ s149
 i<Foundation/Foundation.h>
 
 N/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.h
-c000000005090DAE80000000000000193
-t1351670504
-s403
+c00000000509421810000000000000167
+t1351885185
+s359
 
 N/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m
-c000000005090E04E00000000000004BE
-t1351671886
-s1214
+c000000005094225700000000000003B4
+t1351885399
+s948
+
+N/Users/igor/work/xcode/osx-project-1/Cell/Cell/Header.h
+c0000000050941FCA00000000000000E5
+t1351884746
+s229
 
 N/Users/igor/work/xcode/osx-project-1/Cell/Cell/main.m
-c00000000509140520000000000000875
-t1351696466
-s2165
+c00000000509429B80000000000000268
+t1351887288
+s616
+
+N/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell+mutator.o
+t1351887368
+s8528
 
 N/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.LinkFileList
-c0000000050904C2A0000000000000110
-t1351633962
-s272
+c0000000050941CF500000000000001A0
+t1351884021
+s416
 
 N/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.o
-t1351671930
-s13624
+t1351885401
+s12536
 
 N/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.o
-t1351696467
-s8764
+t1351887368
+s5552
 
 N/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/PrecompiledHeaders/Cell-Prefix-fdhqhidwfjatriejltfbkcqklcav/Cell-Prefix.pch.pth
 t1351633962
 s10142644
 
 N/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/Cell
-t1351696467
-s16244
+t1351887368
+s16544
+
+CBuild AST from /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.m
+r0
 
 CBuild AST from /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m
 r0
@@ -72,11 +95,24 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies0b0eebd97741b641^7652ebd97741b641^---0#1#0#--18"Check dependencies36"A63DF30E-533B-42BC-ACE9-98CFC0F58C26-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies2ee386906144b641^c03d87906144b641^---0#1#0#--18"Check dependencies36"2EDEAE9A-87F6-4F75-B985-D4A276FC2641-
+
+CCompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell+mutator.o /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s373580176.538290
+e373580176.571743
+r1
+xCompileC
+xDerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell+mutator.o
+x/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.m5df889906144b641^f25d92906144b641^---0#0#0#-19%DVTDocumentLocation2@77"file://localhost/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.m0000000000000000^3392"CompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell+mutator.o Cell/Cell+mutator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/igor/work/xcode/osx-project-1/Cell    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-generated-files.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-own-target-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-all-target-headers.hmap -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-project-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources/x86_64 -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources -F/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -include /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/PrecompiledHeaders/Cell-Prefix-fdhqhidwfjatriejltfbkcqklcav/Cell-Prefix.pch -MMD -MT dependencies -MF /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell+mutator.d --serialize-diagnostics /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell+mutator.dia -c /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell+mutator.m -o /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell+mutator.o36"80703930-A88B-4A68-8297-1ADBF654F517-
 
 CCompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.o /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s373364730.042152
-e373364730.096363
+s373578201.338698
+e373578201.382336
 r1
 xCompileC
 xDerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.o
@@ -85,11 +121,11 @@ xnormal
 xx86_64
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Compile /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m65fd0afa1741b641^6dac18fa1741b641^---0#0#0#-19%DVTDocumentLocation2@69"file://localhost/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m0000000000000000^3344"CompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.o Cell/Cell.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/igor/work/xcode/osx-project-1/Cell    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-generated-files.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-own-target-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-all-target-headers.hmap -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-project-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources/x86_64 -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources -F/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -include /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/PrecompiledHeaders/Cell-Prefix-fdhqhidwfjatriejltfbkcqklcav/Cell-Prefix.pch -MMD -MT dependencies -MF /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.d --serialize-diagnostics /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.dia -c /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m -o /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.o36"2ED3B72D-59DF-4685-B8AD-F4C3219A9641-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Compile /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m34da56d95944b641^d2e161d95944b641^---0#0#0#-19%DVTDocumentLocation2@69"file://localhost/Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m0000000000000000^3344"CompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.o Cell/Cell.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/igor/work/xcode/osx-project-1/Cell    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-generated-files.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-own-target-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-all-target-headers.hmap -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-project-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources/x86_64 -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources -F/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -include /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/PrecompiledHeaders/Cell-Prefix-fdhqhidwfjatriejltfbkcqklcav/Cell-Prefix.pch -MMD -MT dependencies -MF /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.d --serialize-diagnostics /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.dia -c /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell.m -o /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.o36"E7E9DBAD-E8F8-4945-B603-3D5983DAB4DE-
 
 CCompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.o /Users/igor/work/xcode/osx-project-1/Cell/Cell/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s373389267.290922
-e373389267.639410
+s373580168.320808
+e373580168.357491
 r1
 xCompileC
 xDerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.o
@@ -98,17 +134,17 @@ xnormal
 xx86_64
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Compile /Users/igor/work/xcode/osx-project-1/Cell/Cell/main.m7fa24ad37741b641^10afa3d37741b641^---0#0#0#-19%DVTDocumentLocation2@69"file://localhost/Users/igor/work/xcode/osx-project-1/Cell/Cell/main.m0000000000000000^3344"CompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.o Cell/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/igor/work/xcode/osx-project-1/Cell    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-generated-files.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-own-target-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-all-target-headers.hmap -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-project-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources/x86_64 -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources -F/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -include /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/PrecompiledHeaders/Cell-Prefix-fdhqhidwfjatriejltfbkcqklcav/Cell-Prefix.pch -MMD -MT dependencies -MF /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.dia -c /Users/igor/work/xcode/osx-project-1/Cell/Cell/main.m -o /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.o36"4FE02ABE-9421-4C82-B889-8C0C478756EE-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection61"Compile /Users/igor/work/xcode/osx-project-1/Cell/Cell/main.md25552886144b641^ba845b886144b641^---0#0#0#-19%DVTDocumentLocation2@69"file://localhost/Users/igor/work/xcode/osx-project-1/Cell/Cell/main.m0000000000000000^3344"CompileC DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.o Cell/main.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/igor/work/xcode/osx-project-1/Cell    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=0 -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wduplicate-method-match -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.8 -g -Wno-sign-conversion "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-generated-files.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-own-target-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-all-target-headers.hmap -iquote /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Cell-project-headers.hmap -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources/x86_64 -I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/DerivedSources -F/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -include /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/PrecompiledHeaders/Cell-Prefix-fdhqhidwfjatriejltfbkcqklcav/Cell-Prefix.pch -MMD -MT dependencies -MF /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.dia -c /Users/igor/work/xcode/osx-project-1/Cell/Cell/main.m -o /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/main.o36"420E0AB4-052F-4965-AB05-B9ED05A51B96-
 
 CLd /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/Cell normal x86_64
-s373389267.646483
-e373389267.789905
+s373580176.578457
+e373580176.605273
 r1
 xLd
 x/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/Cell
 xnormal
 xx86_64
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Link /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/Cellcc99a5d37741b641^7638cad37741b641^---0#0#0#--857"Ld DerivedData/Cell/Build/Products/Debug/Cell normal x86_64    cd /Users/igor/work/xcode/osx-project-1/Cell    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -F/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -filelist /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.LinkFileList -mmacosx-version-min=10.8 -fobjc-arc -fobjc-link-runtime -framework Foundation -o /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/Cell36"D2BD75BA-B4C0-49E2-BD48-80E7F7ECBA9A-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Link /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/Cell912894906144b641^d4f39a906144b641^---0#0#0#--857"Ld DerivedData/Cell/Build/Products/Debug/Cell normal x86_64    cd /Users/igor/work/xcode/osx-project-1/Cell    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -F/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug -filelist /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/Cell.build/Debug/Cell.build/Objects-normal/x86_64/Cell.LinkFileList -mmacosx-version-min=10.8 -fobjc-arc -fobjc-link-runtime -framework Foundation -o /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/Cell36"9DDC7E74-0BE6-47D9-9A82-030D77274ED1-
 
 CProcessPCH /Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Intermediates/PrecompiledHeaders/Cell-Prefix-fdhqhidwfjatriejltfbkcqklcav/Cell-Prefix.pch.pth Cell/Cell-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s373326762.094178

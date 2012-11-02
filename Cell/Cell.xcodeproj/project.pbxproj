@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78323F6C164454260046AD09 /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 78323F6B164454260046AD09 /* Cell+mutator.m */; };
 		78946BB6164081DC000C0023 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78946BB5164081DC000C0023 /* Foundation.framework */; };
 		78946BB9164081DC000C0023 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78946BB8164081DC000C0023 /* main.m */; };
 		78946BBD164081DC000C0023 /* Cell.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78946BBC164081DC000C0023 /* Cell.1 */; };
@@ -27,6 +28,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		78323F6A164454260046AD09 /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		78323F6B164454260046AD09 /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+		78323F6E164456730046AD09 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		78946BB1164081DC000C0023 /* Cell */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Cell; sourceTree = BUILT_PRODUCTS_DIR; };
 		78946BB5164081DC000C0023 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78946BB8164081DC000C0023 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				78946BB8164081DC000C0023 /* main.m */,
+				78323F6E164456730046AD09 /* Header.h */,
+				78323F6A164454260046AD09 /* Cell+mutator.h */,
+				78323F6B164454260046AD09 /* Cell+mutator.m */,
 				78946BBC164081DC000C0023 /* Cell.1 */,
 				78946BBA164081DC000C0023 /* Supporting Files */,
 				78946BC31640822D000C0023 /* Cell.h */,
@@ -146,6 +153,7 @@
 			files = (
 				78946BB9164081DC000C0023 /* main.m in Sources */,
 				78946BC51640822D000C0023 /* Cell.m in Sources */,
+				78323F6C164454260046AD09 /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +250,7 @@
 				78946BC2164081DC000C0023 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

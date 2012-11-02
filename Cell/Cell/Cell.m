@@ -9,7 +9,7 @@
 #import "Cell.h"
 
 @implementation Cell
-@synthesize dna;
+@synthesize dna=_dna;
 
 -(id)init{
     self=[super init];
@@ -17,10 +17,10 @@
         //инициализируем шаблон
         templ=[NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
         
-        dna=[NSMutableArray arrayWithCapacity:100];
+        _dna=[NSMutableArray arrayWithCapacity:elements];
         
-        for(int cc=0;cc<100;cc++)
-            [dna setObject:[self getRandomChar] atIndexedSubscript:cc];
+        for(int cc=0;cc<elements;cc++)
+            [_dna setObject:[self getRandomChar] atIndexedSubscript:cc];
         return self;
     }
     return nil;
@@ -28,9 +28,8 @@
 
 -(int)hammingDistance:(Cell *)theCell{
     int counter=0;
-    for(int cc=0;cc<100;cc++)
-        if([self isEqualItem:[theCell.dna objectAtIndex:cc] atIndex:cc]==NO)counter++;
-
+    for(int cc=0;cc<elements;cc++)
+        if(! [theCell.dna[cc] isEqual: self.dna[cc]])counter++;
     return counter;
     
 }
@@ -38,12 +37,6 @@
 -(NSString*)getRandomChar{
     /* возвращаем случайный символ для DNA */
     return templ[arc4random() % 4];
-}
-
--(BOOL)isEqualItem:(id )theItem atIndex:(int)theIndex{
-    NSString *str1=(NSString*)[dna objectAtIndex:theIndex]; //получим символ с массива
-    if([str1 isEqualToString:(NSString*)theItem])return YES; //сравним их
-    return NO;
 }
 
 @end
