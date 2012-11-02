@@ -11,15 +11,12 @@
 #define capacityOfDNA 100 //количество генов в последовательности ДНК
 #define capacityOfGene 4 //количество генов в одной ячейке ДНК
 
-extern const NSString *gene[capacityOfGene]; // чтобы не создавать каждый раз новые для каждого объекта
-
 @interface Cell : NSObject {
     NSMutableArray *DNA; //собственно, ДНК
 }
 
 @property (nonatomic,readonly) NSArray *DNA; // ридонли свойство для доступа извне
 
-/* метод, определяющий, насколько одна последовательность отличается от другой,
-   возвращает количество позиций, на которых есть несоответствие */
--(int)hammingDistance:(Cell *)someCell;
+-(NSString *)getRandomGene; // для формирования случайного символа
+-(int)hammingDistance:(Cell *)someCell; // подсчёт хэммингова числа
 @end

@@ -8,7 +8,6 @@
 
 #import "Cell.h"
 
-const NSString *gene[capacityOfGene] = {@"A",@"T",@"G",@"C"};
 
 @implementation Cell
 
@@ -19,13 +18,20 @@ const NSString *gene[capacityOfGene] = {@"A",@"T",@"G",@"C"};
     self = [super init]; // сам объект обязан проинициализироваться методом родителя
     if (self) {
         DNA = [[NSMutableArray alloc] initWithCapacity:capacityOfDNA]; // готовим массив для ДНК
-        NSUInteger generated; // для сгенерированного индекса нужной буквы
         for (int i=0; i<capacityOfDNA; i++) {
-            generated = arc4random() % capacityOfGene;
-            [DNA addObject:gene[generated]];
+            [DNA addObject:[self getRandomGene]];
         }
     }
     return self;
+}
+
+/* Следующий метод нужен для того, чтобы можно было заполнять
+ ДНК "статическими" объектами, которые не поменяешь. Таким образом,
+ каждая созданная последовательность ДНК будет состоять из указателей
+ на один из четырёх статических символов в памяти. */
+-(NSString *)getRandomGene{
+    static NSString *gene[capacityOfGene]={@"A",@"T",@"G",@"C"};
+    return gene[arc4random()%capacityOfGene];
 }
 
 -(NSString *)description //этот метод позволит выводить ДНК в виде NSLog(@"%@",myCell)
@@ -35,11 +41,6 @@ const NSString *gene[capacityOfGene] = {@"A",@"T",@"G",@"C"};
 
 -(int)hammingDistance:(Cell *)someCell {
     int ham = 0;
-    /* долго думал, и пришёл к выводу, что так сравнивать лучше всего, так как 
-     у нас нет прямого доступа к массиву DNA объекта someCell, а давать доступ 
-     к модификации последовательности "вручную" я не хочу. Если сделать 
-     @property (nonatomic,readonly), то метод в категории не сможет ничего сделать
-     с моей последовательностью ДНК */
     for (int i=0; i<capacityOfDNA; i++) {
         if ([[DNA objectAtIndex:i] isNotEqualTo:[[someCell DNA] objectAtIndex:i]]) ham++;
     }
