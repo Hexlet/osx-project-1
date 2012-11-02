@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C30B68F81643C78600BFC131 /* Cell + Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = C30B68F71643C78600BFC131 /* Cell + Mutator.m */; };
 		C3208A4C16397AFF00765136 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3208A4B16397AFF00765136 /* Foundation.framework */; };
 		C3208A4F16397AFF00765136 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3208A4E16397AFF00765136 /* main.m */; };
 		C3208A5316397AFF00765136 /* DNK.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3208A5216397AFF00765136 /* DNK.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C30B68F61643C78600BFC131 /* Cell + Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell + Mutator.h"; sourceTree = "<group>"; };
+		C30B68F71643C78600BFC131 /* Cell + Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell + Mutator.m"; sourceTree = "<group>"; };
 		C3208A4716397AFF00765136 /* DNK */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNK; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3208A4B16397AFF00765136 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C3208A4E16397AFF00765136 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				C3208A4E16397AFF00765136 /* main.m */,
+				C30B68F61643C78600BFC131 /* Cell + Mutator.h */,
+				C30B68F71643C78600BFC131 /* Cell + Mutator.m */,
 				C3208A5916397E5C00765136 /* Cell.h */,
 				C3208A5A16397E5C00765136 /* Cell.m */,
 				C3208A5216397AFF00765136 /* DNK.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				C3208A4F16397AFF00765136 /* main.m in Sources */,
 				C3208A5B16397E5C00765136 /* Cell.m in Sources */,
+				C30B68F81643C78600BFC131 /* Cell + Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				C3208A5816397AFF00765136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

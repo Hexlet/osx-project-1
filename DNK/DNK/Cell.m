@@ -8,24 +8,23 @@
 
 #import "Cell.h"
 
-@implementation Cell{
-    int i,d;
+@implementation Cell{    
     
 }
-@synthesize DNA, chars, arnd;
+@synthesize DNA, nucleotides, arnd;
 
 - (int) hammingDistance:(Cell *)otherCell
 {
-    d=0;
+    int distance=0;
     
-    for (i=0; i<100; i++)
+    for (int i=0; i<100; i++)
     {
         if (self.DNA[i] != otherCell.DNA[i])
         {
-            d++;
+            distance++;
         }
     }
-    return d;
+    return distance;
 }
 
 - (id)init
@@ -34,12 +33,12 @@
     
     if (self)
     {
-        chars =[[NSMutableArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
+        nucleotides =[[NSMutableArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
         DNA = [[NSMutableArray alloc] initWithCapacity:100];
-        
-        for (i=0; i<100; i++)
+       
+        for (int i=0; i<100; i++)
         {
-            [DNA insertObject:chars[arc4random() %4] atIndex:i];
+            [DNA insertObject:nucleotides[arc4random() %4] atIndex:i];
         }
     }
     return self;

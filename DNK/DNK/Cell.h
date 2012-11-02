@@ -11,7 +11,7 @@
 @interface Cell : NSObject
 @property (strong, nonatomic) NSMutableArray* DNA;
 @property (strong, nonatomic) NSMutableArray* arnd;
-@property (strong, nonatomic) NSArray *chars;
+@property (strong, nonatomic) NSArray *nucleotides;
 - (int) hammingDistance:(Cell*)otherCell;
 
 @end
