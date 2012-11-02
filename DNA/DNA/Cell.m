@@ -10,11 +10,15 @@
 #import "Cell.h"
 
 
-@implementation Cell
+@implementation Cell {
+    NSArray *availableSymbols;
+}
+
 @synthesize dna;
 
 - (id)init {
     if (self = [super init]) {
+        availableSymbols = @[@"A", @"T", @"G", @"C"];
         [self loadDNA];
     }
     return self;
@@ -28,26 +32,7 @@
 }
 
 - (NSString *)generateRandomSymbol {
-    NSString *result = nil;
-    int newChar = arc4random()%4;
-    switch (newChar) {
-        case 0:
-            result = @"A";
-            break;
-        case 1:
-            result = @"T";
-            break;
-        case 2:
-            result = @"G";
-            break;
-        case 3:
-            result = @"C";
-            break;
-        default:
-            result = @"A";
-            break;
-    }
-    return result;
+    return [availableSymbols objectAtIndex:arc4random()%4];
 }
 
 - (int)hammingDistance:(Cell *)cell {
