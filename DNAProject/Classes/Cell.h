@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 /* Количество элементов */
-#define kCellDNALength 10
+#define kCellDNALength 100
 
 @interface Cell : NSObject
 
