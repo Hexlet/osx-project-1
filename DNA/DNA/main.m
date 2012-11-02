@@ -12,7 +12,7 @@
 @implementation Cell(Mutator)
 
 -(void) mutate:(int)percent {
-    // Если хотят мутировать на более чем сто процентов, то ничего с ДНК не делаем
+    // Если хотят мутировать на более чем сто процентов, то вызываем исключение
     if (percent > 100 || percent < 1) {
         [NSException raise:@"Invalid percent value" format:@"percent of %d is invalid", percent];
         return;
@@ -23,8 +23,8 @@
     int count = [self.DNA count] / 100 * percent;
     
     // Массив с индексами измененных элементов ДНК
-    NSMutableArray *changed;
-    changed = [[NSMutableArray alloc] init];
+    NSMutableArray *changed = [[NSMutableArray alloc] init];
+    
     for (int i = 0; i <= count; i++) {
         int position = arc4random() % [self.DNA count];
         while ([changed containsObject:[NSNumber numberWithInt:position]]) {
@@ -33,11 +33,9 @@
         }
         
         // Заменяем нуклеотид
-        int nucleotide_position = arc4random() % [self.nucleotides length];
-        NSString *nucleotide = [NSString stringWithFormat:@"%C", [self.nucleotides characterAtIndex:nucleotide_position]];
+        NSString* nucleotide = [self getRandomNucleotide];
         while ([self.DNA[position] isEqualTo:nucleotide]) {
-            nucleotide_position = arc4random() % [self.nucleotides length];
-            nucleotide = [NSString stringWithFormat:@"%C", [self.nucleotides characterAtIndex:nucleotide_position]];
+            nucleotide = [self getRandomNucleotide];
         }
         
         [self.DNA replaceObjectAtIndex:position withObject:nucleotide];
