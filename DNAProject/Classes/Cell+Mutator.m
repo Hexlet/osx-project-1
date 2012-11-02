@@ -31,7 +31,7 @@
     }
 
     // Количество элементов, которые должны мутировать
-    NSUInteger mutationCount = (NSUInteger) floorf(kCellDNALength * mutationPercent / 100.0);
+    NSUInteger mutationCount = (NSUInteger) (kCellDNALength * mutationPercent / 100);
 
     // Вспомогательный массив индексов
     static NSMutableArray *mutatingIndices = nil;
