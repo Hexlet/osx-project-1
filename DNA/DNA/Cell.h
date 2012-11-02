@@ -14,6 +14,6 @@
 
 -(void) print;
 -(NSInteger) hammingDistance:(Cell*) alienDNA;
-+(NSString*) genLatter:(int) charIndex;
++(NSString*) genLatter;
 
 @end

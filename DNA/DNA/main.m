@@ -30,7 +30,7 @@
             }
             //Генерируем букву
             do{
-                s = [Cell genLatter:arc4random()%3];
+                s = [Cell genLatter];
             }while ([self.DNA objectAtIndex:index] == s);
             
             [self.DNA replaceObjectAtIndex:index withObject:s];
@@ -51,15 +51,12 @@ int main(int argc, const char * argv[])
         
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
-        
         NSLog(@"Hamming distance: %li", [cell1 hammingDistance:cell2]);
         
         [cell1 mutate:13];
         [cell2 mutate:83];
         
         NSLog(@"Hamming distance after mutate: %li", [cell1 hammingDistance:cell2]);
-
-
         
     }
     return 0;
