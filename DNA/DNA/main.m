@@ -20,7 +20,7 @@
     NSLog(@"Mutating for %i percents", percent);
     // В нашем конкретном случае можно было бы и не вычислять проценты, у нас
     // как раз 100 элементов.
-    int count = [self.DNA count] / 100 * percent;
+    int count = round([self.DNA count] / 100 * percent);
     
     // Массив с индексами измененных элементов ДНК
     NSMutableArray *changed = [[NSMutableArray alloc] init];
@@ -56,9 +56,7 @@ int main(int argc, const char * argv[])
         
         [cell mutate:13];
         [cell2 mutate:23];
-        NSLog(@"Distance after mutation: %i", [cell hammingDistance:cell2]);
-
-        
+        NSLog(@"Distance after mutation: %i", [cell hammingDistance:cell2]);        
     }
     return 0;
 }
