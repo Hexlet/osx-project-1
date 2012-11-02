@@ -15,20 +15,15 @@
     if (percent > 100 && percent <= 0) return; // Если передали 0, то делать ничего не нужно.
     int qnt = DNALength * percent / 100; // Количество элементов для замены
     
+    // Массив индексов
     NSMutableArray *idx;
     idx = [[NSMutableArray alloc] initWithCapacity:[self.dna count]];
     for (int i = 0; i < [self.dna count]; i++) [idx addObject:[NSNumber numberWithInt:i]];
     
-    NSMutableArray *shuffle; // Создается массив случайных индексов для замены
-    shuffle = [[NSMutableArray alloc] initWithCapacity:qnt];
     for  (int i = 0; i < qnt; i++) {
         int index = arc4random() % [idx count];
-        [shuffle addObject:[idx objectAtIndex:index]];
+        [self.dna replaceObjectAtIndex:[[idx objectAtIndex:index] intValue] withObject:[self getRandomSymbol]];
         [idx removeObjectAtIndex:index];
-    }
-    
-    for (id obj in shuffle) {
-        [self.dna replaceObjectAtIndex:[obj intValue] withObject:[self.alphabet objectAtIndex:arc4random() % [self.alphabet count]]];
     }
     
     return;

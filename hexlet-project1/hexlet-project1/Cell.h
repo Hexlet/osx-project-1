@@ -13,9 +13,11 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *alphabet, *dna;
+@property NSMutableArray *dna;
+@property NSArray *alphabet;
 
 -(int)hammingDistance:(Cell *)c;
--(void)printDNA;
+-(NSArray *) getRandomSymbol;
+-(NSMutableString *)getString;
 
 @end

@@ -13,20 +13,20 @@
 -(id) init {    
     self = [super init];
     if (self) {
-        _alphabet = [[NSMutableArray alloc] initWithCapacity:4];
-        [_alphabet addObject:@"A"];
-        [_alphabet addObject:@"T"];
-        [_alphabet addObject:@"G"];
-        [_alphabet addObject:@"C"];
+        _alphabet = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
         _dna = [[NSMutableArray alloc] initWithCapacity:100];
         for (int i = 0; i < DNALength; i++) {
-            [_dna addObject:[_alphabet objectAtIndex:arc4random()%[_alphabet count]]];
+            [_dna addObject:[self getRandomSymbol]];
         }
     }
     return self;
 }
 
--(int)hammingDistance:(Cell *)c {
+-(NSArray *) getRandomSymbol {
+    return [_alphabet objectAtIndex:arc4random() % [_alphabet count]];
+}
+
+-(int) hammingDistance:(Cell *)c {
     int distance = 0;
     
     for (int i = 0; i < DNALength; i++) {
@@ -39,13 +39,13 @@
 }
 
 
--(void)printDNA {
+-(NSMutableString *) getString {
     NSMutableString *str;
     str = [[NSMutableString alloc] initWithCapacity:[_dna count]];
     for (id obj in _dna) {
         [str appendString:obj];
     }
-    NSLog(@"%@", str);
+    return str;
 }
 
 @end

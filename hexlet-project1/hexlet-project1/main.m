@@ -19,14 +19,13 @@ int main(int argc, const char * argv[])
         cell1 = [[Cell alloc] init];
         cell2 = [[Cell alloc] init];
         
-        NSLog(@"%i",[cell1 hammingDistance:cell2]);
+        NSLog(@"Hamming distance 1: %i",[cell1 hammingDistance:cell2]);
         
-        [cell1 mutate:53];
-        [cell2 mutate:13];
+        [cell1 mutate:arc4random() % DNALength];
+        [cell2 mutate:arc4random() % DNALength];
         
-        NSLog(@"%i",[cell1 hammingDistance:cell2]);
-
-        
+        NSLog(@"Hamming distance 2: %i",[cell1 hammingDistance:cell2]);
+                
     }
     return 0;
 }
