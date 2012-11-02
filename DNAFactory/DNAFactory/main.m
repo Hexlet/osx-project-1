@@ -19,10 +19,31 @@
 @implementation Cell (mutator)
 
 -(void) mutate:(int)percent {
+    // Сколько нам надо поменять.
+    int changeCount = (MAX_NUCLEOTIDES * percent) / 100;
+    
+    // Делаем ряд цисел, перемешанных алгоритмом Фишера-Йетса
+    
+    NSMutableArray *fisherRow = [NSMutableArray arrayWithCapacity:MAX_NUCLEOTIDES];
+    
     for (int i = 0; i < MAX_NUCLEOTIDES; i++) {
-        if (percent > arc4random() % 100) {
-            self.DNA[i] = [Cell getRandomNucleotide];
-        }
+        [fisherRow addObject:[NSNumber numberWithInt:i]];
+    }
+    
+    for (int i = 0; i < MAX_NUCLEOTIDES; i++) {
+        NSNumber *temp;
+        int changeIndex = arc4random() % (i + 1);
+        
+        temp = fisherRow[i];
+        fisherRow[i] = fisherRow[changeIndex];
+        fisherRow[changeIndex] = temp;
+    }
+    
+    // Берем первые changeCount чисел из ряда Фишера, используя числа из ряда, как индексы для позиций, которые надо менять.
+    for (int i = 0; i < changeCount; i++) {
+        int index = [fisherRow[i] intValue];
+        
+        self.DNA[index] = [Cell mutateNucleotide:self.DNA[index]];
     }
 }
 
@@ -44,8 +65,8 @@ int main(int argc, const char * argv[])
         NSLog(@"%d",[cell1 hammingDistance:cell2]);
         
         // Мутируем
-        [cell1 mutate:100];
-        [cell2 mutate:100];
+        [cell1 mutate:85];
+        [cell2 mutate:85];
         
         // Снова проверяем
         NSLog(@"%d",[cell1 hammingDistance:cell2]);

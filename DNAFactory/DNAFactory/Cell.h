@@ -7,7 +7,7 @@
 //
 
 // Максимальная длина цепочки
-#define MAX_NUCLEOTIDES 100
+#define MAX_NUCLEOTIDES 120
 
 #import <Foundation/Foundation.h>
 
@@ -18,6 +18,7 @@
 
 // Статический метод для случайного выбора нуклеотида. Посткольку не зависит от конкретного экземпляра, то сделан статическим.
 +(NSString *) getRandomNucleotide;
++(NSString *) mutateNucleotide:(NSString *) n;
 
 // Новый init
 -(id) init;

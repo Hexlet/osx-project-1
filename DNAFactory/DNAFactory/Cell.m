@@ -42,6 +42,19 @@ const NSString *nucleotides[] = {@"A", @"T", @"G", @"C"};
     return nucleotides[nIndex];
 }
 
++(NSString *) mutateNucleotide:(NSString *) n {
+    
+    int nIndex = arc4random() % 4;
+    NSString *temp = [NSString stringWithString:nucleotides[nIndex]];
+    
+    while ([n isEqualToString:temp]) {
+        nIndex = arc4random() % 4;
+        temp = [NSString stringWithString:nucleotides[nIndex]];
+    }
+    
+    return temp;
+}
+
 - (void) print {
     NSLog(@"%@", self.DNA);
 }
