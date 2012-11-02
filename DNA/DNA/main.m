@@ -17,6 +17,11 @@ int main(int argc, const char * argv[])
         
         int difference = [cellFirst hammingDistance:cellSecond];
         NSLog(@"hamming distance before mutate %d",difference);
+        
+        [cellFirst mutate:75];
+        [cellFirst mutate:85];
+        difference = [cellFirst hammingDistance:cellSecond];
+        NSLog(@"hamming distance after mutate %d",difference);
         [cellFirst release];
         [cellSecond release];
         
