@@ -16,7 +16,8 @@
 @property (nonatomic, strong) NSMutableArray *DNA;
 
 -(int) hammingDistance: (Cell *) cell;
--(NSString *) generateChar;
+
+-(NSString *) generateCharWithExclusion: (NSString *)exclude;
 -(NSString *)toString;
 
 @end

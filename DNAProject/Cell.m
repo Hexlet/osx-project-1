@@ -24,7 +24,7 @@
         int i=0;
         for (i = 0; i < CHAIN_LENGTH; i++)
         {
-            [DNA setObject:[self generateChar] atIndexedSubscript:i];
+            [DNA setObject:[self generateCharWithExclusion:nil] atIndexedSubscript:i];
         }
     }
     
@@ -46,11 +46,16 @@
 
 #pragma Utils
 
-// Функция генерирует случайный символ из заданной коллекции
--(NSString *) generateChar
+// Функция генерирует случайный символ из заданной коллекции, может также учитывать исключение из коллекции 
+-(NSString *) generateCharWithExclusion: (NSString *)exclude;
 {
-    int randomIndex = arc4random() % 4;
-    return [dnaChars objectAtIndex:randomIndex];
+    NSMutableArray *chars = [[NSMutableArray alloc] initWithArray:dnaChars];
+    if (exclude != nil)
+    {
+        [chars removeObject:exclude];
+    }
+    int randomIndex = arc4random() % [chars count];
+    return [chars objectAtIndex:randomIndex];
 }
 
 - (NSString *)toString

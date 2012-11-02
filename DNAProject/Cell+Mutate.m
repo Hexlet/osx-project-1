@@ -29,8 +29,8 @@
         while ([changedIndeces indexOfObject:[NSNumber numberWithInt:randomIndex]] != NSNotFound) {
             randomIndex = arc4random() % dnaLength;
         }
-        
-        [DNA setObject:[self generateChar] atIndexedSubscript:randomIndex];
+
+        [DNA setObject:[self generateCharWithExclusion:[DNA objectAtIndex:randomIndex]] atIndexedSubscript:randomIndex];
         [changedIndeces addObject:[NSNumber numberWithInt:randomIndex]];
         howManyToChange--;
     }
