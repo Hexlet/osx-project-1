@@ -23,8 +23,8 @@ int main(int argc, const char * argv[])
         
         distance = [a hammingDistance:b];
         NSLog(@"Hamming distance before mutate: %i", distance);
-        
-        [a mutate:37];
+
+        [a mutate:47];
         [b mutate:53];
         
         //[a print];

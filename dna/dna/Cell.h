@@ -14,6 +14,7 @@
 - (id) init;
 - (int) hammingDistance:(Cell*)otherCell;
 - (void) print;
+- (Cell*) clone;
 
 @end
 

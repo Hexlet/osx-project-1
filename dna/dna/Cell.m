@@ -78,6 +78,14 @@ static const char dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
     NSLog(@"DNA: %@", dnaStr);
 }
 
+
+- (Cell*) clone
+{
+    Cell *newCell = [[Cell alloc] init];
+    newCell->dna = [NSMutableArray arrayWithArray:dna];
+    return newCell;
+}
+
     
 @end
 
@@ -111,14 +119,14 @@ static const char dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
     if (x < maxPercent)
     {
         // перемешивание
-        for (int i = 0; i != maxPercent; ++i)
+        for (int i = 0; i != x; ++i)
         {
-            const int a = rand() % maxPercent;
-            const int b = rand() % maxPercent;
-            [indices exchangeObjectAtIndex:a withObjectAtIndex:b];
+            const int j = rand() % maxPercent;
+            [indices exchangeObjectAtIndex:i withObjectAtIndex:j];
         }
     }
 
+    // Перебрать первые x (случайных) индексов 
     for (int i = 0; i != x; ++i)
     {
         const NSUInteger changeIdx = [(NSNumber*)[indices objectAtIndex:i] unsignedIntegerValue];
