@@ -12,8 +12,8 @@
 
 - (void) mutate:(int)percentsToMutate {
     @try {
-        if (percentsToMutate < 0) {
-            [NSException raise:@"Invalid argument" format:@"percentsToMutate value is negative"];
+        if (percentsToMutate < 0 || percentsToMutate > 100) {
+            [NSException raise:@"Invalid argument" format:@"percentsToMutate value is invalid"];
         }
         
         int percents = (int)(([[self dna] count] * percentsToMutate) / 100); // in case if dna is not 100 characters long this will give us correct amount of characters to mutate
