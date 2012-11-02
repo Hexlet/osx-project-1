@@ -16,6 +16,6 @@
 @property (nonatomic, readonly) NSMutableArray * DNA;
 
 - (NSInteger)hammingDistance:(Cell *)cell;
-- (void)mutate:(NSUInteger)persents;
+- (NSString*)randomDNASymbol;
 
 @end

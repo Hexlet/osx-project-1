@@ -11,6 +11,7 @@
 		A62FC87F16443D9E003B49A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A62FC87E16443D9E003B49A5 /* main.m */; };
 		A62FC88316443D9E003B49A5 /* HexletProject1DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A62FC88216443D9E003B49A5 /* HexletProject1DNA.1 */; };
 		A62FC88C16443DDE003B49A5 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A62FC88B16443DDE003B49A5 /* Cell.m */; };
+		A62FC895164459D1003B49A5 /* Cell+Muttator.m in Sources */ = {isa = PBXBuildFile; fileRef = A62FC894164459D1003B49A5 /* Cell+Muttator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		A62FC88216443D9E003B49A5 /* HexletProject1DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HexletProject1DNA.1; sourceTree = "<group>"; };
 		A62FC88A16443DDE003B49A5 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = classes/Cell.h; sourceTree = "<group>"; };
 		A62FC88B16443DDE003B49A5 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = classes/Cell.m; sourceTree = "<group>"; };
+		A62FC893164459D1003B49A5 /* Cell+Muttator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+Muttator.h"; path = "Categories/Cell+Muttator.h"; sourceTree = "<group>"; };
+		A62FC894164459D1003B49A5 /* Cell+Muttator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+Muttator.m"; path = "Categories/Cell+Muttator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 		A62FC87D16443D9E003B49A5 /* HexletProject1DNA */ = {
 			isa = PBXGroup;
 			children = (
+				A62FC89116445996003B49A5 /* Categories */,
 				A62FC88916443DB5003B49A5 /* classes */,
 				A62FC87E16443D9E003B49A5 /* main.m */,
 				A62FC88216443D9E003B49A5 /* HexletProject1DNA.1 */,
@@ -99,6 +103,15 @@
 				A62FC88B16443DDE003B49A5 /* Cell.m */,
 			);
 			name = classes;
+			sourceTree = "<group>";
+		};
+		A62FC89116445996003B49A5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A62FC893164459D1003B49A5 /* Cell+Muttator.h */,
+				A62FC894164459D1003B49A5 /* Cell+Muttator.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +166,7 @@
 			files = (
 				A62FC87F16443D9E003B49A5 /* main.m in Sources */,
 				A62FC88C16443DDE003B49A5 /* Cell.m in Sources */,
+				A62FC895164459D1003B49A5 /* Cell+Muttator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +257,7 @@
 				A62FC88816443D9E003B49A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
+#import "Cell+Muttator.h"
 int main(int argc, const char * argv[])
 {
 
@@ -24,7 +25,7 @@ int main(int argc, const char * argv[])
         NSLog(@"--= MUTATE =--");
         [firstCell mutate:35];
         [secondCell mutate:75];
-        [secondCell changeDNA];
+       
         NSLog(@"first cell  [%@]", firstCell);
         NSLog(@"second cell [%@]", secondCell);
         
