@@ -41,7 +41,7 @@ const NSString *gene[capacityOfGene] = {@"A",@"T",@"G",@"C"};
      @property (nonatomic,readonly), то метод в категории не сможет ничего сделать
      с моей последовательностью ДНК */
     for (int i=0; i<capacityOfDNA; i++) {
-        if (![[DNA objectAtIndex:i] isEqualTo:[[someCell DNA] objectAtIndex:i]]) ham++;
+        if ([[DNA objectAtIndex:i] isNotEqualTo:[[someCell DNA] objectAtIndex:i]]) ham++;
     }
     return ham;
 }

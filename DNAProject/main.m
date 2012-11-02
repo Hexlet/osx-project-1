@@ -17,27 +17,30 @@
 // Метод mutate нам нужен, чтобы сформировать новую ДНК, изменив х% исходной последовательности
 -(void)mutate:(int)x{
     // если неверно задан процент изменения, дальнейшие действия бессмысленны
-    if (x<0||x>100) {
+    NSCAssert((x>0&&x<=100), @"Invalid x value for mutating!");
+/*    if (x<0||x>100) {
         @throw [NSException exceptionWithName:@"InvalidXInMutator" reason:[NSString stringWithFormat:@"Invalid value %i!",x] userInfo:nil];
-    }
-    NSUInteger generated = 0; //индекс заменяемого символа
+    }*/
+    NSUInteger randomKey = 0; //случайный ключ индекса заменяемого символа
     NSUInteger amount = lroundf((capacityOfDNA*x)/100.0f); // кол-во символов для изменения (x - процентный показатель)
     id sourceGene,modifiedGene; //переменные для анализа исходного символа и модифицированного символа
-    NSMutableIndexSet *setOfDNA = [[NSMutableIndexSet alloc] init]; // эта коллекция индексов нужна для предотвращения повторного изменения в последовательности
-    do {
+    NSMutableArray *indexes = [[NSMutableArray alloc] initWithCapacity:capacityOfDNA];
+    for (int i=0; i<capacityOfDNA; i++) {
+        [indexes addObject:[NSNumber numberWithInt:i]];
+    }
+    for (int modified=0;modified<amount;modified++) {
         // сначала сформируем случайным образом индекс, по которому будем обращаться
         // немаловажное условие - чтобы элемент по одному индексу менялся ровно один раз
-        do {
-            generated = arc4random() % capacityOfDNA;
-        } while ([setOfDNA containsIndex:generated]);
-        [setOfDNA addIndex:generated]; // запоминаем изменяемый индекс
-        sourceGene = [[self DNA] objectAtIndex:generated]; // запоминаем исходное значение в последовательности по индексу
+        randomKey = arc4random() % [indexes count]; // формируем ключ
+        NSUInteger indexToModify = [[indexes objectAtIndex:randomKey] integerValue]; // запоминаем индекс, чтобы по десять раз не посылать сообщения
+        sourceGene = [[self DNA] objectAtIndex:indexToModify]; // запоминаем исходное значение в последовательности по индексу
         // и меняем значение символа, помня о том, что оно в любом случае должно отличаться от исходного!
         do {
             modifiedGene = gene[(arc4random() % capacityOfGene)];
         } while ([sourceGene isEqualToString:modifiedGene]);
-        [DNA replaceObjectAtIndex:generated withObject:modifiedGene];
-    } while ([setOfDNA count]<amount);
+        [DNA replaceObjectAtIndex:indexToModify withObject:modifiedGene]; // всё хорошо, есть новый символ!
+        [indexes removeObjectAtIndex:randomKey]; // не забываем исключить использованный индекс
+    }
 }
 
 @end
@@ -53,24 +56,11 @@ int main(int argc, const char * argv[])
         Cell *myCell2 = [[Cell alloc] init]; // вторая ДНК
         NSLog(@"%@",myCell2);
         NSLog(@"Hamming distance: %d",[myCell hammingDistance:myCell2]);
-        @try {
-            [myCell mutate:12];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"Error while mutating myCell1! %@",exception);
-        }
-        @finally {
-            NSLog(@"%@",myCell);
-        }
-        @try {
-            [myCell2 mutate:37];
-        }
-        @catch (NSException *exception) {
-            NSLog(@"Error while mutating myCell2! %@",exception);
-        }
-        @finally {
-            NSLog(@"%@",myCell2);
-        }
+        // модифицируем обе ДНК
+        [myCell mutate:56];
+        [myCell2 mutate:37];
+        NSLog(@"%@",myCell);
+        NSLog(@"%@",myCell2);
         NSLog(@"Hamming distance: %d",[myCell hammingDistance:myCell2]);
         
     }
