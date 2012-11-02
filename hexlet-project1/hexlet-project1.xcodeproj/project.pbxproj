@@ -11,6 +11,7 @@
 		8026708D164287EE00DA9F39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8026708C164287EE00DA9F39 /* main.m */; };
 		80267091164287EE00DA9F39 /* hexlet_project1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80267090164287EE00DA9F39 /* hexlet_project1.1 */; };
 		802670991642882300DA9F39 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 802670981642882300DA9F39 /* Cell.m */; };
+		804C3B241643DA1B00BEECED /* CellMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 804C3B231643DA1B00BEECED /* CellMutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		80267090164287EE00DA9F39 /* hexlet_project1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = hexlet_project1.1; sourceTree = "<group>"; };
 		802670971642882300DA9F39 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		802670981642882300DA9F39 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		804C3B221643DA1B00BEECED /* CellMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellMutator.h; sourceTree = "<group>"; };
+		804C3B231643DA1B00BEECED /* CellMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellMutator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				8026708C164287EE00DA9F39 /* main.m */,
+				804C3B221643DA1B00BEECED /* CellMutator.h */,
+				804C3B231643DA1B00BEECED /* CellMutator.m */,
 				802670971642882300DA9F39 /* Cell.h */,
 				802670981642882300DA9F39 /* Cell.m */,
 				80267090164287EE00DA9F39 /* hexlet_project1.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				8026708D164287EE00DA9F39 /* main.m in Sources */,
 				802670991642882300DA9F39 /* Cell.m in Sources */,
+				804C3B241643DA1B00BEECED /* CellMutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				80267096164287EE00DA9F39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

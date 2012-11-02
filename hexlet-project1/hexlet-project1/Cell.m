@@ -7,7 +7,6 @@
 //
 
 #import "Cell.h"
-#include <stdlib.h>
 
 @implementation Cell
 
