@@ -11,7 +11,6 @@
 @interface Cell : NSObject  {
     NSMutableArray * DNA;
     int capacity;
-
 }
 
 -(int) hummingDistance: (Cell*) c;

@@ -14,9 +14,12 @@
     self = [super init];
     if(self) {
         
+        //Размер масива DNA
         capacity = 100;
 
+        //Инициализации масива с определнным размером
         DNA = [[NSMutableArray alloc] initWithCapacity:capacity];
+        //Заполнение массива случайными генам
         for (int i = 0; i<capacity; ++i) {
             [DNA insertObject:[Cell getRandGen] atIndex:i ];
         }
@@ -26,10 +29,15 @@
 }
 
 -(int)hummingDistance:(Cell *)c {
+    //В начале мы не имеем совпадений
     int counter = 0;
+    
     for (int i = 0; i<capacity; ++i) {
+        //Получаем свой ген
         NSString * myGen = [self->DNA objectAtIndex:i];
-        if(![myGen isEqualToString: [c->DNA objectAtIndex: i]]){
+        //Если гены сопадают
+        if(![myGen isEqual: [c->DNA objectAtIndex: i]]){
+            //увеличиваем счетчик совпадений
             counter++;
         }
     }
@@ -37,9 +45,11 @@
 }
 
 +(id) getRandGen {
-    
+    //массив содержит возможные гены
     NSArray *arr = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
+    //Случайный номер гена
     u_int8_t r = arc4random() % [arr count];
+    //возвращаем ген
     return [arr objectAtIndex:r];
 
 }
