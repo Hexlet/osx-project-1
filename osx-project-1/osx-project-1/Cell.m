@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Igor Redchuk. All rights reserved.
 //
 
-#define kDNACapacity 100
-
 #import "Cell.h"
 #import "Random.h"
+
+#define kDNACapacity 100
 
 @interface Cell()
 
@@ -28,13 +28,23 @@
 }
 
 + (NSMutableArray *) createDna {
-    NSMutableArray *dna = [NSMutableArray arrayWithCapacity:kDNACapacity];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:kDNACapacity];
     NSArray *chars = [NSArray arrayWithObjects:@'A', @'T', @'G', @'C', nil];
     for (int index = 0; index < kDNACapacity; index++) {
         long randomIndex = [Random nextNumber:4];
-        dna[index] = chars[randomIndex];
+        result[index] = chars[randomIndex];
     }
-    return dna;
+    return result;
+}
+
+- (int) hammingDistance:(Cell *)cell {
+    int hammingDistance = 0;
+    for (int index = 0; index < kDNACapacity; index++) {
+        if ([self.dna[index] isNotEqualTo:cell.dna[index]]) {
+            hammingDistance++;
+        }
+    }
+    return hammingDistance;
 }
 
 @end

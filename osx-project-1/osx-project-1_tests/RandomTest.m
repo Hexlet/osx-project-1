@@ -34,5 +34,4 @@
     STAssertTrue(onesCount < 90, nil);
 }
 
-
 @end

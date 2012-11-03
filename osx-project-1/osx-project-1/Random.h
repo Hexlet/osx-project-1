@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+Methods for working with random numbers
+*/
 @interface Random : NSObject
 
-+ (NSUInteger) nextNumber:(NSUInteger)bound;
+/*
+Returns a random non-negative integer number less that the specified upper bound
+ */
++ (NSUInteger) nextNumber:(NSUInteger)upperBound;
 
 @end

@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+Represents model of a cell containing DNA symbolic array
+*/
 @interface Cell : NSObject
 
-
+/*
+Returns hamming distance between current and specified cell: number of DNA positions
+for which the cells differ.
+*/
+- (int) hammingDistance:(Cell *)cell;
 
 @end
