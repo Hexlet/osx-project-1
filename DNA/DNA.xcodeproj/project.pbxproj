@@ -1,0 +1,249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047790F916442F0A00D6780F /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 047790F816442F0A00D6780F /* Cell+mutator.m */; };
+		0488479C1642C02000611411 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0488479B1642C02000611411 /* Foundation.framework */; };
+		0488479F1642C02000611411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488479E1642C02000611411 /* main.m */; };
+		048847A31642C02000611411 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 048847A21642C02000611411 /* DNA.1 */; };
+		048847AB1642C49A00611411 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048847AA1642C49A00611411 /* Cell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		048847951642C02000611411 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				048847A31642C02000611411 /* DNA.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		047790F716442F0A00D6780F /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		047790F816442F0A00D6780F /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+		048847971642C02000611411 /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
+		0488479B1642C02000611411 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0488479E1642C02000611411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		048847A11642C02000611411 /* DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNA-Prefix.pch"; sourceTree = "<group>"; };
+		048847A21642C02000611411 /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
+		048847A91642C49A00611411 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		048847AA1642C49A00611411 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		048847941642C02000611411 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0488479C1642C02000611411 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0488478C1642C02000611411 = {
+			isa = PBXGroup;
+			children = (
+				0488479D1642C02000611411 /* DNA */,
+				0488479A1642C02000611411 /* Frameworks */,
+				048847981642C02000611411 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		048847981642C02000611411 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				048847971642C02000611411 /* DNA */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0488479A1642C02000611411 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0488479B1642C02000611411 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0488479D1642C02000611411 /* DNA */ = {
+			isa = PBXGroup;
+			children = (
+				0488479E1642C02000611411 /* main.m */,
+				047790F716442F0A00D6780F /* Cell+mutator.h */,
+				047790F816442F0A00D6780F /* Cell+mutator.m */,
+				048847A91642C49A00611411 /* Cell.h */,
+				048847AA1642C49A00611411 /* Cell.m */,
+				048847A21642C02000611411 /* DNA.1 */,
+				048847A01642C02000611411 /* Supporting Files */,
+			);
+			path = DNA;
+			sourceTree = "<group>";
+		};
+		048847A01642C02000611411 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				048847A11642C02000611411 /* DNA-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		048847961642C02000611411 /* DNA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 048847A61642C02000611411 /* Build configuration list for PBXNativeTarget "DNA" */;
+			buildPhases = (
+				048847931642C02000611411 /* Sources */,
+				048847941642C02000611411 /* Frameworks */,
+				048847951642C02000611411 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DNA;
+			productName = DNA;
+			productReference = 048847971642C02000611411 /* DNA */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0488478E1642C02000611411 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 048847911642C02000611411 /* Build configuration list for PBXProject "DNA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0488478C1642C02000611411;
+			productRefGroup = 048847981642C02000611411 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				048847961642C02000611411 /* DNA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		048847931642C02000611411 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0488479F1642C02000611411 /* main.m in Sources */,
+				048847AB1642C49A00611411 /* Cell.m in Sources */,
+				047790F916442F0A00D6780F /* Cell+mutator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		048847A41642C02000611411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		048847A51642C02000611411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		048847A71642C02000611411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DNA/DNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		048847A81642C02000611411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DNA/DNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		048847911642C02000611411 /* Build configuration list for PBXProject "DNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048847A41642C02000611411 /* Debug */,
+				048847A51642C02000611411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		048847A61642C02000611411 /* Build configuration list for PBXNativeTarget "DNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048847A71642C02000611411 /* Debug */,
+				048847A81642C02000611411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0488478E1642C02000611411 /* Project object */;
+}
