@@ -10,17 +10,16 @@
 
 
 @interface Cell : NSObject
+{
+    NSMutableArray  *dna;
+}
+
++ (NSUInteger) getDnaAlphabetSize;
++ (NSUInteger) getDnaCharCount;
 
 - (id) init;
 - (int) hammingDistance:(Cell*)otherCell;
 - (void) print;
 - (Cell*) clone;
-
-@end
-
-
-@interface Cell (mutator)
-
-- (void) mutate:(int)x;
 
 @end

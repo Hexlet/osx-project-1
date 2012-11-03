@@ -8,18 +8,29 @@
 #import <stdlib.h>
 #import "Cell.h"
 
-#define countof(a) (sizeof(a)/sizeof(a[0]))
 
-// Количество символов в ДНК
-static const int dnaCharCount = 100;
+// количество символов в алфавите ДНК
+static const NSUInteger dnaAlphaBetSize = 4;
 
-// Алфавит, составляющий ДНК
-static const char dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
+// алфавит, составляющий ДНК
+static const char dnaAlphabet[dnaAlphaBetSize] = { 'A', 'T', 'G', 'C' };
+
+// количество символов в ДНК
+static const NSUInteger dnaCharCount = 100;
 
 
 @implementation Cell
+
+
++ (NSUInteger) getDnaAlphabetSize
 {
-    NSMutableArray  *dna;
+    return dnaAlphaBetSize;
+}
+
+
++ (NSUInteger) getDnaCharCount
+{
+    return dnaCharCount;
 }
 
 
@@ -29,16 +40,16 @@ static const char dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
     if (!self)
         return nil;
 
-    // Создать массив ДНК и зарезервировать в нем место
+    // создать массив ДНК и зарезервировать в нем место
     dna = [NSMutableArray arrayWithCapacity:dnaCharCount];
     if (!dna)
         return nil;
  
-    // Проинициализировать массив ДНК случайными символами из заданного алфавита
-    for (int i = 0; i != dnaCharCount; ++i)
+    // проинициализировать массив ДНК случайными индексами символов из заданного алфавита
+    for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
-        const int randCharIdx = rand() % countof(dnaAlphabet);
-        [dna addObject:[NSNumber numberWithChar:dnaAlphabet[randCharIdx]]];
+        const NSUInteger randCharIdx = arc4random() % [Cell getDnaAlphabetSize];
+        [dna addObject:[NSNumber numberWithUnsignedInteger:randCharIdx]];
     }
     
     return self;
@@ -47,17 +58,17 @@ static const char dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
 
 - (int) hammingDistance:(Cell*)otherCell
 {
-    // Проверка на правильность аргумента
+    // проверка на правильность аргумента
     if (!otherCell)
         @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Null argument" userInfo:nil];
 
     int distance = 0;
     
-    for (int i = 0; i != dnaCharCount; ++i)
+    for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
-        NSNumber *nl = (NSNumber*)[dna objectAtIndex:i];
-        NSNumber *nr = (NSNumber*)[otherCell->dna objectAtIndex:i];
-        if ([nl charValue] != [nr charValue])
+        const NSNumber *nl = (NSNumber*)[dna objectAtIndex:i];
+        const NSNumber *nr = (NSNumber*)[otherCell->dna objectAtIndex:i];
+        if ([nl unsignedIntegerValue] != [nr unsignedIntegerValue])
             ++distance;
     }
     
@@ -65,14 +76,15 @@ static const char dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
 }
 
 
-// Отладочная печать
+// отладочная печать
 - (void) print
 {
     NSMutableString *dnaStr = [NSMutableString stringWithCapacity:dnaCharCount];
 
-    for (int i = 0; i != dnaCharCount; ++i)
+    for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
-        [dnaStr appendFormat:@"%c", [(NSNumber*)[dna objectAtIndex:i] charValue]];
+        const NSUInteger charIdx = [(NSNumber*)[dna objectAtIndex:i] unsignedIntegerValue];
+        [dnaStr appendFormat:@"%c", dnaAlphabet[charIdx]];
     }
     
     NSLog(@"DNA: %@", dnaStr);
@@ -88,61 +100,4 @@ static const char dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
 
     
 @end
-
-
-    
-@implementation Cell (mutator)
-
-    
-- (void) mutate:(int)x
-{
-    const int maxPercent = 100;
-
-    // Проверка на правильность аргумента
-    if (x < 0  ||  x > maxPercent)
-        @throw [NSException exceptionWithName:NSRangeException reason:@"argument is out of [0..100] range" userInfo:nil];
-    
-    // Если задано изменение 0%, то ничего делать не надо, сразу выход
-    if (0 == x)
-        return;
-    
-    // Создать массив индексов и зарезервировать в нем место
-    NSMutableArray *indices = [NSMutableArray arrayWithCapacity:maxPercent];
-    
-    // заполнить индексы
-    for (int i = 0; i != maxPercent; ++i)
-    {
-        [indices addObject:[NSNumber numberWithUnsignedInteger:i]];
-    }
-    
-    // если мутация затрагивает менее 100% символов, перемешать индексы для случайности изменений
-    if (x < maxPercent)
-    {
-        // перемешивание
-        for (int i = 0; i != x; ++i)
-        {
-            const int j = rand() % maxPercent;
-            [indices exchangeObjectAtIndex:i withObjectAtIndex:j];
-        }
-    }
-
-    // Перебрать первые x (случайных) индексов 
-    for (int i = 0; i != x; ++i)
-    {
-        const NSUInteger changeIdx = [(NSNumber*)[indices objectAtIndex:i] unsignedIntegerValue];
-        NSNumber *nl = (NSNumber*)[dna objectAtIndex:changeIdx];
-        
-        for (;;)
-        {
-            const int randCharIdx = rand() % countof(dnaAlphabet);
-            if (dnaAlphabet[randCharIdx] != [nl charValue])
-            {
-                [dna replaceObjectAtIndex:changeIdx withObject:[NSNumber numberWithChar:dnaAlphabet[randCharIdx]]];
-                break;
-            }
-        }
-    }
-}
-
-    
-@end
+  
