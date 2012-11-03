@@ -10,7 +10,7 @@
 		09E8627A1645538A0041E457 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E862791645538A0041E457 /* Foundation.framework */; };
 		09E8627D1645538A0041E457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E8627C1645538A0041E457 /* main.m */; };
 		09E862811645538A0041E457 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09E862801645538A0041E457 /* DNA.1 */; };
-		09E86289164553A90041E457 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E86288164553A90041E457 /* Cell.m */; };
+		09E8628C16457E210041E457 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E8628B16457E210041E457 /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +32,8 @@
 		09E8627C1645538A0041E457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09E8627F1645538A0041E457 /* DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNA-Prefix.pch"; sourceTree = "<group>"; };
 		09E862801645538A0041E457 /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
-		09E86287164553A90041E457 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = ../Cell.h; sourceTree = "<group>"; };
-		09E86288164553A90041E457 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = ../Cell.m; sourceTree = "<group>"; };
+		09E8628A16457E0F0041E457 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		09E8628B16457E210041E457 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 			children = (
 				09E862801645538A0041E457 /* DNA.1 */,
 				09E8627C1645538A0041E457 /* main.m */,
-				09E86287164553A90041E457 /* Cell.h */,
-				09E86288164553A90041E457 /* Cell.m */,
+				09E8628A16457E0F0041E457 /* Cell.h */,
+				09E8628B16457E210041E457 /* Cell.m */,
 				09E8627E1645538A0041E457 /* Supporting Files */,
 			);
 			path = DNA;
@@ -145,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E8627D1645538A0041E457 /* main.m in Sources */,
-				09E86289164553A90041E457 /* Cell.m in Sources */,
+				09E8628C16457E210041E457 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
