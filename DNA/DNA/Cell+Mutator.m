@@ -7,7 +7,6 @@
 //
 
 #import "Cell+Mutator.h"
-#import "Cell.h"
 
 @implementation Cell (Mutator)
 
