@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'DNApp' target in the 'DNApp' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
