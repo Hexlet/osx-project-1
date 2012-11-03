@@ -9,7 +9,7 @@
 #import "Cell.h"
 
 #define dnaChars @[@"A", @"T", @"G", @"C"]
-#define CHAIN_LENGTH 10
+#define CHAIN_LENGTH 100
 
 @implementation Cell
 
