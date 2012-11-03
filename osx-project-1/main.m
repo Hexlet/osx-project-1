@@ -14,7 +14,6 @@ int main(int argc, const char * argv[])
 {
     
     @autoreleasepool {
-        //NSArray *newArray;
         // insert code here...
         NSLog(@"Hello, DNA!");
         

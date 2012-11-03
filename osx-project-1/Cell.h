@@ -11,8 +11,10 @@
 @interface Cell : NSObject
 {
     NSMutableArray *DNA;
+    NSArray *atcgArray;
 }
 @property (nonatomic) NSMutableArray *DNA;
+@property (nonatomic, readonly) NSArray *atcgArray;
 
 - (id)init;
 - (int)hammingDistanceWithCell:(Cell *)cellToCompareWith;

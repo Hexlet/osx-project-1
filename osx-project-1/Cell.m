@@ -10,16 +10,20 @@
 
 @implementation Cell
 {
-    
+
 }
 
+
 @synthesize DNA = _DNA;
+@synthesize atcgArray = _atcgArray;
+
+
 
 - (id)init
 {
     self = [super init];
     _DNA = [[NSMutableArray alloc] initWithCapacity:100];
-    NSArray *atcgArray = [[NSArray alloc]initWithObjects:@"A",@"C",@"T",@"G", nil];
+    atcgArray = [[NSArray alloc]initWithObjects:@"A",@"T",@"C",@"G", nil];
     
     for (int i = 0; i < 100; i++)
     {

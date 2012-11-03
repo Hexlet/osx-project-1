@@ -21,10 +21,7 @@
     {
         [arrayOfRandomNumbers addObject:[NSNumber numberWithInt:i]];
     }
-    
-    //---Create array of ACTG---
-    NSArray *atcgArray = [[NSArray alloc]initWithObjects:@"A",@"C",@"T",@"G", nil]; 
-    
+       
     //---Take some object from given array and put them in new array (shuffled)---
     
     for (int i = 0; i < percentToMutate; i++)
