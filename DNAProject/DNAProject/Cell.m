@@ -19,7 +19,26 @@
     
     for (NSUInteger i = 0; i < 100; i++) {
         NSUInteger rand = arc4random() % 4;
-        [DNA insertObject:[NSString stringWithFormat: @"%li", rand] atIndex: i];
+        switch (rand) {
+            case 0:
+                [DNA insertObject:@"A" atIndex: i];
+                break;
+                
+            case 1:
+                [DNA insertObject:@"T" atIndex: i];
+                break;
+                
+            case 2:
+                [DNA insertObject:@"G" atIndex: i];
+                break;
+                
+            case 3:
+                [DNA insertObject:@"C" atIndex: i];
+                break;
+                
+            default:
+                break;
+        }
     }
     return self;
     
