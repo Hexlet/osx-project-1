@@ -12,10 +12,9 @@
 -(void)mutate: (int) mutatePercent {
     NSAssert(mutatePercent < 100 && mutatePercent > 0, @"invalid percent");
     // вычисляем примерное кол-во индексов для замены, если кол-во элементов DNA != 100
-    float dna_length = DNA_LEN;
-    int numberIndexesToReplace = dna_length / 100 * mutatePercent;
+    int numberIndexesToReplace = (float)DNA_LEN / 100 * mutatePercent;
     
-    NSMutableArray *mutateIndexArray, *dnaIndexArray;
+    static NSMutableArray *mutateIndexArray, *dnaIndexArray;
     mutateIndexArray = [[NSMutableArray alloc] initWithCapacity:mutatePercent];
     dnaIndexArray = [[NSMutableArray alloc] initWithCapacity:DNA_LEN];
     for (NSInteger i = 0; i < DNA_LEN; i++)
