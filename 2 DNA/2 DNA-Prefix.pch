@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the '2 DNA' target in the '2 DNA' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
