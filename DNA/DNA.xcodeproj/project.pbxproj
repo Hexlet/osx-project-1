@@ -41,6 +41,7 @@
 		1F79D1CF1642B44700B9C5C4 /* Protein.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Protein.m; sourceTree = "<group>"; };
 		1F79D1D11642F85F00B9C5C4 /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
 		1F79D1D21642F85F00B9C5C4 /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+		1F79D1D4164552DE00B9C5C4 /* Алгоритм перемешивания из ДЭ Кнута 2й том.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Алгоритм перемешивания из ДЭ Кнута 2й том.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +92,7 @@
 				1F79D1C416424B3200B9C5C4 /* Cell.m */,
 				1F79D1CE1642B44700B9C5C4 /* Protein.h */,
 				1F79D1CF1642B44700B9C5C4 /* Protein.m */,
+				1F79D1D4164552DE00B9C5C4 /* Алгоритм перемешивания из ДЭ Кнута 2й том.png */,
 				1F79D1BB16424AA600B9C5C4 /* DNA.1 */,
 				1F79D1B916424AA600B9C5C4 /* Supporting Files */,
 			);

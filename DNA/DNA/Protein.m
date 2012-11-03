@@ -36,11 +36,21 @@
 }
 
 - (void) setRand {
-    char s[]="ATGC";  // я конечно слукавил. тут в конце строки еще \0 образовался, ну и пусть
-    int index = (int)arc4random()&3; //  получил long случайное число и обрезал его до промежутка 0-3
+    char s[]="ATGC";  
+    int index = (unsigned int)arc4random()&3; //  получил long случайное число и обрезал его до промежутка 0-3
     self->type= s[index]; // взяли случайный индекс из строки s
 }
 
+
+- (void) changeRand {
+    char s[]="ATGC";
+    int index;
+    do {
+        index = (unsigned int)arc4random()&3;
+    } while (type == s[index]); // бесовестно ищем случайный белок, но не такой как был :-)
+    // как нашли сразу успокоились
+    type= s[index];
+}
 
 
 - (void) print {

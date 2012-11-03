@@ -57,25 +57,33 @@ int main(int argc, const char * argv[])
 /*
  шаг 3 - проверяем работу мутаций на цепочке одинаковых белков
 
+
         Cell *cell1 = [[Cell alloc] initFromString:@"TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"];
         Cell *cell2 = [[Cell alloc] initFromCell:cell1];
-        [cell2 mutate:50];
+        [cell2 mutate:10];
         [cell1 print];
         [cell2 print];
         NSLog(@"расстояние %i",[cell1 hammingDistance:cell2]);
 
- */
+или так проверим
+        
+        Cell *cell1 = [[Cell alloc] init];
+        Cell *cell2 = [[Cell alloc] initFromCell:cell1];
+        NSLog(@"расстояние %i",[cell1 hammingDistance:cell2]); // 0
+        [cell1 mutate:15];
+        NSLog(@"расстояние %i",[cell1 hammingDistance:cell2]);
+*/
+
+        
 // собственно задание
+
         Cell *cell1 = [[Cell alloc] init]; // [cell1 print];
         Cell *cell2 = [[Cell alloc] init]; // [cell2 print];
         NSLog(@"расстояние %i",[cell1 hammingDistance:cell2]);
         
-        [cell1 mutate:50]; // [cell1 print];
-        [cell2 mutate:50]; // [cell2 print];
+        [cell1 mutate:15]; // [cell1 print];
+        [cell2 mutate:15]; // [cell2 print];
         NSLog(@"расстояние %i",[cell1 hammingDistance:cell2]);
-
-
-
 
     }
     return 0;
