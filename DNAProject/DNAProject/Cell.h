@@ -21,6 +21,7 @@
     // represents DNA chain
     NSMutableArray* dna;
 
+
 }
 
 //  Calculate hamming distance between two DNA
