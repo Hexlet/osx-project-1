@@ -19,17 +19,17 @@ int main(int argc, const char * argv[])
         Cell *a = [[Cell alloc] init];
         Cell *b = [[Cell alloc] init];
         
-        //[a print];
-        //[b print];
-        
+        //NSLog(@"DNA-a: %@", [a toString]);
+        //NSLog(@"DNA-b: %@", [b toString]);
+     
         distance = [a hammingDistance:b];
         NSLog(@"Hamming distance before mutate: %i", distance);
 
         [a mutate:47];
         [b mutate:53];
-        
-        //[a print];
-        //[b print];
+
+        //NSLog(@"DNA-a: %@", [a toString]);
+        //NSLog(@"DNA-b: %@", [b toString]);
         
         distance = [a hammingDistance:b];
         NSLog(@"Hamming distance after mutate: %i", distance);

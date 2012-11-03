@@ -5,7 +5,7 @@
 //  Created by Igor Pavlov on 02.11.12.
 //  Copyright (c) 2012 Igor Pavlov. All rights reserved.
 //
-#import <stdlib.h>
+
 #import "Cell.h"
 
 
@@ -76,8 +76,7 @@ static const NSUInteger dnaCharCount = 100;
 }
 
 
-// отладочная печать
-- (void) print
+- (NSString*) toString
 {
     NSMutableString *dnaStr = [NSMutableString stringWithCapacity:dnaCharCount];
 
@@ -87,7 +86,7 @@ static const NSUInteger dnaCharCount = 100;
         [dnaStr appendFormat:@"%c", dnaAlphabet[charIdx]];
     }
     
-    NSLog(@"DNA: %@", dnaStr);
+    return dnaStr;
 }
 
 
