@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'KobaDNA' target in the 'KobaDNA' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
