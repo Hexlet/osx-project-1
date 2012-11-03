@@ -38,8 +38,18 @@
 }
 
 - (id) copyWithZone:(NSZone *)zone {
-    Cell *copy = [[Cell allocWithZone:zone] initWithDNA:self.dna];
+    NSMutableArray *dnaCopy = [self.dna copyWithZone:zone];
+    Cell *copy = [[Cell allocWithZone:zone] initWithDNA:dnaCopy];
     return copy;
+}
+
+- (NSString *) description {
+    char dnaChars[kDNACapacity];
+    for (int i = 0; i < kDNACapacity; i++) {
+        NSNumber *symbol = self.dna[i];
+        dnaChars[i] = symbol.charValue;
+    }
+    return [NSString stringWithCString:dnaChars encoding:NSASCIIStringEncoding];
 }
 
 @end

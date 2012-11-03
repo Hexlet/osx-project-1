@@ -26,6 +26,7 @@
     Cell *cell = [[Cell alloc] init];
     Cell *cellCopy = [cell copy];
     STAssertFalse(cell == cellCopy, nil);
+    STAssertFalse(cell.dna == cellCopy.dna, nil);
     STAssertEquals(cell.dna.count, cellCopy.dna.count, nil);
     for (int i = 0; i < cell.dna.count; i++) {
         STAssertEqualObjects(cell.dna[i], cellCopy.dna[i], nil);
@@ -47,5 +48,37 @@
         STAssertTrue(hammingDistance <= 100, nil);
     }
 }
+
+- (void) test_mutateWithNegativeReplacementCountDoesNotChangeCell {
+    Cell *cell = [[Cell alloc] init];
+    Cell *cellBefore = [cell copy];
+    [cell mutate:-1];
+    STAssertEquals(0, [cell hammingDistance:cellBefore], nil);
+}
+
+- (void) test_mutateWithZeroReplacementCountDoesNotChangeCell {
+    Cell *cell = [[Cell alloc] init];
+    Cell *cellBefore = [cell copy];
+    [cell mutate:0];
+    STAssertEquals(0, [cell hammingDistance:cellBefore], nil);
+}
+
+- (void) test_mutateWith50ReplacementCountCellChanges50SymbolsInDNA {
+    Cell *cell = [[Cell alloc] init];
+    Cell *cellBefore = [cell copy];
+    [cell mutate:50];
+    int hammingDistance = [cell hammingDistance:cellBefore];
+    STAssertTrue(hammingDistance > 0, nil);
+    STAssertTrue(hammingDistance <= 50, nil);
+}
+
+- (void) test_mutateDoesNotChangeDNALength {
+    Cell *cell = [[Cell alloc] init];
+    for (int i = 0; i < 100; i++) {
+        [cell mutate:25];
+        STAssertEquals((NSUInteger)100, cell.dna.count, nil);
+    }
+}
+
 
 @end

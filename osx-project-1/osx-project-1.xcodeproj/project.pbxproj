@@ -16,6 +16,7 @@
 		6914881516457E640029FA0E /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914881416457E640029FA0E /* Cell+Mutator.m */; };
 		69148818164589C30029FA0E /* DNAGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69148817164589C30029FA0E /* DNAGenerator.m */; };
 		6914881916458BB50029FA0E /* DNAGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69148817164589C30029FA0E /* DNAGenerator.m */; };
+		6914881A16459B8E0029FA0E /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914881416457E640029FA0E /* Cell+Mutator.m */; };
 		699893A716454954006F5DA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699893A616454954006F5DA3 /* Foundation.framework */; };
 		699893AA16454954006F5DA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 699893A916454954006F5DA3 /* main.m */; };
 		699893AE16454954006F5DA3 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699893AD16454954006F5DA3 /* osx_project_1.1 */; };
@@ -297,6 +298,7 @@
 			files = (
 				6914881916458BB50029FA0E /* DNAGenerator.m in Sources */,
 				6914880B164557950029FA0E /* Cell.m in Sources */,
+				6914881A16459B8E0029FA0E /* Cell+Mutator.m in Sources */,
 				69148812164573200029FA0E /* Random.m in Sources */,
 				699893DA16454FA0006F5DA3 /* CellTest.m in Sources */,
 				69148811164572110029FA0E /* RandomTest.m in Sources */,
