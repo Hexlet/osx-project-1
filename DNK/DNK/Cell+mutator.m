@@ -40,19 +40,26 @@
         NSNumber *randomIndex = [self randomDnaIndex];
         //Check if we changed item for this index already
         if (![changedIndexes containsObject:randomIndex]) {
+            //generate new DNA type
+            NSString* newDnaType = [self randomDnaType];
+            //get current DNA type in array at index
+            NSString* oldDnaIndex = [[self DNA] objectAtIndex:[randomIndex intValue]];
+            while ([newDnaType isEqualToString: oldDnaIndex]) {
+                newDnaType =  [self randomDnaType];
+            }
             //Add this index in saving array
             [changedIndexes addObject:randomIndex];
-            [self changeDnaAtIndex:[randomIndex intValue]];
+            [self changeDna: newDnaType atIndex:[randomIndex intValue]];
             //increase changed items count
             changedCount++;
-            //recalculate changed percent
-            changedPercent = ((float)changedCount / [self DNACount]) * 100;
+            //recalculate changed percent, round the vaue
+            changedPercent = lroundf(((float)changedCount / [self DNACount]) * 100);
         }
     }
 }
 
 //Chage item in DNA array at specified index
--(void) changeDnaAtIndex:(int) index{
+-(void) changeDna:(NSString*) newDnaType atIndex:(int) index{
     //remove item at specified index
     [[self DNA ] removeObjectAtIndex: index];
     //insert new random item at specified index
