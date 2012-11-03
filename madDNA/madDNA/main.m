@@ -7,30 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Cell.h"
-
-@interface Cell (mutator)
-
-- (void)mutate:(int)percent;
-
-@end
-
-@implementation Cell (mutator)
-
-- (void)mutate:(int)percent {
-	int i;
-	NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:100];
-	for (i = 0; i < 100; i++) {
-		[indexes insertObject:[NSNumber numberWithInt:i] atIndex:i];
-	}
-	while ((100 - [indexes count]) < percent) {
-		int idx = arc4random() % [indexes count];
-		[self mutateAtPosition:[[indexes objectAtIndex:idx] intValue]];
-		[indexes removeObjectAtIndex:idx];
-	}
-}
-
-@end
+#import "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {
