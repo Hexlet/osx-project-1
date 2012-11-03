@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Cyxx. All rights reserved.
 //
 
+static NSArray* elements = nil;
+
 #import "Cell.h"
 
 @implementation Cell
@@ -24,7 +26,10 @@
 
 // common elements for all cells
 +(NSArray*)elements {
-    return [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+    if (elements == nil) {
+        elements = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+    }
+    return elements;
 }
 
 -(void)print {
