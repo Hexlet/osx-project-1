@@ -11,6 +11,8 @@
 		FF95221A164010CC0083511B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF952219164010CC0083511B /* main.m */; };
 		FF95221E164010CC0083511B /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF95221D164010CC0083511B /* DNA.1 */; };
 		FF952226164010EF0083511B /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF952225164010EF0083511B /* Cell.m */; };
+		FFF446E716456E480079F20B /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF446E616456E480079F20B /* Cell+mutator.m */; };
+		FFF446EB16456EBB0079F20B /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FFF446EA16456EBB0079F20B /* NSMutableArray+Shuffling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,10 @@
 		FF95221D164010CC0083511B /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
 		FF952224164010EF0083511B /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		FF952225164010EF0083511B /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		FFF446E516456E480079F20B /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		FFF446E616456E480079F20B /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+		FFF446E916456EBB0079F20B /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
+		FFF446EA16456EBB0079F20B /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				FF952219164010CC0083511B /* main.m */,
+				FFF446E916456EBB0079F20B /* NSMutableArray+Shuffling.h */,
+				FFF446EA16456EBB0079F20B /* NSMutableArray+Shuffling.m */,
+				FFF446E516456E480079F20B /* Cell+mutator.h */,
+				FFF446E616456E480079F20B /* Cell+mutator.m */,
 				FF952224164010EF0083511B /* Cell.h */,
 				FF952225164010EF0083511B /* Cell.m */,
 				FF95221D164010CC0083511B /* DNA.1 */,
@@ -146,6 +156,8 @@
 			files = (
 				FF95221A164010CC0083511B /* main.m in Sources */,
 				FF952226164010EF0083511B /* Cell.m in Sources */,
+				FFF446E716456E480079F20B /* Cell+mutator.m in Sources */,
+				FFF446EB16456EBB0079F20B /* NSMutableArray+Shuffling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +254,7 @@
 				FF952223164010CC0083511B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
