@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
+#import "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {
@@ -23,6 +24,11 @@ int main(int argc, const char * argv[])
         
         NSLog(@"%i", [cellSource hammingDistance:cellForCompare]);
         
+        [cellSource mutate:70];
+        [cellForCompare mutate:70];
+        
+        NSLog(@"%i", [cellSource hammingDistance:cellForCompare]);
+
     }
     return 0;
 }
