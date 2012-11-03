@@ -9,13 +9,22 @@
 #import <Foundation/Foundation.h>
 
 /*
-Methods for working with random numbers
+ Methods for working with random numbers
 */
 @interface Random : NSObject
 
+
 /*
-Returns a random non-negative integer number less that the specified upper bound
- */
+ Returns a random non-negative integer number less that the specified upper bound
+*/
 + (NSUInteger) nextNumber:(NSUInteger)upperBound;
+
+
+/*
+ Returns a random set of non-negative integer numbers less that the specified upper bound
+ of the specified length. All numbers are different.
+*/
++ (NSOrderedSet *) nextSequenceOfLength:(NSUInteger)length
+                  withUpperBound:(NSUInteger)upperBound;
 
 @end
