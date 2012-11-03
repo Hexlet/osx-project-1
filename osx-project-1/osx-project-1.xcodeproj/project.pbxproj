@@ -10,6 +10,9 @@
 		69148808164555CA0029FA0E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699893E01645548F006F5DA3 /* Cocoa.framework */; };
 		69148809164555D00029FA0E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699893BA16454BD7006F5DA3 /* SenTestingKit.framework */; };
 		6914880B164557950029FA0E /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 699893D616454F7D006F5DA3 /* Cell.m */; };
+		6914880E164572030029FA0E /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914880D164572030029FA0E /* Random.m */; };
+		69148811164572110029FA0E /* RandomTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 69148810164572110029FA0E /* RandomTest.m */; };
+		69148812164573200029FA0E /* Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914880D164572030029FA0E /* Random.m */; };
 		699893A716454954006F5DA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699893A616454954006F5DA3 /* Foundation.framework */; };
 		699893AA16454954006F5DA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 699893A916454954006F5DA3 /* main.m */; };
 		699893AE16454954006F5DA3 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699893AD16454954006F5DA3 /* osx_project_1.1 */; };
@@ -42,6 +45,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6914880C164572030029FA0E /* Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Random.h; sourceTree = "<group>"; };
+		6914880D164572030029FA0E /* Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Random.m; sourceTree = "<group>"; };
+		6914880F164572110029FA0E /* RandomTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomTest.h; sourceTree = "<group>"; };
+		69148810164572110029FA0E /* RandomTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomTest.m; sourceTree = "<group>"; };
 		699893A216454954006F5DA3 /* osx-project-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "osx-project-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		699893A616454954006F5DA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		699893A916454954006F5DA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +128,8 @@
 				699893D616454F7D006F5DA3 /* Cell.m */,
 				699893AD16454954006F5DA3 /* osx_project_1.1 */,
 				699893AB16454954006F5DA3 /* Supporting Files */,
+				6914880C164572030029FA0E /* Random.h */,
+				6914880D164572030029FA0E /* Random.m */,
 			);
 			path = "osx-project-1";
 			sourceTree = "<group>";
@@ -149,6 +158,8 @@
 				699893C316454BD7006F5DA3 /* Supporting Files */,
 				699893D816454FA0006F5DA3 /* CellTest.h */,
 				699893D916454FA0006F5DA3 /* CellTest.m */,
+				6914880F164572110029FA0E /* RandomTest.h */,
+				69148810164572110029FA0E /* RandomTest.m */,
 			);
 			path = "osx-project-1_tests";
 			sourceTree = "<group>";
@@ -263,6 +274,7 @@
 			files = (
 				699893AA16454954006F5DA3 /* main.m in Sources */,
 				699893D716454F7D006F5DA3 /* Cell.m in Sources */,
+				6914880E164572030029FA0E /* Random.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6914880B164557950029FA0E /* Cell.m in Sources */,
+				69148812164573200029FA0E /* Random.m in Sources */,
 				699893DA16454FA0006F5DA3 /* CellTest.m in Sources */,
+				69148811164572110029FA0E /* RandomTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

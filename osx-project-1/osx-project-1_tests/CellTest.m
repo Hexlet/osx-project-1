@@ -11,7 +11,7 @@
 
 @implementation CellTest
 
-- (void) testCellCreated_expectDnaNotNull {
+- (void) testInit {
     Cell *cell = [[Cell alloc] init];
     STAssertNotNil(cell, nil);
 }

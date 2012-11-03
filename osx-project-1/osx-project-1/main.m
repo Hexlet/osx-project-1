@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Cell.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        NSLog(@"Up and running!");
+        Cell *cell = [[Cell alloc] init];
+        NSLog(@"Cell %@", cell);
     }
     return 0;
 }
