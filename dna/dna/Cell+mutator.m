@@ -24,39 +24,39 @@
     if (0 == percent)
         return;
     
-    const NSUInteger dnaCharCount = [Cell getDnaCharCount];
+    const u_int32_t dnaCharCount = [Cell getDnaCharCount];
     
     // создать массив индексов и зарезервировать в нем место
     NSMutableArray *indices = [NSMutableArray arrayWithCapacity:dnaCharCount];
     
     // заполнить индексы
-    for (NSUInteger i = 0; i != dnaCharCount; ++i)
+    for (u_int32_t i = 0; i != dnaCharCount; ++i)
     {
         [indices addObject:[NSNumber numberWithUnsignedInteger:i]];
     }
     
     // количество символов к мутации
-    const NSUInteger indexCount = dnaCharCount*percent/maxPercent;
+    const u_int32_t indexCount = dnaCharCount*percent/maxPercent;
     
     // если мутация затрагивает менее 100% символов, перемешать индексы для случайности изменений
     if (percent < maxPercent)
     {
         // перемешивание
-        for (NSUInteger i = 0; i != indexCount; ++i)
+        for (u_int32_t i = 0; i != indexCount; ++i)
         {
-            const NSUInteger j = arc4random() % dnaCharCount;
+            const NSUInteger j = i + arc4random_uniform(dnaCharCount - i);
             [indices exchangeObjectAtIndex:i withObjectAtIndex:j];
         }
     }
     
-    const NSUInteger dnaAlphabetSize = [Cell getDnaAlphabetSize];
+    const u_int32_t dnaAlphabetSize = [Cell getDnaAlphabetSize];
     
     // перебрать первые indexCount (случайных) индексов
-    for (NSUInteger i = 0; i != indexCount; ++i)
+    for (u_int32_t i = 0; i != indexCount; ++i)
     {
         const NSUInteger changeIdx  = [(NSNumber*)[indices objectAtIndex:i] unsignedIntegerValue];
         const NSUInteger charIdx    = [(NSNumber*)[dna objectAtIndex:changeIdx] unsignedIntegerValue];
-        const NSUInteger newCharIdx = (charIdx + 1 + (arc4random() % (dnaAlphabetSize - 1))) % dnaAlphabetSize; // inspired by Sachs
+        const NSUInteger newCharIdx = (charIdx + 1 + arc4random_uniform(dnaAlphabetSize - 1)) % dnaAlphabetSize; // inspired by Sachs
 
         [dna replaceObjectAtIndex:changeIdx withObject:[NSNumber numberWithUnsignedInteger:newCharIdx]];
     }

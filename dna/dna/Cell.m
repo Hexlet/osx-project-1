@@ -10,25 +10,25 @@
 
 
 // количество символов в алфавите ДНК
-static const NSUInteger dnaAlphaBetSize = 4;
+static const u_int32_t dnaAlphaBetSize = 4;
 
 // алфавит, составляющий ДНК
 static const char dnaAlphabet[dnaAlphaBetSize] = { 'A', 'T', 'G', 'C' };
 
 // количество символов в ДНК
-static const NSUInteger dnaCharCount = 100;
+static const u_int32_t dnaCharCount = 100;
 
 
 @implementation Cell
 
 
-+ (NSUInteger) getDnaAlphabetSize
++ (u_int32_t) getDnaAlphabetSize
 {
     return dnaAlphaBetSize;
 }
 
 
-+ (NSUInteger) getDnaCharCount
++ (u_int32_t) getDnaCharCount
 {
     return dnaCharCount;
 }
@@ -46,9 +46,9 @@ static const NSUInteger dnaCharCount = 100;
         return nil;
  
     // проинициализировать массив ДНК случайными индексами символов из заданного алфавита
-    for (NSUInteger i = 0; i != dnaCharCount; ++i)
+    for (u_int32_t i = 0; i != dnaCharCount; ++i)
     {
-        const NSUInteger randCharIdx = arc4random() % [Cell getDnaAlphabetSize];
+        const NSUInteger randCharIdx = arc4random_uniform([Cell getDnaAlphabetSize]);
         [dna addObject:[NSNumber numberWithUnsignedInteger:randCharIdx]];
     }
     
@@ -64,7 +64,7 @@ static const NSUInteger dnaCharCount = 100;
 
     int distance = 0;
     
-    for (NSUInteger i = 0; i != dnaCharCount; ++i)
+    for (u_int32_t i = 0; i != dnaCharCount; ++i)
     {
         const NSNumber *nl = (NSNumber*)[dna objectAtIndex:i];
         const NSNumber *nr = (NSNumber*)[otherCell->dna objectAtIndex:i];
@@ -80,7 +80,7 @@ static const NSUInteger dnaCharCount = 100;
 {
     NSMutableString *dnaStr = [NSMutableString stringWithCapacity:dnaCharCount];
 
-    for (NSUInteger i = 0; i != dnaCharCount; ++i)
+    for (u_int32_t i = 0; i != dnaCharCount; ++i)
     {
         const NSUInteger charIdx = [(NSNumber*)[dna objectAtIndex:i] unsignedIntegerValue];
         [dnaStr appendFormat:@"%c", dnaAlphabet[charIdx]];

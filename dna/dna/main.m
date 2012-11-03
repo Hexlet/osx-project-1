@@ -19,6 +19,9 @@ int main(int argc, const char * argv[])
         Cell *a = [[Cell alloc] init];
         Cell *b = [[Cell alloc] init];
         
+        //Cell *at = [a clone];
+        //Cell *bt = [b clone];
+        
         //NSLog(@"DNA-a: %@", [a toString]);
         //NSLog(@"DNA-b: %@", [b toString]);
      
@@ -28,6 +31,12 @@ int main(int argc, const char * argv[])
         [a mutate:47];
         [b mutate:53];
 
+        //distance = [a hammingDistance:at];
+        //NSLog(@"Hamming distance a-at: %i", distance);
+
+        //distance = [b hammingDistance:bt];
+        //NSLog(@"Hamming distance b-bt: %i", distance);
+        
         //NSLog(@"DNA-a: %@", [a toString]);
         //NSLog(@"DNA-b: %@", [b toString]);
         
