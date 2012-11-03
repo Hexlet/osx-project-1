@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'osx-project-1_tests' target in the 'osx-project-1_tests' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

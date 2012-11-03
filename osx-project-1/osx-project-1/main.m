@@ -12,7 +12,7 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        NSLog(@"test");
+        NSLog(@"Up and running!");
     }
     return 0;
 }
