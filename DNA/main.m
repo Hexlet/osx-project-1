@@ -9,6 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
+@interface NSMutableArray (Shuffling)
+- (void)shuffle;
+@end
+
+@implementation NSMutableArray (Shuffling)
+
+- (void)shuffle
+{
+    NSUInteger count = [self count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [self exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+}
+
+@end
+
 @interface Cell (mutator)
 -(void) mutate:(int)viruses;
 @end
@@ -18,12 +37,13 @@
     
     NSMutableArray *viruseBase = [[NSMutableArray alloc] init];
     
-    while ([viruseBase count] < viruses) {
-        NSNumber *randomVirusNumber = [NSNumber numberWithInteger:arc4random() % [[self dna] count] ];
-        if (![viruseBase containsObject:randomVirusNumber]) {
-            [viruseBase addObject:randomVirusNumber];
-        }
+    //fill viruseBase
+    for (int i = 0; i < viruses; i++) {
+        NSNumber *virusNumber = [[NSNumber alloc] initWithInteger:i];
+        [viruseBase addObject:virusNumber];
     }
+    //shuffle viruseBase
+    [viruseBase shuffle];
     
     for (int i = 0; i < [viruseBase count]; i++) {
         [
@@ -43,7 +63,7 @@ int main(int argc, const char * argv[])
         Cell *cell2 = [[Cell alloc] init];
         NSLog(@"Hamming Distance Between DNAs is %i",[cell1 hammingDistance:cell2]);
         [cell1 mutate:5];
-        [cell2 mutate:50];
+        [cell2 mutate:100];
         NSLog(@"Hamming Distance Between Mutated DNAs is %i",[cell1 hammingDistance:cell2]);
     }
     return 0;
