@@ -15,8 +15,7 @@
     return (NSUInteger)(arc4random() % upperBound);
 }
 
-+ (NSOrderedSet *) nextSequenceOfLength:(NSUInteger)length
-                  withUpperBound:(NSUInteger)upperBound {
++ (NSOrderedSet *) nextSequenceOfLength:(NSUInteger)length withUpperBound:(NSUInteger)upperBound {
     NSMutableArray *possibleNumbers = [NSMutableArray arrayWithCapacity:upperBound];
     for (int n = 0; n < upperBound; n++) {
         possibleNumbers[n] = @(n);

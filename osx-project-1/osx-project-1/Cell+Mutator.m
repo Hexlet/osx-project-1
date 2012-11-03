@@ -13,7 +13,9 @@
 @implementation Cell (Mutator)
 
 - (void) mutate:(int)replacementCount {
-    if (replacementCount <= 0) { return; }
+    if (replacementCount <= 0) {
+        return;
+    }
     DNAGenerator *dnaGenerator = [[DNAGenerator alloc] init];
     NSOrderedSet *indexes = [Random nextSequenceOfLength:replacementCount withUpperBound:self.dna.count];
     for (NSNumber *index in indexes) {

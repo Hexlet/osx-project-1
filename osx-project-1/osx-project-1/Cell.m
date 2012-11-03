@@ -13,6 +13,7 @@
 
 @implementation Cell
 
+//designated initializer
 - (id) initWithDNA:(NSMutableArray *)dna {
     self = [super init];
     if (self) {
@@ -37,6 +38,7 @@
     return hammingDistance;
 }
 
+//NSCopying implementation
 - (id) copyWithZone:(NSZone *)zone {
     NSMutableArray *dnaCopy = [self.dna copyWithZone:zone];
     Cell *copy = [[Cell allocWithZone:zone] initWithDNA:dnaCopy];
