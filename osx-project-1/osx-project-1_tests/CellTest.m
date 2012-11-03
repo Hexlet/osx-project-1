@@ -8,12 +8,18 @@
 
 #import "CellTest.h"
 #import "Cell.h"
+#import "Cell+Mutator.h"
 
 @implementation CellTest
 
-- (void) test_init {
+- (void) test_initDnaContains100Symbols {
     Cell *cell = [[Cell alloc] init];
     STAssertNotNil(cell, nil);
+    STAssertEquals((NSUInteger)100, cell.dna.count, nil);
+    NSArray *dnaSymbols = [NSArray arrayWithObjects:@'A', @'T', @'G', @'C', nil];
+    for (id symbol in cell.dna) {
+        STAssertTrue([dnaSymbols containsObject:symbol], nil);
+    }
 }
 
 - (void) test_hammingDistanceWithSelfReturns0 {
@@ -31,6 +37,5 @@
         STAssertTrue(hammingDistance <= 100, nil);
     }
 }
-
 
 @end

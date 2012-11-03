@@ -7,34 +7,17 @@
 //
 
 #import "Cell.h"
-#import "Random.h"
-
-#define kDNACapacity 100
-
-@interface Cell()
-
-@property (nonatomic, strong, readonly) NSMutableArray *dna;
-
-@end
+#import "DNAGenerator.h"
 
 @implementation Cell
 
 - (id) init {
     self = [super init];
     if (self) {
-        _dna = [Cell createDna];
+        DNAGenerator *dnaGenerator = [[DNAGenerator alloc] init];
+        _dna = [dnaGenerator createDNAWithCapacity:kDNACapacity];
     }
     return self;
-}
-
-+ (NSMutableArray *) createDna {
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:kDNACapacity];
-    NSArray *chars = [NSArray arrayWithObjects:@'A', @'T', @'G', @'C', nil];
-    for (int index = 0; index < kDNACapacity; index++) {
-        long randomIndex = [Random nextNumber:4];
-        result[index] = chars[randomIndex];
-    }
-    return result;
 }
 
 - (int) hammingDistance:(Cell *)cell {
