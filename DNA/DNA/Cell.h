@@ -10,8 +10,9 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA;
-@property NSArray *DNAtypes;
+@property NSMutableArray *DNA; // цепочка ДНК
+@property NSArray *DNAtypes; // типы аминокислот
+@property (readonly) int DNAamount; // длинна цепоки ДНК
 
 -(int) hammingDistance:(Cell *)anotherCell;
 

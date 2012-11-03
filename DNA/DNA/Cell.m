@@ -13,11 +13,12 @@
 -(id) init{
         self = [super init];
         if (self){
+                _DNAamount = 100;
                 int amino;
                 _DNA = [[NSMutableArray alloc] initWithCapacity:100];
-                _DNAtypes = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil]; //массив типов ДНК
-                for (int i=0; i<100; i++) {
-                        amino = arc4random()%4;
+                _DNAtypes = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil]; //массив типов аминокислот
+                for (int i=0; i<_DNAamount; i++) {
+                        amino = arc4random()%[_DNAtypes count]; // выбираю один из вариантов аминокислот
                         [_DNA addObject:[_DNAtypes objectAtIndex:amino]];
                     }
             }
@@ -25,8 +26,8 @@
     }
 
 -(int) hammingDistance:(Cell *)anotherCell{
-        int count=100;
-        for (int i=0; i<100; i++) {
+        int count=_DNAamount;
+        for (int i=0; i<_DNAamount; i++) {
                 if ([[_DNA objectAtIndex:i] isEqual:[anotherCell.DNA objectAtIndex:i]] ) {
                         count--;
                     }
