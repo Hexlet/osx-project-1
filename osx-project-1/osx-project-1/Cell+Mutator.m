@@ -8,12 +8,17 @@
 
 #import "Cell+Mutator.h"
 #import "Random.h"
+#import "DNAGenerator.h"
 
 @implementation Cell (Mutator)
 
 - (void) mutate:(int)replacementCount {
-    for (int i = 0; i < replacementCount; i++) {
-        //TODO
+    if (replacementCount <= 0) { return; }
+    DNAGenerator *dnaGenerator = [[DNAGenerator alloc] init];
+    NSOrderedSet *indexes = [Random nextSequenceOfLength:replacementCount withUpperBound:self.dna.count];
+    for (NSNumber *index in indexes) {
+        int i = index.intValue;
+        self.dna[i] = [dnaGenerator randomDNASymbol];
     }
 }
 

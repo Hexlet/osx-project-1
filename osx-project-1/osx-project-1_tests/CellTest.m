@@ -22,6 +22,16 @@
     }
 }
 
+- (void) test_copy {
+    Cell *cell = [[Cell alloc] init];
+    Cell *cellCopy = [cell copy];
+    STAssertFalse(cell == cellCopy, nil);
+    STAssertEquals(cell.dna.count, cellCopy.dna.count, nil);
+    for (int i = 0; i < cell.dna.count; i++) {
+        STAssertEqualObjects(cell.dna[i], cellCopy.dna[i], nil);
+    }
+}
+
 - (void) test_hammingDistanceWithSelfReturns0 {
     Cell *cell = [[Cell alloc] init];
     int hammingDistance = [cell hammingDistance:cell];

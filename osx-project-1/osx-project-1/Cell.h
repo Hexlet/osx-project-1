@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#define kDNACapacity 100
-
 /*
 Represents model of a cell containing DNA symbolic array
 */
-@interface Cell : NSObject
+@interface Cell : NSObject <NSCopying>
 
 /*
 Array of symbols representing DNA of the current cell

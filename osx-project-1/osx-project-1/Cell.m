@@ -9,15 +9,22 @@
 #import "Cell.h"
 #import "DNAGenerator.h"
 
+#define kDNACapacity 100
+
 @implementation Cell
 
-- (id) init {
+- (id) initWithDNA:(NSMutableArray *)dna {
     self = [super init];
     if (self) {
-        DNAGenerator *dnaGenerator = [[DNAGenerator alloc] init];
-        _dna = [dnaGenerator createDNAWithCapacity:kDNACapacity];
+        _dna = dna;
     }
     return self;
+}
+
+- (id) init {
+    DNAGenerator *dnaGenerator = [[DNAGenerator alloc] init];
+    NSMutableArray *dna = [dnaGenerator createDNAWithCapacity:kDNACapacity];
+    return [self initWithDNA:dna];
 }
 
 - (int) hammingDistance:(Cell *)cell {
@@ -28,6 +35,11 @@
         }
     }
     return hammingDistance;
+}
+
+- (id) copyWithZone:(NSZone *)zone {
+    Cell *copy = [[Cell allocWithZone:zone] initWithDNA:self.dna];
+    return copy;
 }
 
 @end
