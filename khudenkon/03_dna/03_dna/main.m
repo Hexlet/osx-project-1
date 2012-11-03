@@ -16,8 +16,8 @@
 @implementation Cell (Evolution)
 
 -(void) mutate: (int) percent{                          // категория Cell (Evolution) 
-    const int LENGTH_ARRAY = 100;                       // ПОЧЕМУ ТО ПРИШЛОСЬ ПОВТОРИТЬ!!! 
-    const NSString *ch[4] = {@"A", @"T", @"G", @"C"};   // тоже ПРИШЛОСЬ ПОВТОРИТЬ!!! (не знаю как объявить глобальную для Cell (Evolution) и для Cell.m)
+    extern int const LENGTH_ARRAY;
+    extern NSString const *ch[4];
     
 // создание массива размером исходного (NSMutableArray *dna), из элементов Boolean,
 // где столько значение TRUE, сколько процентов нужно изменить.

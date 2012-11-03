@@ -8,7 +8,7 @@
 
 #import "Cell.h"
 
-const int LENGTH_ARRAY = 100;                       // ПОЧЕМУ ТО ПРИШЛОСЬ ПОВТОРИТЬ!!! 
+const int LENGTH_ARRAY = 100;                       // ПОЧЕМУ ТО ПРИШЛОСЬ ПОВТОРИТЬ!!!
 const NSString *ch[4] = {@"A", @"T", @"G", @"C"};   // тоже ПРИШЛОСЬ ПОВТОРИТЬ!!! (не знаю как объявить глобальную для Cell (Evolution) и для Cell.m)
 
 @implementation Cell
