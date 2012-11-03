@@ -34,6 +34,7 @@
     int distance = 0;
     
     for (int i = 0; i < DNA_LENGHT; i++) {
+        
         //Если элементы с одинаковыми индексами НЕ совпадают, наращиваем счетчик
         if ( ! [[anCell.DNA objectAtIndex: i] isEqualToString:[self.DNA objectAtIndex: i]]){
             distance++;

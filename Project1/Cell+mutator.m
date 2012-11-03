@@ -11,22 +11,28 @@
 @implementation Cell (mutator)
 
 - (void) mutate:(int)percent{
+    // Отладочная проверка параметра
+    NSAssert((percent >= 0) && (percent <= 100), @"percent should be in range(0,100)");
+    
+    // Если надо мутировать 0 %  - то ничего не делаем
+    if (percent == 0) return;
+    
+    // Переводим процент в количество элементов
+    int count = DNA_LENGHT * percent / 100;
     
     static NSMutableArray *tmpArray = nil;
     
-    //Переводим процент в количество элементов
-    int count = DNA_LENGHT * percent / 100;
-    
-    //Массив создается только при первом вызове метода
+    // Массив создается только при первом вызове метода
     if (!tmpArray) {
         tmpArray = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
         
+        // Вспомогательный массив последовательных элементов
         for (int i = 0; i < DNA_LENGHT; i++) {
             [tmpArray addObject:[NSNumber numberWithInt:i]];
         }
     }
     
-    // Перемешиваем массив
+    // Перемешиваем массив, для получения уникальных неповторяющихся индексов
     for (int i = 0; i < count; i++) {
         int j = i + arc4random() % (DNA_LENGHT - i);
         [tmpArray exchangeObjectAtIndex:i withObjectAtIndex:j];
@@ -35,15 +41,30 @@
     // Получаем срез массива необходимого размера count
     NSArray *uniqueIndexes = [tmpArray subarrayWithRange: NSMakeRange(0, count)];
     
-    // Заменим элементы по случайным индексам
+    NSMutableArray *tmpSymbols;
+    
+    // Пробежимся по случайным индексам
     for (NSNumber *index in uniqueIndexes){
-        // Ищем случайный символ и меняем, проверяя на не совпадение со старым
-        int rnd_index = arc4random() % 4;
-        while ([self.DNA[[index integerValue]] isEqualToString:self.DNASymbols[rnd_index]]) {
-            rnd_index = arc4random() % 4;
+        
+        // Создадим вспомогательный массив из символов ДНК
+        tmpSymbols = [NSMutableArray arrayWithArray:self.DNASymbols];
+        
+        // Выберем случайный индекс
+        int rnd_index = arc4random() % [tmpSymbols count];
+        
+        // Если символ по этому индексу такой-же как и старый,
+        if ([tmpSymbols[rnd_index] isEqualToString:self.DNA[[index integerValue]]]){
+            
+            // то удалим этот символ из вспомогательного массива
+            [tmpSymbols removeObjectAtIndex:rnd_index];
+            
+            // и выберем случайно из оставшихся символов
+            rnd_index = arc4random() % [tmpSymbols count];
         }
-        // DEBUG: NSLog(@"at index: %li %@ replace to %@", [index integerValue], self.DNA[[index integerValue]], self.DNASymbols[rnd_index]);
-        [self.DNA replaceObjectAtIndex:[index integerValue] withObject:self.DNASymbols[rnd_index]];
+        
+        // Заменим символ на уникалный новый
+        // DEBUG: NSLog(@"at index: %li %@ replace to %@", [index integerValue], self.DNA[[index integerValue]], tmpSymbols[rnd_index]);
+        [self.DNA replaceObjectAtIndex:[index integerValue] withObject:tmpSymbols[rnd_index]];
     }
 }
 @end
