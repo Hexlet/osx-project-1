@@ -10,6 +10,7 @@
 
 @interface Cell (Mutator)
 
+-(void)mutateNucleotide: (NSUInteger) nucleotideIndexInDNA;
 -(void)mutate: (int)percent;
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Cyxx. All rights reserved.
 //
 
-static NSArray* elements = nil;
+static NSArray* nucleotides = nil;
 
 #import "Cell.h"
 
@@ -16,8 +16,8 @@ static NSArray* elements = nil;
     if (self = [super init]) {
         dna = [NSMutableArray arrayWithCapacity:DNA_COUNT];
         for (int i = 0; i < DNA_COUNT; i++) {
-            u_int32_t rnd = (arc4random() % [[Cell elements] count]);
-            [dna addObject:[[Cell elements] objectAtIndex:rnd]];
+            u_int32_t rnd = (arc4random() % [[Cell nucleotides] count]);
+            [dna addObject:[[Cell nucleotides] objectAtIndex:rnd]];
         }
     }
     
@@ -25,11 +25,11 @@ static NSArray* elements = nil;
 }
 
 // common elements for all cells
-+(NSArray*)elements {
-    if (elements == nil) {
-        elements = @[@"A", @"T", @"G", @"C"];
++(NSArray*)nucleotides {
+    if (nucleotides == nil) {
+        nucleotides = @[@"A", @"T", @"G", @"C"];
     }
-    return elements;
+    return nucleotides;
 }
 
 -(void)print {
@@ -38,14 +38,14 @@ static NSArray* elements = nil;
     printf("\n");
 }
 
--(NSString*)elementAtIndex: (int) dnaIndex {
+-(NSString*)nucleotideAtIndex: (int) dnaIndex {
     return [dna objectAtIndex:dnaIndex];
 }
 
 -(int)hammingDistance:(Cell *)c {
     int distance = 0;
     for (int i = 0; i < DNA_COUNT; i++) {
-        if ([[dna objectAtIndex:i] isNotEqualTo:[c elementAtIndex:i]])
+        if ([[self nucleotideAtIndex:i] isNotEqualTo:[c nucleotideAtIndex:i]])
             distance++;
     }
     return distance;

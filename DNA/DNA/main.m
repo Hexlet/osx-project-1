@@ -17,12 +17,13 @@ int main(int argc, const char * argv[])
         Cell *cellB = [[Cell alloc] init];
         [cellA print];
         [cellB print];
+
         printf("Hamming Distance = %d\n", [cellA hammingDistance:cellB]);
         
         printf("\nMutating...\n\n");
 
-        [cellA mutate:30];
-        [cellB mutate:30];
+        [cellA mutate:40];
+        [cellB mutate:40];
         [cellA print];
         [cellB print];
         printf("Hamming Distance = %d\n", [cellA hammingDistance:cellB]);

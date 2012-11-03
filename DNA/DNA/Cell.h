@@ -11,11 +11,10 @@
 #define DNA_COUNT   100
 
 @interface Cell : NSObject {
-    //NSArray *element;
     NSMutableArray *dna;
 }
 
-+(NSArray*)elements;
++(NSArray*)nucleotides;
 -(void)print;
 -(int)hammingDistance: (Cell*)c;
 

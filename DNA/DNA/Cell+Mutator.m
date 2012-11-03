@@ -10,23 +10,41 @@
 
 @implementation Cell (Mutator)
 
+// мутирование нуклеотида
+-(void)mutateNucleotide: (NSUInteger) nucleotideIndexInDNA {
+
+    // индекс нуклеотида в массиве нуклеотидов
+    NSUInteger nucleotideIndex = [[Cell nucleotides] indexOfObjectIdenticalTo: [dna objectAtIndex:nucleotideIndexInDNA]];
+
+    // вычисление индекса для мутированного нуклеотида в массиве нуклеотидов ()
+    nucleotideIndex = (nucleotideIndex + 1 + arc4random()%([[Cell nucleotides] count] - 1))%[[Cell nucleotides] count];
+
+    // замена нуклеотида на мутированный в цепочке ДНК
+    [dna replaceObjectAtIndex:nucleotideIndexInDNA withObject:[[Cell nucleotides] objectAtIndex:nucleotideIndex]];
+}
+
+// мутирование ДНК
 -(void)mutate:(int)percent {
-    // clip percent to range [0, 100]
+
+    // ограничиваем percent до диапазона [0, 100]
     percent = MAX(0, MIN(percent, 100));
-    
+
+    // создаём набор индексов и заполняем всеми доступными индексами цепочки ДНК: [0, DNA_COUNT - 1]
     NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSet];
     for (int i = 0; i < DNA_COUNT; i++)
         [set addObject:[NSNumber numberWithInt:i]];
-    
+
+    // пересчёт количества мутаций для заданной длины цепочки ДНК
     int mutationsCount = DNA_COUNT*percent/100;
+
+    // цикл мутаций
     for (int i = 0; i < mutationsCount; i++) {
-        NSUInteger indexInSet = (arc4random() % set.count);
-        NSUInteger indexInDNA = [(NSNumber*)[set objectAtIndex:indexInSet] intValue];
-        
-        NSUInteger elementIndex = [[Cell elements] indexOfObjectIdenticalTo: [dna objectAtIndex:indexInDNA]];
-        NSUInteger mutatedElementIndex = (elementIndex + 1 + arc4random()%([[Cell elements] count] - 1))%[[Cell elements] count];
-        [dna replaceObjectAtIndex:indexInDNA withObject:[[Cell elements] objectAtIndex:mutatedElementIndex]];
-        [set removeObjectAtIndex:indexInSet];
+        NSUInteger mutationSetIndex = (arc4random() % set.count);
+        NSUInteger nucleotidIndex = [(NSNumber*)[set objectAtIndex:mutationSetIndex] intValue];
+        [self mutateNucleotide:nucleotidIndex];
+
+        // чтобы мутация не повторилась, вычеркиваем использованный индекс из набора индексов
+        [set removeObjectAtIndex:mutationSetIndex];
     }
 }
 

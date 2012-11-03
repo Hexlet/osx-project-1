@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.h"
-         timestampString = "373630541.927763"
+         timestampString = "373644310.228584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "18"
-         endingLineNumber = "18"
-         landmarkName = "+elements"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "+nucleotides"
          landmarkType = "4">
       </FileBreakpoint>
    </FileBreakpoints>
