@@ -44,7 +44,8 @@
 {
   const NSArray *symbols = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
   // по поводу rand - я знаю, что есть более рандомные способы, но для данной задачи подойдет и этот
-  NSString *newChar = [symbols objectAtIndex:rand() % symbols.count];
+  // upd: проанализировав чужие исходники обнаружил функцию arc4random. Вроде лучше будет
+  NSString *newChar = [symbols objectAtIndex:arc4random() % symbols.count];
   symbols = nil;
   return newChar;
 }

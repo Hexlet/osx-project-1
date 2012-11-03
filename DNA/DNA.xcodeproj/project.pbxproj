@@ -11,6 +11,7 @@
 		D9FBF57816455C9D0097B053 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF57716455C9D0097B053 /* main.m */; };
 		D9FBF57C16455C9D0097B053 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D9FBF57B16455C9D0097B053 /* DNA.1 */; };
 		D9FBF58416455CD30097B053 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF58316455CD30097B053 /* Cell.m */; };
+		D9FBF5921645C0E50097B053 /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FBF5911645C0E50097B053 /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		D9FBF57B16455C9D0097B053 /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
 		D9FBF58216455CD30097B053 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		D9FBF58316455CD30097B053 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		D9FBF5901645C0E50097B053 /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		D9FBF5911645C0E50097B053 /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 				D9FBF57716455C9D0097B053 /* main.m */,
 				D9FBF58216455CD30097B053 /* Cell.h */,
 				D9FBF58316455CD30097B053 /* Cell.m */,
+				D9FBF5901645C0E50097B053 /* Cell+mutator.h */,
+				D9FBF5911645C0E50097B053 /* Cell+mutator.m */,
 				D9FBF57B16455C9D0097B053 /* DNA.1 */,
 				D9FBF57916455C9D0097B053 /* Supporting Files */,
 			);
@@ -146,6 +151,7 @@
 			files = (
 				D9FBF57816455C9D0097B053 /* main.m in Sources */,
 				D9FBF58416455CD30097B053 /* Cell.m in Sources */,
+				D9FBF5921645C0E50097B053 /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				D9FBF58116455C9D0097B053 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
