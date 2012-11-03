@@ -27,7 +27,7 @@ static NSArray* elements = nil;
 // common elements for all cells
 +(NSArray*)elements {
     if (elements == nil) {
-        elements = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+        elements = @[@"A", @"T", @"G", @"C"];
     }
     return elements;
 }
