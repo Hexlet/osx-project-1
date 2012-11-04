@@ -15,20 +15,19 @@
     self = [super init];
     if(self){
         _size = 100;
-        _genes = @"ATGC";
+        _nucleotides = @"ATGC";
         _DNA = [[NSMutableArray alloc] initWithCapacity:_size];
         
-        // Initializes <DNA> with random values from <genes>
-        // arc4random() returns 'TRUE' random integer
+        // Initializes <DNA> with random values from <_nucleotides>
         for(int i=0; i<_size; i++){
-            int index = arc4random() % [_genes length];
-            [_DNA addObject:[_genes substringWithRange:NSMakeRange(index, 1)]];
+            int index = arc4random_uniform((uint)[_nucleotides length]);
+            [_DNA addObject:[_nucleotides substringWithRange:NSMakeRange(index, 1)]];
         }
     }
     return self;
 }
 
-// Returns a number of unmatched genes in self and cell
+// Returns a number of unmatched nucleotides in <self> and <cell>
 -(int) hammingDistance:(Cell*) cell{
     int result = 0;
     for(int i=0; i<_size; i++){

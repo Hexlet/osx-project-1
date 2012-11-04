@@ -19,7 +19,8 @@ int main(int argc, const char * argv[])
         Cell *cell2 = [[Cell alloc] init];
         
         if(!cell1 || !cell2){
-            return -1;
+            NSLog(@"ERROR: Failed to create cells!");
+            exit(EXIT_FAILURE);
         }
         
         NSLog(@"Hamming distance = %d", [cell1 hammingDistance:cell2]);
@@ -31,6 +32,6 @@ int main(int argc, const char * argv[])
         
     }
     
-    return 0;
+    return EXIT_SUCCESS;
 }
 

@@ -23,7 +23,7 @@ static NSMutableArray *mutateArray = nil;
     
     // Each call part: random permutation of numbers - complexity O(n)
     for(int i=0; i<[self size]; i++){
-        int index = arc4random() % [self size];
+        int index = arc4random_uniform((uint)[self size]);
         [mutateArray exchangeObjectAtIndex:i withObjectAtIndex:index];
     }
 }
@@ -31,35 +31,34 @@ static NSMutableArray *mutateArray = nil;
 -(void) mutate:(int)x{
     // Checks input
     if(x<0 || x>100){
-        NSLog(@"Can't mutate %d percent of genes!", x);
+        NSLog(@"ERROR: Can't mutate %d percent of genes!", x);
+        exit(EXIT_FAILURE);
+    }
+    // Avoids useless actions
+    else if(x==0){
         return;
     }
     
     // Prepares <mutateArray>
     [self preMutate];
     
-    // Calculates number of items to mutate
-    NSUInteger portion = [self size] * x / 100;
+    // Calculates number of nucleotides to mutate
+    NSUInteger portion = roundtol([self size] * x / 100.0f);
     
     //
-    // Mutates first <portion> items with indices in <mutateArray>
+    // Mutates first <portion> nucleotides with indices in <mutateArray> - complexity O(n)
     //
-    
-    // Copies DNA to <newDNA>, which will be changed
-    NSMutableArray *newDNA = [NSMutableArray arrayWithArray:[self DNA]];
     for(int i=0; i<portion; i++){
-        // Gets index in DNA to mutate
+        // Gets index of nucleotide in DNA to mutate
         int indexInDNA = [[mutateArray objectAtIndex:i] intValue];
-        // Removes current value of gene at <indexInDNA> from <genes> string, thus we have new set of possible genes
-        NSString *newGenes = [[self genes] stringByReplacingOccurrencesOfString:[newDNA objectAtIndex:indexInDNA] withString:@""];
-        // Randomly chooses an index of new gene in <newGenes>
-        int indexInNewGenes = arc4random() % [newGenes length];
-        // Replaces gene in <newDNA> at <indexInDNA> by new gene (accesible by <indexInNewGene> in <newGenes>)
-        [newDNA replaceObjectAtIndex:indexInDNA
-                          withObject:[newGenes substringWithRange:NSMakeRange(indexInNewGenes, 1)]];
+        // Removes current value of nucleotide at <indexInDNA> from <nucleotides> string, thus we have new set of possible nucleotides
+        NSString *newNucleotides = [[self nucleotides] stringByReplacingOccurrencesOfString:[[self DNA] objectAtIndex:indexInDNA] withString:@""];
+        // Randomly chooses an index of new nucleotide in <newNucleotides>
+        int indexInNewNucleotides = arc4random_uniform((uint)[newNucleotides length]);
+        // Replaces nucleotide in <DNA> at <indexInDNA> by new nucleotide (accesible by <indexInNewNucleotides> in <newNucleotides>)
+        [[self DNA] replaceObjectAtIndex:indexInDNA
+                              withObject:[newNucleotides substringWithRange:NSMakeRange(indexInNewNucleotides, 1)]];
     }
-    // Replaces DNA with modified <newDNA>
-    [self setDNA:newDNA];
 }
 
 @end

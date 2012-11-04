@@ -10,9 +10,9 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA;
+@property (readonly) NSMutableArray *DNA;
 @property (readonly) NSUInteger size;
-@property (readonly) NSString *genes;
+@property (readonly) NSString *nucleotides;
 
 -(int) hammingDistance:(Cell*) cell;
 
