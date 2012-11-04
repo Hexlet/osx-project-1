@@ -14,18 +14,19 @@ NSMutableArray *DnaTypes;
 
 //Overloaded init
 -(id) init{
+    //Call base init method
+    self = [super init];
+    
     [self InitVariables];
     
     [self fillDna];
     
-    //Call base init method
-    self = [super init];
     return self;
 }
 
 //Fill DNA array with random values
 -(void) fillDna{
-    for (int dnaIndex = 0; dnaIndex <= _DNACount; dnaIndex++) {
+    for (int dnaIndex = 0; dnaIndex < _DNACount; dnaIndex++) {
         
         [_DNA addObject: [self randomDnaType]];
     }
@@ -52,8 +53,8 @@ NSMutableArray *DnaTypes;
     int hammingDistance = 0;
     for (int dnaIndex = 0; dnaIndex < _DNACount; dnaIndex ++) {
         //compare cell's DNAs at the same index
-        if ([[_DNA objectAtIndex:dnaIndex] isEqualToString:[[cell DNA] objectAtIndex:dnaIndex]]) {
-            //if equal - increment hammingDistance
+        if ([[_DNA objectAtIndex:dnaIndex] isNotEqualTo:[[cell DNA] objectAtIndex:dnaIndex]]) {
+            //if not equal - increment hammingDistance
             hammingDistance++;
         }
     }
