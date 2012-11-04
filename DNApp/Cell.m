@@ -11,15 +11,17 @@
 @implementation Cell
 
 - (id) init {
+    dnaCapacity = 100;
+    
     self = [super init];
     
     if (self) {
         _randomArray = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil]; // Инициализация массива, который содержит буквенные указатели
         
-        _dna = [[NSMutableArray alloc] init]; // Инициализация массива ДНК
+        _dna = [[NSMutableArray alloc] initWithCapacity:dnaCapacity]; // Инициализация массива ДНК
         
         // Цикл, в котором мы рандомно присваиваем значения каждому из 100 елементов массива ДНК
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < dnaCapacity; i++) {
             
         [_dna addObject:[self getRandom]]; // Сам метод добавления обектов в массив ДНК
             
@@ -45,7 +47,7 @@
     int count = 0; // создаем переменную счетчик со значением 0
     
     // Теперь в цикле проверяем на несовпадения в двух массивах, при нахождении несовпадения увеличеваем счетчик на 1
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < dnaCapacity; i++) {
         if (![[cell.dna objectAtIndex:i] isEqualToString:[_dna objectAtIndex:i]]) {
             count ++;
         }

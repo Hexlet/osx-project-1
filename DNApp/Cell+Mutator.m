@@ -18,11 +18,11 @@
     }
     
     // Первод процентов в единицы
-    int countOfElement = 100*0.01*persentOfElement;
+    int countOfElement = dnaCapacity*persentOfElement/100;
     
     // Создаем масив-список
     NSMutableArray *replaceList = [[NSMutableArray alloc] init];
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < dnaCapacity; i++) {
             [replaceList addObject:@(i)]; // Единицы в стринг
         }
     

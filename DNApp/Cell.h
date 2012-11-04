@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
+@interface Cell : NSObject {
+    int dnaCapacity;
+}
 
 @property NSMutableArray *dna; // массив для ДНК
 @property NSArray *randomArray; // массив для значений 
