@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Cells' target in the 'Cells' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
