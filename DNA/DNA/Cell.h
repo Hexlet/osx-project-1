@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject
-{
-    NSMutableArray *DNA;
-}
+@property (strong) NSMutableArray *dna;
+
+-(int)hammingDistance:(Cell *)cell;
 
 @end
