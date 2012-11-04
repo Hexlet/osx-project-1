@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Igor Smirnov. All rights reserved.
 //
 
+// FINAL версия
+
 #include <stdio.h>
 #import "Cell.h"
 #import "Cell+Mutator.h"
