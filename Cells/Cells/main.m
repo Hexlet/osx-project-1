@@ -13,11 +13,13 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        
-        // insert code here...
-        NSLog(@"Hello, World!");
         Cell *first = [[Cell alloc] init];
         Cell *second = [[Cell alloc] init];
+        NSLog(@"%i", [first hammingDistance:second]);
+        
+        [first mutator:25];
+        [second mutator:40];
+        
         NSLog(@"%i", [first hammingDistance:second]);
     }
     return 0;

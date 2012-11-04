@@ -14,16 +14,23 @@
 }
 
 - (id) init {
-    if (self = [super init]) {
-        DNA = [NSMutableArray arrayWithCapacity:100];
-        NSArray *Genome = [NSArray arrayWithObjects:@"A", @"C", @"G", @"T", nil];
+    NSArray *Genome = [NSArray arrayWithObjects:@"A", @"C", @"G", @"T", nil];
+    NSMutableArray *arrayDNA = [NSMutableArray arrayWithCapacity:100];
+    for (int i = 0; i < 100; ++i) {
+        [arrayDNA addObject:[Genome objectAtIndex:arc4random() % 4]];
         
-        for (int i = 0; i < 100; ++i) {
-            [DNA addObject:[Genome objectAtIndex:arc4random() % 4]];
-            
-        }
     }
-    NSLog(@"%@", DNA);
+    
+    if (self = [self initWithArray:arrayDNA]) {
+        // Awesome !
+    }
+    return self;
+}
+
+- (id) initWithArray:(NSArray *)arrayDNA {
+    if (self = [super init]) {
+        DNA = [NSMutableArray arrayWithArray:arrayDNA];
+    }
     return self;
 }
 
@@ -41,6 +48,20 @@
     }
     
     return count;
+}
+
+- (void) mutator:(int)persent {
+    if (persent > 100 && persent < 0){
+        NSLog(@"Error: bad value");
+        return ;
+    }
+    
+    NSArray *Genome = [NSArray arrayWithObjects:@"A", @"C", @"G", @"T", nil];
+
+    Cell *MutableDNA = [[Cell alloc] initWithArray:DNA];
+    while (persent > [self hammingDistance:MutableDNA]) {
+        [DNA replaceObjectAtIndex:(arc4random() % [DNA count]) withObject:[Genome objectAtIndex:arc4random() % 4]];
+    }
 }
 
 @end

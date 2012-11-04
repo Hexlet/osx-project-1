@@ -10,7 +10,13 @@
 
 @interface Cell : NSObject
 - (id) init;
+- (id) initWithArray:(NSArray *)arrayDNA;
 - (NSString *) genomeAtIndex:(int)index;
 - (int) hammingDistance:(Cell *)another;
 
+@end
+
+
+@interface Cell ()
+- (void) mutator:(int)persent;
 @end
