@@ -24,7 +24,7 @@
     if (0 == percent)
         return;
     
-    const u_int32_t dnaCharCount = [Cell getDnaCharCount];
+    const NSUInteger dnaCharCount = [dna count];
     
     // создать массив индексов и зарезервировать в нем место
     NSMutableArray *indices = [NSMutableArray arrayWithCapacity:dnaCharCount];
@@ -36,27 +36,27 @@
     }
     
     // количество символов к мутации
-    const u_int32_t indexCount = dnaCharCount*percent/maxPercent;
+    const NSUInteger indexCount = dnaCharCount*percent/maxPercent;
     
     // если мутация затрагивает менее 100% символов, перемешать индексы для случайности изменений
     if (percent < maxPercent)
     {
         // перемешивание
-        for (u_int32_t i = 0; i != indexCount; ++i)
+        for (NSUInteger i = 0; i != indexCount; ++i)
         {
-            const NSUInteger j = i + arc4random_uniform(dnaCharCount - i);
+            const NSUInteger j = i + arc4random_uniform((u_int32_t)(dnaCharCount - i));
             [indices exchangeObjectAtIndex:i withObjectAtIndex:j];
         }
     }
     
-    const u_int32_t dnaAlphabetSize = [Cell getDnaAlphabetSize];
+    const NSUInteger dnaAlphabetSize = [Cell getDnaAlphabetSize];
     
     // перебрать первые indexCount (случайных) индексов
     for (u_int32_t i = 0; i != indexCount; ++i)
     {
         const NSUInteger changeIdx  = [(NSNumber*)[indices objectAtIndex:i] unsignedIntegerValue];
         const NSUInteger charIdx    = [(NSNumber*)[dna objectAtIndex:changeIdx] unsignedIntegerValue];
-        const NSUInteger newCharIdx = (charIdx + 1 + arc4random_uniform(dnaAlphabetSize - 1)) % dnaAlphabetSize; // inspired by Sachs
+        const NSUInteger newCharIdx = (charIdx + 1 + arc4random_uniform((u_int32_t)(dnaAlphabetSize - 1))) % dnaAlphabetSize; // inspired by Sachs
 
         [dna replaceObjectAtIndex:changeIdx withObject:[NSNumber numberWithUnsignedInteger:newCharIdx]];
     }

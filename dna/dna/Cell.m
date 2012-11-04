@@ -10,27 +10,21 @@
 
 
 // количество символов в алфавите ДНК
-static const u_int32_t dnaAlphaBetSize = 4;
+static const NSUInteger dnaAlphaBetSize = 4;
 
 // алфавит, составляющий ДНК
 static const char dnaAlphabet[dnaAlphaBetSize] = { 'A', 'T', 'G', 'C' };
 
 // количество символов в ДНК
-static const u_int32_t dnaCharCount = 100;
+static const NSUInteger dnaCharCount = 100;
 
 
 @implementation Cell
 
 
-+ (u_int32_t) getDnaAlphabetSize
++ (NSUInteger) getDnaAlphabetSize
 {
     return dnaAlphaBetSize;
-}
-
-
-+ (u_int32_t) getDnaCharCount
-{
-    return dnaCharCount;
 }
 
 
@@ -46,9 +40,10 @@ static const u_int32_t dnaCharCount = 100;
         return nil;
  
     // проинициализировать массив ДНК случайными индексами символов из заданного алфавита
-    for (u_int32_t i = 0; i != dnaCharCount; ++i)
+    for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
-        const NSUInteger randCharIdx = arc4random_uniform([Cell getDnaAlphabetSize]);
+        const NSUInteger randCharIdx = arc4random_uniform((u_int32_t)dnaAlphaBetSize);
+        // вместо самих букв, составляющих алфавит ДНК, сохраняются их индексы, что позволяет оптимизировать алгоритм мутации
         [dna addObject:[NSNumber numberWithUnsignedInteger:randCharIdx]];
     }
     
@@ -64,10 +59,11 @@ static const u_int32_t dnaCharCount = 100;
 
     int distance = 0;
     
-    for (u_int32_t i = 0; i != dnaCharCount; ++i)
+    for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
         const NSNumber *nl = (NSNumber*)[dna objectAtIndex:i];
         const NSNumber *nr = (NSNumber*)[otherCell->dna objectAtIndex:i];
+        // сравнение индексов на буквы, составляющие алфавит ДНК
         if ([nl unsignedIntegerValue] != [nr unsignedIntegerValue])
             ++distance;
     }
@@ -80,7 +76,7 @@ static const u_int32_t dnaCharCount = 100;
 {
     NSMutableString *dnaStr = [NSMutableString stringWithCapacity:dnaCharCount];
 
-    for (u_int32_t i = 0; i != dnaCharCount; ++i)
+    for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
         const NSUInteger charIdx = [(NSNumber*)[dna objectAtIndex:i] unsignedIntegerValue];
         [dnaStr appendFormat:@"%c", dnaAlphabet[charIdx]];
