@@ -10,10 +10,10 @@
 
 @interface Cell : NSObject
 
-@property (readonly) NSMutableArray *DNA;
-
 - (int)hammingDistance:(Cell*)cell;
 
 - (void)mutateAtPosition:(int)position;
+
+- (id)charAtPosition:(int)position;
 
 @end

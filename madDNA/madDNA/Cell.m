@@ -11,6 +11,7 @@
 
 @implementation Cell {
 	const NSArray *chars;
+	NSMutableArray *dna;
 }
 
 - (id)getRandomChar {
@@ -20,19 +21,23 @@
 - (id)init {
 	self = [super init];
 	if (self) {
-		_DNA = [NSMutableArray arrayWithCapacity:100];
+		dna = [NSMutableArray arrayWithCapacity:100];
 		chars = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
 		for (int i = 0; i < 100; i++) {
-			[_DNA insertObject:[self getRandomChar] atIndex:i];
+			[dna insertObject:[self getRandomChar] atIndex:i];
 		}
 	}
 	return self;
 }
 
+- (id)charAtPosition:(int)position {
+	return [dna objectAtIndex:position];
+}
+
 - (int)hammingDistance:(Cell *)cell {
 	int result = 0;
 	for (int i = 0; i < 100; i++) {
-		if ([_DNA objectAtIndex:i] != [[cell DNA] objectAtIndex:i]) {
+		if ([self charAtPosition:i] != [cell charAtPosition:i]) {
 			result++;
 		}
 	}
@@ -40,12 +45,12 @@
 }
 
 - (void)mutateAtPosition:(int)index {
-	NSString *current_char = [_DNA objectAtIndex:index];
+	NSString *current_char = [self charAtPosition:index];
 	NSString *new_char = [self getRandomChar];
 	while (current_char == new_char) {
 		new_char = [self getRandomChar];
 	}
-	[_DNA replaceObjectAtIndex:index withObject:new_char];
+	[dna replaceObjectAtIndex:index withObject:new_char];
 }
 
 @end
