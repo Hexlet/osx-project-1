@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "Cell.h"
+#include "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {

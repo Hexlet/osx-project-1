@@ -27,10 +27,3 @@
 -(NSString*) getRandomSymbol;
 
 @end
-
-
-@interface Cell(mutator)
-
--(void)mutate:(int) x;
-
-@end

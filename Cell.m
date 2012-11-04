@@ -52,27 +52,3 @@
 }
 
 @end
-
-
-@implementation Cell(mutator)
-
--(void)mutate:(int) x {
-    int max_replacements = round( CELL_ARRAY_CAPACITY * x / 100);
-    
-    NSMutableArray *replaced_pos = [[NSMutableArray alloc] initWithCapacity: max_replacements];
-    
-    NSNumber *random_pos = [NSNumber numberWithInteger:-1];
-    
-    for ( int i = 0; i < max_replacements; ++i ) {
-        while(
-              [random_pos intValue] == -1 ||
-              [replaced_pos containsObject:random_pos]
-        ) {
-            random_pos = [NSNumber numberWithInteger: arc4random() % CELL_ARRAY_CAPACITY];
-            [_dna replaceObjectAtIndex:[random_pos intValue] withObject:[self getRandomSymbol]];
-        }
-        [replaced_pos addObject:random_pos];
-    }
-}
-
-@end

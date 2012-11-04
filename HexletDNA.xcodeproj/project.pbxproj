@@ -10,6 +10,7 @@
 		66438276164265C9007C7D0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66438275164265C9007C7D0A /* main.m */; };
 		66438278164265C9007C7D0A /* HexletDNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66438277164265C9007C7D0A /* HexletDNA.1 */; };
 		66438280164266AF007C7D0A /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6643827F164266AF007C7D0A /* Cell.m */; };
+		66EDE8911646DE0500618DDB /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EDE8901646DE0500618DDB /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		66438277164265C9007C7D0A /* HexletDNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HexletDNA.1; sourceTree = "<group>"; };
 		6643827E164266AF007C7D0A /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		6643827F164266AF007C7D0A /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		66EDE88F1646DE0500618DDB /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		66EDE8901646DE0500618DDB /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +52,8 @@
 			children = (
 				6643827E164266AF007C7D0A /* Cell.h */,
 				6643827F164266AF007C7D0A /* Cell.m */,
+				66EDE88F1646DE0500618DDB /* Cell+mutator.h */,
+				66EDE8901646DE0500618DDB /* Cell+mutator.m */,
 				66438274164265C9007C7D0A /* HexletDNA */,
 				66438272164265C9007C7D0A /* Products */,
 			);
@@ -124,6 +129,7 @@
 			files = (
 				66438276164265C9007C7D0A /* main.m in Sources */,
 				66438280164266AF007C7D0A /* Cell.m in Sources */,
+				66EDE8911646DE0500618DDB /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
