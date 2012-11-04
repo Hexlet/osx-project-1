@@ -12,6 +12,8 @@
 
 - (NSNumber *) randomDNASymbol;
 
+- (NSNumber *) randomDNASymbolExcept:(NSNumber *)symbol;
+
 - (NSMutableArray *) createDNAWithCapacity:(NSUInteger)capacity;
 
 @end

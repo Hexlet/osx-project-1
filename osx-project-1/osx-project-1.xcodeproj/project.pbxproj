@@ -23,6 +23,7 @@
 		699893C716454BD7006F5DA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 699893C516454BD7006F5DA3 /* InfoPlist.strings */; };
 		699893D716454F7D006F5DA3 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 699893D616454F7D006F5DA3 /* Cell.m */; };
 		699893DA16454FA0006F5DA3 /* CellTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 699893D916454FA0006F5DA3 /* CellTest.m */; };
+		69D99C1C1646CF3A009DB673 /* DNAGeneratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 69D99C1B1646CF3A009DB673 /* DNAGeneratorTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,7 @@
 		699893A916454954006F5DA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		699893AC16454954006F5DA3 /* osx-project-1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-project-1-Prefix.pch"; sourceTree = "<group>"; };
 		699893AD16454954006F5DA3 /* osx_project_1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = osx_project_1.1; sourceTree = "<group>"; };
-		699893B916454BD7006F5DA3 /* osx-project-1_tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "osx-project-1_tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		699893B916454BD7006F5DA3 /* osx-project-1_tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "osx-project-1_tests.octest"; path = "osx-project-1Test.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		699893BA16454BD7006F5DA3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		699893BF16454BD7006F5DA3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		699893C016454BD7006F5DA3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -75,6 +76,8 @@
 		699893D816454FA0006F5DA3 /* CellTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellTest.h; sourceTree = "<group>"; };
 		699893D916454FA0006F5DA3 /* CellTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellTest.m; sourceTree = "<group>"; };
 		699893E01645548F006F5DA3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		69D99C1A1646CF3A009DB673 /* DNAGeneratorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAGeneratorTest.h; sourceTree = "<group>"; };
+		69D99C1B1646CF3A009DB673 /* DNAGeneratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAGeneratorTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				699893C316454BD7006F5DA3 /* Supporting Files */,
 				699893D816454FA0006F5DA3 /* CellTest.h */,
 				699893D916454FA0006F5DA3 /* CellTest.m */,
+				69D99C1A1646CF3A009DB673 /* DNAGeneratorTest.h */,
+				69D99C1B1646CF3A009DB673 /* DNAGeneratorTest.m */,
 				6914880F164572110029FA0E /* RandomTest.h */,
 				69148810164572110029FA0E /* RandomTest.m */,
 			);
@@ -302,6 +307,7 @@
 				69148812164573200029FA0E /* Random.m in Sources */,
 				699893DA16454FA0006F5DA3 /* CellTest.m in Sources */,
 				69148811164572110029FA0E /* RandomTest.m in Sources */,
+				69D99C1C1646CF3A009DB673 /* DNAGeneratorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

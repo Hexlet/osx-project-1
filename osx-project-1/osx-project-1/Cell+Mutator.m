@@ -20,7 +20,7 @@
     NSOrderedSet *indexes = [Random nextSequenceOfLength:replacementCount withUpperBound:self.dna.count];
     for (NSNumber *index in indexes) {
         int i = index.intValue;
-        self.dna[i] = [dnaGenerator randomDNASymbol];
+        self.dna[i] = [dnaGenerator randomDNASymbolExcept:self.dna[i]];
     }
 }
 

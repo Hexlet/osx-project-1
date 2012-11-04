@@ -68,8 +68,7 @@
     Cell *cellBefore = [cell copy];
     [cell mutate:50];
     int hammingDistance = [cell hammingDistance:cellBefore];
-    STAssertTrue(hammingDistance > 0, nil);
-    STAssertTrue(hammingDistance <= 50, nil);
+    STAssertEquals(50, hammingDistance, nil);
 }
 
 - (void) test_mutateDoesNotChangeDNALength {

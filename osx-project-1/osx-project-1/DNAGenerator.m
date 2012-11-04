@@ -32,6 +32,16 @@
     return self.allowedSymbols[index];
 }
 
+- (NSNumber *) randomDNASymbolExcept:(NSNumber *)symbol {
+    NSUInteger index = [Random nextNumber:4];
+    NSNumber *result = self.allowedSymbols[index];
+    if ([result isEqualTo:symbol]) {
+        index = (index + 1) % 4;
+        result = self.allowedSymbols[index];
+    }
+    return result;
+}
+
 - (NSMutableArray *) createDNAWithCapacity:(NSUInteger)capacity {
     NSMutableArray *dna = [NSMutableArray arrayWithCapacity:capacity];
     for (int index = 0; index < capacity; index++) {
