@@ -45,8 +45,10 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        Cell *dna1 = [[Cell alloc] init]; // Создаем объект dna1 класса Cell (ДНК-1)
-        Cell *dna2 = [[Cell alloc] init]; // Создаем объект dna2 класса Cell (ДНК-2)
+        int dnaItems = 100; // Количество элементов массива DNA
+        
+        Cell *dna1 = [[Cell alloc] init:dnaItems]; // Создаем объект dna1 класса Cell (ДНК-1)
+        Cell *dna2 = [[Cell alloc] init:dnaItems]; // Создаем объект dna2 класса Cell (ДНК-2)
 
         NSLog(@"Hamming distance before mutator: %i", [dna1 hammingDistance:dna2]); // Выводим результат сравнения ДНК-1 и ДНК-2
         

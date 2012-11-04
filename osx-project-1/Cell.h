@@ -13,6 +13,7 @@
 @property NSMutableArray *DNA; // Свойства для работы с массивом DNA
 @property NSArray *symbols;    // Свойства для работы с массивом символов
 
+-(id) init:(int)di;
 -(int) hammingDistance:(Cell *) f; // Описание метода hammingDistance: возвращает int, принимает Cell
 
 @end
