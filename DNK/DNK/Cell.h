@@ -14,8 +14,7 @@
 
 - (int)hammingDistance:(Cell*) cell;
 
-//Methods which are used in both Cell and Cell+mutator
+//Method which are used in both Cell and Cell+mutator
 -(NSString*) randomDnaType;
--(void) fillDna;
 
 @end
