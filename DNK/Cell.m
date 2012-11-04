@@ -8,16 +8,27 @@
 
 #import "Cell.h"
 
+
+// Общая информация для всех экземпляров класса
+int              DNALength;          // Длина DNA
+NSArray          * alphabet;         // Набор символов для формирования DNA
+unsigned long    alphabetLength;     // Количество символов в наборе
+
+
 @implementation Cell : NSObject
 
+
+// Инициализируем общую информацию
++(void) initialize {
+    if (self == [Cell class]) {
+        DNALength = 100;
+        alphabet = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C",nil];
+        alphabetLength = [alphabet count];
+    }
+}
+
+
 -(id) init {
-    
-    // Увы, магические числа
-    DNALength = 100;
-    aphabet = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C",nil];
-    
-    // Чтобы каждый раз не считать
-    alphabetLength = [aphabet count];
     
     self = [super init];
     
@@ -36,7 +47,7 @@
 
 // Вынес в отдельный метод, потому что код используется в двух местах
 -(NSString *) generateGen {
-    return [aphabet objectAtIndex:(arc4random() % alphabetLength)];
+    return [alphabet objectAtIndex:(arc4random() % alphabetLength)];
 }
 
 

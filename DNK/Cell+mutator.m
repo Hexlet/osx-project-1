@@ -8,6 +8,7 @@
 
 #import "Cell+mutator.h"
 
+extern int DNALength;
 
 @implementation Cell (mutator)
 
@@ -20,7 +21,6 @@
     
     // Массив, в котором запоминаем уже позицию уже мутировавших генов
     NSMutableArray *mutatedPositions = [[NSMutableArray alloc] init];
-    
     
     // Мутируем, пока не наберёся нужной количество мутаций
     while ([mutatedPositions count] < (percents * DNALength / 100)) {

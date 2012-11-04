@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject {
-    int             DNALength;          // Длина DNA
-    NSArray         *aphabet;           // Набор символов для формирования DNA
-    unsigned long   alphabetLength;     // Количество символов в наборе
-}
+@interface Cell : NSObject
 
 @property NSMutableArray *DNA;
 
