@@ -17,6 +17,9 @@
 
 -(void)mutate:(int)percentForSuffle {
     //Принцип работы: Создаём массив индексов для всей длинны ДНК. Рандомно удаляем из этого массива 100%-Х% индексов. В итоге получаем набор уникальных индексов которые нужно заменить. Далее заменяем нуклеотиды по этим индексы в ДНК на новые предварительно убедившись, что новый нуклеотид отличается от старого.
+    if (percentForSuffle > 100) {percentForSuffle = 100;}
+    if (percentForSuffle < 0) {percentForSuffle = 0;}
+    
     NSInteger lengthOfDNA = [self.DNA count];
     
     NSMutableArray *indexesForSuffle = [NSMutableArray arrayWithCapacity:lengthOfDNA];
@@ -36,7 +39,7 @@
         [setOfDNAWithoutCurrent addObjectsFromArray:self.setOfDNA];
         [setOfDNAWithoutCurrent removeObject:[self.DNA objectAtIndex:[[indexesForSuffle objectAtIndex:i] integerValue]]];
         
-        [self.DNA replaceObjectAtIndex:[[indexesForSuffle objectAtIndex:i] integerValue] withObject:[setOfDNAWithoutCurrent objectAtIndex:(arc4random() % 2)]];
+        [self.DNA replaceObjectAtIndex:[[indexesForSuffle objectAtIndex:i] integerValue] withObject:[setOfDNAWithoutCurrent objectAtIndex:(arc4random() % 3)]];
     }
 }
 

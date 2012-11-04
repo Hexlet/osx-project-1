@@ -19,7 +19,7 @@
         _setOfDNA = @[@"A", @"T", @"G", @"C"];
         
         do {
-            [_DNA addObject:[_setOfDNA objectAtIndex:(arc4random() % 3)]];
+            [_DNA addObject:[_setOfDNA objectAtIndex:(arc4random() % 4)]];
         } while ([_DNA count] < lengthOfDNA);
     }
     return self;
@@ -33,7 +33,7 @@
         _setOfDNA = @[@"A", @"T", @"G", @"C"];
         
         do {
-            [_DNA addObject:[_setOfDNA objectAtIndex:(arc4random() % 3)]];
+            [_DNA addObject:[_setOfDNA objectAtIndex:(arc4random() % 4)]];
         } while ([_DNA count] < lengthOfDNA);
     }
     return self;
