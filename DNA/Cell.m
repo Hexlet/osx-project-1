@@ -23,7 +23,7 @@
 
 -(NSString*) randNucleotide {
     NSString* value;
-    switch (arc4random() % 4) {
+    switch (arc4random_uniform(4)) {
         case 0:
             value = @"A";
             break;
@@ -61,7 +61,7 @@
     NSUInteger mutations = (percent / (Float32)DNA_SIZE) * 100;
     NSMutableSet* set = [[NSMutableSet alloc] initWithCapacity:mutations];
     while(mutations) {
-        NSNumber* pos = [[NSNumber alloc] initWithUnsignedInteger: arc4random() % DNA_SIZE];
+        NSNumber* pos = [[NSNumber alloc] initWithUnsignedInteger: arc4random_uniform(DNA_SIZE)];
         if([set member:pos] == nil)
         {
             [DNA replaceObjectAtIndex:[pos unsignedIntegerValue] withObject:[self randNucleotide]];
