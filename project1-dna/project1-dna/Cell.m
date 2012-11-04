@@ -8,7 +8,7 @@
 
 #import "Cell.h"
 
-#define CELL_SIZE 20
+#define CELL_SIZE 100
 
 
 
