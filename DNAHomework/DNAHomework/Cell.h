@@ -10,10 +10,16 @@
 
 @interface Cell : NSObject
 {
-    NSMutableArray *DNA;
-    NSArray *nucleotides;
+@protected
+    NSMutableArray *_dna;
+    NSArray *_nucleotides;
+    int _count;
 }
-- (Cell*)init;
-- (int)hammingDistance:(Cell *)target;
-- (NSString *)description;
+- (Cell *) init;
+- (int) getCount;
+- (NSArray *) getDna;
+- (int) hammingDistance:(Cell *)target;
+- (NSString *) description;
+
++ (id) dnaWithCount:(int)count;
 @end

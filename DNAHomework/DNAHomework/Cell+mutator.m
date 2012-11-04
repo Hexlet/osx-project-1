@@ -11,21 +11,31 @@
 
 @implementation Cell (mutator)
 
-- (void) mutate:(int) count {
+- (void) mutate:(int) percent {
+    
+    if (percent < 1 || percent > 100) {
+        // Если percent = 0 то зачем делать работу
+        // в остальных случаях возможно имеет смысл выкидывать исключение...
+        return;
+    }
+    
+    // Вычисляем точное число замен из процента
+    int count = _count * percent / 100;
+    
     // Генерируем по массиву для каждого нуклеида содержащий три другие
     // для удобства последующей замены
     NSMutableArray *replacingValues;
-    replacingValues = [NSMutableArray arrayWithCapacity:[nucleotides count]];
+    replacingValues = [NSMutableArray arrayWithCapacity:[_nucleotides count]];
     
     int replacesCount;
-    replacesCount = (int) [nucleotides count] - 1;
-    for (int i = 0; i < [nucleotides count]; i++) {
+    replacesCount = (int) [_nucleotides count] - 1;
+    for (int i = 0; i < [_nucleotides count]; i++) {
         NSMutableArray *replacingValue;
         replacingValue = [NSMutableArray arrayWithCapacity: replacesCount];
-        for (int j = 0; j < [nucleotides count]; j++) {
+        for (int j = 0; j < [_nucleotides count]; j++) {
             // Проверяем не добавим ли мы ключевый нуклеид в список возможных замен
             if (i != j) {
-                [replacingValue addObject:[nucleotides objectAtIndex: j]];
+                [replacingValue addObject:[_nucleotides objectAtIndex: j]];
             }
         }
         [replacingValues addObject:replacingValue];
@@ -35,13 +45,13 @@
     // создаем словарь где в качестве ключа будет нуклеид а в значении массив
     // с тремя другими нуклеидами
     NSDictionary *replacingTable;
-    replacingTable = [NSDictionary dictionaryWithObjects: replacingValues forKeys: nucleotides];
+    replacingTable = [NSDictionary dictionaryWithObjects: replacingValues forKeys: _nucleotides];
     
     
-    // Это просто массив чисел от 1 до 100 (в данном случае) с помощью которого
+    // Это просто массив чисел от 0 до _count с помощью которого
     // мы будем выбирать случайную позицую в последовательности ДНК для замены
     NSMutableArray *range = [NSMutableArray array];
-    int dnaCount = (int) [DNA count];
+    int dnaCount = (int) [_dna count];
     for (int i = 0; i < dnaCount; i++) {
         // @(i) - какой то хитрый способ создания NSNumber
         [range addObject: @(i)];
@@ -64,9 +74,9 @@
         [range removeObjectAtIndex: randomIndex];
         // Для выбраного нуклеида из последовательности DNA выбираем случайный
         // индекс из таблицы замен
-        replace = [[replacingTable objectForKey: [DNA objectAtIndex:dnaIndex]] objectAtIndex: arc4random_uniform(replacesCount)];
+        replace = [[replacingTable objectForKey: [_dna objectAtIndex:dnaIndex]] objectAtIndex: arc4random_uniform(replacesCount)];
         // После чего меняем старый на новый
-        [DNA replaceObjectAtIndex: dnaIndex withObject: replace];
+        [_dna replaceObjectAtIndex: dnaIndex withObject: replace];
     }
 }
 
