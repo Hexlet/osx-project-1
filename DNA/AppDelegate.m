@@ -21,6 +21,7 @@
 
 - (IBAction)run:(id)sender {
     
+    //simple validate
     if (([self.percent1TextFld.stringValue length] == 0) || ([self.percent1TextFld.stringValue length] > 2)) {
         return;
     }
@@ -33,12 +34,15 @@
     Cell *cell2 = [[Cell alloc] init];
     
     NSLog(@"1st harming distance: %i",[cell hammingDistance:cell2]);
+    //modify result textfield
     self.hamming1TextFld.stringValue = [NSString stringWithFormat:@"%i",[cell hammingDistance:cell2]];
-    
+
+    //get value from textfield
     [cell mutate:self.percent1TextFld.intValue];
     [cell2 mutate:self.percent2TextFld.intValue];
     
     NSLog(@"2nd harming distance: %i",[cell hammingDistance:cell2]);
+    //modify result textfield
     self.hamming2TextFld.stringValue = [NSString stringWithFormat:@"%i",[cell hammingDistance:cell2]];
 
 }

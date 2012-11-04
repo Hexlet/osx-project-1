@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Max Bazaliy. All rights reserved.
 //
 
+static int const ARRAY_CAPACITY = 100;
+
 #import "Cell.h"
 
 @implementation Cell
@@ -14,7 +16,7 @@
 
     self = [super init];
     if (self) {
-        self.DNA = [self fillArray:self.DNA withRandomSymbolsCount:100];
+        self.DNA = [self fillArray:self.DNA withRandomSymbolsCount:ARRAY_CAPACITY];
     }
     return self;
 }
@@ -30,6 +32,7 @@
 
     for(int symbol = 0; symbol < count; symbol++)
     {
+        //fill array with random symbols
         int value = arc4random() % 4;
         NSString *symbol = [self symbolForCode:value];
         [filledArray addObject:symbol];
@@ -44,6 +47,7 @@
     NSMutableArray *first = [self.DNA mutableCopy];
     NSMutableArray *second = [cell.DNA mutableCopy];
     
+    //if array size not equal - return
     if ([first count] != [second count]) {
         return -1;
     }
