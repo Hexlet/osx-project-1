@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
+#import "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {
@@ -17,8 +18,8 @@ int main(int argc, const char * argv[])
         Cell *second = [[Cell alloc] init];
         NSLog(@"%i", [first hammingDistance:second]);
         
-        [first mutator:25];
-        [second mutator:40];
+        [first mutate:24];
+        [second mutate:42];
         
         NSLog(@"%i", [first hammingDistance:second]);
     }

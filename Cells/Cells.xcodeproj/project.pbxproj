@@ -11,6 +11,7 @@
 		E7821A091646D53500DD177D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7821A081646D53500DD177D /* main.m */; };
 		E7821A0D1646D53500DD177D /* Cells.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = E7821A0C1646D53500DD177D /* Cells.1 */; };
 		E7821A151646D57C00DD177D /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7821A141646D57C00DD177D /* Cell.m */; };
+		E7821A1816471BB800DD177D /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = E7821A1716471BB800DD177D /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		E7821A0C1646D53500DD177D /* Cells.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Cells.1; sourceTree = "<group>"; };
 		E7821A131646D57C00DD177D /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		E7821A141646D57C00DD177D /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		E7821A1616471BB800DD177D /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		E7821A1716471BB800DD177D /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				E7821A081646D53500DD177D /* main.m */,
+				E7821A1616471BB800DD177D /* Cell+mutator.h */,
+				E7821A1716471BB800DD177D /* Cell+mutator.m */,
 				E7821A131646D57C00DD177D /* Cell.h */,
 				E7821A141646D57C00DD177D /* Cell.m */,
 				E7821A0C1646D53500DD177D /* Cells.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				E7821A091646D53500DD177D /* main.m in Sources */,
 				E7821A151646D57C00DD177D /* Cell.m in Sources */,
+				E7821A1816471BB800DD177D /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

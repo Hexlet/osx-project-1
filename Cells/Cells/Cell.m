@@ -9,9 +9,7 @@
 #import "Cell.h"
 #import <stdlib.h>
 
-@implementation Cell {
-    NSMutableArray *DNA;
-}
+@implementation Cell
 
 // Инициализация объекта, массив «ДНК» генериться
 - (id) init {
@@ -19,7 +17,6 @@
     NSMutableArray *arrayDNA = [NSMutableArray arrayWithCapacity:100];
     for (int i = 0; i < 100; ++i) {
         [arrayDNA addObject:[Genome objectAtIndex:arc4random() % 4]];
-        
     }
     
     if (self = [self initWithArray:arrayDNA]) {
@@ -52,21 +49,6 @@
     }
     
     return count;
-}
-
-// Мутация «ДНК»
-- (void) mutator:(int)persent {
-    if (persent > 100 && persent < 0){
-        NSLog(@"Error: bad value");
-        return ;
-    }
-    
-    NSArray *Genome = [NSArray arrayWithObjects:@"A", @"C", @"G", @"T", nil];
-
-    Cell *MutableDNA = [[Cell alloc] initWithArray:DNA];
-    while (persent > [self hammingDistance:MutableDNA]) {
-        [DNA replaceObjectAtIndex:(arc4random() % [DNA count]) withObject:[Genome objectAtIndex:arc4random() % 4]];
-    }
 }
 
 @end
