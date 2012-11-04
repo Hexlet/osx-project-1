@@ -16,10 +16,7 @@
 }
 
 + (NSOrderedSet *) nextSequenceOfLength:(NSUInteger)length withUpperBound:(NSUInteger)upperBound {
-    NSMutableArray *possibleNumbers = [NSMutableArray arrayWithCapacity:upperBound];
-    for (int n = 0; n < upperBound; n++) {
-        possibleNumbers[n] = @(n);
-    }
+    NSMutableArray *possibleNumbers =  [self arrayWithRangeOfLength:upperBound];
     NSMutableOrderedSet *result = [NSMutableOrderedSet orderedSet];
     for (int i = 0; i < length; i++) {
         NSUInteger numbersLeft = possibleNumbers.count;
@@ -31,5 +28,12 @@
     return result;
 }
 
++ (NSMutableArray *) arrayWithRangeOfLength:(NSUInteger)length {
+    NSMutableArray *numbers = [NSMutableArray arrayWithCapacity:length];
+    for (int n = 0; n < length; n++) {
+        numbers[n] = @(n);
+    }
+    return numbers;
+}
 
 @end

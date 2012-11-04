@@ -27,9 +27,16 @@
     return _allowedSymbols;
 }
 
+- (NSMutableArray *) createDNAWithCapacity:(NSUInteger)capacity {
+    NSMutableArray *dna = [NSMutableArray arrayWithCapacity:capacity];
+    for (int index = 0; index < capacity; index++) {
+        dna[index] = [self randomDNASymbol];
+    }
+    return dna;
+}
+
 - (NSNumber *) randomDNASymbol {
-    NSUInteger index = [Random nextNumber:4];
-    return self.allowedSymbols[index];
+    return [self randomDNASymbolExcept:nil];
 }
 
 - (NSNumber *) randomDNASymbolExcept:(NSNumber *)symbol {
@@ -40,14 +47,6 @@
         result = self.allowedSymbols[index];
     }
     return result;
-}
-
-- (NSMutableArray *) createDNAWithCapacity:(NSUInteger)capacity {
-    NSMutableArray *dna = [NSMutableArray arrayWithCapacity:capacity];
-    for (int index = 0; index < capacity; index++) {
-        dna[index] = [self randomDNASymbol];
-    }
-    return dna;
 }
 
 @end
