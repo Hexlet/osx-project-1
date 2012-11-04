@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Cell : NSObject
+@interface Cell : NSObject <NSCopying>
 {
     NSMutableArray  *dna;
 }
 
-+ (NSUInteger) getDnaAlphabetSize;
++ (NSUInteger)  getDnaAlphabetSize;
++ (const char*) getDnaAlphabet;
++ (NSUInteger)  getAlphabetCharIndex:(char)c;
 
-- (id) init;
-- (int) hammingDistance:(Cell*)otherCell;
-- (Cell*) clone;
+- (id)    init;
+- (int)   hammingDistance:(Cell*)otherCell;
 
 @end

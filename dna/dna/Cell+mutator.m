@@ -50,15 +50,18 @@
     }
     
     const NSUInteger dnaAlphabetSize = [Cell getDnaAlphabetSize];
+    const char      *dnaAlphabet     = [Cell getDnaAlphabet];
     
     // перебрать первые indexCount (случайных) индексов
     for (u_int32_t i = 0; i != indexCount; ++i)
     {
         const NSUInteger changeIdx  = [(NSNumber*)[indices objectAtIndex:i] unsignedIntegerValue];
-        const NSUInteger charIdx    = [(NSNumber*)[dna objectAtIndex:changeIdx] unsignedIntegerValue];
-        const NSUInteger newCharIdx = (charIdx + 1 + arc4random_uniform((u_int32_t)(dnaAlphabetSize - 1))) % dnaAlphabetSize; // inspired by Sachs
+        const char       curChar    = [(NSNumber*)[dna objectAtIndex:changeIdx] charValue];
+        const NSUInteger curCharIdx = [Cell getAlphabetCharIndex:curChar];
+        const NSUInteger newCharIdx = (curCharIdx + 1 + arc4random_uniform((u_int32_t)(dnaAlphabetSize - 1))) % dnaAlphabetSize; // inspired by Sachs
+        const char       newChar    = dnaAlphabet[newCharIdx];
 
-        [dna replaceObjectAtIndex:changeIdx withObject:[NSNumber numberWithUnsignedInteger:newCharIdx]];
+        [dna replaceObjectAtIndex:changeIdx withObject:[NSNumber numberWithChar:newChar]];
     }
 }
 

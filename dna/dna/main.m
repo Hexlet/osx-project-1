@@ -19,8 +19,8 @@ int main(int argc, const char * argv[])
         Cell *a = [[Cell alloc] init];
         Cell *b = [[Cell alloc] init];
         
-        //Cell *at = [a clone];
-        //Cell *bt = [b clone];
+        //Cell *at = [a copy];
+        //Cell *bt = [b copy];
         
         //NSLog(@"DNA-a: %@", a);
         //NSLog(@"DNA-b: %@", b);

@@ -9,11 +9,14 @@
 #import "Cell.h"
 
 
-// количество символов в алфавите ДНК
-static const NSUInteger dnaAlphaBetSize = 4;
+#define countof(a) (sizeof(a)/sizeof(a[0]))
+
 
 // алфавит, составляющий ДНК
-static const char dnaAlphabet[dnaAlphaBetSize] = { 'A', 'T', 'G', 'C' };
+static const char       dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
+
+// количество символов в алфавите ДНК
+static const NSUInteger dnaAlphaBetSize = countof(dnaAlphabet);
 
 // количество символов в ДНК
 static const NSUInteger dnaCharCount = 100;
@@ -25,6 +28,33 @@ static const NSUInteger dnaCharCount = 100;
 + (NSUInteger) getDnaAlphabetSize
 {
     return dnaAlphaBetSize;
+}
+
+
++ (const char*) getDnaAlphabet
+{
+    return dnaAlphabet;
+}
+
+
++ (NSUInteger) getAlphabetCharIndex:(char)c
+{
+    switch (c)
+    {
+    case 'A':
+        return 0;
+            
+    case 'T':
+        return 1;
+            
+    case 'G':
+        return 2;
+            
+    case 'C':
+        return 3;
+    }
+    
+    @throw [NSException exceptionWithName:NSRangeException reason:@"argument is not from the set: 'A', 'T', 'G', 'C'" userInfo:nil];
 }
 
 
@@ -43,8 +73,7 @@ static const NSUInteger dnaCharCount = 100;
     for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
         const NSUInteger randCharIdx = arc4random_uniform((u_int32_t)dnaAlphaBetSize);
-        // вместо самих букв, составляющих алфавит ДНК, сохраняются их индексы, что позволяет оптимизировать алгоритм мутации
-        [dna addObject:[NSNumber numberWithUnsignedInteger:randCharIdx]];
+        [dna addObject:[NSNumber numberWithChar:dnaAlphabet[randCharIdx]]];
     }
     
     return self;
@@ -64,7 +93,7 @@ static const NSUInteger dnaCharCount = 100;
         const NSNumber *nl = (NSNumber*)[dna objectAtIndex:i];
         const NSNumber *nr = (NSNumber*)[otherCell->dna objectAtIndex:i];
         // сравнение индексов на буквы, составляющие алфавит ДНК
-        if ([nl unsignedIntegerValue] != [nr unsignedIntegerValue])
+        if ([nl charValue] != [nr charValue])
             ++distance;
     }
     
@@ -78,20 +107,26 @@ static const NSUInteger dnaCharCount = 100;
 
     for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
-        const NSUInteger charIdx = [(NSNumber*)[dna objectAtIndex:i] unsignedIntegerValue];
-        [dnaStr appendFormat:@"%c", dnaAlphabet[charIdx]];
+        const char c = [(NSNumber*)[dna objectAtIndex:i] charValue];
+        [dnaStr appendFormat:@"%c", c];
     }
     
     return dnaStr;
 }
 
 
-- (Cell*) clone
+- (id) copyWithZone:(NSZone *)zone
 {
-    Cell *newCell = [[Cell alloc] init];
-    newCell->dna = [dna mutableCopy];
-    return newCell;
+    Cell *copy = [[[self class] allocWithZone:zone] init];
+    if (!copy)
+        return nil;
+    
+    copy->dna = [dna mutableCopyWithZone:zone];
+    if (!copy->dna)
+        return nil;
+
+    return copy;
 }
 
-    
+
 @end
