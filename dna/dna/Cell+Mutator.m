@@ -16,9 +16,9 @@
         NSUInteger totalGenes=[self.dna count];
         NSUInteger genesToMutate=round(totalGenes/100*n);
         
-        NSMutableArray* indexes=[NSMutableArray arrayWithCapacity:totalGenes];
+        NSMutableOrderedSet* indexes=[NSMutableOrderedSet orderedSetWithCapacity:totalGenes];
         for (NSUInteger i=0; i<totalGenes; i++)
-            indexes[i]=[NSNumber numberWithUnsignedLong:i];
+            [indexes addObject:[NSNumber numberWithUnsignedLong:i]];
         
         for (NSUInteger i=0; i<genesToMutate; i++) {
             NSUInteger randomIndex=arc4random()%totalGenes;
