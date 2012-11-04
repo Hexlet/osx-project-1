@@ -14,7 +14,12 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         Cell* cellOne = [[Cell alloc] init];
-        NSLog(@"%@", [cellOne getDnaAsString]);
+        NSLog(@"cell one: %@", [cellOne getDnaAsString]);
+        Cell* cellTwo = [[Cell alloc] init];
+        NSLog(@"cell two: %@", [cellTwo getDnaAsString]);
+        
+        int distance = [cellOne hammingDistance:cellTwo];
+        NSLog(@"distance: %d", distance);
     }
     return 0;
 }

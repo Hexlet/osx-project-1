@@ -14,7 +14,7 @@
 - (id) init {
     self = [super init];
     
-    if (self) {
+    if (self != nil) {
         int dnaLength = 100;
         dna = [NSMutableArray arrayWithCapacity:dnaLength];
         NSString* acids = @"ATGC";
@@ -26,6 +26,23 @@
         }
     }
     return self;
+}
+
+
+- (int) hammingDistance:(Cell *)cell {
+    int distance = 0;
+    NSArray* otherDna = [cell getDnaAsArray];
+    int count = MIN([dna count], [otherDna count]);
+    for (int i=0; i<count; i++) {
+        if ([dna objectAtIndex:i] != [otherDna objectAtIndex:i]) {
+            distance++;
+        }
+    }
+    return distance;
+}
+
+- (NSArray *) getDnaAsArray {
+    return dna;
 }
 
 - (NSString*) getDnaAsString {

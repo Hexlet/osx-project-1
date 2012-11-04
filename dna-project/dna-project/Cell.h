@@ -14,6 +14,9 @@
 }
 
 - (id) init;
+- (int) hammingDistance:(Cell*)cell;
+
+- (NSArray*) getDnaAsArray;
 - (NSString*) getDnaAsString;
 
 @end
