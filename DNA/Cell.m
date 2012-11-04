@@ -16,14 +16,24 @@ static NSArray *bases;
 @implementation Cell
 
 // Returns random nucleobase
-+(NSString*) randomBase {
++(NSString*)randomBase {
+    return [Cell randomBaseExcept:nil];
+}
+
++(NSString*)randomBaseExcept: (NSString*)exception {
     if (bases == nil) {
         bases = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
     }
+
+    NSMutableArray* basesCopy = [bases mutableCopy];
     
-    int randomIndex = arc4random() % [bases count];
+    if (exception != nil) {
+        [basesCopy removeObject:exception];
+    }
+    
+    int randomIndex = arc4random() % [basesCopy count];
                                       
-    return [bases objectAtIndex: randomIndex];
+    return [basesCopy objectAtIndex: randomIndex];
 }
 
 -(id)init {

@@ -26,7 +26,9 @@
     for (int i = 0; i < percent; i++) {
         int randomIndex = (int) [[randomIndexes objectAtIndex:i] integerValue];
         
-        [self.DNA replaceObjectAtIndex:randomIndex withObject:[Cell randomBase]];
+        NSString* oldBase = [self.DNA objectAtIndex:randomIndex];
+        NSString* newBase = [Cell randomBaseExcept:oldBase];
+        [self.DNA replaceObjectAtIndex:randomIndex withObject: newBase];
     }
 }
 @end

@@ -10,7 +10,7 @@
 
 @interface Cell : NSObject
 
-+(NSString*) randomBase;
++(NSString*) randomBaseExcept : (NSString*) exception;
 
 -(int) hammingDistance : (Cell*)other;
 
