@@ -20,8 +20,9 @@
     NSString *symbol = [NSString string];               // Переменная для хранения символа для замены
     NSNumber *num = [NSNumber alloc];
     int rndIndex;
+    int replaceSymbols = (int)((float)[self.DNA count] / (float)100 * (float)percent); // Количество заменяемых символов
     
-    for (int i=0; i<percent; i++) {                     // Цикл замены {percent} случайных символов в массиве DNA
+    for (int i = 0; i < replaceSymbols; i++) {          // Цикл замены {replaceSymbols} случайных символов в массиве DNA
         do {                                            // Случайным образом находим уникальный индекс
             rndIndex = arc4random() % [self.DNA count];
         } while ([tmpArray containsObject:[num initWithInt:rndIndex]]);
@@ -50,7 +51,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming distance before mutator: %i", [dna1 hammingDistance:dna2]); // Выводим результат сравнения ДНК-1 и ДНК-2
         
         [dna1 mutate:30]; // Производим мутацию ДНК-1
-        [dna2 mutate:40]; // Производим мутацию ДНК-2
+        [dna2 mutate:60]; // Производим мутацию ДНК-2
 
         NSLog(@"Hamming distance after mutator: %i", [dna1 hammingDistance:dna2]); // Выводим результат сравнения ДНК-1 и ДНК-2
         
