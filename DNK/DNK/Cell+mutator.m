@@ -10,7 +10,15 @@
 @implementation Cell (mutator)
 
 -(void) mutate:(int) percent{
-    if (percent >= 100){//if 100%
+    if(percent<0 || percent>100){
+    
+        NSLog(@"Can't mutate %d percent of DNA!", percent);
+        return;
+    }
+    if (percent == 0){
+        return;
+    }
+    if (percent == 100){//if 100%
         [self mutateAllDna];//mutate all array
     }
     else {
@@ -72,10 +80,8 @@
 
 //Chage item in DNA array at specified index
 -(void) changeDna:(NSString*) newDnaType atIndex:(int) index{
-    //remove item at specified index
-    [[self DNA ] removeObjectAtIndex: index];
-    //insert new random item at specified index
-    [[self DNA] insertObject:[self randomDnaType] atIndex: index];
+    //replace new random item at specified index
+    [[self DNA] replaceObjectAtIndex:index  withObject: newDnaType];
 }
 
 //Get random index for DNA array

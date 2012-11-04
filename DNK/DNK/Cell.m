@@ -19,7 +19,8 @@ NSMutableArray *DnaTypes;
     [self fillDna];
     
     //Call base init method
-    return [super init];
+    self = [super init];
+    return self;
 }
 
 //Fill DNA array with random values
