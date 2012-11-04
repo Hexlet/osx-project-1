@@ -18,20 +18,9 @@
     if (percent == 0){
         return;
     }
-    if (percent == 100){//if 100%
-        [self mutateAllDna];//mutate all array
-    }
-    else {
-        [self mutatePartOfDna:percent];//mutate part of array
-    }
-}
-
-//Refill all DNA array
--(void) mutateAllDna{
-    //Remove all items
-    [[self DNA] removeAllObjects];
-    //Fill DNA array with new values
-    [self fillDna];
+    
+    [self mutatePartOfDna:percent];//mutate part of array
+    
 }
 
 -(void) mutatePartOfDna:(int) percent{
