@@ -17,13 +17,12 @@
 -(void) mutate: (int) percent{
     int mutate_count = (int) (DNA_length*percent/[self.DNA count]);
     NSMutableArray *DNA_mutate_cell = [NSMutableArray arrayWithCapacity:DNA_length];
-    
-    for (int i=0; i<mutate_count; i++) {
+    while (mutate_count) {
         int mutate_cell_id = arc4random() % DNA_length;
-        while (![DNA_mutate_cell containsObject:[NSNumber numberWithInt:mutate_cell_id]]) {
+        if (![DNA_mutate_cell containsObject:[NSNumber numberWithInt:mutate_cell_id]]) {
             [DNA_mutate_cell addObject:[NSNumber numberWithInt:mutate_cell_id]];
-            
             [self.DNA replaceObjectAtIndex:mutate_cell_id withObject:self.getRandomNucleotide];
+            mutate_count--;
         }
     }
 }
@@ -39,9 +38,8 @@ int main(int argc, const char * argv[])
         
         NSLog(@"hamming distance = %i",[myCell hammingDistance:myAnotherCell]);
         [myCell mutate:40];
-        [myAnotherCell mutate:20];
+        [myAnotherCell mutate:80];
         NSLog(@"hamming distance after mytate = %i",[myCell hammingDistance:myAnotherCell]);
-
     }
     return 0;
 }

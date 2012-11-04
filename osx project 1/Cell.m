@@ -26,7 +26,7 @@
 -(int)hammingDistance:(Cell *)another_cell{
     int distance = 0;
     for (int i=0; i<DNA_length; i++) {
-        if([_DNA objectAtIndex:i]==[another_cell.DNA objectAtIndex:i])
+        if([_DNA objectAtIndex:i]!=[another_cell.DNA objectAtIndex:i])
             distance++;
     }
     return distance;
