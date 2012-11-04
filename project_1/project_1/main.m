@@ -33,8 +33,11 @@
 
 		/// Заменяем случайный элемент ДНК на случайный элемент из массива возможных значений
 		for (i = 0; i < ind_array.count; i++) {
-			randomRef = arc4random() % [self.array count];
-			
+			// Проверяем чтобы значение элемента ДНК не заменялось на такое-же, каковым оно является до замены.
+			do{
+				randomRef = arc4random() % [self.array count];
+			} while([self.DNA objectAtIndex:[(NSNumber*)[ind_array objectAtIndex:i] intValue]] ==[self.array objectAtIndex:randomRef]);
+			// Собственно заменяем элемент
 			[self.DNA insertObject:[self.array objectAtIndex:randomRef] atIndex: [(NSNumber*)[ind_array objectAtIndex:i] intValue]];
 		}
 		
@@ -51,12 +54,10 @@ int main(int argc, const char * argv[])
 	    Cell *cell, *cell1;
 		cell = [[Cell alloc] init];
 		cell1 = [[Cell alloc] init];
-	    // insert code here...
-	  // NSLog(@"%@", cell.DNA);
-	  
+	   	  
 	   NSLog(@"%i", [cell hammingDistance:cell1]);
 	   [cell mutate:30];  //мутируем первую ДНК на 30%
-	   // NSLog(@"%@", cell.DNA);
+	   
 	   [cell1 mutate:40]; //мутируем вторую ДНК на 40%
 	   NSLog(@"%i", [cell hammingDistance:cell1]); 
 	}

@@ -27,23 +27,23 @@
 	
 -(id) init {
 	self = [super init];
+	if(self){
+		DNACount = 100; ///количество элементов в ДНК
 	
-	DNACount = 100; ///количество элементов в ДНК
-	
-	array = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil]; // Массив возможных значений элемента ДНК
+		array = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil]; // Массив возможных значений элемента ДНК
 	
 	
+		
+		DNA = [NSMutableArray arrayWithCapacity:DNACount];
+		int i;
 	
-	DNA = [NSMutableArray arrayWithCapacity:DNACount];
-	int i;
+		//Заполняем ДНК значениями, используя случайную выборку элементов из массива возможных значений
 	
-	//Заполняем ДНК значениями, используя случайную выборку элементов из массива возможных значений
-	
-	for (i = 0; i < DNACount; i++) {
-		randomRef = arc4random() % [array count];
-		[DNA insertObject:[array objectAtIndex:randomRef] atIndex:i];
+		for (i = 0; i < DNACount; i++) {
+			randomRef = arc4random() % [array count];
+			[DNA insertObject:[array objectAtIndex:randomRef] atIndex:i];
+		}
 	}
-	
 	return self;
 }
 	
