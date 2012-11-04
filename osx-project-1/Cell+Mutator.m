@@ -26,6 +26,8 @@
     
     for (int i = 0; i < percentToMutate; i++)
     {
+        BOOL acidsAreEqual = YES;
+        
         //---Random position from arrayOfRandomNumbers---
         int randomIndex = arc4random_uniform([arrayOfRandomNumbers count]);
         
@@ -35,11 +37,30 @@
         //---Delete picked position from array---
         [arrayOfRandomNumbers removeObjectAtIndex:randomIndex];
         
-        //---Get one of Acid to variable---
-        NSString *randomAcid = [atcgArray objectAtIndex:arc4random_uniform(4)];
+        //---Get Acid in DNA at certain position---
+        NSString *currentAcidInDNA = [self.DNA objectAtIndex:[randomPosition intValue]];
         
-        //---Replace acid in DNA with new one---
-        [self.DNA replaceObjectAtIndex:[randomPosition intValue] withObject:randomAcid];   
+        //---Check for equality of Acid---
+        while (acidsAreEqual)
+        {
+            //---Get one of Acid to variable---
+            NSString *randomAcid = [atcgArray objectAtIndex:arc4random_uniform(4)];
+            
+            if (![currentAcidInDNA isEqualToString:randomAcid])
+            {
+                //---Replace acid in DNA with new one---
+                [self.DNA replaceObjectAtIndex:[randomPosition intValue] withObject:randomAcid];
+                acidsAreEqual = NO;
+            }
+            else
+            {
+                //---Log if acids were eqaul---
+                NSLog(@"Acids are equal");
+            }
+            
+        }
+        
+           
     }
     NSLog(@"Cell mutated");
 }
