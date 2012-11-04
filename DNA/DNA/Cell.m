@@ -9,21 +9,24 @@
 - (id) init {self = [super init];
     dnaLength = 100;
 
-  
-    //Массив возможных значений
-    atgcArray = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
+    if (self){
+        //Массив возможных значений
+        atgcArray = [[NSMutableArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
     
-    //Создаем массив ДНК
-    dna = [NSMutableArray arrayWithCapacity: dnaLength];
+        //Создаем массив ДНК
+        dna = [NSMutableArray arrayWithCapacity: dnaLength];
    
-    //и наполняем его случайными значениями
-    for (int i = 0 ; i < dnaLength; i++) {
-        int element = random() % 4;
-        [dna addObject:[NSString stringWithFormat:@"%@",[atgcArray objectAtIndex:element]]];
-    }
-    NSLog(@"new DNA: %@", dna);
+        //и наполняем его случайными значениями
+        for (int i = 0 ; i < dnaLength; i++) {
+            int element = random() % 4;
+            [dna addObject:[atgcArray objectAtIndex:element]];
+
+        }
+        NSLog(@"new DNA: %@", dna);
+    };
+    
     return self;
-}
+};
      
 - (int) hammingDistance: (Cell*) cell{
     

@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373635094.27562"
+         timestampString = "373715875.878877"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
+         startingLineNumber = "32"
+         endingLineNumber = "32"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
       </FileBreakpoint>

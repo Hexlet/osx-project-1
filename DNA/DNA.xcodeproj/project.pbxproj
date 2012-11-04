@@ -11,6 +11,7 @@
 		5B1226C11641ADBE005B3EF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1226C01641ADBE005B3EF9 /* main.m */; };
 		5B1226C51641ADBE005B3EF9 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5B1226C41641ADBE005B3EF9 /* DNA.1 */; };
 		5B1226CD1641ADF4005B3EF9 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1226CC1641ADF4005B3EF9 /* Cell.m */; };
+		5BD8C5A11645498500202E69 /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8C5A01645498500202E69 /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		5B1226C41641ADBE005B3EF9 /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
 		5B1226CB1641ADF4005B3EF9 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		5B1226CC1641ADF4005B3EF9 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		5BD8C59F1645498500202E69 /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		5BD8C5A01645498500202E69 /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				5B1226C01641ADBE005B3EF9 /* main.m */,
+				5BD8C59F1645498500202E69 /* Cell+mutator.h */,
+				5BD8C5A01645498500202E69 /* Cell+mutator.m */,
 				5B1226CB1641ADF4005B3EF9 /* Cell.h */,
 				5B1226CC1641ADF4005B3EF9 /* Cell.m */,
 				5B1226C41641ADBE005B3EF9 /* DNA.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				5B1226C11641ADBE005B3EF9 /* main.m in Sources */,
 				5B1226CD1641ADF4005B3EF9 /* Cell.m in Sources */,
+				5BD8C5A11645498500202E69 /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
