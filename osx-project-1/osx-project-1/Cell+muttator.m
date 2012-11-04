@@ -12,6 +12,12 @@
 
 -(void) mutate:(int)num{
     
+    if ((num < 0) || (num > 100))
+    {
+        NSLog(@"Задан не допустимый процент мутации");
+        exit(1);
+    }
+    
     int numMutate = (self->capacity/100) * num;
     //Масив будет содержать уже мутировавшие гены
     NSMutableArray *checkPosition = [NSMutableArray arrayWithCapacity:numMutate];

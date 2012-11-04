@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
         int matches = [cellOne hummingDistance: cellTwo];
         NSLog(@"Match gens %d",matches);
         
-        [cellOne mutate:10];
+        [cellOne mutate:-10];
         [cellTwo mutate:20];
         matches = [cellOne hummingDistance: cellTwo];
         NSLog(@"Match gens %d",matches);

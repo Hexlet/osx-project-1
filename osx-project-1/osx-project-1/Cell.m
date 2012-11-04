@@ -16,6 +16,11 @@
         
         //Размер масива DNA
         capacity = 100;
+        
+        if (capacity < 0){
+            NSLog(@"DNA не может иметь отрицательный размер.");
+            exit(1);
+        }
 
         //Инициализации масива с определнным размером
         DNA = [[NSMutableArray alloc] initWithCapacity:capacity];
