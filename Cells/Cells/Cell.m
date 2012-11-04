@@ -13,6 +13,7 @@
     NSMutableArray *DNA;
 }
 
+// Инициализация объекта, массив «ДНК» генериться
 - (id) init {
     NSArray *Genome = [NSArray arrayWithObjects:@"A", @"C", @"G", @"T", nil];
     NSMutableArray *arrayDNA = [NSMutableArray arrayWithCapacity:100];
@@ -22,11 +23,12 @@
     }
     
     if (self = [self initWithArray:arrayDNA]) {
-        // Awesome !
+        // Ошибок нет
     }
     return self;
 }
 
+// Инициализация с массивом «ДНК»
 - (id) initWithArray:(NSArray *)arrayDNA {
     if (self = [super init]) {
         DNA = [NSMutableArray arrayWithArray:arrayDNA];
@@ -34,10 +36,12 @@
     return self;
 }
 
+// Возвращает конкретный геном по индексу
 - (NSString *) genomeAtIndex:(int)index {
     return [DNA objectAtIndex:index];
 }
 
+// Сравнивает два массива «ДНК» и выводит количество отличающихся элементов
 - (int) hammingDistance:(Cell *)another {
     int count = 0;
     
@@ -50,6 +54,7 @@
     return count;
 }
 
+// Мутация «ДНК»
 - (void) mutator:(int)persent {
     if (persent > 100 && persent < 0){
         NSLog(@"Error: bad value");
