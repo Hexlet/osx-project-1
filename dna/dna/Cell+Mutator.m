@@ -10,17 +10,20 @@
 
 @implementation Cell (Mutator)
 
-- (void) mutate:(int)n
+- (void) mutate:(int)mutationPercent
 {
-    if (n>0 && n<=100) {
+    if (mutationPercent>0 && mutationPercent<=100) {
         NSUInteger totalGenes=[self.dna count];
-        NSUInteger genesToMutate=round(totalGenes/100*n);
+        NSUInteger genesToMutate=round(totalGenes/100*mutationPercent);
         
+        
+        //set of indexes to randomly pull from for mutating 
         NSMutableOrderedSet* indexes=[NSMutableOrderedSet orderedSetWithCapacity:totalGenes];
         for (NSUInteger i=0; i<totalGenes; i++)
             [indexes addObject:[NSNumber numberWithUnsignedLong:i]];
         
         for (NSUInteger i=0; i<genesToMutate; i++) {
+            //random index selected once, mutated, then removed from set to avoid mutating same element twice 
             NSUInteger randomIndex=arc4random()%totalGenes;
             [self.dna[randomIndex] mutate];
             [indexes removeObjectAtIndex:randomIndex];
@@ -28,7 +31,7 @@
         }
         
     }
-    else if(n>100) NSLog(@"Wrong value for n=%i, should be between 0 and 100",n);
+    else if(mutationPercent>100) NSLog(@"Wrong value for n=%i, should be between 0 and 100",mutationPercent);
 }
 
 @end

@@ -26,6 +26,7 @@ static NSArray* genes;
     self=[super init];
     if (self)
     {
+        //init nucleotid with random value out of all possible
         NSUInteger random=arc4random()%4;
         self.value=[Gene allGenes][random];
     }
@@ -34,6 +35,7 @@ static NSArray* genes;
 
 -(void)mutate
 {
+    //current nucleotid value removed from nucleotids array, new one is selected randomly out of remaining ones
     NSMutableArray* availableGenes = [[Gene allGenes] mutableCopy];
     [availableGenes removeObjectIdenticalTo:self.value];
     NSUInteger random=arc4random()%3;

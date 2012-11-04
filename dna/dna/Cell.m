@@ -12,10 +12,13 @@
 
 -(id)initWithGenes:(int)amountOfGenes
 {
+    //dna could be of arbitrary length
     self=[super init];
     if(self)
     {
         _dna=[NSMutableArray arrayWithCapacity:amountOfGenes];
+        
+        //init each dna element with random nucleotid
         for(int i=0;i<amountOfGenes;i++)
             _dna[i]=[[Gene alloc] init];
     }
@@ -24,7 +27,6 @@
 
 -(int)hammingDistance:(Cell*)cell
 {
-    
     int result=0;
     
     if ([self.dna count]!=[cell.dna count]) {
@@ -41,6 +43,7 @@
 
 -(NSString*)dnaString
 {
+    //string represetation of dna
     NSMutableString* result = [NSMutableString string];
     
     for (Gene* gene in _dna)
