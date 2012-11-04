@@ -18,11 +18,12 @@ int main(int argc, const char * argv[])
         [c1 print];
         [c2 print];
         int distance = [c1 hammingDistance: c2];
-        printf("%d\n", distance);
+        printf("%d\n\n", distance);
         
-        [c1 mutate: 2];
-        distance = [c1 hammingDistance: c1];
-        printf("%d\n", distance);
+        [c1 mutate: 10];
+        [c2 mutate: 10];
+        distance = [c1 hammingDistance: c2];
+        printf("%d\n\n", distance);
         [c1 print];
     }
     return 0;
