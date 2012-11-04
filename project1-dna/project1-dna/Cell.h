@@ -29,7 +29,7 @@
 
 - (id)init;
 - (int)hammingDistanceTo: (Cell*)aCell;
-- (NSString *)description; // for debug
+- (NSString *)description;
 
 @end
 
