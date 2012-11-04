@@ -14,40 +14,39 @@
 -(void) mutator: (int) mutatePercentage;
 
 @end
+
 @implementation Cell (mutator)
 
 -(void) mutator: (int) mutatePercentage {
     
-    // Если процент для мутации больше 100 сделаем его 100
-    if (mutatePercentage>100)
-        mutatePercentage = 100;
+    // Если процент для мутации больше 100 или меньше 0 сделаем его 100 и 0 соответственно
+    mutatePercentage = (mutatePercentage>100)?(100):((mutatePercentage<0)?(0):mutatePercentage);
     
     // Здесь будем хранить уже измененные индексы
     NSMutableArray *updated = [[NSMutableArray alloc] init];
     
     for (int i=0; i<mutatePercentage; i++) {
 
-        int index = arc4random() % 100;
-       
         // Поиск индекса, который еще не использвался
-        while ([updated containsObject:[NSNumber numberWithInt:index]]) {
+        int index = 0;
+        do {
             index = arc4random() % 100;
         }
+        while ([updated containsObject:[NSNumber numberWithInt:index]]);
         
-        //Сохраним индекс как использованный
-        [updated addObject:[NSNumber numberWithInt:index]];
-
         NSArray *validDnkSet = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
         NSString *curentValue = [[self dnk] objectAtIndex:index];
-        NSString *newValue = [validDnkSet objectAtIndex: arc4random() % [validDnkSet count]];
-        
+        NSString *newValue;
         //Если новое и старое значение равны, то попробуем выбрать следующее новое
-        while ([curentValue isEqualToString:newValue]) {
+        do {
             newValue = [validDnkSet objectAtIndex: arc4random() % [validDnkSet count]];
-        }
+        } while ([curentValue isEqualToString:newValue]);
         
         //Заменим значение на новое
         [[self dnk] replaceObjectAtIndex:index withObject:newValue];
+
+        //Сохраним индекс как использованный
+        [updated addObject:[NSNumber numberWithInt:index]];
 
     }
 }
