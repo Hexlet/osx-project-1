@@ -58,6 +58,9 @@
 @implementation Cell (Mutator)
 
 -(void) mutate:(NSUInteger)percent {
+    if(percent > 100)
+        [NSException raise: @"Invalid value" format: @"Percent value must be not greater then 100"];
+
     NSUInteger mutations = (percent / (Float32)DNA_SIZE) * 100;
     NSMutableSet* set = [[NSMutableSet alloc] initWithCapacity:mutations];
     while(mutations) {
