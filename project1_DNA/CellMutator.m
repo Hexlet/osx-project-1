@@ -28,7 +28,7 @@
                 [changePositions addObject:randPosition]; // добавляем в использованые
                 
                 do {
-                    randGen = [geneticMaterial objectAtIndex: arc4random() % [geneticMaterial count]]; //выбираем ген
+                    randGen = [self getRandomSymbol]; //выбираем ген
                 } while ([randGen isEqual:[self.DNA objectAtIndex:[randPosition intValue]]]); // перегенериваем ген если он совпадает с тем что в клетке на этой позиции
                 
                 [self.DNA insertObject:randGen atIndex:[randPosition intValue]]; //заменяем ген

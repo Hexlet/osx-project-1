@@ -33,10 +33,10 @@
 		FA6605DC16431724008B3F31 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA6605DF16431724008B3F31 /* project1_DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "project1_DNA-Prefix.pch"; sourceTree = "<group>"; };
 		FA6605E016431724008B3F31 /* project1_DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = project1_DNA.1; sourceTree = "<group>"; };
-		FA6605F81643187E008B3F31 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
-		FA6605F91643187E008B3F31 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		FA6605FB16432940008B3F31 /* CellMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellMutator.h; path = project1_DNA/CellMutator.h; sourceTree = "<group>"; };
-		FA6605FC16432940008B3F31 /* CellMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellMutator.m; path = project1_DNA/CellMutator.m; sourceTree = "<group>"; };
+		FA6605F81643187E008B3F31 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = ../Cell.h; sourceTree = "<group>"; };
+		FA6605F91643187E008B3F31 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = ../Cell.m; sourceTree = "<group>"; };
+		FA6605FB16432940008B3F31 /* CellMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellMutator.h; sourceTree = "<group>"; };
+		FA6605FC16432940008B3F31 /* CellMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellMutator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +54,6 @@
 		FA6605CA16431724008B3F31 = {
 			isa = PBXGroup;
 			children = (
-				FA6605FC16432940008B3F31 /* CellMutator.m */,
-				FA6605FB16432940008B3F31 /* CellMutator.h */,
-				FA6605F81643187E008B3F31 /* Cell.h */,
-				FA6605F91643187E008B3F31 /* Cell.m */,
 				FA6605DB16431724008B3F31 /* project1_DNA */,
 				FA6605D816431724008B3F31 /* Frameworks */,
 				FA6605D616431724008B3F31 /* Products */,
@@ -83,6 +79,10 @@
 		FA6605DB16431724008B3F31 /* project1_DNA */ = {
 			isa = PBXGroup;
 			children = (
+				FA6605FC16432940008B3F31 /* CellMutator.m */,
+				FA6605FB16432940008B3F31 /* CellMutator.h */,
+				FA6605F81643187E008B3F31 /* Cell.h */,
+				FA6605F91643187E008B3F31 /* Cell.m */,
 				FA6605DC16431724008B3F31 /* main.m */,
 				FA6605E016431724008B3F31 /* project1_DNA.1 */,
 				FA6605DE16431724008B3F31 /* Supporting Files */,

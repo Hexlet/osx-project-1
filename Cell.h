@@ -18,4 +18,6 @@
 
 -(int) hammingDistance: (Cell*) cell;
 
+-(NSString*) getRandomSymbol;
+
 @end

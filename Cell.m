@@ -19,7 +19,7 @@
         _DNA = [[NSMutableArray alloc] initWithCapacity:(CELL_CAPACITY)];
         
         for (int i=0; i < CELL_CAPACITY; i++) {
-            [_DNA insertObject:[geneticMaterial objectAtIndex: arc4random() % [geneticMaterial count]] atIndex:i]; // заполняем клетку рандомными генами
+            [_DNA insertObject: [self getRandomSymbol] atIndex:i]; // заполняем клетку рандомными генами
         }
     }
     
@@ -34,6 +34,10 @@
         }
     }
     return distance;
+}
+
+-(NSString*) getRandomSymbol {
+    return [geneticMaterial objectAtIndex: arc4random() % [geneticMaterial count]];
 }
 
 @end
