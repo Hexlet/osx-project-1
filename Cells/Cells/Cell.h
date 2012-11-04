@@ -10,4 +10,7 @@
 
 @interface Cell : NSObject
 - (id) init;
+- (NSString *) genomeAtIndex:(int)index;
+- (int) hammingDistance:(Cell *)another;
+
 @end

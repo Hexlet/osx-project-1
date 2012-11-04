@@ -18,7 +18,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hello, World!");
         Cell *first = [[Cell alloc] init];
         Cell *second = [[Cell alloc] init];
-        
+        NSLog(@"%i", [first hammingDistance:second]);
     }
     return 0;
 }
