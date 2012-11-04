@@ -14,7 +14,7 @@
 -(void) print
 {
     NSMutableString* DNAString = [NSMutableString string];
-    for(Gene* gene in DNA)
+    for(Gene* gene in [self DNA])
         [DNAString appendString:[gene toString]];
     NSLog(@"%@", DNAString);
 }

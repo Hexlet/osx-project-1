@@ -13,31 +13,18 @@
 
 -(void) mutate:(int)percentage
 {
-    long genesToChangeCount = [DNA count] * percentage / 100;
+    long genesToChangeCount = [[self DNA] count] * percentage / 100;
     
-    if(genesToChangeCount <= 0)
-        return;
-    
-    if(genesToChangeCount >= [DNA count])
+    NSMutableArray* genes = [NSMutableArray arrayWithArray:[self DNA]];
+    while(genesToChangeCount > 0)
     {
-        for(Gene* gene in DNA)
-            [gene mutate];
-        return;
-    }
-    
-    long unchangedGenesCount = [DNA count] - genesToChangeCount;
-    
-    NSMutableArray* changeFlags = [[NSMutableArray alloc] initWithCapacity:[DNA count]];
-    
-    for(int i = 0; i < unchangedGenesCount; i++)
-        [changeFlags addObject:[NSNumber numberWithBool:NO]];
-    
-    for(int i = 0; i < genesToChangeCount; i++)
-        [changeFlags insertObject:[NSNumber numberWithBool:YES] atIndex:rand() % [changeFlags count]];
+        Gene* gene = [genes objectAtIndex:(rand() % [genes count])];
         
-    for(int i = 0; i < [DNA count]; i++)
-        if([[changeFlags objectAtIndex:i] boolValue])
-            [[DNA objectAtIndex:i] mutate];
+        [gene mutate];
+        [genes removeObject:gene];
+        
+        genesToChangeCount -= 1;
+    }
 }
 
 @end

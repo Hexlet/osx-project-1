@@ -18,7 +18,7 @@ const int DNA_SIZE = 100;
     self = [super init];
     if(self)
     {
-        DNA = [[NSMutableArray alloc] initWithCapacity:DNA_SIZE];
+        _DNA = [[NSMutableArray alloc] initWithCapacity:DNA_SIZE];
         [self fillDNAWithRandomValues];
     }
     return self;
@@ -26,9 +26,9 @@ const int DNA_SIZE = 100;
 
 -(void) fillDNAWithRandomValues
 {
-    [DNA removeAllObjects];
+    [_DNA removeAllObjects];
     for(int i = 0; i < DNA_SIZE; i++)
-        [DNA addObject:[[Gene alloc] initWithRandomValue]];
+        [_DNA addObject:[[Gene alloc] initWithRandomValue]];
 }
 
 -(int) hammingDistance:(Cell *)cell
@@ -36,8 +36,8 @@ const int DNA_SIZE = 100;
     int distance = 0;
     for(int i = 0; i < DNA_SIZE; i++)
     {
-        Gene* geneSelf = [self->DNA objectAtIndex:i];
-        Gene* geneCell = [cell->DNA objectAtIndex:i];
+        Gene* geneSelf = [[self DNA] objectAtIndex:i];
+        Gene* geneCell = [[cell DNA] objectAtIndex:i];
         if(![geneSelf equalsTo:geneCell])
             distance += 1;        
     }
