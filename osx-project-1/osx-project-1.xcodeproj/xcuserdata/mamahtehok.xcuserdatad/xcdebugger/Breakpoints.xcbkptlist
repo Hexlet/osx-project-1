@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
+         timestampString = "373725745.976689"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
+         startingLineNumber = "19"
+         endingLineNumber = "19"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
+         timestampString = "373725745.976689"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
+         timestampString = "373725745.976689"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
+         startingLineNumber = "18"
+         endingLineNumber = "18"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -79,19 +79,6 @@
          startingLineNumber = "26"
          endingLineNumber = "26"
          landmarkName = "-init"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
-         landmarkName = "-mutate:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -125,50 +112,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
+         timestampString = "373725745.976689"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
-         landmarkName = "-mutate:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "50"
-         endingLineNumber = "50"
-         landmarkName = "-mutate:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
+         startingLineNumber = "22"
+         endingLineNumber = "22"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
+         filePath = "osx-project-1/Cell+muttator.m"
+         timestampString = "373725980.274812"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "39"
-         endingLineNumber = "39"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
          landmarkName = "-mutate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -176,38 +137,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "osx-project-1/main.m"
-         timestampString = "373549823.219822"
+         filePath = "osx-project-1/Cell+muttator.m"
+         timestampString = "373725980.274812"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
-         landmarkName = "-mutate:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "osx-project-1/main.m"
-         timestampString = "373549985.657113"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "37"
-         endingLineNumber = "37"
-         landmarkName = "-mutate:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "osx-project-1/main.m"
-         timestampString = "373549987.806833"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
          landmarkName = "-mutate:"
          landmarkType = "5">
       </FileBreakpoint>

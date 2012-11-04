@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1BC0D7164699C0000D712A /* Cell+muttator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1BC0D6164699C0000D712A /* Cell+muttator.m */; };
 		1CF0364316405EF400666A25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF0364216405EF400666A25 /* Foundation.framework */; };
 		1CF0364616405EF400666A25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0364516405EF400666A25 /* main.m */; };
 		1CF0364A16405EF400666A25 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1CF0364916405EF400666A25 /* osx_project_1.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C1BC0D5164699C0000D712A /* Cell+muttator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+muttator.h"; sourceTree = "<group>"; };
+		1C1BC0D6164699C0000D712A /* Cell+muttator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+muttator.m"; sourceTree = "<group>"; };
 		1CF0363E16405EF400666A25 /* osx-project-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "osx-project-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF0364216405EF400666A25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1CF0364516405EF400666A25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				1CF0364516405EF400666A25 /* main.m */,
+				1C1BC0D5164699C0000D712A /* Cell+muttator.h */,
+				1C1BC0D6164699C0000D712A /* Cell+muttator.m */,
 				1CF0364916405EF400666A25 /* osx_project_1.1 */,
 				1CF0364716405EF400666A25 /* Supporting Files */,
 				1CF0365016405F2C00666A25 /* Cell.h */,
@@ -146,6 +151,7 @@
 			files = (
 				1CF0364616405EF400666A25 /* main.m in Sources */,
 				1CF0365216405F2C00666A25 /* Cell.m in Sources */,
+				1C1BC0D7164699C0000D712A /* Cell+muttator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				1CF0364F16405EF400666A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
