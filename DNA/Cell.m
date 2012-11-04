@@ -13,7 +13,7 @@
 @implementation Cell
 -(id) init{
     self = [super init];
-    DNA = [[NSMutableArray alloc] initWithCapacity:100];
+    DNA = [[NSMutableArray alloc] initWithCapacity:DNA_SIZE];
 
     for(NSUInteger i=0; i < DNA_SIZE; ++i)
         [DNA insertObject:[self randNucleotide] atIndex:i];
@@ -61,16 +61,18 @@
     if(percent > 100)
         [NSException raise: @"Invalid value" format: @"Percent value must be not greater then 100"];
 
+    NSMutableArray* indexesArray = [[NSMutableArray alloc] initWithCapacity:DNA_SIZE];
+    for(NSUInteger i=0; i < DNA_SIZE; ++i) 
+        [indexesArray insertObject: [[NSNumber alloc] initWithUnsignedInteger: i] atIndex: i];
+    
+    for(NSUInteger i=0; i < DNA_SIZE; ++i)
+        [indexesArray exchangeObjectAtIndex:i withObjectAtIndex: arc4random_uniform(DNA_SIZE)];
+        
     NSUInteger mutations = (percent * DNA_SIZE) / (Float32)100;
-    NSMutableSet* set = [[NSMutableSet alloc] initWithCapacity:mutations];
     while(mutations) {
-        NSNumber* pos = [[NSNumber alloc] initWithUnsignedInteger: arc4random_uniform(DNA_SIZE)];
-        if([set member:pos] == nil)
-        {
-            [DNA replaceObjectAtIndex:[pos unsignedIntegerValue] withObject:[self randNucleotide]];
-            [set addObject: pos];
-            --mutations;
-        }
+        NSUInteger idx = [[indexesArray objectAtIndex: mutations - 1] unsignedIntegerValue];
+        [DNA replaceObjectAtIndex: idx withObject:[self randNucleotide]];
+        --mutations;
     }
 }
 
