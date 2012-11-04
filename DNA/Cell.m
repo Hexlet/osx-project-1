@@ -59,7 +59,7 @@
 
 -(void) mutate:(NSUInteger)percent {
     NSUInteger mutations = (percent / (Float32)DNA_SIZE) * 100;
-    NSMutableSet* set = [[NSMutableSet alloc] init];
+    NSMutableSet* set = [[NSMutableSet alloc] initWithCapacity:mutations];
     while(mutations) {
         NSNumber* pos = [[NSNumber alloc] initWithUnsignedInteger: arc4random() % DNA_SIZE];
         if([set member:pos] == nil)
