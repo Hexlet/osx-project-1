@@ -47,7 +47,7 @@
 -(NSUInteger) hammingDistance: (Cell*) in {
     NSUInteger distance = 0;
     for(NSUInteger i=0; i < DNA_SIZE; ++i) {
-        if(![[DNA objectAtIndex:i] compare: [in->DNA objectAtIndex:i]])
+        if(![[DNA objectAtIndex:i] isEqualToString: [in->DNA objectAtIndex:i]])
             ++distance;
     }
     
@@ -71,7 +71,12 @@
     NSUInteger mutations = (percent * DNA_SIZE) / (Float32)100;
     while(mutations) {
         NSUInteger idx = [[indexesArray objectAtIndex: mutations - 1] unsignedIntegerValue];
-        [DNA replaceObjectAtIndex: idx withObject:[self randNucleotide]];
+        NSString* newNucleotide;
+        do { //check if new value is different from previous
+            newNucleotide = [self randNucleotide];
+        } while ([[DNA objectAtIndex:idx] isEqualToString: newNucleotide]);
+
+        [DNA replaceObjectAtIndex: idx withObject: newNucleotide];
         --mutations;
     }
 }
