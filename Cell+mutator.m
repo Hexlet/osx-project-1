@@ -25,7 +25,15 @@
               [replaced_pos containsObject:random_pos]
               ) {
             random_pos = [NSNumber numberWithInteger: arc4random() % CELL_ARRAY_CAPACITY];
-            [[self dna] replaceObjectAtIndex:[random_pos intValue] withObject:[self getRandomSymbol]];
+            
+            // исключаем повторение заменяемого символа
+            NSString *new_symbol = @"";
+            NSString *current_symbol = [[self dna] objectAtIndex:[random_pos intValue]];
+            while ([new_symbol isEqualToString:@""] || [new_symbol isEqualToString:current_symbol]) {
+                new_symbol = [self getRandomSymbol];
+            }
+            
+            [[self dna] replaceObjectAtIndex:[random_pos intValue] withObject:new_symbol];
         }
         [replaced_pos addObject:random_pos];
     }
