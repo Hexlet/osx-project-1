@@ -61,7 +61,7 @@
     if(percent > 100)
         [NSException raise: @"Invalid value" format: @"Percent value must be not greater then 100"];
 
-    NSUInteger mutations = (percent / (Float32)DNA_SIZE) * 100;
+    NSUInteger mutations = (percent * DNA_SIZE) / (Float32)100;
     NSMutableSet* set = [[NSMutableSet alloc] initWithCapacity:mutations];
     while(mutations) {
         NSNumber* pos = [[NSNumber alloc] initWithUnsignedInteger: arc4random_uniform(DNA_SIZE)];
