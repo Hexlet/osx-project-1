@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Cell.h"
 
 int main(int argc, const char * argv[])
 {
@@ -15,6 +16,8 @@ int main(int argc, const char * argv[])
         
         // insert code here...
         NSLog(@"Hello, World!");
+        Cell *first = [[Cell alloc] init];
+        Cell *second = [[Cell alloc] init];
         
     }
     return 0;
