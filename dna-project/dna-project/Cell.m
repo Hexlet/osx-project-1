@@ -15,9 +15,9 @@
     self = [super init];
     
     if (self != nil) {
-        int dnaLength = 100;
+        int dnaLength = [Cell getDnaInitialLength];
+        NSString* acids = [Cell getAcidsSet];
         dna = [NSMutableArray arrayWithCapacity:dnaLength];
-        NSString* acids = @"ATGC";
         
         for (int i=0; i<dnaLength; i++) {
             int randomIndex = arc4random() % [acids length];
@@ -47,6 +47,13 @@
 
 - (NSString*) getDnaAsString {
     return [dna componentsJoinedByString:@""];
+}
+
++ (int) getDnaInitialLength {
+    return 100;
+}
++ (NSString*) getAcidsSet {
+    return @"ATGC";
 }
 
 @end

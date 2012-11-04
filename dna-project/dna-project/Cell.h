@@ -19,4 +19,7 @@
 - (NSArray*) getDnaAsArray;
 - (NSString*) getDnaAsString;
 
++ (int) getDnaInitialLength;
++ (NSString*) getAcidsSet;
+
 @end

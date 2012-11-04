@@ -11,6 +11,7 @@
 		A094762A16467CC5001C95D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A094762916467CC5001C95D2 /* main.m */; };
 		A094762E16467CC5001C95D2 /* dna_project.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A094762D16467CC5001C95D2 /* dna_project.1 */; };
 		A094763616467ED6001C95D2 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A094763516467ED6001C95D2 /* Cell.m */; };
+		A09476391646971F001C95D2 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = A09476381646971F001C95D2 /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		A094762D16467CC5001C95D2 /* dna_project.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = dna_project.1; sourceTree = "<group>"; };
 		A094763416467ED6001C95D2 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		A094763516467ED6001C95D2 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		A09476371646971F001C95D2 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		A09476381646971F001C95D2 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				A094762B16467CC5001C95D2 /* Supporting Files */,
 				A094763416467ED6001C95D2 /* Cell.h */,
 				A094763516467ED6001C95D2 /* Cell.m */,
+				A09476371646971F001C95D2 /* Cell+Mutator.h */,
+				A09476381646971F001C95D2 /* Cell+Mutator.m */,
 			);
 			path = "dna-project";
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			files = (
 				A094762A16467CC5001C95D2 /* main.m in Sources */,
 				A094763616467ED6001C95D2 /* Cell.m in Sources */,
+				A09476391646971F001C95D2 /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
