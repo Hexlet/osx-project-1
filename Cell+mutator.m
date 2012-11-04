@@ -27,9 +27,9 @@
             random_pos = [NSNumber numberWithInteger: arc4random() % CELL_ARRAY_CAPACITY];
             
             // исключаем повторение заменяемого символа
-            NSString *new_symbol = @"";
+            NSString *new_symbol = nil;
             NSString *current_symbol = [[self dna] objectAtIndex:[random_pos intValue]];
-            while ([new_symbol isEqualToString:@""] || [new_symbol isEqualToString:current_symbol]) {
+            while (new_symbol == nil || [new_symbol isEqualToString:current_symbol]) {
                 new_symbol = [self getRandomSymbol];
             }
             
