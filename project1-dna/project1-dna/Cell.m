@@ -8,7 +8,7 @@
 
 #import "Cell.h"
 
-#define CELL_SIZE 100
+#define CELL_SIZE 20
 
 
 
@@ -73,6 +73,9 @@
 @implementation Cell (Mutator)
 
 - (void) mutate: (int)percentage {
+    if (percentage > 100 || percentage < 0)
+        [NSException raise:@"Invalid percentage value" format:@"percentage of %d is not in range from 0 to 100", percentage];
+    
     NSMutableArray * indexes = [[NSMutableArray alloc] initWithCapacity:100];
     for (int i = 0; i < CELL_SIZE; ++i)
         [indexes addObject: [NSNumber numberWithInt:i]];
