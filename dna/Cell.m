@@ -29,6 +29,8 @@
     self = [super init];
     
     if (self) {
+        if (lengthOfDNA < 5) {lengthOfDNA = 5;}
+        
         _DNA = [NSMutableArray arrayWithCapacity:lengthOfDNA];
         _setOfDNA = @[@"A", @"T", @"G", @"C"];
         
@@ -51,7 +53,7 @@
         if (countCurrentDNA > countCurrentCompareDNA) {
             countCompare = countCurrentCompareDNA;
         }
-        NSLog(@"Warning: DNA have different lengths! Only the first %li will be comparisons.", countCompare);
+        NSLog(@"Warning: DNA have different lengths. Only the first %li will be comparisons!", countCompare);
     }
     
     
