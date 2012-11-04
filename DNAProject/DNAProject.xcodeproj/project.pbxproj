@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A8FBC4D164642840006CF3F /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A8FBC47164642840006CF3F /* Cell+Mutator.m */; };
+		2A8FBC4E164642840006CF3F /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A8FBC49164642840006CF3F /* Cell.m */; };
+		2A8FBC4F164642840006CF3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A8FBC4C164642840006CF3F /* main.m */; };
 		2ACBD7951645491B0051B5FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ACBD7941645491B0051B5FA /* Foundation.framework */; };
-		2ACBD7981645491B0051B5FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACBD7971645491B0051B5FA /* main.m */; };
-		2ACBD79C1645491B0051B5FA /* DNAProject.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2ACBD79B1645491B0051B5FA /* DNAProject.1 */; };
-		2ACBD7A4164549420051B5FA /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACBD7A3164549420051B5FA /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,20 +20,21 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				2ACBD79C1645491B0051B5FA /* DNAProject.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A8FBC46164642840006CF3F /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		2A8FBC47164642840006CF3F /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
+		2A8FBC48164642840006CF3F /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		2A8FBC49164642840006CF3F /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		2A8FBC4A164642840006CF3F /* DNAProject-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNAProject-Prefix.pch"; sourceTree = "<group>"; };
+		2A8FBC4B164642840006CF3F /* DNAProject.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = DNAProject.1; sourceTree = "<group>"; };
+		2A8FBC4C164642840006CF3F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2ACBD7901645491B0051B5FA /* DNAProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNAProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACBD7941645491B0051B5FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2ACBD7971645491B0051B5FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2ACBD79A1645491B0051B5FA /* DNAProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNAProject-Prefix.pch"; sourceTree = "<group>"; };
-		2ACBD79B1645491B0051B5FA /* DNAProject.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNAProject.1; sourceTree = "<group>"; };
-		2ACBD7A2164549420051B5FA /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
-		2ACBD7A3164549420051B5FA /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,10 +49,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A8FBC45164642840006CF3F /* DNAProject */ = {
+			isa = PBXGroup;
+			children = (
+				2A8FBC46164642840006CF3F /* Cell+Mutator.h */,
+				2A8FBC47164642840006CF3F /* Cell+Mutator.m */,
+				2A8FBC48164642840006CF3F /* Cell.h */,
+				2A8FBC49164642840006CF3F /* Cell.m */,
+				2A8FBC4A164642840006CF3F /* DNAProject-Prefix.pch */,
+				2A8FBC4B164642840006CF3F /* DNAProject.1 */,
+				2A8FBC4C164642840006CF3F /* main.m */,
+			);
+			path = DNAProject;
+			sourceTree = "<group>";
+		};
 		2ACBD7851645491B0051B5FA = {
 			isa = PBXGroup;
 			children = (
-				2ACBD7961645491B0051B5FA /* DNAProject */,
+				2A8FBC45164642840006CF3F /* DNAProject */,
 				2ACBD7931645491B0051B5FA /* Frameworks */,
 				2ACBD7911645491B0051B5FA /* Products */,
 			);
@@ -71,26 +86,6 @@
 				2ACBD7941645491B0051B5FA /* Foundation.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2ACBD7961645491B0051B5FA /* DNAProject */ = {
-			isa = PBXGroup;
-			children = (
-				2ACBD7971645491B0051B5FA /* main.m */,
-				2ACBD79B1645491B0051B5FA /* DNAProject.1 */,
-				2ACBD7991645491B0051B5FA /* Supporting Files */,
-				2ACBD7A2164549420051B5FA /* Cell.h */,
-				2ACBD7A3164549420051B5FA /* Cell.m */,
-			);
-			path = DNAProject;
-			sourceTree = "<group>";
-		};
-		2ACBD7991645491B0051B5FA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2ACBD79A1645491B0051B5FA /* DNAProject-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,8 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ACBD7981645491B0051B5FA /* main.m in Sources */,
-				2ACBD7A4164549420051B5FA /* Cell.m in Sources */,
+				2A8FBC4D164642840006CF3F /* Cell+Mutator.m in Sources */,
+				2A8FBC4E164642840006CF3F /* Cell.m in Sources */,
+				2A8FBC4F164642840006CF3F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +238,7 @@
 				2ACBD7A11645491B0051B5FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

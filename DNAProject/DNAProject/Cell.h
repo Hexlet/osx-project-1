@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject {
-    NSMutableArray *DNA;
+    NSMutableArray *_DNA;
+    NSMutableArray *_mutatedElements;
 }
 
 -(void) printArray;
+-(NSString*) generateElement;
+-(NSMutableArray*) getArray;
+-(int) hammingDistance: (Cell*) c;
 
 @end
 

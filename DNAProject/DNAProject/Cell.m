@@ -14,37 +14,59 @@
 -(id) init {
     self = [super init];
     if (self) {
-        DNA = [NSMutableArray arrayWithCapacity:100];
+        _DNA = [NSMutableArray arrayWithCapacity:100];
+        _mutatedElements = [[NSMutableArray alloc] init];
     }
     
     for (NSUInteger i = 0; i < 100; i++) {
-        NSUInteger rand = arc4random() % 4;
-        switch (rand) {
-            case 0:
-                [DNA insertObject:@"A" atIndex: i];
-                break;
-                
-            case 1:
-                [DNA insertObject:@"T" atIndex: i];
-                break;
-                
-            case 2:
-                [DNA insertObject:@"G" atIndex: i];
-                break;
-                
-            case 3:
-                [DNA insertObject:@"C" atIndex: i];
-                break;
-                
-            default:
-                break;
-        }
+        [_DNA insertObject:[self generateElement] atIndex: i];
     }
     return self;
     
 }
+
 -(void) printArray {
-        NSLog(@"%@",DNA);
+    NSLog(@"%@",_DNA);
+}
+
+-(NSMutableArray*) getArray {
+    return _DNA;
+}
+
+-(NSString*) generateElement {
+    NSUInteger rand = arc4random() % 4;
+    switch (rand) {
+        case 0:
+            return @"A";
+            break;
+            
+        case 1:
+            return @"T";
+            break;
+            
+        case 2:
+            return @"G";
+            break;
+            
+        case 3:
+            return @"C";
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+}
+
+-(int) hammingDistance: (Cell*) c {
+    int result = 0;
+    NSMutableArray *compareWith = [c getArray];
+    for (int i = 0; i < 0; i++) {
+        if ([_DNA objectAtIndex: i] == [compareWith objectAtIndex: i]) {
+            result++;
+        }
+    }
+    return result;
 }
 
 @end
