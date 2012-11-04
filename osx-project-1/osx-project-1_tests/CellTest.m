@@ -39,14 +39,20 @@
     STAssertEquals(0, hammingDistance, nil);
 }
 
-- (void) test_hammingDistanceWithRandomCellIsBetween1And100 {
+- (void) test_hammingDistanceWithRandomCellIsBetween1AndDNACapacity {
     Cell *cell = [[Cell alloc] init];
     for (int i = 0; i < 10; i++) {
         Cell *otherCell = [[Cell alloc] init];
         int hammingDistance = [cell hammingDistance:otherCell];
         STAssertTrue(hammingDistance > 0, nil);
-        STAssertTrue(hammingDistance <= 100, nil);
+        STAssertTrue(hammingDistance <= kDNACapacity, nil);
     }
+}
+
+- (void) test_hammingDistanceWithNilReturnsDNACapacity {
+    Cell *cell = [[Cell alloc] init];
+    int hammingDistance = [cell hammingDistance:nil];
+    STAssertEquals(kDNACapacity, hammingDistance, nil);
 }
 
 - (void) test_mutateWithNegativeReplacementCountDoesNotChangeCell {
@@ -75,7 +81,7 @@
     Cell *cell = [[Cell alloc] init];
     for (int i = 0; i < 100; i++) {
         [cell mutate:25];
-        STAssertEquals((NSUInteger)100, cell.dna.count, nil);
+        STAssertEquals((NSUInteger)kDNACapacity, cell.dna.count, nil);
     }
 }
 

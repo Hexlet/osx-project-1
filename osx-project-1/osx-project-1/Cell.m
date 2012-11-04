@@ -9,11 +9,9 @@
 #import "Cell.h"
 #import "DNAGenerator.h"
 
-#define kDNACapacity 100
-
 @implementation Cell
 
-//designated initializer
+//designated initializer (private)
 - (id) initWithDNA:(NSMutableArray *)dna {
     self = [super init];
     if (self) {

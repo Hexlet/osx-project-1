@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kDNACapacity 100
+
 /*
 Represents model of a cell containing DNA symbolic array
 */
