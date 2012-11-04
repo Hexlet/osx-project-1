@@ -27,7 +27,7 @@ int main(int argc, const char * argv[])
         
         // Инициализация метода мутирования
         [myCell1 mutate:30];
-        [myCell2 mutate:60];
+        [myCell2 mutate:50];
         
         // Инициализация метода проверки на несовпадения после мутации
         int hammingDistance2 = [myCell1 hammingDistance:myCell2];
@@ -35,8 +35,6 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Найденно несовпадений в двух ДНК: %d", hammingDistance1);
         NSLog(@"Найденно несовпадений после мутации: %d", hammingDistance2);
-
-//      NSLog(@"Array1: %@, Array2: %@", [myCell1 dna], [myCell2 dna]);
         
     }
     return 0;
