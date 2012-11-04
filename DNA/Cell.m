@@ -18,13 +18,11 @@
     self = [super init];
     if (self) {
         int COUNT = 100;
-        NSMutableArray *VALUES = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         
         DNA = [NSMutableArray arrayWithCapacity:COUNT];
         
-        for (int i = 0; i < COUNT; ++i) {
-            [DNA addObject: [VALUES objectAtIndex:rand() % [VALUES count]]];
-        }
+        for (int i = 0; i < COUNT; ++i)
+            [self randomizeAt:i];
     }
     return self;
 }
@@ -33,7 +31,16 @@
     return DNA;
 }
 
--(int) hammingDistance:(Cell *) cell {
+-(void) randomizeAt:(NSInteger)index {
+    NSMutableArray *VALUES = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+    
+    if (index >= [DNA count])
+        [DNA insertObject:[VALUES objectAtIndex:rand() % [VALUES count]] atIndex:index];
+    else
+        [DNA replaceObjectAtIndex:index withObject:[VALUES objectAtIndex:rand() % [VALUES count]]];
+}
+
+-(int) hammingDistance:(Cell *)cell {
     int diff = 0;
     for (int i = 0; i < [DNA count]; ++i) {
 //        NSLog(@"%@ - %@ -> ", [DNA objectAtIndex:i], [[cell getDNA] objectAtIndex:i]);

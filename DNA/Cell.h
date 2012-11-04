@@ -10,7 +10,8 @@
 
 @interface Cell : NSObject
 
--(int) hammingDistance:(Cell *) cell;
+-(void) randomizeAt:(NSInteger)position;
+-(int) hammingDistance:(Cell *)cell;
 
 -(void) print;
 
