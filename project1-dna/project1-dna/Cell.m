@@ -78,7 +78,8 @@
         [indexes addObject: [NSNumber numberWithInt:i]];
     [indexes shuffle];
     
-    for (int i = 0; i < percentage; ++i) {
+    int countOfMutations = round((CELL_SIZE / 100.0) * percentage);
+    for (int i = 0; i < countOfMutations; ++i) {
         int indexToChage = (int)[[indexes lastObject] integerValue];
         [indexes removeLastObject];
         NSMutableArray *newSymbols = [[NSMutableArray alloc] initWithArray:symbols];
