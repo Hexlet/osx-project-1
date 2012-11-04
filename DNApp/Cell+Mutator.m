@@ -21,7 +21,7 @@
     int countOfElement = dnaCapacity*persentOfElement/100;
     
     // Создаем масив-список
-    NSMutableArray *replaceList = [[NSMutableArray alloc] init];
+    NSMutableArray *replaceList = [[NSMutableArray alloc] initWithCapacity:dnaCapacity];
         for (int i = 0; i < dnaCapacity; i++) {
             [replaceList addObject:@(i)]; // Единицы в стринг
         }
@@ -33,21 +33,20 @@
             int nIndexForReplace = arc4random() % [replaceList count];
             
             // Получаем из массива индекс элемента после рандома
+            
+            NSMutableArray *copyOfRandomArray = [[NSMutableArray alloc] initWithArray:self.randomArray]; // Делаем копию массива з буквами
+            
             int elementIndex = [[replaceList objectAtIndex: nIndexForReplace] intValue]; // Из стринга назад в единицы
             
-            NSString *dnaString = [self.dna objectAtIndex:elementIndex];
+            NSString *currentState = [self.dna objectAtIndex:elementIndex]; //Берем из массива ДНК состояние нужного обьекта
             
-            NSString *randomString = [self getRandom];
+            [copyOfRandomArray removeObjectIdenticalTo: currentState]; // Удаляем из массива обьект который совпадает с з нашим обьектом из массива ДНК
             
-            // Условие - буквы не должны совпадать
-            if (dnaString != randomString) {
-                [self.dna replaceObjectAtIndex:elementIndex withObject:randomString];
-                
-                // Удаляем замененынй обьект из массива
-                [replaceList removeObjectAtIndex:nIndexForReplace];    
-                
-                i--;
-            }
+            NSInteger countAtg = [copyOfRandomArray count] - 1; // Считаем количество елементов в нашей копии массива randomArray
+            
+            [self.dna replaceObjectAtIndex:elementIndex withObject:[copyOfRandomArray objectAtIndex:random() % countAtg]]; // Заменf мут. обьектf из массива ДНК  рандомным обьектом зи коппи масива randomArray  
+            
+            i--;
         }
 }
 
