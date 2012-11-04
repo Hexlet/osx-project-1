@@ -14,7 +14,7 @@
 @property NSMutableArray* dna;
 
 // Returns array of possible nucleobases: [A, T, G, C]
-+ (NSArray*)nucleobases;
++ (NSArray *)nucleobases;
 
 // Returns hamming distance between actual and provided cells
 - (int)hammingDistance:(Cell *) cell;

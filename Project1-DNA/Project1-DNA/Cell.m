@@ -12,13 +12,13 @@
 @implementation Cell 
 
 + (NSArray *)nucleobases {
-    static NSArray *arrayOfNucleobases = nil;
+    static NSArray *nucleobasesArray = nil;
     
-    if (arrayOfNucleobases == nil) {
-        arrayOfNucleobases = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
+    if (nucleobasesArray == nil) {
+        nucleobasesArray = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
     }
     
-    return arrayOfNucleobases;
+    return nucleobasesArray;
 }
 
 - (id)init {
