@@ -3,7 +3,7 @@
 //  DNA
 //
 //  Created by Gennadii Lukash on 10/31/12.
-//  Copyright (c) 2012 Gennadii Lukash. All rights reserved.
+//  Copyright (c) 2012 GL. All rights reserved.
 //
 
 #import "Cell.h"
@@ -12,19 +12,16 @@
 
 -(id) init {
     if (self = [super init]) {
-        
-        //elemenst for DNA
-        NSArray *charsDNA = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
-        
+      
         //Size array's DNA
-        _DNA = [NSMutableArray arrayWithCapacity:100];
+        _DNA = [NSMutableArray arrayWithCapacity:LENGHT_DNA_ARRAY];
        
-        //Create DNA with random elements from charsDNA
-        for (int count=0; count<100; count++){
-            int r_index = arc4random()%4;
+        //Create DNA with random elements from define constant CHARS_DNA
+        for (int count=0; count<LENGHT_DNA_ARRAY; count++){
+            int random_index = arc4random()%4;
         
             // Add symbol from elements DNA with random index
-            [_DNA addObject:[charsDNA objectAtIndex:r_index]];
+            [_DNA addObject:[CHARS_DNA objectAtIndex:random_index]];
         }
       }
     return self;
@@ -36,9 +33,9 @@
 
 -(int) hammingDistance:(Cell *)dna_1{
     int hamming_count = 0;
-        for (int count=0; count < 100; count++){
+        for (int indexCounter=0; indexCounter < LENGHT_DNA_ARRAY; indexCounter++){
             //Compare each symbol step by step
-            if ([self.DNA objectAtIndex: count]  != [dna_1.DNA objectAtIndex: count]) {
+            if ([self.DNA objectAtIndex: indexCounter]  != [dna_1.DNA objectAtIndex: indexCounter]) {
                 hamming_count++;
             }
             

@@ -11,6 +11,7 @@
 		3CF3ECA2164193A300F3C3AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3ECA1164193A300F3C3AF /* main.m */; };
 		3CF3ECA6164193A300F3C3AF /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CF3ECA5164193A300F3C3AF /* DNA.1 */; };
 		3CF3ECAE1641943300F3C3AF /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3ECAD1641943300F3C3AF /* Cell.m */; };
+		3CF6456816470FB700EA997B /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF6456716470FB700EA997B /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		3CF3ECA5164193A300F3C3AF /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
 		3CF3ECAC1641943300F3C3AF /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		3CF3ECAD1641943300F3C3AF /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		3CF6456616470FB700EA997B /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		3CF6456716470FB700EA997B /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				3CF3ECA1164193A300F3C3AF /* main.m */,
+				3CF6456616470FB700EA997B /* Cell+Mutator.h */,
+				3CF6456716470FB700EA997B /* Cell+Mutator.m */,
 				3CF3ECAC1641943300F3C3AF /* Cell.h */,
 				3CF3ECAD1641943300F3C3AF /* Cell.m */,
 				3CF3ECA5164193A300F3C3AF /* DNA.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				3CF3ECA2164193A300F3C3AF /* main.m in Sources */,
 				3CF3ECAE1641943300F3C3AF /* Cell.m in Sources */,
+				3CF6456816470FB700EA997B /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				3CF3ECAB164193A300F3C3AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
