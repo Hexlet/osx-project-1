@@ -76,7 +76,7 @@ static const u_int32_t dnaCharCount = 100;
 }
 
 
-- (NSString*) toString
+- (NSString*) description
 {
     NSMutableString *dnaStr = [NSMutableString stringWithCapacity:dnaCharCount];
 
@@ -93,10 +93,9 @@ static const u_int32_t dnaCharCount = 100;
 - (Cell*) clone
 {
     Cell *newCell = [[Cell alloc] init];
-    newCell->dna = [NSMutableArray arrayWithArray:dna];
+    newCell->dna = [dna mutableCopy];
     return newCell;
 }
 
     
 @end
-  

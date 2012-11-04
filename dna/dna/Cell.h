@@ -19,7 +19,6 @@
 
 - (id) init;
 - (int) hammingDistance:(Cell*)otherCell;
-- (NSString*) toString;
 - (Cell*) clone;
 
 @end
