@@ -42,8 +42,6 @@
         //Get a random item value from not changed indexes array
         //which is equal item index in DNA array
         int randomIndex = [[availableIndexes objectAtIndex:[randomIndexPosition intValue]] intValue];
-        //Check if we changed item for this index already
-        
         //generate new DNA type
         NSString* newDnaType = [self randomDnaType];
         //get current DNA type in array at index
