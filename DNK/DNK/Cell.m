@@ -49,7 +49,7 @@ NSMutableArray *DnaTypes;
 //Calculate hamming distance
 - (int)hammingDistance:(Cell*) cell{
     int hammingDistance = 0;
-    for (int dnaIndex = 0; dnaIndex <= _DNACount; dnaIndex ++) {
+    for (int dnaIndex = 0; dnaIndex < _DNACount; dnaIndex ++) {
         //compare cell's DNAs at the same index
         if ([[_DNA objectAtIndex:dnaIndex] isEqualToString:[[cell DNA] objectAtIndex:dnaIndex]]) {
             //if equal - increment hammingDistance
