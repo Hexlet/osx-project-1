@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Yury Radchenko. All rights reserved.
 //
 
-#define oneDNAMutatorPercent 40 //процент мутации для первой ДНК
-#define twoDNAMutatorPercent 70 //процент мутации для второй ДНК
+#define oneDNAMutatorPercent 60 //процент мутации для первой ДНК
+#define twoDNAMutatorPercent 40 //процент мутации для второй ДНК
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
@@ -21,13 +21,15 @@
 @implementation Cell (mutator)
 
 - (void) mutate: (int) xPercentMutator {
+//    
+//    if (xPercentMutator < 0 && xPercentMutator > 100)
+//        
+//        NSLog(@"Некорректно введен процент мутации");
+//    
+//    else {
     
-    if (xPercentMutator > 100)
-        
-        NSLog(@"Некорректно введен процент мутации");
+    if (xPercentMutator >= 0 && xPercentMutator <= 100) {
     
-    else {
-        
         int xCount = (int) dnaLenght * xPercentMutator / 100; //кол-во ячеек ДНК, подлежащих изменению
         
         NSString *newCell = [[NSString alloc] init]; //здесь будем хранить новое значение ячейки ДНК
@@ -68,8 +70,11 @@
         
     }
     
+    else
+        
+        NSLog(@"Некорректно введен процент мутации");
+    
 }
-
 
 @end
 
