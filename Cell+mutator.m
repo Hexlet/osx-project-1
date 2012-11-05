@@ -17,8 +17,6 @@
     
     NSNumber *random_pos = [NSNumber numberWithInteger:-1];
     
-    NSLog(@"Initial cell DNA: %@", [self toString]);
-    
     for ( int i = 0; i < max_replacements; ++i ) {
         while(
               [random_pos intValue] == -1 ||
@@ -37,8 +35,6 @@
         }
         [replaced_pos addObject:random_pos];
     }
-    
-    NSLog(@"Mutated cell DNA: %@", [self toString]);
 }
 
 -(NSString*)toString {

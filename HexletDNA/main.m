@@ -24,8 +24,14 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Mutation...");
         
+        NSLog(@"Initial cell DNA: %@", [cell1 toString]);
         [cell1 mutate:muting_volume];
+        NSLog(@"Mutated cell DNA: %@", [cell1 toString]);
+
+        
+        NSLog(@"Initial cell DNA: %@", [cell2 toString]);
         [cell2 mutate:muting_volume];
+        NSLog(@"Mutated cell DNA: %@", [cell2 toString]);
         
         NSLog(@"Renewed hamming distance: %i", [cell1 hammingDistance:cell2]);
     }
