@@ -9,16 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject
-{
-    NSMutableArray *DNA;
-}
+
+@property NSMutableArray *DNA;
 
 // overrided init & custom initWithCapacity
 -(id) init;
 -(id) initWithCapacity:(int)count;
 
 -(NSString*) getRandom;
--(NSMutableArray*) getDNA;
 -(int) hammingDistance: (NSMutableArray*) otherDNA;
 
 -(void) printDNA;

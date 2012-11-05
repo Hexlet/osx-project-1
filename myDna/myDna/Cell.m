@@ -10,6 +10,8 @@
 
 @implementation Cell
 
+@synthesize DNA;
+
 -(id) init
 {
     self = [super init];
@@ -17,7 +19,7 @@
     // init new NSMutableArrary with default capacity
     DNA = [[NSMutableArray alloc] initWithCapacity:100];
 
-    // and populate it with random values
+    // and fill it with random values
     for (NSInteger i = 0; i < 100; ++i) {
         [DNA addObject: [self getRandom]];
     }
@@ -50,14 +52,8 @@
 
 -(void) printDNA
 {
-    // used for debug, just prints DNA
+    // used for debugging purposes. just prints DNA
     NSLog(@"%@", DNA);
-}
-
--(NSMutableArray *) getDNA
-{
-    // getter implementation
-    return DNA;
 }
 
 -(int) hammingDistance: (NSMutableArray*) otherDNA
@@ -67,11 +63,14 @@
     
     for (NSInteger i=0; i<100; ++i) {
         // check if our array element equals otherDNA element
-        if ([DNA objectAtIndex:i] == [otherDNA objectAtIndex:i]) {
+        
+        if ([DNA objectAtIndex:i] != [otherDNA objectAtIndex:i]) {
+            
             // increment counter
             ++counter;
         }
     }
+    
     return counter;
 }
 
