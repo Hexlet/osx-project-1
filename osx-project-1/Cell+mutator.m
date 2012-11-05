@@ -13,22 +13,27 @@
 - (void)mutate:(int)percent
 {
     int numElements = [self.DNA count] / 100 * percent;
-    int rnd;
+    int i,rnd1,rnd2;
 
-    //An array that contains a list of indexes(of code) which were updated
-    NSMutableArray *dnaIndexes = [NSMutableArray arrayWithCapacity:(NSUInteger) numElements];
-    for (int j = 0; j < numElements; j++)
+    NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:[self.DNA count]];
+
+    // add indexes
+    for (i = 0; i < [indexes count]; i++)
     {
-        rnd = arc4random() % [self.DNA count];
-
-        // Make sure that current index(code) wasn't updated yet
-        while ([dnaIndexes containsObject:[NSNumber numberWithInt:rnd]])
-        {
-            rnd = arc4random() % [self.DNA count];
-        }
-        [dnaIndexes addObject:[NSNumber numberWithInt:rnd]];
-        NSString *oldCode = [self.DNA objectAtIndex:(NSUInteger) rnd];
-        [self.DNA replaceObjectAtIndex:(NSUInteger) rnd withObject:[self getAnotherDNACode:oldCode]];
+        [indexes addObject:[NSNumber numberWithInt:i]];
+    }
+    //shuffle : we can even use a half of this length
+    for (i = 0; i < [indexes count]; i++)
+    {
+        rnd1 = arc4random() % [indexes count];
+        rnd2 = [indexes count] - rnd1;
+        [indexes exchangeObjectAtIndex:(NSUInteger) rnd1 withObjectAtIndex:(NSUInteger) rnd2];
+    }
+    //change specific number of elements
+    for (i = 0; i < numElements; i++)
+    {
+        NSString *oldCode = [self.DNA objectAtIndex:(NSUInteger) i];
+        [self.DNA replaceObjectAtIndex:(NSUInteger) i withObject:[self getAnotherDNACode:oldCode]];
     }
 }
 
