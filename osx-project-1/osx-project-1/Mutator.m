@@ -17,6 +17,7 @@
     //int count = 0;
     //int count2 = 0;
     //int count3 = 0;
+    //int count4 = 0;
     
     for (int i = 0;i<percent; i++) {
       //  count2++;
@@ -30,6 +31,13 @@
         }
         //count3++;
         NSString *memberDna = [DNA objectAtIndex:[choseRandomMemberDna unsignedIntegerValue]];
+        NSString *givenMemberDna = [DNA objectAtIndex:[mutateMemberDna unsignedIntegerValue]];
+        
+        if (memberDna == givenMemberDna) {
+            i--;
+            //count4++;
+            continue;
+        }
         
         [DNA replaceObjectAtIndex:[mutateMemberDna unsignedIntegerValue] withObject:memberDna];
         
