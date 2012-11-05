@@ -11,6 +11,7 @@
 		54ECC2DF164417F200E31919 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ECC2DE164417F200E31919 /* main.m */; };
 		54ECC2E3164417F200E31919 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54ECC2E2164417F200E31919 /* osx_project_1.1 */; };
 		54ECC2EB1644183500E31919 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ECC2EA1644183500E31919 /* Cell.m */; };
+		54ECC2EE16479C8A00E31919 /* MyChar.m in Sources */ = {isa = PBXBuildFile; fileRef = 54ECC2ED16479C8A00E31919 /* MyChar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		54ECC2E2164417F200E31919 /* osx_project_1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = osx_project_1.1; sourceTree = "<group>"; };
 		54ECC2E91644183500E31919 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		54ECC2EA1644183500E31919 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		54ECC2EC16479C8A00E31919 /* MyChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyChar.h; sourceTree = "<group>"; };
+		54ECC2ED16479C8A00E31919 /* MyChar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyChar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 			children = (
 				54ECC2E91644183500E31919 /* Cell.h */,
 				54ECC2EA1644183500E31919 /* Cell.m */,
+				54ECC2EC16479C8A00E31919 /* MyChar.h */,
+				54ECC2ED16479C8A00E31919 /* MyChar.m */,
 				54ECC2DE164417F200E31919 /* main.m */,
 				54ECC2E2164417F200E31919 /* osx_project_1.1 */,
 				54ECC2E0164417F200E31919 /* Supporting Files */,
@@ -146,6 +151,7 @@
 			files = (
 				54ECC2DF164417F200E31919 /* main.m in Sources */,
 				54ECC2EB1644183500E31919 /* Cell.m in Sources */,
+				54ECC2EE16479C8A00E31919 /* MyChar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

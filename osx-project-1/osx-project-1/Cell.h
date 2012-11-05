@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MyChar.h"
+
+
 @interface Cell : NSObject
 
 @property NSMutableArray *DNA;
 
-+(int) getRandomNumberBetweenMin:(int)min andMax:(int)max;
 
 -(int) hammingDistance: (Cell*) cell;
 
++(char) randNucleotide;
 
 @end
