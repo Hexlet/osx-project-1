@@ -35,28 +35,30 @@
 }
 
 - (void) test_nextSequenceWithLength0ReturnsEmptySet {
-    NSOrderedSet *set = [Random nextSequenceOfLength:0 withUpperBound:100];
+    NSIndexSet *set = [Random nextSequenceOfLength:0 withUpperBound:100];
     STAssertEquals((NSUInteger)0, set.count, nil);
 }
 
 - (void) test_nextSequenceWithLength5AndBound10Contains5NumbersFrom0To9 {
     for (int i = 0; i < 100; i++) {
-        NSOrderedSet *set = [Random nextSequenceOfLength:5 withUpperBound:10];
+        NSIndexSet *set = [Random nextSequenceOfLength:5 withUpperBound:10];
         STAssertEquals((NSUInteger)5, set.count, nil);
-        for (NSNumber *number in set) {
-            STAssertTrue(number.intValue >= 0, nil);
-            STAssertTrue(number.intValue < 10, nil);
+        NSUInteger index = set.firstIndex;
+        while (index != NSNotFound) {
+            STAssertTrue(index >= 0, nil);
+            STAssertTrue(index < 10, nil);
+            index = [set indexGreaterThanIndex:index];
         }
     }
 }
 
 - (void) test_nextSequenceWithLengthWhenLengthGreaterThanBoundsReturnsCutSequence {
     for (int i = 0; i < 100; i++) {
-        NSOrderedSet *set = [Random nextSequenceOfLength:4 withUpperBound:3];
+        NSIndexSet *set = [Random nextSequenceOfLength:4 withUpperBound:3];
         STAssertEquals((NSUInteger)3, set.count, nil);
-        STAssertTrue([set containsObject:@0], nil);
-        STAssertTrue([set containsObject:@1], nil);
-        STAssertTrue([set containsObject:@2], nil);
+        STAssertTrue([set containsIndex:0], nil);
+        STAssertTrue([set containsIndex:1], nil);
+        STAssertTrue([set containsIndex:2], nil);
     }
 }
 

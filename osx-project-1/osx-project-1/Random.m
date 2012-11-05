@@ -15,14 +15,14 @@
     return (NSUInteger)(arc4random() % upperBound);
 }
 
-+ (NSOrderedSet *) nextSequenceOfLength:(NSUInteger)length withUpperBound:(NSUInteger)upperBound {
++ (NSIndexSet *) nextSequenceOfLength:(NSUInteger)length withUpperBound:(NSUInteger)upperBound {
     NSMutableArray *possibleNumbers =  [self arrayWithRangeOfLength:upperBound];
-    NSMutableOrderedSet *result = [NSMutableOrderedSet orderedSet];
+    NSMutableIndexSet *result = [NSMutableIndexSet indexSet];
     for (int i = 0; i < length; i++) {
         NSUInteger numbersLeft = possibleNumbers.count;
         if (numbersLeft == 0) { break; }
         NSUInteger index = [Random nextNumber:numbersLeft];
-        [result addObject:possibleNumbers[index]];
+        [result addIndex:[possibleNumbers[index] intValue]];
         [possibleNumbers removeObjectAtIndex:index];
     }
     return result;

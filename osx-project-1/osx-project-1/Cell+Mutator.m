@@ -17,10 +17,11 @@
         return;
     }
     DNAGenerator *dnaGenerator = [[DNAGenerator alloc] init];
-    NSOrderedSet *indexes = [Random nextSequenceOfLength:replacementCount withUpperBound:self.dna.count];
-    for (NSNumber *index in indexes) {
-        int i = index.intValue;
-        self.dna[i] = [dnaGenerator randomDNASymbolExcept:self.dna[i]];
+    NSIndexSet *indexes = [Random nextSequenceOfLength:replacementCount withUpperBound:self.dna.count];
+    NSUInteger index = indexes.firstIndex;
+    while (index != NSNotFound) {
+        self.dna[index] = [dnaGenerator randomDNASymbolExcept:self.dna[index]];
+        index = [indexes indexGreaterThanIndex:index];
     }
 }
 

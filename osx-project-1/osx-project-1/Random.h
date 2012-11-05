@@ -24,7 +24,7 @@
  Returns a random set of non-negative integer numbers less that the specified upper bound
  of the specified length. All numbers are different.
 */
-+ (NSOrderedSet *) nextSequenceOfLength:(NSUInteger)length
++ (NSIndexSet *) nextSequenceOfLength:(NSUInteger)length
                   withUpperBound:(NSUInteger)upperBound;
 
 @end
