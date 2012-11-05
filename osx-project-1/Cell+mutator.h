@@ -10,4 +10,6 @@
 
 @interface Cell (mutator)
 
+-(void) mutate:(int) withPercent;
+
 @end

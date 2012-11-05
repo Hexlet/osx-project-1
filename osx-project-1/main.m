@@ -8,13 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+#import "Cell.h"
+#import "Cell+mutator.h"
+
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        Cell *myDNACell1 = [[Cell alloc] initWithMoleculeLength:100];
+        Cell *myDNACell2 = [[Cell alloc] initWithMoleculeLength:100];
+        
+        NSLog(@"First hamming distance = %i",[myDNACell1 hammingDistance:myDNACell2]);
+        
+        [myDNACell1 mutate:10];
+        [myDNACell2 mutate:15];
+        
+        NSLog(@"Second hamming distance = %i",[myDNACell1 hammingDistance:myDNACell2]);
         
     }
     return 0;

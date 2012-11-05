@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C054C5521647CAC200EC33FB /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C054C5511647CAC200EC33FB /* Cell.m */; };
+		C054C5561647E9CB00EC33FB /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = C054C5551647E9CB00EC33FB /* Cell+mutator.m */; };
 		C0A0AAA21647C882002416EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A0AAA11647C882002416EA /* Foundation.framework */; };
 		C0A0AAA51647C882002416EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A0AAA41647C882002416EA /* main.m */; };
 		C0A0AAA91647C882002416EA /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C0A0AAA81647C882002416EA /* osx_project_1.1 */; };
@@ -26,6 +28,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C054C5501647CAC200EC33FB /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		C054C5511647CAC200EC33FB /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		C054C5541647E9CB00EC33FB /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		C054C5551647E9CB00EC33FB /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 		C0A0AA9D1647C882002416EA /* osx-project-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "osx-project-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A0AAA11647C882002416EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C0A0AAA41647C882002416EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,8 +79,11 @@
 		C0A0AAA31647C882002416EA /* osx-project-1 */ = {
 			isa = PBXGroup;
 			children = (
+				C054C5501647CAC200EC33FB /* Cell.h */,
+				C054C5511647CAC200EC33FB /* Cell.m */,
 				C0A0AAA41647C882002416EA /* main.m */,
-				C0A0AAA81647C882002416EA /* osx_project_1.1 */,
+				C054C5541647E9CB00EC33FB /* Cell+mutator.h */,
+				C054C5551647E9CB00EC33FB /* Cell+mutator.m */,
 				C0A0AAA61647C882002416EA /* Supporting Files */,
 			);
 			path = "osx-project-1";
@@ -83,6 +92,7 @@
 		C0A0AAA61647C882002416EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C0A0AAA81647C882002416EA /* osx_project_1.1 */,
 				C0A0AAA71647C882002416EA /* osx-project-1-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -140,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A0AAA51647C882002416EA /* main.m in Sources */,
+				C054C5521647CAC200EC33FB /* Cell.m in Sources */,
+				C054C5561647E9CB00EC33FB /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +248,7 @@
 				C0A0AAAE1647C882002416EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
