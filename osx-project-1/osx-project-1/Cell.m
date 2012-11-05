@@ -41,18 +41,18 @@
     return self;
 }
 
-- (int) hammingDistance:(Cell *)ins {
+- (int) hammingDistance:(Cell *)insertCell {
     
     NSMutableArray *selfArrayDna = [self DNA];
-    NSMutableArray *givenArrayDna = [ins DNA];
+    NSMutableArray *givenArrayDna = [insertCell DNA];
     int countMatchMembers = 0;
     
     for (int i=0; i<100; i++) {
         
-        NSString *str1 = [selfArrayDna objectAtIndex:i];
-        NSString *str2 = [givenArrayDna objectAtIndex:i];
+        NSString *memberSelfArray = [selfArrayDna objectAtIndex:i];
+        NSString *memberGivenArray = [givenArrayDna objectAtIndex:i];
         
-        if (str1 != str2) {
+        if (memberSelfArray != memberGivenArray) {
             //NSLog(@"str1 %@ str2 %@",str1, str2);
             countMatchMembers++;
         }

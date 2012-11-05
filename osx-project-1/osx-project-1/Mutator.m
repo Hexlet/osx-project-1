@@ -10,15 +10,15 @@
 
 @implementation Cell (mutator)
 
-- (void) mutate:(int)m {
+- (void) mutate:(int)percent {
     
-    NSMutableArray *arrayMutableMembersDna = [NSMutableArray arrayWithCapacity:m];
+    NSMutableArray *arrayMutableMembersDna = [NSMutableArray arrayWithCapacity:percent];
     //NSNumber *num = NULL;
     //int count = 0;
     //int count2 = 0;
     //int count3 = 0;
     
-    for (int i = 0;i<m; i++) {
+    for (int i = 0;i<percent; i++) {
       //  count2++;
         NSNumber *choseRandomMemberDna = [NSNumber numberWithUnsignedInt: arc4random() % 100];
         NSNumber *mutateMemberDna = [NSNumber numberWithUnsignedInt: arc4random() % 100];
