@@ -66,7 +66,15 @@
 	}
 	
 	for(NSNumber *index in mutatedChromosomeIndexes)
-		[self.dna replaceObjectAtIndex:[index intValue] withObject:[chromosome objectAtIndex:arc4random()%4]];
+	{
+		@autoreleasepool
+		{
+			NSMutableArray *temp = [chromosome mutableCopy];
+			[temp removeObject:[self.dna objectAtIndex:[index intValue]]];
+			
+			[self.dna replaceObjectAtIndex:[index intValue] withObject:[temp objectAtIndex:arc4random()%3]];
+		}
+	}
 }
 
 @end
