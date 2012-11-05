@@ -20,7 +20,7 @@
 //Метод для случайного перемешивания NSMutableArray
 {
     NSUInteger count = [self count];
-    for (NSUInteger i = 0; i < count; ++i) {
+    for (NSInteger i = 0; i < count; ++i) {
         NSInteger nElements = count - i;
         NSInteger n = (arc4random() % nElements) + i;
         [self exchangeObjectAtIndex:i withObjectAtIndex:n];
@@ -37,18 +37,21 @@
 @implementation Cell (Mutating)
 
 -(void) mutate: (int)x {
-    // Алгоритм: создаем массив из чисел 0-99 соответствующих индексам
+    // Алгоритм: создаем массив из чисел индексов соответствующих индексам
     // массива dnk. Перемешиваем массив, в цикле обходим первые x элементов
     // и меняем значение в dnk находящееся по данному индексу на другое.
     NSMutableArray *indexesToMutate;
-    indexesToMutate = [[NSMutableArray alloc] initWithCapacity: 100];
-    for (int i=0; i<100; i++) {
+    indexesToMutate = [[NSMutableArray alloc] initWithCapacity: [self.dnk count]];
+    for (int i=0; i<[self.dnk count]; i++) {
         [indexesToMutate addObject: [NSNumber numberWithInt: i]];
     }
     [indexesToMutate shuffle];
     
+    // Вычисляем количество символов для замены исходя из процентов
+    int needsToReplace = [self.dnk count] * x / 100;
+    
     NSString *dnkSymbol;
-    for (int i=0; i<x; i++) {
+    for (int i=0; i<needsToReplace; i++) {
         int indexToMutate = [[indexesToMutate objectAtIndex: i] intValue];
         do {
             dnkSymbol = [self getRandomDnkSymbol];

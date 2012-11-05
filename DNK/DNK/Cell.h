@@ -10,7 +10,7 @@
 
 @interface Cell : NSObject
     @property NSMutableArray *dnk;
-    @property NSArray *dnksybol;
+    @property NSArray *dnksymbols;
 
     -(int) hammingDistance: (Cell*)cell;
     -(NSString *) getRandomDnkSymbol;

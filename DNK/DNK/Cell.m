@@ -12,12 +12,14 @@
 
 @implementation Cell
 
+int dnkLenght = 100;
+
 -(id) init {
     self = [super init];
-    _dnksybol = [[NSArray alloc] initWithObjects: @"A", @"T", @"G", @"C", nil];
+    _dnksymbols = [[NSArray alloc] initWithObjects: @"A", @"T", @"G", @"C", nil];
     if (self) {
-        _dnk = [[NSMutableArray alloc] initWithCapacity: 100];
-        for (int i=0; i<100; i++) {
+        _dnk = [[NSMutableArray alloc] initWithCapacity: dnkLenght];
+        for (int i=0; i<dnkLenght; i++) {
             [_dnk addObject: [self getRandomDnkSymbol]];
         }
     }
@@ -26,15 +28,15 @@
 
 -(NSString *) getRandomDnkSymbol {
     //Вспомогательный метод для получения случайного символа ДНК
-    int randIndex = arc4random() % [_dnksybol count];
+    int randIndex = arc4random() % [_dnksymbols count];
     NSString *nextDnkSymbol;
-    nextDnkSymbol = [_dnksybol objectAtIndex: randIndex];
+    nextDnkSymbol = [_dnksymbols objectAtIndex: randIndex];
     return nextDnkSymbol;
 }
 
 -(int) hammingDistance: (Cell *)cell {
     int counter = 0;
-    for (int i=0; i<100; i++) {
+    for (int i=0; i<dnkLenght; i++) {
         if([self.dnk objectAtIndex:(i)] != [cell.dnk objectAtIndex:(i)]) {
             counter++;
         }
