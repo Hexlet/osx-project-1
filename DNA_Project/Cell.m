@@ -8,7 +8,7 @@
 
 #import "Cell.h"
 
-#define DNA_LENGTH 100000
+#define DNA_LENGTH 100
 
 #define FAST_MUTATION 1 // set to 1 for using fast mutate: method
 
