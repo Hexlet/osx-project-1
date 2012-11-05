@@ -49,7 +49,7 @@
 
 - (void)mutate:(int)percent
 {
-	if(percent > 100) // if > 100%
+	if(percent > 100 || percent < 0)
 		return;
 	
 	int x = percent * DNA_LENGTH / 100;

@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E336604164880DD00524FF4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E336603164880DD00524FF4 /* AppKit.framework */; };
 		9F9CAB00163FE97B00B07F1E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9CAAFF163FE97B00B07F1E /* Cocoa.framework */; };
 		9F9CAB0C163FE97B00B07F1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CAB0B163FE97B00B07F1E /* main.m */; };
 		9F9CAB1E163FE9BA00B07F1E /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9CAB1D163FE9BA00B07F1E /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E336603164880DD00524FF4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9F9CAAFB163FE97B00B07F1E /* DNA_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DNA_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CAAFF163FE97B00B07F1E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9F9CAB0B163FE97B00B07F1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -25,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E336604164880DD00524FF4 /* AppKit.framework in Frameworks */,
 				9F9CAB00163FE97B00B07F1E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +38,7 @@
 		9F9CAAF0163FE97B00B07F1E = {
 			isa = PBXGroup;
 			children = (
+				5E336603164880DD00524FF4 /* AppKit.framework */,
 				9F9CAB05163FE97B00B07F1E /* DNA_Project */,
 				9F9CAAFE163FE97B00B07F1E /* Frameworks */,
 				9F9CAAFC163FE97B00B07F1E /* Products */,
@@ -230,6 +234,7 @@
 				9F9CAB1B163FE97B00B07F1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
