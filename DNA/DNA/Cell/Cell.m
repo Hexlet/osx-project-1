@@ -29,7 +29,8 @@
 -(int) hammingDistance:(Cell *)x_cell
 {
     
-    NSLog(@"First DNA chain: %@ \n Second DNA chain: %@",self.DNA, x_cell.DNA);
+    NSLog(@"First DNA chain: %@ \n Second DNA chain: %@",[self.DNA componentsJoinedByString:@"-"]
+          , [x_cell.DNA componentsJoinedByString:@"-"]);
     
     int hamming_distance = 0;
     

@@ -12,8 +12,9 @@
 #define chain_length 100
 
 @interface Cell : NSObject
+
 @property NSMutableArray *DNA;
-@property NSArray *dna_nucliotide;
+@property (readonly) NSArray *dna_nucliotide;
 
 -(int) hammingDistance:(Cell *)x_cell;
 

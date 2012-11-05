@@ -27,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E7D08EF116488488005E2692 /* CellOperations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellOperations.h; sourceTree = "<group>"; };
 		E7FE829A1643CFE6003FB962 /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FE829E1643CFE6003FB962 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E7FE82A11643CFE6003FB962 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 				E7FE82A11643CFE6003FB962 /* main.m */,
 				E7FE82A51643CFE6003FB962 /* DNA.1 */,
 				E7FE82A41643CFE6003FB962 /* DNA-Prefix.pch */,
+				E7D08EF116488488005E2692 /* CellOperations.h */,
 				E7FE82A31643CFE6003FB962 /* Cell */,
 			);
 			path = DNA;
