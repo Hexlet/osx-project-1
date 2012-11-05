@@ -31,7 +31,7 @@
         }
         
     }
-    else if(mutationPercent>100) NSLog(@"Wrong value for n=%i, should be between 0 and 100",mutationPercent);
+    else if(mutationPercent!=0) NSLog(@"Wrong value for n=%i, should be between 0 and 100",mutationPercent);
 }
 
 @end

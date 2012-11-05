@@ -43,7 +43,7 @@
 
 -(NSString*)dnaString
 {
-    //string represetation of dna
+    //string representation of dna
     NSMutableString* result = [NSMutableString string];
     
     for (Gene* gene in _dna)
