@@ -20,22 +20,24 @@
 @implementation Cell (mutator)
 
 - (void)mutate:(int)percent {
-    if (percent >= 0 && percent <= 100) {
-        NSNumber *randomNumber;
-        NSMutableSet *alreadyMutatedElements = [[NSMutableSet alloc] init];  // множество для хранения индексов мутированных элементов (чтобы не повторяться)
-        int numberOfElementsForMutation = percent * kLengthOfDNA / 100; // вычисляем количество элементов для мутации
-        while (alreadyMutatedElements.count < numberOfElementsForMutation) {
-            // генерация случайного числа с проверкой на уникальность
-            do {
-                randomNumber = [NSNumber numberWithInt:(rand() % kLengthOfDNA)];
-            } while ([alreadyMutatedElements containsObject:randomNumber]);
-            NSMutableSet *dnaComponents = [[Cell possibleElements] mutableCopy]; // локальная изменяемая копия множества элементов ДНК
-            [dnaComponents removeObject:[self.dna objectAtIndex:randomNumber.intValue]]; //удаляем текущий элемент из локального множества
-            [self.dna replaceObjectAtIndex:randomNumber.intValue withObject:[dnaComponents randomObject]]; // заменяем текущий элемент ДНК случайным элементом локального множества
-            [alreadyMutatedElements addObject:randomNumber];
-        }
-    } else {
-        NSLog(@"Alarm! Mutation of DNA 146%%");
+    NSAssert((percent >= 0 && percent <= 100), @"Wrong percent count:%d",percent);
+    NSNumber *randomNumber;
+    // множество для хранения индексов мутированных элементов (чтобы не повторяться)
+    NSMutableSet *alreadyMutatedElements = [[NSMutableSet alloc] init];
+    // вычисляем количество элементов для мутации
+    int numberOfElementsForMutation = percent * LENGTH_OF_DNA / 100;
+    while (alreadyMutatedElements.count < numberOfElementsForMutation) {
+        // генерация случайного числа с проверкой на уникальность
+        do {
+            randomNumber = [NSNumber numberWithInt:(rand() % LENGTH_OF_DNA)];
+        } while ([alreadyMutatedElements containsObject:randomNumber]);
+        // локальная изменяемая копия множества элементов ДНК
+        NSMutableSet *dnaComponents = [[Cell possibleElements] mutableCopy];
+        //удаляем текущий элемент из локального множества
+        [dnaComponents removeObject:[self.dna objectAtIndex:randomNumber.intValue]];
+        // заменяем текущий элемент ДНК случайным элементом локального множества
+        [self.dna replaceObjectAtIndex:randomNumber.intValue withObject:[dnaComponents randomObject]];
+        [alreadyMutatedElements addObject:randomNumber];
     }
 }
 

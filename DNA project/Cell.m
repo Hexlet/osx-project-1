@@ -29,7 +29,7 @@
 // отложенная инициализация массива на 100 элементов
 - (NSMutableArray *)dna {
     if (!_dna) {
-        _dna = [[NSMutableArray alloc] initWithCapacity:kLengthOfDNA];
+        _dna = [[NSMutableArray alloc] initWithCapacity:LENGTH_OF_DNA];
     }
     return _dna;
 }
@@ -37,7 +37,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        for (int i = 0; i < kLengthOfDNA; i++) {
+        for (int i = 0; i < LENGTH_OF_DNA; i++) {
             [self.dna addObject:[[Cell possibleElements] randomObject]];
         }
     }
@@ -46,7 +46,7 @@
 
 - (int)hammingDistance:(Cell *)anotherCell {
     int distance = 0;
-    for (int i = 0; i < kLengthOfDNA; i++) {
+    for (int i = 0; i < LENGTH_OF_DNA; i++) {
         // поэлементно сравниваем массивы и считаем несовпадения
         if (![[self.dna objectAtIndex:i] isEqualTo:[anotherCell.dna objectAtIndex:i]]) distance++;
     }

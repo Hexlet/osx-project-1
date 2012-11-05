@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Sergey Starukhin. All rights reserved.
 //
 
-#define kLengthOfDNA 100 // длина ДНК
+#define LENGTH_OF_DNA 100 // длина ДНК
 
 #import <Foundation/Foundation.h>
 
