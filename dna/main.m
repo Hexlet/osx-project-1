@@ -37,9 +37,21 @@
         
         NSArray *tempDNA = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
         NSInteger index = 0;
+<<<<<<< HEAD
         for (NSInteger i = 0; i < part * arrValue / 100; i++) {
+=======
+        for (int i = 0; i < part * arrValue / 100; i++) {
+            
+>>>>>>> FINAL
             index = [[mutatorPattern objectAtIndex:i] integerValue];
-            [self.DNA replaceObjectAtIndex:index withObject:[tempDNA objectAtIndex:arc4random() % [tempDNA count]]];
+            NSString *replaceWith = [tempDNA objectAtIndex:arc4random() % [tempDNA count]];
+            
+            while ([self.DNA objectAtIndex:index] == replaceWith) {
+                replaceWith = [tempDNA objectAtIndex:arc4random() % [tempDNA count]];
+            }
+            
+            [self.DNA replaceObjectAtIndex:index withObject:replaceWith];
+            
         }
     }
 }
@@ -53,11 +65,11 @@ int main(int argc, const char * argv[])
         
         Cell *myCell = [[Cell alloc] init];
         Cell *sCell = [[Cell alloc] init];
-        
+
         NSLog(@"Hamming Distance: %d", [myCell hammingDistance:sCell]);
         
-        [myCell mutate:100];
-        [sCell mutate:5];
+        [myCell mutate:30];
+        [sCell mutate:50];
         
         NSLog(@"Hamming Distance: %d", [myCell hammingDistance:sCell]);
     }
