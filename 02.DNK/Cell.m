@@ -29,6 +29,7 @@
 }
 -(id)initWithCapacity:(NSUInteger)count andGens:(NSArray*) dnk_gen
 {
+    assert( [dnk_gen count] > 0);
     self = [self init];
     if(self)
     {
@@ -72,7 +73,7 @@
 
 -(void)mutate:(NSUInteger)percent
 {
-    assert(percent <100);
+    assert(0 < percent && percent < 100);
     //create temp array with elem numbers, randomize it, then get first percent from size elements, and change them
     NSUInteger size = [_dnk count];
     int tmp_array[ size ];
