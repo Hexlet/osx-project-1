@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Cell.h"
+#import "Cell+Mutator.h"
 
 int main(int argc, const char * argv[])
 {
@@ -20,8 +21,12 @@ int main(int argc, const char * argv[])
         cell1 = [[Cell alloc] init];
         cell2 = [[Cell alloc] init];
         
-        NSLog(@"Hamming Distance is %i", [cell1 hammingDistance:cell2]);
+        NSLog(@"Initial Hamming Distance is %i", [cell1 hammingDistance:cell2]);
         
+        [cell1 mutate:25];
+        [cell2 mutate:75];
+        
+        NSLog(@"Hamming Distance after Mutate is %i", [cell1 hammingDistance:cell2]);
     }
     return 0;
 }
