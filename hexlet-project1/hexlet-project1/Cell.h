@@ -17,7 +17,7 @@
 @property NSArray *alphabet;
 
 -(int)hammingDistance:(Cell *)c;
--(NSArray *) getRandomSymbol;
+-(NSString *) getRandomSymbol;
 -(NSMutableString *)getString;
 
 @end

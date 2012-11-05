@@ -22,7 +22,7 @@
     return self;
 }
 
--(NSArray *) getRandomSymbol {
+-(NSString *) getRandomSymbol {
     return [_alphabet objectAtIndex:arc4random() % [_alphabet count]];
 }
 

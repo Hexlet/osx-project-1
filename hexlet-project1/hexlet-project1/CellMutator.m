@@ -22,7 +22,12 @@
     
     for  (int i = 0; i < qnt; i++) {
         int index = arc4random() % [idx count];
-        [self.dna replaceObjectAtIndex:[[idx objectAtIndex:index] intValue] withObject:[self getRandomSymbol]];
+        NSString *previous = [self.dna objectAtIndex:index];
+        NSString *next = [self getRandomSymbol];
+        while ([previous isEqualToString:next]) {
+            next = [self getRandomSymbol];
+        }
+        [self.dna replaceObjectAtIndex:[[idx objectAtIndex:index] intValue] withObject:next];
         [idx removeObjectAtIndex:index];
     }
     
