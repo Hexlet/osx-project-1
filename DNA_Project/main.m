@@ -14,6 +14,8 @@ int main(int argc, char *argv[])
 		
 		NSLog(@"Initialization...");
 		
+        NSTimeInterval timeBefore = [[NSDate date] timeIntervalSince1970];
+        
 		Cell *cell1 = [[Cell alloc] init];
 		Cell *cell2 = [[Cell alloc] init];
 		
@@ -22,12 +24,17 @@ int main(int argc, char *argv[])
 		
 		NSLog(@"Hamming Distance: %d", [cell1 hammingDistance:cell2]);
 		
-		[cell1 mutate:60];
-		[cell2 mutate:50];
+		[cell1 mutate:30];
+		[cell2 mutate:80];
 		
-		NSLog(@"Cell1 After Mutation: %@", [cell1 getDNA]);
-		NSLog(@"Cell2 After Mutation: %@", [cell2 getDNA]);
+        NSLog(@"Mutation...");
+        
+		NSLog(@"Cell1 after mutation: %@", [cell1 getDNA]);
+		NSLog(@"Cell2 After mutation: %@", [cell2 getDNA]);
 		
-		NSLog(@"Hamming Distance After Mutation: %d", [cell1 hammingDistance:cell2]);
+		NSLog(@"Hamming Distance after mutation: %d", [cell1 hammingDistance:cell2]);
+     
+        NSTimeInterval timeAfter = [[NSDate date] timeIntervalSince1970];
+        NSLog(@"Time of calculating: %f seconds", timeAfter - timeBefore);
 	}
 }

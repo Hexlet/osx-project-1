@@ -8,7 +8,9 @@
 
 #import "Cell.h"
 
-#define DNA_LENGTH 100
+#define DNA_LENGTH 1000
+
+#define FAST_MATATION 1 // set to 1 for using fast mutate: method
 
 @implementation Cell
 - (id)init
@@ -19,7 +21,7 @@
 	{
 		_dna = [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
 		
-		chromosome = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+		chromosome = [[NSArray alloc] initWithObjects: @"A", @"T", @"G", @"C", nil];
 		
 		for(int i = 0; i < DNA_LENGTH; i++)
 			[_dna addObject:[chromosome objectAtIndex:arc4random()%4]];
@@ -30,17 +32,14 @@
 
 - (int)hammingDistance:(Cell*)cell
 {
-	int count = 0;
+    __block int count = 0;
 	
-	for(int i = 0; i < [self.dna count]; i++)
-	{
-		NSString *chromosome1 = [self.dna objectAtIndex:i];
-		NSString *chromosome2 = [cell.dna objectAtIndex:i];
-		
-		if(![chromosome1 isEqualToString:chromosome2])
-			count++;
-	}
-	
+    [self.dna enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+     {
+         if(![obj isEqual:[cell.dna objectAtIndex:idx]])
+             count++;
+     }];
+
 	return count;
 }
 
@@ -54,6 +53,26 @@
 		return;
 	
 	int x = percent * DNA_LENGTH / 100;
+
+#if FAST_MATATION
+    
+	NSMutableIndexSet *mutatedChromosomeIndexes = [[NSMutableIndexSet alloc] init];
+	
+	while ([mutatedChromosomeIndexes count] < x)
+	{
+		NSUInteger rand_position = arc4random()%DNA_LENGTH;
+        [mutatedChromosomeIndexes addIndex:rand_position];
+	}
+    
+    [mutatedChromosomeIndexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop)
+    {
+        NSMutableArray *temp = [chromosome mutableCopy];
+        [temp removeObject:[self.dna objectAtIndex:idx]];
+        
+        [self.dna replaceObjectAtIndex:idx withObject:[temp objectAtIndex:arc4random()%3]];
+    }];
+    
+#else
 	
 	NSMutableArray *mutatedChromosomeIndexes = [NSMutableArray arrayWithCapacity:x];
 	
@@ -75,6 +94,9 @@
 			[self.dna replaceObjectAtIndex:[index intValue] withObject:[temp objectAtIndex:arc4random()%3]];
 		}
 	}
+    
+#endif
+
 }
 
 @end
@@ -85,8 +107,10 @@
 {
 	NSMutableString *dnaString = [[NSMutableString alloc] initWithCapacity:DNA_LENGTH];
 	
-	for(NSString *item in _dna)
-		[dnaString appendString:item];
+	[_dna enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+    {
+        [dnaString appendString:obj];
+    }];
 	
 	return dnaString;
 }
