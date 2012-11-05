@@ -25,12 +25,12 @@ NSString * const dna[] = {@"A", @"T", @"G", @"C"};
       index2 = arc4random()%self.DNA.count; // generate second index
 
       // if mutatedIndexes is empty add into array generated indexes
-      if (mutatedIndexs.count == 0)
+      if (mutatedIndexs.count == 0 && index1 != index2)
       {
         break;
       }
   	}
-		while (![mutatedIndexs containsObject:[NSNumber numberWithInt:index1]] && ![mutatedIndexs containsObject:[NSNumber numberWithInt:index2]]);
+		while ((index1 == index2) || (![mutatedIndexs containsObject:[NSNumber numberWithInt:index1]] && ![mutatedIndexs containsObject:[NSNumber numberWithInt:index2]]));
 
     [mutatedIndexs addObject:[NSNumber numberWithInt:index1]];
     [mutatedIndexs addObject:[NSNumber numberWithInt:index2]];
