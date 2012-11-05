@@ -23,7 +23,7 @@
     }
 }
 
--(void)setDna:(int)index :(id)value {
+-(void)setDna:(int)index withValue:(id)value {
     if (index >= 0 && index < SIZE){
         if (index >= [dna count]){
             [dna insertObject:value atIndex:index];
@@ -39,13 +39,13 @@
     if (self) {
         SIZE = 100;
         dna = [NSMutableArray arrayWithCapacity:SIZE];
+
+        // создаем массив с последовательностью символов нуклеотид
+        NSArray *a = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         for (int i=0; i<SIZE; i++){
-            // создаем массив с последовательностью символов
-            NSArray *a = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
             // выбираем произвольный символ и добавляем его в массив dna
             int rnd = arc4random() % 4;
             [dna addObject:[a objectAtIndex:rnd]];
-            
         }
     }
     return self;

@@ -16,7 +16,7 @@
 //@property (assign, readwrite) NSMutableArray *dna;
 
 -(void) print; 
--(void) setDna:(int)index: (id) value;
+-(void) setDna: (int)index withValue: (id)value;
 -(id) getDna:(int) index;
 -(int)  hammingDistance:(Cell*) mCell; 
 

@@ -15,6 +15,7 @@
     NSUInteger count = [array count];
     for (NSUInteger i = 0; i < count; i++) {
         // Select a random element between i and end of array to swap with.
+        // Выбираем произвольный элемент между i и концом массива, и меняем их местами
         NSInteger nElements = count - i;
         NSInteger n = (arc4random() % nElements) + i;
         [array exchangeObjectAtIndex:i withObjectAtIndex:n];
