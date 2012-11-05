@@ -16,8 +16,8 @@
 @property NSMutableArray *DNA;
 
 - (void) logDNA;
-- (int) hammingDistance: (Cell *) otherCell;
+- (int) hammingDistance: (Cell *)otherCell;
 + (NSString *) getRandomNucleotide;
-+ (NSString *) getRandomNucleotideExcept: (NSString *) itemValue;
++ (NSString *) getRandomNucleotideExcept: (NSString *)itemValue;
 
 @end

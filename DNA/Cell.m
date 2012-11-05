@@ -50,7 +50,7 @@ static NSArray *nucleotides = nil;
     int result = 0;
     for (int i = 0; i < DNA_LENGTH; i++)
         if([self.DNA objectAtIndex:i] != [otherCell.DNA objectAtIndex:i])
-            result +=1;
+            result += 1;
     return result;
 }
 
