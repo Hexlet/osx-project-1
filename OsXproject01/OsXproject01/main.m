@@ -55,7 +55,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming distance between cells: %i", [cell01 hammingDistance:cell02]);
         [cell01 mutator:30];
         [cell02 mutator:20];
-        NSLog(@"Hamming distance between cells: %i", [cell01 hammingDistance:cell02]);
+        NSLog(@"New Hamming distance between cells: %i", [cell01 hammingDistance:cell02]);
         
     }
     return 0;
