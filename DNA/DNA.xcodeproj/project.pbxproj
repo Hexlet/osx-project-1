@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85F5BCE3164715C500915D77 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 85F5BCE2164715C500915D77 /* main.c */; };
+		85F5BCE3164715C500915D77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F5BCE2164715C500915D77 /* main.m */; };
 		85F5BCE5164715C500915D77 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85F5BCE4164715C500915D77 /* DNA.1 */; };
+		85F5BCED164716D700915D77 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F5BCEC164716D700915D77 /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +27,10 @@
 
 /* Begin PBXFileReference section */
 		85F5BCDE164715C500915D77 /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
-		85F5BCE2164715C500915D77 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		85F5BCE2164715C500915D77 /* main.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85F5BCE4164715C500915D77 /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
+		85F5BCEB164716D700915D77 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		85F5BCEC164716D700915D77 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +63,10 @@
 		85F5BCE1164715C500915D77 /* DNA */ = {
 			isa = PBXGroup;
 			children = (
-				85F5BCE2164715C500915D77 /* main.c */,
+				85F5BCE2164715C500915D77 /* main.m */,
 				85F5BCE4164715C500915D77 /* DNA.1 */,
+				85F5BCEB164716D700915D77 /* Cell.h */,
+				85F5BCEC164716D700915D77 /* Cell.m */,
 			);
 			path = DNA;
 			sourceTree = "<group>";
@@ -117,7 +122,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85F5BCE3164715C500915D77 /* main.c in Sources */,
+				85F5BCE3164715C500915D77 /* main.m in Sources */,
+				85F5BCED164716D700915D77 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
