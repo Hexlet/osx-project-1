@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) NSMutableArray *dna;
 
+// Метод возвращает множество элементов из которых строится ДНК
+// в данном случае A,T,G,C
 + (NSSet *)possibleElements;
 
 @end
@@ -31,9 +33,9 @@
         do {
             randomNumber = [NSNumber numberWithInt:(rand() % LENGTH_OF_DNA)];
         } while ([alreadyMutatedElements containsObject:randomNumber]);
-        // локальная изменяемая копия множества элементов ДНК
+        // локальная изменяемая копия множества элементов из которых строится ДНК
         NSMutableSet *dnaComponents = [[Cell possibleElements] mutableCopy];
-        //удаляем текущий элемент из локального множества
+        //удаляем текущий элемент ДНК из локального множества элементов из которых строится ДНК
         [dnaComponents removeObject:[self.dna objectAtIndex:randomNumber.intValue]];
         // заменяем текущий элемент ДНК случайным элементом локального множества
         [self.dna replaceObjectAtIndex:randomNumber.intValue withObject:[dnaComponents randomObject]];
