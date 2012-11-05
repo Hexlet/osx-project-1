@@ -12,8 +12,8 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA;  //Массив оснований
-@property NSArray *DNASymbols;  //Азотистые основания
+@property (readonly) NSMutableArray *DNA;  //Массив оснований
+@property (readonly) NSArray *DNASymbols;  //Азотистые основания
 
 - (int) hammingDistance: (Cell *) anCell;
 

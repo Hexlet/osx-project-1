@@ -18,13 +18,13 @@
     self = [super init];
     if (self) {
         
-        self.DNA = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
+        _DNA = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
         
-        self.DNASymbols = @[@"A", @"T", @"G", @"C"];
+        _DNASymbols = @[@"A", @"T", @"G", @"C"];
         
         // Заполним цепочку ДНК случайными символами
         for (int i = 0; i < DNA_LENGHT; i++) {
-            [self.DNA addObject:self.DNASymbols[arc4random() % [self.DNASymbols count]]];
+            [_DNA addObject:_DNASymbols[arc4random() % [_DNASymbols count]]];
         }
     }
     return self;
@@ -36,7 +36,7 @@
     for (int i = 0; i < DNA_LENGHT; i++) {
         
         //Если элементы с одинаковыми индексами НЕ совпадают, наращиваем счетчик
-        if ( ! [[anCell.DNA objectAtIndex: i] isEqualToString:[self.DNA objectAtIndex: i]]){
+        if ( ! [[anCell.DNA objectAtIndex: i] isEqualToString:[_DNA objectAtIndex: i]]){
             distance++;
         }
     }
