@@ -12,34 +12,34 @@
 
 - (void) mutate:(int)m {
     
-    NSMutableArray *prc = [NSMutableArray arrayWithCapacity:m];
-    NSNumber *num = NULL;
+    NSMutableArray *arrayMutableMembersDna = [NSMutableArray arrayWithCapacity:m];
+    //NSNumber *num = NULL;
     //int count = 0;
     //int count2 = 0;
     //int count3 = 0;
     
     for (int i = 0;i<m; i++) {
       //  count2++;
-        NSNumber *src = [NSNumber numberWithUnsignedInt: arc4random() % 100];
-        NSNumber *dst = [NSNumber numberWithUnsignedInt: arc4random() % 100];
+        NSNumber *choseRandomMemberDna = [NSNumber numberWithUnsignedInt: arc4random() % 100];
+        NSNumber *mutateMemberDna = [NSNumber numberWithUnsignedInt: arc4random() % 100];
         
-        if ([prc containsObject:dst]) {
+        if ([arrayMutableMembersDna containsObject:mutateMemberDna]) {
             i--;
             //count++;
             continue;
         }
         //count3++;
-        NSString *str = [DNA objectAtIndex:[src unsignedIntegerValue]];
+        NSString *memberDna = [DNA objectAtIndex:[choseRandomMemberDna unsignedIntegerValue]];
         
-        [DNA replaceObjectAtIndex:[dst unsignedIntegerValue] withObject:str];
+        [DNA replaceObjectAtIndex:[mutateMemberDna unsignedIntegerValue] withObject:memberDna];
         
-        [prc addObject:dst];
+        [arrayMutableMembersDna addObject:mutateMemberDna];
         //NSLog(@"%u",[dst intValue]);
     }
-    for (int i = 0 ; i<m; i++) {
-        num = [prc objectAtIndex:i];
+    /*for (int i = 0 ; i<m; i++) {
+        num = [arrayMutableMembersDna objectAtIndex:i];
         //NSLog(@"%d",[num intValue]);
-    }
+    }*/
     //NSLog(@"%d %d %d",count,count2,count3);
 }
 @end
