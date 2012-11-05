@@ -11,7 +11,9 @@
 
 @interface Cell : NSObject
 
-@property (strong) NSMutableArray* dna;
+-(void)setDnaElement:(Gene*)gene atIndex:(NSUInteger)index;
+-(Gene*)getDnaElementAtIndex:(NSUInteger)index;
+-(NSUInteger)length;
 
 -(id)initWithGenes:(int)amountOfGenes;
 

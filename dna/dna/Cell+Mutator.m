@@ -13,7 +13,7 @@
 - (void) mutate:(int)mutationPercent
 {
     if (mutationPercent>0 && mutationPercent<=100) {
-        NSUInteger totalGenes=[self.dna count];
+        NSUInteger totalGenes=[self length];
         NSUInteger genesToMutate=round(totalGenes/100*mutationPercent);
         
         
@@ -25,7 +25,7 @@
         for (NSUInteger i=0; i<genesToMutate; i++) {
             //random index selected once, mutated, then removed from set to avoid mutating same element twice 
             NSUInteger randomIndex=arc4random()%totalGenes;
-            [self.dna[randomIndex] mutate];
+            [[self getDnaElementAtIndex:randomIndex] mutate];
             [indexes removeObjectAtIndex:randomIndex];
             totalGenes--;
         }

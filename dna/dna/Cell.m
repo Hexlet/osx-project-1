@@ -9,6 +9,9 @@
 #import "Cell.h"
 
 @implementation Cell
+{
+    NSMutableArray *_dna;
+}
 
 -(id)init
 {
@@ -34,17 +37,32 @@
 {
     int result=0;
     
-    if ([self.dna count]!=[cell.dna count]) {
+    if ([self length]!=[cell length]) {
         NSLog(@"Parameters length mismatch");
         result=-1;
     }
     else
-    for (NSUInteger i=0; i<[self.dna count]; i++) {
-        if([[self.dna[i] value] isNotEqualTo:[cell.dna[i] value]]) result++;
+    for (NSUInteger i=0; i<[self length]; i++) {
+        if([[[self getDnaElementAtIndex:i] value] isNotEqualTo:[[cell getDnaElementAtIndex:i] value]]) result++;
     }
     return result;
 }
 
+-(void)setDnaElement:(Gene*)gene atIndex:(NSUInteger)index
+{
+    if(index>0)
+    _dna[index]=gene;
+}
+
+-(Gene*)getDnaElementAtIndex:(NSUInteger)index
+{
+    return _dna[index];
+}
+
+-(NSUInteger)length
+{
+    return [_dna count];
+}
 
 -(NSString*)dnaString
 {
