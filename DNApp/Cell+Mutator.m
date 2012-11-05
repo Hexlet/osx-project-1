@@ -34,7 +34,7 @@
             
             // Получаем из массива индекс элемента после рандома
             
-            NSMutableArray *copyOfRandomArray = [[NSMutableArray alloc] initWithArray:self.randomArray]; // Делаем копию массива з буквами
+            NSMutableArray *copyOfRandomArray = [[NSMutableArray alloc] initWithArray:self.randomArray]; // Делаем копию массива с буквами
             
             int elementIndex = [[replaceList objectAtIndex: nIndexForReplace] intValue]; // Из стринга назад в единицы
             
@@ -42,9 +42,13 @@
             
             [copyOfRandomArray removeObjectIdenticalTo: currentState]; // Удаляем из массива обьект который совпадает с з нашим обьектом из массива ДНК
             
-            NSInteger countAtg = [copyOfRandomArray count] - 1; // Считаем количество елементов в нашей копии массива randomArray
+            NSInteger countAtg = [copyOfRandomArray count]; // Считаем количество елементов в нашей копии массива randomArray
             
-            [self.dna replaceObjectAtIndex:elementIndex withObject:[copyOfRandomArray objectAtIndex:random() % countAtg]]; // Заменf мут. обьектf из массива ДНК  рандомным обьектом зи коппи масива randomArray  
+            [self.dna replaceObjectAtIndex:elementIndex withObject:[copyOfRandomArray objectAtIndex:random() % countAtg]]; // Заменf мут. обьект из массива ДНК  рандомным обьектом зи копии масива randomArray
+            
+            // Удаляем замененынй обьект из массива
+           
+            [replaceList removeObjectAtIndex:nIndexForReplace];
             
             i--;
         }
