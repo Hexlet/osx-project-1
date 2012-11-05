@@ -10,22 +10,18 @@
 
 @implementation Cell
 
-- (id) init {
-    int size = 100;
-    
+- (id)init {
     if (self = [super init]) {
-        _DNA = [NSMutableArray arrayWithCapacity:size];
+        _dnaSize = 100;
+        _DNA = [NSMutableArray arrayWithCapacity:_dnaSize];
         _dnaVariants = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-        
-        for (int i = 0; i < size; i++) {
-            [_DNA setObject:self.randomElement atIndexedSubscript:i];
-        }
+        [self fillRandomAtPositions:[self generateIndexes]];
     }
     
     return self;
 }
 
-- (int) hammingDistance:(Cell *)compare {
+- (int)hammingDistance:(Cell *)compare {
     if ([_DNA count] != [compare.DNA count]) {
         return -1;
     }
@@ -41,9 +37,25 @@
     return distance;
 }
 
-- (NSString*) randomElement {
+- (NSString*)randomElement {
     int r = arc4random_uniform((uint)_dnaVariants.count);
     return [_dnaVariants objectAtIndex: r];
+}
+
+- (NSMutableArray*)generateIndexes {
+    NSMutableArray *indexes = [[NSMutableArray alloc] initWithCapacity:_dnaSize];
+    
+    for (int i = 0; i < _dnaSize; i++) {
+        [indexes addObject:[NSNumber numberWithInt:i]];
+    }
+    
+    return indexes;
+}
+
+- (void)fillRandomAtPositions:(NSMutableArray*)indexes {
+    for (int i = 0; i < indexes.count; i++) {
+        [_DNA setObject:self.randomElement atIndexedSubscript:i];
+    }
 }
 
 @end

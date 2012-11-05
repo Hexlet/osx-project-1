@@ -12,7 +12,10 @@
 
 @property NSMutableArray *DNA;
 @property (readonly) NSArray *dnaVariants;
+@property (readonly) int dnaSize;
 
-- (int) hammingDistance:(Cell *)compare;
+- (int)hammingDistance:(Cell *)compare;
+- (NSMutableArray *)generateIndexes;
+- (void)fillRandomAtPositions:(NSMutableArray *)indexes;
 
 @end
