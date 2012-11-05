@@ -36,4 +36,9 @@
     return [elements objectAtIndex:arc4random() % [elements count]];
 }
 
++ (NSString *)randomElementWithout:(NSString *)element {
+    NSMutableArray * elements = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+    [elements removeObject:element];
+    return [elements objectAtIndex: arc4random() % [elements count]];
+}
 @end

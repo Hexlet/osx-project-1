@@ -14,4 +14,5 @@
 
 - (int) hammingDistance: (Cell *) cell;
 + (NSString *) randomElement;
++ (NSString *) randomElementWithout: (NSString *) element;
 @end

@@ -17,7 +17,6 @@
 
 - (void)mutate:(int)percent {
     NSMutableSet * positions = [[NSMutableSet alloc] init];
-    NSString * element;
     int X = [self.DNA count]*percent/100;
     
     while ([positions count]<X) {
@@ -25,11 +24,7 @@
     }
     
     for (int i=0; i<X; i++) {
-        do {
-            element = [Cell randomElement];
-        } while (element != [self.DNA objectAtIndex:i]);
-        
-        [self.DNA replaceObjectAtIndex:[[[positions allObjects] objectAtIndex:i] integerValue] withObject:element];
+        [self.DNA replaceObjectAtIndex:[[[positions allObjects] objectAtIndex:i] integerValue] withObject:[Cell randomElementWithout:[self.DNA objectAtIndex:i]]];
     }
 }
 @end
