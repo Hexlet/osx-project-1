@@ -22,16 +22,18 @@
 - (id)init
 {
     self = [super init];
-    _DNA = [[NSMutableArray alloc] initWithCapacity:100];
-    atcgArray = [[NSArray alloc]initWithObjects:@"A",@"T",@"C",@"G", nil];
-    
-    for (int i = 0; i < 100; i++)
+    if (self)
     {
-        int randomIndex = arc4random_uniform(4);
-        NSString *objectToAdd = [atcgArray objectAtIndex:randomIndex];
-        [_DNA addObject:objectToAdd];
-    }
+        _DNA = [[NSMutableArray alloc] initWithCapacity:100];
+        atcgArray = [[NSArray alloc]initWithObjects:@"A",@"T",@"C",@"G", nil];
     
+        for (int i = 0; i < 100; i++)
+        {
+            int randomIndex = arc4random_uniform(4);
+            NSString *objectToAdd = [atcgArray objectAtIndex:randomIndex];
+            [_DNA addObject:objectToAdd];
+        }
+    }
     return self;
 }
 
@@ -47,9 +49,17 @@
         if ([self.DNA objectAtIndex:i] != [cellToCompareWith.DNA objectAtIndex:i])
         {
             differenceCounter++;
+            //NSLog(@"%@ %@", [self.DNA objectAtIndex:i], [cellToCompareWith.DNA objectAtIndex:i]);
         }
-    }
     
+        //---Test for equality---
+        if ([self.DNA objectAtIndex:i] == [cellToCompareWith.DNA objectAtIndex:i])
+        {
+            //NSLog(@"%@ %@", [self.DNA objectAtIndex:i], [cellToCompareWith.DNA objectAtIndex:i]);
+        }
+    
+    }
+
     NSLog(@"Hamming distance between cells is: %i", differenceCounter);
     return differenceCounter;
 }
