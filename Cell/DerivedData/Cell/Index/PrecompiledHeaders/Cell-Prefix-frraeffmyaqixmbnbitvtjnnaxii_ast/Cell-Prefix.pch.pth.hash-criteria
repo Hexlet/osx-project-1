@@ -1,0 +1,33 @@
+Contents of /Users/igor/work/xcode/osx-project-1/Cell/Cell/Cell-Prefix.pch
+4.1 (tags/Apple/clang-421.11.66) (based on LLVM 3.1svn)
+x86_64-apple-darwin12.2.0
+-x
+objective-c
+-arch
+x86_64
+-fmessage-length=0
+-std=gnu99
+-fobjc-arc
+-fpascal-strings
+-O0
+-DDEBUG=1
+-isysroot
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+-fasm-blocks
+-mmacosx-version-min=10.8
+-g
+-DIBOutlet=__attribute__((iboutlet))
+-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))
+-DIBAction=void)__attribute__((ibaction)
+-iquote
+-iquote
+-I/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+-F/Users/igor/work/xcode/osx-project-1/Cell/DerivedData/Cell/Build/Products/Debug
+-ferror-limit=10
+-working-directory=/Users/igor/work/xcode/osx-project-1/Cell
+-Xclang
+-detailed-preprocessing-record
+SDK_PRODUCT_BUILD_VERSION=12C37
