@@ -16,8 +16,8 @@
     // индекс нуклеотида в массиве нуклеотидов
     NSUInteger nucleotideIndex = [[Cell nucleotides] indexOfObjectIdenticalTo: [dna objectAtIndex:nucleotideIndexInDNA]];
 
-    // вычисление индекса для мутированного нуклеотида в массиве нуклеотидов ()
-    nucleotideIndex = (nucleotideIndex + 1 + arc4random()%([[Cell nucleotides] count] - 1))%[[Cell nucleotides] count];
+    // вычисление индекса для мутированного нуклеотида в массиве нуклеотидов
+    nucleotideIndex = (nucleotideIndex + 1 + arc4random()%([Cell nucleotides].count - 1))%[Cell nucleotides].count;
 
     // замена нуклеотида на мутированный в цепочке ДНК
     [dna replaceObjectAtIndex:nucleotideIndexInDNA withObject:[[Cell nucleotides] objectAtIndex:nucleotideIndex]];
@@ -26,8 +26,11 @@
 // мутирование ДНК
 -(void)mutate:(int)percent {
 
-    // ограничиваем percent до диапазона [0, 100]
-    percent = MAX(0, MIN(percent, 100));
+    // проверка диапазона percent
+    if (percent < 0 || percent > 100) {
+        NSLog(@"%i percent is out of range [0, 100]", percent);
+        return;
+    }
 
     // создаём набор индексов и заполняем всеми доступными индексами цепочки ДНК: [0, DNA_COUNT - 1]
     NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSet];

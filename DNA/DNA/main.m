@@ -11,7 +11,6 @@
 
 int main(int argc, const char * argv[])
 {
-
     @autoreleasepool {
         Cell *cellA = [[Cell alloc] init];
         Cell *cellB = [[Cell alloc] init];

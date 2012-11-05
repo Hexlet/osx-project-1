@@ -16,7 +16,7 @@ static NSArray* nucleotides = nil;
     if (self = [super init]) {
         dna = [NSMutableArray arrayWithCapacity:DNA_COUNT];
         for (int i = 0; i < DNA_COUNT; i++) {
-            u_int32_t rnd = (arc4random() % [[Cell nucleotides] count]);
+            NSUInteger rnd = arc4random_uniform((u_int32_t)[nucleotides count]);
             [dna addObject:[[Cell nucleotides] objectAtIndex:rnd]];
         }
     }
