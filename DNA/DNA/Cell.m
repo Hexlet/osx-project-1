@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Cyxx. All rights reserved.
 //
 
-static NSArray* nucleotides = nil;
+static NSArray* _nucleotides = nil;
 
 #import "Cell.h"
 
@@ -16,7 +16,7 @@ static NSArray* nucleotides = nil;
     if (self = [super init]) {
         dna = [NSMutableArray arrayWithCapacity:DNA_COUNT];
         for (int i = 0; i < DNA_COUNT; i++) {
-            NSUInteger rnd = arc4random_uniform((u_int32_t)[nucleotides count]);
+            NSUInteger rnd = arc4random_uniform((u_int32_t)[[Cell nucleotides] count]);
             [dna addObject:[[Cell nucleotides] objectAtIndex:rnd]];
         }
     }
@@ -26,10 +26,10 @@ static NSArray* nucleotides = nil;
 
 // common elements for all cells
 +(NSArray*)nucleotides {
-    if (nucleotides == nil) {
-        nucleotides = @[@"A", @"T", @"G", @"C"];
+    if (_nucleotides == nil) {
+        _nucleotides = @[@"A", @"T", @"G", @"C"];
     }
-    return nucleotides;
+    return _nucleotides;
 }
 
 -(void)print {
