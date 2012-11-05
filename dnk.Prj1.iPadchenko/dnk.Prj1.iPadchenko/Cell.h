@@ -5,7 +5,7 @@
 //  Created by yury on 31.10.12.
 //  Copyright (c) 2012 Yury Radchenko. All rights reserved.
 //
-#define dnaLenght 100 //длина цепочки ДНК
+#define dnaLength 100 //длина цепочки ДНК
 
 #import <Foundation/Foundation.h>
 

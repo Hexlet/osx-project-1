@@ -20,10 +20,10 @@
     if (self) { //если все ОК по родительской теме, тогда выполняем собственные особенности инициализации
         
         //Инициализируем массив
-        _DNA = [NSMutableArray arrayWithCapacity:dnaLenght];
+        _DNA = [NSMutableArray arrayWithCapacity:dnaLength];
         
         //Каждая ячейка вашего массива должна быть одним из этих четырех символов: A, T, G и С
-        for (int i=0; i < dnaLenght; i++)
+        for (int i=0; i < dnaLength; i++)
             
             [self.DNA addObject:[self randomCellValueATGC]]; //добавляем в конец массива случайное значение
         
@@ -36,41 +36,31 @@
     
     int hD = 0; //изначально 0 совпадений
     
-    for (int i = 0; i < dnaLenght; i++)
+    for (int i = 0; i < dnaLength; i++)
         
-        if (![[self.DNA objectAtIndex:i] isEqual:[secondDNA.DNA objectAtIndex:i]])
+        if (![[self.DNA objectAtIndex:i] isEqual:[secondDNA.DNA objectAtIndex:i]]) {
             
             hD++; //учитываем несовпадение
+            
+        }
     
     return hD;
 }
 
-
 - (void) print {
     
-    NSMutableString *dnaOneString = [[NSMutableString alloc] init];
-    
-    for (int i = 0; i < dnaLenght; i++)
-        
-        [dnaOneString appendString:[self.DNA objectAtIndex:i]];//код ДНК формируем одной строкой
+    NSString *dnaOneString = [[NSString alloc] initWithFormat:@"%@", [self.DNA componentsJoinedByString: @""]];
     
     //NSLog(@"name = %@", self);//расскоментировать, если надо видеть класс и адрес переменной
-    NSLog(@"ДНК = \n%@",dnaOneString);
+    NSLog(@"ДНК = %@",dnaOneString);
 
 }
 
 - (NSString *) randomCellValueATGC { //процедура случаного выбора значений ячейки ДНК
     
-    NSString *ATGC = [[NSString alloc] init];
+    NSArray *ATGC = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
         
-    switch ((int) (arc4random() % 4)) { //случайное целое число от 0 до 3
-        case 0: ATGC = @"A"; break;
-        case 1: ATGC = @"T"; break;
-        case 2: ATGC = @"G"; break;
-        case 3: ATGC = @"C"; break;
-    }
-    
-    return ATGC;
+    return [ATGC objectAtIndex:(arc4random() % ATGC.count)];
 }
 
 @end

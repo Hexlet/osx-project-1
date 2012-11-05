@@ -7,7 +7,7 @@
 //
 
 #define oneDNAMutatorPercent 60 //процент мутации для первой ДНК
-#define twoDNAMutatorPercent 40 //процент мутации для второй ДНК
+#define twoDNAMutatorPercent 80 //процент мутации для второй ДНК
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
@@ -21,16 +21,10 @@
 @implementation Cell (mutator)
 
 - (void) mutate: (int) xPercentMutator {
-//    
-//    if (xPercentMutator < 0 && xPercentMutator > 100)
-//        
-//        NSLog(@"Некорректно введен процент мутации");
-//    
-//    else {
     
     if (xPercentMutator >= 0 && xPercentMutator <= 100) {
     
-        int xCount = (int) dnaLenght * xPercentMutator / 100; //кол-во ячеек ДНК, подлежащих изменению
+        int xCount = (int) dnaLength * xPercentMutator / 100; //кол-во ячеек ДНК, подлежащих изменению
         
         NSString *newCell = [[NSString alloc] init]; //здесь будем хранить новое значение ячейки ДНК
         
@@ -40,7 +34,7 @@
         int i = 0;
         
         do {
-            int randomIndex = (int) (arc4random() % (dnaLenght));  //выбираем случайную ячейку ДНК
+            int randomIndex = (int) (arc4random() % (dnaLength));  //выбираем случайную ячейку ДНК
             
             //сравниваем выбранный номер с ранее выпадавшими и запомненными
             
@@ -49,18 +43,13 @@
                 //запоминаем выбор
                 [cellMutator addObject:[NSString stringWithFormat:@"%d", randomIndex]];
                 
-                //меняем ячейку ДНК
-                BOOL changeCellRun = YES;//метка о выходе из цикла по смене ячейки ДНК
-                
                 do {
                     newCell = [self randomCellValueATGC];
-                                
-                    if (![newCell isEqualToString:[self.DNA objectAtIndex:randomIndex]]) {//если ячейка меняется
-                        [self.DNA replaceObjectAtIndex:randomIndex withObject:newCell]; //меняем ячейку ДНК
-                        changeCellRun = NO;//метка о выходе
-                    }
-
-                } while (changeCellRun);
+                    
+                        //новое равно старому - продолжаем цикл
+                } while ([newCell isEqualToString:[self.DNA objectAtIndex:randomIndex]]);
+                
+                [self.DNA replaceObjectAtIndex:randomIndex withObject:newCell]; //меняем ячейку ДНК
                 
                 i++; //увеличиваем счетчик уже измененных ячеек ДНК
                 
@@ -70,10 +59,11 @@
         
     }
     
-    else
+    else {
         
-        NSLog(@"Некорректно введен процент мутации");
+        NSLog(@"Ошибочное значение процента мутации = %d", xPercentMutator);
     
+    }
 }
 
 @end
@@ -86,19 +76,19 @@ int main(int argc, const char * argv[])
         Cell *oneDNA = [[Cell alloc] init];
         Cell *twoDNA = [[Cell alloc] init];
         
-//        [oneDNA print];//расскоментить чтобы выводился код ДНК
-//        [twoDNA print];//расскоментить чтобы выводился код ДНК
-
+        [oneDNA print];//расскоментить чтобы выводился код ДНК
+        [twoDNA print];//расскоментить чтобы выводился код ДНК
+        
         NSLog(@"Несовпадений до мутации = %d",[oneDNA hammingDistance:twoDNA]);
         
         [oneDNA mutate:oneDNAMutatorPercent];
         [twoDNA mutate:twoDNAMutatorPercent];
-//        [oneDNA print];//расскоментить чтобы выводился код ДНК
-//        [twoDNA print];//расскоментить чтобы выводился код ДНК
+
+        [oneDNA print];//расскоментить чтобы выводился код ДНК
+        [twoDNA print];//расскоментить чтобы выводился код ДНК
         
         NSLog(@"Несовпадений после мутации = %d",[oneDNA hammingDistance:twoDNA]);
         
     }
     return 0;
 }
-
