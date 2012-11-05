@@ -104,7 +104,7 @@
         @autoreleasepool {
                 int index = (int)[nucleotides indexOfObject:elem];
             
-                int newIndex = (int)(index + [nucleotides count] - 1) % [nucleotides count];
+                int newIndex = (int)(index + arc4random_uniform((int)[nucleotides count])) % [nucleotides count];
             
                 return [nucleotides objectAtIndex: newIndex];
             }
