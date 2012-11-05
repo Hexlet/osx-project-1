@@ -12,7 +12,7 @@
 @implementation Cell(Mutator)
 
 -(void) mutate:(int)percent {
-    // Если хотят мутировать на более чем сто процентов, то вызываем исключение
+    // Проверяем входящие параметры
     if (percent > 100 || percent < 1) {
         [NSException raise:@"Invalid percent value" format:@"percent of %d is invalid", percent];
         return;
@@ -32,7 +32,7 @@
             position = arc4random() % [self.DNA count];
         }
         
-        // Заменяем нуклеотид
+        // Заменяем нуклеотид. Учитываем, что надо замена на аналогичный не подходит
         NSString* nucleotide = [self getRandomNucleotide];
         while ([self.DNA[position] isEqualTo:nucleotide]) {
             nucleotide = [self getRandomNucleotide];
