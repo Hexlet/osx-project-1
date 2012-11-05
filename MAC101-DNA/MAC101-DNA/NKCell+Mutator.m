@@ -27,7 +27,8 @@
     
     [indexesToMutate enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
         NKDNASymbol *symbolToMutate = [self.DNA objectAtIndex:idx];
-        [symbolToMutate mutate];
+        DNASymbolType type = symbolToMutate.type;
+        symbolToMutate.type = (type < 3 ? type+1 : 0);
     }];
 }
 
