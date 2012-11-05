@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
+@interface Cell : NSObject {
+    NSArray *dnksymbols;
+}
     @property NSMutableArray *dnk;
-    @property NSArray *dnksymbols;
 
     -(int) hammingDistance: (Cell*)cell;
     -(NSString *) getRandomDnkSymbol;

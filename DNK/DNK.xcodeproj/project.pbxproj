@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3727D8971647F9260010757A /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3727D8961647F9260010757A /* NSMutableArray+Shuffling.m */; };
+		3727D89A1647F97A0010757A /* Cell+Mutating.m in Sources */ = {isa = PBXBuildFile; fileRef = 3727D8991647F97A0010757A /* Cell+Mutating.m */; };
 		379135BE164494AF00906911 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379135BD164494AF00906911 /* Foundation.framework */; };
 		379135C1164494AF00906911 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 379135C0164494AF00906911 /* main.m */; };
 		379135C5164494AF00906911 /* DNK.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 379135C4164494AF00906911 /* DNK.1 */; };
@@ -27,6 +29,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3727D8951647F9260010757A /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
+		3727D8961647F9260010757A /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
+		3727D8981647F97A0010757A /* Cell+Mutating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutating.h"; sourceTree = "<group>"; };
+		3727D8991647F97A0010757A /* Cell+Mutating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutating.m"; sourceTree = "<group>"; };
 		379135B9164494AF00906911 /* DNK */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNK; sourceTree = BUILT_PRODUCTS_DIR; };
 		379135BD164494AF00906911 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		379135C0164494AF00906911 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,10 +83,14 @@
 			isa = PBXGroup;
 			children = (
 				379135C0164494AF00906911 /* main.m */,
+				3727D8981647F97A0010757A /* Cell+Mutating.h */,
+				3727D8991647F97A0010757A /* Cell+Mutating.m */,
 				379135C4164494AF00906911 /* DNK.1 */,
 				379135C2164494AF00906911 /* Supporting Files */,
 				379135CB1644951300906911 /* Cell.h */,
 				379135CC1644951300906911 /* Cell.m */,
+				3727D8951647F9260010757A /* NSMutableArray+Shuffling.h */,
+				3727D8961647F9260010757A /* NSMutableArray+Shuffling.m */,
 			);
 			path = DNK;
 			sourceTree = "<group>";
@@ -146,6 +156,8 @@
 			files = (
 				379135C1164494AF00906911 /* main.m in Sources */,
 				379135CD1644951300906911 /* Cell.m in Sources */,
+				3727D8971647F9260010757A /* NSMutableArray+Shuffling.m in Sources */,
+				3727D89A1647F97A0010757A /* Cell+Mutating.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +254,7 @@
 				379135CA164494AF00906911 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
