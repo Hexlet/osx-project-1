@@ -62,7 +62,7 @@
     
     NSMutableArray *second = [NSArray arrayWithObjects:@"A", @"A", @"A", @"A", nil];
     Cell *cell2 = [[Cell alloc] init];
-    [cell1 setDna:second];
+    [cell2 setDna:second];
     
     // WHEN
     int actualHammingDistance = [cell1 hammingDistance:cell2];
@@ -70,7 +70,5 @@
     // THEN
     STAssertEquals(expectedHammingDistance, actualHammingDistance, @"Unexpected hamming distance");
 }
-
-
 
 @end

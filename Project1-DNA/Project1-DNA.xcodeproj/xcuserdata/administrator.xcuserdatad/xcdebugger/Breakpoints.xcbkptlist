@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "UnitTests/RandomTests.m"
-         timestampString = "373742688.210205"
+         timestampString = "373836020.323328"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
+         startingLineNumber = "84"
+         endingLineNumber = "84"
          landmarkName = "-testUniqueRandomIntegersWithSize"
          landmarkType = "5">
       </FileBreakpoint>
@@ -53,6 +53,19 @@
          startingLineNumber = "38"
          endingLineNumber = "38"
          landmarkName = "-testNucleobases"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Project1-DNA/Random.m"
+         timestampString = "373834934.0235"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "15"
+         endingLineNumber = "15"
+         landmarkName = "+randomInteger:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

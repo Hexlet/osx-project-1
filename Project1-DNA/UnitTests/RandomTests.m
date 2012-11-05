@@ -32,7 +32,7 @@
     
     // WHEN        
     // THEN
-    STAssertThrows([Random randomInteger:upperBound], @"IllegalArgumentException expected");
+    STAssertThrowsSpecificNamed([Random randomInteger:upperBound], NSException, NSInvalidArgumentException, @"NSInvalidArgumentException expected");
 }
 
 - (void)testRandomIntegerZeroUpperBound
@@ -60,17 +60,6 @@
     STAssertTrue((actual >= 0 && actual < upperBound), @"Random integer is out of expected range");
 }
 
-- (void)testUniqueRandomIntegersWithSizeNegativeSize
-{
-    // GIVE
-    int size = -1;
-    int upperBound = 1;
-    
-    // WHEN
-    // THEN
-    STAssertThrows([Random uniqueRandomIntegersWithSize:size upperBound:upperBound], @"IllegalArgumentException expected");
-}
-
 - (void)testUniqueRandomIntegersWithSizeNegativeUpperBound
 {
     // GIVE
@@ -79,7 +68,7 @@
     
     // WHEN
     // THEN
-    STAssertThrows([Random uniqueRandomIntegersWithSize:size upperBound:upperBound], @"IllegalArgumentException expected");
+    STAssertThrowsSpecificNamed([Random uniqueRandomIntegersWithSize:size upperBound:upperBound], NSException, NSInvalidArgumentException, @"NSInvalidArgumentException expected");
 }
 
 - (void)testUniqueRandomIntegersWithSize

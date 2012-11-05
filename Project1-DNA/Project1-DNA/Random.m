@@ -12,18 +12,15 @@
 
 + (int)randomInteger:(int)upperBound {
     if (upperBound < 0) {
-        @throw [NSException exceptionWithName:@"IllegalArgumentException" reason:@"Upperbound value can't be negative" userInfo:nil];
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Upperbound value can't be negative" userInfo:nil];
     }
     return arc4random_uniform(upperBound);
 }
 
 + (NSSet *)uniqueRandomIntegersWithSize:(int)size upperBound:(int)upperBound {
-    if (size < 0) {
-        @throw [NSException exceptionWithName:@"IllegalArgumentException" reason:@"Size value can't be negative" userInfo:nil];
-    }
     
     if (upperBound < 0) {
-        @throw [NSException exceptionWithName:@"IllegalArgumentException" reason:@"Upperbound value can't be negative" userInfo:nil];
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Upperbound value can't be negative" userInfo:nil];
     }
     
     NSMutableSet *resultSet = [NSMutableSet setWithCapacity:size];
