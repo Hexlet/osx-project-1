@@ -13,4 +13,5 @@
     @property NSArray *dnksybol;
 
     -(int) hammingDistance: (Cell*)cell;
+    -(NSString *) getRandomDnkSymbol;
 @end
