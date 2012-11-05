@@ -11,15 +11,13 @@
 #define DNA_LENGTH  100
 #define NUCLEOTIDES @[@"A", @"T", @"G", @"C"]
 
-@interface Cell : NSObject {
-    NSArray * nucleotides;
-}
+@interface Cell : NSObject 
 
 @property NSMutableArray *DNA;
 
 - (void) logDNA;
 - (int) hammingDistance: (Cell *) otherCell;
-- (NSString *) getRandomDNAItemValue;
-- (NSString *) getRandomDNAItemValueExcept: (NSString *) itemValue;
++ (NSString *) getRandomNucleotide;
++ (NSString *) getRandomNucleotideExcept: (NSString *) itemValue;
 
 @end

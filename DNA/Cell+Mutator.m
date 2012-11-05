@@ -16,12 +16,13 @@
              @"Percentage should be in range from 0 to 100.");
     
     // Calculating the number of items we have to change.
-    int itemsNum = round(DNA_LENGTH * percentage / 100.0);
+    int itemsNum = round(DNA_LENGTH * percentage/100.0);
     
     // Creating an array of numbers 0 to 100 (length of our DNA)
-    NSMutableArray *range = [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
+    NSMutableArray *range =
+        [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
     for (int i = 0; i < DNA_LENGTH; i++)
-        [range addObject:[NSNumber numberWithInt:i]];
+        [range addObject: [NSNumber numberWithInt:i]];
     
     // Shuffling the range of numbers
     [range shuffle];
@@ -30,9 +31,9 @@
     int position;
     for (int i = 0; i < itemsNum; i++) {
         position = [[range objectAtIndex:i] intValue];
-        NSString *itemValue = [self.DNA objectAtIndex: position];
-        [self.DNA replaceObjectAtIndex: position
-                  withObject: [self getRandomDNAItemValueExcept:itemValue]];
+        NSString *itemValue = [self.DNA objectAtIndex:position];
+        [self.DNA replaceObjectAtIndex:position
+                  withObject: [Cell getRandomNucleotideExcept:itemValue]];
     }
 }
 

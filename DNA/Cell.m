@@ -10,30 +10,31 @@
 
 @implementation Cell
 
+static NSArray *nucleotides = nil;
+
 - (id) init {
     self = [super init];
     if (!self) return self;
-    
-    nucleotides = NUCLEOTIDES;
+    if (!nucleotides) nucleotides = NUCLEOTIDES;
     
     // Initializing our DNA
     self.DNA = [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
     for (int i = 0; i < DNA_LENGTH; i++)
-        [self.DNA addObject: [self getRandomDNAItemValue]];
+        [self.DNA addObject: [Cell getRandomNucleotide]];
         // Replace previous line with this to debug mutation:
         // [self.DNA addObject: @"A"];
 
     return self;
 }
 
-- (NSString *) getRandomDNAItemValue {
++ (NSString *) getRandomNucleotide {
     return [nucleotides
             objectAtIndex: (arc4random() % [nucleotides count])];
 }
 
-- (NSString *) getRandomDNAItemValueExcept: (NSString *)itemValue {
++ (NSString *) getRandomNucleotideExcept: (NSString *)itemValue {
     NSMutableArray *opts = [NSMutableArray arrayWithArray:nucleotides];
-    [opts removeObject: itemValue];
+    [opts removeObject:itemValue];
     return [opts
             objectAtIndex: (arc4random() % ([nucleotides count] - 1))];
 }
@@ -41,7 +42,7 @@
 // For debugging purposes, displays DNA representation in log.
 - (void) logDNA {
     NSString *str = @"";
-    for (NSString *item in self.DNA) str = [str stringByAppendingString: item];
+    for (NSString *item in self.DNA) str = [str stringByAppendingString:item];
     NSLog(@"%@", str);
 }
 
