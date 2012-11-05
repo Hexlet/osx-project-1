@@ -27,7 +27,7 @@
     for (int i = 0; i < percentToMutate; i++)
     {
         //---Random position from arrayOfRandomNumbers---
-        int randomIndex = arc4random_uniform([arrayOfRandomNumbers count]);
+        int randomIndex = arc4random_uniform((int)[arrayOfRandomNumbers count]);
         
         //---Get number at certain position---
         NSNumber *randomPosition = [arrayOfRandomNumbers objectAtIndex:randomIndex];
