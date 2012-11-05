@@ -12,12 +12,10 @@
 
 - (id)init{
     
-    ATGC= @[@"A", @"T", @"G", @"C"];
-    
     self = [super init];
     if (self) {
         _DNA = [NSMutableArray arrayWithCapacity:100];
-        for (int i=1; i<=100; i++) {
+        for (int i=0; i<100; i++) {
             [[self DNA] addObject:[ATGC objectAtIndex:(arc4random()%[ATGC count])]];
         }
     }
@@ -45,18 +43,21 @@
         NSException *e = [NSException exceptionWithName:@"WrongNumberPercent" reason:@"Wrong Number Percent" userInfo:nil];
         @throw e;
     }
-    else{
-        NSMutableSet *indexes = [NSMutableSet set];
-        for (int i = 1 ; i <= percentM; i++) {
-            int index1 = arc4random()%[[self DNA] count];
-            int index2 = arc4random()%[ATGC count];
-            while (([[[self DNA] objectAtIndex:index1] isEqual: [ATGC objectAtIndex:index2]]) || ([indexes containsObject:[NSNumber numberWithInt:index1]])) {
-                index2 = arc4random()%[ATGC count];
-            }
-            
-            [[self DNA] replaceObjectAtIndex:index1 withObject:[ATGC objectAtIndex:index2]];
-            [indexes addObject:[NSNumber numberWithInt: index1]];
+
+    NSMutableSet *indexes = [NSMutableSet set];
+    for (int i = 0 ; i <= percentM; i++) {
+        int index1 = arc4random()%[[self DNA] count];
+        int index2 = arc4random()%[ATGC count];
+        
+        while (([indexes containsObject:[NSNumber numberWithInt:index1]])) {
+            index1 = arc4random()%[ATGC count];
         }
+        while (([[[self DNA] objectAtIndex:index1] isEqual: [ATGC objectAtIndex:index2]])) {
+            index2 = arc4random()%[ATGC count];
+        }
+        
+        [[self DNA] replaceObjectAtIndex:index1 withObject:[ATGC objectAtIndex:index2]];
+        [indexes addObject:[NSNumber numberWithInt: index1]];
     }
 }
 @end

@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
-//extern NSArray const *ATGC;
-
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
+        
+        ATGC= @[@"A", @"T", @"G", @"C"];
         
         Cell *c1 = [[Cell alloc] init];
         Cell *c2 = [[Cell alloc] init];

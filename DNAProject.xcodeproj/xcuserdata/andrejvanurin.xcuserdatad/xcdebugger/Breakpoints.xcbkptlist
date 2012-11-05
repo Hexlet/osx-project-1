@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Cell.m"
-         timestampString = "373476016.796835"
+         timestampString = "373829019.451948"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "28"
-         endingLineNumber = "28"
+         startingLineNumber = "26"
+         endingLineNumber = "26"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -26,6 +26,19 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "22"
          endingLineNumber = "22"
+         landmarkName = "main()"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNAProject/main.m"
+         timestampString = "373828249.40473"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "25"
+         endingLineNumber = "25"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
