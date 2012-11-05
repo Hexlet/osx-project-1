@@ -10,18 +10,26 @@
 #import "Cell.h"
 
 @interface Cell (Mutator)
-- (void) mutate: (int) X;
+- (void) mutate: (int) percent;
 @end
 
 @implementation Cell (Mutator)
 
-- (void)mutate:(int)X {
+- (void)mutate:(int)percent {
     NSMutableSet * positions = [[NSMutableSet alloc] init];
+    NSString * element;
+    int X = [self.DNA count]*percent/100;
+    
     while ([positions count]<X) {
         [positions addObject:[NSNumber numberWithInt:random() % 100]];
     }
+    
     for (int i=0; i<X; i++) {
-        [self.DNA replaceObjectAtIndex:[[[positions allObjects] objectAtIndex:i] integerValue] withObject:[Cell randomElement]];
+        do {
+            element = [Cell randomElement];
+        } while (element != [self.DNA objectAtIndex:i]);
+        
+        [self.DNA replaceObjectAtIndex:[[[positions allObjects] objectAtIndex:i] integerValue] withObject:element];
     }
 }
 @end
