@@ -10,11 +10,10 @@
 
 @implementation Cell (mutator)
 
-- (void)shuffle:(NSMutableArray*) array
-{
+
+- (void)shuffle:(NSMutableArray*) array {
     NSUInteger count = [array count];
     for (NSUInteger i = 0; i < count; i++) {
-        // Select a random element between i and end of array to swap with.
         // Выбираем произвольный элемент между i и концом массива, и меняем их местами
         NSInteger nElements = count - i;
         NSInteger n = (arc4random() % nElements) + i;
@@ -22,38 +21,38 @@
     }
 }
 
+
 -(void) mutate:(int)percent {
+    if (percent <=0 || percent > 100)
+        return;
+    
     // вычисляем количество ячеек которые нужно изменить в массиве dna
     int numberOfMutatedCells = SIZE * percent / 100;
     
     // создаем массив который будет сопадать размером с dna и содержать номера элементов по порядку
-    NSMutableArray* shuffledArray = [NSMutableArray arrayWithCapacity:SIZE];
+    NSMutableArray* shuffledArray = [[NSMutableArray alloc] init];
     for (int i = 0; i<SIZE; i++){
-        NSNumber *num = [NSNumber numberWithInt:i];
-        [shuffledArray insertObject:num atIndex:i];
-        
+        [shuffledArray addObject:[NSNumber numberWithInt:i]];
     }
+    
     // перемешиваем содержимое массива
     [self shuffle:shuffledArray];
-    
-    // массив arrayMask содержит номера элементов массива dna которые необходимо изменить
-    NSArray* arMask = [shuffledArray subarrayWithRange: NSMakeRange(1, numberOfMutatedCells)];
     
     for (int i = 0; i<numberOfMutatedCells; i++) {
         // создаем множество символов нуклеотид
         NSMutableSet *set = [NSMutableSet setWithObjects:@"A", @"T", @"G", @"C",nil];
         
-        // из массива arMask получаем индекс элемета который будем менять в массиве dna
-        NSUInteger index = [[arMask objectAtIndex:i] unsignedIntegerValue];
+        // из массива shuffledArray получаем индекс элемета который будем менять в массиве dna
+        NSUInteger indexInDna = [[shuffledArray objectAtIndex:i] unsignedIntegerValue];
         
         // удаляем из множества текущий символ
-        NSString *c = [dna objectAtIndex:index];
+        NSString *c = [dna objectAtIndex:indexInDna];
         [set removeObject:c];
         
         //заменяем текущий символ в массиве dna на случайный из оставшихся в множестве
         int rnd = arc4random() % (int)[set count];
         NSArray *arraySet = [set allObjects];
-        [dna replaceObjectAtIndex:index withObject:[arraySet objectAtIndex:rnd]]; //[set anyObject]
+        [dna replaceObjectAtIndex:indexInDna withObject:[arraySet objectAtIndex:rnd]]; 
     }
 }
 
