@@ -11,17 +11,20 @@
 @implementation Cell
 
 -(id) init {
+    // генерация DNA
     self = [super init];
     if (self) {
-        // @todo ... generate 100 element array ["A", "C", "G", "T" ... ]
-
+        mols = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
+        DNA = [[NSMutableArray alloc] init];
     }
-    
     return self;
 }
--(void) print {
-     NSLog(@"hello");
 
+-(id) initLength:(int) l{
+    self = [self init]; if (self) {
+        for (int i = 0; i < l; i++)[DNA addObject:[mols objectAtIndex:arc4random()%4]];
+    }
+    return self;
 }
 
 -(void) hammingDistance {
