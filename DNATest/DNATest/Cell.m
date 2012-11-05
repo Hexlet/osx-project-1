@@ -15,11 +15,11 @@
     self = [super init];
     if(self){
         int count = 100;
-        NSArray *values = [Cell DNA_VALUES];
+        NSArray *values = [Cell NUCLEOTIDES];
         _DNA = [[NSMutableArray alloc] initWithCapacity:count];
         for (int i = 0; i < count; i++) {
             int idx = arc4random() % [values count];
-            [_DNA insertObject:[values objectAtIndex:idx] atIndex:i];
+            [_DNA addObject:[values objectAtIndex:idx]];
         }
     }
     return self;
@@ -36,7 +36,7 @@
     return count;
 }
 
-+ (NSArray *) DNA_VALUES
++ (NSArray *) NUCLEOTIDES
 {
     static NSArray *theArray;
     if (!theArray) {

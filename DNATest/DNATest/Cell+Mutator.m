@@ -8,29 +8,69 @@
 
 #import "Cell+Mutator.h"
 
+@interface NSMutableArray (Shuffling)
+- (void)shuffle;
+@end
+
+@implementation NSMutableArray (Shuffling)
+
+- (void)shuffle
+{
+    NSUInteger count = [self count];
+    for (NSUInteger i = 0; i < count; ++i)
+    {
+        // Select a random element between i and end of array to swap with.
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [self exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+}
+@end
+
 @implementation Cell (Mutator)
 
 - (void) mutate: (int) perc
 {
-    NSMutableSet* ids = [[NSMutableSet alloc] init];
-    int i;
-    for (i = 0; i < [self.DNA count]; i++) {
+    const int max = 100;
+    
+    if(perc < 0) perc = 0;
+    if(perc > max) perc = max;
+    if(perc == 0)
+    {
+        //нечего менять, уходим
+        return;
+    }
+    NSUInteger dnaCount = [self.DNA count];
+    NSUInteger indexesToChange = dnaCount * perc / max;
+    NSMutableArray* ids = [[NSMutableArray alloc] initWithCapacity:dnaCount];
+    unsigned int i;
+    for (i = 0; i < dnaCount; i++)
+    {
         [ids addObject:[NSNumber numberWithInt:i]];
     }
-    i = 1;
-    while (i < floor([self.DNA count] * perc * 0.01)) {
-        id obj = [ids anyObject];
-        int idx = [obj intValue];
-        [self replaceKeyAtIndex:idx];
-        [ids removeObject:obj];
-        i++;
+    
+    if(perc < max)
+    {
+        [ids shuffle];
     }
+    
+    for (i = 0; i < indexesToChange; i++)
+    {
+        int idx = [[ids objectAtIndex:i] intValue];
+        [self replaceKeyAtIndex:idx];
+    }
+    
 }
 - (void) replaceKeyAtIndex: (int) idx
 {
     NSString *elem = [self.DNA objectAtIndex:idx];
-    NSMutableArray *newValues = [self.DNA mutableCopy];
+    NSMutableArray *newValues = [Cell.NUCLEOTIDES mutableCopy];
     [newValues removeObject:elem];
-    [self.DNA setObject:[newValues objectAtIndex:arc4random() % [newValues count]] atIndexedSubscript:idx];
+    NSString *newElem = [newValues objectAtIndex:[self randomIdx:[newValues count]]];
+    [self.DNA setObject:newElem atIndexedSubscript:idx];
+}
+- (int) randomIdx:(NSUInteger) count
+{
+    return arc4random_uniform((u_int32_t) count);
 }
 @end

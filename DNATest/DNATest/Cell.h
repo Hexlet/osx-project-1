@@ -11,5 +11,5 @@
 @interface Cell : NSObject
 @property NSMutableArray* DNA;
 - (int) hammingDistance: (Cell *) cell;
-+ (NSArray *) DNA_VALUES;
++ (NSArray *) NUCLEOTIDES;
 @end
