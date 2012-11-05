@@ -35,7 +35,7 @@
     NSMutableArray *VALUES = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
     
     if (index >= [DNA count])
-        [DNA insertObject:[VALUES objectAtIndex:rand() % [VALUES count]] atIndex:index];
+        [DNA insertObject:[VALUES objectAtIndex:arc4random() % [VALUES count]] atIndex:index];
     else {
         id val = [DNA objectAtIndex:index];
         for (int i = 0; i < [VALUES count]; ++i) {
@@ -44,7 +44,7 @@
                 break;
             }
         }
-        [DNA replaceObjectAtIndex:index withObject:[VALUES objectAtIndex:rand() % [VALUES count]]];
+        [DNA replaceObjectAtIndex:index withObject:[VALUES objectAtIndex:arc4random() % [VALUES count]]];
 //        NSLog(@"%@ -> %@", val, VALUES);
     }
 }

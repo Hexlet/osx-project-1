@@ -44,7 +44,7 @@
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
-        srand([[NSDate date] timeIntervalSince1970]);
+//        srand([[NSDate date] timeIntervalSince1970]);
         
         Cell *c1 = [[Cell alloc] init];
         Cell *c2 = [[Cell alloc] init];
