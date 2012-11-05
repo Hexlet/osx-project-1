@@ -29,11 +29,11 @@
     [indices shuffle];
     
     // Replacing items in DNA, taking indices from our shuffled array.
-    int position;
+    int index;
     for (int i = 0; i < itemsNum; i++) {
-        position = [[indices objectAtIndex:i] intValue];
-        NSString *nucleotide = [self.DNA objectAtIndex:position];
-        [self.DNA replaceObjectAtIndex:position
+        index = [[indices objectAtIndex:i] intValue];
+        NSString *nucleotide = [self.DNA objectAtIndex:index];
+        [self.DNA replaceObjectAtIndex:index
                   withObject: [Cell getRandomNucleotideExcept:nucleotide]];
     }
 }
