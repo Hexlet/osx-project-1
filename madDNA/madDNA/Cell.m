@@ -10,19 +10,24 @@
 #include "stdlib.h"
 
 @implementation Cell {
-	const NSArray *chars;
+	NSArray *chars;
 	NSMutableArray *dna;
 }
 
+- (id)getRandomCharFromArray:(NSArray*)array {
+	// массив не будет нулевой длины, в данной реализации )
+	return [array objectAtIndex:arc4random() % [array count]];
+}
+
 - (id)getRandomChar {
-	return [chars objectAtIndex:arc4random() % 4];
+	return [self getRandomCharFromArray:chars];
 }
 
 - (id)init {
 	self = [super init];
 	if (self) {
-		dna = [NSMutableArray arrayWithCapacity:100];
 		chars = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+		dna = [NSMutableArray arrayWithCapacity:100];
 		for (int i = 0; i < 100; i++) {
 			[dna insertObject:[self getRandomChar] atIndex:i];
 		}
@@ -45,11 +50,11 @@
 }
 
 - (void)mutateAtPosition:(int)index {
-	NSString *current_char = [self charAtPosition:index];
-	NSString *new_char = [self getRandomChar];
-	while (current_char == new_char) {
-		new_char = [self getRandomChar];
-	}
+	// отфильтровать возможные символы для мутации, исключив из них текущий символ
+	// промежуточная переменная possible_chars не нужна, но так легче читать
+	NSArray *possible_chars = [chars filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF <> %@", [self charAtPosition:index]]];
+	// теперь из них - новый символ
+	NSString *new_char = [self getRandomCharFromArray:possible_chars];
 	[dna replaceObjectAtIndex:index withObject:new_char];
 }
 
