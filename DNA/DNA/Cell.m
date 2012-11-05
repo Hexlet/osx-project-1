@@ -11,7 +11,7 @@
         nucleotides = @"ATGC";
         _DNA = [[NSMutableArray alloc] initWithCapacity:DNACapacity];
         
-        for (int i = 0; i <= DNACapacity; i++) {
+        for (int i = 0; i < DNACapacity; i++) {
             [_DNA addObject:[self getRandomNucleotide]];
         }
     }
@@ -33,6 +33,16 @@
 -(NSString*) getRandomNucleotide {
     int nucleotide_position = arc4random() % [nucleotides length];
     return [NSString stringWithFormat:@"%C", [nucleotides characterAtIndex:nucleotide_position]];
+}
+
+-(void) print {
+    NSMutableString *str = [NSMutableString string];
+    
+    for (int i = 0; i < [_DNA count]; i++) {
+        [str appendString:[_DNA objectAtIndex: i]];
+    }
+    
+    NSLog(@"%@", str);
 }
 
 @end

@@ -20,7 +20,7 @@
     NSLog(@"Mutating for %i percents", percent);
     // В нашем конкретном случае можно было бы и не вычислять проценты, у нас
     // как раз 100 элементов.
-    int count = round([self.DNA count] / 100 * percent);
+    int count = round((float)([self.DNA count] / 100.0) * percent);
     
     // Массив с индексами измененных элементов ДНК
     NSMutableArray *changed = [[NSMutableArray alloc] init];

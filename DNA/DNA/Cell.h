@@ -8,5 +8,6 @@
 
 -(int) hammingDistance:(Cell*) cell;
 -(NSString*) getRandomNucleotide;
+-(void) print;
 
 @end
