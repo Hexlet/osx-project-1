@@ -1,0 +1,124 @@
+TProject1
+v7
+r0
+t373395611.419887
+cCheck dependencies
+cProcessPCH /var/folders/Mf/MfkOk6BUFM4yewLbCH4rRE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Project1_Prefix-grljrdmudodywjfsiqoimtwymery/Project1_Prefix.pch.gch Project1_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Project1.o /Users/kest/Documents/Project1/Project1.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Cell.o /Users/kest/Documents/Project1/Cell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/kest/Documents/Project1/build/Debug/Project1 normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004ABBF0FD00000000000000EE
+t1253830909
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004AB9AA2700000000000013E6
+t1253681703
+s5094
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004AD8432D0000000000B37440
+t1255686957
+s11760704
+
+N/Users/kest/Documents/Project1/Cell.h
+c00000000509158C900000000000000ED
+t1351702729
+s237
+i<Foundation/Foundation.h>
+
+N/Users/kest/Documents/Project1/Cell.m
+c000000005091585C000000000000028A
+t1351702620
+s650
+i"Cell.h"
+
+N/Users/kest/Documents/Project1/Project1.m
+c00000000509159130000000000000249
+t1351702803
+s585
+i<Foundation/Foundation.h>
+i"Cell.h"
+
+N/Users/kest/Documents/Project1/Project1_Prefix.pch
+c0000000050913C33000000000000009E
+t1351695411
+s158
+i<Foundation/Foundation.h>
+
+N/Users/kest/Documents/Project1/build/Debug/Project1
+t1351702803
+s10464
+
+N/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Cell.o
+t1351702729
+s9832
+
+N/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Project1.LinkFileList
+c0000000050914ACF00000000000000D0
+t1351699151
+s208
+
+N/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Project1.o
+t1351702803
+s7152
+
+N/var/folders/Mf/MfkOk6BUFM4yewLbCH4rRE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Project1_Prefix-grljrdmudodywjfsiqoimtwymery/Project1_Prefix.pch.gch
+t1351699153
+s41405200
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies373395611#373395611#0(0"0(0#1#0"4324412872#0"0#
+
+CCompileC build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Cell.o /Users/kest/Documents/Project1/Cell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s373395529.789371
+e373395529.986986
+r1
+xCompileC
+xbuild/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Cell.o
+x/Users/kest/Documents/Project1/Cell.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/kest/Documents/Project1/Cell.m373395529#373395530#0(0"0(0#0#37"/Users/kest/Documents/Project1/Cell.m4324412872#1382"    cd /Users/kest/Documents/Project1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-generated-files.hmap -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-own-target-headers.hmap -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-all-target-headers.hmap -iquote /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-project-headers.hmap -F/Users/kest/Documents/Project1/build/Debug -I/Users/kest/Documents/Project1/build/Debug/include -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/DerivedSources/x86_64 -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/DerivedSources -include /var/folders/Mf/MfkOk6BUFM4yewLbCH4rRE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Project1_Prefix-grljrdmudodywjfsiqoimtwymery/Project1_Prefix.pch -c /Users/kest/Documents/Project1/Cell.m -o /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Cell.o0#
+
+CCompileC build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Project1.o /Users/kest/Documents/Project1/Project1.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s373395603.113164
+e373395603.467018
+r1
+xCompileC
+xbuild/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Project1.o
+x/Users/kest/Documents/Project1/Project1.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@49"Compile /Users/kest/Documents/Project1/Project1.m373395603#373395603#0(0"0(0#0#41"/Users/kest/Documents/Project1/Project1.m4324412872#1390"    cd /Users/kest/Documents/Project1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-generated-files.hmap -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-own-target-headers.hmap -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-all-target-headers.hmap -iquote /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-project-headers.hmap -F/Users/kest/Documents/Project1/build/Debug -I/Users/kest/Documents/Project1/build/Debug/include -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/DerivedSources/x86_64 -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/DerivedSources -include /var/folders/Mf/MfkOk6BUFM4yewLbCH4rRE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Project1_Prefix-grljrdmudodywjfsiqoimtwymery/Project1_Prefix.pch -c /Users/kest/Documents/Project1/Project1.m -o /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Project1.o0#
+
+CLd /Users/kest/Documents/Project1/build/Debug/Project1 normal x86_64
+s373395603.467125
+e373395603.491892
+r1
+xLd
+x/Users/kest/Documents/Project1/build/Debug/Project1
+xnormal
+xx86_64
+lSLF07#2@56"Link /Users/kest/Documents/Project1/build/Debug/Project1373395603#373395603#0(0"0(0#0#0"4324412872#484"    cd /Users/kest/Documents/Project1    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/kest/Documents/Project1/build/Debug -F/Users/kest/Documents/Project1/build/Debug -filelist /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Objects-normal/x86_64/Project1.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -o /Users/kest/Documents/Project1/build/Debug/Project10#
+
+CProcessPCH /var/folders/Mf/MfkOk6BUFM4yewLbCH4rRE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Project1_Prefix-grljrdmudodywjfsiqoimtwymery/Project1_Prefix.pch.gch Project1_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s373391951.039991
+e373391954.027803
+r1
+xProcessPCH
+x/var/folders/Mf/MfkOk6BUFM4yewLbCH4rRE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Project1_Prefix-grljrdmudodywjfsiqoimtwymery/Project1_Prefix.pch.gch
+xProject1_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile Project1_Prefix.pch373391951#373391954#0(0"0(0#0#50"/Users/kest/Documents/Project1/Project1_Prefix.pch8237135891347629056#1295"    cd /Users/kest/Documents/Project1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-generated-files.hmap -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-own-target-headers.hmap -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-all-target-headers.hmap -iquote /Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/Project1-project-headers.hmap -F/Users/kest/Documents/Project1/build/Debug -I/Users/kest/Documents/Project1/build/Debug/include -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/DerivedSources/x86_64 -I/Users/kest/Documents/Project1/build/Project1.build/Debug/Project1.build/DerivedSources -c /Users/kest/Documents/Project1/Project1_Prefix.pch -o /var/folders/Mf/MfkOk6BUFM4yewLbCH4rRE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Project1_Prefix-grljrdmudodywjfsiqoimtwymery/Project1_Prefix.pch.gch0#
+

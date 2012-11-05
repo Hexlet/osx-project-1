@@ -1,0 +1,6 @@
+/Users/kest/Documents/Project1/Cell.m: In function '-[Cell init]':
+/Users/kest/Documents/Project1/Cell.m:17: error: 'DNA' undeclared (first use in this function)
+/Users/kest/Documents/Project1/Cell.m:17: error: (Each undeclared identifier is reported only once
+/Users/kest/Documents/Project1/Cell.m:17: error: for each function it appears in.)
+/Users/kest/Documents/Project1/Cell.m: In function '-[Cell print]':
+/Users/kest/Documents/Project1/Cell.m:42: error: 'DNA' undeclared (first use in this function)
