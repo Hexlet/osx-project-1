@@ -10,15 +10,14 @@
 #import "Random.h"
 
 @implementation DNAGenerator
-{
-    NSArray *allowedSymbols;
-}
 
-- (id) init {
-    if (self = [super init]) {
-        allowedSymbols = @[@'A', @'T', @'G', @'C'];
+static NSArray * _allowedSymbols;
+
++ (NSArray *) allowedSymbols {
+    if (!_allowedSymbols) {
+        _allowedSymbols = @[@'A', @'T', @'G', @'C'];
     }
-    return self;
+    return _allowedSymbols;
 }
 
 - (NSMutableArray *) createDNAWithCapacity:(NSUInteger)capacity {
@@ -30,14 +29,14 @@
 }
 
 - (NSNumber *) randomDNASymbolExcept:(NSNumber *)exceptSymbol {
-    NSUInteger exceptIndex = [allowedSymbols indexOfObject:exceptSymbol];
-    NSUInteger index = [Random nextNumberExcept:exceptIndex withUpperBound:allowedSymbols.count];
-    return allowedSymbols[index];
+    NSUInteger exceptIndex = [[DNAGenerator allowedSymbols] indexOfObject:exceptSymbol];
+    NSUInteger index = [Random nextNumberExcept:exceptIndex withUpperBound:[DNAGenerator allowedSymbols].count];
+    return [DNAGenerator allowedSymbols][index];
 }
 
 - (NSNumber *) randomDNASymbol {
-    NSUInteger index = [Random nextNumber:allowedSymbols.count];
-    return allowedSymbols[index];
+    NSUInteger index = [Random nextNumber:[DNAGenerator allowedSymbols].count];
+    return [DNAGenerator allowedSymbols][index];
 }
 
 @end
