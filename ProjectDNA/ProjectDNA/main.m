@@ -22,7 +22,7 @@
     // заменять одну ячейку можно максимум один раз.
     while ([uniqNumbers count] < percent){
         int idx = arc4random() % 100; // случайное число
-        
+
         if (![uniqNumbers containsObject:[NSNumber numberWithInteger:idx]]){  // если uniqNumbers содержит случайное число...
             [uniqNumbers addObject:[NSNumber numberWithInteger:idx]];         // добавить число в массив
             [DNA setObject:[self getRandomChar] atIndexedSubscript:idx];      // заменить значение ячейки в массиве DNA
