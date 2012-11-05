@@ -18,30 +18,30 @@
         return;
     }
     
-    uint indexToReplace, nucleotideIndex;
+    uint indexToReplace, nucleotideIndex, indexValue;
     uint nucleotidesToReplace = (uint)(percent * 0.01 * self.dnaLength);
     
     NSMutableArray *replacedIndexes = [NSMutableArray arrayWithCapacity:nucleotidesToReplace];
-
+    
+    //заполняем массив доступными индексами
+    for (int i = 0; i < self.dnaLength; i++){
+        [replacedIndexes addObject:[NSNumber numberWithUnsignedInt:i]];
+    }
+    
     while (nucleotidesToReplace) {
-        
-        indexToReplace = arc4random() % self.dnaLength; //индекс для замены
-        
-        //проверяем не обработали ли мы уже этот индекс
-        if([replacedIndexes containsObject:[NSNumber numberWithUnsignedInt:indexToReplace]]) continue;
-        
-        //если нет, добавляем индекс в массив с отработанными индексами
-        [replacedIndexes addObject:[NSNumber numberWithUnsignedInt:indexToReplace]];
+        indexToReplace = arc4random() % [replacedIndexes count]; //индекс для замены
+        indexValue = [[replacedIndexes objectAtIndex:indexToReplace] unsignedIntValue];
         
         do { //исключаем замену шила на мыло)
             nucleotideIndex = arc4random() % 4;
-        } while ([[self.dna objectAtIndex:indexToReplace] isEqual:[self.nucleotides objectAtIndex:nucleotideIndex]]);
+        } while ([[self.dna objectAtIndex:indexValue] isEqual:[self.nucleotides objectAtIndex:nucleotideIndex]]);
         
         //заменяем нуклеотид по индексу indexToReplace
-        [self.dna replaceObjectAtIndex:indexToReplace withObject:[self.nucleotides objectAtIndex:nucleotideIndex]];
+        [self.dna replaceObjectAtIndex:indexValue withObject:[self.nucleotides objectAtIndex:nucleotideIndex]];
+        
+        [replacedIndexes removeObjectAtIndex:indexToReplace]; //изымаем этот индекс из списка доступных
         
         nucleotidesToReplace--;
-        
     }
         
 }
