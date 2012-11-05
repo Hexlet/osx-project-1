@@ -60,7 +60,7 @@ int main(int argc, const char * argv[])
         Cell *cell2 = [[Cell alloc] init];
         [cell1 printDNA];
         [cell2 printDNA];
-        NSLog(@"Hamming distance before mutating: %d", [cell1 hammingDistance:[cell2 DNA]]);
+        NSLog(@"Hamming distance before mutating: %d", [cell1 hammingDistance:cell2]);
         
         // Мутация
         
@@ -68,7 +68,7 @@ int main(int argc, const char * argv[])
         [cell1 printDNA];
         [cell2 mutate:60]; // изменить 60% элементов
         [cell2 printDNA];
-        NSLog(@"Hamming distance after mutating: %d", [cell1 hammingDistance:[cell2 DNA]]);
+        NSLog(@"Hamming distance after mutating: %d", [cell1 hammingDistance:cell2]);
     }
     return 0;
 }

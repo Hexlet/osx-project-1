@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSArray *DNAs; // A, T, G, C
 @property int DNALength; // Длина массива ДНК (100)
 
-- (int)hammingDistance:(NSMutableArray *)DNAArray;
+- (int)hammingDistance:(Cell *)cell;
 - (void)printDNA;
 
 @end

@@ -26,11 +26,11 @@
     return self;
 }
 
-- (int)hammingDistance:(NSMutableArray *)DNAArray
+- (int)hammingDistance:(Cell *)cell
 {
     int hammingDistanceCount = 0;
     for (int i = 0; i < [_DNA count]; i++) {
-        if (![[_DNA objectAtIndex:i] isEqual:[DNAArray objectAtIndex:i]])
+        if (![[_DNA objectAtIndex:i] isEqual:[cell.DNA objectAtIndex:i]])
         {
             hammingDistanceCount++;
         }
