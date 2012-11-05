@@ -15,23 +15,21 @@
 
 @implementation Cell (mutat2or)
 -(void) mutate: (int)nucleotids{
-    if(nucleotids >100) {
-//      Если на вход пришло значение больше, чем 100%, то примем, что заменить необходимо все нуклеотиды
-        nucleotids = 100;
-    }
-    if (nucleotids <= 0)
+    if (nucleotids < 0  ||  nucleotids > 100)
+        @throw [NSException exceptionWithName:NSRangeException reason:@"Percentage value should be between 0 and 100." userInfo:nil];
+
+    if (nucleotids == 0)
     {
-//      Если указано значение ноль или меньше, то заменять ничего не нужно. Завершаем мутацию без изменений в клетке
+//      Если указано значение ноль, то заменять ничего не нужно. Завершаем мутацию без изменений в клетке
         return;
     }
     
 //  Определяем целое количество нуклеотидов, которые необходимо заменить
     int nucleotidsCount = ([self cellLength] * nucleotids) / 100;
-    NSLog(@"Nucleotids to be mutated: %i.", nucleotidsCount);
+//    NSLog(@"Nucleotids to be mutated: %i.", nucleotidsCount);
 
     int k;
     NSNumber *position;
-    NSString *newNucleotid;
     NSMutableArray *mutableNucleotids = [NSMutableArray arrayWithCapacity:nucleotidsCount], *newDNA = [NSMutableArray arrayWithArray:[self DNA]];
 //  Из интервала [0; cellLength - 1] выбираем nucleotidsCount целых чисел, которые будут обозначать позиции нуклеотидов, которые необходимо мутировать
     for (int j = 0; j < nucleotidsCount;)
@@ -42,27 +40,10 @@
 //      Если такого значениея в массиве еще нет, то
         if(![mutableNucleotids containsObject:position])
         {
-//          добавляем это значение в массив, чтобы более не повторяться
+//          добавляем это значение в массив, чтобы более в следующих итерациях уже не менять это позицию
             [mutableNucleotids addObject:position];
-//          и мутируем соответствующий нуклеотид
-            switch (arc4random() % 4) {
-                case 0:
-                    newNucleotid = @"A";
-                    break;
-                    
-                case 1:
-                    newNucleotid = @"T";
-                    break;
-                    
-                case 2:
-                    newNucleotid = @"G";
-                    break;
-                    
-                default:
-                    newNucleotid = @"C";
-                    break;
-            }
-            [newDNA replaceObjectAtIndex:k withObject:newNucleotid];
+//          и заменяем соответствующий нуклеотид
+            [newDNA replaceObjectAtIndex:k withObject:[charSet objectAtIndex:(([charSet indexOfObject:[[self DNA] objectAtIndex:k]] + 1 + arc4random()%3)%4)]];
             j++;
         }
     }
@@ -89,7 +70,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming distance before mutation is %i.", i);
         
         [cell1 mutate:60];
-        [cell2 mutate:26];
+        [cell2 mutate:76];
         
 //        [cell1 printDNA];
 //        [cell2 printDNA];

@@ -19,29 +19,12 @@
 // определяем размер массива DNA в 100 элементов и
         _cellLength = 100;
         _DNA = [NSMutableArray arrayWithCapacity:_cellLength];
-
+       
 // заполняем его случайным образом символами A, T, G и C
-        int symbol;
+        charSet = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
         for (int i = 0; i < _cellLength; i++)
         {
-            symbol = arc4random() % 4;
-            switch (symbol) {
-                case 0:
-                    [_DNA addObject:@"A"];
-                    break;
-
-                case 1:
-                    [_DNA addObject:@"T"];
-                break;
-                    
-                case 2:
-                    [_DNA addObject:@"G"];
-                break;
-
-                default:
-                    [_DNA addObject:@"C"];
-                    break;
-            }
+            [_DNA addObject:[charSet objectAtIndex:(arc4random() % 4)]];
         }
     }  
     return self;
@@ -59,18 +42,13 @@
         if ([[_DNA objectAtIndex:i] isEqualToString:[m objectAtIndex:i]]) {
             count--;
         }
-//        NSLog(@"i = %i", i);
-//        NSLog(@"    %@", [_DNA objectAtIndex:i]);
-//        NSLog(@"    %@", [m objectAtIndex:i]);
-//        NSLog(@"    %i", count);
     }
     return count;
 }
 
-
-//-(void) printDNA{
-//    NSLog(@"%@", _DNA);
-//}
+-(void) printDNA{
+    NSLog(@"Cell is %@", [_DNA componentsJoinedByString:@""]);
+}
 
 @end
 
