@@ -14,14 +14,16 @@
     self = [super init];
     _dna = [[NSMutableArray alloc] init];
     for ( int i = 0; i < 100; i++ ) {
-        [_dna addObject:[NSNumber numberWithInt:(arc4random()%4)]];
+        [_dna addObject:[Cell getRandom]];
     }
     return self;
 }
 -(void)print {
-    for(NSObject *item in _dna ) {
-        NSLog(@"%@", item);
+    NSMutableString *res = [[NSMutableString alloc] init];
+    for(NSNumber *item in _dna ) {
+        [res appendFormat:@"%c", [item charValue]];
     }
+    NSLog(@"%@", res);
 }
 
 -(int)hammingDistance:(Cell *)secondCell{
@@ -32,5 +34,10 @@
         }
     }
     return diff;
+}
++(NSNumber*)getRandom {
+    char table[] = "ATGC?";
+    int pos = arc4random()%4;
+    return [NSNumber numberWithChar:table[pos]];
 }
 @end

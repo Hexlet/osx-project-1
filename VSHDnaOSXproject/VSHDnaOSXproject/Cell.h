@@ -12,4 +12,5 @@
 @property NSMutableArray *dna;
 -(void)print;
 -(int)hammingDistance:(Cell*)secondCell;
++(NSNumber*)getRandom;
 @end
