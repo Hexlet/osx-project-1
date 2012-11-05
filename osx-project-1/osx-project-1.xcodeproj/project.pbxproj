@@ -17,6 +17,9 @@
 		69148818164589C30029FA0E /* DNAGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69148817164589C30029FA0E /* DNAGenerator.m */; };
 		6914881916458BB50029FA0E /* DNAGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69148817164589C30029FA0E /* DNAGenerator.m */; };
 		6914881A16459B8E0029FA0E /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914881416457E640029FA0E /* Cell+Mutator.m */; };
+		6956A3DA16484A5E0017A5C3 /* NSMutableArray+Range.m in Sources */ = {isa = PBXBuildFile; fileRef = 6956A3D916484A5E0017A5C3 /* NSMutableArray+Range.m */; };
+		6956A3DE16484B210017A5C3 /* NSMutableArrayRangeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6956A3DD16484B210017A5C3 /* NSMutableArrayRangeTest.m */; };
+		6956A3DF16484B2C0017A5C3 /* NSMutableArray+Range.m in Sources */ = {isa = PBXBuildFile; fileRef = 6956A3D916484A5E0017A5C3 /* NSMutableArray+Range.m */; };
 		699893A716454954006F5DA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699893A616454954006F5DA3 /* Foundation.framework */; };
 		699893AA16454954006F5DA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 699893A916454954006F5DA3 /* main.m */; };
 		699893AE16454954006F5DA3 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699893AD16454954006F5DA3 /* osx_project_1.1 */; };
@@ -58,6 +61,10 @@
 		6914881416457E640029FA0E /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 		69148816164589C30029FA0E /* DNAGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAGenerator.h; sourceTree = "<group>"; };
 		69148817164589C30029FA0E /* DNAGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNAGenerator.m; sourceTree = "<group>"; };
+		6956A3D816484A5E0017A5C3 /* NSMutableArray+Range.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Range.h"; sourceTree = "<group>"; };
+		6956A3D916484A5E0017A5C3 /* NSMutableArray+Range.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Range.m"; sourceTree = "<group>"; };
+		6956A3DC16484B210017A5C3 /* NSMutableArrayRangeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArrayRangeTest.h; sourceTree = "<group>"; };
+		6956A3DD16484B210017A5C3 /* NSMutableArrayRangeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArrayRangeTest.m; sourceTree = "<group>"; };
 		699893A216454954006F5DA3 /* osx-project-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "osx-project-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		699893A616454954006F5DA3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		699893A916454954006F5DA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -139,6 +146,8 @@
 				699893D616454F7D006F5DA3 /* Cell.m */,
 				6914881316457E640029FA0E /* Cell+Mutator.h */,
 				6914881416457E640029FA0E /* Cell+Mutator.m */,
+				6956A3D816484A5E0017A5C3 /* NSMutableArray+Range.h */,
+				6956A3D916484A5E0017A5C3 /* NSMutableArray+Range.m */,
 				69148816164589C30029FA0E /* DNAGenerator.h */,
 				69148817164589C30029FA0E /* DNAGenerator.m */,
 				6914880C164572030029FA0E /* Random.h */,
@@ -176,6 +185,8 @@
 				69D99C1A1646CF3A009DB673 /* DNAGeneratorTest.h */,
 				69D99C1B1646CF3A009DB673 /* DNAGeneratorTest.m */,
 				6914880F164572110029FA0E /* RandomTest.h */,
+				6956A3DC16484B210017A5C3 /* NSMutableArrayRangeTest.h */,
+				6956A3DD16484B210017A5C3 /* NSMutableArrayRangeTest.m */,
 				69148810164572110029FA0E /* RandomTest.m */,
 			);
 			path = "osx-project-1_tests";
@@ -294,6 +305,7 @@
 				6914880E164572030029FA0E /* Random.m in Sources */,
 				6914881516457E640029FA0E /* Cell+Mutator.m in Sources */,
 				69148818164589C30029FA0E /* DNAGenerator.m in Sources */,
+				6956A3DA16484A5E0017A5C3 /* NSMutableArray+Range.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,13 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6914881916458BB50029FA0E /* DNAGenerator.m in Sources */,
 				6914880B164557950029FA0E /* Cell.m in Sources */,
 				6914881A16459B8E0029FA0E /* Cell+Mutator.m in Sources */,
 				69148812164573200029FA0E /* Random.m in Sources */,
+				6914881916458BB50029FA0E /* DNAGenerator.m in Sources */,
+				6956A3DF16484B2C0017A5C3 /* NSMutableArray+Range.m in Sources */,
 				699893DA16454FA0006F5DA3 /* CellTest.m in Sources */,
 				69148811164572110029FA0E /* RandomTest.m in Sources */,
 				69D99C1C1646CF3A009DB673 /* DNAGeneratorTest.m in Sources */,
+				6956A3DE16484B210017A5C3 /* NSMutableArrayRangeTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "Random.h"
+#import "NSMutableArray+Range.h"
 
 @implementation Random
 
@@ -27,7 +28,7 @@
 }
 
 + (NSIndexSet *) nextSequenceOfLength:(NSUInteger)length withUpperBound:(NSUInteger)upperBound {
-    NSMutableArray *possibleNumbers =  [self arrayWithRangeOfLength:upperBound];
+    NSMutableArray *possibleNumbers =  [NSMutableArray arrayWithRange:NSMakeRange(0, upperBound)];
     NSMutableIndexSet *result = [NSMutableIndexSet indexSet];
     for (int i = 0; i < length; i++) {
         NSUInteger numbersLeft = possibleNumbers.count;
@@ -37,14 +38,6 @@
         [possibleNumbers removeObjectAtIndex:index];
     }
     return result;
-}
-
-+ (NSMutableArray *) arrayWithRangeOfLength:(NSUInteger)length {
-    NSMutableArray *numbers = [NSMutableArray arrayWithCapacity:length];
-    for (int n = 0; n < length; n++) {
-        numbers[n] = @(n);
-    }
-    return numbers;
 }
 
 @end
