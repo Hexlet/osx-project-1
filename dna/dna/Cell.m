@@ -10,6 +10,11 @@
 
 @implementation Cell
 
+-(id)init
+{
+    return [[Cell alloc] initWithGenes:100];
+}
+
 -(id)initWithGenes:(int)amountOfGenes
 {
     //dna could be of arbitrary length
