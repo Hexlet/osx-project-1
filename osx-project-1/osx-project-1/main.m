@@ -21,7 +21,7 @@
     int X = [self.DNA count]*percent/100;
     
     while ([positions count]<X) {
-        [positions addObject:[NSNumber numberWithInt:random() % 100]];
+        [positions addObject:[NSNumber numberWithInt:arc4random() % [self.DNA count]]];
     }
     
     for (int i=0; i<X; i++) {
