@@ -21,8 +21,8 @@ int main(int argc, const char * argv[])
         NSLog(@"DNA#2-[%@]", [cell2 toString]);
         NSLog(@"Hamming Distance - %d", [cell1 hammingDistance:cell2]);
         
-        [cell1 mutate:70];
-        [cell2 mutate:30];
+        [cell1 mutate:[Random randomInteger:100]];
+        [cell2 mutate:[Random randomInteger:100]];
         
         NSLog(@"AFTER MUTATION");
         NSLog(@"DNA#1-[%@]", [cell1 toString]);
