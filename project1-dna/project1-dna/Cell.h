@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#define CELL_SIZE 100
 
 @interface NSMutableArray (Random)
 
@@ -22,19 +22,12 @@
 
 @end
 
-@interface Cell : NSObject {
-    NSMutableArray *symbols;
-}
-@property (readonly) NSMutableArray *DNA;
+@interface Cell : NSObject
+
+@property (readonly) NSMutableArray *DNA, *symbols;
 
 - (id)init;
 - (int)hammingDistanceTo: (Cell*)aCell;
-- (NSString *)description;
 
 @end
 
-@interface Cell (Mutator)
-
-- (void) mutate: (int)percentage;
-
-@end
