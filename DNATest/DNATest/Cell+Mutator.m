@@ -63,14 +63,10 @@
 }
 - (void) replaceKeyAtIndex: (int) idx
 {
-    NSString *elem = [self.DNA objectAtIndex:idx];
-    NSMutableArray *newValues = [Cell.NUCLEOTIDES mutableCopy];
-    [newValues removeObject:elem];
-    NSString *newElem = [newValues objectAtIndex:[self randomIdx:[newValues count]]];
-    [self.DNA setObject:newElem atIndexedSubscript:idx];
-}
-- (int) randomIdx:(NSUInteger) count
-{
-    return arc4random_uniform((u_int32_t) count);
+    NSArray *nucleotides = Cell.NUCLEOTIDES;
+    NSUInteger nucleotideCount = [nucleotides count];
+    NSUInteger curNucleotideIndex = [nucleotides indexOfObject:[self.DNA objectAtIndex:idx]];
+    NSUInteger newNucleotideIndex = (curNucleotideIndex + 1 + arc4random_uniform((u_int32_t)(nucleotideCount - 1))) % nucleotideCount;
+    [self.DNA replaceObjectAtIndex:idx withObject:[nucleotides objectAtIndex:newNucleotideIndex]];
 }
 @end
