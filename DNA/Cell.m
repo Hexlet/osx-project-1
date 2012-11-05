@@ -12,12 +12,13 @@
 
 - (id) init {
     self = [super init];
-    DNAItemValueOptions = @[@"A", @"T", @"G", @"C"];
-    DNALength = 100;
+    if (!self) return self;
+    
+    nucleotides = NUCLEOTIDES;
     
     // Initializing our DNA
-    self.DNA = [[NSMutableArray alloc] initWithCapacity:DNALength];
-    for (int i = 0; i < DNALength; i++)
+    self.DNA = [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
+    for (int i = 0; i < DNA_LENGTH; i++)
         [self.DNA addObject: [self getRandomDNAItemValue]];
         // Replace previous line with this to debug mutation:
         // [self.DNA addObject: @"A"];
@@ -26,15 +27,15 @@
 }
 
 - (NSString *) getRandomDNAItemValue {
-    return [DNAItemValueOptions
-            objectAtIndex: (arc4random() % [DNAItemValueOptions count])];
+    return [nucleotides
+            objectAtIndex: (arc4random() % [nucleotides count])];
 }
 
 - (NSString *) getRandomDNAItemValueExcept: (NSString *)itemValue {
-    NSMutableArray *opts = [NSMutableArray arrayWithArray:DNAItemValueOptions];
+    NSMutableArray *opts = [NSMutableArray arrayWithArray:nucleotides];
     [opts removeObject: itemValue];
     return [opts
-            objectAtIndex: (arc4random() % ([DNAItemValueOptions count] - 1))];
+            objectAtIndex: (arc4random() % ([nucleotides count] - 1))];
 }
 
 // For debugging purposes, displays DNA representation in log.
@@ -46,7 +47,7 @@
 
 - (int) hammingDistance: (Cell *)otherCell {
     int result = 0;
-    for (int i = 0; i < DNALength; i++)
+    for (int i = 0; i < DNA_LENGTH; i++)
         if([self.DNA objectAtIndex:i] != [otherCell.DNA objectAtIndex:i])
             result +=1;
     return result;

@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#define DNA_LENGTH  100
+#define NUCLEOTIDES @[@"A", @"T", @"G", @"C"]
+
 @interface Cell : NSObject {
-    NSArray *DNAItemValueOptions;
-    int DNALength;
+    NSArray * nucleotides;
 }
 
 @property NSMutableArray *DNA;
