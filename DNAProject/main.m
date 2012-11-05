@@ -22,6 +22,7 @@ int main(int argc, const char * argv[])
         NSLog(@"#1 = %i", [c1 hammingDistance:c2]);
 
         [c1 mutate:10];
+        [c2 mutate:10];
         
         NSLog(@"#2 = %i", [c1 hammingDistance:c2]);
     }
