@@ -20,27 +20,10 @@
     self = [super init];
     
     if (self){
-        int curr_cell_type;
-        NSString *curr_cell_name = [[NSString alloc] init];
+        
         for (int i = 0; i < 100; i++){
             
-            curr_cell_type = arc4random() % 4;
-            
-            switch (curr_cell_type) {
-                case 0:
-                    curr_cell_name = @"A";
-                    break;
-                case 1:
-                    curr_cell_name = @"T";
-                    break;
-                case 2:
-                    curr_cell_name = @"G";
-                    break;
-                default:
-                    curr_cell_name = @"C";
-                    break;
-            }
-            [dna addObject:curr_cell_name];
+            [dna addObject:[Cell getRandomCellType]];
             
         }
             }
@@ -63,6 +46,35 @@
         i++;
     }
     return difference;
+}
+
+
++(NSString *)getRandomCellType{
+    //Random cell initialization
+    
+    int curr_cell_type;
+    NSString *curr_cell_name = [[NSString alloc] init];
+    
+    curr_cell_type = arc4random() % 4;
+    
+    switch (curr_cell_type) {
+        case 0:
+            curr_cell_name = @"A";
+            break;
+        case 1:
+            curr_cell_name = @"T";
+            break;
+        case 2:
+            curr_cell_name = @"G";
+            break;
+        default:
+            curr_cell_name = @"C";
+            break;
+    }
+    
+    return curr_cell_name;
+
+    
 }
 
 @end

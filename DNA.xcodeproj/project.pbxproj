@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA9E5FA31647E06A00A36829 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9E5FA21647E06A00A36829 /* Cell+Mutator.m */; };
 		DA9ED2F71641438F00348B49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9ED2F61641438F00348B49 /* Foundation.framework */; };
 		DA9ED2FA1641438F00348B49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9ED2F91641438F00348B49 /* main.m */; };
 		DA9ED2FE1641438F00348B49 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA9ED2FD1641438F00348B49 /* DNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA9E5FA11647E06A00A36829 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+Mutator.h"; path = "../Cell+Mutator.h"; sourceTree = "<group>"; };
+		DA9E5FA21647E06A00A36829 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+Mutator.m"; path = "../Cell+Mutator.m"; sourceTree = "<group>"; };
 		DA9ED2F21641438F00348B49 /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9ED2F61641438F00348B49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DA9ED2F91641438F00348B49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 		DA9ED2F81641438F00348B49 /* DNA */ = {
 			isa = PBXGroup;
 			children = (
+				DA9E5FA11647E06A00A36829 /* Cell+Mutator.h */,
+				DA9E5FA21647E06A00A36829 /* Cell+Mutator.m */,
 				DA9ED2F91641438F00348B49 /* main.m */,
 				DA9ED2FD1641438F00348B49 /* DNA.1 */,
 				DA9ED2FB1641438F00348B49 /* Supporting Files */,
@@ -146,6 +151,7 @@
 			files = (
 				DA9ED2FA1641438F00348B49 /* main.m in Sources */,
 				DA9ED306164143E200348B49 /* Cell.m in Sources */,
+				DA9E5FA31647E06A00A36829 /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				DA9ED3031641438F00348B49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

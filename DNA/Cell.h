@@ -16,5 +16,6 @@
 
 - (NSMutableArray *) getDna;
 - (int) hammingDistance: (Cell *) f;
++ (NSString *)getRandomCellType;
 
 @end
