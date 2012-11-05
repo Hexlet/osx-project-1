@@ -21,8 +21,8 @@ int main(int argc, const char * argv[])
         int result = [myCell1 hammingDistance:myCell2];
         NSLog(@"%d",result);
     
-        [myCell1 mutate:30];
-        [myCell2 mutate:32];
+        [myCell1 mutate:3];
+        [myCell2 mutate:72];
         
         result = [myCell1 hammingDistance:myCell2];
         NSLog(@"%d",result);
