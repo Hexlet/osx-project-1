@@ -46,14 +46,14 @@
     
     for (int i = 0; i < [self.DNA count]; i++)
     {   
-        if ([self.DNA objectAtIndex:i] != [cellToCompareWith.DNA objectAtIndex:i])
+        if (![[self.DNA objectAtIndex:i] isEqualTo:[cellToCompareWith.DNA objectAtIndex:i]])
         {
             differenceCounter++;
             //NSLog(@"%@ %@", [self.DNA objectAtIndex:i], [cellToCompareWith.DNA objectAtIndex:i]);
         }
     
         //---Test for equality---
-        if ([self.DNA objectAtIndex:i] == [cellToCompareWith.DNA objectAtIndex:i])
+        if ([[self.DNA objectAtIndex:i] isEqualTo:[cellToCompareWith.DNA objectAtIndex:i]])
         {
             //NSLog(@"%@ %@", [self.DNA objectAtIndex:i], [cellToCompareWith.DNA objectAtIndex:i]);
         }
