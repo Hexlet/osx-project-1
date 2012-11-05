@@ -17,8 +17,8 @@ int main(int argc, const char * argv[])
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
         NSLog(@"Hamming Distance Between DNAs is %i",[cell1 hammingDistance:cell2]);
-        [cell1 mutate:5];
-        [cell2 mutate:100];
+        [cell1 mutate:10];
+        [cell2 mutate:50];
         NSLog(@"Hamming Distance Between Mutated DNAs is %i",[cell1 hammingDistance:cell2]);
     }
     return 0;

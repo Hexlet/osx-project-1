@@ -12,23 +12,41 @@
 @implementation Cell (mutator)
 -(void) mutate:(int)viruses {
     
-    NSMutableArray *viruseBase = [[NSMutableArray alloc] init];
     
-    //fill viruseBase
+    NSMutableArray *randomBase = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < [[self dna] count]; i++) {
+        NSNumber *number = [[NSNumber alloc] initWithInteger:i];
+        [randomBase addObject:number];
+    }
+    
+    [randomBase shuffle];
+    
     for (int i = 0; i < viruses; i++) {
-        NSNumber *virusNumber = [[NSNumber alloc] initWithInteger:i];
-        [viruseBase addObject:virusNumber];
+        
+        int randomBaseNumber = [[randomBase objectAtIndex:i] intValue];
+        id randomBaseObject = [[self dna] objectAtIndex:randomBaseNumber];
+        
+        int randomNucleoNumber = arc4random() % [[self nucleobase] count];
+        id randomNucleoObject = [[self nucleobase] objectAtIndex:randomNucleoNumber];
+        
+        if ([randomBaseObject isEqual:randomNucleoObject]) {
+            NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:[self nucleobase]];
+            [temp removeObject:randomBaseObject];
+            [
+             [self dna]
+                replaceObjectAtIndex:randomBaseNumber
+                withObject:[temp objectAtIndex:arc4random() % [temp count]]
+             ];
+        } else {
+            [
+             [self dna]
+                replaceObjectAtIndex:randomBaseNumber
+                withObject:randomNucleoObject
+             ];
+        }
+
     }
-    //shuffle viruseBase
-    [viruseBase shuffle];
-    
-    for (int i = 0; i < [viruseBase count]; i++) {
-        [
-         [self dna]
-         replaceObjectAtIndex:[[viruseBase objectAtIndex:i] intValue]
-         withObject:[[self nucleobase] objectAtIndex:arc4random() % [[self nucleobase] count]]
-         ];
-    }
-    
+//    NSLog(@"self dna %@",[self dna]);
 }
 @end

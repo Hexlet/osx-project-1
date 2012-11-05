@@ -10,8 +10,8 @@
 
 @interface Cell : NSObject
 
-@property (nonatomic,retain) NSMutableArray *dna;
-@property (nonatomic,retain) NSArray *nucleobase;
+@property NSMutableArray *dna;
+@property NSArray *nucleobase;
 
 -(int) hammingDistance:(Cell *)cell;
 
