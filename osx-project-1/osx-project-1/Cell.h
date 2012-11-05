@@ -15,7 +15,7 @@
 @interface Cell: NSObject
 {
     
-    NSMutableArray *data;
+    NSMutableArray *dna;
     
 }
 

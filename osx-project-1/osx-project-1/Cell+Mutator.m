@@ -25,7 +25,7 @@
         if ([[mask objectAtIndex: p] intValue] == 0)
         {
             [mask insertObject: [NSNumber numberWithInt: 1] atIndex: p];
-            [data insertObject:[self nextMolecule: [data objectAtIndex: p]] atIndex: p];
+            [dna insertObject:[self nextMolecule: [dna objectAtIndex: p]] atIndex: p];
             round = round + 1;
         }
     }

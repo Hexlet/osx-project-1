@@ -15,11 +15,11 @@
     self = [super init];
     if (self)
     {
-        data = [NSMutableArray arrayWithCapacity: CELL_SIZE];
+        dna = [NSMutableArray arrayWithCapacity: CELL_SIZE];
         for (int i = 0; i < CELL_SIZE; i++)
         {
             int n = arc4random() % 4;
-            [data insertObject:[self moleculeByIndex: n] atIndex: i];
+            [dna insertObject:[self moleculeByIndex: n] atIndex: i];
         }
     }
     
@@ -30,7 +30,7 @@
 {
     if (index < CELL_SIZE)
     {
-        return [data objectAtIndex: index];
+        return [dna objectAtIndex: index];
     }
     return nil;
 }
@@ -40,7 +40,7 @@
     NSMutableString *result = [NSMutableString stringWithCapacity: CELL_SIZE];
     for (int i = 0; i < CELL_SIZE; i++)
     {
-        Molecule *m = [data objectAtIndex: i];
+        Molecule *m = [dna objectAtIndex: i];
         [result insertString: [m toString] atIndex: i];
     }
     return result;
@@ -51,7 +51,7 @@
     int result = 0;
     for (int i = 0; i < CELL_SIZE; i++)
     {
-        Molecule *a = [data objectAtIndex: i];
+        Molecule *a = [dna objectAtIndex: i];
         Molecule *b = [toCell moleculeAtIndex: i];
         if ([a equal: b])
         {
