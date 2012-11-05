@@ -12,6 +12,6 @@
 
 @property NSMutableArray *DNA;
 
-+(NSString*) getMutation;
++(NSString*) getMutation: (NSString*) src;
 -(int) hammingDistance: (Cell*) cell;
 @end

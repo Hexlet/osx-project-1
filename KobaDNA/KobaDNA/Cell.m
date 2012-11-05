@@ -16,27 +16,17 @@
     if (self) {
         self.DNA = [[NSMutableArray alloc] init];
         for (int i = 0; i < 100; i++){
-            [self.DNA addObject:[Cell getMutation]];
+            [self.DNA addObject:[Cell getMutation:@""]];
         }
     }
     return self;
 }
 
-+(NSString*) getMutation{
-    NSString *letter;
-    switch (arc4random() % 4) {
-        case 0:
-            letter = @"A";
-            break;
-        case 1:
-            letter = @"T";
-            break;
-        case 2:
-            letter = @"G";
-            break;
-        case 3:
-            letter = @"C";
-            break;
++(NSString*) getMutation: (NSString*) src {
+    NSString *letter = src;
+    NSArray *letters = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
+    while (src == letter) {
+        letter = [letters objectAtIndex:arc4random() % 4];
     }
     return letter;
 }
@@ -44,7 +34,7 @@
 -(int) hammingDistance: (Cell*) cell {
     int distance = 0;
     for (int i = 0; i < [self.DNA count]; i++){
-        if ([self.DNA objectAtIndex:i] == [cell.DNA objectAtIndex:i]){
+        if ([self.DNA objectAtIndex:i] != [cell.DNA objectAtIndex:i]){
             distance++;
         }
     }

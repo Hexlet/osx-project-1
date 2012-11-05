@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "KobaDNA/Cell.m"
-         timestampString = "373648989.462891"
+         timestampString = "373827823.178008"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "46"
-         endingLineNumber = "46"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
       </FileBreakpoint>

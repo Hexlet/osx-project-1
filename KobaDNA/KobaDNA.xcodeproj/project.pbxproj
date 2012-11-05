@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFD2AE791648275B0009EA2B /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD2AE781648275B0009EA2B /* Cell+mutator.m */; };
 		CFE4E3E516456117002538C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE4E3E416456117002538C6 /* Foundation.framework */; };
 		CFE4E3E816456117002538C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE4E3E716456117002538C6 /* main.m */; };
 		CFE4E3EC16456117002538C6 /* KobaDNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFE4E3EB16456117002538C6 /* KobaDNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CFD2AE771648275B0009EA2B /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		CFD2AE781648275B0009EA2B /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 		CFE4E3E016456117002538C6 /* KobaDNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KobaDNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE4E3E416456117002538C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CFE4E3E716456117002538C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				CFE4E3E716456117002538C6 /* main.m */,
+				CFD2AE771648275B0009EA2B /* Cell+mutator.h */,
+				CFD2AE781648275B0009EA2B /* Cell+mutator.m */,
 				CFE4E3F21645613D002538C6 /* Cell.h */,
 				CFE4E3F31645613D002538C6 /* Cell.m */,
 				CFE4E3EB16456117002538C6 /* KobaDNA.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				CFE4E3E816456117002538C6 /* main.m in Sources */,
 				CFE4E3F41645613D002538C6 /* Cell.m in Sources */,
+				CFD2AE791648275B0009EA2B /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				CFE4E3F116456117002538C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
