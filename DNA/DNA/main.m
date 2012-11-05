@@ -74,7 +74,11 @@ int main(int argc, const char * argv[])
         y_DNA = [[Cell alloc]init];
         
         [x_DNA hammingDistance:y_DNA];
+        
         [x_DNA mutate:5];
+        [y_DNA mutate:10];
+        
+        [x_DNA hammingDistance:y_DNA];
     }
     return 0;
 }
