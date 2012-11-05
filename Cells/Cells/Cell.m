@@ -9,13 +9,15 @@
 #import "Cell.h"
 #import <stdlib.h>
 
+#define DNASize 100
+
 @implementation Cell
 
 // Инициализация объекта, массив «ДНК» генериться
 - (id) init {
     NSArray *Genome = [NSArray arrayWithObjects:@"A", @"C", @"G", @"T", nil];
-    NSMutableArray *arrayDNA = [NSMutableArray arrayWithCapacity:100];
-    for (int i = 0; i < 100; ++i) {
+    NSMutableArray *arrayDNA = [NSMutableArray arrayWithCapacity:DNASize];
+    for (int i = 0; i < DNASize; ++i) {
         [arrayDNA addObject:[Genome objectAtIndex:arc4random() % 4]];
     }
     
@@ -42,7 +44,7 @@
 - (int) hammingDistance:(Cell *)another {
     int count = 0;
     
-    for (int i = 0; i < [DNA count]; ++i) {
+    for (int i = 0; i < DNASize; ++i) {
         if ([self genomeAtIndex:i] != [another genomeAtIndex:i]) {
             ++count;
         }

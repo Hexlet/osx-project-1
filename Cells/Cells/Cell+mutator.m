@@ -16,10 +16,12 @@
         return ;
     }
     
+    int count = round([DNA count] * persent / 100);
+    
     NSArray *Genome = [NSArray arrayWithObjects:@"A", @"C", @"G", @"T", nil];
     
     Cell *MutableDNA = [[Cell alloc] initWithArray:DNA];
-    while (persent > [self hammingDistance:MutableDNA]) {
+    while (count > [self hammingDistance:MutableDNA]) {
         [DNA replaceObjectAtIndex:(arc4random() % [DNA count]) withObject:[Genome objectAtIndex:arc4random() % 4]];
     }
 }
