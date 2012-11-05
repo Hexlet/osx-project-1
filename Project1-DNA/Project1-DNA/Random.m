@@ -18,7 +18,7 @@
 }
 
 + (NSSet *)uniqueRandomIntegersWithSize:(int)size upperBound:(int)upperBound {
-    if (upperBound < 0) {
+    if (size < 0) {
         @throw [NSException exceptionWithName:@"IllegalArgumentException" reason:@"Size value can't be negative" userInfo:nil];
     }
     
