@@ -1,0 +1,249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CED4F3031646A35700E678A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED4F3021646A35700E678A7 /* Foundation.framework */; };
+		CED4F3061646A35700E678A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED4F3051646A35700E678A7 /* main.m */; };
+		CED4F30A1646A35700E678A7 /* DNK.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CED4F3091646A35700E678A7 /* DNK.1 */; };
+		CED4F3121646A44800E678A7 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED4F3111646A44800E678A7 /* Cell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CED4F2FC1646A35700E678A7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				CED4F30A1646A35700E678A7 /* DNK.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CED4F2FE1646A35700E678A7 /* DNK */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNK; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED4F3021646A35700E678A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CED4F3051646A35700E678A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CED4F3081646A35700E678A7 /* DNK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNK-Prefix.pch"; sourceTree = "<group>"; };
+		CED4F3091646A35700E678A7 /* DNK.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNK.1; sourceTree = "<group>"; };
+		CED4F3101646A44800E678A7 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		CED4F3111646A44800E678A7 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CED4F2FB1646A35700E678A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED4F3031646A35700E678A7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CED4F2F31646A35600E678A7 = {
+			isa = PBXGroup;
+			children = (
+				CED4F3041646A35700E678A7 /* DNK */,
+				CED4F3011646A35700E678A7 /* Frameworks */,
+				CED4F2FF1646A35700E678A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CED4F2FF1646A35700E678A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CED4F2FE1646A35700E678A7 /* DNK */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CED4F3011646A35700E678A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CED4F3021646A35700E678A7 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CED4F3041646A35700E678A7 /* DNK */ = {
+			isa = PBXGroup;
+			children = (
+				CED4F3051646A35700E678A7 /* main.m */,
+				CED4F3101646A44800E678A7 /* Cell.h */,
+				CED4F3111646A44800E678A7 /* Cell.m */,
+				CED4F3091646A35700E678A7 /* DNK.1 */,
+				CED4F3071646A35700E678A7 /* Supporting Files */,
+			);
+			path = DNK;
+			sourceTree = "<group>";
+		};
+		CED4F3071646A35700E678A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CED4F3081646A35700E678A7 /* DNK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CED4F2FD1646A35700E678A7 /* DNK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED4F30D1646A35700E678A7 /* Build configuration list for PBXNativeTarget "DNK" */;
+			buildPhases = (
+				CED4F2FA1646A35700E678A7 /* Sources */,
+				CED4F2FB1646A35700E678A7 /* Frameworks */,
+				CED4F2FC1646A35700E678A7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DNK;
+			productName = DNK;
+			productReference = CED4F2FE1646A35700E678A7 /* DNK */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CED4F2F51646A35600E678A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Admin;
+			};
+			buildConfigurationList = CED4F2F81646A35600E678A7 /* Build configuration list for PBXProject "DNK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CED4F2F31646A35600E678A7;
+			productRefGroup = CED4F2FF1646A35700E678A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CED4F2FD1646A35700E678A7 /* DNK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CED4F2FA1646A35700E678A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED4F3061646A35700E678A7 /* main.m in Sources */,
+				CED4F3121646A44800E678A7 /* Cell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CED4F30B1646A35700E678A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CED4F30C1646A35700E678A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CED4F30E1646A35700E678A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DNK/DNK-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CED4F30F1646A35700E678A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DNK/DNK-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CED4F2F81646A35600E678A7 /* Build configuration list for PBXProject "DNK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED4F30B1646A35700E678A7 /* Debug */,
+				CED4F30C1646A35700E678A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CED4F30D1646A35700E678A7 /* Build configuration list for PBXNativeTarget "DNK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED4F30E1646A35700E678A7 /* Debug */,
+				CED4F30F1646A35700E678A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CED4F2F51646A35600E678A7 /* Project object */;
+}
