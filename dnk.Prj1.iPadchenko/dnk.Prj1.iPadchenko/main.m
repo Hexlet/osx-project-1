@@ -32,7 +32,8 @@
         
         NSString *newCell = [[NSString alloc] init]; //здесь будем хранить новое значение ячейки ДНК
         
-        NSMutableArray *cellMutator = [NSMutableArray arrayWithCapacity:xCount]; //массив хранения номеров измененных ячеек ДНК
+        NSMutableSet *cellMutator = [[NSMutableSet alloc] init];//хранения номеров измененных ячеек ДНК
+        //работа с NSMutableSet быстрей, чем с обычным массивом
         
         int i = 0;
         
@@ -58,8 +59,6 @@
                     }
 
                 } while (changeCellRun);
-                
-                                
                 
                 i++; //увеличиваем счетчик уже измененных ячеек ДНК
                 

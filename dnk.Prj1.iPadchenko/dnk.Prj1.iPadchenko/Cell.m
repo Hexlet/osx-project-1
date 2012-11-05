@@ -19,8 +19,6 @@
     
     if (self) { //если все ОК по родительской теме, тогда выполняем собственные особенности инициализации
         
-        //dnaLenght = (int) 5; //длина цепочки ДНК
-        
         //Инициализируем массив
         _DNA = [NSMutableArray arrayWithCapacity:dnaLenght];
         
@@ -38,7 +36,7 @@
     
     int hD = 0; //изначально 0 совпадений
     
-    for (int i = 0; i <= dnaLenght - 1; i++)
+    for (int i = 0; i < dnaLenght; i++)
         
         if (![[self.DNA objectAtIndex:i] isEqual:[secondDNA.DNA objectAtIndex:i]])
             
@@ -56,7 +54,7 @@
         
         [dnaOneString appendString:[self.DNA objectAtIndex:i]];//код ДНК формируем одной строкой
     
-    //NSLog(@"name? = %@", self);//расскоментировать, если надо видеть класс и адрес переменной
+    //NSLog(@"name = %@", self);//расскоментировать, если надо видеть класс и адрес переменной
     NSLog(@"ДНК = \n%@",dnaOneString);
 
 }
