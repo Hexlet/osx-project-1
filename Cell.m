@@ -52,7 +52,7 @@ extern NSArray const *ATGC;
         int index2 = arc4random()%[ATGC count];
         
         while (([indexes containsObject:[NSNumber numberWithInt:index1]])) {
-            index1 = arc4random()%[ATGC count];
+            index1 = arc4random()%[[self DNA] count];
         }
         while (([[[self DNA] objectAtIndex:index1] isEqual: [ATGC objectAtIndex:index2]])) {
             index2 = arc4random()%[ATGC count];
