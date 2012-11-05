@@ -7,13 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Cell.h>
 
 @interface Cell : NSObject
 
 @property NSMutableArray *dna;
 
--(void) print;
 -(int) hammingDistance: (Cell *) d;
 
 

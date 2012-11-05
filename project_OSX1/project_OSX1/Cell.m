@@ -40,7 +40,7 @@
     int total;
     total = 0;
     for (int i=0; i<100; i++){
-        if (![[self.dna objectAtIndex:i] isEqual:[d objectAtIndex:i]]{
+        if ([_dna objectAtIndex:i] != [[d dna] objectAtIndex:i]){
             total++;
         }
     }

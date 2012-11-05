@@ -7,19 +7,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "project_OSX1/Cell.h"
-         timestampString = "373486153.317301"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "15"
-         endingLineNumber = "15"
-         landmarkName = "-print"
-         landmarkType = "4">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "project_OSX1/Cell.m"
          timestampString = "373569175.24271"
          startingColumnNumber = "9223372036854775807"
@@ -41,6 +28,17 @@
          endingLineNumber = "41"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "project_OSX1/main.m"
+         timestampString = "373838712.479472"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "10"
+         endingLineNumber = "10">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

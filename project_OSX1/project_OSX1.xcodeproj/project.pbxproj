@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51675521648532300B5B10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A51675511648532300B5B10B /* main.m */; };
 		A5552BBB1641A528004BC452 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5552BBA1641A528004BC452 /* Foundation.framework */; };
 		A5552BC21641A528004BC452 /* project_OSX1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5552BC11641A528004BC452 /* project_OSX1.1 */; };
 		A5552BCA1641ACE1004BC452 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5552BC91641ACE1004BC452 /* Cell.m */; };
@@ -26,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A51675511648532300B5B10B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A5552BB61641A528004BC452 /* project_OSX1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = project_OSX1; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5552BBA1641A528004BC452 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5552BC01641A528004BC452 /* project_OSX1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "project_OSX1-Prefix.pch"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				A5552BC81641ACE1004BC452 /* Cell.h */,
 				A5552BC91641ACE1004BC452 /* Cell.m */,
+				A51675511648532300B5B10B /* main.m */,
 				A5552BC11641A528004BC452 /* project_OSX1.1 */,
 				A5552BBF1641A528004BC452 /* Supporting Files */,
 			);
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5552BCA1641ACE1004BC452 /* Cell.m in Sources */,
+				A51675521648532300B5B10B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +242,7 @@
 				A5552BC71641A528004BC452 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
