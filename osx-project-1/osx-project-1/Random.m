@@ -11,8 +11,19 @@
 @implementation Random
 
 + (NSUInteger) nextNumber:(NSUInteger)upperBound {
-    if (upperBound <= 0) { return 0; }
+    if (upperBound == 0) { return NSNotFound; }
     return (NSUInteger)(arc4random() % upperBound);
+}
+
++ (NSUInteger) nextNumberExcept:(NSUInteger)exceptNumber withUpperBound:(NSUInteger)upperBound {
+    if (exceptNumber >= upperBound) {
+        return [Random nextNumber:upperBound];
+    }
+    NSUInteger randomShift = [Random nextNumber:upperBound - 1];
+    if (randomShift == NSNotFound) {
+        return NSNotFound;
+    }
+    return (exceptNumber + 1 + randomShift) % upperBound;
 }
 
 + (NSIndexSet *) nextSequenceOfLength:(NSUInteger)length withUpperBound:(NSUInteger)upperBound {

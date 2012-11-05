@@ -9,24 +9,16 @@
 #import "DNAGenerator.h"
 #import "Random.h"
 
-@interface DNAGenerator()
-
-@property (nonatomic, strong, readonly) NSOrderedSet *allowedSymbols;
-
-@end
-
 @implementation DNAGenerator
 {
-    NSOrderedSet *_allowedSymbols;
-    NSUInteger allowedSymbolsCount;
+    NSArray *allowedSymbols;
 }
 
-- (NSOrderedSet *) allowedSymbols {
-    if (!_allowedSymbols) {
-        _allowedSymbols = [NSOrderedSet orderedSetWithObjects:@'A', @'T', @'G', @'C', nil];
-        allowedSymbolsCount = _allowedSymbols.count;
+- (id) init {
+    if (self = [super init]) {
+        allowedSymbols = @[@'A', @'T', @'G', @'C'];
     }
-    return _allowedSymbols;
+    return self;
 }
 
 - (NSMutableArray *) createDNAWithCapacity:(NSUInteger)capacity {
@@ -38,17 +30,14 @@
 }
 
 - (NSNumber *) randomDNASymbolExcept:(NSNumber *)exceptSymbol {
-    NSUInteger symbolIndex = [self.allowedSymbols indexOfObject:exceptSymbol];
-    if (symbolIndex == NSNotFound) {
-        return [self randomDNASymbol];
-    }
-    NSUInteger index = (symbolIndex + 1 + [Random nextNumber:allowedSymbolsCount-1]) % allowedSymbolsCount;
-    return self.allowedSymbols[index];
+    NSUInteger exceptIndex = [allowedSymbols indexOfObject:exceptSymbol];
+    NSUInteger index = [Random nextNumberExcept:exceptIndex withUpperBound:allowedSymbols.count];
+    return allowedSymbols[index];
 }
 
 - (NSNumber *) randomDNASymbol {
-    NSUInteger index = [Random nextNumber:allowedSymbolsCount];
-    return self.allowedSymbols[index];
+    NSUInteger index = [Random nextNumber:allowedSymbols.count];
+    return allowedSymbols[index];
 }
 
 @end

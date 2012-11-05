@@ -19,9 +19,9 @@
     }
 }
 
-- (void) test_nextNumberForBound0Returns0 {
+- (void) test_nextNumberForBound0ReturnsNSNotFound {
     NSUInteger number = [Random nextNumber:0];
-    STAssertEquals((NSUInteger)0, number, nil);
+    STAssertEquals((NSUInteger)NSNotFound, number, nil);
 }
 
 - (void) test_nextNumberForBound2IsUniform {
@@ -32,6 +32,43 @@
     }
     STAssertTrue(onesCount > 10, nil);
     STAssertTrue(onesCount < 90, nil);
+}
+
+- (void) test_nextNumberExceptNumberGreaterThanBoundReturnsNumberFrom0ToBound {
+    for (int i = 0; i < 100; i++) {
+        NSUInteger number = [Random nextNumberExcept:100 withUpperBound:3];
+        STAssertTrue(number >= 0, nil);
+        STAssertTrue(number < 3, nil);
+    }
+}
+
+- (void) test_nextNumberExceptNSNotFoundReturnsNumberFrom0ToBound {
+    for (int i = 0; i < 100; i++) {
+        NSUInteger number = [Random nextNumberExcept:NSNotFound withUpperBound:2];
+        STAssertTrue(number >= 0, nil);
+        STAssertTrue(number < 2, nil);
+    }
+}
+
+- (void) test_nextNumberExcept1WithBound3Returns0Or2 {
+    for (int i = 0; i < 100; i++) {
+        NSUInteger number = [Random nextNumberExcept:1 withUpperBound:3];
+        STAssertTrue(number == 0 || number == 2, nil);
+    }
+}
+
+- (void) test_nextNumberExcept0WithBound2Returns1 {
+    for (int i = 0; i < 100; i++) {
+        NSUInteger number = [Random nextNumberExcept:0 withUpperBound:2];
+        STAssertEquals((NSUInteger)1, number, nil);
+    }
+}
+
+- (void) test_nextNumberExcept0WithBound1ReturnsNSNotFound {
+    for (int i = 0; i < 100; i++) {
+        NSUInteger number = [Random nextNumberExcept:0 withUpperBound:1];
+        STAssertEquals((NSUInteger)NSNotFound, number, nil);
+    }
 }
 
 - (void) test_nextSequenceWithLength0ReturnsEmptySet {

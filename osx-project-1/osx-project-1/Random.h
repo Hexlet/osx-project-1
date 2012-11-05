@@ -19,12 +19,17 @@
 */
 + (NSUInteger) nextNumber:(NSUInteger)upperBound;
 
+/*
+ Returns a random non-negative integer number that not equals to specified except number
+ and less that the specified upper bound
+*/
++ (NSUInteger) nextNumberExcept:(NSUInteger)exceptNumber withUpperBound:(NSUInteger)upperBound;
 
 /*
  Returns a random set of non-negative integer numbers less that the specified upper bound
  of the specified length. All numbers are different.
 */
 + (NSIndexSet *) nextSequenceOfLength:(NSUInteger)length
-                  withUpperBound:(NSUInteger)upperBound;
+                       withUpperBound:(NSUInteger)upperBound;
 
 @end
