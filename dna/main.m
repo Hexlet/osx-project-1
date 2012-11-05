@@ -37,7 +37,7 @@
         
         NSArray *tempDNA = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
         NSInteger index = 0;
-        for (NSInteger i = 0; i < part / 100 * arrValue; i++) {
+        for (NSInteger i = 0; i < part * arrValue / 100; i++) {
             index = [[mutatorPattern objectAtIndex:i] integerValue];
             [self.DNA replaceObjectAtIndex:index withObject:[tempDNA objectAtIndex:arc4random() % [tempDNA count]]];
         }
