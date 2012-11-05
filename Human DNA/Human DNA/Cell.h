@@ -8,16 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-
+// класс Cell, который наследуется от NSObject.
 @interface Cell : NSObject
+@property NSArray *arrayOfChars;
+@property NSMutableArray *DNA;
 
--(void) DNA:(int) d;
 -(id) init;
--(int) hammingDistance:(Cell *) numericHamming;
-@end
-
-
-@interface Cell ()
-
--(void) mutator:(int)precentOfSymbols;
+-(id) createDNA;
+// Создаем метод hammingDistance, который возвращает int и принимает объект класса Cell
+-(int) hammingDistance:(Cell *) cell;
 @end

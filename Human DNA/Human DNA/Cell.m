@@ -9,39 +9,45 @@
 #import "Cell.h"
 
 
-@implementation Cell {
-    
-    NSMutableArray *DNA;
-    NSArray *arrayOfChars;
-}
+@implementation Cell 
+// В классе Cell cоздаем переменную DNA типа NSMutableArray
+    NSMutableArray *humanDNA;
 
-// Inititalize array 'humanDNA'
+
+// Создадим собственный метод init
 -(id) init {
     self = [super init];
     if (self) {
-            int countR = 0;
-            NSString *a = @"A";
-            NSString *t = @"T";
-            NSString *g = @"G";
-            NSString *c = @"C";
-            arrayOfChars = [[NSArray alloc] initWithObjects:a,t,g,c,nil];
-            NSLog(@"%@", arrayOfChars);
-        
-            NSMutableArray *humanDNA = [[NSMutableArray alloc] initWithArray:(arrayOfChars)];
-            for (int i=0; i<=100; i++) {
-                countR = random() % 4;
-                [[humanDNA insertObjects:[[NSArray arrayOfChars[countR] atIndex:i]]];
-            }
-            NSLog(@"%@", humanDNA);
-            return self;
+
+        // Инициализация массива под символьные значения
+        _arrayOfChars = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+        _DNA = [self createDNA];
+        }
+        return self;
     }
+
+// Создаем DNA
+-(id) createDNA {
+    NSMutableArray *humanDNA = [[NSMutableArray alloc] initWithCapacity:100];
+    for (int i = 0; i < 100; ++i) {
+   
+        // Заполняем 'humanDNA'-массив, случайно сгенерированными символами
+        [humanDNA addObject:[_arrayOfChars objectAtIndex:arc4random()%4]];
+    }
+    // Возвращаем заполненный 100 символами массив 'humanDNA'
+    return humanDNA;
 }
-                 
-// Mutation of DNA
-- (void) mutator:(int) percentOfSymbols {
-    if (percentOfSymbols > 100 && percentOfSymbols < 0) {
-        NSLog(@"Error!");
-    return;
+
+// метод сравнивает свой DNA и DNA переданного в качестве аргумента объекта и
+// возвращать количество позиций, где символы DNA не совпадают.
+-(int) hammingDistance:(Cell *)cell {
+    int diffOfDNA = 0;
+    for (int n = 0; 1 < 100; ++n) {
+        if ([[cell DNA] objectAtIndex:n] !=[_DNA objectAtIndex:n]) {
+            ++diffOfDNA;
+        }
     }
+    // Возвращаем количественную разницу между DNA
+    return diffOfDNA;
 }
 @end
