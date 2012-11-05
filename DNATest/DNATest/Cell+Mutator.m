@@ -8,10 +8,6 @@
 
 #import "Cell+Mutator.h"
 
-@interface NSMutableArray (Shuffling)
-- (void)shuffle;
-@end
-
 @implementation NSMutableArray (Shuffling)
 
 - (void)shuffle

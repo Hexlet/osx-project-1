@@ -11,3 +11,6 @@
 @interface Cell (Mutator)
 - (void) mutate: (int) perc;
 @end
+@interface NSMutableArray (Shuffling)
+- (void)shuffle;
+@end
