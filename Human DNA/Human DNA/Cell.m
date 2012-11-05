@@ -42,7 +42,7 @@
 // возвращать количество позиций, где символы DNA не совпадают.
 -(int) hammingDistance:(Cell *)cell {
     int diffOfDNA = 0;
-    for (int n = 0; 1 < 100; ++n) {
+    for (int n = 0; n < 100; ++n) {
         if ([[cell DNA] objectAtIndex:n] !=[_DNA objectAtIndex:n]) {
             ++diffOfDNA;
         }
