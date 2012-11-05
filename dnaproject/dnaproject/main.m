@@ -27,7 +27,7 @@
             changeindex=[NSNumber numberWithInt:(arc4random()%100)];
             } while ([mutA containsObject:changeindex]);
         do {
-            e = arc4random() % 4 + 1;
+            e = arc4random() % 4+1;
             if(e==1){
                 change=@"A";
             }
