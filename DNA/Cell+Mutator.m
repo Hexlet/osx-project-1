@@ -14,23 +14,24 @@
 - (void) mutate: (int)percentage {
     NSAssert(percentage >= 0 && percentage <= 100,
              @"Percentage should be in range from 0 to 100.");
+    if (percentage == 0) return;
     
     // Calculating the number of items we have to change.
     int itemsNum = round(DNA_LENGTH * percentage/100.0);
     
-    // Creating an array of numbers from 0 to 99.
-    NSMutableArray *range =
+    // Creating an array of indices from 0 to 99.
+    NSMutableArray *indices =
         [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
     for (int i = 0; i < DNA_LENGTH; i++)
-        [range addObject: [NSNumber numberWithInt:i]];
+        [indices addObject: [NSNumber numberWithInt:i]];
     
-    // Shuffling the range of numbers.
-    [range shuffle];
+    // Shuffling the indices.
+    [indices shuffle];
     
-    // Replacing items in DNA, taking indexes from our shuffled range.
+    // Replacing items in DNA, taking indices from our shuffled array.
     int position;
     for (int i = 0; i < itemsNum; i++) {
-        position = [[range objectAtIndex:i] intValue];
+        position = [[indices objectAtIndex:i] intValue];
         NSString *nucleotide = [self.DNA objectAtIndex:position];
         [self.DNA replaceObjectAtIndex:position
                   withObject: [Cell getRandomNucleotideExcept:nucleotide]];
