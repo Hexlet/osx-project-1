@@ -10,13 +10,13 @@
 
 @implementation Cell (mutator)
 // Мутация «ДНК»
-- (void) mutate:(int)persent {
-    if (persent > 100 && persent < 0){
+- (void) mutate:(int)percent {
+    if (percent > 100 || percent < 0){
         NSLog(@"Error: bad value");
         return ;
     }
     
-    int count = round([DNA count] * persent / 100);
+    int count = round([DNA count] * percent / 100);
     
     NSArray *Genome = [NSArray arrayWithObjects:@"A", @"C", @"G", @"T", nil];
     
