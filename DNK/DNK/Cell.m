@@ -10,9 +10,6 @@
 #include <stdlib.h>
 
 
-
-
-
 @implementation Cell
 
 -(id) init {
