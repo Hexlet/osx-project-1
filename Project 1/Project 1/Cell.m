@@ -27,7 +27,7 @@
 
 -(int) hammingDistance:(Cell*) cell{
     int j=0;
-    for (int i=0; i<100; i++) {
+    for (int i=0; i<DNAArrayLength; i++) {
         if ([[self getDNKLetter:i] isEqualToString:[cell getDNKLetter:i]]) {
             j++ ;
         }
