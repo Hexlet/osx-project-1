@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-NSArray const *ATGC;
+
 
 @interface Cell : NSObject
 

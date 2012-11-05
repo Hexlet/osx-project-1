@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
+NSArray const *ATGC;
+
 int main(int argc, const char * argv[])
 {
 

@@ -8,6 +8,8 @@
 
 #import "Cell.h"
 
+extern NSArray const *ATGC;
+
 @implementation Cell
 
 - (id)init{
