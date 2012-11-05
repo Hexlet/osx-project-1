@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject {
-    NSMutableArray *DNAItemValueOptions;
+    NSArray *DNAItemValueOptions;
     int DNALength;
 }
 

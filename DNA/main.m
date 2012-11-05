@@ -38,7 +38,7 @@
 
 - (void) mutate: (int) percentage {
     // Calculating the number of items we have to change.
-    int itemsNum = round(DNALength * percentage / 100);
+    int itemsNum = round(DNALength * percentage / 100.0);
     
     // Creating an array of numbers 0 to 100 (length of our DNA)
     NSMutableArray *range = [[NSMutableArray alloc] initWithCapacity:DNALength];

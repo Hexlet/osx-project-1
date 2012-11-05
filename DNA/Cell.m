@@ -12,8 +12,7 @@
 
 - (id) init {
     self = [super init];
-    DNAItemValueOptions =
-        [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+    DNAItemValueOptions = @[@"A", @"T", @"G", @"C"];
     DNALength = 100;
     
     // Initializing our DNA
