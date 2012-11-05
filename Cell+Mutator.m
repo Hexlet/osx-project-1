@@ -11,16 +11,17 @@
 @implementation Cell (Mutator)
 
 -(void) mutate:(int)f{
+    int percent_to_number = [dna count]*f/100;
     NSNumber *cell_to_modify = 0;
     NSMutableSet * modifiedCells = [[NSMutableSet alloc] init];
     NSString *curr_cell_name = [[NSString alloc]init];
-    while (f!=0) {
+    while (percent_to_number!=0) {
         cell_to_modify = [NSNumber numberWithInt:(arc4random() % 100)];
         if ([modifiedCells containsObject:cell_to_modify]){
             continue;
         }
         [modifiedCells addObject:cell_to_modify];
-        f -= 1;
+        percent_to_number -= 1;
         curr_cell_name = [Cell getRandomCellType];
         while ([curr_cell_name isEqualToString:[dna objectAtIndex:[cell_to_modify intValue]]]){
             
