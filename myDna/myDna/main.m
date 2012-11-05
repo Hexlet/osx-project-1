@@ -38,7 +38,6 @@
             [uniqNumbers addObject: [NSNumber numberWithInteger:r]];
            
             // Randomize DNA element != previous  value
-            randomElement = [self getRandom];
             do {
                 randomElement = [self getRandom];
             } while ([self.DNA objectAtIndex:r] == randomElement);
