@@ -26,7 +26,7 @@ int main(int argc, const char * argv[])
         int hammingDistance1 = [myCell1 hammingDistance:myCell2];
         
         // Инициализация метода мутирования
-        [myCell1 mutate:30];
+        [myCell1 mutate:10];
         [myCell2 mutate:50];
         
         // Инициализация метода проверки на несовпадения после мутации
