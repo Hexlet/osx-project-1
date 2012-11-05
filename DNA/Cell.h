@@ -18,6 +18,6 @@
 - (void) logDNA;
 - (int) hammingDistance: (Cell *)otherCell;
 + (NSString *) getRandomNucleotide;
-+ (NSString *) getRandomNucleotideExcept: (NSString *)itemValue;
++ (NSString *) getRandomNucleotideExcept: (NSString *)nucleotide;
 
 @end

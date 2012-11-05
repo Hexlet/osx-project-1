@@ -18,16 +18,16 @@
     // Calculating the number of items we have to change.
     int itemsNum = round(DNA_LENGTH * percentage/100.0);
     
-    // Creating an array of numbers from 0 to 99
+    // Creating an array of numbers from 0 to 99.
     NSMutableArray *range =
         [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
     for (int i = 0; i < DNA_LENGTH; i++)
         [range addObject: [NSNumber numberWithInt:i]];
     
-    // Shuffling the range of numbers
+    // Shuffling the range of numbers.
     [range shuffle];
     
-    // Replacing items in our DNA by taking indexes from our shuffled range
+    // Replacing items in DNA, taking indexes from our shuffled range.
     int position;
     for (int i = 0; i < itemsNum; i++) {
         position = [[range objectAtIndex:i] intValue];

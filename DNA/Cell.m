@@ -32,9 +32,9 @@ static NSArray *nucleotides = nil;
             objectAtIndex: (arc4random() % [nucleotides count])];
 }
 
-+ (NSString *) getRandomNucleotideExcept: (NSString *)itemValue {
++ (NSString *) getRandomNucleotideExcept: (NSString *)nucleotide {
     NSMutableArray *opts = [NSMutableArray arrayWithArray:nucleotides];
-    [opts removeObject:itemValue];
+    [opts removeObject:nucleotide];
     return [opts
             objectAtIndex: (arc4random() % ([nucleotides count] - 1))];
 }
