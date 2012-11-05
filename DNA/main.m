@@ -30,7 +30,7 @@
     while (rate--) {
         int pos = -1;
         do {
-            pos = rand() % COUNT;
+            pos = arc4random() % COUNT;
         } while ([positions objectAtIndex:pos] == [NSNumber numberWithBool:YES]);
         [positions replaceObjectAtIndex:pos withObject:[NSNumber numberWithBool:YES]];
         
