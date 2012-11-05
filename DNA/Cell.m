@@ -36,8 +36,17 @@
     
     if (index >= [DNA count])
         [DNA insertObject:[VALUES objectAtIndex:rand() % [VALUES count]] atIndex:index];
-    else
+    else {
+        id val = [DNA objectAtIndex:index];
+        for (int i = 0; i < [VALUES count]; ++i) {
+            if ([VALUES objectAtIndex:i] == val) {
+                [VALUES removeObjectAtIndex:i];
+                break;
+            }
+        }
         [DNA replaceObjectAtIndex:index withObject:[VALUES objectAtIndex:rand() % [VALUES count]]];
+//        NSLog(@"%@ -> %@", val, VALUES);
+    }
 }
 
 -(int) hammingDistance:(Cell *)cell {
