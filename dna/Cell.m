@@ -10,16 +10,15 @@
 
 @implementation Cell
 
-
-NSString * const Codes[] = {@"A", @"T", @"G", @"C"};
-
 - (id) init {
     self = [super init];
     
     if (self) {
         _dna = [[NSMutableArray alloc] init];
-    
-        for (int i=0; i<100; i++) {
+        //К сожалению я так и не придумал как это сделать константой
+        _codes = [NSArray arrayWithObjects:  @"A", @"T", @"G", @"C", nil];
+        
+        for (int i=0; i<DNA_SIZE; i++) {
             [_dna insertObject: [self getCode] atIndex:i];
         }
     }
@@ -39,14 +38,30 @@ NSString * const Codes[] = {@"A", @"T", @"G", @"C"};
 }
 
 - (NSString*) getCode {
-    return Codes[arc4random() % 4];
+    return _codes[arc4random() % [_codes count]];
 }
 
 - (NSString*) getCode:(NSString *) oldCode {
-    NSString* new_code = [self getCode];
-    while (new_code == oldCode) {
-        new_code = [self getCode];
+    //Узнаем текущий индекс
+    
+    NSUInteger current_index = [_codes indexOfObject:oldCode];
+    
+    //Выбираем число от 1 до количества кодов
+    
+    NSUInteger offset = arc4random() % ([_codes count] - 2) + 1;
+    
+    //Выбираем новый оффсет
+    
+    NSUInteger new_offset = current_index + offset;
+    
+    //NSLog(@"Index %lu %s", current_index, oldCode);
+    
+    if (new_offset > ([_codes count] - 1)) {
+        new_offset = new_offset - [_codes count];
     }
+    
+    NSString* new_code = [_codes objectAtIndex:new_offset];
+    
     return new_code;
 }
 

@@ -10,16 +10,24 @@
 
 @implementation Cell (mutator)
 - (void) mutate:(int)percent {
-    NSMutableArray *changed_indexes = [NSMutableArray new];
-    int changed_indexes_count = 0;
-    int random_number;
-    while (changed_indexes_count < percent) {
-        random_number = arc4random() % [self.dna count];
-        if (![changed_indexes containsObject:[NSNumber numberWithInt:random_number]]) {
-            [changed_indexes addObject:[NSNumber numberWithInt:random_number]];
-            changed_indexes_count++;
-            [self.dna replaceObjectAtIndex:random_number withObject:[self getCode:[self.dna objectAtIndex:random_number]]];
-        }
+    NSAssert((percent > 0) && (percent <= 100), @"Invalid percent");
+    
+    NSUInteger count = lround(percent / 100.0 * DNA_SIZE);
+    
+    NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:DNA_SIZE];
+    
+    for (NSUInteger i=0; i<DNA_SIZE; i++) {
+        [indexes addObject:@(i)];
+    }
+    
+    for (NSUInteger changed=0; changed < count; changed++) {
+        NSUInteger change_index = arc4random() % [indexes count];
+        NSUInteger change_index_value = [indexes[change_index] integerValue];
+        NSString *old_code = self.dna[change_index_value];
+        NSString *new_code = [self getCode:old_code];
+        [self.dna replaceObjectAtIndex:change_index_value withObject:new_code];
+        [indexes removeObjectAtIndex:change_index];
+        
     }
 }
 @end

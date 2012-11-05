@@ -22,7 +22,7 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Do the evolution!");
         
-        [cell mutate:10];
+        [cell mutate:40];
         [cell2 mutate:50];
         
         NSLog(@"distance: %d", [cell hammingDistance:cell2]);
