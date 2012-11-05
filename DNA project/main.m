@@ -15,13 +15,12 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        sranddev();
         Cell *firstCell, *secondCell;
         firstCell = [[Cell alloc] init];
         secondCell = [[Cell alloc] init];
         NSLog(@"hamming distance before mutation:%d", [firstCell hammingDistance:secondCell]);
-        [firstCell mutate:5];
-        [secondCell mutate:10];
+        [firstCell mutate:78];
+        [secondCell mutate:94];
         NSLog(@"hamming distance after mutation:%d", [firstCell hammingDistance:secondCell]);
         
     }

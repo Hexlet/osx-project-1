@@ -13,7 +13,7 @@
 // Метод возвращает случайный элемент множества
 - (id)randomObject {
     NSArray *objects = [self allObjects];
-    return [objects objectAtIndex:(rand() % objects.count)];
+    return [objects objectAtIndex:arc4random_uniform((uint32_t)objects.count)];
 }
 
 @end
