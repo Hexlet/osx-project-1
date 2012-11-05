@@ -23,8 +23,7 @@
 }
 
 -(void)initDna {
-    //CellSymbol symbol;
-    NSUInteger max_variants = [symbols count] - 1;
+    NSUInteger max_variants = [symbols count];
     
     NSString *symbol;
     int ix;
@@ -48,7 +47,7 @@
 }
 
 -(NSString*)getRandomSymbol {
-    return [symbols objectAtIndex:(arc4random() % ( [symbols count] - 1 ))];
+    return [symbols objectAtIndex:(arc4random() % ( [symbols count] ))];
 }
 
 @end
