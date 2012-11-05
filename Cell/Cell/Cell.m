@@ -21,9 +21,9 @@
         
         for(int cc=0;cc<elements;cc++)
             [_dna setObject:[self getRandomChar] atIndexedSubscript:cc];
-        return self;
+      
     }
-    return nil;
+    return self;
 }
 
 -(int)hammingDistance:(Cell *)theCell{
