@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Nucleotide.h"
+#define DNA_LENGTH 100
 
 @interface Cell : NSObject
 @property NSMutableArray *dna;
 -(void)print;
 -(int)hammingDistance:(Cell*)secondCell;
-+(NSNumber*)getRandom;
 @end

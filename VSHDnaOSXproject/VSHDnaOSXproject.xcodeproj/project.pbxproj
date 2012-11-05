@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21F213F216480F2200029F24 /* Cell+CellMuattor.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F213F116480F2200029F24 /* Cell+CellMuattor.m */; };
+		21F213F6164817C600029F24 /* Nucleotide.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F213F5164817C600029F24 /* Nucleotide.m */; };
 		21FB47881642F22600EA74BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21FB47871642F22600EA74BA /* Foundation.framework */; };
 		21FB478B1642F22600EA74BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FB478A1642F22600EA74BA /* main.m */; };
 		21FB478F1642F22600EA74BA /* VSHDnaOSXproject.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 21FB478E1642F22600EA74BA /* VSHDnaOSXproject.1 */; };
@@ -27,6 +29,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21F213F016480F2200029F24 /* Cell+CellMuattor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+CellMuattor.h"; sourceTree = "<group>"; };
+		21F213F116480F2200029F24 /* Cell+CellMuattor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+CellMuattor.m"; sourceTree = "<group>"; };
+		21F213F4164817C600029F24 /* Nucleotide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nucleotide.h; sourceTree = "<group>"; };
+		21F213F5164817C600029F24 /* Nucleotide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nucleotide.m; sourceTree = "<group>"; };
 		21FB47831642F22600EA74BA /* VSHDnaOSXproject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VSHDnaOSXproject; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FB47871642F22600EA74BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		21FB478A1642F22600EA74BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +87,10 @@
 				21FB478C1642F22600EA74BA /* Supporting Files */,
 				21FB47951642F26300EA74BA /* Cell.h */,
 				21FB47961642F26300EA74BA /* Cell.m */,
+				21F213F016480F2200029F24 /* Cell+CellMuattor.h */,
+				21F213F116480F2200029F24 /* Cell+CellMuattor.m */,
+				21F213F4164817C600029F24 /* Nucleotide.h */,
+				21F213F5164817C600029F24 /* Nucleotide.m */,
 			);
 			path = VSHDnaOSXproject;
 			sourceTree = "<group>";
@@ -146,6 +156,8 @@
 			files = (
 				21FB478B1642F22600EA74BA /* main.m in Sources */,
 				21FB47971642F26300EA74BA /* Cell.m in Sources */,
+				21F213F216480F2200029F24 /* Cell+CellMuattor.m in Sources */,
+				21F213F6164817C600029F24 /* Nucleotide.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +254,7 @@
 				21FB47941642F22600EA74BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

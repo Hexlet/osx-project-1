@@ -7,34 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#include "Cell.h"
-
-@interface Cell (mutator)
--(void)mutate:(int)n;
-@end
-
-@implementation Cell (mutator)
-
--(void)mutate:(int)n {
-    // prepare postions array
-    NSMutableArray *positions = [[NSMutableArray alloc] init];
-    NSUInteger length = [[self dna] count];
-    for ( int i = 0 ; i < length; i++ ) {
-        [positions addObject:[NSNumber numberWithInt:i]];
-    }
-    // update DNA array
-    for ( int i = 0 ; i < n; i++ ) {
-        int firstIndex = arc4random()%[positions count];
-        NSNumber *secondIndex = positions[firstIndex];
-        [positions removeObjectAtIndex:firstIndex];
-        [[self dna] replaceObjectAtIndex:[secondIndex unsignedIntegerValue] withObject:[Cell getRandom] ];
-    }
-}
-@end
+#include "Cell+CellMuattor.h"
 
 int main(int argc, const char * argv[])
 {
-
     @autoreleasepool {
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
