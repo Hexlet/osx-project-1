@@ -24,14 +24,14 @@
     [indexesToMutate shuffle];
     
     // Вычисляем количество символов для замены исходя из процентов
-    int needsToReplace = [self.dnk count] * x / 100;
+    int needsToReplace = round([self.dnk count] * x * 0.01);
     
     NSString *dnkSymbol;
     for (int i=0; i<needsToReplace; i++) {
         int indexToMutate = [[indexesToMutate objectAtIndex: i] intValue];
         do {
             dnkSymbol = [self getRandomDnkSymbol];
-        } while (dnkSymbol == [self.dnk objectAtIndex: indexToMutate]);
+        } while ([dnkSymbol isEqualToString: [self.dnk objectAtIndex: indexToMutate]]);
         [self.dnk replaceObjectAtIndex: indexToMutate withObject: dnkSymbol];
     }
 }
