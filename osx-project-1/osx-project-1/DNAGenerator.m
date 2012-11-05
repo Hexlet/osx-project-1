@@ -18,11 +18,13 @@
 @implementation DNAGenerator
 {
     NSOrderedSet *_allowedSymbols;
+    NSUInteger allowedSymbolsCount;
 }
 
 - (NSOrderedSet *) allowedSymbols {
     if (!_allowedSymbols) {
         _allowedSymbols = [NSOrderedSet orderedSetWithObjects:@'A', @'T', @'G', @'C', nil];
+        allowedSymbolsCount = _allowedSymbols.count;
     }
     return _allowedSymbols;
 }
@@ -35,18 +37,18 @@
     return dna;
 }
 
-- (NSNumber *) randomDNASymbol {
-    return [self randomDNASymbolExcept:nil];
+- (NSNumber *) randomDNASymbolExcept:(NSNumber *)exceptSymbol {
+    NSUInteger symbolIndex = [self.allowedSymbols indexOfObject:exceptSymbol];
+    if (symbolIndex == NSNotFound) {
+        return [self randomDNASymbol];
+    }
+    NSUInteger index = (symbolIndex + 1 + [Random nextNumber:allowedSymbolsCount-1]) % allowedSymbolsCount;
+    return self.allowedSymbols[index];
 }
 
-- (NSNumber *) randomDNASymbolExcept:(NSNumber *)symbol {
-    NSUInteger index = [Random nextNumber:4];
-    NSNumber *result = self.allowedSymbols[index];
-    if ([result isEqualTo:symbol]) {
-        index = (index + 1) % 4;
-        result = self.allowedSymbols[index];
-    }
-    return result;
+- (NSNumber *) randomDNASymbol {
+    NSUInteger index = [Random nextNumber:allowedSymbolsCount];
+    return self.allowedSymbols[index];
 }
 
 @end
