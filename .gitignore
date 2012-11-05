@@ -1,0 +1,37 @@
+Thumbs.db
+.DS_Store
+
+# XCode build files
+build/
+DerivedData/
+
+# Exclude temp nibs and swap files
+*~.nib
+*.swp
+
+#####
+# Xcode private settings (window sizes, bookmarks, breakpoints, custom executables, smart groups)
+#
+# This is complicated:
+#
+# SOMETIMES you need to put this file in version control.
+# Apple designed it poorly - if you use "custom executables", they are
+#  saved in this file.
+# 99% of projects do NOT use those, so they do NOT want to version control this file.
+#  ..but if you're in the 1%, comment out the line "*.pbxuser"
+
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+#    NB: also, whitelist the default ones, some projects need to use these
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+xcuserdata
+
+
+# AppCode settings directory
+.idea/
