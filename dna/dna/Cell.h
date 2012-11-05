@@ -14,11 +14,9 @@
     NSMutableArray  *dna;
 }
 
-+ (NSUInteger)  getDnaAlphabetSize;
-+ (const char*) getDnaAlphabet;
-+ (NSUInteger)  getAlphabetCharIndex:(char)c;
++ (NSArray*) getNucleotides;
 
-- (id)    init;
-- (int)   hammingDistance:(Cell*)otherCell;
+- (id)  init;
+- (int) hammingDistance:(Cell*)otherCell;
 
 @end

@@ -30,7 +30,7 @@
     NSMutableArray *indices = [NSMutableArray arrayWithCapacity:dnaCharCount];
     
     // заполнить индексы
-    for (u_int32_t i = 0; i != dnaCharCount; ++i)
+    for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
         [indices addObject:[NSNumber numberWithUnsignedInteger:i]];
     }
@@ -48,20 +48,17 @@
             [indices exchangeObjectAtIndex:i withObjectAtIndex:j];
         }
     }
-    
-    const NSUInteger dnaAlphabetSize = [Cell getDnaAlphabetSize];
-    const char      *dnaAlphabet     = [Cell getDnaAlphabet];
+
+    const NSArray   *nucleotides     = [Cell getNucleotides];
+    const NSUInteger nucleotideCount = [nucleotides count];
     
     // перебрать первые indexCount (случайных) индексов
-    for (u_int32_t i = 0; i != indexCount; ++i)
+    for (NSUInteger i = 0; i != indexCount; ++i)
     {
-        const NSUInteger changeIdx  = [(NSNumber*)[indices objectAtIndex:i] unsignedIntegerValue];
-        const char       curChar    = [(NSNumber*)[dna objectAtIndex:changeIdx] charValue];
-        const NSUInteger curCharIdx = [Cell getAlphabetCharIndex:curChar];
-        const NSUInteger newCharIdx = (curCharIdx + 1 + arc4random_uniform((u_int32_t)(dnaAlphabetSize - 1))) % dnaAlphabetSize; // inspired by Sachs
-        const char       newChar    = dnaAlphabet[newCharIdx];
-
-        [dna replaceObjectAtIndex:changeIdx withObject:[NSNumber numberWithChar:newChar]];
+        const NSUInteger changeIndex        = [(NSNumber*)[indices objectAtIndex:i] unsignedIntegerValue];
+        const NSUInteger curNucleotideIndex = [nucleotides indexOfObject:[dna objectAtIndex:changeIndex]];
+        const NSUInteger newNucleotideIndex = (curNucleotideIndex + 1 + arc4random_uniform((u_int32_t)(nucleotideCount - 1))) % nucleotideCount; // inspired by Sachs
+        [dna replaceObjectAtIndex:changeIndex withObject:[nucleotides objectAtIndex:newNucleotideIndex]];
     }
 }
 

@@ -9,52 +9,16 @@
 #import "Cell.h"
 
 
-#define countof(a) (sizeof(a)/sizeof(a[0]))
-
-
-// алфавит, составляющий ДНК
-static const char       dnaAlphabet[] = { 'A', 'T', 'G', 'C' };
-
-// количество символов в алфавите ДНК
-static const NSUInteger dnaAlphaBetSize = countof(dnaAlphabet);
-
-// количество символов в ДНК
-static const NSUInteger dnaCharCount = 100;
-
-
 @implementation Cell
 
 
-+ (NSUInteger) getDnaAlphabetSize
++ (NSArray*) getNucleotides
 {
-    return dnaAlphaBetSize;
-}
-
-
-+ (const char*) getDnaAlphabet
-{
-    return dnaAlphabet;
-}
-
-
-+ (NSUInteger) getAlphabetCharIndex:(char)c
-{
-    switch (c)
-    {
-    case 'A':
-        return 0;
-            
-    case 'T':
-        return 1;
-            
-    case 'G':
-        return 2;
-            
-    case 'C':
-        return 3;
-    }
-    
-    @throw [NSException exceptionWithName:NSRangeException reason:@"argument is not from the set: 'A', 'T', 'G', 'C'" userInfo:nil];
+    // алфавит, составляющий ДНК
+    static NSArray *nucleotides;
+    if (!nucleotides)
+        nucleotides = @[@"A", @"T", @"G", @"C"];
+    return nucleotides;
 }
 
 
@@ -64,16 +28,22 @@ static const NSUInteger dnaCharCount = 100;
     if (!self)
         return nil;
 
+    // количество символов в ДНК
+    const NSUInteger dnaCharCount = 100;
+    
     // создать массив ДНК и зарезервировать в нем место
     dna = [NSMutableArray arrayWithCapacity:dnaCharCount];
     if (!dna)
         return nil;
  
-    // проинициализировать массив ДНК случайными индексами символов из заданного алфавита
+    NSArray *nucleotides = [Cell getNucleotides];
+    const NSUInteger nucleotideCount = [nucleotides count];
+    
+    // проинициализировать массив ДНК случайными символами нуклеотидов из заданного алфавита
     for (NSUInteger i = 0; i != dnaCharCount; ++i)
     {
-        const NSUInteger randCharIdx = arc4random_uniform((u_int32_t)dnaAlphaBetSize);
-        [dna addObject:[NSNumber numberWithChar:dnaAlphabet[randCharIdx]]];
+        const NSUInteger randCharIdx = arc4random_uniform((u_int32_t)nucleotideCount);
+        [dna addObject:[nucleotides objectAtIndex:randCharIdx]];
     }
     
     return self;
@@ -88,12 +58,11 @@ static const NSUInteger dnaCharCount = 100;
 
     int distance = 0;
     
-    for (NSUInteger i = 0; i != dnaCharCount; ++i)
+    for (NSUInteger i = 0, dnaCharCount = [dna count]; i != dnaCharCount; ++i)
     {
-        const NSNumber *nl = (NSNumber*)[dna objectAtIndex:i];
-        const NSNumber *nr = (NSNumber*)[otherCell->dna objectAtIndex:i];
-        // сравнение индексов на буквы, составляющие алфавит ДНК
-        if ([nl charValue] != [nr charValue])
+        const NSString *nl = [dna objectAtIndex:i];
+        const NSString *nr = [otherCell->dna objectAtIndex:i];
+        if (nl != nr)
             ++distance;
     }
     
@@ -103,15 +72,7 @@ static const NSUInteger dnaCharCount = 100;
 
 - (NSString*) description
 {
-    NSMutableString *dnaStr = [NSMutableString stringWithCapacity:dnaCharCount];
-
-    for (NSUInteger i = 0; i != dnaCharCount; ++i)
-    {
-        const char c = [(NSNumber*)[dna objectAtIndex:i] charValue];
-        [dnaStr appendFormat:@"%c", c];
-    }
-    
-    return dnaStr;
+    return [dna componentsJoinedByString:@""];
 }
 
 
