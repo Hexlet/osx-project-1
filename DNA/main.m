@@ -29,37 +29,29 @@
         percent = 100;
     }
 
-    // Считаем, сколько элементов необходимо заменить
-    int mutateCount = (double)percent / [DNA count] * 100;
-    
+    int dnaCount = (int)[DNA count];                        // Кешируем общее количество элементов
+    int mutateCount = (double)percent / dnaCount * 100;     // Считаем, сколько элементов необходимо заменить
+
     // «Случайный массив» — массив для хранения случайных, неповторяющихся чисел
     NSMutableArray *randomNumbers = [[NSMutableArray alloc] init];
-    
+
     // Пока массив не заполнен до нужного количества
     while (randomNumbers.count < mutateCount) {
-        
+
         // Генерим случайное число которое должно быть от 0 до DNS.count - 1
-        NSNumber *random = [NSNumber numberWithInt:arc4random() % [DNA count]];
-        
-        // И если оно ешё не содержится в нашем массиве
-        if (![randomNumbers containsObject:random])
-            
-            // Добавляем его туда
-            [randomNumbers addObject:random];
+        NSNumber *random = [NSNumber numberWithInt:arc4random() % dnaCount];
 
+        // Если полученное число уже есть — повторяем попытку
+        if ([randomNumbers containsObject:random]) continue;
+
+        // Добавляем полученное число в список
+        [randomNumbers addObject:random];
+
+        // И заменяем нуклеотид по индексу
+        [self replaceAtIndex:[random intValue] withObject:[self getRandomNucleotide]];
 
     }
-    
-    // Проходимся по случайному массиву
-    for (int index = 0; index < mutateCount; index++) {
-        
-        // Сохраняем в переменную позицию нуклеотида
-        // который должен мутировать и заменяем его случайным
-        int replaceIndex =[[randomNumbers objectAtIndex:index] intValue];
-        [self replaceAtIndex:replaceIndex withObject:[self getRandomNucleotide]];
-        
-    }
-    
+
 }
 
 // Синоним для mutate:
@@ -73,18 +65,18 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        
+
         Cell* cell1 = [[Cell alloc] init];
         Cell* cell2 = [[Cell alloc] initWithCapacity:100];  // Вот так ещё можно
-        
+
         NSLog(@"%d", [cell1 hammingDistance:cell2]);
 
         [cell1 mutate:34];
         [cell2 mutateWith:67];                              // И вот так ещё
-        
+
         NSLog(@"%d", [cell1 hammingDistance:cell2]);
-        
-        
+
+
     }
     return 0;
 }
