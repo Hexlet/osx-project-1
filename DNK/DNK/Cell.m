@@ -43,8 +43,7 @@ NSMutableArray *DnaTypes;
 
 //Returns random DNA value one of specified in DnaTypes array
 -(NSString*) randomDnaType{
-    //get randaom value between 0 and (4-1) = 3 (four DNA types)
-    int randomInt = arc4random() % ([DnaTypes count] -1);
+    int randomInt = arc4random() % [DnaTypes count];
     return [DnaTypes objectAtIndex:randomInt];
 }
 

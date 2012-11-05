@@ -73,7 +73,7 @@
 
 //Get random index for DNA array
 -(NSNumber*) randomDnaIndexInRange:(NSNumber*) range{
-    return [NSNumber numberWithInt: arc4random() % ([range intValue] -1)];
+    return [NSNumber numberWithInt: arc4random() % [range intValue]];
 }
 
 
