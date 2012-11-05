@@ -18,13 +18,11 @@ int main(int argc, const char * argv[])
 
         Cell* cell1=[[Cell alloc] init];
         Cell* cell2=[[Cell alloc] init];
-        NSNumber *n=[NSNumber numberWithInt:[cell1 hammingDistance:cell2]];
-        NSLog(@"%@",n);
+        NSLog(@"%d",[cell1 hammingDistance:cell2]);
         [cell1 mutate:100];
         [cell2 mutate:100];
-        n=[NSNumber numberWithInt:[cell1 hammingDistance:cell2]];
-        NSLog(@"%@",n);
-    
+        NSLog(@"%d",[cell1 hammingDistance:cell2]);
+
     }
     return 0;
 }

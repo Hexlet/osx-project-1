@@ -12,8 +12,14 @@
 -(void)mutate:(int)percent
 {
     //Сколько элементов днк мутировать
-    int mutateArrayLength=DNAArrayLength*percent/100;
-    
+    int mutateArrayLength=floor(DNAArrayLength*percent/100);
+    if (mutateArrayLength<1) {
+        return;
+    }
+    else if(mutateArrayLength>100)
+    {
+        mutateArrayLength=100;
+    }
     //Промежуточный массив с индексами всего массива днк
     NSMutableArray *arr1=[NSMutableArray arrayWithCapacity:DNAArrayLength];
     for (int i=0; i<DNAArrayLength; i++) {
