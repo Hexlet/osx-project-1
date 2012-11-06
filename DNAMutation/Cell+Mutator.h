@@ -11,6 +11,7 @@
 @interface Cell (Mutator)
 
 - (void)mutate:(int)degree;
+- (NSString *)newElementForIndex:(int)idx;
 - (NSMutableArray *)randomDNAIndices:(int)amount;
 
 @end

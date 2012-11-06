@@ -18,19 +18,24 @@
   int i;
   for (i = 0; i < amount; i++) {
     int idx = [indicesToMutate[i] intValue];
-    
-    NSString *newElement;
-    NSString *oldElement = self.DNA[idx];
-    
-    while (true) {
-      newElement = [[self class] generateRandomElement];
-      
-      if (![newElement isEqualToString:oldElement])
-        break;
-    }
 
-    self.DNA[idx] = newElement;
+    self.DNA[idx] = [self newElementForIndex:idx];
   }
+}
+
+- (NSString *)newElementForIndex:(int)idx
+{
+  NSString *newElement;
+  NSString *oldElement = self.DNA[idx];
+  
+  while (true) {
+    newElement = [[self class] generateRandomElement];
+    
+    if (![newElement isEqualToString:oldElement])
+      break;
+  }
+  
+  return newElement;
 }
 
 - (NSMutableArray *)randomDNAIndices:(int)amount
