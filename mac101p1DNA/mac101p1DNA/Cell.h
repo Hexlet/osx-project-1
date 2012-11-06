@@ -11,15 +11,16 @@
 // 2. Наследуем NSObject
 
 @interface Cell : NSObject {
-    NSMutableArray *DNA;
+    @public NSMutableArray *DNA;
     NSArray *mols;
 }
 
 -(id) init;
 -(id) initLength:(int) l; // Похоже Obj-C неподдерживает Default Argument Value
 
-// -(int) hammingdistance: (Cell *) cell;
-// -(NSMutableArray *) getDNA;
+-(int) hammingDistance: (Cell *) cell;
+//-(NSMutableArray *) getDNA;
+
 @end
 
 // 6. Добавляем категорию с методом mutate

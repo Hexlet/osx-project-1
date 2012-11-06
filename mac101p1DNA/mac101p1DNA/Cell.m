@@ -12,24 +12,29 @@
 
 -(id) init {
     // генерация DNA
-    self = [super init];
-    if (self) {
-        mols = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
-        DNA = [[NSMutableArray alloc] init];
-    }
-    return self;
+    return [self initLength:100];
 }
 
 -(id) initLength:(int) l{
-    self = [self init]; if (self) {
-        for (int i = 0; i < l; i++)[DNA addObject:[mols objectAtIndex:arc4random()%4]];
-    }
+    self = [super init];
+    if (self) {
+            mols = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
+            DNA = [[NSMutableArray alloc] init];
+            for (int i = 0; i < l; i++)[DNA addObject:[mols objectAtIndex:arc4random()%4]];
+        }
     return self;
 }
 
--(void) hammingDistance {
-    // @todo ...
-    
+//-(NSMutableArray *) getDNA {
+//    return DNA;
+//}
+
+-(int) hammingDistance:(Cell *)cell {
+    int hd = 0;
+    for (int i=0;i < DNA.count ;i++) {
+        if (![[self->DNA objectAtIndex:i] isEqual:[cell->DNA objectAtIndex:i]])hd++;
+    }
+    return hd;
 }
 
 @end
