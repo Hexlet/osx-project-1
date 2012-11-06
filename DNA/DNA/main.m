@@ -21,7 +21,7 @@
     
     int mutateCount = c/100.0f * DNA_COUNT;
     
-    // массив индексов (Если бы в сроках хранились тэги, то получилось бы без этого)
+    // массив индексов
     NSMutableArray* indexes = [NSMutableArray arrayWithCapacity:DNA_COUNT];
     for (int i = 0; i<DNA_COUNT; i++)
     {
@@ -31,7 +31,7 @@
     initDnaItems;
     
     // возможные варианты для замены
-    NSMutableDictionary* varMatrix = [[NSMutableDictionary alloc]initWithCapacity:DNA_COUNT];
+    NSMutableDictionary* varMatrix = [[NSMutableDictionary alloc]initWithCapacity:[dnaItem count]];
     for (NSString* dnaV in dnaItem)
     {
         NSMutableArray* arr = [NSMutableArray arrayWithArray:dnaItem];
