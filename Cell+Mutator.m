@@ -8,14 +8,12 @@
 
 #import "Cell+Mutator.h"
 
-@implementation Cell {
-
-}
+@implementation Cell 
 
 - (id)init {
    if ( self= [super init]) {
       self.DNA = [NSMutableArray arrayWithCapacity:100];
-       for (int i=0; i<=99; i++) {
+       for (int i=0; i<100; i++) {
           [self.DNA insertObject:[self randomCharacter] atIndex:i];
        }
        
@@ -26,10 +24,11 @@
 
 - (id)initWithLenght:(int)length {
     if ( self= [super init]) {
-        self.DNA = [NSMutableArray arrayWithCapacity:length-1];
-        for (int i=0; i<=length-1; i++) {
-            [self.DNA insertObject:[self randomCharacter] atIndex:i];
-        }
+        if (length<=0) length=1; //проверка на нулевое и отрицательные значения длины ДНК
+            self.DNA = [NSMutableArray arrayWithCapacity:length];
+            for (int i=0; i<length; i++) {
+                [self.DNA insertObject:[self randomCharacter] atIndex:i];
+            }
         
     }
     
@@ -53,14 +52,16 @@
 }
 
 - (int) hammingDistance:(Cell *)aCell {
-    int kpos = 0, i;
-    for (i=0; i<=[[self DNA] count]-1; i++) {
+    int ham = 0, i;
+    NSInteger length = [[self DNA] count];
+    if ([[self DNA] count] > [[aCell DNA] count]) length = [[aCell DNA] count]; //если первая ДНК длиннее второй, то сравниваем только до длины второй ДНК
+    for (i=0; i<length; i++) {
         
         if ([self.DNA objectAtIndex:i]!= [aCell.DNA objectAtIndex:i] ) {
-            kpos++;
+            ham++;
         }
     }
-    return kpos;
+    return ham;
 }
 
 - (void) print {
