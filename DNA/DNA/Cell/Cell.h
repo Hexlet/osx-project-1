@@ -13,7 +13,7 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA;
+@property (readonly) NSMutableArray *DNA;
 @property (readonly) NSArray *dna_nucliotide;
 
 -(int) hammingDistance:(Cell *)x_cell;

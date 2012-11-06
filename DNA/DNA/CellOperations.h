@@ -11,7 +11,7 @@
 
 #import "Cell.h"
 
-@interface Cell (dnaOperations)
+@interface Cell (cellOperations)
 
 -(void) mutate:(NSInteger)mutate_percent;
 
@@ -22,7 +22,10 @@
 -(void) mutate:(NSInteger)mutatePercent
 {
     if (mutatePercent <= 0 || mutatePercent > 100 )
+    {
+        NSLog(@"Mutable percent is incorect!");
         return;
+    }
     
     NSInteger mutableCount = 0;
     mutableCount = round((float)(self.DNA.count * mutatePercent) / 100);
