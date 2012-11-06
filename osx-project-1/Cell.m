@@ -14,8 +14,7 @@
 {
 	if ( (self = [super init]) )
 	{
-		gen = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
-		
+		gen = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];		
 		[self fillDna];
 	}
 	
@@ -38,9 +37,9 @@
 
 - (void)fillDna
 {
-	dna = [[NSMutableArray alloc] init];
+	dna = [[NSMutableArray alloc] initWithCapacity:DNA_SIZE]; //< будет ли так быстрее?
 	
-	for (int i=1; i<=100; i+=2) {
+	for (int i=0; i<DNA_SIZE; i+=2) {
 		int index1 = arc4random() % 4;
 		int index2 = [self genIndex2:index1];
 		
@@ -49,9 +48,9 @@
 	}
 }
 
-- (NSString *)gen:(int)index
+- (NSString *)genByIndex:(int)index
 {
-	if ( index > 0 && index < 100 )
+	if ( index >= 0 && index < DNA_SIZE )
 		return (NSString *)[dna objectAtIndex:index];
 
 	return @"";
@@ -63,23 +62,25 @@
 }
 
 - (int)hammingDistance:(Cell *)cell2
-{
+{	
 	int result = 0;
-	NSMutableString *s1 = [[NSMutableString alloc] init];
-	NSMutableString *s2 = [[NSMutableString alloc] init];
+	NSMutableString *s1 = [[NSMutableString alloc] initWithCapacity:DNA_SIZE];
+	NSMutableString *s2 = [[NSMutableString alloc] initWithCapacity:DNA_SIZE];
 	
-	for (int i=0; i<100; ++i) {
-		if ( ![ [self gen:i] isEqualToString:[cell2 gen:i] ] ) {
+	for (int i=0; i<DNA_SIZE; ++i) {
+		NSString *g1 = [self genByIndex:i];
+		NSString *g2 = [cell2 genByIndex:i];
+		if ( ![g1 isEqualToString:g2] ) {
 			++result;
 			
-			[s1 appendString:[self gen:i]]; //<< различающиеся гены в большими буквами
-			[s2 appendString:[cell2 gen:i]];
+			[s1 appendString:g1];
+			[s2 appendString:g2];
 		} else {
-			[s1 appendString:[[self gen:i] lowercaseString]];
-			[s2 appendString:[[cell2 gen:i] lowercaseString]];
+			[s1 appendString:[g1 lowercaseString]];
+			[s2 appendString:[g2 lowercaseString]];
 		}
 	}
-	
+
 	NSLog(@"DNA1: %@", s1);
 	NSLog(@"DNA2: %@", s2);
 
@@ -88,11 +89,19 @@
 
 - (void)print
 {
-	NSMutableString *s = [[NSMutableString alloc] init];
-	for (int i=0; i<100; ++i) {
-		[s appendString:[dna objectAtIndex:i]];
-	}
-	NSLog(@"DNA: %@", s);
+	//будет ли так быстрее?
+	NSLog(@"DNA: %@", [dna componentsJoinedByString:@""]);
+	
+//	NSMutableString *s = [[NSMutableString alloc] init];
+//	for (int i=0; i<100; ++i) {
+//		[s appendString:[dna objectAtIndex:i]];
+//	}
+//	NSLog(@"DNA: %@", s);
+}
+
+- (NSString *)description
+{
+	return [dna componentsJoinedByString:@""];
 }
 
 

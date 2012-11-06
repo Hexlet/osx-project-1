@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define DNA_SIZE 100
+
 @interface Cell : NSObject
 {
 	NSArray *gen;

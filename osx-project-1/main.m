@@ -22,10 +22,14 @@ int main(int argc, const char * argv[])
 		NSLog(@"--------------------------------");
 		
 		NSLog(@"Hamming distance: %d", [cell1 hammingDistance:cell2]);
-		NSLog(@"--------------------------------");
 		
-		[cell1 mutate:7]; //< 7% генов заменить
-		[cell2 mutate:7];
+		NSLog(@"");
+		NSLog(@"--- mutator --------------------");
+		
+		[cell1 mutate:33];
+		[cell2 mutate:75];
+		
+		NSLog(@"--------------------------------");
 		
 		NSLog(@"Hamming distance: %d", [cell1 hammingDistance:cell2]);
 		

@@ -14,32 +14,31 @@
 
 - (void)mutate:(int)percent
 {
-	int count = [self count];
-	int replaceCount = ( percent * [self count] ) / 100;
+	int replaceCount = ( percent * DNA_SIZE ) / 100;
+	NSMutableString *printString = [[NSMutableString alloc] initWithString:[@"" stringByPaddingToLength:DNA_SIZE withString:@" " startingAtIndex:0]];
 	
-	int k[count];
-	
-	for (int i=0; i<count; ++i)
-		k[i] = 0;
-	
-	for (int i=0; i<replaceCount; ++i) {
-		int j;
-		do {
-			j =  arc4random() % (count-1);
-		} while (k[j] > 0);
+	while ( replaceCount > 0 ) {
 		
-		int v = (arc4random() % 4)+1;
-		k[j] = v;
+		int ind = arc4random() % 4;
+		int rnd = arc4random() % DNA_SIZE;
+		
+		if ( ![gen[ind] isEqual:[dna objectAtIndex:rnd]] && [printString characterAtIndex:rnd] != '*' ) {
+			[dna replaceObjectAtIndex:rnd withObject:gen[ind]];
+			[printString replaceCharactersInRange:NSMakeRange(rnd, 1) withString:@"*"];
+			--replaceCount;
+		}
+		
 	}
 	
-	//нужна еще проверка совпадения "старого" гена и "мутированного"
-	//если одинаковы - "мутации" нет
-
-	for (int i=0; i<count; ++i) {
-		if ( k[i] > 0 ) {
-			[dna replaceObjectAtIndex:i withObject:[[gen objectAtIndex:k[i]-1] lowercaseString]];
-		}
-	}
+	NSLog(@"%@", self.description);
+	NSLog(@"%@", printString);
+	
+//	int k = 0;
+//	for (int i=0; i<printString.length; ++i) {
+//		if ([printString characterAtIndex:i] == '*')
+//			++k;
+//	}
+//	NSLog(@"k = %d", k);
 }
 
 
