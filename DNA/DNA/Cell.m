@@ -15,10 +15,7 @@
 
 - (NSArray *)dnaKeys
 {
-    if (!_dnaKeys) {
-        return [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-    }
-    return _dnaKeys;
+    return [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
 }
 
 - (id)init
@@ -59,13 +56,7 @@
 
 - (void)print
 {
-    NSMutableString *output = [NSMutableString string];
-
-    for (id dnaKey in self.DNA) {
-        [output appendString:dnaKey];
-    };
-    
-    NSLog(@"%@\n\n", output);
+    NSLog(@"%@\n\n", [self.DNA componentsJoinedByString:@""]);
 }
 
 
