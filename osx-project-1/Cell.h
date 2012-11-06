@@ -13,9 +13,9 @@
 }
 
 -(id) initWithMoleculeLength:(int) length;
--(NSMutableArray *) generateDNA:(long int) length;
+-(NSMutableArray *) generateDNA:(long int) withLength;
 -(NSString *) getRandomMolecule;
--(int) getRandomNumber:(NSUInteger) length;
+-(int) getRandomNumber:(NSUInteger) topLimit;
 -(int) hammingDistance:(Cell *) cell;
 -(void) print;
 

@@ -27,10 +27,10 @@
 }
 
 // вспомогательный метод, заполняющий молекулу
--(NSMutableArray *) generateDNA:(long int) length{
-    NSMutableArray *dna = [NSMutableArray arrayWithCapacity:length];
+-(NSMutableArray *) generateDNA:(long int) withLength{
+    NSMutableArray *dna = [NSMutableArray arrayWithCapacity:withLength];
     
-    for (int i=0; i<length; i++) {
+    for (int i=0; i<withLength; i++) {
         [dna addObject:[self getRandomMolecule]];
     }
     
@@ -43,17 +43,17 @@
     return [molecule objectAtIndex:[self getRandomNumber:[molecule count]]];
 }
 
-// возвращаем случайное число не более length
--(int) getRandomNumber:(NSUInteger) length {
-    return (arc4random() % length);
+// возвращаем случайное число не более topLimit
+-(int) getRandomNumber:(NSUInteger) topLimit {
+    return (arc4random() % topLimit);
 }
 
 // возвращаем количество различий
 -(int) hammingDistance:(Cell *)cell {
     int distance = 0;
     
-    for (int i=0;i< cell->DNA.count; i++) {
-        if (![[cell->DNA objectAtIndex:i] isEqual:[self->DNA objectAtIndex:i]]) {
+    for (int idx=0;idx< cell->DNA.count; idx++) {
+        if (![[cell->DNA objectAtIndex:idx] isEqual:[self->DNA objectAtIndex:idx]]) {
             distance++;
         }
     }
