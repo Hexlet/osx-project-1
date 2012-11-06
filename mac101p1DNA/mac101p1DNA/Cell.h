@@ -17,6 +17,7 @@
 
 -(id) init;
 -(id) initLength:(int) l; // Похоже Obj-C неподдерживает Default Argument Value
+-(NSMutableArray *) makeDNA:(int) l;
 -(int) hammingDistance: (Cell *) cell;
 
 @end

@@ -18,16 +18,17 @@
 -(id) initLength:(int) l{
     self = [super init];
     if (self) {
-            mols = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
-            DNA = [[NSMutableArray alloc] init];
-            for (int i = 0; i < l; i++)[DNA addObject:[mols objectAtIndex:arc4random()%4]];
-        }
+        DNA = [NSMutableArray arrayWithArray:[self makeDNA:l]];
+    }
     return self;
 }
 
-//-(NSMutableArray *) getDNA {
-//    return DNA;
-//}
+-(NSMutableArray *) makeDNA:(int)l {
+    mols = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
+    DNA = [[NSMutableArray alloc] init];
+    for (int i = 0; i < l; i++)[DNA addObject:[mols objectAtIndex:arc4random()%4]];
+    return DNA;
+}
 
 -(int) hammingDistance:(Cell *)cell {
     int hd = 0;
