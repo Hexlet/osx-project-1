@@ -25,7 +25,7 @@
     // Массив с индексами измененных элементов ДНК
     NSMutableArray *changed = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i <= count; i++) {
+    for (int i = 0; i < count; i++) {
         int position = arc4random() % [self.DNA count];
         while ([changed containsObject:[NSNumber numberWithInt:position]]) {
             NSLog(@"Nucleotide at index %i has mutated. Trying get another index.", position);
