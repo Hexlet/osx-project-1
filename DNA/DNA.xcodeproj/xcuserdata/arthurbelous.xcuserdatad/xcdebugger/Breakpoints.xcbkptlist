@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "1.0">
+   <FileBreakpoints>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNA/Cell.h"
+         timestampString = "373843644.116125"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "13"
+         endingLineNumber = "13"
+         landmarkName = "@interface Cell"
+         landmarkType = "2">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNA/Cell.m"
+         timestampString = "373923676.388999"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
+         landmarkName = "-init"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNA/main.m"
+         timestampString = "373846124.780496"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "main()"
+         landmarkType = "7">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNA/main.m"
+         timestampString = "373924128.086023"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "18"
+         endingLineNumber = "18"
+         landmarkName = "main()"
+         landmarkType = "7">
+      </FileBreakpoint>
+   </FileBreakpoints>
+</Bucket>
