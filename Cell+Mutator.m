@@ -41,13 +41,6 @@
     int i = arc4random() % 4;
     NSString *value = [arrayOfChars substringWithRange:NSMakeRange(i, 1)];
     return value;
-//    switch (i) {
-//    case 1 : return @"A"; break;
-//    case 2 : return @"C"; break;
-//    case 3 : return @"G"; break;
-//    case 4 : return @"T"; break;
-//        default : return @"Error";
-//    }
 }
 
 

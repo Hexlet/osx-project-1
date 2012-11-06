@@ -9,13 +9,10 @@
 @interface Cell : NSObject 
    @property   NSMutableArray *DNA;
 
-
 - (id)   init ;
 - (id)   initWithLenght: (int) length;
 - (int)  hammingDistance: (Cell*) aCell;
 - (void) print;
-
-//- (void) setDNA: (NSMutableArray *) DNA;
 - (NSString* ) randomCharacter;
 - (NSString* ) replaceCharacter: (NSString*) exclude ;
 
