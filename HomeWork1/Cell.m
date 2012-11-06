@@ -18,7 +18,7 @@
     NSMutableArray *arrayChars = [[NSMutableArray alloc] initWithObjects:@"A",@"T",@"G",@"C",nil];
     if ( self ) {
         for ( int i = 0; i < 100; i++) {
-            randomCount = random() % 4;
+            randomCount = arc4random() % 4;
             [_DNA addObject:[arrayChars objectAtIndex:randomCount] ];
         }
     }

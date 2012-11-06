@@ -242,6 +242,7 @@
 				3AF78D4F1648025100FEBD5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

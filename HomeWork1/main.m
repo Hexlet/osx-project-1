@@ -27,13 +27,13 @@
     for ( int i = 0 ; i < x; i++) {
         
         int randomCount;
-        randomCount = random() % x;
+        randomCount = arc4random() % x;
         [arrayForIndex addObject:[NSNumber numberWithInt:randomCount]];
         [arrayForIndex removeObjectAtIndex:randomCount];
     }
     //меняем
     for ( int i = 0; i < x; i++) {
-        randomCount = random() % 4;
+        randomCount = arc4random() % 4;
         [self.DNA insertObject:[arrayChars objectAtIndex:randomCount] atIndex:[[arrayForIndex objectAtIndex:i] integerValue]];
     }
 }
