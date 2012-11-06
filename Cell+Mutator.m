@@ -77,7 +77,7 @@
 
 - (void) mutate:(int) p {
     
-    if (0<p && p<=100) {
+    if (0<=p && p<=100) {
     
     int n = round([self.DNA count] * p/100), length=1, randomInt;
     NSInteger indexArray[n], i=0;
