@@ -5,13 +5,12 @@
 -(id) init {
     self = [super init];
     if (self) {
-        NSUInteger DNACapacity = 100;
         // Определяем нуклеотиды в виде строки, что бы в случае необходимости
         // можно было легко добавить нужные или удалить ненужные
         nucleotides = @"ATGC";
-        _DNA = [[NSMutableArray alloc] initWithCapacity:DNACapacity];
+        _DNA = [[NSMutableArray alloc] initWithCapacity:DNA_CAPACITY];
         
-        for (int i = 0; i < DNACapacity; i++) {
+        for (int i = 0; i < DNA_CAPACITY; i++) {
             [_DNA addObject:[self getRandomNucleotide]];
         }
     }

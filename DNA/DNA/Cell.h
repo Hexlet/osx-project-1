@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+#define DNA_CAPACITY 100
+
 @interface Cell : NSObject {
     NSString *nucleotides;
 }

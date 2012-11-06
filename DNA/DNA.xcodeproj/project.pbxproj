@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1311C66A16490786000F008F /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1311C66916490786000F008F /* Cell+Mutator.m */; };
 		13AE1ABA1640F8B900756543 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AE1AB91640F8B900756543 /* Foundation.framework */; };
 		13AE1ABD1640F8B900756543 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AE1ABC1640F8B900756543 /* main.m */; };
 		13AE1AC11640F8B900756543 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 13AE1AC01640F8B900756543 /* DNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1311C66816490786000F008F /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		1311C66916490786000F008F /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 		13AE1AB51640F8B900756543 /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AE1AB91640F8B900756543 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		13AE1ABC1640F8B900756543 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 				13AE1ABE1640F8B900756543 /* Supporting Files */,
 				13AE1AC71640F8CD00756543 /* Cell.h */,
 				13AE1AC81640F8CD00756543 /* Cell.m */,
+				1311C66816490786000F008F /* Cell+Mutator.h */,
+				1311C66916490786000F008F /* Cell+Mutator.m */,
 			);
 			path = DNA;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			files = (
 				13AE1ABD1640F8B900756543 /* main.m in Sources */,
 				13AE1AC91640F8CD00756543 /* Cell.m in Sources */,
+				1311C66A16490786000F008F /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +182,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -200,7 +206,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -242,6 +248,7 @@
 				13AE1AC61640F8B900756543 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
