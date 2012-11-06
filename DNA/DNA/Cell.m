@@ -13,17 +13,14 @@
 
 @implementation Cell
 
-- (NSArray *)dnaKeys
-{
-    return [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-}
-
 - (id)init
 {
     self = [super init];
     
     if (self) {
         _DNA = [NSMutableArray arrayWithCapacity:DNA_CAPACITY];
+        
+        _dnaKeys = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         
         NSUInteger counter;
         for (counter = 0; counter < DNA_CAPACITY; counter++) {
