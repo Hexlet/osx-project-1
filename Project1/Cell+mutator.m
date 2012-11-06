@@ -18,7 +18,7 @@
     if (percent == 0) return;
     
     // Переводим процент в количество элементов
-    int count = DNA_LENGHT * percent / 100;
+    int count = round(DNA_LENGHT * percent / 100);
     
     static NSMutableArray *tmpArray = nil;
     
