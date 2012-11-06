@@ -15,6 +15,10 @@ static NSArray *bases;
 
 @implementation Cell
 
++(int)length {
+    return DNAlength;
+}
+
 // Returns random nucleobase
 +(NSString*)randomBase {
     return [Cell randomBaseExcept:nil];
