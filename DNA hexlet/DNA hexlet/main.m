@@ -19,10 +19,16 @@
 @implementation Cell (mutator)
 
 -(void)mutate:(int)value{
-    NSArray *lettersArray=@[@"A",@"T",@"C",@"G"];
+    NSArray *lettersArray=[NSArray arrayWithObjects:@"A",@"T",@"C",@"G", nil];
     NSMutableArray *usedIndexes=[[NSMutableArray alloc]initWithCapacity:100];
     int randomIndex=0;
     int randomIndex2=0;
+    
+    //NSLog(@"value=%d",value);
+    if(value > 100 || value < 0){
+        NSLog(@"Mutate failed! Wrong persentage.");
+        return;
+    }
     for(int index=0;index<value;index++){
         randomIndex =(int)(arc4random() % dna.count);
         randomIndex2=(int)(arc4random() % lettersArray.count);
@@ -50,7 +56,7 @@ int main(int argc, const char * argv[])
         NSLog(@"hammingDistance befor mutate=%d",[cell hammingDistance:cell2]);
         ///[cell print];
         //[cell2 print];
-        [cell mutate:44];
+        [cell mutate:10];
         [cell2 mutate:53];
         NSLog(@"hammingDistance after mutate=%d",[cell hammingDistance:cell2]);
         //[cell print];
