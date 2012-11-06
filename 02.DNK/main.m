@@ -16,11 +16,11 @@ int main(int argc, const char * argv[])
         // insert code here...
         NSLog(@"Hello, World!");
         Cell *obj1 = [[Cell alloc]init];
-        NSLog(@"obj1 %@", [obj1 description]);
+        NSLog(@"obj1 %@", obj1);
         
         NSArray* dnk_gen = [[NSArray alloc] initWithObjects:@"A",@"T",@"G", @"C", nil ]; //default values
         Cell *obj2 = [[Cell alloc] initWithCapacity:100 andGens:dnk_gen];
-        NSLog(@"obj2 %@", [obj2 description]);
+        NSLog(@"obj2 %@", obj2);
         
         NSLog(@" distance = %ld", [obj1 hammingDistance:obj2]);
         
