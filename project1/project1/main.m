@@ -15,7 +15,6 @@
 
 @implementation Cell (mutator)
 - (void) mutate:(int)x {
-    NSMutableArray *objects = [[NSMutableArray alloc] initWithObjects:@"A", @"T", @"G", @"С", nil];
     int i;
     for (i = 0; i < x; i++) {
         
