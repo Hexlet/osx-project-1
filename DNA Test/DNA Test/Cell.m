@@ -48,9 +48,9 @@
     //Инициализируем счётчик несоответствий
     int hamming = 0;
     
-    for (int i=1; i<DNA_LENGHT; i++) {
+    for (int i=0; i<DNA_LENGHT; i++) {
         //Сравниваем поэлементно и в случае несоответствия увеличиваем счётчик
-        if([[DNA objectAtIndex:i] isEqual:[[DNAForHamming getDNA] objectAtIndex:i]]) {
+        if(![[DNA objectAtIndex:i] isEqual:[[DNAForHamming getDNA] objectAtIndex:i]]) {
             hamming++;
         }
     }
