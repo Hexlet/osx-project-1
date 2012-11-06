@@ -31,8 +31,6 @@
     }
     
     for (NSNumber *mIndex in mutateIndexArray) {
-        // удаляем текущий нуклеотид из массива для замены,
-        // чтобы нуклеотид в позиции был гарантированно заменен на другой
         NSUInteger currentIndex, newIndex;
         // получаем индекс текущего нуклеотида
         currentIndex = [[Cell nucleotides] indexOfObject:[DNA objectAtIndex:[mIndex integerValue]]];
