@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
+
 @interface Cell (mutator)
 
 -(void) mutator:(int)x;
@@ -18,24 +19,35 @@
 @implementation Cell (mutator)
 
 -(void)mutator:(int)x
-{    
+{
+    //Вычисляю процент
+    int procent = (int)round((float)x/100*[self.dna count]);
+    
     //Создал массив чисел от 0 до 99
     NSMutableArray *unicNumbers = [NSMutableArray array];
-    for(int i = 0; i < 100; i++) 
+    for(int i = 0; i<100; i++) 
         [unicNumbers addObject: [NSNumber numberWithInt:i]];
     
     NSUInteger size, position;
-    for (int i = 0; i < x; i++) {
+    NSString *oldDnaCode, *newDnaCode;
+    for (int i = 0; i<procent; i++) {
         size = [unicNumbers count];
-        if (size > 0) 
-            //Выбираю уникальное число (номер позици в dna)
+        //Выбираю уникальное число (номер позици в dna)
+        if (size > 0)
             position = (arc4random() % size);
-            NSNumber *unicRandomNumber = [unicNumbers objectAtIndex:position];
-            //Мутирую днк по выбранной позиции
-            [self.dna replaceObjectAtIndex:[unicRandomNumber intValue]
-                                withObject:[self.dnaCode objectAtIndex:arc4random() % [self.dnaCode count]]];
-            //Удаляю использованную позицию из массива, чтоб больше не повторялось
-            [unicNumbers removeObjectAtIndex:position];
+        int unicRandomNumber = [[unicNumbers objectAtIndex:position] intValue];
+        
+        //Проверяю чтобы днк код не повторялся при замене
+        oldDnaCode = [self.dna objectAtIndex:unicRandomNumber];
+        newDnaCode = [self.dnaCode objectAtIndex:arc4random() % [self.dnaCode count]];
+        while ([oldDnaCode isEqualToString:newDnaCode])
+            newDnaCode = [self.dnaCode objectAtIndex:arc4random() % [self.dnaCode count]];
+        
+        //Мутирую днк по выбранной позиции
+        [self.dna replaceObjectAtIndex:unicRandomNumber
+                            withObject:newDnaCode];
+        //Удаляю использованную позицию из массива, чтоб больше не повторялось
+        [unicNumbers removeObjectAtIndex:position];
     }
 }
 

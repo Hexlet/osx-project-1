@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject 
+@interface Cell : NSObject
 
-@property (weak) NSMutableArray *dna;
-@property (weak, readonly) NSArray *dnaCode;
+@property NSMutableArray *dna;
+@property (readonly) NSArray *dnaCode;
 
 -(int)hammingDistance:(Cell *)cell;
 

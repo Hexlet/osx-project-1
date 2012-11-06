@@ -10,18 +10,14 @@
 
 @implementation Cell
 
-@synthesize dna;
-@synthesize dnaCode;
-
 - (id)init
 {
     self = [super init];
     if (self) {
-        dnaCode = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-        
-        dna = [NSMutableArray arrayWithCapacity:100];
+        _dnaCode = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
+        _dna = [NSMutableArray arrayWithCapacity:100];
         for (int i =0; i<100; i++) 
-            [dna addObject:[dnaCode objectAtIndex:arc4random()%[dnaCode count]]];
+            [_dna addObject:[_dnaCode objectAtIndex:arc4random()%[_dnaCode count]]];
     }    
 
     return self;
@@ -32,8 +28,8 @@
 {
     int result;
     
-    for (int i = 0; i < [dna count]; i++) 
-        if([[dna objectAtIndex:i] isNotEqualTo:[cell.dna objectAtIndex:i]])
+    for (int i = 0; i<[_dna count]; i++)
+        if([[_dna objectAtIndex:i] isNotEqualTo:[cell.dna objectAtIndex:i]])
             result++;
     
     return result;

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B84778801648F74D00498069 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = B847787F1648F74D00498069 /* Cell.m */; };
 		B8C4C801163FF9CE008A796C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C4C800163FF9CE008A796C /* Foundation.framework */; };
 		B8C4C804163FF9CE008A796C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C4C803163FF9CE008A796C /* main.m */; };
 		B8C4C808163FF9CE008A796C /* ProjectOne_DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = B8C4C807163FF9CE008A796C /* ProjectOne_DNA.1 */; };
-		B8C4C82C1642995B008A796C /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C4C82B1642995B008A796C /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,13 +27,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B847787E1648F74D00498069 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		B847787F1648F74D00498069 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 		B8C4C7FC163FF9CE008A796C /* ProjectOne_DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ProjectOne_DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C4C800163FF9CE008A796C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B8C4C803163FF9CE008A796C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8C4C806163FF9CE008A796C /* ProjectOne_DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectOne_DNA-Prefix.pch"; sourceTree = "<group>"; };
 		B8C4C807163FF9CE008A796C /* ProjectOne_DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ProjectOne_DNA.1; sourceTree = "<group>"; };
-		B8C4C82A1642995B008A796C /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = ../../../ProjectOne_DNA/ProjectOne_DNA/Cell.h; sourceTree = "<group>"; };
-		B8C4C82B1642995B008A796C /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = ../../../ProjectOne_DNA/ProjectOne_DNA/Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +76,8 @@
 		B8C4C802163FF9CE008A796C /* ProjectOne_DNA */ = {
 			isa = PBXGroup;
 			children = (
-				B8C4C82A1642995B008A796C /* Cell.h */,
-				B8C4C82B1642995B008A796C /* Cell.m */,
+				B847787E1648F74D00498069 /* Cell.h */,
+				B847787F1648F74D00498069 /* Cell.m */,
 				B8C4C803163FF9CE008A796C /* main.m */,
 				B8C4C807163FF9CE008A796C /* ProjectOne_DNA.1 */,
 				B8C4C805163FF9CE008A796C /* Supporting Files */,
@@ -119,7 +119,7 @@
 		B8C4C7F3163FF9CE008A796C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = B8C4C7F6163FF9CE008A796C /* Build configuration list for PBXProject "ProjectOne_DNA" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C4C804163FF9CE008A796C /* main.m in Sources */,
-				B8C4C82C1642995B008A796C /* Cell.m in Sources */,
+				B84778801648F74D00498069 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
