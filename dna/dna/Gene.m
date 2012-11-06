@@ -40,6 +40,7 @@ static NSMutableOrderedSet* genes;
     [[Gene allGenes] removeObject:currentValue];
     NSUInteger random=arc4random()%3;
     self.value=[[Gene allGenes] objectAtIndex:random];
+    
     //push back removed value
     [[Gene allGenes] addObject:currentValue];
 }
