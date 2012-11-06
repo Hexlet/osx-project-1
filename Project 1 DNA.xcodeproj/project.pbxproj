@@ -1,0 +1,242 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEEEEA7E164480E70022D229 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEEEA7D164480E70022D229 /* Foundation.framework */; };
+		CEEEEA81164480E70022D229 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEEEA80164480E70022D229 /* main.m */; };
+		CEEEEA8D164481000022D229 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEEEA8C164481000022D229 /* Cell.m */; };
+		CEEEEA9016449DA30022D229 /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEEEA8F16449DA30022D229 /* Cell+mutator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEEEEA77164480E70022D229 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CEEEEA79164480E70022D229 /* Project 1 DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Project 1 DNA"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEEEA7D164480E70022D229 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CEEEEA80164480E70022D229 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CEEEEA8B164481000022D229 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = ../Cell.h; sourceTree = "<group>"; };
+		CEEEEA8C164481000022D229 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = ../Cell.m; sourceTree = "<group>"; };
+		CEEEEA8E16449DA30022D229 /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		CEEEEA8F16449DA30022D229 /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEEEEA76164480E70022D229 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEEEEA7E164480E70022D229 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEEEEA6E164480E70022D229 = {
+			isa = PBXGroup;
+			children = (
+				CEEEEA7F164480E70022D229 /* Project 1 DNA */,
+				CEEEEA7C164480E70022D229 /* Frameworks */,
+				CEEEEA7A164480E70022D229 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEEEEA7A164480E70022D229 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEEEEA79164480E70022D229 /* Project 1 DNA */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEEEEA7C164480E70022D229 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEEEEA7D164480E70022D229 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEEEEA7F164480E70022D229 /* Project 1 DNA */ = {
+			isa = PBXGroup;
+			children = (
+				CEEEEA8B164481000022D229 /* Cell.h */,
+				CEEEEA8C164481000022D229 /* Cell.m */,
+				CEEEEA8E16449DA30022D229 /* Cell+mutator.h */,
+				CEEEEA8F16449DA30022D229 /* Cell+mutator.m */,
+				CEEEEA80164480E70022D229 /* main.m */,
+			);
+			path = "Project 1 DNA";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEEEEA78164480E70022D229 /* Project 1 DNA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEEEEA88164480E70022D229 /* Build configuration list for PBXNativeTarget "Project 1 DNA" */;
+			buildPhases = (
+				CEEEEA75164480E70022D229 /* Sources */,
+				CEEEEA76164480E70022D229 /* Frameworks */,
+				CEEEEA77164480E70022D229 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Project 1 DNA";
+			productName = "Project 1 DNA";
+			productReference = CEEEEA79164480E70022D229 /* Project 1 DNA */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEEEEA70164480E70022D229 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = bashtannik;
+			};
+			buildConfigurationList = CEEEEA73164480E70022D229 /* Build configuration list for PBXProject "Project 1 DNA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CEEEEA6E164480E70022D229;
+			productRefGroup = CEEEEA7A164480E70022D229 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEEEEA78164480E70022D229 /* Project 1 DNA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEEEEA75164480E70022D229 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEEEEA81164480E70022D229 /* main.m in Sources */,
+				CEEEEA8D164481000022D229 /* Cell.m in Sources */,
+				CEEEEA9016449DA30022D229 /* Cell+mutator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CEEEEA86164480E70022D229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CEEEEA87164480E70022D229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CEEEEA89164480E70022D229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "Project 1 DNA/Project 1 DNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CEEEEA8A164480E70022D229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "Project 1 DNA/Project 1 DNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEEEEA73164480E70022D229 /* Build configuration list for PBXProject "Project 1 DNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEEEEA86164480E70022D229 /* Debug */,
+				CEEEEA87164480E70022D229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEEEEA88164480E70022D229 /* Build configuration list for PBXNativeTarget "Project 1 DNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEEEEA89164480E70022D229 /* Debug */,
+				CEEEEA8A164480E70022D229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEEEEA70164480E70022D229 /* Project object */;
+}
