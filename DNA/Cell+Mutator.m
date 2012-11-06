@@ -12,16 +12,20 @@
 
 -(void) mutate: (int) x {
     
-    if (x < 0 || x > 100) {
-        NSLog(@"Can't mutate less or more 100 percent of genes");
-        return;
+    @try {
+        [self mutateWithExctption: x];
     }
+    @catch (NSException *exception) {
+        NSLog(@"Error: %@",exception);
+    }
+}
+
+-(void) mutateWithExctption: (int) x {
     
-    /* Так как мне сказали на форуме: не следует наращивать функционал, который не требуется,
-     убираю рассчет 100%
-     int symbolsCount = x * [self maxSetSymbols] / 100;
-     */
-    int symbolsCount = x;
+    if (x < 0 || x > 100) @throw [NSException exceptionWithName:@"InvalidNumbersOfPercent" reason: @"Can't mutate less or more 100 percent of genes" userInfo:nil];
+    
+    int symbolsCount = x * [self maxSetSymbols] / 100;
+    
     NSMutableArray *changesList = [[NSMutableArray alloc] init];
     BOOL flag = NO;
     
