@@ -17,6 +17,7 @@
 -(void)mutate:(int)c
 {
     c = c>100?100:c;
+    c = c<0?0:c;
     
     int mutateCount = c/100.0f * DNA_COUNT;
     
@@ -30,8 +31,13 @@
     for (int i=0; i<mutateCount; i++) {
         int tmpIndx = arc4random()%[indexes count];
         
-        [self.dna replaceObjectAtIndex:[[indexes objectAtIndex:tmpIndx]intValue]
-                            withObject:[dnaItem objectAtIndex:arc4random()%[dnaItem count]]];
+        NSString* oldVal = [self.dna objectAtIndex:[[indexes objectAtIndex:tmpIndx]intValue]];
+        
+        while ([oldVal isEqual:[self.dna objectAtIndex:[[indexes objectAtIndex:tmpIndx]intValue]]]) {
+            [self.dna replaceObjectAtIndex:[[indexes objectAtIndex:tmpIndx]intValue]
+                                withObject:[dnaItem objectAtIndex:arc4random()%[dnaItem count]]];
+        }
+
         [indexes removeObjectAtIndex:tmpIndx];
     }
 }
