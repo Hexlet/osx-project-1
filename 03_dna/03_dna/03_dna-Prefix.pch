@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the '03_dna' target in the '03_dna' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
