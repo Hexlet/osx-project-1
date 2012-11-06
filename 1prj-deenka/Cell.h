@@ -10,7 +10,7 @@
 
 @interface Cell : NSObject
 
-- (int) hammingDistance: (Cell*) cell;
+- (int) hammingDistance: (Cell*) partner;
 
 // for debug only?
 - (void) print;

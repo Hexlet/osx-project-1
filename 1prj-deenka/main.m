@@ -18,6 +18,9 @@ int main(int argc, const char * argv[])
         Cell *leeloo, *korben;
         leeloo = [[Cell alloc] init];
         korben = [[Cell alloc] init];
+
+        
+        NSLog(@"Hamming Distance = %i",[leeloo hammingDistance:korben]);
         
         [leeloo print];
         [korben print];

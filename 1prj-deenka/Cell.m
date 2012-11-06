@@ -22,19 +22,17 @@
         
         DNA_bases = @"ATGC";
         
+        DNA = [[NSMutableArray alloc] initWithCapacity:100];
+        
+//            NSLog (@"Конструктор инициирует ДНК: %li", [DNA count ]); //debug
+        // почему цикл не крутится никак не пойму ... ага [DNA count] виноват, он же пока 0!
         // 10 для начала - так легче дебагить, для FINAL не забыть поменять на 100
-        DNA = [[NSMutableArray alloc] initWithCapacity:10];
-        
-/*            NSLog (@"Конструктор инициирует ДНК: %li", [DNA count ]); //debug
-        
-        for (int iii=0; iii < 5; iii++) {
-            NSLog (@"%i", iii);
-        }*/
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // почему цикл не крутится никак не пойму - ага [DNA count] виноват, он же 0!
         for (i=0; i<10; i++) {
-            j=(random()%4);
-            [DNA addObject:[NSString stringWithFormat:@"%c",[DNA_bases characterAtIndex:j ]]];
+//            j=arc4random()%4;
+// arc4random рандомнее, чем просто random - по крайней мере, с каждым run выдает новые значения
+//            NSLog(@"%i",arc4random());
+             [DNA addObject:[NSString stringWithFormat:@"%c",[DNA_bases characterAtIndex:arc4random()%4 ]]];
+            // напишу, пожалуй, весь проект в одно строчку. Потом ради смеха сразу в кексах.
 //            NSLog (@"Конструктор заполняет ДНК: %li", [DNA count ]); //debug
         }
     }
@@ -46,15 +44,29 @@
 }
 
 
-- (int) hammingDistance: (Cell*) cell {
+- (int) hammingDistance: (Cell*) partner {
 
-    return 0;
+    NSMutableArray *DNA2=partner->DNA;
+    
+    int hd=0;
+    
+    for (i=0; i<10; i++) {
+ 
+        if ([DNA objectAtIndex:i] != [DNA2 objectAtIndex:i]) hd++;
+
+        //NSLog(@"L vs. K: %@-%@",[DNA objectAtIndex:i],[DNA2 objectAtIndex:i]);
+    }
+//        NSLog (@"%@ vs. %@", DNA, DNA2);
+    return hd;
 }
 
 
 - (void) print {
-    NSLog (@"%@", DNA_bases);
-    NSLog (@"%@%@%@", [DNA objectAtIndex:0],[DNA objectAtIndex:5],[DNA objectAtIndex:9]); //[DNA count ]
+    
+    //NSLog (@"Two");
+    //NSLog (@"%@", DNA_bases);
+    //NSLog (@"%@%@%@", [DNA objectAtIndex:0],[DNA objectAtIndex:5],[DNA objectAtIndex:9]); //[DNA count ]
+    //NSLog (@"%@", DNA);
 }
 
 @end
