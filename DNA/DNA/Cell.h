@@ -10,9 +10,13 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *dna;
-@property (readonly) NSArray *aAvailableSymbols;
+@property NSMutableArray *DNA;
+
++(NSArray *)dnaCodes;
++(NSString *)getRandomCode;
++(NSString *)getRandomCode:(NSString *)exclude;
 
 -(id) init;
 -(int) hammingDistance:(Cell *)cell;
+
 @end

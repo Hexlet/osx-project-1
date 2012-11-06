@@ -7,24 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import  "Cell.h"
+#import "Cell.h"
+#import "Cell+mutator.h"
 
-@interface Cell(mutator)
--(void) mutate: (int)pcnt2Mutate;
-@end
 
-@implementation Cell(mutator)
-
--(void) mutate:(int)pcnt2Mutate {
-    int cnt2Mutate = pcnt2Mutate % 100;
-    int i;
-    
-    for (i = 0; i < cnt2Mutate; i++) {
-        [self.dna replaceObjectAtIndex:(i) withObject:([self.aAvailableSymbols objectAtIndex:(2)])];
-    }
-}
-
-@end
 
 int main (int argc, const char * argv[])
 {
@@ -34,11 +20,10 @@ int main (int argc, const char * argv[])
         cell1 = [[Cell alloc] init];
         cell2 = [[Cell alloc] init];
         
-        NSLog(@"%@", cell1);
         NSLog(@"%d", [cell1 hammingDistance:(cell2)]);
         
         [cell1 mutate:(10)];
-        [cell2 mutate:(10)];
+        [cell2 mutate:(20)];
 
         NSLog(@"%d", [cell1 hammingDistance:(cell2)]);
     }
