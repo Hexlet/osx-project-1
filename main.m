@@ -8,7 +8,7 @@
 #import "Cell.h"
 
 @interface Ceil(mutator)
--(void) mutate:(int);
+-(void) mutate:(int)x;
 @end
 
 @implementation Ceil(Mutator)
