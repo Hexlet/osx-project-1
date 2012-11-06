@@ -23,7 +23,9 @@
     
     // Mutate
     
-    for (int i = 0; i < percent; i++) {
+    int mutationsCount = round( [Cell length] * percent / 100.0f );
+    
+    for (int i = 0; i < mutationsCount; i++) {
         int randomIndex = (int) [[randomIndexes objectAtIndex:i] integerValue];
         
         NSString* oldBase = [self.DNA objectAtIndex:randomIndex];
