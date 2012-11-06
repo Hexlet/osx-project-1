@@ -18,7 +18,7 @@
 	-(void) mutate: (int) PercentToMutate{
 		int randomRef;
 		/// Создаем массив и заполняем его случайными индексами. Количество индексов строго 30% от длинны массива DNA
-		NSMutableArray *ind_array = [NSMutableArray arrayWithCapacity:(int)(PercentToMutate/self.DNA.count*100)];
+		NSMutableArray *ind_array = [NSMutableArray arrayWithCapacity:(int)round(PercentToMutate/100*self.DNA.count)];
 		int i=0;
 		do {
 			randomRef = arc4random() % [[self DNA] count];
@@ -26,7 +26,7 @@
 				[ind_array addObject: [NSNumber numberWithInt:randomRef]];
 				i++;
 			}
-		}while (i<(int)(PercentToMutate*100/self.DNA.count));
+		}while (i<(int)round(PercentToMutate/100*self.DNA.count));
 		
 				
 		
@@ -38,7 +38,8 @@
 				randomRef = arc4random() % [self.array count];
 			} while([self.DNA objectAtIndex:[(NSNumber*)[ind_array objectAtIndex:i] intValue]] ==[self.array objectAtIndex:randomRef]);
 			// Собственно заменяем элемент
-			[self.DNA insertObject:[self.array objectAtIndex:randomRef] atIndex: [(NSNumber*)[ind_array objectAtIndex:i] intValue]];
+			[self.DNA  replaceObjectAtIndex:[(NSNumber*)[ind_array objectAtIndex:i] intValue] withObject:[self.array objectAtIndex:randomRef]];
+			
 		}
 		
 		
