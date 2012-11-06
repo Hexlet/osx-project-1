@@ -28,8 +28,8 @@
     int distance = 0;              // Начальное количество разных символов
     
     for (int i = 0; i < [self.DNA count]; i++) { // Перебираем все символы в массивах ДНК-1 и ДНК-2
-        if ([self.DNA objectAtIndex:i] != [f.DNA objectAtIndex:i]) { // Если символы не совпадают
-            distance++;                                              // увеличиваем переменную на 1
+        if (![[self.DNA objectAtIndex:i] isEqual:[f.DNA objectAtIndex:i]]) { // Если символы не совпадают
+            distance++;                                                      // увеличиваем переменную на 1
         }
     }
     return distance; // Возвращаем количество несовпадающих символов
