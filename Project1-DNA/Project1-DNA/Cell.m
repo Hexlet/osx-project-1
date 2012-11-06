@@ -50,8 +50,10 @@
                         DNA = [NSMutableArray arrayWithCapacity: DNASize];
             
                         for(int i = 0; i < DNASize; i++){
-                                NSString *val = [nucleotides objectAtIndex: arc4random_uniform((int)[nucleotides count])];
-                                [DNA addObject: val];
+                                //вернет случайное число в диапазоне [0..[nucleotides count] - 1]
+                                int index = arc4random_uniform((int)[nucleotides count]);
+                            
+                                [DNA addObject: [nucleotides objectAtIndex: index]];
                             }
                     }
                 return self;
@@ -104,7 +106,10 @@
         @autoreleasepool {
                 int index = (int)[nucleotides indexOfObject:elem];
             
-                int newIndex = (int)(index + arc4random_uniform((int)[nucleotides count])) % [nucleotides count];
+                //получаем случайное смещение индекса в диапазоне [1..3]
+                int shift = arc4random_uniform((int)[nucleotides count] - 1) + 1; //вернет [0..2] + 1
+            
+                int newIndex = (int)(index + shift) % [nucleotides count];
             
                 return [nucleotides objectAtIndex: newIndex];
             }
