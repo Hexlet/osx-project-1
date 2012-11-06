@@ -19,8 +19,10 @@
 
 - (void) mutate:(int) k {
     
-    /* процент замен не может быть больше 100 */
+    /* процент замен не может быть больше 100% */
     if (k<=100){
+        
+        k = 100*k/100; // Нормируем k. Теперь k — количество ячеек, которые нужно заменить.
         
         /* Вычисляем индексы, которые будем менять */
         int position; // тестовая позиция
@@ -80,16 +82,20 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         Cell *oneCell, *twoCell;
+        int distance1, distance2;
         
         oneCell = [[Cell alloc] init];
         twoCell = [[Cell alloc] init];
         
-        [oneCell hammingDistance:twoCell] ;
+        distance1 = [oneCell hammingDistance:twoCell] ;
         
         [oneCell mutate:10];
         [twoCell mutate:10];
         
-        [oneCell hammingDistance:twoCell] ;
+        distance2 = [oneCell hammingDistance:twoCell] ;
+        
+        NSLog(@"%d", distance1);
+        NSLog(@"%d", distance2);
         
         
     }
