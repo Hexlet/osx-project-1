@@ -9,13 +9,15 @@
 #import "Cell+mutator.h"
 
 @implementation Cell(mutator)
+
 -(void)mutate: (int) mutatePercent {
-    NSAssert(mutatePercent < 100 && mutatePercent > 0, @"invalid percent");
+    NSAssert(mutatePercent <= 100 && mutatePercent >= 0, @"invalid percent");
+    if(mutatePercent==0) return;
     // вычисляем примерное кол-во индексов для замены, если кол-во элементов DNA != 100
-    int numberIndexesToReplace = (float)DNA_LEN / 100 * mutatePercent;
+    int numberIndexesToReplace = round((float)DNA_LEN * mutatePercent / 100);
+    NSMutableArray *mutateIndexArray, *dnaIndexArray;
     
-    static NSMutableArray *mutateIndexArray, *dnaIndexArray;
-    mutateIndexArray = [[NSMutableArray alloc] initWithCapacity:mutatePercent];
+    mutateIndexArray = [[NSMutableArray alloc] initWithCapacity:numberIndexesToReplace];
     dnaIndexArray = [[NSMutableArray alloc] initWithCapacity:DNA_LEN];
     for (NSInteger i = 0; i < DNA_LEN; i++)
         [dnaIndexArray addObject:[NSNumber numberWithInteger:i]];
@@ -28,12 +30,12 @@
         numberIndexesToReplace--;
     }
     
-    for (id mIndex in mutateIndexArray) {
+    for (NSNumber *mIndex in mutateIndexArray) {
         // удаляем текущий нуклеотид из массива для замены,
         // чтобы нуклеотид в позиции был гарантированно заменен на другой
         NSString *currentNuke = [DNA objectAtIndex:[mIndex integerValue]];
         NSUInteger current_nuke_index = [[Cell nucleotides] indexOfObject:currentNuke];
-        id newNucleotide;
+        NSString *newNucleotide;
         // index может быть только 0,1,2,3, проверяем кратность двойки и меняем его в большую или меньшую сторону
         if (current_nuke_index % 2 == 0) {
             newNucleotide = [[Cell nucleotides] objectAtIndex:++current_nuke_index];
