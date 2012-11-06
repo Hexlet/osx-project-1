@@ -14,6 +14,7 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
+        //create 2 elements
         Cell *leeloo, *korben;
         leeloo = [[Cell alloc] init];
         korben = [[Cell alloc] init];
