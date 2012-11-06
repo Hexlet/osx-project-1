@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 MKM. All rights reserved.
 //
 
+// переменная для проверки введеного пользователем значения
+int test = 1;
+
 // интерфейс класса Cell
 @interface Cell : NSObject
 {
@@ -98,9 +101,10 @@
     
     NSArray *arrayChar = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C",  nil];
     int i = 0;
-   
+    // проверка введеного пользовательм кол-ва процентов (диапазон 0-100)
+    if (x >= 0 && x <= 100) {
         while (i < x) {
-        
+            
             int index = rand() % [arrayChar count];
             int index1 = rand() % 100;
             if (!testAr[index1]) {
@@ -109,7 +113,16 @@
                 ++i;
             }
         }
+        test = 1;
+        
     }
+    // если пользователь ввел не корректное число, выводим соответствующее сообщение
+    // и глобальной переменной test присваиваем - 0 для дальнейшей проверки в main
+    else{
+        NSLog(@"Проценты должны находится в диапазоне 0-100");
+        test = 0;
+    }
+}
 
 @end
 
@@ -126,24 +139,28 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming distance между ДНК");
         NSLog(@"%i", [cell1 hammingDistance:cell2]);
         
-        NSLog(@"Введите кол-во процентов для мутации ДНК");
+        int x = 1;
         
-        int m;
-        scanf("%i", &m);
-        
-        
-        if (m >= 0 && m <= 100) {
+        // цикл для введения кол-ва процентов для мутации 
+        while (x) {
+            NSLog(@"Введите кол-во процентов для мутации ДНК (в диапазоне 0-100)");
+            
+            int m;
+            scanf("%i", &m);
+            
             [cell1 mutator:m];
-            [cell2 mutator:m];
-            NSLog(@"hamming distance между ДНК после мутации");
-            NSLog(@"% i", [cell1 hammingDistance:cell2]);
+            
+            // если пользователь ввел число не из диапазона 0-100,
+            // то мутация второго cell не происходит и не расчитывается hamming distance
+            // до тех пор пока не введет значение из необходимого диапазона
+            if (test){
+                [cell2 mutator:m];
+                NSLog(@"hamming distance между ДНК после мутации");
+                NSLog(@"% i", [cell1 hammingDistance:cell2]);
+                
+                x = 0;            
+            }
         }
-        else
-            NSLog(@"Проценты должны находится в диапазоне 0-100");
-        
-        
-       
-        
     }
 
     return 0;
