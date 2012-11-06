@@ -15,10 +15,12 @@
     lenght = 99; // для тестирования очень удобно выставить например 9
     
     self = [super init];
-    self->DNA = [[NSMutableArray alloc] init];
-    for(int i = 0; i <= lenght; i++) {
-        [self->DNA addObject:letters[arc4random()%4]]; // случайным образом генерируем значение индекса массива букв и 
-    }                                                  // записываем в массив ДНК значение по этому индексу
+    if(self) {
+        self->DNA = [[NSMutableArray alloc] init];
+        for(int i = 0; i <= lenght; i++) {
+            [self->DNA addObject:letters[arc4random()%4]]; // случайным образом генерируем значение индекса массива букв и
+        }                                                  // записываем в массив ДНК значение по этому индексу
+    }
     return self;
 }
 
