@@ -53,7 +53,7 @@
     //массив содержит возможные гены
     NSArray *arr = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
     //Случайный номер гена
-    u_int8_t r = arc4random() % [arr count];
+    NSUInteger r = arc4random() % [arr count];
     //возвращаем ген
     return [arr objectAtIndex:r];
 

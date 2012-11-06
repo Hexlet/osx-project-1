@@ -18,12 +18,12 @@ int main(int argc, const char * argv[])
         Cell *cellOne = [[Cell alloc] init];
         Cell *cellTwo = [[Cell alloc] init];
         int matches = [cellOne hummingDistance: cellTwo];
-        NSLog(@"Match gens %d",matches);
+        NSLog(@"Not match gens %d",matches);
         
-        [cellOne mutate:-10];
+        [cellOne mutate:10];
         [cellTwo mutate:20];
         matches = [cellOne hummingDistance: cellTwo];
-        NSLog(@"Match gens %d",matches);
+        NSLog(@"Not match gens %d",matches);
 
     }
     return 0;
