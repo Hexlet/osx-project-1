@@ -20,7 +20,7 @@
 // если будет меньше нуля, то метод ничего делать не будет, а если > 100, то изменит содержимое каждой яцейки
 -(void)mutate:(int) X{
     // передали значение меньше нуля, ничего не делать
-    if (X < 0) {
+    if (X <= 0) {
         return;
     }else if (X > 100){ // значение больше 100, изменяем всю цепочку днк
         for (int i=0; i<100; ++i) {
@@ -30,8 +30,8 @@
         NSMutableArray *aTemp; // временный массив в котором будет хравиться индексы ячеек которые мы изменили
         aTemp = [NSMutableArray arrayWithCapacity:X]; // выделяем память на Х ячеек
         for (int i=0; i<X; ++i) { // бежим по массиву от 0 до Х
-            BOOL aCheck = true; // переменная нужна для проверки
-            while (aCheck) { // если истина, то продолжаем работу цикл
+            BOOL aCheck = false; // переменная нужна для проверки
+            do { // если истина, то продолжаем работу цикл
                 aCheck = false;
                 int newElement = arc4random() % 100; // выбираем случайную ячейку ДНК для изменения ее значения
                 NSString *str = [NSString stringWithFormat:@"%d",newElement];
@@ -42,7 +42,7 @@
                     [aTemp addObject:str]; // добавляем индекс в массив
                     [DNK replaceObjectAtIndex:newElement withObject:self.getEletmentArray]; // меняем значение ДНК в случайном индексе
                 }
-            }
+            }while (aCheck);
         }
     }
 }
