@@ -79,14 +79,13 @@
         
                 for(int i = 0; i < ([DNA count ] * percent/ 100 ); i++){
             
-                        int rnd = arc4random_uniform((int)[indexes count]) % [nucleotides count];
-            
+                        int rnd = arc4random_uniform((int)[indexes count]);
+       
                         int index = (int)[[indexes objectAtIndex: rnd] integerValue];
             
                         NSString *val = [DNA objectAtIndex:index];
             
                         NSString *mutant = [self mutateElem: val];
-                    
                     
                         [DNA replaceObjectAtIndex:index withObject: mutant];
                     
