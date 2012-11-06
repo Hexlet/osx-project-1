@@ -15,10 +15,12 @@ const NSString *ch[4] = {@"A", @"T", @"G", @"C"};   //
 // метод инициализации ////////////////////////////////////////////////////////////
 -(id) init{
     self = [super init];
-    dna = [[NSMutableArray alloc] init];
-    int count = LENGTH_ARRAY;
-    while (count--)
-        [dna addObject:ch[arc4random()%4]];
+    if (self) {
+        dna = [[NSMutableArray alloc] init];
+        int count = LENGTH_ARRAY;
+        while (count--)
+            [dna addObject:ch[arc4random()%4]];
+    }
     return self;
 }
 // метод инициализации закончен ///////////////////////////////////////////////////
