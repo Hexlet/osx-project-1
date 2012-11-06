@@ -13,7 +13,7 @@
 -(void)mutate: (int)percent {
     
     if (percent > 100 || percent <= 0) return; // Если передали 0, то делать ничего не нужно.
-    int qnt = DNALength * percent / 100; // Количество элементов для замены
+    long qnt = lroundf( DNALength * percent / 100); // Количество элементов для замены
     
     // Массив индексов
     NSMutableArray *idx;
