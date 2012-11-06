@@ -47,19 +47,9 @@
         [positionNotUse removeObjectAtIndex:[num integerValue]];
     }
     
-    NSInteger pos = 0;
-    
     // замена следующих из списка номеров хромосом
-    for (NSInteger i = 0; i < 100 && [rand count] != 0; ++i)
-    {
-        NSInteger num = [[rand objectAtIndex: pos] integerValue];
-        
-        if (num == i) {
-            [self mutateElementWithNumber: num];
-            i = -1;
-            [rand removeObjectAtIndex:pos];
-        }
-    }
+    for (NSInteger i = 0; i < [rand count]; ++i)
+        [self mutateElementWithNumber: [[rand objectAtIndex: i] integerValue]];
 }
 
 @end

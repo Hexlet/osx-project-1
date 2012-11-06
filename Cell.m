@@ -20,11 +20,7 @@
         
         // Автозаполнение хромосом в ДНК
         for (int i = 0; i < 100; ++i)
-        {
-            int rand = arc4random()%4;
-        
-            [self.DNA  addObject: [typeHromosome objectAtIndex: rand]];
-        }
+            [self.DNA  addObject: [typeHromosome objectAtIndex: arc4random()%4]];
     }
     
     return self;
@@ -47,9 +43,7 @@
     {
         // поэлементное сравнение двух списков хромосом
         if([[self.DNA objectAtIndex: i]  isEqual: [otherDNA.DNA objectAtIndex: i]])
-        {
             ++distance;
-        }
     }
     
     return distance;
