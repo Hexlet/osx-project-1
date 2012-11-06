@@ -20,14 +20,14 @@ int main(int argc, const char * argv[])
         
         NSLog(@"%@", cell1);
         NSLog(@"%@", cell2);
-        NSLog(@"distance: %d", [cell1 hammingDistance:cell2]);
+        NSLog(@"Haming Distance: %d", [cell1 hammingDistance:cell2]);
         
-        [cell1 mutate:15];
+        [cell1 mutate:10];
         [cell2 mutate:25];
         
         NSLog(@"%@", cell1);
         NSLog(@"%@", cell2);
-        NSLog(@"distance: %d", [cell1 hammingDistance:cell2]);
+        NSLog(@"Haming Distance: %d", [cell1 hammingDistance:cell2]);
         
     }
     return 0;
