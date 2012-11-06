@@ -17,14 +17,13 @@
     }
 
 -(int) hammingDistanse: (Cell*) cell{
-    
-        @autoreleasepool {
+
                if([self isEqual:cell]) return 0;
         
                if(cell == nil) return (int)[DNA count] ;
         
                int count = 0;
-        
+    
                NSMutableArray *dna = [cell getDNA];
         
                for (int i = 0; i < [DNA count]; i++) {
@@ -35,11 +34,8 @@
         
                return count;
             }
-    
-    }
 
 -(id)init {
-        @autoreleasepool {
                 self = [super init];
         
                 if (self != nil) {
@@ -57,7 +53,6 @@
                             }
                     }
                 return self;
-            }
     }
 -(NSMutableArray *) getDNA{
         return [DNA copy];
@@ -103,7 +98,6 @@
     };
 
 -(NSString*) mutateElem: (NSString*) elem {
-        @autoreleasepool {
                 int index = (int)[nucleotides indexOfObject:elem];
             
                 //получаем случайное смещение индекса в диапазоне [1..3]
@@ -112,7 +106,6 @@
                 int newIndex = (int)(index + shift) % [nucleotides count];
             
                 return [nucleotides objectAtIndex: newIndex];
-            }
     }
 
 @end
