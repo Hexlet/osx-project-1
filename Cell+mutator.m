@@ -13,10 +13,15 @@ extern NSArray const *ATGC;
 @implementation Cell (mutator)
 
 - (void)mutate:(int) percentM{
+
     if ((percentM < 0) || (percentM >100)) {
         NSException *e = [NSException exceptionWithName:@"WrongNumberPercent" reason:@"Wrong Number Percent" userInfo:nil];
         @throw e;
     }
+    
+    
+    percentM = [[self DNA] count] * percentM / 100;
+    
     
     NSMutableSet *indexesForMutationSet = [NSMutableSet set];
     
