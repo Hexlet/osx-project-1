@@ -8,21 +8,7 @@ static const NSString* mutateDNAItem(NSString *item)
     
     if(DNAItems[index] == item)
     {
-        switch(index)
-        {
-            case 0: 
-                index += arc4random()%(kMaxDNAItems - 1) + 1;
-                break;
-                
-            case (kMaxDNAItems - 1): 
-                index -= arc4random()%(kMaxDNAItems - 1) + 1;
-                break;
-                
-            default:
-                index += arc4random()%2 ? arc4random()%(kMaxDNAItems - index - 1) + 1 
-                                        : -arc4random()%index - 1;
-                break;
-        }
+        index = (index + 1 + arc4random()%(kMaxDNAItems - 1))%kMaxDNAItems;
     }
     
     return DNAItems[index];
