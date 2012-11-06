@@ -22,7 +22,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming Distance: %i",[DNA1 hammingDistance:DNA2]);
         
         [DNA1 mutate:20];
-		[DNA2 mutate:40];
+	[DNA2 mutate:40];
         
         NSLog(@"Hamming Distance: %i",[DNA1 hammingDistance:DNA2]);
     }
