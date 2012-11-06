@@ -62,7 +62,8 @@
 }
 
 - (int)hammingDistance:(Cell *)cell2
-{	
+{
+	///
 	int result = 0;
 	NSMutableString *s1 = [[NSMutableString alloc] initWithCapacity:DNA_SIZE];
 	NSMutableString *s2 = [[NSMutableString alloc] initWithCapacity:DNA_SIZE];
