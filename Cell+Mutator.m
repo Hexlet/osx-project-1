@@ -14,7 +14,7 @@
 
 - (id)init {
    if ( self= [super init]) {
-      self.DNA = [NSMutableArray arrayWithCapacity:99];
+      self.DNA = [NSMutableArray arrayWithCapacity:100];
        for (int i=0; i<=99; i++) {
           [self.DNA insertObject:[self randomCharacter] atIndex:i];
        }
@@ -75,6 +75,9 @@
 @implementation Cell (Mutator)
 
 - (void) mutate:(int) p {
+    
+    if (0<p && p<=100) {
+    
     int n = round([self.DNA count] * p/100), length=1, randomInt;
     NSInteger indexArray[n], i=0;
     //NSLog(@"длина днк: %ld, нужно поменять %i",[self.DNA count], n);
@@ -109,6 +112,9 @@
         
         
     } else NSLog(@"Нечего менять, так как количество процентов меньше 1 единицы из ДНК");
+    
+  } else NSLog(@"Значение процентов не может быть больше 100%% или меньше нуля");
+
     
 
     

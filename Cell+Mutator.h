@@ -9,7 +9,6 @@
 @interface Cell : NSObject 
    @property   NSMutableArray *DNA;
 
-- (id)   init ;
 - (id)   initWithLenght: (int) length;
 - (int)  hammingDistance: (Cell*) aCell;
 - (void) print;
