@@ -1,0 +1,240 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84D447C31648E5E9009D9BE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D447C21648E5E9009D9BE3 /* Foundation.framework */; };
+		84D447C61648E5E9009D9BE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D447C51648E5E9009D9BE3 /* main.m */; };
+		84D447CA1648E5E9009D9BE3 /* DNKProject.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84D447C91648E5E9009D9BE3 /* DNKProject.1 */; };
+		84D447D21648E62B009D9BE3 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D447D11648E62B009D9BE3 /* Cell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84D447BC1648E5E9009D9BE3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				84D447CA1648E5E9009D9BE3 /* DNKProject.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		84D447BE1648E5E9009D9BE3 /* DNKProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNKProject; sourceTree = BUILT_PRODUCTS_DIR; };
+		84D447C21648E5E9009D9BE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		84D447C51648E5E9009D9BE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84D447C81648E5E9009D9BE3 /* DNKProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNKProject-Prefix.pch"; sourceTree = "<group>"; };
+		84D447C91648E5E9009D9BE3 /* DNKProject.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNKProject.1; sourceTree = "<group>"; };
+		84D447D01648E62B009D9BE3 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		84D447D11648E62B009D9BE3 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84D447BB1648E5E9009D9BE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D447C31648E5E9009D9BE3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84D447B31648E5E9009D9BE3 = {
+			isa = PBXGroup;
+			children = (
+				84D447D01648E62B009D9BE3 /* Cell.h */,
+				84D447D11648E62B009D9BE3 /* Cell.m */,
+				84D447C41648E5E9009D9BE3 /* DNKProject */,
+				84D447C11648E5E9009D9BE3 /* Frameworks */,
+				84D447BF1648E5E9009D9BE3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84D447BF1648E5E9009D9BE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84D447BE1648E5E9009D9BE3 /* DNKProject */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84D447C11648E5E9009D9BE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84D447C21648E5E9009D9BE3 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84D447C41648E5E9009D9BE3 /* DNKProject */ = {
+			isa = PBXGroup;
+			children = (
+				84D447C51648E5E9009D9BE3 /* main.m */,
+				84D447C91648E5E9009D9BE3 /* DNKProject.1 */,
+				84D447C71648E5E9009D9BE3 /* Supporting Files */,
+			);
+			path = DNKProject;
+			sourceTree = "<group>";
+		};
+		84D447C71648E5E9009D9BE3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84D447C81648E5E9009D9BE3 /* DNKProject-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84D447BD1648E5E9009D9BE3 /* DNKProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84D447CD1648E5E9009D9BE3 /* Build configuration list for PBXNativeTarget "DNKProject" */;
+			buildPhases = (
+				84D447BA1648E5E9009D9BE3 /* Sources */,
+				84D447BB1648E5E9009D9BE3 /* Frameworks */,
+				84D447BC1648E5E9009D9BE3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DNKProject;
+			productName = DNKProject;
+			productReference = 84D447BE1648E5E9009D9BE3 /* DNKProject */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84D447B51648E5E9009D9BE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 84D447B81648E5E9009D9BE3 /* Build configuration list for PBXProject "DNKProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84D447B31648E5E9009D9BE3;
+			productRefGroup = 84D447BF1648E5E9009D9BE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84D447BD1648E5E9009D9BE3 /* DNKProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84D447BA1648E5E9009D9BE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D447C61648E5E9009D9BE3 /* main.m in Sources */,
+				84D447D21648E62B009D9BE3 /* Cell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84D447CB1648E5E9009D9BE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		84D447CC1648E5E9009D9BE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		84D447CE1648E5E9009D9BE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DNKProject/DNKProject-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84D447CF1648E5E9009D9BE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DNKProject/DNKProject-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84D447B81648E5E9009D9BE3 /* Build configuration list for PBXProject "DNKProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D447CB1648E5E9009D9BE3 /* Debug */,
+				84D447CC1648E5E9009D9BE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D447CD1648E5E9009D9BE3 /* Build configuration list for PBXNativeTarget "DNKProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84D447CE1648E5E9009D9BE3 /* Debug */,
+				84D447CF1648E5E9009D9BE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84D447B51648E5E9009D9BE3 /* Project object */;
+}
