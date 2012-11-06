@@ -11,21 +11,14 @@
 @implementation Cell
 
 - (id)init {
-    return [self initWithDnaSymbols];
-}
-
-- (id)initWithDnaSymbols {
-    
     self = [super init];
-    
     if (self) {
-        
         _dnaSymbols = [NSSet setWithObjects:@"A",@"T",@"G",@"C", nil];
         _dnaItems = [NSMutableArray arrayWithCapacity:kDnaLenght];
         for (int i = 0; i < kDnaLenght; i++) {
             [_dnaItems addObject:[[_dnaSymbols allObjects] objectAtIndex:arc4random()%[_dnaSymbols count]]];
         }
-        
+
     }
     
     return self;
