@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
+@interface Cell : NSObject {
+    
+    @private NSMutableArray *DNA;
+    
+}
 
--(void) randomizeAt:(NSInteger)position;
 -(int) hammingDistance:(Cell *)cell;
 
 -(void) print;

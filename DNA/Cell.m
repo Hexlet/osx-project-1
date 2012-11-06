@@ -8,52 +8,32 @@
 
 #import "Cell.h"
 
-@implementation Cell {
-    
-    NSMutableArray *DNA;
-    
-}
+#import "NucleotideGenerator.h"
+
+@implementation Cell
+
+static int DNA_LENGTH = 100;
 
 -(id) init {
     self = [super init];
     if (self) {
-        int COUNT = 100;
+        DNA = [NSMutableArray arrayWithCapacity: DNA_LENGTH];
         
-        DNA = [NSMutableArray arrayWithCapacity:COUNT];
+        for (int i = 0; i < DNA_LENGTH; ++i)
+            [DNA addObject: [NucleotideGenerator getRandom]];
         
-        for (int i = 0; i < COUNT; ++i)
-            [self randomizeAt:i];
     }
     return self;
 }
 
--(NSMutableArray *) getDNA {
-    return DNA;
-}
-
--(void) randomizeAt:(NSInteger)index {
-    NSMutableArray *VALUES = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-    
-    if (index >= [DNA count])
-        [DNA insertObject:[VALUES objectAtIndex:arc4random() % [VALUES count]] atIndex:index];
-    else {
-        id val = [DNA objectAtIndex:index];
-        for (int i = 0; i < [VALUES count]; ++i) {
-            if ([VALUES objectAtIndex:i] == val) {
-                [VALUES removeObjectAtIndex:i];
-                break;
-            }
-        }
-        [DNA replaceObjectAtIndex:index withObject:[VALUES objectAtIndex:arc4random() % [VALUES count]]];
-//        NSLog(@"%@ -> %@", val, VALUES);
-    }
-}
-
 -(int) hammingDistance:(Cell *)cell {
+    if ([DNA count] != [cell->DNA count])
+        @throw [NSException exceptionWithName:@"CellException" reason:@"DNA lengths aren't equal." userInfo:nil];
+    
     int diff = 0;
     for (int i = 0; i < [DNA count]; ++i) {
-//        NSLog(@"%@ - %@ -> ", [DNA objectAtIndex:i], [[cell getDNA] objectAtIndex:i]);
-        if ([DNA objectAtIndex:i] != [[cell getDNA] objectAtIndex:i]) {
+//        NSLog(@"%@ - %@ -> ", [DNA objectAtIndex:i], [cell->DNA objectAtIndex:i]);
+        if ([DNA objectAtIndex:i] != [cell->DNA objectAtIndex:i]) {
             ++diff;
 //            NSLog(@"ne");
         }
