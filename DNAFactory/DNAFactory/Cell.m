@@ -30,7 +30,7 @@ const NSString *nucleotides[] = {@"A", @"T", @"G", @"C"};
     int counter = 0;
     
     for (int i = 0; i < MAX_NUCLEOTIDES; i++) {
-        if ([self.DNA[i] isEqualToString:_cell.DNA[i]]) {
+        if (!([self.DNA[i] isEqualToString:_cell.DNA[i]])) {
             counter++;
         }
     }
@@ -56,7 +56,11 @@ const NSString *nucleotides[] = {@"A", @"T", @"G", @"C"};
 }
 
 - (void) print {
-    NSLog(@"%@", self.DNA);
+    NSMutableString *DNAString = [NSMutableString stringWithString:@""];
+    for (int i = 0; i < MAX_NUCLEOTIDES; i++) {
+        [DNAString appendString:self.DNA[i]];
+    }
+    NSLog(@"%@", DNAString);
 }
 
 @end

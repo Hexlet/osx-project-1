@@ -7,7 +7,7 @@
 //
 
 // Максимальная длина цепочки
-#define MAX_NUCLEOTIDES 120
+#define MAX_NUCLEOTIDES 20
 
 #import <Foundation/Foundation.h>
 

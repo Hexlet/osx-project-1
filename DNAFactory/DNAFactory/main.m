@@ -20,7 +20,7 @@
 
 -(void) mutate:(int)percent {
     // Сколько нам надо поменять.
-    int changeCount = (MAX_NUCLEOTIDES * percent) / 100;
+    int changeCount = round((MAX_NUCLEOTIDES * percent) / 100.0);
     
     // Делаем ряд цисел, перемешанных алгоритмом Фишера-Йетса
     
@@ -61,15 +61,23 @@ int main(int argc, const char * argv[])
         cell1 = [[Cell alloc] init];
         cell2 = [[Cell alloc] init];
         
-        // Проверяем
-        NSLog(@"%d",[cell1 hammingDistance:cell2]);
+        NSLog(@"DNA cells:");
+        [cell1 print];
+        [cell2 print];
         
+        // Проверяем
+        NSLog(@"Hamming distance: %d \n\n",[cell1 hammingDistance:cell2]);
+        
+        NSLog(@"Mutate...");
         // Мутируем
-        [cell1 mutate:85];
-        [cell2 mutate:85];
+        [cell1 mutate:10];
+        [cell2 mutate:20];
+        
+        [cell1 print];
+        [cell2 print];
         
         // Снова проверяем
-        NSLog(@"%d",[cell1 hammingDistance:cell2]);
+        NSLog(@"Hamming distance: %d",[cell1 hammingDistance:cell2]);
         
     }
     return 0;
