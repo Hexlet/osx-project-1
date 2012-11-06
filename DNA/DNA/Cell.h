@@ -12,7 +12,6 @@
 @property NSMutableArray *dna;
 
 -(id) init;
--(void) print;
 -(int) hummingDistance: (Cell*) cell;
 
 @end
