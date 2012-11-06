@@ -23,7 +23,7 @@
         _DNA = [[NSMutableArray alloc] initWithCapacity:self.DNASize];
 
         for(i=0; i<self.DNASize; i++){
-            r = arc4random() % 4;
+            r = arc4random() % self.Symbols.count;
             _DNA[i] = self.Symbols[r];
         }
     }

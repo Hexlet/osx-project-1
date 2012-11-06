@@ -29,7 +29,7 @@
     }
 
     for(int i=0; i<n; i++) {
-        int r = arc4random() % 3;
+        int r = arc4random() % (self.Symbols.count-1);
         int l = 0;
         
         for(int j=0; j<=r; j++){
