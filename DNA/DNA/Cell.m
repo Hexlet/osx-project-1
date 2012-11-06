@@ -27,11 +27,6 @@
     return self;
 }
 
--(void) print
-{
-    NSLog(@"%@", _dna);
-}
-
 -(int) hummingDistance:(Cell *)cell
 {
     int distance = 0;
