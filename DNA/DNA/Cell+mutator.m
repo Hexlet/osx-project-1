@@ -20,7 +20,7 @@
     //вычисляем количество символов для замены
     int changeCount = ([self getCount] * x) / 100;
     BOOL changed;
-    NSMutableSet *alreadyChanged = [[[NSMutableSet alloc] init] autorelease];
+    NSMutableSet *alreadyChanged = [[NSMutableSet alloc] init];
     for (int i = 0; i < changeCount; i++)
     {
         changed = NO;

@@ -15,8 +15,8 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        Cell * firstDNA = [[[Cell alloc] init] autorelease];
-        Cell * secondDNA = [[[Cell alloc] init] autorelease];
+        Cell * firstDNA = [[Cell alloc] init];
+        Cell * secondDNA = [[Cell alloc] init];
         
         NSLog(@"hammingDistance from 1 to 2 is %d", [firstDNA hammingDistance:secondDNA]);
         NSLog(@"hammingDistance from 2 to 1 is %d", [secondDNA hammingDistance:firstDNA]);
