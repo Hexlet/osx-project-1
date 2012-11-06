@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/main.m"
-         timestampString = "373837061.629849"
+         timestampString = "373888342.482947"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "134"
-         endingLineNumber = "134"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/main.m"
-         timestampString = "373836904.844479"
+         timestampString = "373881067.384195"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "-print"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,24 +47,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/main.m"
-         timestampString = "373836904.844479"
+         timestampString = "373881067.384195"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "70"
-         endingLineNumber = "70"
+         startingLineNumber = "71"
+         endingLineNumber = "71"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/main.m"
-         timestampString = "373836904.844479"
+         timestampString = "373881067.384195"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "94"
-         endingLineNumber = "94"
+         startingLineNumber = "95"
+         endingLineNumber = "95"
          landmarkName = "-mutator:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,12 +73,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/main.m"
-         timestampString = "373836904.844479"
+         timestampString = "373887347.246715"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
+         startingLineNumber = "109"
+         endingLineNumber = "109"
          landmarkName = "-mutator:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNA/main.m"
+         timestampString = "373881067.384195"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
+         landmarkName = "-hammingDistance:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DNA/main.m"
+         timestampString = "373881315.245682"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
+         landmarkName = "-setDNA"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -86,13 +112,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/main.m"
-         timestampString = "373838013.342609"
+         timestampString = "373888342.482947"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "67"
-         endingLineNumber = "67"
-         landmarkName = "-hammingDistance:"
-         landmarkType = "5">
+         startingLineNumber = "132"
+         endingLineNumber = "132"
+         landmarkName = "main()"
+         landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

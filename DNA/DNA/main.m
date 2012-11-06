@@ -41,6 +41,7 @@
     NSArray *arrayChar = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C",  nil];
     int index;
     for (int i = 0; i < 100; ++i) {
+        
         index = rand() % [arrayChar count];
         [DNA addObject:[arrayChar objectAtIndex:index]];
     }
@@ -97,17 +98,18 @@
     
     NSArray *arrayChar = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C",  nil];
     int i = 0;
-    while (i < x) {
-        int index = rand() % [arrayChar count];
-        int index1 = rand() % 100;
-        if (!testAr[index1]) {
-            [DNA replaceObjectAtIndex:index1 withObject:[arrayChar objectAtIndex:index]];
-            testAr[index1] = 1;
-            ++i;
+   
+        while (i < x) {
+        
+            int index = rand() % [arrayChar count];
+            int index1 = rand() % 100;
+            if (!testAr[index1]) {
+                [DNA replaceObjectAtIndex:index1 withObject:[arrayChar objectAtIndex:index]];
+                testAr[index1] = 1;
+                ++i;
+            }
         }
     }
-    
-}
 
 @end
 
@@ -121,13 +123,25 @@ int main(int argc, const char * argv[])
         Cell *cell1 = [[Cell alloc] initDNA];
         Cell *cell2 = [[Cell alloc] initDNA];
         
-        
+        NSLog(@"Hamming distance между ДНК");
         NSLog(@"%i", [cell1 hammingDistance:cell2]);
         
-        [cell1 mutator:30];
-        [cell2 mutator:30];
+        NSLog(@"Введите кол-во процентов для мутации ДНК");
         
-        NSLog(@"%i", [cell1 hammingDistance:cell2]);
+        int m;
+        scanf("%i", &m);
+        
+        
+        if (m >= 0 && m <= 100) {
+            [cell1 mutator:m];
+            [cell2 mutator:m];
+            NSLog(@"hamming distance между ДНК после мутации");
+            NSLog(@"% i", [cell1 hammingDistance:cell2]);
+        }
+        else
+            NSLog(@"Проценты должны находится в диапазоне 0-100");
+        
+        
        
         
     }
