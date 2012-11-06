@@ -50,7 +50,7 @@
     
     for (int i=0; i<DNA_LENGHT; i++) {
         //Сравниваем поэлементно и в случае несоответствия увеличиваем счётчик
-        if(![[DNA objectAtIndex:i] isEqual:[[DNAForHamming getDNA] objectAtIndex:i]]) {
+        if([[DNA objectAtIndex:i] isNotEqualTo:[[DNAForHamming getDNA] objectAtIndex:i]]) {
             hamming++;
         }
     }
