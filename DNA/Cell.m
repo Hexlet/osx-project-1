@@ -24,7 +24,7 @@
     return self;
 }
 -(void) print{
-    NSLog(@"%@", _dna);
+    NSLog(@"%@", _dna); 
 }
 
 -(NSString *)getRandomNucleotid {
