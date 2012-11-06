@@ -44,21 +44,23 @@
 @implementation Cell (mutator)
 
 -(void) mutate:(int)mut {
-    int i = 0;
-    int k = random()%100;
-    NSString *Mutstr;
-    NSMutableArray *TEMP = [NSMutableArray array];
+    if (mut != 0) {
+        int i = 0;
+        int k = random()%100;
+        NSString *Mutstr;
+        NSMutableArray *TEMP = [NSMutableArray array];
         do {
             while ([TEMP containsObject:[NSString stringWithFormat:@"%d",k]]) {
                 k = arc4random()%100;
             }
-            Mutstr = [NSString stringWithFormat:@"%C", [@"ATGC" characterAtIndex:arc4random()%4]];
+                Mutstr = [NSString stringWithFormat:@"%C", [@"ATGC" characterAtIndex:arc4random()%4]];
             if (Mutstr != [DNA[k] self ]) {
                 [TEMP addObject:[NSString stringWithFormat:@"%d",k]];
                 [DNA replaceObjectAtIndex:k withObject:Mutstr];
                 i++;
             }
         } while (i < mut);
+    }
 }
 
 @end
