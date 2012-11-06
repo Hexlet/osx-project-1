@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the '1prj-deenka' target in the '1prj-deenka' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
