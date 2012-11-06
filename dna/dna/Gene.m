@@ -8,15 +8,15 @@
 
 #import "Gene.h"
 
-static NSArray* genes;
+static NSMutableOrderedSet* genes;
 
 @implementation Gene
 
-+(NSArray*) allGenes
++(NSMutableOrderedSet*) allGenes
 {
     if(genes==nil)
     {
-        genes=[NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
+        genes=[NSMutableOrderedSet orderedSetWithObjects:@"A",@"T",@"G",@"C",nil];
     }
     return genes;
 }
@@ -28,7 +28,7 @@ static NSArray* genes;
     {
         //init nucleotid with random value out of all possible
         NSUInteger random=arc4random()%4;
-        self.value=[Gene allGenes][random];
+        self.value=[[Gene allGenes] objectAtIndex:random];
     }
     return self;
 }
@@ -36,10 +36,12 @@ static NSArray* genes;
 -(void)mutate
 {
     //current nucleotid value removed from nucleotids array, new one is selected randomly out of remaining ones
-    NSMutableArray* availableGenes = [[Gene allGenes] mutableCopy];
-    [availableGenes removeObjectIdenticalTo:self.value];
+    NSString* currentValue=self.value;
+    [[Gene allGenes] removeObject:currentValue];
     NSUInteger random=arc4random()%3;
-    self.value=availableGenes[random];
+    self.value=[[Gene allGenes] objectAtIndex:random];
+    //push back removed value
+    [[Gene allGenes] addObject:currentValue];
 }
 
 

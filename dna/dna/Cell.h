@@ -12,7 +12,7 @@
 @interface Cell : NSObject
 
 -(void)setDnaElement:(Gene*)gene atIndex:(NSUInteger)index;
--(Gene*)getDnaElementAtIndex:(NSUInteger)index;
+-(Gene*)dnaElementAtIndex:(NSUInteger)index;
 -(NSUInteger)length;
 
 -(id)initWithGenes:(int)amountOfGenes;

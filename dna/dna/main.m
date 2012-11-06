@@ -17,7 +17,7 @@ int main(int argc, const char * argv[])
         
         Cell* firstCell = [[Cell alloc] initWithGenes:100];
         Cell* secondCell = [[Cell alloc] initWithGenes:100];
-        
+ 
         NSLog(@"Distance is %i",[firstCell hammingDistance:secondCell]);
         
         [firstCell mutate:25];

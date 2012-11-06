@@ -43,7 +43,7 @@
     }
     else
     for (NSUInteger i=0; i<[self length]; i++) {
-        if([[[self getDnaElementAtIndex:i] value] isNotEqualTo:[[cell getDnaElementAtIndex:i] value]]) result++;
+        if([[[self dnaElementAtIndex:i] value] isNotEqualTo:[[cell dnaElementAtIndex:i] value]]) result++;
     }
     return result;
 }
@@ -54,7 +54,7 @@
     _dna[index]=gene;
 }
 
--(Gene*)getDnaElementAtIndex:(NSUInteger)index
+-(Gene*)dnaElementAtIndex:(NSUInteger)index
 {
     return _dna[index];
 }

@@ -25,7 +25,7 @@
         for (NSUInteger i=0; i<genesToMutate; i++) {
             //random index selected once, mutated, then removed from set to avoid mutating same element twice 
             NSUInteger randomIndex=arc4random()%totalGenes;
-            [[self getDnaElementAtIndex:randomIndex] mutate];
+            [[self dnaElementAtIndex:randomIndex] mutate];
             [indexes removeObjectAtIndex:randomIndex];
             totalGenes--;
         }
