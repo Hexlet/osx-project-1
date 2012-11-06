@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'DNKProject' target in the 'DNKProject' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
