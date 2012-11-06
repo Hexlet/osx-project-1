@@ -11,46 +11,36 @@
 
 @implementation Cell (Mutator)
 
--(NSString *)mutateDNASymbol:(NSString *)theSymbol{
-    int randomShift = random() % DNALength;
-    if ([theSymbol isEqual:DNASymbols[randomShift]]){
+-(NSString *)mutatedDNAAtIndex:(NSUInteger)theIndex{
+    int randomShift = arc4random() % DNALength;
+    NSString *gene = [[self DNA] objectAtIndex:theIndex];
+    
+    if ([gene isEqual:DNASymbols[randomShift]]) {
         randomShift = (randomShift + 1) % DNALength;
     }
     return DNASymbols[randomShift];
 }
 
 -(void)mutateDNAWithPercentage:(int)thePercentage{
+    NSAssert(thePercentage >= 0 && thePercentage <= 100, @"Wrong percentage parameter");
+    
     NSUInteger length = [[self DNA] count];
     NSUInteger mutationCount = ((length / 100) * thePercentage);
     if (mutationCount > length) {
         mutationCount = length;
     }
-
-    BOOL mutation[length];
+    if (mutationCount > 0) {
     
-    for(NSUInteger i = 0; i < length; ++i){
-        mutation[i] = NO;
-    }
-    
-    // Создаем схему мутации
-    for(NSUInteger i = 0; i < mutationCount; ++i){
-        NSUInteger randomIndex = random() % length;
-        BOOL setted = NO;
-        while(!setted){
-            if(mutation[randomIndex]){
-                randomIndex = (randomIndex + 1) % length;
-            } else {
-                mutation[randomIndex] = YES;
-                setted = YES;
-            }
+        NSUInteger mutation[length];
+        for(NSUInteger i = 0; i < length; ++i){
+            mutation[i] = i;
         }
-    }
-    
-    // Накладываем схему мутации
-    for(NSUInteger i = 0; i < length; ++i){
-        if(mutation[i]){
-            // Мутируем символ - случайным другим символом
-            [[self DNA] replaceObjectAtIndex:i withObject:[self mutateDNASymbol:[self DNA][i]]];
+        // Создаем схему мутации и сразу реализуем ее
+        for(NSUInteger i = 0; i < mutationCount; ++i){
+            NSUInteger randomIndex = (arc4random() % (length - i)) + i;
+            NSUInteger mutateIndex = mutation[randomIndex];
+            mutation[randomIndex] = mutation[i];
+            [[self DNA] replaceObjectAtIndex:mutateIndex withObject:[self mutatedDNAAtIndex:mutateIndex]];
         }
     }
 }

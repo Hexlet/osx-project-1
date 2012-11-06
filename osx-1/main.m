@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Core/Cell.h"
 #import "Extends/Cell+Mutator.h"
 
 int main(int argc, const char * argv[])
@@ -16,18 +15,15 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         Cell *firstCell = [[Cell alloc] init];
-        //NSLog(@"Cell 1: %@", firstCell);
-        
         Cell *secondCell = [[Cell alloc] init];
-        //NSLog(@"Cell 2: %@", secondCell);
-        
+
         NSLog(@"Haming distance: %d", [firstCell hammingDistance:secondCell]);
         
-        [firstCell mutateDNAWithPercentage:20];
-        [secondCell mutateDNAWithPercentage:10];
-        
+        [firstCell mutateDNAWithPercentage:50];
+        [secondCell mutateDNAWithPercentage:30];
+
         NSLog(@"Haming distance after mutation: %d", [firstCell hammingDistance:secondCell]);
-        
+
     }
     return 0;
 }

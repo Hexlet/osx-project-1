@@ -11,12 +11,8 @@
 
 @implementation Cell
 
--(int)randomDNAIndex{
-    return random() % DNALength;
-}
-
 -(NSString *)randomDNASymbol{
-    return DNASymbols[[self randomDNAIndex]];
+    return DNASymbols[arc4random() % DNALength];
 }
 
 -(NSMutableArray *)createDNAArrayWithCapacity:(NSUInteger)theCapacity{
@@ -48,7 +44,7 @@
         length = otherLength;
     }
     for(NSUInteger i = 0; i < otherLength; ++i){
-        if(! [_DNA[i] isEqualTo:[otherCell DNA][i]])
+        if([_DNA[i] isNotEqualTo:[otherCell DNA][i]])
         {
             ++counter;
         }
