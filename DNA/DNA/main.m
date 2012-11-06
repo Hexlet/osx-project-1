@@ -47,7 +47,7 @@ int main(int argc, const char * argv[])
         // Create third cell (first cell clone).
         Cell *cell3 = [Cell cellWithCell:cell1];
         NSLog(@"Cell3 DNA:");
-        [cell2 print];
+        [cell1 print];
         
         // Mutate third cell.
         [cell3 mutate:66];
