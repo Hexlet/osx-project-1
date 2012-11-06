@@ -7,33 +7,39 @@
 
 #import "Cell.h"
 
-@interface Ceil(mutator)
+@interface Cell(mutator)
 -(void) mutate:(int)x;
 @end
 
-@implementation Ceil(Mutator)
+@implementation Cell(Mutator)
 -(void) mutate:(int)x {
-    if( x > self.DNALength or x < 0){
+    if( x > 100 || x < 0){
         // На всякий случай выйдем при некорректном значении
+        NSLog(@"Incorrect mutation value");
         return ;
     }
     // Количество замененных клеток
     int mutated = 0;
-    NSArray *nucleotids = [[NSArray alloc] initWithObjects: @"A", @"G", @"T", @"C", nil]
+    NSArray *nucleotids = [[NSArray alloc] initWithObjects: @"A", @"G", @"T", @"C", nil];
     for(int i=0; i < self.DNALength; i++ ){
         // Алгоритм замены такой:
         // заменяем с некой вероятностью, на каждом шаге вероятность меняется и мы её считаем
         // Исходя из того сколько мы заменили и сколько еще осталость пройти шагов
-        if( (x - mutated) < (arc4random() % (self.DNALength-i)) ){
+        int rand = arc4random();
+        NSLog(@"Chance %i < %i, %i", x*self.DNALength/100, (rand % (self.DNALength-i)), rand);
+        bool replace = (x*self.DNALength/100 - mutated) <= (rand % (self.DNALength-i));
+        //NSLog(replace?@"Replace":@"Not replace");
+        if( replace ){
             // Чуточку усложнения что бы символ был гарантированно другим
             while(true){
-                NSString *nucleotid = [nucleotids objectAtIndex:arc4random() % 4]
-                if( [_DNA objectAtIndex:i] != nucleotid ){
-                    [_DNA replaceObjectAtIndex:i withObject:nucleotid];
+                NSString *nucleotid = [nucleotids objectAtIndex:arc4random() % 4];
+                if( [self.DNA objectAtIndex:i] != nucleotid ){
+                    [self.DNA replaceObjectAtIndex:i withObject:nucleotid];
+                    NSLog(@"Mutation %i %@", i, nucleotid);
+                    mutated++;
                     break;
                 }
             }
-            mutated++;
         }
     }
 }
@@ -43,15 +49,19 @@ int main (int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        Ceil *ceilOne, *ceilTwo;
-        ceilOne = [[Ceil alloc] init];
-        ceilTwo = [[Ceil alloc] init];
+        Cell *cellOne, *cellTwo;
+        cellOne = [[Cell alloc] init];
+        cellTwo = [[Cell alloc] init];
         
-        NSLog(@"Initial hamming distance: %i", [ceilOne hammingDistance:ceilTwo])
+        [cellOne print];
+        [cellTwo print];
+        NSLog(@"Initial hamming distance: %i", [cellOne hammingDistance:cellTwo]);
         
-        [ceilOne mutate:40]
+        [cellOne mutate:50];
         
-        NSLog(@"Hamming distance after mutation: %i", [ceilOne hammingDistance:ceilTwo])
+        [cellOne print];
+        [cellTwo print];
+        NSLog(@"Hamming distance after mutation: %i", [cellOne hammingDistance:cellTwo]);
     }
     return 0;
 

@@ -6,11 +6,11 @@
 
 @implementation Cell 
 
--(id)init: {
+-(id)init {
     self = [super init];
     if (self){
-        _DNALength = 100;
-        [self generateDNA]
+        _DNALength = 10;
+        [self generateDNA];
     }
     return self;
 }
@@ -31,6 +31,14 @@
         }
     }
     return hd;
+}
+
+-(void) print {
+    NSString * dna = @"";
+    for(int i=0; i< self.DNALength; i++){
+        dna = [dna  stringByAppendingString:[self.DNA objectAtIndex:i]];
+    }
+    NSLog(@"%@",dna);
 }
 
 @end

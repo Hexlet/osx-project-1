@@ -5,6 +5,6 @@
 
 @property (readonly) int DNALength;
 @property NSMutableArray *DNA;
-- (id)initWithDNALen:(int);
-- (int)hammingDistance: (Cell*);
+- (int)hammingDistance:(Cell*)compare;
+- (void) print;
 @end
