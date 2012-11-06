@@ -40,7 +40,7 @@ const int dnaSize = 100;
 
 -(void)replaceNucleotideAtIndex:(int)index with:(NucleotidesEnum)nucleotide
 {
-    if (nucleotide > 3)
+    if (nucleotide >= NucleotidesEnumMax)
     {
         @throw [NSException exceptionWithName:@"Invalid nucleotide" reason:@"Nucleotide must be \"A\", \"T\", \"G\" or \"C\"" userInfo:nil];
     }

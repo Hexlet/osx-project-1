@@ -38,11 +38,11 @@
     {
         int n = indexesToChange[i];
         NucleotidesEnum old = [self nucleotideAtIndex:n];
-        NucleotidesEnum new = rand() % 4;
+        NucleotidesEnum new = rand() % NucleotidesEnumMax;
         
         if (new == old)
         {
-            new = (new + 1) % 4;
+            new = (new + 1) % NucleotidesEnumMax;
         }
         
         [self replaceNucleotideAtIndex:n with:new];
