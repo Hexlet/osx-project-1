@@ -24,10 +24,9 @@
 -(int) hammingDistance:(Cell *)cellObject
 {
     // Checks if two literals at the same index are not equal, then increments count.
-    
+    int count = 0;
+    NSInteger len = [_DNA count];
     cellDna = [cellObject DNA];
-    len = [_DNA count];
-    count = 0;
     for (int i = 0; i < len; i++) {
         if ([cellDna objectAtIndex:i] != [_DNA objectAtIndex:i])
             count += 1;

@@ -3,10 +3,7 @@
 
 @interface Cell : NSObject
 {
-    NSInteger len;
-    int  count;
     NSMutableArray *cellDna;
-    
 }
 
 @property  NSMutableArray *DNA;
