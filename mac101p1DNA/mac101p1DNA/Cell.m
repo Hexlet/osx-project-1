@@ -38,3 +38,13 @@
 }
 
 @end
+
+@implementation Cell (mutator)
+
+-(void) mutate:(int) x {
+    // Использую NSIndexSet для генерации уникальных наборов индексов
+    NSUInteger num = (int)floor(DNA.count*x/100); // кол-во изменяемых молекул ДНК
+    // получаем номера изменяемых молекул
+    // Генерируем случайные молекулы
+}
+@end

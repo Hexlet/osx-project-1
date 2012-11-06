@@ -19,12 +19,11 @@
 -(id) initLength:(int) l; // Похоже Obj-C неподдерживает Default Argument Value
 
 -(int) hammingDistance: (Cell *) cell;
-//-(NSMutableArray *) getDNA;
 
 @end
 
 // 6. Добавляем категорию с методом mutate
 
-// @interface Cell (mutator)
-// -(void) mutate: (int)X;
-// @end
+@interface Cell (mutator)
+-(void) mutate: (int) x;
+@end
