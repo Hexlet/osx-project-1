@@ -28,10 +28,10 @@
 	NSUInteger dnaSymbolsCount = [Cell.dnaSymbols count];
 	NSArray *keysSorted = [indexes keysSortedByValueUsingSelector:@selector(compare:)];
 	for (NSNumber* index in keysSorted) {
-		NSUInteger symbolIndex = [Cell.dnaSymbols indexOfObject:self.dna[[index integerValue]]];
+		NSUInteger symbolIndex = [Cell.dnaSymbols indexOfObject:[self.dna objectAtIndex:[index integerValue]]];
 		NSUInteger newSymbolIndex = (symbolIndex + random()%(dnaSymbolsCount-1) + 1)%dnaSymbolsCount;
 
-		self.dna[[index integerValue]] = Cell.dnaSymbols[newSymbolIndex];
+		[self.dna replaceObjectAtIndex:[index integerValue] withObject:[Cell.dnaSymbols objectAtIndex:newSymbolIndex]];
 
 		if (!--symbolsToMutate) break;
 	}

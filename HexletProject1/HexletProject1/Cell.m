@@ -45,10 +45,12 @@
 
 - (NSUInteger)hammingDistance:(Cell*)anotherCell
 {
+	if (anotherCell == self) return 0;
+
 	NSUInteger dnaLength = [self.dna count], distance = 0;
 
 	for (NSUInteger index = 0; index < dnaLength; ++index) {
-		if (![self.dna[index] isEqual:anotherCell.dna[index]])
+		if (![[self.dna objectAtIndex:index] isEqual:[anotherCell.dna objectAtIndex:index]])
 			++distance;
 	}
 
