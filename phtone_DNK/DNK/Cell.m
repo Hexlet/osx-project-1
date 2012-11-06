@@ -8,9 +8,9 @@
 
 #import "Cell.h"
 
-@implementation Cell
+const NSUInteger DNA_LENGHT = 100;
 
-@synthesize DNA;
+@implementation Cell
 
 
 -(id) init {
@@ -32,13 +32,9 @@
 
 +(NSString*) randomElement {
     
-    static NSArray *genes;
+    NSArray *const genes = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+    return genes[rand() % genes.count];
     
-    if(!genes)
-    {
-        genes = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
-    }
-    return [genes objectAtIndex:arc4random () % [genes count]];
 }
 
 
@@ -47,7 +43,7 @@
     
     
 for (NSUInteger i = 0; i < DNA_LENGHT; i++) {
-    if([DNA objectAtIndex:i] != [cell->DNA objectAtIndex:i])
+    if([DNA objectAtIndex:i] != [cell -> DNA objectAtIndex:i])
         count++;
     }
 

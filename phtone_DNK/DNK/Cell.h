@@ -8,18 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#define DNA_LENGHT 100
 
 @interface Cell : NSObject {
     
     NSMutableArray *DNA;
-    NSArray *genes;
 }
 
-@property (nonatomic, readonly) NSMutableArray* DNA;
++ (NSString*) randomElement;
 
 - (int) hammingDistance: (Cell *)cell;
- 
-+ (NSString*) randomElement;
 
 @end
