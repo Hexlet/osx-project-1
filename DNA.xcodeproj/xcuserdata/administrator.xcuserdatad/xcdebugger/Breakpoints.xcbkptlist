@@ -8,35 +8,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell+Mutantor.m"
-         timestampString = "373801312.872699"
+         timestampString = "373918521.538611"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "82"
-         endingLineNumber = "82">
+         startingLineNumber = "72"
+         endingLineNumber = "72">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell+Mutantor.m"
-         timestampString = "373801312.872699"
+         timestampString = "373918521.538611"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "78"
-         endingLineNumber = "78">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "DNA/Cell+Mutantor.m"
-         timestampString = "373801312.872699"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
-         landmarkName = "-mutatePercent:"
-         landmarkType = "5">
+         startingLineNumber = "68"
+         endingLineNumber = "68">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
