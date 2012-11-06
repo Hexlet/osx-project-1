@@ -14,18 +14,17 @@
 @end
 
 @implementation Cell (Mutator)
-
 //  Замена X процентов символов в массиве DNA в случайном порядке
 - (void)mutate:(int)percent{
     NSMutableArray* uniqNumbers = [[NSMutableArray alloc] init];
     
-    // заменять одну ячейку можно максимум один раз.
+    // заменять одну ячейку можно максимум один раз.  
     while ([uniqNumbers count] < percent){
-        int idx = arc4random() % 100; // случайное число
+        int idx = arc4random() % 100;
 
-        if (![uniqNumbers containsObject:[NSNumber numberWithInteger:idx]]){  // если uniqNumbers содержит случайное число...
-            [uniqNumbers addObject:[NSNumber numberWithInteger:idx]];         // добавить число в массив
-            [DNA setObject:[self getRandomChar] atIndexedSubscript:idx];      // заменить значение ячейки в массиве DNA
+        if (![uniqNumbers containsObject:[NSNumber numberWithInteger:idx]]){
+            [uniqNumbers addObject:[NSNumber numberWithInteger:idx]];
+            [DNA setObject:[self getRandomChar] atIndexedSubscript:idx];
         }
     }
 }

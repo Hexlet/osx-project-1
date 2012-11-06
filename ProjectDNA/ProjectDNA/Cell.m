@@ -42,7 +42,7 @@
     int cnt = 0;
     
     for (int i = 0; i < 100; i++){
-        if (![[DNA objectAtIndex:i] isEqualToString: [DNA1 objectAtIndex:i]]){
+        if ([[DNA objectAtIndex:i] isNotEqualTo: [DNA1 objectAtIndex:i]]){
             ++cnt;
         }
     }

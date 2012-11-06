@@ -242,6 +242,7 @@
 				2BED181D1646DCCF002644F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
