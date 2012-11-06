@@ -45,6 +45,19 @@
     // Использую NSIndexSet для генерации уникальных наборов индексов
     NSUInteger num = (int)floor(DNA.count*x/100); // кол-во изменяемых молекул ДНК
     // получаем номера изменяемых молекул
-    // Генерируем случайные молекулы
+    NSIndexSet *molnum = [[NSIndexSet alloc] initWithIndexSet:[self generateRandomIndexes:num]];
+    // Генерируем молекулы     
+    
+}
+
+-(NSIndexSet *) generateRandomIndexes:(NSUInteger) l {
+    NSMutableIndexSet *places = [[NSMutableIndexSet alloc] init];
+    int num = 0;
+    while (places.count < l) {
+        num = arc4random()%self->DNA.count;
+        [places addIndex:num];
+    }
+    return places;
+    
 }
 @end

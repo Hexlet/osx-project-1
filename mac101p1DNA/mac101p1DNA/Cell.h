@@ -17,7 +17,6 @@
 
 -(id) init;
 -(id) initLength:(int) l; // Похоже Obj-C неподдерживает Default Argument Value
-
 -(int) hammingDistance: (Cell *) cell;
 
 @end
