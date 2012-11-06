@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'iDNA' target in the 'iDNA' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
