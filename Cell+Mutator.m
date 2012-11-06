@@ -64,9 +64,8 @@
     return ham;
 }
 
-- (void) print {
-    NSLog(@"%@", [_DNA componentsJoinedByString:@""]);
-    
+- (NSString *) description {
+    return [NSString stringWithFormat:@"%@", [_DNA componentsJoinedByString:@""]];
 }
 
 

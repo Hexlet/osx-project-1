@@ -11,7 +11,6 @@
 
 - (id)   initWithLenght: (int) length;
 - (int)  hammingDistance: (Cell*) aCell;
-- (void) print;
 - (NSString* ) randomCharacter;
 - (NSString* ) replaceCharacter: (NSString*) exclude ;
 

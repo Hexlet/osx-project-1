@@ -16,14 +16,14 @@ int main(int argc, const char * argv[])
         Cell *Cell1, *Cell2;
         Cell1 = [[Cell alloc] initWithLenght:100];
         Cell2 = [[Cell alloc] init]; // по-умолчанию инициализируем масив из 100 символов
-        [Cell1 print];
-        [Cell2 print];
+        NSLog(@"%@", Cell1);
+        NSLog(@"%@", Cell2);
         NSLog (@"ДНК не совпадают в %i позициях", [Cell1 hammingDistance:Cell2]);
         
         [Cell1 mutate:20];
         [Cell2 mutate:20];
-        [Cell1 print];
-        [Cell2 print];
+        NSLog(@"%@", Cell1);
+        NSLog(@"%@", Cell2);
         NSLog (@"ДНК не совпадают в %i позициях", [Cell1 hammingDistance:Cell2]);
     }
     return 0;
