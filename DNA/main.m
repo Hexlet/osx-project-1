@@ -18,16 +18,23 @@
     if(percent > 100){
         [NSException raise:@"Percent can't be > 100" format:@"Percent can't be > 100"];
     }
-    NSMutableArray *visited = [NSMutableArray arrayWithCapacity:[[self dna] count]];
     NSMutableArray *dna = [self dna];
+    NSMutableArray *visited = [NSMutableArray arrayWithCapacity:[dna count]];
     int size =(int) [dna count];
-    for(int i = 0; i < percent; i++){
+    int update_number = round(((percent * [dna count])/100));
+    for(int i = 0; i < update_number; i++){
         NSNumber *randomElement = [NSNumber numberWithInt:arc4random_uniform(size)];
         while([visited containsObject:randomElement]){
             randomElement = [NSNumber numberWithInt:arc4random_uniform(size)];
         }
         [visited addObject:randomElement];
-        [dna setObject:[self getRandomNucleotid] atIndexedSubscript:[randomElement intValue]];
+        NSString *currentNucl = [dna objectAtIndex:[randomElement intValue]];
+        NSString *newNucl = [self getRandomNucleotid];
+        while ([currentNucl isEqualToString:newNucl]){
+            newNucl = [self getRandomNucleotid];
+        }
+        
+        [dna setObject:newNucl atIndexedSubscript:[randomElement intValue]];
     }
 }
 @end

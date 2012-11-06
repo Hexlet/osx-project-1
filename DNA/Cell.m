@@ -14,10 +14,12 @@
 @implementation Cell
 -(id) init{
     self = [super init];
-    _nucleotids = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
-    _dna = [[NSMutableArray alloc] init];
-    for (int i=0; i<100; i++) {
-        [_dna addObject:[self getRandomNucleotid]];
+    if(self){
+        _nucleotids = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
+        _dna = [[NSMutableArray alloc] init];
+        for (int i=0; i<100; i++) {
+            [_dna addObject:[self getRandomNucleotid]];
+        }
     }
     return self;
 }
