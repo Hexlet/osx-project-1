@@ -20,6 +20,7 @@
 
 -(void)mutator:(int)x
 {
+    NSAssert(x>=0 && x<=100, @"Процент должен быть строго от 0 до 100");
     //Вычисляю процент
     int procent = (int)round((float)x/100*[self.dna count]);
     
