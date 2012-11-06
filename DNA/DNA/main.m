@@ -19,6 +19,7 @@ int main(int argc, const char * argv[])
         Cell * secondDNA = [[[Cell alloc] init] autorelease];
         
         NSLog(@"hammingDistance = %d", [firstDNA hammingDistance:secondDNA]);
+        NSLog(@"hammingDistance = %d", [secondDNA hammingDistance:firstDNA]);
         
         int x = arc4random() % 100;
         
@@ -29,6 +30,8 @@ int main(int argc, const char * argv[])
         [secondDNA mutate:x];
         
         NSLog(@"hammingDistance after matation = %d", [firstDNA hammingDistance:secondDNA]);
+        NSLog(@"hammingDistance after matation = %d", [secondDNA hammingDistance:firstDNA]);
+
         
     }
     return 0;
