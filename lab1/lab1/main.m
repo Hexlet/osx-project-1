@@ -20,9 +20,7 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Hamming distance before mutate is %i", [cell1 hammingDistance:cell2]);
         
-        NSLog(@"Mutate 50 percent cell1");
         [cell1 mutate:50];
-        NSLog(@"Mutate 13 percent cell2");
         [cell2 mutate:13];
         
         NSLog(@"Hamming distance after mutate is %i", [cell1 hammingDistance:cell2]);
