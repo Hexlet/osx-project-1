@@ -15,7 +15,7 @@
     NSMutableArray* indexes = [NSMutableArray array];
    
     for (int i=0; i<kDnaLenght;i++) {
-       [indexes addObject:[NSString stringWithFormat:@"%d",i]];
+       [indexes addObject:[NSNumber numberWithInt:i]];
     }
     
     for (int i=1; i <= percentMutate;i++) {
