@@ -37,7 +37,7 @@ const int ARRAY_COUNT = 100;
     int result = 0;
     if(cell.array.count <= ARRAY_COUNT){
         for (int i=0; i<ARRAY_COUNT; i++) {
-            if(self.array[i]==cell.array[i]) {
+            if(self.array[i]!=cell.array[i]) {
                 result++;
             }
         }
