@@ -21,22 +21,33 @@
     
     int mutateCount = c/100.0f * DNA_COUNT;
     
+    // массив индексов (Если бы в сроках хранились тэги, то получилось бы без этого)
     NSMutableArray* indexes = [NSMutableArray arrayWithCapacity:DNA_COUNT];
-    for (int i = 0; i<DNA_COUNT; i++) {
+    for (int i = 0; i<DNA_COUNT; i++)
+    {
         [indexes addObject:[NSNumber numberWithInteger:i]];
     }
     
     initDnaItems;
     
-    for (int i=0; i<mutateCount; i++) {
+    // возможные варианты для замены
+    NSMutableDictionary* varMatrix = [[NSMutableDictionary alloc]initWithCapacity:DNA_COUNT];
+    for (NSString* dnaV in dnaItem)
+    {
+        NSMutableArray* arr = [NSMutableArray arrayWithArray:dnaItem];
+        [arr removeObject:dnaV];
+        [varMatrix setObject:arr forKey:dnaV];
+    }
+    
+    // замена
+    for (int i=0; i<mutateCount; i++)
+    {
         int tmpIndx = arc4random()%[indexes count];
         
-        NSString* oldVal = [self.dna objectAtIndex:[[indexes objectAtIndex:tmpIndx]intValue]];
+        int mutateTargetIndex = [[indexes objectAtIndex:tmpIndx]intValue];
         
-        while ([oldVal isEqual:[self.dna objectAtIndex:[[indexes objectAtIndex:tmpIndx]intValue]]]) {
-            [self.dna replaceObjectAtIndex:[[indexes objectAtIndex:tmpIndx]intValue]
-                                withObject:[dnaItem objectAtIndex:arc4random()%[dnaItem count]]];
-        }
+        [self.dna replaceObjectAtIndex:mutateTargetIndex
+                            withObject:[[varMatrix objectForKey:[self.dna objectAtIndex:mutateTargetIndex]] objectAtIndex:arc4random()%([dnaItem count]-1)] ];
 
         [indexes removeObjectAtIndex:tmpIndx];
     }
