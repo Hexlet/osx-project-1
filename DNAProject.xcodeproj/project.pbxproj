@@ -11,6 +11,7 @@
 		2D0D981F163FF68100D3F257 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D981E163FF68100D3F257 /* main.m */; };
 		2D0D9823163FF68100D3F257 /* DNAProject.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2D0D9822163FF68100D3F257 /* DNAProject.1 */; };
 		2D0D982B163FF69500D3F257 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D982A163FF69500D3F257 /* Cell.m */; };
+		2DBEB0531648EFB6004F308E /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBEB0521648EFB6004F308E /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		2D0D9822163FF68100D3F257 /* DNAProject.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNAProject.1; sourceTree = "<group>"; };
 		2D0D9829163FF69500D3F257 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		2D0D982A163FF69500D3F257 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		2DBEB0511648EFB6004F308E /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		2DBEB0521648EFB6004F308E /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,8 @@
 			children = (
 				2D0D9829163FF69500D3F257 /* Cell.h */,
 				2D0D982A163FF69500D3F257 /* Cell.m */,
+				2DBEB0511648EFB6004F308E /* Cell+mutator.h */,
+				2DBEB0521648EFB6004F308E /* Cell+mutator.m */,
 				2D0D981D163FF68100D3F257 /* DNAProject */,
 				2D0D981A163FF68100D3F257 /* Frameworks */,
 				2D0D9818163FF68100D3F257 /* Products */,
@@ -146,6 +151,7 @@
 			files = (
 				2D0D981F163FF68100D3F257 /* main.m in Sources */,
 				2D0D982B163FF69500D3F257 /* Cell.m in Sources */,
+				2DBEB0531648EFB6004F308E /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				2D0D9828163FF68100D3F257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

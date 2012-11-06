@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
+#import "Cell+mutator.h"
 
 NSArray const *ATGC;
 

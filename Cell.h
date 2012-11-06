@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-
 @interface Cell : NSObject
 
 @property (nonatomic, strong) NSMutableArray *DNA;
@@ -17,6 +15,3 @@
 
 @end
 
-@interface Cell (mutator)
-- (void)mutate:(int) percentM;
-@end

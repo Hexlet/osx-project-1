@@ -7,6 +7,7 @@
 //
 
 #import "Cell.h"
+#import "Cell+mutator.h"
 
 extern NSArray const *ATGC;
 
@@ -37,31 +38,4 @@ extern NSArray const *ATGC;
 }
 
 @end
-
-@implementation Cell (mutator)
-
-- (void)mutate:(int) percentM{   
-    if ((percentM < 0) || (percentM >100)) {
-        NSException *e = [NSException exceptionWithName:@"WrongNumberPercent" reason:@"Wrong Number Percent" userInfo:nil];
-        @throw e;
-    }
-
-    NSMutableSet *indexes = [NSMutableSet set];
-    for (int i = 0 ; i <= percentM; i++) {
-        int index1 = arc4random()%[[self DNA] count];
-        int index2 = arc4random()%[ATGC count];
-        
-        while (([indexes containsObject:[NSNumber numberWithInt:index1]])) {
-            index1 = arc4random()%[[self DNA] count];
-        }
-        while (([[[self DNA] objectAtIndex:index1] isEqual: [ATGC objectAtIndex:index2]])) {
-            index2 = arc4random()%[ATGC count];
-        }
-        
-        [[self DNA] replaceObjectAtIndex:index1 withObject:[ATGC objectAtIndex:index2]];
-        [indexes addObject:[NSNumber numberWithInt: index1]];
-    }
-}
-@end
-
 
