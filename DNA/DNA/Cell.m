@@ -33,7 +33,7 @@
     
     for(int i = 0; i < 100; i++)
     {
-        if (_dna[i] == cell.dna[i])
+        if (_dna[i] != cell.dna[i])
             distance++;
     }
     
