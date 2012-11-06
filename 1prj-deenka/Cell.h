@@ -8,11 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
+@interface Cell : NSObject {
+    
+    // если объявить переменные здесь (Cell.h), то они будут доступны как self->var
+    // из категории в main.m
+    // если объявить в Cell.m - то до vars уже не достучаться
+    NSMutableArray *DNA;
+    NSString *DNA_bases;
+    unsigned int i; //, j;
+}
 
 - (int) hammingDistance: (Cell*) partner;
 
-// for debug only?
+// for debug only!
 - (void) print;
 
 @end

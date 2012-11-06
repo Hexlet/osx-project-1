@@ -9,6 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
+// Категория МУТАТОР ***************
+// (вынести в отдельные .h & .m? )
+@interface Cell (mutator)
+
+- (void) mutator: (int) percent;
+
+@end
+
+@implementation Cell (mutator)
+    
+- (void) mutator: (int) percent {
+    NSLog(@"%@",self->DNA);
+}
+@end
+// End of МУТАТОР ******************
+
 int main(int argc, const char * argv[])
 {
 
@@ -23,7 +39,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming Distance = %i",[leeloo hammingDistance:korben]);
         
         [leeloo print];
-        [korben print];
+        [korben mutator:1];
 /*        for (int i=0; i<100; i++) {
          NSLog(@"%li",random()%5 );
          }
