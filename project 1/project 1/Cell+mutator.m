@@ -13,6 +13,12 @@
 
 - (void)mutate:(int)mutationPercentages
 {
+    if (mutationPercentages < 0 && mutationPercentages > 100)
+    {
+        NSLog(@"Error: Mutation percentage must be in range 0 to 100.");
+        return;
+    }
+    
     NSMutableArray *mutatedGenes = [NSMutableArray array];
     
     NSUInteger mutatedGenesCount = [self->DNA count] * mutationPercentages / 100;
