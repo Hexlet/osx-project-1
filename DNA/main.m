@@ -16,8 +16,8 @@ int main(int argc, const char * argv[])
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
         
-        NSLog(@"First cell DNA: %@", [cell1 DNAasString]);
-        NSLog(@"Second cell DNA: %@", [cell2 DNAasString]);
+        NSLog(@"First cell DNA: %@", cell1);
+        NSLog(@"Second cell DNA: %@", cell2);
         
         NSLog(@"Hamming distance between cells: %i", [cell1 hammingDistance: cell2] );
         
@@ -26,8 +26,8 @@ int main(int argc, const char * argv[])
         [cell1 mutate: 5];
         [cell2 mutate: 10];
         
-        NSLog(@"First cell DNA: %@", [cell1 DNAasString]);
-        NSLog(@"Second cell DNA: %@", [cell2 DNAasString]);
+        NSLog(@"First cell DNA: %@", cell1);
+        NSLog(@"Second cell DNA: %@", cell2);
         
         NSLog(@"After mutation, hamming distance is: %i", [cell1 hammingDistance: cell2]);
     }

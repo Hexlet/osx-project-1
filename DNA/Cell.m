@@ -62,7 +62,7 @@ static NSArray *bases;
     return distance;
 }
 
--(NSString*) DNAasString {
+-(NSString*) description {
     return [_DNA componentsJoinedByString:@""];
 }
 

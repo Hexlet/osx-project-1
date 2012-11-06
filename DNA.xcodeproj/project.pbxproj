@@ -37,7 +37,6 @@
 		9D7410E016456C9C0014691C /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 		9D7410E3164572ED0014691C /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
 		9D7410E4164572ED0014691C /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
-		9D7410E6164587C00014691C /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; name = DNA.1; path = ../../../../../.Trash/DNA.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +86,6 @@
 				9D7410E016456C9C0014691C /* Cell+mutator.m */,
 				9D7410E3164572ED0014691C /* NSMutableArray+Shuffling.h */,
 				9D7410E4164572ED0014691C /* NSMutableArray+Shuffling.m */,
-				9D7410E6164587C00014691C /* DNA.1 */,
 				9D7410C316455B5F0014691C /* Supporting Files */,
 			);
 			path = DNA;

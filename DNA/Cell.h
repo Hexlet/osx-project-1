@@ -14,8 +14,6 @@
 
 -(int) hammingDistance : (Cell*)other;
 
--(NSString*) DNAasString;
-
 @property NSMutableArray *DNA;
 
 @end
