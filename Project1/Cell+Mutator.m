@@ -34,6 +34,11 @@
         
         // Генерируем новое значение.
         char newType = kDNATypes[ arc4random() % kDNATypesLenght ];
+        char oldType = [[self.DNA objectAtIndex: currentIndex] charValue];
+        while ( newType == oldType ) { // Следим за тем, что бы новое значение не было равно старому.
+            newType = newType = kDNATypes[ arc4random() % kDNATypesLenght ];
+        }
+                
         [self.DNA replaceObjectAtIndex: currentIndex withObject: [NSNumber numberWithChar: newType]];    
     }
 }
