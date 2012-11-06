@@ -13,6 +13,7 @@
 -(void) mutate:(int)p {
     if(p > 100 || p < 1) {
         NSLog(@"Процентов должно быть больше 0 и меньше 100!");
+        exit(0);
     }
     int x = ([[self DNA] count] * p) / 100;
     //NSLog(@"%d",x);
