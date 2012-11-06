@@ -8,81 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
-
-
-@interface Cell (mutator)
-
-    -(void) mutate: (int) percent;
-
-@end
-
-@implementation Cell (mutator)
-
-    -(void) mutate: (int) percent
-    {
-        nucleotides n;
-        BOOL mut[DNALenght];
-        int i, j;
-        
-        percent = percent < 0 ? -percent: percent;
-        percent = percent > 100 ? 100: percent;
-        
-        for (i = 0; i < DNALenght; i++) mut[i] = FALSE;      
-        
-        i = 0;
-        
-        while (i < (int)(DNALenght * percent / 100.0))
-        {
-            j = arc4random() % DNALenght;
-                        
-            if (!mut[j])
-            {
-                mut[j] = TRUE;
-                i++;
-            }
-            
-        }
-        
-        for (i = 0; i < DNALenght; i++)
-        {
-            if (mut[i])
-            {
-                n = [DNA[i] nucleo];
-                while (n == [DNA[i] nucleo]) [DNA[i] setNucleo: [Nucleotid random]];
-            }
-        }
-    }
-
-@end
-
+#import "CellMutator.h"
 
 int main(int argc, const char * argv[])
 {
-
     @autoreleasepool
-    {
-        Cell *aCell, *bCell;
-        int hamming_distance;
+    {      
+        Cell *aCell = [[Cell alloc] init];
+        Cell *bCell = [[Cell alloc] init];
         
-        aCell = [[Cell alloc] init];
-        bCell = [[Cell alloc] init];
+//        [aCell print];
+//        [bCell print];
         
-        [aCell print];
-        [bCell print];
-        
-        hamming_distance = [aCell hammingDistance: bCell];
-        
-        NSLog(@"Hamming distance = %i", hamming_distance);      
+        NSLog(@"Hamming distance = %i", [aCell hammingDistance: bCell]);
       
-        [aCell mutate: arc4random() % 100 + 1];
-        [bCell mutate: arc4random() % 100 + 1];
+        [aCell mutate: 33];
+        [bCell mutate: 67];
         
-        [aCell print];
-        [bCell print];
+//        [aCell print];
+//        [bCell print];
         
-        hamming_distance = [aCell hammingDistance: bCell];
-        
-        NSLog(@"New hamming distance = %i", hamming_distance);    
+        NSLog(@"New hamming distance = %i", [aCell hammingDistance: bCell]);
     }
     
     return 0;

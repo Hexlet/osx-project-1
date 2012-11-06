@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D03F66B164709BD001120CC /* CellMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D03F66A164709BD001120CC /* CellMutator.m */; };
 		4D17C84116465AC800F1F23D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D17C84016465AC800F1F23D /* Foundation.framework */; };
 		4D17C84416465AC800F1F23D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D17C84316465AC800F1F23D /* main.m */; };
 		4D17C84816465AC800F1F23D /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4D17C84716465AC800F1F23D /* DNA.1 */; };
@@ -27,13 +28,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4D03F669164709BD001120CC /* CellMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellMutator.h; sourceTree = "<group>"; };
+		4D03F66A164709BD001120CC /* CellMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellMutator.m; sourceTree = "<group>"; };
 		4D17C83C16465AC800F1F23D /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D17C84016465AC800F1F23D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4D17C84316465AC800F1F23D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4D17C84616465AC800F1F23D /* DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNA-Prefix.pch"; sourceTree = "<group>"; };
 		4D17C84716465AC800F1F23D /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
-		4D3B68D716465B3A00840234 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = DNA/Cell.h; sourceTree = "<group>"; };
-		4D3B68D816465B3A00840234 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = DNA/Cell.m; sourceTree = "<group>"; };
+		4D3B68D716465B3A00840234 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		4D3B68D816465B3A00840234 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,6 @@
 		4D17C83116465AC800F1F23D = {
 			isa = PBXGroup;
 			children = (
-				4D3B68D716465B3A00840234 /* Cell.h */,
-				4D3B68D816465B3A00840234 /* Cell.m */,
 				4D17C84216465AC800F1F23D /* DNA */,
 				4D17C83F16465AC800F1F23D /* Frameworks */,
 				4D17C83D16465AC800F1F23D /* Products */,
@@ -78,7 +79,11 @@
 		4D17C84216465AC800F1F23D /* DNA */ = {
 			isa = PBXGroup;
 			children = (
+				4D3B68D716465B3A00840234 /* Cell.h */,
+				4D3B68D816465B3A00840234 /* Cell.m */,
 				4D17C84316465AC800F1F23D /* main.m */,
+				4D03F669164709BD001120CC /* CellMutator.h */,
+				4D03F66A164709BD001120CC /* CellMutator.m */,
 				4D17C84716465AC800F1F23D /* DNA.1 */,
 				4D17C84516465AC800F1F23D /* Supporting Files */,
 			);
@@ -146,6 +151,7 @@
 			files = (
 				4D17C84416465AC800F1F23D /* main.m in Sources */,
 				4D3B68D916465B3A00840234 /* Cell.m in Sources */,
+				4D03F66B164709BD001120CC /* CellMutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

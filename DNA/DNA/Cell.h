@@ -6,13 +6,10 @@
 //  Copyright (c) 2012 Eraser. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 typedef enum {A, T, G, C} nucleotides;
 
 @interface Cell : NSObject
 {
-    NSMutableArray *DNA;
     int DNALenght;
 }
 
@@ -26,15 +23,12 @@ typedef enum {A, T, G, C} nucleotides;
 
 
 @interface Nucleotid : NSObject
-{
-    nucleotides nucleo;
-}
 
-@property nucleotides nucleo;
+@property nucleotides nucleic;
 
 +(nucleotides) random;
 -(id) init;
--(BOOL) isEqual: (Nucleotid *) n;
+-(BOOL) isNotEqual: (Nucleotid *) n;
 -(char) getSymbol;
 
 @end

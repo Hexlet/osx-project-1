@@ -6,11 +6,10 @@
 //  Copyright (c) 2012 Eraser. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "Cell.h"
 
 @implementation Cell
-
-@synthesize DNA;
 
 -(id) init
 {
@@ -18,9 +17,9 @@
     
     if ((self = [super init]))
     {
-        DNA = [NSMutableArray arrayWithCapacity: DNALenght];
+        _DNA = [NSMutableArray arrayWithCapacity: DNALenght];
         
-        for (int i = 0; i < DNALenght; i++) DNA[i] = [[Nucleotid alloc] init];
+        for (int i = 0; i < DNALenght; i++) _DNA[i] = [[Nucleotid alloc] init];
     }
     
     return self;
@@ -30,7 +29,7 @@
 {
     int hd = 0;
 
-    for (int i = 0; i < DNALenght; i++) if ( ![DNA[i] isEqual: c.DNA[i]] ) hd++;
+    for (int i = 0; i < DNALenght; i++) if ([_DNA[i] isNotEqual: c.DNA[i]]) hd++;
     
     return hd;
 }
@@ -39,7 +38,7 @@
 {
     char DNAString[DNALenght+1];
     
-    for (int i = 0; i < DNALenght; i++) DNAString[i] = [DNA[i] getSymbol];
+    for (int i = 0; i < DNALenght; i++) DNAString[i] = [_DNA[i] getSymbol];
     
     DNAString[DNALenght] = '\0';
     
@@ -52,9 +51,6 @@
 
 @implementation Nucleotid : NSObject
 
-@synthesize nucleo;
-
-
 +(nucleotides) random
 {
     return (nucleotides)(arc4random() % (int) 4);
@@ -62,20 +58,20 @@
 
 -(id) init
 {
-    if ((self = [super init])) nucleo = [Nucleotid random];
+    if ((self = [super init])) _nucleic = [Nucleotid random];
     
     return self;
     
 }
 
--(BOOL) isEqual:(Nucleotid *) n
+-(BOOL) isNotEqual:(Nucleotid *) n
 {
-    return (nucleo == [n nucleo])? TRUE : FALSE;
+    return _nucleic != [n nucleic];
 }
 
 -(char) getSymbol
 {
-    switch (nucleo)
+    switch (_nucleic)
     {
         case A: return 'A';
         case T: return 'T';
