@@ -31,6 +31,7 @@
             //replace
             NSLog(@"Object %@ at index: %i would be replaced with: %@",self.DNA[a], a, newSymbols[a]);
             self.DNA[a] = newSymbols[a];
+        //    NSLog(@"%@",self.DNA);
         }
     }
 }
@@ -39,7 +40,6 @@
 for (NSString *symbol in array) {
     if (![symbol isEqualToString:ignore]) {
         return symbol;
-        break;
         }
     }
     //else return ignore symbol or nil
