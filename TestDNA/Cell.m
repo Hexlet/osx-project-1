@@ -19,7 +19,7 @@
         dnaArray = [[NSArray alloc]initWithObjects:@"A", @"T", @"G", @"C",nil];
         for (int i = 0; i<arrayCapacity; i++)
         {
-            [_dna addObject:[dnaArray objectAtIndex:arc4random()%3]];
+            [_dna addObject:[dnaArray objectAtIndex:arc4random()%4]];
         }
         
     }return self;
@@ -54,7 +54,7 @@
     for (int i=0;i<[mutatorArray count];i++)
     {
         int j = [[mutatorArray objectAtIndex:i]intValue];
-        NSString *dnaObjectForReplace = [NSString stringWithString:[dnaArray objectAtIndex:arc4random()%3]];
+        NSString *dnaObjectForReplace = [NSString stringWithString:[dnaArray objectAtIndex:arc4random()%4]];
         [self.dna replaceObjectAtIndex:j withObject:dnaObjectForReplace];
     
     }
