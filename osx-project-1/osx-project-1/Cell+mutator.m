@@ -18,7 +18,7 @@
     NSMutableArray* genes = [NSMutableArray arrayWithArray:[self DNA]];
     while(genesToChangeCount > 0)
     {
-        Gene* gene = [genes objectAtIndex:(rand() % [genes count])];
+        Gene* gene = [genes objectAtIndex:(arc4random() % [genes count])];
         
         [gene mutate];
         [genes removeObject:gene];

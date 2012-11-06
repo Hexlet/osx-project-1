@@ -23,7 +23,7 @@ typedef enum
 {
     self = [super init];
     if(self)
-        value = rand() % TypesCount;
+        value = arc4random() % TypesCount;
     return self;
 }
 
@@ -51,7 +51,7 @@ typedef enum
 
 -(void) mutate
 {
-    int circularShift = 1 + rand() % (TypesCount - 1);
+    int circularShift = 1 + arc4random() % (TypesCount - 1);
     value = (value + circularShift) % TypesCount;
 }
 
