@@ -86,6 +86,7 @@ int main(int argc, const char * argv[])
         
         [cel1 mutate:[cel1 hammingDistance:cel2]];
         
+        NSLog(@"New DNA: ");
         [cel1 showDNA:[cel1 _DNA]];
         
     }
