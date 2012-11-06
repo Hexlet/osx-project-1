@@ -10,7 +10,5 @@
 
 @interface Cell (mutator)
 @property NSMutableArray* DNA;
-- (id) init;
-- (int) hammingDistance:(Cell*) otherCell;
 - (void) mutate:(int) percent;
 @end

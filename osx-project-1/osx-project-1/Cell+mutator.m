@@ -39,23 +39,7 @@
             NSString* newValue = [[NSString alloc] init];
             do
             {
-                int indexOfValue = arc4random_uniform(4);
-                switch(indexOfValue)
-                {
-                    case 0:
-                        newValue = @"A";
-                        break;
-                    case 1:
-                        newValue = @"T";
-                        break;
-                    case 2:
-                        newValue = @"G";
-                        break;
-                    case 3:
-                    default:
-                        newValue = @"C";
-                        break;
-                }
+                newValue = [self getNewGenom];
 
 
             } while ([[[self DNA] objectAtIndex:number] isEqualToString:newValue]);

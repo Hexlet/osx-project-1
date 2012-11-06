@@ -14,5 +14,5 @@
 @property NSMutableArray* DNA;
 - (id) init;
 - (int) hammingDistance:(Cell*) otherCell;
-
+- (NSString*) getNewGenom;
 @end

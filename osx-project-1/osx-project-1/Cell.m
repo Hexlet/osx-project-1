@@ -10,6 +10,29 @@
 
 
 @implementation Cell
+- (NSString *)getNewGenom
+{
+    NSString *charValue;
+    NSInteger value = arc4random_uniform(4);
+    switch(value)
+    {
+        case 0:
+            charValue = @"A";
+            break;
+        case 1:
+            charValue = @"T";
+            break;
+        case 2:
+            charValue = @"G";
+            break;
+        case 3:
+        default:
+            charValue = @"C";
+            break;
+    }
+    return charValue;
+}
+
 - (id) init
 {
     self = [super init];
@@ -21,24 +44,9 @@
         NSInteger i = 0;
         while(i<100)
         {
-            NSInteger value = arc4random_uniform(4);
+            
             NSString* charValue = [[NSString alloc] init];
-            switch(value)
-            {
-                case 0:
-                    charValue = @"A";
-                    break;
-                case 1:
-                    charValue = @"T";
-                    break;
-                case 2:
-                    charValue = @"G";
-                    break;
-                case 3:
-                default:
-                    charValue = @"C";
-                    break;
-            }
+            charValue = [self getNewGenom];
             [_DNA insertObject:charValue atIndex:i];
             i++;
         }

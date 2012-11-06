@@ -16,8 +16,8 @@ int main(int argc, const char * argv[])
         Cell* firstCell = [[Cell alloc] init];
         Cell* secondCell = [[Cell alloc] init];
         NSLog(@"Hamming distance before mutate is %i",[firstCell hammingDistance:secondCell]);
-        [firstCell mutate:50];
-        [secondCell mutate:20];
+        [firstCell mutate:0];
+        [secondCell mutate:0];
         NSLog(@"Hamming distance after mutate is %i",[firstCell hammingDistance:secondCell]);
     }
     return 0;
