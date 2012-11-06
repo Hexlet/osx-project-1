@@ -26,7 +26,7 @@
         
         BOOL isNumberChanged = NO;
         do {
-            numberOfCell = arc4random()%99;
+            numberOfCell = arc4random()%100;
             isNumberChanged=[changedCells containsObject:[ NSNumber numberWithInt: numberOfCell]];
             if (!isNumberChanged) {
                 numberOfMutatedCell = numberOfCell;
@@ -59,13 +59,13 @@ int main (int argc, const char * argv[])
         Cell *newCell1 = [[Cell alloc]init]; 
         Cell *newCell2 = [[Cell alloc]init];
         int humDistBefore=[newCell1 hammingDistance:newCell2];
-        NSLog(@"Humming Distance before mutation%i",humDistBefore);
+        NSLog(@"Humming Distance before mutation %i",humDistBefore);
         
                 
         [newCell1 mutate:numberOfMutatedCells];
         [newCell2 mutate:numberOfMutatedCells];
         int humDistAfter=[newCell1 hammingDistance:newCell2];
-        NSLog(@"Humming Distance after mutation%i",humDistAfter);
+        NSLog(@"Humming Distance after mutation %i",humDistAfter);
           
     }
     return 0;

@@ -10,10 +10,9 @@
 
 @interface Cell : NSObject 
 
-@property (nonatomic,retain) NSMutableArray *DNA; 
+@property (nonatomic,strong) NSMutableArray *DNA; 
 @property int countDNA;
 
--(Cell*)init;
 -(int)hammingDistance:(Cell*)cell1;
 -(NSString*)generateSymbol;
 
