@@ -10,15 +10,22 @@
 
 @implementation Cell
 static NSArray *nucleotidesArray;
+static NSArray *noIndex;
 
 + (void) initialize
 {
     nucleotidesArray = [[NSArray alloc] initWithObjects: @"A", @"T", @"G", @"C", nil];
+    noIndex = [[NSArray alloc] initWithObjects:@[@1,@2,@3],@[@0,@2,@3],@[@1,@0,@3],@[@1,@2,@0], nil];
 }
 
 + (NSArray *) nucleotides
 {
     return nucleotidesArray;
+}
+
++ (NSArray *) noCurrentIndex
+{
+    return noIndex;
 }
 
 -(id)init {

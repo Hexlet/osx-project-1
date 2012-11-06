@@ -14,5 +14,6 @@
     NSMutableArray *DNA;
 }
 +(NSArray *) nucleotides;
++(NSArray *) noCurrentIndex;
 -(int) hammingDistance: (Cell *)obj;
 @end
