@@ -8,20 +8,29 @@
 
 #import "Cell.h"
 
+int const CellLength = 100;
+
+static NSArray *cellDNASymbols;
+
 @implementation Cell
+
++ (void)initialize
+{
+  if (cellDNASymbols == nil)
+    cellDNASymbols = @[@"A", @"T", @"G", @"C"];
+}
 
 + (NSString *)generateRandomElement
 {
-  NSArray *DNASymbols = @[@"A", @"T", @"G", @"C"];
-  NSUInteger randomIndex = arc4random() % [DNASymbols count];
+  NSUInteger randomIndex = arc4random() % [cellDNASymbols count];
   
-  return DNASymbols[randomIndex];
+  return cellDNASymbols[randomIndex];
 }
 
 - (id)init
 {
   if (self = [super init]) {
-    _DNA = [NSMutableArray arrayWithCapacity:100];
+    _DNA = [NSMutableArray arrayWithCapacity:CellLength];
     [self generateDNA];
   }
   
@@ -31,7 +40,7 @@
 - (void)generateDNA
 {
   int i;
-  for (i = 0; i < 100; i++) {
+  for (i = 0; i < CellLength; i++) {
     _DNA[i] = [self.class generateRandomElement];
   }
 }
@@ -45,6 +54,11 @@
   }];
   
   return distance;
+}
+
+- (void)print
+{
+  NSLog(@"%@", _DNA);
 }
 
 @end

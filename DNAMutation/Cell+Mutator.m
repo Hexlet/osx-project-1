@@ -12,10 +12,11 @@
 
 - (void)mutate:(int)degree
 {
-  NSMutableArray *indicesToMutate = [self randomDNAIndices:degree];
+  int amount = CellLength * degree / 100;
+  NSMutableArray *indicesToMutate = [self randomDNAIndices:amount];
   
   int i;
-  for (i = 0; i < degree; i++) {
+  for (i = 0; i < amount; i++) {
     int idx = [indicesToMutate[i] intValue];
     
     self.DNA[idx] = [[self class] generateRandomElement];

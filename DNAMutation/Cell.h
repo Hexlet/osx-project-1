@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern int const CellLength;
+
 @interface Cell : NSObject
 
 @property NSMutableArray *DNA;
@@ -15,5 +17,6 @@
 + (NSString *)generateRandomElement;
 - (void)generateDNA;
 - (int)hammingDistance:(Cell *)otherCell;
+- (void)print;
 
 @end
