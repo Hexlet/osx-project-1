@@ -24,7 +24,7 @@
         // Алгоритм замены такой:
         // заменяем с некой вероятностью, на каждом шаге вероятность меняется и мы её считаем
         // Исходя из того сколько мы заменили и сколько еще осталость пройти шагов
-        if( (x - m) < (arc4random() % (self.DNALength-i)) ){
+        if( (x - mutated) < (arc4random() % (self.DNALength-i)) ){
             // Чуточку усложнения что бы символ был гарантированно другим
             while(true){
                 NSString *nucleotid = [nucleotids objectAtIndex:arc4random() % 4]
