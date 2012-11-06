@@ -15,7 +15,7 @@
         NSLog(@"Процентов должно быть больше 0 и меньше 100!");
         exit(0);
     }
-    int x = ([[self DNA] count] * p) / 100;
+    int x = floor(([[self DNA] count] * p) / 100);
     //NSLog(@"%d",x);
     int indexes[x];
     bool new;
