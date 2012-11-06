@@ -2,7 +2,7 @@
 //  Cell.m
 //  OSX-Poject1
 //
-//  Created by keks keksovich on 05.11.12.
+//  Created by Oleg Bogatenko on 05.11.12.
 //  Copyright (c) 2012 DoZator Home. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ NSArray const *SYMBOLS = nil;
 
 @implementation Cell
 
--(id) init {
+- (id)init {
     
     SYMBOLS = @[@"A", @"T", @"G", @"C"];
     
@@ -27,7 +27,7 @@ NSArray const *SYMBOLS = nil;
     return self;
 }
 
--(int) hammingDistance:(Cell *) mas {
+- (int)hammingDistance:(Cell *)mas {
     
     unsigned int counter = 0;
     
@@ -43,16 +43,23 @@ NSArray const *SYMBOLS = nil;
 
 @implementation Cell(mutator)
 
--(void) mutate:(int)percent {
+- (void)mutate:(int)percent {
     
     NSMutableArray *alreadyChanged = [NSMutableArray arrayWithCapacity:percent];
      
     for (int i=0; i<percent; i++) {
         BOOL complete = NO;
         do {
-            NSNumber *index = [NSNumber numberWithInt:(arc4random()%99)];
+            NSNumber *index = [NSNumber numberWithInt:arc4random()%100];
             if (![alreadyChanged containsObject:index]) {
-                [self.dna replaceObjectAtIndex:[index intValue] withObject:[SYMBOLS objectAtIndex:arc4random()%[SYMBOLS count]]];
+                
+                NSString *newElement = [SYMBOLS objectAtIndex:arc4random()%[SYMBOLS count]];
+                
+                while ([[self.dna objectAtIndex:[index intValue]] isEqual:newElement]) {
+                    newElement = [SYMBOLS objectAtIndex:arc4random()%[SYMBOLS count]];
+                }
+                
+                [self.dna replaceObjectAtIndex:[index intValue] withObject:newElement];
                 [alreadyChanged addObject:index];
                 complete = YES;
             }
