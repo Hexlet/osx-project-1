@@ -19,7 +19,17 @@
   for (i = 0; i < amount; i++) {
     int idx = [indicesToMutate[i] intValue];
     
-    self.DNA[idx] = [[self class] generateRandomElement];
+    NSString *newElement;
+    NSString *oldElement = self.DNA[idx];
+    
+    while (true) {
+      newElement = [[self class] generateRandomElement];
+      
+      if (![newElement isEqualToString:oldElement])
+        break;
+    }
+
+    self.DNA[idx] = newElement;
   }
 }
 
