@@ -8,18 +8,16 @@
 
 #import "Cell.h"
 #import <stdlib.h>
-
 @implementation Cell
 
 -(id) init {
     self = [super init];
     if (self) {
-        _DNA = [NSMutableArray arrayWithCapacity:100];
-        _mutatedElements = [[NSMutableArray alloc] init];
+        _DNA = [NSMutableArray arrayWithCapacity:CELL_LENGTH];
     }
     
     for (NSUInteger i = 0; i < 100; i++) {
-        [_DNA insertObject:[self generateElement] atIndex: i];
+        [_DNA insertObject:[self generateElement] atIndex: CELL_LENGTH];
     }
     return self;
     

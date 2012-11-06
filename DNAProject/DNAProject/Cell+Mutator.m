@@ -12,15 +12,13 @@
 
 
 -(void) mutate: (int) howPercent {
-    int counter = 0;
-    NSNumber *randIndex;
-    while (counter < howPercent) {
-        randIndex = [NSNumber numberWithInt:arc4random()% 4];
-        if (![_mutatedElements containsObject: randIndex]) {
-           [_mutatedElements addObject:randIndex];
-           [_DNA insertObject:[self generateElement] atIndex: counter];
-            counter++;
-        }
+    NSUInteger elementsToMutate = (CELL_LENGTH / 100) * howPercent;
+    NSMutableArray *mutatorIndexes = [NSMutableArray arrayWithCapacity:elementsToMutate];
+    for (NSInteger i = 0; i < elementsToMutate; i++) {   //TODO: Need implementation of shuffle function
+        [mutatorIndexes addObject:[NSNumber numberWithInteger:i]];
+    }
+    for (int i = 0; i < elementsToMutate; i++) {
+        [_DNA replaceObjectAtIndex:i withObject:[self generateElement]];
     }
 }
 

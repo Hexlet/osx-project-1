@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
+#define CELL_LENGTH 100;
 
 int main(int argc, const char * argv[])
 {
