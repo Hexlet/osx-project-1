@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A263C951649B991009C469C /* Cell+mutate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A263C941649B991009C469C /* Cell+mutate.m */; };
 		1AAFC31B16470E3A00471D97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAFC31A16470E3A00471D97 /* Foundation.framework */; };
 		1AAFC31E16470E3A00471D97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAFC31D16470E3A00471D97 /* main.m */; };
 		1AAFC32216470E3A00471D97 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1AAFC32116470E3A00471D97 /* DNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A263C931649B991009C469C /* Cell+mutate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutate.h"; sourceTree = "<group>"; };
+		1A263C941649B991009C469C /* Cell+mutate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutate.m"; sourceTree = "<group>"; };
 		1AAFC31616470E3A00471D97 /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAFC31A16470E3A00471D97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1AAFC31D16470E3A00471D97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				1AAFC32816470E6C00471D97 /* Cell.h */,
+				1A263C931649B991009C469C /* Cell+mutate.h */,
+				1A263C941649B991009C469C /* Cell+mutate.m */,
 				1AAFC32916470E6C00471D97 /* Cell.m */,
 				1AAFC31C16470E3A00471D97 /* DNA */,
 				1AAFC31916470E3A00471D97 /* Frameworks */,
@@ -146,6 +151,7 @@
 			files = (
 				1AAFC31E16470E3A00471D97 /* main.m in Sources */,
 				1AAFC32A16470E6C00471D97 /* Cell.m in Sources */,
+				1A263C951649B991009C469C /* Cell+mutate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				1AAFC32716470E3A00471D97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

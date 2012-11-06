@@ -8,23 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
-
-@interface Cell  (Mutation)
--(void) mutate: (int) percent;
-@end
-
-@implementation Cell (Mutation)
--(void) mutate:(int)percent{
-    NSArray *tmp=[[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
-    //множество возможных значений
-    int step=100/percent;
-    //шаг мутации (чтобы каждый раз новый ген мутировать)
-    //Здорово, что не выбивает ошибку, а само округляет (если при делении получается float)
-    for(int i=0;i<100;i+=step)
-        [DNA replaceObjectAtIndex:i withObject:[tmp objectAtIndex:rand()%4]];
-        //заменяем в нужном месте ген случайным
-}
-@end
+#import "Cell+mutate.h"
 
 int main(int argc, const char * argv[])
 {
