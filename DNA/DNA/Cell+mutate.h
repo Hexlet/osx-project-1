@@ -10,6 +10,6 @@
 
 @interface Cell (mutate)
 
--(void) mutate:(int)x;
+-(void) mutate:(int)p;
 
 @end

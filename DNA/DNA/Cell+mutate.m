@@ -10,7 +10,12 @@
 
 @implementation Cell (mutate)
 
--(void) mutate:(int)x {
+-(void) mutate:(int)p {
+    if(p > 100 || p < 1) {
+        NSLog(@"Процентов должно быть больше 0 и меньше 100!");
+    }
+    int x = ([[self DNA] count] * p) / 100;
+    NSLog(@"%d",x);
     int indexes[x];
     bool new;
     NSArray *cDNA = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
