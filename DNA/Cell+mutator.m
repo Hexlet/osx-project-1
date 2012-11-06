@@ -31,12 +31,12 @@
         id randomNucleoObject = [[self nucleobase] objectAtIndex:randomNucleoNumber];
         
         if ([randomBaseObject isEqual:randomNucleoObject]) {
-            NSMutableArray *temp = [[NSMutableArray alloc] initWithArray:[self nucleobase]];
-            [temp removeObject:randomBaseObject];
+            NSMutableArray *nucleobaseCopy = [[NSMutableArray alloc] initWithArray:[self nucleobase]];
+            [nucleobaseCopy removeObject:randomBaseObject];
             [
              [self dna]
                 replaceObjectAtIndex:randomBaseNumber
-                withObject:[temp objectAtIndex:arc4random() % [temp count]]
+                withObject:[nucleobaseCopy objectAtIndex:arc4random() % [nucleobaseCopy count]]
              ];
         } else {
             [
