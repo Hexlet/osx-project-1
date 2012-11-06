@@ -7,7 +7,9 @@
 //
 
 #import "Cell.h"
-#include <stdlib.h>
+#import <stdlib.h>
+
+#define DNA_LENGTH 100   // Длина массива ДНК
 
 @implementation Cell
 
@@ -16,7 +18,7 @@
     self = [super init];
     if (self)
     {
-        _DNALength = 100;
+        _DNALength = DNA_LENGTH;
         _DNA = [[NSMutableArray alloc] init];
         _DNAs = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
         for (int i = 0; i < _DNALength; i++) {
@@ -26,7 +28,7 @@
     return self;
 }
 
-- (int)hammingDistance:(Cell *)cell
+- (int)hammingDistance:(Cell *)cell  // Расчет отклонения
 {
     int hammingDistanceCount = 0;
     for (int i = 0; i < [_DNA count]; i++) {
@@ -38,7 +40,7 @@
     return hammingDistanceCount;
 }
 
-- (void)printDNA
+- (void)printDNA  // Вывод ДНК в читаемом виде
 {
     NSMutableString *dnaStr = [[NSMutableString alloc] init];
     for (NSString *str in _DNA)

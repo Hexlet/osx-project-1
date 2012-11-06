@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
+#define MUTATING_1 50   // Процентное кол-во мутируемых элементов первого массива
+#define MUTATING_2 60   // Процентное кол-во мутируемых элементов второго массива
+
 @interface Cell (mutator)
 
 - (void)mutate:(int)changePercent;
@@ -64,9 +67,9 @@ int main(int argc, const char * argv[])
         
         // Мутация
         
-        [cell1 mutate:50]; // изменить 50% элементов
+        [cell1 mutate:MUTATING_1]; // изменить 50% элементов
         [cell1 printDNA];
-        [cell2 mutate:60]; // изменить 60% элементов
+        [cell2 mutate:MUTATING_2]; // изменить 60% элементов
         [cell2 printDNA];
         NSLog(@"Hamming distance after mutating: %d", [cell1 hammingDistance:cell2]);
     }
