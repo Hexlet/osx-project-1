@@ -16,11 +16,19 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         Cell *a, *b;
+        
         a = [[Cell alloc] init];
         b = [[Cell alloc] init];
+        
+        NSLog(@"%@", [a toNSString]);
+        NSLog(@"%@", [b toNSString]);
         NSLog(@"%i",[a hammingDistance: b]);
+        
         [a mutate: 10];
         [b mutate: 50];
+        
+        NSLog(@"%@", [a toNSString]);
+        NSLog(@"%@", [b toNSString]);
         NSLog(@"%i", [a hammingDistance: b]);
     }
     return 0;

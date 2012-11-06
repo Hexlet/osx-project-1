@@ -17,24 +17,14 @@
     self = [super init];
     
     if(self){
-        _DNA = [[NSMutableArray alloc] init];
+        _DNASize = 100;
+        _Symbols = [[NSArray alloc] initWithObjects: @"A", @"T", @"G", @"C", nil];
+        
+        _DNA = [[NSMutableArray alloc] initWithCapacity:self.DNASize];
 
-        for(i=0; i<100; i++){
+        for(i=0; i<self.DNASize; i++){
             r = arc4random() % 4;
-            switch(r){
-                case 0:
-                    [_DNA addObject: @'A'];
-                    break;
-                case 1:
-                    [_DNA addObject: @'T'];
-                    break;
-                case 2:
-                    [_DNA addObject: @'G'];
-                    break;
-                case 3:
-                    [_DNA addObject: @'C'];
-                    break;
-            }
+            _DNA[i] = self.Symbols[r];
         }
     }
     return self;
@@ -47,6 +37,15 @@
             d++;
     }
     return d;
+}
+
+-(NSString*) toNSString {
+    int i;
+    NSMutableString *str = [[NSMutableString alloc] init];
+    for(i=0; i<self.DNASize; i++){
+        [str  appendString:self.DNA[i]];
+    }
+    return str;
 }
 
 @end
