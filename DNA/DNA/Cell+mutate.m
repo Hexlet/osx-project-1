@@ -15,7 +15,7 @@
         NSLog(@"Процентов должно быть больше 0 и меньше 100!");
     }
     int x = ([[self DNA] count] * p) / 100;
-    NSLog(@"%d",x);
+    //NSLog(@"%d",x);
     int indexes[x];
     bool new;
     NSArray *cDNA = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
