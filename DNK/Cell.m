@@ -19,7 +19,7 @@
         for (int i = 0; i < 100; i++) {
             [DNA addObject:
                 [NSString stringWithFormat:@"%C",
-                    [@"ATGC" characterAtIndex:random()%4]]];
+                    [@"ATGC" characterAtIndex:arc4random()%4]]];
             }
         }
     return self;
@@ -50,9 +50,9 @@
     NSMutableArray *TEMP = [NSMutableArray array];
         do {
             while ([TEMP containsObject:[NSString stringWithFormat:@"%d",k]]) {
-                k = random()%100;
+                k = arc4random()%100;
             }
-            Mutstr = [NSString stringWithFormat:@"%C", [@"ATGC" characterAtIndex:random()%4]];
+            Mutstr = [NSString stringWithFormat:@"%C", [@"ATGC" characterAtIndex:arc4random()%4]];
             if (Mutstr != [DNA[k] self ]) {
                 [TEMP addObject:[NSString stringWithFormat:@"%d",k]];
                 [DNA replaceObjectAtIndex:k withObject:Mutstr];
