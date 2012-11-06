@@ -16,7 +16,7 @@
     
     if (self) {
         
-        _dnaCapacity = 10;
+        _dnaCapacity = 100;
         
         _DNA = [NSMutableArray arrayWithCapacity:_dnaCapacity];
 
