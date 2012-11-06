@@ -15,10 +15,11 @@
 {
     if(percent > 100)
         percent = 100;
+    else if (percent < 0)
+        percent = 0;
     
     int numberOfChangedCliches = self.dnaArray.count * percent / 100.0;
     int randomIndex = 0;//index in self.dnaArray where random value will be inserted
-    int randomValue = 0;//value to insert into self.dnaArray
     int nextIndexValue = 0;//next unchanged cliche, uses to improve performance
     NSMutableArray* indexArray = [[NSMutableArray alloc] initWithCapacity:numberOfChangedCliches];
     
@@ -32,9 +33,8 @@
             
             randomIndex = nextIndexValue++;
         }
-        randomValue = 'A' + arc4random() % DNA_RANGE;
         
-        [self.dnaArray setObject:[NSString stringWithFormat:@"%c", randomValue] atIndexedSubscript:randomIndex];
+        [self.dnaArray setObject:[self.dnaElemArray objectAtIndex:(arc4random() % DNA_RANGE)] atIndexedSubscript:randomIndex];
         [indexArray addObject:[NSNumber numberWithInt:randomIndex]];
         
     }

@@ -14,6 +14,7 @@
 @interface Cell : NSObject
 //properties:
 @property (nonatomic) NSMutableArray *dnaArray;
+@property (nonatomic) NSArray *dnaElemArray;
 //methods:
 -(int)hammingDistance: (Cell*) cell;
 @end

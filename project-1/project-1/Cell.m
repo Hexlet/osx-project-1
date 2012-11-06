@@ -11,6 +11,7 @@
 
 @implementation Cell
 @synthesize dnaArray = _dnaArray;
+@synthesize dnaElemArray = _dnaElemArray;
 
 //Getter for an initialization of dnaArray
 -(NSMutableArray*) dnaArray
@@ -21,27 +22,25 @@
     return _dnaArray;
 }
 
+-(NSArray*) dnaElemArray
+{
+    if(_dnaElemArray == nil) {
+        _dnaElemArray = [[NSArray alloc] initWithObjects:@"A",@"C",@"G",@"T", nil];
+    }
+    return _dnaElemArray;
+}
+
 
 //Overided init method to randomly set dnaArray
 - (id)init
 {
     self = [super init];
     if (self) {
-        char randomValue = 0;
         for(int i = 0; i < DNA_SIZE; ++i){
-            randomValue = [self generateCharPresentationWithinRange:DNA_RANGE];
-            
-            NSString *str = [NSString stringWithFormat:@"%c", randomValue];
-            [self.dnaArray addObject:str];
+            [self.dnaArray addObject: [self.dnaElemArray objectAtIndex:(arc4random() % DNA_RANGE)] ];
         }
     }
     return self;
-}
-
-//private method for generation a char
--(int) generateCharPresentationWithinRange: (int) range {
-    return 'A' + arc4random() % range;
-
 }
 
 //method for checking distances bettwen self.dnaArray and parameter
