@@ -17,7 +17,8 @@
 
 -(id) init;
 -(id) initLength:(int) l; // Похоже Obj-C неподдерживает Default Argument Value
--(NSMutableArray *) makeDNA:(int) l;
+-(NSMutableArray *) makeDNA:(NSUInteger) l;
+-(NSArray *) newNucleotide;
 -(int) hammingDistance: (Cell *) cell;
 
 @end
@@ -25,5 +26,5 @@
 // 6. Добавляем категорию с методом mutate
 
 @interface Cell (mutator)
--(void) mutate: (int) x;
+-(void) mutate: (NSUInteger) x;
 @end

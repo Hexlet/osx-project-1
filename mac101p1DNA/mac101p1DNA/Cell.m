@@ -23,11 +23,16 @@
     return self;
 }
 
--(NSMutableArray *) makeDNA:(int)l {
-    mols = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
+-(NSMutableArray *) makeDNA:(NSUInteger)l {
+    
     DNA = [[NSMutableArray alloc] init];
-    for (int i = 0; i < l; i++)[DNA addObject:[mols objectAtIndex:arc4random()%4]];
+    for (int i = 0; i < l; i++)[DNA addObject:[self newNucleotide]];
     return DNA;
+}
+
+-(NSArray *) newNucleotide {
+    mols = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
+    return [mols objectAtIndex:arc4random()%mols.count];
 }
 
 -(int) hammingDistance:(Cell *)cell {
@@ -42,21 +47,32 @@
 
 @implementation Cell (mutator)
 
--(void) mutate:(int) x {
+-(void) mutate:(NSUInteger) x {
     // Использую NSIndexSet для генерации уникальных наборов индексов
-    NSUInteger num = (int)floor(DNA.count*x/100); // кол-во изменяемых молекул ДНК
+    NSUInteger num = (NSUInteger)floor([self->DNA count]*x/100); // кол-во изменяемых молекул ДНК
     // получаем номера изменяемых молекул
-    NSIndexSet *molnum = [[NSIndexSet alloc] initWithIndexSet:[self generateRandomIndexes:num]];
-    // Генерируем молекулы     
+    // NSIndexSet *molnum = [[NSIndexSet alloc] initWithIndexSet:[self generateRandomIndexes:num]];
+    // Генерируем молекулы
+    for (int i=0;i<num;i++) {
+        [self->DNA replaceObjectAtIndex:i withObject:[self newNucleotide]];
+    };
     
+//    NSMutableArray *newcell = [NSMutableArray arrayWithArray:[self makeDNA:num]];
+//    
+//    [self->DNA replaceObjectsAtIndexes:molnum withObjects:newcell];
 }
 
 -(NSIndexSet *) generateRandomIndexes:(NSUInteger) l {
     NSMutableIndexSet *places = [[NSMutableIndexSet alloc] init];
-    int num = 0;
+    NSUInteger number = 0;
+//    do {
+//        number = arc4random()%self->DNA.count;
+//        [places addIndex:number];
+//    } while (places.count < l);
+    
     while (places.count < l) {
-        num = arc4random()%self->DNA.count;
-        [places addIndex:num];
+        number = arc4random()%self->DNA.count;
+        [places addIndex:number];
     }
     return places;
     
