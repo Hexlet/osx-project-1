@@ -17,3 +17,10 @@ extern const NSString *acid[4];
 -(int) hammingDistance:(Cell *)reactiv;
 
 @end
+
+@interface Cell (Mutator)
+
+- (void) mutate: (int) percentage;
+
+@end
+

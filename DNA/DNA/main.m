@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
-#import "Mutate.h"
 
 int main(int argc, const char * argv[])
 {
@@ -18,9 +17,17 @@ int main(int argc, const char * argv[])
         Cell *cellFirst = [[Cell alloc] init];
         Cell *cellSecond = [[Cell alloc] init];
         
-        NSLog(@"%@",[cellFirst description]);
-        NSLog(@"%@",[cellSecond description]);
-        NSLog(@"Hello, World!");
+        NSLog(@"%@", cellFirst);
+        NSLog(@"%@", cellSecond);
+        NSLog(@"Hamming Distance: %d", [cellFirst hammingDistance:cellSecond]);
+        
+        [cellFirst mutate: 71];
+        [cellSecond mutate: 25];
+        NSLog(@"\n \n mutation is complit \n \n");
+        
+        NSLog(@"%@", cellFirst);
+        NSLog(@"%@", cellSecond);
+        NSLog(@"Hamming Distance: %d", [cellFirst hammingDistance: cellSecond]);
         
     }
     return 0;
