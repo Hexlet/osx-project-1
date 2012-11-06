@@ -3,6 +3,8 @@
 
 @interface Cell : NSObject
 
+@property (readonly) int DNALength;
 @property NSMutableArray *DNA;
-- (int)hammingDistance: (Cell*)
+- (id)initWithDNALen:(int);
+- (int)hammingDistance: (Cell*);
 @end

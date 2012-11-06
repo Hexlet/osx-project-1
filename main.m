@@ -13,20 +13,26 @@
 
 @implementation Ceil(Mutator)
 -(void) mutate:(int)x {
-    if( x > 100 or x < 0){
+    if( x > self.DNALength or x < 0){
         // На всякий случай выйдем при некорректном значении
         return ;
     }
     // Количество замененных клеток
     int mutated = 0;
-    int i;
     NSArray *nucleotids = [[NSArray alloc] initWithObjects: @"A", @"G", @"T", @"C", nil]
-    for( i=0; i < 100; i++ ){
+    for(int i=0; i < self.DNALength; i++ ){
         // Алгоритм замены такой:
         // заменяем с некой вероятностью, на каждом шаге вероятность меняется и мы её считаем
         // Исходя из того сколько мы заменили и сколько еще осталость пройти шагов
-        if( (x - m) < (arc4random() % (100-i)) ){
-            [_DNA replaceObjectAtIndex:i withObject:[nucleotids objectAtIndex:arc4random() % 4]]
+        if( (x - m) < (arc4random() % (self.DNALength-i)) ){
+            // Чуточку усложнения что бы символ был гарантированно другим
+            while(true){
+                NSString *nucleotid = [nucleotids objectAtIndex:arc4random() % 4]
+                if( [_DNA objectAtIndex:i] != nucleotid ){
+                    [_DNA replaceObjectAtIndex:i withObject:nucleotid];
+                    break;
+                }
+            }
             mutated++;
         }
     }
