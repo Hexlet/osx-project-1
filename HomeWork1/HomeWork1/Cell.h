@@ -10,7 +10,7 @@
 
 @interface Cell : NSObject {
     NSMutableArray *DNA;
-    NSArray *genes;
+    NSMutableArray *genes;
     int capacity;
 }
 

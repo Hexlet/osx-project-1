@@ -11,6 +11,7 @@
 		71C8B72F164191EC0028EA7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C8B72E164191EC0028EA7A /* main.m */; };
 		71C8B733164191EC0028EA7A /* HomeWork1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71C8B732164191EC0028EA7A /* HomeWork1.1 */; };
 		71C8B73B164193600028EA7A /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C8B73A164193600028EA7A /* Cell.m */; };
+		71D2D30416497C7100C0FA1F /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D2D30316497C7100C0FA1F /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		71C8B732164191EC0028EA7A /* HomeWork1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HomeWork1.1; sourceTree = "<group>"; };
 		71C8B739164193600028EA7A /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		71C8B73A164193600028EA7A /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		71D2D30216497C7100C0FA1F /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		71D2D30316497C7100C0FA1F /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				71C8B72E164191EC0028EA7A /* main.m */,
+				71D2D30216497C7100C0FA1F /* Cell+mutator.h */,
+				71D2D30316497C7100C0FA1F /* Cell+mutator.m */,
 				71C8B739164193600028EA7A /* Cell.h */,
 				71C8B73A164193600028EA7A /* Cell.m */,
 				71C8B732164191EC0028EA7A /* HomeWork1.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				71C8B72F164191EC0028EA7A /* main.m in Sources */,
 				71C8B73B164193600028EA7A /* Cell.m in Sources */,
+				71D2D30416497C7100C0FA1F /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				71C8B738164191EC0028EA7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

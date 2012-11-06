@@ -8,35 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
-
-@interface Cell (mutator)
--(void)mutate:(int)x;
-@end
-
-@implementation Cell (mutator)
--(void)mutate:(int)x {
-    int toChange = round(capacity * x / 100);
-    NSUInteger i = 0;
-    id newGene;
-    NSMutableIndexSet *changed = [[NSMutableIndexSet alloc] init];
-
-    while ([changed count] < toChange) {
-        do {
-            i = random() % capacity;
-        }
-        while ([changed containsIndex:i]);
-
-        [changed addIndex:i];
-
-        do {
-            newGene = [genes objectAtIndex:(random() % [genes count])];
-        }
-        while ([[DNA objectAtIndex:i] isEqualToString:newGene]);
-
-        [DNA replaceObjectAtIndex:i withObject:newGene];
-    }
-}
-@end
+#import "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {
