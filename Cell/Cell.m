@@ -74,6 +74,9 @@
     if (DNA.count < checkLength)
         checkLength = (int)DNA.count;
 
+    // Разницу в длине ДНК тоже считаем за несовпадение
+    count = abs((int)[DNA count] - (int)[[anotherCell getDNA] count]);
+
     // Проходимся по нашей цепочке текущего инстанса
     for (int index = 0; index < checkLength; index++)
 
