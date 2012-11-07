@@ -10,5 +10,5 @@
 
 // добавил после изучения чужих работ. Правда я не считаю, что в данном случае это очень важно, но раз стандарт, то пусть будет
 @interface Cell (mutator)
-- (void) mutateWith:(uint)percent;
+- (void) mutateWith:(int)percent;
 @end

@@ -22,7 +22,7 @@ int main(int argc, const char * argv[])
     NSLog(@"Расстояние Хэмминга после заполнения: %i", ham);
     
     // переводим в проценты
-    int percent = ham * 100 / MAX_LEN;
+    int percent = roundf(ham * 100 / MAX_LEN);
     
     [cell1 mutateWith:percent];
     [cell2 mutateWith:percent];

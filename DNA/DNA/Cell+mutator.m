@@ -9,15 +9,15 @@
 #import "Cell+mutator.h"
 
 @implementation Cell (mutator)
--(void) mutateWith:(uint)percent {
+-(void) mutateWith:(int)percent {
   // я аполитичен, но иного объяснения появления числа > 100% придумать не могу
-  if (percent > 100) {
+  if (percent > 100 || percent < 0) {
     NSLog(@"Замечен представитель партии \"Единая Россия\". Происходит экстренное завершение программы...");
     exit(1);
   }
   
   // переводим проценты в количество символов
-  uint charCount = percent * MAX_LEN / 100;
+  int charCount = roundf(percent * MAX_LEN / 100);
   
   NSMutableArray *usedPosition = [[NSMutableArray alloc] init]; // массив, хранящий уже замененные позиции массива DNA
   NSString *newChar;
