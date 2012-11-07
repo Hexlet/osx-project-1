@@ -21,24 +21,31 @@
 
     int randomElementIndex = 0;
     int randomMutationIndex = 0;
+    int numberOfElementsToMutate = 0;
     NSUInteger indexOfDNAForMutation = 0;
     NSString *currentElementInDNA;
     
     NSMutableArray *mutationIndexes;
     NSMutableArray *elements;
     
+    //проверка корректности введенного значения процента мутации
+    if (x<0||x>100) {
+        @throw [NSException exceptionWithName:@"InvalidPercentage" reason:[NSString stringWithFormat:@"Invalid percentage: %i. Percentage must be from 0 to 100!",x] userInfo:nil];
+    }
     //создание массива ATGC
     elements = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
 
     //создание массива для хранения индексов еще не мутировавших элементов
     mutationIndexes = [NSMutableArray arrayWithCapacity: [self.DNA count]];
     
-
+    //определение количества элементов DNA, которые необходимо мутировать
+    numberOfElementsToMutate = (int) lroundf(0.01*x*[self.DNA count]);
+    
     //заполнение массива mutationIndexes индексами массива DNA
     for (NSUInteger index=0; index<[self.DNA count]; index++) {
         [mutationIndexes insertObject:[NSNumber numberWithUnsignedInteger:index] atIndex:index];
     }
-    for (NSUInteger index=0; index<x; index++) {
+    for (NSUInteger index=0; index<numberOfElementsToMutate; index++) {
                 
         //случайный индекс элемента массива еще не мутировавших элементов
         randomMutationIndex = arc4random()%([self.DNA count] - index);
@@ -82,7 +89,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Distance1 =  %i",distance);
 
         [myCell1 mutate:30];
-        [myCell2 mutate:50];
+        [myCell2 mutate:30];
 
         distance = [myCell1 hammingDistance:myCell2];
         NSLog(@"Distance2 =  %i",distance);

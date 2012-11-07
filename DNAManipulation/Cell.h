@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+//Определение количества элементов DNA (по условию задачи)
+#define DNA_LENGTH 100
 
 @interface Cell : NSObject
 @property (readonly) NSMutableArray *DNA;

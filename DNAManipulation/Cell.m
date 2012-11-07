@@ -16,7 +16,6 @@
     if (self) {
 
         //размер массива DNA
-        int capacityOfDNA = 100;
         int randomElementIndex = 0;
         
         //создание временного массива для выбора случайного элемента
@@ -24,10 +23,10 @@
         elements = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
  
         //инициализация массива DNA размером в 100 элементов
-        _DNA = [NSMutableArray arrayWithCapacity:capacityOfDNA];
+        _DNA = [NSMutableArray arrayWithCapacity:DNA_LENGTH];
 
         //заполнение массива DNA случайными элементами
-        for (NSUInteger index=0; index<capacityOfDNA; index++) {
+        for (NSUInteger index=0; index<DNA_LENGTH; index++) {
             randomElementIndex = arc4random()%4;
             [_DNA insertObject:[elements objectAtIndex:randomElementIndex] atIndex:index];
         }
