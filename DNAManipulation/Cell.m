@@ -37,15 +37,10 @@
 -(int) hammingDistance: (Cell *) c {
 
     int distance = 0;
-    
-    NSMutableArray *arrayToCompare1 = self.DNA;
-    NSMutableArray *arrayToCompare2 = c.DNA;
-    
-    for (int index=0; index< [arrayToCompare1 count]; index++) {
-        NSString *element1 = [arrayToCompare1 objectAtIndex:index];
-        NSString *element2 = [arrayToCompare2 objectAtIndex:index];
+        
+    for (int index=0; index< [[self DNA] count]; index++) {
 
-        if (![element1 isEqualToString:element2]) {
+        if ([[[self DNA] objectAtIndex:index] isNotEqualTo: [[c DNA] objectAtIndex:index]]) {
             distance++;
         }
     }
