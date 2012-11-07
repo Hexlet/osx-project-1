@@ -11,9 +11,9 @@
 
 @interface Cell : NSObject {
     
-    NSMutableArray *DNA;
+    //NSMutableArray *DNA;
 }
-
+@property NSMutableArray *DNA;
 + (NSString*) randomElement;
 
 - (int) hammingDistance: (Cell *)cell;

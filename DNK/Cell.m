@@ -8,10 +8,10 @@
 
 #import "Cell.h"
 
-const NSUInteger DNA_LENGHT = 100;
+const NSUInteger DNA_LENGTH = 100;
 
 @implementation Cell
-
+@synthesize DNA;
 
 -(id) init {
     
@@ -19,9 +19,9 @@ const NSUInteger DNA_LENGHT = 100;
     
     if (self) {
         
-        DNA = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
+        DNA = [NSMutableArray arrayWithCapacity:DNA_LENGTH];
         
-        for (int i = 0; i < DNA_LENGHT; i++) {
+        for (int i = 0; i < DNA_LENGTH; i++) {
 
             [DNA addObject:[Cell randomElement]];
         }
@@ -33,7 +33,7 @@ const NSUInteger DNA_LENGHT = 100;
 +(NSString*) randomElement {
     
     NSArray *const genes = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-    return genes[rand() % genes.count];
+    return genes[arc4random() % genes.count];
     
 }
 
@@ -42,13 +42,18 @@ const NSUInteger DNA_LENGHT = 100;
     int count = 0;
     
     
-for (NSUInteger i = 0; i < DNA_LENGHT; i++) {
-    if([DNA objectAtIndex:i] != [cell -> DNA objectAtIndex:i])
+for (NSUInteger i = 0; i < DNA_LENGTH; i++) {
+    if([DNA objectAtIndex:i] != [(*cell).DNA objectAtIndex:i])
         count++;
     }
 
     return count;
 
+}
+
+- (NSString *)description
+{
+    return [DNA componentsJoinedByString:@""];
 }
 
 @end
