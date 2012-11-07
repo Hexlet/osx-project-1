@@ -12,7 +12,7 @@
 #define CAPACITY 100
 
 @interface Cell ()
--(void) initDna;
+-(void) initDna; // initialize arrays
 @end
 
 
@@ -36,7 +36,7 @@
 	
 	symbols = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
 	dnaArray = [NSMutableArray arrayWithCapacity:CAPACITY];
-	for (int i = 0; i < CAPACITY; i++) {
+	for (int i = 0; i < CAPACITY; i++) {   // filling an array
 		[[self dnaArray] addObject:[symbols objectAtIndex:arc4random()%[symbols count]]];
 	}
 	
