@@ -24,7 +24,7 @@
             DNA=[[NSMutableArray alloc]init];
             NSArray *template=[NSArray arrayWithObjects:@"A",@"T",@"C",@"G", nil];
             
-            for (i=0;i<100;++i)
+            for (i=0;i<10;++i)
             {
                 NSUInteger c= arc4random()%[template count];
                // NSLog(@"%lu",c);
@@ -48,7 +48,7 @@
     NSString *a;
     NSString *b;
     for (i=0;i<[[self DNA] count];i++)
-    {  if ((a=[[cellForCompare DNA] objectAtIndex:i]) == (b=[[self DNA] objectAtIndex:i]))
+    {  if ((a=[[cellForCompare DNA] objectAtIndex:i]) != (b=[[self DNA] objectAtIndex:i]))
         {
             countC++;
           //print of index of coincidence

@@ -11,7 +11,7 @@
 @implementation Cell (mutator)
 -(void)mutate: (int) x
 {
-    if (x>100) NSLog(@"input data error: x should be less than 100%%. Cell will not be mutable");
+    if (x>100 | x<0) NSLog(@"input data error: x should be less than 100%% and more than 0. Cell will not be mutable");
     
     else
     {
@@ -22,9 +22,15 @@
     
     for (i=0;i<mutateElementsQuantity;++i)
         {
-            NSUInteger c= arc4random()%[template count];
+           NSString *obj= [[self DNA] objectAtIndex:i];
+            while ([[self DNA] objectAtIndex:i]==obj)
+            {
+                NSUInteger c= arc4random()%[template count];
+                obj=[template objectAtIndex:c];
+            }
+            
             // NSLog(@"%lu",c);
-            NSString *obj=[template objectAtIndex:c];
+            
             [ [self DNA] replaceObjectAtIndex:i withObject:obj];
         }
     }
