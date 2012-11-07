@@ -5,11 +5,13 @@
 
 -(id) init {
     self = [super init];
-	_DNA = [NSMutableArray arrayWithCapacity:100];
+    if (self) {	
+	_DNA = [NSMutableArray arrayWithCapacity:DNA_LENGTH];
 	
 	for (int i = 0 ; i < DNA_LENGTH; i++) {
 		[_DNA addObject: [nucleotides objectAtIndex:arc4random_uniform(3)]];
 	}
+    }
     
     return self;
 }

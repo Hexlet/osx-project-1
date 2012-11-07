@@ -6,7 +6,7 @@
 
 -(void) mutate: (int) n {
 
-	if (n>DNA_LENGTH) return;
+	if (n>100 || n<0) return;
 	
 	NSMutableArray* arrIndex = [[NSMutableArray alloc] init];
 	
