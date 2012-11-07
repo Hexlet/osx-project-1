@@ -19,7 +19,7 @@
         for (i=0; i<maxLenght; i++) [mutatedArray addObject:[NSNumber numberWithBool:NO]];
         NSMutableArray *cellMutatedDNA=[self getDNA];
             
-            while (replaceNumber)  //количество оставкшихся замен
+            while (replaceNumber)  
             {  
                 int changePosition=arc4random()%maxLenght;
                 NSString *mutatedChar =[NSString stringWithString:[self makeGen]];
@@ -29,7 +29,6 @@
                     [cellMutatedDNA replaceObjectAtIndex:changePosition withObject:mutatedChar];
                     [mutatedArray replaceObjectAtIndex:changePosition withObject:[NSNumber numberWithBool:YES]];
                     replaceNumber--;
-                    //NSLog(@"changed to %@ in %d position",cellMutatedDNA,changePosition);
                 }
             }
         [self setDNA:cellMutatedDNA];
