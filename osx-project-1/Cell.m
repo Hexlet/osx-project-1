@@ -54,9 +54,33 @@
     return differents;
 }
 
-//
+// Print it
 -(void)print
 {
+    NSString *str = [[NSString alloc] init];
+    
+    for ( int i = 0; i < DNA_DIMENTION; i++ )
+    {
+        switch ([self getLetterByIndex:i])
+        {
+            case leterA:
+                str = [str stringByAppendingString:@"A"];
+                break;
+            case letterC:
+                str = [str stringByAppendingString:@"C"];
+                break;
+            case letterG:
+                str = [str stringByAppendingString:@"G"];
+                break;
+            case letterT:
+                str = [str stringByAppendingString:@"T"];
+                break;
+            default:
+                break;
+        }
+    }
+    
+    NSLog(str);
 }
 
 @end
