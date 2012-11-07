@@ -8,39 +8,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletDNA/Cell.h"
-         timestampString = "373765638.418372"
+         timestampString = "374014544.508273"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "17"
-         endingLineNumber = "17"
-         landmarkName = "-hamminDistance:"
-         landmarkType = "4">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "HexletDNA/Cell.m"
-         timestampString = "373767701.198117"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
          landmarkName = "-hammingDistance:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "HexletDNA/Cell.m"
-         timestampString = "373767701.198117"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "25"
-         endingLineNumber = "25"
-         landmarkName = "-init"
-         landmarkType = "5">
+         landmarkType = "4">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

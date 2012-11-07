@@ -16,10 +16,10 @@
     if (self) {
         // строка с набором кодов ДНК
         NSString *codes = @"ATGC";
-        _length = 100;
-        DNA = [NSMutableArray arrayWithCapacity:_length];
+        length = 100;
+        DNA = [NSMutableArray arrayWithCapacity:length];
         
-        for (int i = 0; i < _length; ++i) {
+        for (int i = 0; i < length; ++i) {
             // создаём интервал единичной длины со случайной начальной позицией
             NSRange range = {arc4random_uniform(4), 1};
             
@@ -33,10 +33,10 @@
 - (int) hammingDistance:(Cell *)withCell {
     // на случай если в будущем мы будем считать различия в клетках
     // с различной длиной ДНК, определим какая из длин меньше
-    int minLength = _length < withCell->_length ? _length : withCell->_length;
+    int minLength = length < withCell->length ? length : withCell->length;
     
     // если размеры ДНК разные, то эта разница становиться начальной дистанцией
-    int distance = abs(_length - withCell->_length);
+    int distance = abs(length - withCell->length);
     
     for (int i = 0; i < minLength; ++i) {
         // если коды ДНК в позиции i не равны, дистанцию увеличиваем на 1

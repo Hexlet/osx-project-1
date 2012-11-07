@@ -14,20 +14,32 @@
 
 - (void) mutate:(int)withPercent {
     
+    // если 0 или меньше процентов то ничего не мутируем
+    if (withPercent < 1) {
+        return;
+    }
+    // мутировать больше 100% ДНК невозможно
+    if (withPercent > 100) {
+        withPercent = 100;
+    }
+    
     // создаём массив индексов
-    NSMutableArray* idxs = [NSMutableArray arrayWithCapacity:[self length]];
-    for (int i = 0; i < [self length]; ++i) {
+    NSMutableArray* idxs = [NSMutableArray arrayWithCapacity:length];
+    for (int i = 0; i < length; ++i) {
         NSNumber* idx = [NSNumber numberWithInt:i];
         [idxs addObject:idx];
     }
     
-    // перемешиваем индексы
-    for (NSUInteger i = 0; i < [idxs count]; ++i) {
-        [idxs exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform([idxs count] - 1)];
+    // если мутировать 100% ДНК, то перемешивать индексы нет необходимости
+    if (withPercent < 100) {
+        // перемешиваем индексы
+        for (NSUInteger i = 0; i < [idxs count]; ++i) {
+            [idxs exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform((UInt32)[idxs count] - 1)];
+        }
     }
     
     // определяем какое количество символов необходимо мутировать
-    int n = withPercent / 100.0 * [self length];
+    int n = withPercent / 100.0 * length;
     
     // мутируем цепочку
     for (int i = 0; i < n; ++i) {
@@ -36,8 +48,7 @@
         
         // чтобы гарантировать, что код в цеопчке будет изменён,
         // удалим изменяемый символ из множества
-        NSMutableString* codes = [NSMutableString stringWithCapacity:4];
-        [codes appendString:@"ATGC"];
+        NSMutableString* codes = [@"ATGC" mutableCopy];
         NSString* mutationCode = [DNA objectAtIndex:idx];
         [codes deleteCharactersInRange:[codes rangeOfString:mutationCode]];
         
