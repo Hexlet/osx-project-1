@@ -24,19 +24,19 @@
     
     for (NSUInteger i = 0;  i < mutateGenesCount; i++) {
         NSNumber *index;
-        
+        //выбираем случайные позииции 
         do {
-            index = [NSNumber numberWithInt:rand() % [self . DNA count]];
-        } while ([mutateGenes containsObject:index]);
+            index = [NSNumber numberWithInt:arc4random() % [self . DNA count]]; //генерируем новый индекс
+        } while ([mutateGenes containsObject:index]); //если mutateGenes уже лежит этот индекс то перегенерируем
         
-        [mutateGenes addObject:index];
+        [mutateGenes addObject:index]; //добавляем индекс
 
         NSString* newelement;
         do {
-            newelement = [Cell randomElement];
-        } while ([self . DNA objectAtIndex:[index unsignedIntegerValue]]==newelement);
+            newelement = [Cell randomElement]; //новый рандомный элемент 
+        } while ([self . DNA objectAtIndex:[index unsignedIntegerValue]]==newelement); //не должен быть равен старому
 
-        [self . DNA replaceObjectAtIndex:[index unsignedIntegerValue] withObject:newelement];
+        [self . DNA replaceObjectAtIndex:[index unsignedIntegerValue] withObject:newelement]; //меняем старый элемент на новый сгенерированный
     }
 }
 

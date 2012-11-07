@@ -43,7 +43,7 @@ const NSUInteger DNA_LENGTH = 100;
     
     
 for (NSUInteger i = 0; i < DNA_LENGTH; i++) {
-    if([DNA objectAtIndex:i] != [(*cell).DNA objectAtIndex:i])
+    if([DNA objectAtIndex:i] != [cell->DNA objectAtIndex:i])
         count++;
     }
 

@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Cell : NSObject {
-    
-    //NSMutableArray *DNA;
-}
+@interface Cell : NSObject
+
 @property NSMutableArray *DNA;
 + (NSString*) randomElement;
 
