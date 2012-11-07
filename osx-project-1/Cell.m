@@ -11,9 +11,9 @@
 @implementation Cell
 
 int const DNALength = 100;
-NSArray *genes;
 
 @synthesize DNA;
+@synthesize genes;
 
 - (id)init
 {

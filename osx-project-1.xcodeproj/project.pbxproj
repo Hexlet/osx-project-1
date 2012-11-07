@@ -11,6 +11,7 @@
 		840CB957164AD50E00E7722E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 840CB956164AD50E00E7722E /* main.m */; };
 		840CB95B164AD50E00E7722E /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 840CB95A164AD50E00E7722E /* osx_project_1.1 */; };
 		840CB963164AD52D00E7722E /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840CB962164AD52D00E7722E /* Cell.m */; };
+		840CB96E164AE98200E7722E /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 840CB96D164AE98200E7722E /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		840CB95A164AD50E00E7722E /* osx_project_1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = osx_project_1.1; sourceTree = "<group>"; };
 		840CB961164AD52D00E7722E /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		840CB962164AD52D00E7722E /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		840CB96C164AE98200E7722E /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		840CB96D164AE98200E7722E /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				840CB956164AD50E00E7722E /* main.m */,
+				840CB96C164AE98200E7722E /* Cell+Mutator.h */,
+				840CB96D164AE98200E7722E /* Cell+Mutator.m */,
 				840CB95A164AD50E00E7722E /* osx_project_1.1 */,
 				840CB958164AD50E00E7722E /* Supporting Files */,
 				840CB961164AD52D00E7722E /* Cell.h */,
@@ -146,6 +151,7 @@
 			files = (
 				840CB957164AD50E00E7722E /* main.m in Sources */,
 				840CB963164AD52D00E7722E /* Cell.m in Sources */,
+				840CB96E164AE98200E7722E /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				840CB960164AD50E00E7722E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
