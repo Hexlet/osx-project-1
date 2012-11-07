@@ -16,6 +16,4 @@
 
 -(int) hammingDistance:(Cell *)cell;
 
--(void) print;
-
 @end

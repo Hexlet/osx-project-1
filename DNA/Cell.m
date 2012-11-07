@@ -44,8 +44,8 @@ static int DNA_LENGTH = 100;
     return diff;
 }
 
--(void) print {
-    NSLog(@"%@", DNA);
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@", DNA];
 }
 
 @end
