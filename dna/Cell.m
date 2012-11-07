@@ -29,7 +29,7 @@
 -(int) hammingDistance:(Cell *) secondDNA {
     int count = 0;
     for (int i = 0; i < 100; i++) {
-        if (self.DNA[i] == secondDNA.DNA[i]) {
+        if (self.DNA[i] != secondDNA.DNA[i]) {
             count++;
         }
     }
