@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletObjCTask01/Cell.m"
-         timestampString = "373938890.404096"
+         timestampString = "373939959.607215"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletObjCTask01/Cell.m"
-         timestampString = "373938890.404096"
+         timestampString = "373939959.607215"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
+         startingLineNumber = "116"
+         endingLineNumber = "116"
          landmarkName = "@implementation Cell"
          landmarkType = "3">
       </FileBreakpoint>

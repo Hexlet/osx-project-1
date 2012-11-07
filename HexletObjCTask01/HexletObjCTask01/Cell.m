@@ -27,10 +27,18 @@
     return self;
 }
 
--(void)setRandomAt:(int)index {
++(char)getAsCharFromDna:(NSMutableArray*)theDna atIndex:(int)index {
+    return [[theDna objectAtIndex:index] UTF8String][0];
+}
+
+-(void)changeToRandomAt:(int)index {
     DNA_CHAR_SET = "ATCG";
     unsigned int random = arc4random();
 //    [DNA replaceObjectAtIndex:index withObject:[NSString stringWithFormat:@"%c" , ' ']];
+    const char currentVal = [Cell getAsCharFromDna:DNA atIndex:index];
+    while( DNA_CHAR_SET[random%4]== currentVal) {
+        random = arc4random();
+    }
     [DNA replaceObjectAtIndex:index withObject:[NSString stringWithFormat:@"%c" , DNA_CHAR_SET[random%4]]];
 }
 
@@ -63,7 +71,7 @@
     //printf("Mutating at %d indexes\n", length);
     for(int f=0; f<length; f++) {
         //printf(" - index: %d\n", indexes[f]);
-        [self setRandomAt:indexes[f]];
+        [self changeToRandomAt:indexes[f]];
     }
 }
 
@@ -80,10 +88,12 @@
         lengthDiff = -lengthDiff;
     }
     for(int i=0;i<minLength; i++) {
-        const char* oneStrChars = [[self->DNA objectAtIndex:i] UTF8String];
-        const char one = oneStrChars[0]; // Yeah, if you've got empty string there somehow - your fault (-;
-        const char* otherStrChars = [[otherDna objectAtIndex:i] UTF8String];
-        const char two = otherStrChars[0]; // Same as above d-:
+//        const char* oneStrChars = [[self->DNA objectAtIndex:i] UTF8String];
+//        const char one = oneStrChars[0]; // Yeah, if you've got empty string there somehow - your fault (-;
+//        const char* otherStrChars = [[otherDna objectAtIndex:i] UTF8String];
+//        const char two = otherStrChars[0]; // Same as above d-:
+        const char one = [Cell getAsCharFromDna:self->DNA atIndex:i];
+        const char two = [Cell getAsCharFromDna:otherDna atIndex:i];
         if(one!=two) {
             result++;
         }
