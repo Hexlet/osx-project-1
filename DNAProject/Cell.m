@@ -19,7 +19,7 @@
     if (self) {
         DNA = [[NSMutableArray alloc] initWithCapacity:capacityOfDNA]; // готовим массив для ДНК
         for (int i=0; i<capacityOfDNA; i++) {
-            [DNA addObject:[self getRandomGene]];
+            [DNA addObject:[[self class] getRandomGene]];
         }
     }
     return self;
@@ -29,9 +29,12 @@
  ДНК "статическими" объектами, которые не поменяешь. Таким образом,
  каждая созданная последовательность ДНК будет состоять из указателей
  на один из четырёх статических символов в памяти. */
--(NSString *)getRandomGene{
-    static NSString *gene[capacityOfGene]={@"A",@"T",@"G",@"C"};
-    return gene[arc4random()%capacityOfGene];
++(NSString *)getRandomGene{
+    static NSArray *gene = nil;
+    if (!gene) {
+        gene = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
+    }
+    return gene[arc4random()%[gene count]];
 }
 
 -(NSString *)description //этот метод позволит выводить ДНК в виде NSLog(@"%@",myCell)
@@ -45,6 +48,11 @@
         if ([[DNA objectAtIndex:i] isNotEqualTo:[[someCell DNA] objectAtIndex:i]]) ham++;
     }
     return ham;
+}
+
+// мне необходимо переопределить геттер, иначе он всё равно будет выдавать NSMutableArray, что мне не нужно
+-(NSArray *)DNA {
+    return [NSArray arrayWithArray:[DNA copy]];
 }
 
 @end

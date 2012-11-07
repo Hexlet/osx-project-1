@@ -31,7 +31,7 @@
         sourceGene = [[self DNA] objectAtIndex:indexToModify]; // запоминаем исходное значение в последовательности по индексу
         // и меняем значение символа, помня о том, что оно в любом случае должно отличаться от исходного!
         do {
-            modifiedGene = [self getRandomGene];
+            modifiedGene = [[self class] getRandomGene];
         } while ([sourceGene isEqualToString:modifiedGene]);
         [DNA replaceObjectAtIndex:indexToModify withObject:modifiedGene]; // всё хорошо, есть новый символ!
         [indexes removeObjectAtIndex:randomKey]; // не забываем исключить использованный индекс

@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 #define capacityOfDNA 100 //количество генов в последовательности ДНК
-#define capacityOfGene 4 //количество генов в одной ячейке ДНК
 
 @interface Cell : NSObject {
     NSMutableArray *DNA; //собственно, ДНК
@@ -17,6 +16,6 @@
 
 @property (nonatomic,readonly) NSArray *DNA; // ридонли свойство для доступа извне
 
--(NSString *)getRandomGene; // для формирования случайного символа
++(NSString *)getRandomGene; // для формирования случайного символа
 -(int)hammingDistance:(Cell *)someCell; // подсчёт хэммингова числа
 @end
