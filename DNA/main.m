@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Cell+mutator.h"
+#import "Cell+Mutator.h"
 
 int main(int argc, const char * argv[])
 {

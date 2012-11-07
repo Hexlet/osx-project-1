@@ -11,7 +11,7 @@
 		0A05DD861646668D00DDC704 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A05DD851646668D00DDC704 /* main.m */; };
 		0A05DD8A1646668D00DDC704 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A05DD891646668D00DDC704 /* DNA.1 */; };
 		0A05DD92164666BA00DDC704 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A05DD91164666BA00DDC704 /* Cell.m */; };
-		0AACC82C164993B6009B9A73 /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AACC82B164993B6009B9A73 /* Cell+mutator.m */; };
+		0AACC82C164993B6009B9A73 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AACC82B164993B6009B9A73 /* Cell+Mutator.m */; };
 		0AACC830164994B7009B9A73 /* NucleotideGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AACC82F164994B7009B9A73 /* NucleotideGenerator.m */; };
 /* End PBXBuildFile section */
 
@@ -36,8 +36,8 @@
 		0A05DD891646668D00DDC704 /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
 		0A05DD90164666BA00DDC704 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		0A05DD91164666BA00DDC704 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		0AACC82A164993B6009B9A73 /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
-		0AACC82B164993B6009B9A73 /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+		0AACC82A164993B6009B9A73 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		0AACC82B164993B6009B9A73 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 		0AACC82E164994B7009B9A73 /* NucleotideGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NucleotideGenerator.h; sourceTree = "<group>"; };
 		0AACC82F164994B7009B9A73 /* NucleotideGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NucleotideGenerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,8 +86,8 @@
 				0A05DD91164666BA00DDC704 /* Cell.m */,
 				0A05DD891646668D00DDC704 /* DNA.1 */,
 				0A05DD851646668D00DDC704 /* main.m */,
-				0AACC82A164993B6009B9A73 /* Cell+mutator.h */,
-				0AACC82B164993B6009B9A73 /* Cell+mutator.m */,
+				0AACC82A164993B6009B9A73 /* Cell+Mutator.h */,
+				0AACC82B164993B6009B9A73 /* Cell+Mutator.m */,
 				0A05DD871646668D00DDC704 /* Supporting Files */,
 				0AACC82E164994B7009B9A73 /* NucleotideGenerator.h */,
 				0AACC82F164994B7009B9A73 /* NucleotideGenerator.m */,
@@ -156,7 +156,7 @@
 			files = (
 				0A05DD861646668D00DDC704 /* main.m in Sources */,
 				0A05DD92164666BA00DDC704 /* Cell.m in Sources */,
-				0AACC82C164993B6009B9A73 /* Cell+mutator.m in Sources */,
+				0AACC82C164993B6009B9A73 /* Cell+Mutator.m in Sources */,
 				0AACC830164994B7009B9A73 /* NucleotideGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
