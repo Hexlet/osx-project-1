@@ -22,7 +22,7 @@
               [random_pos intValue] == -1 ||
               [replaced_pos containsObject:random_pos]
               ) {
-            random_pos = [NSNumber numberWithInteger: arc4random() % CELL_ARRAY_CAPACITY];
+            random_pos = [NSNumber numberWithInteger: arc4random_uniform( CELL_ARRAY_CAPACITY )];
             
             // исключаем повторение заменяемого символа
             NSString *new_symbol = nil;

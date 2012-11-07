@@ -30,10 +30,10 @@
 		66438271164265C9007C7D0A /* HexletDNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HexletDNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		66438275164265C9007C7D0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66438277164265C9007C7D0A /* HexletDNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HexletDNA.1; sourceTree = "<group>"; };
-		6643827E164266AF007C7D0A /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
-		6643827F164266AF007C7D0A /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		66EDE88F1646DE0500618DDB /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
-		66EDE8901646DE0500618DDB /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+		6643827E164266AF007C7D0A /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = ../Cell.h; sourceTree = "<group>"; };
+		6643827F164266AF007C7D0A /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = ../Cell.m; sourceTree = "<group>"; };
+		66EDE88F1646DE0500618DDB /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+mutator.h"; path = "../Cell+mutator.h"; sourceTree = "<group>"; };
+		66EDE8901646DE0500618DDB /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+mutator.m"; path = "../Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,10 +50,6 @@
 		66438266164265C9007C7D0A = {
 			isa = PBXGroup;
 			children = (
-				6643827E164266AF007C7D0A /* Cell.h */,
-				6643827F164266AF007C7D0A /* Cell.m */,
-				66EDE88F1646DE0500618DDB /* Cell+mutator.h */,
-				66EDE8901646DE0500618DDB /* Cell+mutator.m */,
 				66438274164265C9007C7D0A /* HexletDNA */,
 				66438272164265C9007C7D0A /* Products */,
 			);
@@ -70,6 +66,10 @@
 		66438274164265C9007C7D0A /* HexletDNA */ = {
 			isa = PBXGroup;
 			children = (
+				6643827E164266AF007C7D0A /* Cell.h */,
+				6643827F164266AF007C7D0A /* Cell.m */,
+				66EDE88F1646DE0500618DDB /* Cell+mutator.h */,
+				66EDE8901646DE0500618DDB /* Cell+mutator.m */,
 				66438275164265C9007C7D0A /* main.m */,
 				66438277164265C9007C7D0A /* HexletDNA.1 */,
 			);

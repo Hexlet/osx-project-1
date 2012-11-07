@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define CELL_ARRAY_CAPACITY 100
+#define CELL_ARRAY_CAPACITY 4
 
 @interface Cell : NSObject {
     NSArray *symbols;
