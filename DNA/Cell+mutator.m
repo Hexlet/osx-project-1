@@ -29,17 +29,12 @@
         [dnaIndexArray removeObjectAtIndex:random_index];
         numberIndexesToReplace--;
     }
-    
-    for (NSNumber *mIndex in mutateIndexArray) {
-        NSUInteger currentIndex, newIndex;
+
+    for (NSNumber *indexToMutate in mutateIndexArray) {
         // получаем индекс текущего нуклеотида
-        currentIndex = [[Cell nucleotides] indexOfObject:[DNA objectAtIndex:[mIndex integerValue]]];
-        // получаем новый индекс случайным образом из статического массива индексов, в котором отсутствует текущий индекс
-        newIndex = [[[[Cell noCurrentIndex] objectAtIndex:currentIndex] objectAtIndex:arc4random() % 3] integerValue];
-        // получаем новый нуклеотид
-        NSString *newNucleotide = [[Cell nucleotides] objectAtIndex:newIndex];
+        NSUInteger currentIndex = [[Cell nucleotides] indexOfObject:[DNA objectAtIndex:[indexToMutate integerValue]]];
         // заменяем текущий нуклеотид на новый
-        [DNA replaceObjectAtIndex:[mIndex integerValue] withObject:newNucleotide];
+        [DNA replaceObjectAtIndex:[indexToMutate integerValue] withObject:[Cell getRandomNucleotideWithoutIndex:currentIndex]];
     }
 }
 

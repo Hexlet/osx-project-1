@@ -28,6 +28,14 @@ static NSArray *noIndex;
     return noIndex;
 }
 
++ (NSString *) getRandomNucleotideWithoutIndex: (NSUInteger) curIndex
+{
+    // берем нужный массив по текущему индексу и выбираем рандомный индекс нуклеотида
+    NSInteger newIndex = [[[noIndex objectAtIndex:curIndex] objectAtIndex:arc4random() % 3] integerValue];
+    // возвращаем новый нуклеотид для мутации
+    return [nucleotidesArray objectAtIndex:newIndex];
+}
+
 -(id)init {
     self = [super init];
     if (self){

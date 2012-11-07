@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373923009.06547"
+         timestampString = "373953163.657282"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
          landmarkName = "@implementation Cell"
          landmarkType = "3">
       </FileBreakpoint>
@@ -32,11 +32,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373923009.06547"
+         timestampString = "373953163.657282"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "53"
-         endingLineNumber = "53"
+         startingLineNumber = "61"
+         endingLineNumber = "61"
          landmarkName = "-description"
          landmarkType = "5">
       </FileBreakpoint>
@@ -45,11 +45,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell+mutator.m"
-         timestampString = "373923746.748088"
+         timestampString = "373953163.657282"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "48"
-         endingLineNumber = "48"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
          landmarkName = "@implementation Cell(mutator)"
          landmarkType = "3">
       </FileBreakpoint>
@@ -58,11 +58,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373923009.06547"
+         timestampString = "373953163.657282"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -71,11 +71,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/main.m"
-         timestampString = "373638396.411368"
+         timestampString = "373930229.548739"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34">
+         startingLineNumber = "35"
+         endingLineNumber = "35">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -120,13 +120,13 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "DNA/Cell+mutator.m"
-         timestampString = "373923746.748088"
+         filePath = "DNA/Cell.m"
+         timestampString = "373953163.657282"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
-         landmarkName = "-mutate:"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
+         landmarkName = "+getRandomNucleotideWithoutIndex:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
