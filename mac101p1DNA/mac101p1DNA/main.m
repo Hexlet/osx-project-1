@@ -14,10 +14,13 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        int l = 100;
+//        int l = 100;
         Cell *DNACell1, *DNACell2;
-        DNACell1 = [[Cell alloc] initLength:l];
-        DNACell2 = [[Cell alloc] initLength:l];
+//        DNACell1 = [[Cell alloc] initLength:l];
+//        DNACell2 = [[Cell alloc] initLength:l];
+        DNACell1 = [[Cell alloc] init];
+        DNACell2 = [[Cell alloc] init];
+        
         
 //        NSLog(@"%@ %@", DNACell1->DNA, DNACell2->DNA);
         NSLog(@"Hamming Distance = %i", [DNACell1 hammingDistance:DNACell2]);
