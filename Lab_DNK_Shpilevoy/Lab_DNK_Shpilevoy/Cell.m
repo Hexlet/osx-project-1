@@ -13,13 +13,15 @@
 @synthesize DNA;
 -(id)init
 {
-    self = [super init];
+    self = [super init];  
+    if (self) {     //добавлено после проверки
     array = [NSSet setWithObjects : @"C",@"T",@"G",@"A", nil];  // заполняем множество элементов буквами
     DNA = [NSMutableArray arrayWithCapacity:100]; // создаем массив с определенным количеством элементов
         for (int i=0; i<=100; i++)
         {
             [DNA addObject:[[array allObjects] objectAtIndex:arc4random()%[array count]]]; // заполняем массив рандомными буквами
         }
+    }
     return self;
 }
 -(int)hammingDistance:(Cell*)inputCell
@@ -47,9 +49,9 @@
 
 @implementation Cell (Mutator)
 
--(void)mutate:(int)p
+-(void)mutate: (int) p
 {
-    
+    p = [self.DNA count]/100*p; // добавлено после проверки, теперь считает правильно с учетом процентов
     NSMutableArray* arrWithIndexes = [[NSMutableArray alloc] init];
     for (int i=0; i< [DNA count];i++)
     {
