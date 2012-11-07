@@ -41,7 +41,9 @@ NSInteger const dnaLength  = 100;
 //mutator implementation
 @implementation VVCell (mutator)
 
-- (void) mutate:(NSInteger)count {
+- (void) mutate:(NSInteger) percent {
+    NSInteger count = dnaLength * percent / 100;
+    
     NSMutableArray *rnd = [[NSMutableArray alloc] initWithCapacity:dnaLength];
     for (int i=0;i<dnaLength;i++) {
         [rnd insertObject:[NSNumber numberWithInt:i] atIndex:i];

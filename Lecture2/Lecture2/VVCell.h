@@ -22,5 +22,5 @@ extern NSInteger const dnaLength;
 
 // mutator category
 @interface VVCell (mutator)
-- (void) mutate:(NSInteger) count;
+- (void) mutate:(NSInteger) percent;
 @end
