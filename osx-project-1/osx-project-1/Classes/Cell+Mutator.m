@@ -13,7 +13,7 @@
 -(void) mutate:(NSUInteger) percent {
     
     @try {
-        if (percent>101) [NSException raise:@"Invalid percent value." format:@"Foo of %ld is invalid. Should be value between 0 and 100.", percent];
+        if (percent>=101) [NSException raise:@"Invalid percent value." format:@"Foo of %ld is invalid. Should be value between 0 and 100.", percent];
         
         NSUInteger countOfItemsToChange = percent*0.01*[self.DNA  count];
 //        create list of numbers
