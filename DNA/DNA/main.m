@@ -20,14 +20,15 @@
     //подготовка к мутации
     int percentInNumbers = [self.DNA count]/100*percentage;
     NSArray *codes = [[NSArray alloc]initWithObjects:@"A",@"T",@"G",@"C", nil];//похоже пора вынести из методов
-    NSMutableArray *numbersUsedinRandomChange = [[NSMutableArray alloc]init];
+    NSMutableArray *numbersUsedinRandomChange = [[NSMutableArray alloc]init];//сюда будем складывать индексы кодов, которые поменяли
     
     
     //мутируем и обеспечиваем рандомизацию
-    //чтобы менять один код только один раз используем след алгоритм: случайно число проверяем использовали ли мы его или нет. Если нет - то используем и складываем в спец. массив и тд
+    //чтобы менять один код только один раз используем след алгоритм: случайное число проверяем
+    //использовали ли мы его или нет. Если нет - то используем и складываем в спец. массив и тд
     for (int i=0; i < percentInNumbers; i++) {
-        int random_num = arc4random()%100;
-        NSNumber *random_numAsObject = [NSNumber numberWithInt:random_num];
+        int random_num = arc4random()%[self.DNA count];
+        NSNumber *random_numAsObject = [NSNumber numberWithInt:random_num];//превращаем число в обЪект
         
         if (![numbersUsedinRandomChange containsObject:random_numAsObject]) {
             [numbersUsedinRandomChange addObject:random_numAsObject];
