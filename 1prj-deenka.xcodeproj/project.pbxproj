@@ -11,6 +11,7 @@
 		C310D7F916485E1D00E87D41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C310D7F816485E1D00E87D41 /* main.m */; };
 		C310D7FD16485E1D00E87D41 /* _prj_deenka.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C310D7FC16485E1D00E87D41 /* _prj_deenka.1 */; };
 		C310D80C1648602B00E87D41 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C310D80B1648602B00E87D41 /* Cell.m */; };
+		C3FBDE8E1649CBCC000C3764 /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FBDE8D1649CBCC000C3764 /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		C310D7FC16485E1D00E87D41 /* _prj_deenka.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = _prj_deenka.1; sourceTree = "<group>"; };
 		C310D80A1648602B00E87D41 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		C310D80B1648602B00E87D41 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		C3FBDE8C1649CBCC000C3764 /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		C3FBDE8D1649CBCC000C3764 /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				C310D80A1648602B00E87D41 /* Cell.h */,
 				C310D7FC16485E1D00E87D41 /* _prj_deenka.1 */,
 				C310D7FA16485E1D00E87D41 /* Supporting Files */,
+				C3FBDE8C1649CBCC000C3764 /* Cell+mutator.h */,
+				C3FBDE8D1649CBCC000C3764 /* Cell+mutator.m */,
 			);
 			path = "1prj-deenka";
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			files = (
 				C310D7F916485E1D00E87D41 /* main.m in Sources */,
 				C310D80C1648602B00E87D41 /* Cell.m in Sources */,
+				C3FBDE8E1649CBCC000C3764 /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				C310D80216485E1D00E87D41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

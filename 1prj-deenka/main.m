@@ -8,22 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
-
-// Категория МУТАТОР ***************
-// (вынести в отдельные .h & .m? )
-@interface Cell (mutator)
-
-- (void) mutator: (int) percent;
-
-@end
-
-@implementation Cell (mutator)
-    
-- (void) mutator: (int) percent {
-    NSLog(@"%@",self->DNA);
-}
-@end
-// End of МУТАТОР ******************
+#import "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {
