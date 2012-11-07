@@ -21,3 +21,22 @@ osx-project-1
 
 ### Примечание
 Прикладывайте полностью весь проект, включая .xcodeproj. Так значительно легче проверять ваши работы! 
+
+
+
+#import "Cell.h"
+
+@implementation Cell
+
+//initialization of instance
+-(id) init
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"sdfsfd");
+        // Custom 
+    }
+    return self;
+}
+
+@end
