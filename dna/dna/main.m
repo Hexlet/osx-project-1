@@ -24,21 +24,21 @@
         // array to store already processed indexes
         NSMutableArray *indexes = [[NSMutableArray alloc] init];
         
-        for (int i = 0; i < percent;) {
+        for (int i = 0; i < percent; i++) {
             // getting random index of nucliotide
             index = [NSNumber numberWithInteger:arc4random()%100];
 
             // if current nucliotide was not changed yet
             if (![indexes containsObject: index]) {
-                
-                // changing nucliotide in dna structure
-                self.dna[[index intValue]] = [Cell getNucliotideFromArray];
                  
                 // storing index of changed nucliotide
                 [indexes addObject:index];
-                
-                i++;
             }
+        }
+        
+        // changing nucliotide in dna structure
+        for(NSNumber *i in indexes) {            
+            self.dna[[i intValue]] = [Cell getNucliotideFromArray];
         }
     }
 
