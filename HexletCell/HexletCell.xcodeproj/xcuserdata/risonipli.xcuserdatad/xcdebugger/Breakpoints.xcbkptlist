@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletCell/main.m"
-         timestampString = "374002875.466381"
+         timestampString = "374008191.620443"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
+         startingLineNumber = "28"
+         endingLineNumber = "28"
          landmarkName = "-mutate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletCell/main.m"
-         timestampString = "374003013.85542"
+         timestampString = "374008191.620443"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
          landmarkName = "-mutate:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletCell/Cell.m"
-         timestampString = "374002875.466381"
+         timestampString = "374008652.766421"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
+         startingLineNumber = "46"
+         endingLineNumber = "46"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,12 +60,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletCell/Cell.m"
-         timestampString = "374001002.048901"
+         timestampString = "374008652.766421"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
-         landmarkName = "-getRandomDNAMark"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
+         landmarkName = "+getRandomDNAMark"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletCell/main.m"
-         timestampString = "374003013.85542"
+         timestampString = "374008191.620443"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>

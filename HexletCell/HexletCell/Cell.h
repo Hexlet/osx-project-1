@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject
-@property NSMutableArray * DNA;
--(void) print;
+@property (readonly) NSMutableArray * DNA;
 -(int) hammingDistance:(Cell *)cell;
--(NSString *) getRandomDNAMark;
++(NSString *) getRandomDNAMark;
 @end

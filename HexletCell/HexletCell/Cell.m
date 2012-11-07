@@ -15,14 +15,15 @@
     self = [super init];
     DNA = [NSMutableArray arrayWithCapacity:100];
     for (int i = 0; i < 100; i++) {
-        NSString * DNAMark = [self getRandomDNAMark];
+        NSString * DNAMark = [Cell getRandomDNAMark];
         [DNA addObject:DNAMark];
     }
     return self;
 }
 
+
 // Генерит случайное значение для ячейки DNA
--(NSString *) getRandomDNAMark {
++(NSString *) getRandomDNAMark {
     int j = arc4random() % 4;
     NSString * DNAMark;
     if (j == 0) {
@@ -51,11 +52,12 @@
     return hammingDistance;
 }
 
--(void) print {
-    for (int i = 0; i<[DNA count]; i++) {
-        NSLog(@"Count = %lu", [DNA count]);
-        NSLog(@"%@", DNA);
+-(NSString *) description {
+    NSMutableString * result = [[NSMutableString alloc] init];;
+    for (NSString * obj in [self DNA]) {
+        [result appendString:[obj description]];
     }
+    return result;
 }
 
 @end
