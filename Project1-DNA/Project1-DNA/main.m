@@ -17,16 +17,16 @@ int main(int argc, const char * argv[])
         Cell *cell2 = [[Cell alloc] init];
         
         NSLog(@"BEFORE MUTATION");
-        NSLog(@"DNA#1-[%@]", [cell1 toString]);
-        NSLog(@"DNA#2-[%@]", [cell2 toString]);
+        NSLog(@"DNA#1-[%@]", cell1);
+        NSLog(@"DNA#2-[%@]", cell2);
         NSLog(@"Hamming Distance - %d", [cell1 hammingDistance:cell2]);
         
         [cell1 mutate:[Random randomInteger:100]];
         [cell2 mutate:[Random randomInteger:100]];
         
         NSLog(@"AFTER MUTATION");
-        NSLog(@"DNA#1-[%@]", [cell1 toString]);
-        NSLog(@"DNA#2-[%@]", [cell2 toString]);
+        NSLog(@"DNA#1-[%@]", cell1);
+        NSLog(@"DNA#2-[%@]", cell2);
         NSLog(@"Hamming Distance - %d", [cell1 hammingDistance:cell2]);
     }
     return 0;

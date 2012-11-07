@@ -19,7 +19,4 @@
 // Returns hamming distance between actual and provided cells
 - (int)hammingDistance:(Cell *) cell;
 
-// Returns readable comma-separated view of dna array
-- (NSString *)toString;
-
 @end

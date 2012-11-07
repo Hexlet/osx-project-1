@@ -53,7 +53,7 @@
     return result;
 }
 
-- (NSString *)toString {
+- (NSString *)description {
     return [self.dna componentsJoinedByString:@","];
 }
 
