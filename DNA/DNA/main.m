@@ -23,7 +23,7 @@
 { 
     NSMutableArray *tmp = [self _DNA];//сохраняем ДНК во временную переменную 
     
-    x = x*100/[tmp count] ;//Вычисляем процент
+    x = (x*[tmp count])/100 ;//Вычисляем процент
     
     for (int i=0; i<x; i++) { //цикл на количество %
 
@@ -84,10 +84,19 @@ int main(int argc, const char * argv[])
         
         NSLog(@"hammingDistance= %i",[cel1 hammingDistance:cel2]);
         
+      
+        
         [cel1 mutate:[cel1 hammingDistance:cel2]];
         
-        NSLog(@"New DNA: ");
+        [cel2 mutate:[cel2 hammingDistance:cel1]];
+        
+        NSLog(@"New DNA 1: ");
         [cel1 showDNA:[cel1 _DNA]];
+        
+        NSLog(@"New DNA 2: ");
+        [cel2 showDNA:[cel2 _DNA]];
+        
+        NSLog(@"New hammingDistance 1= %i",[cel1 hammingDistance:cel2]);
         
     }
     return 0;
