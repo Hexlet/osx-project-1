@@ -15,11 +15,11 @@
 
     if (self) {
         // Define a set of DNA-bases (adenine (A), cytosine (C), guanine (G), thymine (T).
-         self.nucleobases = [NSArray arrayWithObjects: @"A", @"C", @"T", @"G", nil];
+         _nucleobases = [NSArray arrayWithObjects: @"A", @"C", @"T", @"G", nil];
         
         // Create DNA from random sequence of nucleotides
-        [self setDNA: [NSMutableArray array]];
-        for (int i = 100; i--;) {
+        _DNA = [NSMutableArray array];
+        for (int i = LENGTH; i--;) {
             int randIndex = arc4random() % 4;
             [self.DNA addObject: [self.nucleobases objectAtIndex:randIndex]];
         }
@@ -32,7 +32,7 @@
     
     int counter = 0;
     
-    for (int i = 100; i--;) {
+    for (int i = LENGTH; i--;) {
         if ([self.DNA objectAtIndex: i] != [cell.DNA objectAtIndex: i]) {
             counter++;
         }

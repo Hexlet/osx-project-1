@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#define LENGTH 100
+
 @interface Cell : NSObject
 
-    @property NSMutableArray *DNA;
-    @property NSArray *nucleobases;
+    @property (readonly) NSMutableArray *DNA;
+    @property (readonly) NSArray *nucleobases;
 
     -(int)hammingDistance: (Cell *)cell;
 @end

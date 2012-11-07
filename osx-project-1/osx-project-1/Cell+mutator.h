@@ -13,4 +13,6 @@
     -(void)mutate: (int)percent;
 
     +(int)getUniqueLocus: (int *)usedLocuses numerum: (int)number;
+
+    -(NSString*)getNewNucteotide: (NSString*)oldOne;
 @end

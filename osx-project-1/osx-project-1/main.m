@@ -20,17 +20,17 @@ int main(int argc, const char * argv[])
         Hellen = [[Cell alloc] init];
         Hala = [[Cell alloc] init];
         
-        NSLog(@"----------");
+        printf("----------\n");
         
         int i = [Hellen hammingDistance: Hala];
         
-        NSLog(@"Before mutation HD: %i",i);
+        printf("Before mutation HD: %i\n",i);
         
-        [Hala mutate:99];
+        [Hala mutate:10];
         
         int j = [Hellen hammingDistance: Hala];
       
-        NSLog(@"After mutation HD: %i",j);
+        printf("After mutation HD: %i\n",j);
         
         
         

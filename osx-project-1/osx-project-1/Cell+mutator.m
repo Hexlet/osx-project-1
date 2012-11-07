@@ -12,26 +12,26 @@
 
 
 -(void)mutate: (int)percent {
-    assert(percent <= 100);
-
-    int i = percent;
+    assert(percent <= 100 && percent >= 0);
     
-    int position[percent];
+    int absolute = (LENGTH * percent) / 100;
     
-    for (int i = percent; i--; ) {
+    int position[absolute];
+    
+    for (int i = 0; i < absolute; i++) {
         position[i] = -1;
     }
     
     
     
-    while (i) {
-        position[i] = [Cell getUniqueLocus: &position[0] numerum: percent];
-        NSLog(@"%i",position[i]);
+    for (int i = 0; i<absolute; i++) {
+        position[i] = [Cell getUniqueLocus: &position[0] numerum: absolute];
+        //NSLog(@"%i",position[i]);
         
-        int randIndex = arc4random() % 4;
-        [self.DNA replaceObjectAtIndex: position[i] withObject:[ self.nucleobases objectAtIndex:randIndex ] ];
+        [self.DNA replaceObjectAtIndex: position[i] withObject:
+         [self getNewNucteotide: [self.DNA objectAtIndex: position[i]]]];
         
-        i--;
+    
     }
 }
 
@@ -41,7 +41,7 @@
 
     bool check = TRUE;
     while (check) {
-        newLocus = arc4random() % 100;
+        newLocus = arc4random() % LENGTH;
         check = FALSE;
         for (int i = 0; i < number; i++) {
             
@@ -57,6 +57,22 @@
     }
     
     return newLocus;
+}
+
+-(NSString*)getNewNucteotide: (NSString*)oldOne {
+    NSString *nucleotide;
+    bool check = TRUE;
+    while (check) {
+        int randIndex = arc4random() % 4;
+        nucleotide = [self.nucleobases objectAtIndex:randIndex];
+        check = FALSE;
+        if (nucleotide == oldOne) {
+            check = TRUE;
+        }
+    }
+    
+    return nucleotide;
+
 }
 
 @end
