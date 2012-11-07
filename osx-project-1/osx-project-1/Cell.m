@@ -12,20 +12,16 @@
 
 - (id) init {
     if (self = [super init]) {
-        _DNA = [[NSMutableArray alloc] init];
+        DNA = [[NSMutableArray alloc] init];
         for (int i=0; i<DNA_SIZE; i++) {
-            [_DNA addObject:[Cell randomElement]];
+            [DNA addObject:[Cell randomElementWithout:@""]];
         }
     }
     return self;
 }
 
-- (NSString *)toString {
-    NSString * s = @"";
-    for (int i=0; i<DNA_SIZE; i++) {
-        s = [s stringByAppendingString:[_DNA objectAtIndex:i]];
-    }
-    return s;
+- (NSString *)description {
+    return [DNA componentsJoinedByString:@""];
 }
 
 - (int) hammingDistance:(Cell *)cell {
@@ -35,7 +31,7 @@
 #endif
     
     for (int i=0; i<DNA_SIZE; i++) {
-        if ([_DNA objectAtIndex:i] != [cell.DNA objectAtIndex:i]) {
+        if ([DNA objectAtIndex:i] != [cell.DNA objectAtIndex:i]) {
             diffCount++;
 #ifdef DEBUG
             difference = [difference stringByAppendingString:@"^"];
@@ -48,18 +44,17 @@
 #endif
     }
 #ifdef DEBUG
-    NSLog(@"\n%@\n%@\n%@\n", [self toString],[cell toString],difference);
+    NSLog(@"\n%@\n%@\n%@\n", self, cell, difference);
 #endif
     return diffCount;
 }
 
-+ (NSArray *)getElements {
-    return [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+-(NSMutableArray *)DNA {
+    return [NSArray arrayWithArray:DNA];
 }
 
-+ (NSString *)randomElement {
-    NSArray * elements = [Cell getElements];
-    return [elements objectAtIndex:arc4random() % [elements count]];
++ (NSArray *)getElements {
+    return [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
 }
 
 + (NSString *)randomElementWithout:(NSString *)element {

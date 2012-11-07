@@ -16,15 +16,18 @@
 @implementation Cell (Mutator)
 
 - (void)mutate:(int)percent {
+    if (percent<0 || percent>100) {
+        [NSException raise:@"Invalid value" format:@"Value must be in range [0..100]"];
+    }
     NSMutableSet * positions = [[NSMutableSet alloc] init];
-    int X = [self.DNA count]*percent/100;
+    int X = [DNA count]*percent/100;
     
     while ([positions count]<X) {
-        [positions addObject:[NSNumber numberWithInt:arc4random() % [self.DNA count]]];
+        [positions addObject:[NSNumber numberWithInt:arc4random() % [DNA count]]];
     }
     
     for (int i=0; i<X; i++) {
-        [self.DNA replaceObjectAtIndex:[[[positions allObjects] objectAtIndex:i] integerValue] withObject:[Cell randomElementWithout:[self.DNA objectAtIndex:i]]];
+        [DNA replaceObjectAtIndex:[[[positions allObjects] objectAtIndex:i] integerValue] withObject:[Cell randomElementWithout:[DNA objectAtIndex:i]]];
     }
 }
 @end

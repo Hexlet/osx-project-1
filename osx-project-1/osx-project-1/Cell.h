@@ -10,13 +10,14 @@
 
 #define DNA_SIZE 100
 
-@interface Cell : NSObject
+@interface Cell : NSObject {
+    NSMutableArray * DNA;
+}
 
-@property NSMutableArray * DNA;
+@property (nonatomic, readonly) NSMutableArray * DNA;
 
-- (NSString *) toString;
 - (int) hammingDistance: (Cell *) cell;
 + (NSArray *) getElements;
-+ (NSString *) randomElement;
 + (NSString *) randomElementWithout: (NSString *) element;
+
 @end
