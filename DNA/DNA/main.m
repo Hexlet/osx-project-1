@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
         
         Cell *runCell = [[Cell alloc] init];
         [runCell init];
-        [runCell hammingDistance];
+        [runCell hammingDistance:DNA]; // I do cknow is it right !?
         
        
     }
