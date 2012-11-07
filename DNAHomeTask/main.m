@@ -24,6 +24,8 @@
         return;
     }
     
+    int cellsNum = (int)(self.DNA.count * (percent / (float)100));
+    
     // init array with index from 0 to 99.
     NSMutableArray* mutatePlaces = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < 100; i++)
@@ -31,7 +33,7 @@
     
     // remove from array random indexes which not needed to mutate,
     // keep indexes neccesary to mutate
-    for (NSInteger i = 0; i < 100 - percent; i++)
+    for (NSInteger i = 0; i < self.DNA.count - cellsNum; i++)
         [mutatePlaces removeObjectAtIndex: rand() % mutatePlaces.count];
     
     // for each index change corresponding element in DNA array
