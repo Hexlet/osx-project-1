@@ -24,7 +24,7 @@
             DNA=[[NSMutableArray alloc]init];
             NSArray *template=[NSArray arrayWithObjects:@"A",@"T",@"C",@"G", nil];
             
-            for (i=0;i<10;++i)
+            for (i=0;i<100;++i)
             {
                 NSUInteger c= arc4random()%[template count];
                // NSLog(@"%lu",c);
