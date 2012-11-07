@@ -47,7 +47,10 @@
 {
 	if (anotherCell == self) return 0;
 
-	NSUInteger dnaLength = [self.dna count], distance = 0;
+	// а вдруг придется сравнивать цепочки разной длины
+	NSUInteger selfDnaCount = [self.dna count], anotherDnaCount = [anotherCell.dna count];
+	NSUInteger dnaLength = MIN(selfDnaCount, anotherDnaCount);
+	NSUInteger distance = (selfDnaCount > anotherDnaCount ? selfDnaCount - anotherDnaCount : anotherDnaCount - selfDnaCount);
 
 	for (NSUInteger index = 0; index < dnaLength; ++index) {
 		if (![[self.dna objectAtIndex:index] isEqual:[anotherCell.dna objectAtIndex:index]])
