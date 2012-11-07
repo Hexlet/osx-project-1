@@ -26,6 +26,7 @@
         do {
             changeindex=[NSNumber numberWithInt:(arc4random()%100)];
             } while ([mutA containsObject:changeindex]);
+        
         do {
             e = arc4random() % 4+1;
             if(e==1){
@@ -39,7 +40,7 @@
             }
             else  change=@"C";
             } while ([DNA objectAtIndex:[changeindex intValue]]==change);
-        
+        [mutA insertObject:change atIndex:[changeindex intValue]];
         [DNA removeObjectAtIndex:[changeindex intValue]];
         [DNA insertObject:change atIndex:[changeindex intValue]];
         x--;

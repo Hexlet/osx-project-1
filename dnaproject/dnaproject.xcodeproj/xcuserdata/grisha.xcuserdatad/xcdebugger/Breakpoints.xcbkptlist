@@ -12,9 +12,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "60"
-         endingLineNumber = "60"
-         landmarkName = "@implementation Cell"
-         landmarkType = "3">
+         endingLineNumber = "60">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -26,7 +24,20 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "47"
          endingLineNumber = "47"
-         landmarkName = "-hammingDistance:"
+         landmarkName = "@implementation Cell"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "dnaproject/main.m"
+         timestampString = "374003996.899494"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "43"
+         endingLineNumber = "43"
+         landmarkName = "-mutate:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
