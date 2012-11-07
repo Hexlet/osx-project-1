@@ -9,5 +9,5 @@
 #import "Cell.h"
 
 @interface Cell (Mutator)
--(void)mutate:(double)rate;
+-(void)mutate:(int)rate;
 @end

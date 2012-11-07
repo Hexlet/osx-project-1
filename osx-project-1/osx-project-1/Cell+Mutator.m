@@ -10,7 +10,7 @@
 
 @implementation Cell (Mutator)
 
--(void)mutate:(double)rate
+-(void)mutate:(int)rate
 {
     if ((rate < 0.0) || (rate > 100.0))
     {
@@ -18,7 +18,7 @@
     }
         
     int dnaSize = [self dnaCapacity];
-    int changesCount = (int)((rate / 100.0) * ((double)dnaSize));
+    int changesCount = (int)((((double)rate) / 100.0) * ((double)dnaSize));
     
     int *indexesToChange = malloc(sizeof(int) * dnaSize);
     for (int i = 0; i < dnaSize; i++)
