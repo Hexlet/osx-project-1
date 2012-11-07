@@ -30,9 +30,11 @@
     int count = 0;//counter of changed elements
     while (count < countEl) {
         int index = arc4random()%[self.DNA count];
-        if(checkReplace[index]){
+        NSString *el = [self getRandomSymbol];
+        if(checkReplace[index] && ([self.DNA objectAtIndex:index] != el)){
             checkReplace[index] = 0;
-            [self.DNA insertObject:[self getRandomSymbol] atIndex:index];
+            count++;
+            [self.DNA replaceObjectAtIndex:index withObject:el];
         }
     }
         
@@ -52,7 +54,8 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Hamming distance = %i", [cell_1 hammingDistance:cell_2]);
         
-        [cell_1 mutate:50];
+        [cell_1 mutate:arc4random()%[[cell_1 DNA] count]];
+        [cell_2 mutate:arc4random()%[[cell_2 DNA] count]];
         
         NSLog(@"Hamming distance = %i", [cell_1 hammingDistance:cell_2]);
 
