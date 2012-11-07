@@ -4,7 +4,7 @@
 
 @interface Cell (Mutator)
 -(void) mutate:(float) percent;
--(NSString*) differentObjectsAtIndex:(int) index;
+-(NSString*) differentObjectsAtIndex:(int) index; // уникальное значение для позиции
 @end
 
 @implementation Cell (Mutator)
@@ -12,7 +12,7 @@
     
     // object - случайный ген
     NSString* object =  [symbols objectAtIndex:arc4random()%[symbols count]];
-    // если значения совпали вызываем текущий метод
+    // если значение не уникально вызываем текущий метод
     if ([[[self dnaArray] objectAtIndex:index] isEqualToString:object]) {
         object =  [self differentObjectsAtIndex:index];
     }
@@ -25,14 +25,13 @@
 		return;
     
     int capacity = [[self dnaArray] count];	
-    int percentCapacity = capacity*percent/100.0f;
+    int percentCapacity = capacity*percent/100.0f;	// кол-во объектов для замены
     
-    NSMutableArray* unique = [[NSMutableArray alloc] initWithCapacity:percentCapacity];
+    NSMutableArray* unique = [NSMutableArray arrayWithCapacity:percentCapacity]; // не повторяющиеся индексы
     
 	
 	for (int i = 0; i < percentCapacity; i++) {
         
-		// index -  случайный индекс
         int index = arc4random()%capacity;
         
         while ([unique containsObject:[NSNumber numberWithInt:index]]) {
@@ -47,8 +46,6 @@
         
         [[self dnaArray] replaceObjectAtIndex:[rand intValue] withObject:object];
     }
-    
-    [unique release];
 }
 
 int main (int argc, const char * argv[]) {
