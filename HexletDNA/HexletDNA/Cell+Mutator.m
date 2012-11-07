@@ -34,7 +34,7 @@
     if (withPercent < 100) {
         // перемешиваем индексы
         for (NSUInteger i = 0; i < [idxs count]; ++i) {
-            [idxs exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform((UInt32)[idxs count] - 1)];
+            [idxs exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform((UInt32)[idxs count])];
         }
     }
     
