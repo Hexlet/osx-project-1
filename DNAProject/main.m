@@ -15,7 +15,7 @@
 
 @implementation Cell (Mutator) // имплементация категории Mutator
 -(void)mutate:(int)x{
-    NSCAssert((x>0&&x<=100), @"Invalid x value for mutating!"); // если неверно задан процент изменения, дальнейшие действия бессмысленны
+    NSCAssert((x>=0&&x<=100), @"Invalid x value for mutating!"); // если неверно задан процент изменения, дальнейшие действия бессмысленны
     NSMutableArray *indexes = [[NSMutableArray alloc] initWithCapacity:capacityOfDNA]; // здесь будем хранить индексы
     NSUInteger randomKey = 0; //случайный ключ индекса заменяемого символа
     NSUInteger amount = lroundf((capacityOfDNA*x)/100.0f); // кол-во символов для изменения (x - процентный показатель)
