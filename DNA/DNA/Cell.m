@@ -12,7 +12,7 @@ const int dnaSize = 100;
 
 @implementation Cell 
 
-@synthesize DNA;
+@synthesize DNA = _DNA;
 
 +(NSArray *)dnaCodes {
     static NSArray *foo = nil;
@@ -28,7 +28,7 @@ const int dnaSize = 100;
 
 +(NSString *)getRandomCode:(NSString *)exclude {
     NSString *randomValue = [[Cell dnaCodes] objectAtIndex:arc4random()%[[Cell dnaCodes] count]];
-    if (randomValue == exclude) {
+    if ([randomValue isEqualTo: exclude]) {
         randomValue = [Cell getRandomCode:exclude];
     }
     return randomValue;
@@ -37,10 +37,10 @@ const int dnaSize = 100;
 -(id) init {
     if (self = [super init]) {
         
-        self.DNA = [NSMutableArray arrayWithCapacity: (dnaSize)];
+        _DNA = [NSMutableArray arrayWithCapacity: (dnaSize)];
 
         for (int i = 0; i < dnaSize; i++) {
-            [DNA insertObject:[Cell getRandomCode] atIndex:i];
+            [_DNA insertObject:[Cell getRandomCode] atIndex:i];
         }
     }
     return self;
@@ -51,7 +51,7 @@ const int dnaSize = 100;
     int i;
     
     for (i = 0; i < dnaSize; i++) {
-        if ([self.DNA objectAtIndex:i] != [cell.DNA objectAtIndex:i]) {
+        if ([[_DNA objectAtIndex:i] isNotEqualTo:[cell.DNA objectAtIndex:i]]) {
             distance++;
         }
     }

@@ -10,7 +10,7 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA;
+@property (nonatomic, strong) NSMutableArray *DNA;
 
 +(NSArray *)dnaCodes;
 +(NSString *)getRandomCode;
