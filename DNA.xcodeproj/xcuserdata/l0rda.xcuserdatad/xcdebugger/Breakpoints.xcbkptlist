@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373953163.657282"
+         timestampString = "373960783.91639"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
          landmarkName = "@implementation Cell"
          landmarkType = "3">
       </FileBreakpoint>
@@ -32,11 +32,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373953163.657282"
+         timestampString = "373960783.91639"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "61"
-         endingLineNumber = "61"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
          landmarkName = "-description"
          landmarkType = "5">
       </FileBreakpoint>
@@ -58,11 +58,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373953163.657282"
+         timestampString = "373960783.91639"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -121,11 +121,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DNA/Cell.m"
-         timestampString = "373953163.657282"
+         timestampString = "373960783.91639"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
          landmarkName = "+getRandomNucleotideWithoutIndex:"
          landmarkType = "5">
       </FileBreakpoint>

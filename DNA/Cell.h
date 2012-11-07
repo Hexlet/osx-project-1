@@ -14,7 +14,6 @@
     NSMutableArray *DNA;
 }
 +(NSArray *) nucleotides;
-+(NSArray *) noCurrentIndex;
 +(NSString *) getRandomNucleotideWithoutIndex: (NSUInteger) curIndex;
 -(int) hammingDistance: (Cell *)obj;
 @end
