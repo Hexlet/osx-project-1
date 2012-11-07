@@ -18,7 +18,7 @@ const int CELL_DIMENTION = 100;
     -(id) init {
         self = [super init];
         if(self){
-            DNA = [NSMutableArray arrayWithCapacity:100];
+            DNA = [NSMutableArray arrayWithCapacity:CELL_DIMENTION];
             int i;
             NSArray *DNA_SRC = [NSArray arrayWithObjects:@"A", @"T", @"G",@"C", nil];
             for(i = 0; i < CELL_DIMENTION; i++){
@@ -42,10 +42,12 @@ const int CELL_DIMENTION = 100;
         return distance;
     }
 
-    -(void) print {
+    -(NSString *) description {
         int i;
+        NSString *lineRepresentation = @"";
         for(i = 0; i < CELL_DIMENTION; i++)
-            NSLog(@"Elem %i=%@", i, [DNA objectAtIndex:i]);
+            lineRepresentation = [lineRepresentation stringByAppendingString:[DNA objectAtIndex:i]];
+        return lineRepresentation;
     }
 
 @end

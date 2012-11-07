@@ -12,9 +12,7 @@ extern int const CELL_DIMENTION;
 
 @interface Cell : NSObject
 
-    //-(void) setDNA;
     -(NSMutableArray *) getDNA;
     +(int) hammingDistance:(Cell*) srcDNA trgt:(Cell *) trgtDNA;
-    -(void) print;
 
 @end
