@@ -8,15 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject{
-    NSArray *avaiableKeys;
-}
+@interface Cell : NSObject
 
 extern const int MAX_ITEMS;
-@property NSMutableArray *DNA;
-
-- (id) initWithGeneratedDNA;
+@property (readonly) NSMutableArray *DNA;
 
 - (int)hammingDistance:(Cell *)comparedCell;
++ (NSArray *)availableKeys;
 
 @end
