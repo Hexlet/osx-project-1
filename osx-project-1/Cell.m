@@ -43,7 +43,7 @@
 }
 
 - (NSMutableArray*)generateIndexes {
-    NSMutableArray *indexes = [[NSMutableArray alloc] initWithCapacity:_dnaSize];
+    NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:_dnaSize];
     
     for (int i = 0; i < _dnaSize; i++) {
         [indexes addObject:[NSNumber numberWithInt:i]];
@@ -53,9 +53,20 @@
 }
 
 - (void)fillRandomAtPositions:(NSMutableArray*)indexes {
+    NSString *replacement;
+    
     for (int i = 0; i < indexes.count; i++) {
-        [_DNA setObject:self.randomElement atIndexedSubscript:i];
+        int position = [[indexes objectAtIndex:i] intValue];
+        do {
+            replacement = self.randomElement;
+        } while ([_DNA count] > position && replacement == [_DNA objectAtIndex:position]);
+        
+        [_DNA setObject:replacement atIndexedSubscript:position];
     }
+}
+
+- (NSString *)description {
+    return [_DNA componentsJoinedByString:@""];
 }
 
 @end
