@@ -37,10 +37,8 @@
     return hDistance;
 }
 
--(void) printDNA {
-    for(int i = 0; i<100; i++)
-        NSLog(@"%@, %d", _DNA[i], i);
-    
+-(NSString *) description {
+    return [_DNA componentsJoinedByString:@""];
 }
 
 

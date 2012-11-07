@@ -22,6 +22,8 @@ int main()
         [DNA2 mutate:66];
         
         NSLog(@"HD2 = %d", [DNA hammingDistance:DNA2]);
+        
+        NSLog(@"\n%@\n%@", DNA, DNA2);
     }
     return 0;
 }
