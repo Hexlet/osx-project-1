@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-#define DNA_LENGHT 100         //Длина цепочки ДНК
+#define DNA_LENGHT 100      // Длина цепочки ДНК
 
-@interface Cell : NSObject
-
-@property (readonly) NSMutableArray *DNA;  //Массив оснований
-@property (readonly) NSArray *DNASymbols;  //Азотистые основания
+@interface Cell : NSObject {
+    NSMutableArray *DNA;    // Массив оснований
+    NSArray *nucleotides;   // Азотистые основания
+}
 
 - (int) hammingDistance: (Cell *) anCell;
+- (NSString *) nucleotideAtIndex: (int) index;
 
 @end
 

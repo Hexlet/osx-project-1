@@ -41,30 +41,30 @@
     // Получаем срез массива необходимого размера count
     NSArray *uniqueIndexes = [tmpArray subarrayWithRange: NSMakeRange(0, count)];
     
-    NSMutableArray *tmpSymbols;
+    NSMutableArray *tmpNucleotides;
     
     // Пробежимся по случайным индексам
     for (NSNumber *index in uniqueIndexes){
         
-        // Создадим вспомогательный массив из символов ДНК
-        tmpSymbols = [NSMutableArray arrayWithArray:self.DNASymbols];
+        // Создадим вспомогательный массив из нуклеотидов
+        tmpNucleotides = [NSMutableArray arrayWithArray:nucleotides];
         
         // Выберем случайный индекс
-        int rnd_index = arc4random() % [tmpSymbols count];
+        int rnd_index = arc4random() % [tmpNucleotides count];
         
         // Если символ по этому индексу такой-же как и старый,
-        if ([tmpSymbols[rnd_index] isEqualToString:self.DNA[[index integerValue]]]){
+        if ([tmpNucleotides[rnd_index] isEqualToString:DNA[[index integerValue]]]){
             
             // то удалим этот символ из вспомогательного массива
-            [tmpSymbols removeObjectAtIndex:rnd_index];
+            [tmpNucleotides removeObjectAtIndex:rnd_index];
             
             // и выберем случайно из оставшихся символов
-            rnd_index = arc4random() % [tmpSymbols count];
+            rnd_index = arc4random() % [tmpNucleotides count];
         }
         
         // Заменим символ на уникалный новый
-        // DEBUG: NSLog(@"at index: %li %@ replace to %@", [index integerValue], self.DNA[[index integerValue]], tmpSymbols[rnd_index]);
-        [self.DNA replaceObjectAtIndex:[index integerValue] withObject:tmpSymbols[rnd_index]];
+        // DEBUG: NSLog(@"at index: %li %@ replace to %@", [index integerValue], DNA[[index integerValue]], tmpNucleotides[rnd_index]);
+        [DNA replaceObjectAtIndex:[index integerValue] withObject:tmpNucleotides[rnd_index]];
     }
 }
 @end

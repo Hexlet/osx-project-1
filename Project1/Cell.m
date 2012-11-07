@@ -11,23 +11,28 @@
 @implementation Cell
 
 - (id)init{
-    return [self initWithRandomDNA];
+    return [self initWithRandomNucleotides];
 }
 
-- (id) initWithRandomDNA{
+- (id) initWithRandomNucleotides{
     self = [super init];
     if (self) {
         
-        _DNA = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
+        DNA = [NSMutableArray arrayWithCapacity:DNA_LENGHT];
         
-        _DNASymbols = @[@"A", @"T", @"G", @"C"];
+        nucleotides = @[@"A", @"T", @"G", @"C"];
         
-        // Заполним цепочку ДНК случайными символами
+        // Заполним цепочку ДНК случайными нуклеотидами
         for (int i = 0; i < DNA_LENGHT; i++) {
-            [_DNA addObject:_DNASymbols[arc4random() % [_DNASymbols count]]];
+            [DNA addObject:nucleotides[arc4random() % [nucleotides count]]];
         }
     }
     return self;
+}
+
+- (NSString *) nucleotideAtIndex:(int)index{
+    // Для чтения нуклеотида за пределами класса
+    return DNA[index];
 }
 
 - (int) hammingDistance:(Cell *)anCell{
@@ -35,8 +40,8 @@
     
     for (int i = 0; i < DNA_LENGHT; i++) {
         
-        //Если элементы с одинаковыми индексами НЕ совпадают, наращиваем счетчик
-        if ( ! [[anCell.DNA objectAtIndex: i] isEqualToString:[_DNA objectAtIndex: i]]){
+        // Если элементы с одинаковыми индексами НЕ совпадают, наращиваем счетчик
+        if ( ! [[anCell nucleotideAtIndex:i] isEqualToString:[DNA objectAtIndex: i]]){
             distance++;
         }
     }
