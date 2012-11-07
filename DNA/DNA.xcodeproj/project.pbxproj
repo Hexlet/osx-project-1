@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96ABFB87164B196700639D9B /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 96ABFB86164B196700639D9B /* Cell+Mutator.m */; };
 		96B90BFD164654A9007BD1EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B90BFC164654A9007BD1EE /* Foundation.framework */; };
 		96B90C00164654A9007BD1EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B90BFF164654A9007BD1EE /* main.m */; };
 		96B90C04164654A9007BD1EE /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 96B90C03164654A9007BD1EE /* DNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		96ABFB85164B196700639D9B /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		96ABFB86164B196700639D9B /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 		96B90BF8164654A9007BD1EE /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B90BFC164654A9007BD1EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96B90BFF164654A9007BD1EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				96B90BFF164654A9007BD1EE /* main.m */,
+				96ABFB85164B196700639D9B /* Cell+Mutator.h */,
+				96ABFB86164B196700639D9B /* Cell+Mutator.m */,
 				96B90C0A164654C9007BD1EE /* Cell.h */,
 				96B90C0B164654CA007BD1EE /* Cell.m */,
 				96B90C03164654A9007BD1EE /* DNA.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				96B90C00164654A9007BD1EE /* main.m in Sources */,
 				96B90C0C164654CA007BD1EE /* Cell.m in Sources */,
+				96ABFB87164B196700639D9B /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				96B90C09164654A9007BD1EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
