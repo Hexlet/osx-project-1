@@ -55,7 +55,7 @@ static NSUInteger lenthOfDNA = 100;
     [newMarkersArray removeObjectIdenticalTo:marker];
     
 //    generate radnom index for change in range from 0 to index of last item
-    NSUInteger indexForChange = (arc4random()%([newMarkersArray count]-1));
+    NSUInteger indexForChange = (arc4random()%([newMarkersArray count]));
     
 //    get random makrer from array with generated index
     NSString *newMarker = [newMarkersArray objectAtIndex:indexForChange];
