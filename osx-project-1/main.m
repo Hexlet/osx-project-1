@@ -18,7 +18,13 @@
 
 -(void)mutate:(int)percent
 {
-    // mutate
+    int forMutate =  (int)([DNA count] * percent / 100);
+
+    while (forMutate)
+    {
+        
+        forMutate--;
+    }
 }
 
 @end

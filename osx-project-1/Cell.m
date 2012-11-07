@@ -48,7 +48,7 @@
     
     for (int i = 0 ; i < DNA_DIMENTION; i++)
     {
-        if ( [self getLetterByIndex:i] == [anotherDNA getLetterByIndex:i] ) differents++;
+        if ( [self getLetterByIndex:i] != [anotherDNA getLetterByIndex:i] ) differents++;
     }
                   
     return differents;
