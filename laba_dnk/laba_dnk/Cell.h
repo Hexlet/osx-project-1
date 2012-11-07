@@ -13,8 +13,9 @@
     NSMutableArray *MassElementovDNK; // массив элементов ДНК размер = 4 состоит из @"A", @"T", @"G", @"C"
 }
 
--(NSString *)getEletmentArray; // возращает случайны элемент из массива MassElementovDNK
+
+-(NSString *)getElementArray; // возращает случайны элемент из массива MassElementovDNK
+-(NSString *)getElementNext:(NSString*) theElement;
 -(int)hammingDistance:(Cell*) theCell; // метод сравнивает ДНК объекта с ДНК передаваемого объекта
 -(void)print; // выводим ДНК объкта
-
 @end

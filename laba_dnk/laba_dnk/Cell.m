@@ -10,8 +10,22 @@
 
 @implementation Cell
 
--(NSString *)getEletmentArray{
+-(NSString *)getElementArray{
     return [MassElementovDNK objectAtIndex:(arc4random() % 4)]; // возращает случайный элемент массива
+}
+
+-(NSString *)getElementNext:(NSString *)theElement{
+    NSUInteger aIndextheElement = [MassElementovDNK indexOfObject:theElement];
+    NSUInteger aNewIndex = (arc4random() % 4);
+    if (aIndextheElement == aNewIndex)
+    {
+        if (aNewIndex + 1 >= 4) {
+            --aNewIndex;
+        }else{
+            ++aNewIndex;
+        }
+    }
+    return [MassElementovDNK objectAtIndex:aNewIndex]; // возращает случайный элемент массива
 }
 
 -(int)hammingDistance:(Cell *)theCell{
@@ -30,9 +44,10 @@
         DNK = [NSMutableArray   arrayWithCapacity:100]; // выделяем массиву ДНК память
         MassElementovDNK = [NSMutableArray arrayWithObjects: @"A", @"T",@"G",@"C", nil]; // инцилизируем размер массив элементы ДНК и заполняем его
         for (int i=0; i<100; ++i) { // заполняем по циклу случайными элементами массив ДНК
-            [DNK addObject:self.getEletmentArray];
+            [DNK addObject:self.getElementArray];
         }
     }
+    
     return self;
 }
 

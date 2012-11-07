@@ -24,7 +24,7 @@
         return;
     }else if (X > 100){ // значение больше 100, изменяем всю цепочку днк
         for (int i=0; i<100; ++i) {
-            [DNK replaceObjectAtIndex:i withObject:self.getEletmentArray];
+            [DNK replaceObjectAtIndex:i withObject:self.getElementArray];
         }
     }else{ // иначе именяем в случайном прорядке ячейки днк, случайными значениями
         NSMutableArray *aTemp; // временный массив в котором будет хравиться индексы ячеек которые мы изменили
@@ -40,7 +40,7 @@
                 }
                 if (!aCheck) { // иначе добавляем индекс в массив для индексов, чтобы повторно не изменять там значение
                     [aTemp addObject:str]; // добавляем индекс в массив
-                    [DNK replaceObjectAtIndex:newElement withObject:self.getEletmentArray]; // меняем значение ДНК в случайном индексе
+                    [DNK replaceObjectAtIndex:newElement withObject:[self getElementNext:[DNK objectAtIndex:newElement]]]; // меняем значение ДНК в случайном индексе
                 }
             }while (aCheck);
         }

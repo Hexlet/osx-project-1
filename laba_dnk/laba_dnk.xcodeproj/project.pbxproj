@@ -10,7 +10,7 @@
 		A91E96BB1641369A005931FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91E96BA1641369A005931FB /* Foundation.framework */; };
 		A91E96BE1641369A005931FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A91E96BD1641369A005931FB /* main.m */; };
 		A91E96C21641369A005931FB /* laba_dnk.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A91E96C11641369A005931FB /* laba_dnk.1 */; };
-		A91E96CA164137A0005931FB /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A91E96C9164137A0005931FB /* Cell.m */; };
+		A9CF502C164A965E00E11A69 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CF502B164A965E00E11A69 /* Cell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +32,8 @@
 		A91E96BD1641369A005931FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A91E96C01641369A005931FB /* laba_dnk-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "laba_dnk-Prefix.pch"; sourceTree = "<group>"; };
 		A91E96C11641369A005931FB /* laba_dnk.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = laba_dnk.1; sourceTree = "<group>"; };
-		A91E96C8164137A0005931FB /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
-		A91E96C9164137A0005931FB /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		A9CF502A164A965E00E11A69 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		A9CF502B164A965E00E11A69 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +76,11 @@
 		A91E96BC1641369A005931FB /* laba_dnk */ = {
 			isa = PBXGroup;
 			children = (
+				A9CF502A164A965E00E11A69 /* Cell.h */,
+				A9CF502B164A965E00E11A69 /* Cell.m */,
 				A91E96BD1641369A005931FB /* main.m */,
 				A91E96C11641369A005931FB /* laba_dnk.1 */,
 				A91E96BF1641369A005931FB /* Supporting Files */,
-				A91E96C8164137A0005931FB /* Cell.h */,
-				A91E96C9164137A0005931FB /* Cell.m */,
 			);
 			path = laba_dnk;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A91E96BE1641369A005931FB /* main.m in Sources */,
-				A91E96CA164137A0005931FB /* Cell.m in Sources */,
+				A9CF502C164A965E00E11A69 /* Cell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +242,7 @@
 				A91E96C71641369A005931FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
