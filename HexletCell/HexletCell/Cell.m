@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 Артем Прохоров. All rights reserved.
 //
 
-#include <stdlib.h>
 #import "Cell.h"
 
 @implementation Cell
@@ -22,6 +21,7 @@
     return self;
 }
 
+// Генерит случайное значение для ячейки DNA
 -(NSString *) getRandomDNAMark {
     int j = arc4random() % 4;
     NSString * DNAMark;
@@ -40,10 +40,11 @@
     return DNAMark;
 }
 
+// Вычисляет различие DNA двух клеток
 -(int) hammingDistance:(Cell *)cell {
     int hammingDistance = 0;
     for (int i = 0; i < [DNA count]; i++) {
-        if ([DNA objectAtIndex:i] != [cell.DNA objectAtIndex:i]) {
+        if (![(NSString *)[self.DNA objectAtIndex:i] isEqualToString:(NSString *)[cell.DNA objectAtIndex:i]]) {
             hammingDistance++;
         }
     }
