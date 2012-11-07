@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #import "Cell.h"
 
+#define DNA_LENGTH 100
+
 @implementation Cell
 
 static NSArray *availableSymbols;
@@ -27,9 +29,8 @@ static NSArray *availableSymbols;
   self = [super init];
 
   if (self) {
-    int numberOfElements = 100;
-    _dna = [[NSMutableArray alloc] initWithCapacity:numberOfElements];
-    for (int i = 0; i < numberOfElements; i++) {
+    _dna = [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
+    for (int i = 0; i < DNA_LENGTH; i++) {
       [_dna addObject:[Cell randomSymbol]];
     }
   }

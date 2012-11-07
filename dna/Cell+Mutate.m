@@ -9,12 +9,16 @@
 #import <stdlib.h>
 #import "Cell+Mutate.h"
 
+#define MIN_PERCENT 0
+#define MAX_PERCENT 100
+
 @implementation Cell (Mutator)
 
 -(void) mutate:(int)percent {
+  if (percent > MAX_PERCENT || percent < MIN_PERCENT) percent = MIN_PERCENT;
   NSMutableSet *set = [[NSMutableSet alloc] init];
   
-  for (int i = 0; i < [[self dna] count] && i * 100 / [[self dna] count] < percent; i++) {
+  for (int i = 0; i < [[self dna] count] && i * MAX_PERCENT / [[self dna] count] < percent; i++) {
     NSNumber *n = [NSNumber numberWithInt:arc4random()%[[self dna] count]];
     while ([set member:n]) {
       n = [NSNumber numberWithInt:arc4random()%[[self dna] count]];
