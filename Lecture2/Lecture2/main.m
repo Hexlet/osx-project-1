@@ -16,7 +16,7 @@ int main(int argc, const char * argv[])
         VVCell* cell1 = [[VVCell alloc] init];
         VVCell* cell2 = [[VVCell alloc] init];
         NSLog(@"Hamming distance between cell1 and cell2: %li", [cell1 hammingDistance:cell2]);
-    
+        
         NSLog(@"cell1 and cell2 mutating...");
         [cell1 mutate:30];
         [cell2 mutate:10];

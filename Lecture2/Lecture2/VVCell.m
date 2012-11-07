@@ -53,7 +53,13 @@ NSInteger const dnaLength  = 100;
     for (int i=0; i<count; i++) {
         int index = arc4random() % rnd.count;
         int j = [[rnd objectAtIndex:index] intValue];
-        [self.DNA replaceObjectAtIndex:j withObject:[dnaType objectAtIndex:arc4random() % dnaTypeLength]];
+        
+        NSString* newValue = [dnaType objectAtIndex:arc4random() % dnaTypeLength];
+        while ([newValue isEqualToString:[self.DNA objectAtIndex:j]]) {
+            newValue = [dnaType objectAtIndex:arc4random() % dnaTypeLength];
+        }
+            
+        [self.DNA replaceObjectAtIndex:j withObject:newValue];
         [rnd removeObjectAtIndex:index];
     }
 }
