@@ -25,7 +25,7 @@
     {
         indexesToChange[i] = i;
     }
-    for (int i = 0; i < dnaSize; i++)
+    for (int i = 0; i < changesCount; i++)
     {
         int n = rand() % dnaSize;
         
