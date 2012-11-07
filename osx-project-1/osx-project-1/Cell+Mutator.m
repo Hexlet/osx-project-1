@@ -47,6 +47,8 @@
         
         [self replaceNucleotideAtIndex:n with:new];
     }
+    
+    free(indexesToChange);
 }
 
 @end

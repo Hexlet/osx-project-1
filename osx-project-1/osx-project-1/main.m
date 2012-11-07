@@ -18,8 +18,6 @@ int main(int argc, const char * argv[])
         Cell *cell2 = [[Cell alloc] init];
         NSLog(@"Hamming distance before mutation is %d", [cell1 hammingDistanceWith:cell2]);
         
-        [cell1 replaceNucleotideAtIndex:110 with:5];
-        
         // Mutate both, and recalculate hamming distance
         double mutationRate = 10.0;
         [cell1 mutate:mutationRate];
