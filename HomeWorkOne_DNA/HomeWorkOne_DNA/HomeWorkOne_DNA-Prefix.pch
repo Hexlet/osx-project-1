@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'HomeWorkOne_DNA' target in the 'HomeWorkOne_DNA' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
