@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "osx-project-1/Cell.m"
-         timestampString = "374006491.321702"
+         timestampString = "374007566.666019"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>

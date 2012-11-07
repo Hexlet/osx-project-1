@@ -12,4 +12,8 @@
     
 }
 
+@property NSMutableArray *DNA;
+
+- (int)hammingDistance:(Cell *) cell;
+
 @end

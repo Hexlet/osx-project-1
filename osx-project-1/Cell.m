@@ -10,9 +10,10 @@
 
 @implementation Cell
 
-NSMutableArray *DNA;
 int const DNALength = 100;
 NSArray *genes;
+
+@synthesize DNA;
 
 - (id)init
 {
@@ -29,6 +30,18 @@ NSArray *genes;
 
 - (NSString *) description {
     return [NSString stringWithFormat:@"%@", DNA];
+}
+
+- (int)hammingDistance:(Cell *) cell {
+    int result = 0;
+    if (cell) {
+        for (int i = 0; i < DNALength; i++) {
+            if ([[DNA objectAtIndex:i] isNotEqualTo:[[cell DNA] objectAtIndex:i]]) {
+                result++;
+            }
+        }
+    }
+    return result;
 }
 
 @end
