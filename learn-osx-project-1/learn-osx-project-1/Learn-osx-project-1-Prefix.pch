@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Learn-osx-project-1' target in the 'Learn-osx-project-1' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
