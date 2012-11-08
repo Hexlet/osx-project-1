@@ -8,16 +8,16 @@
 
 #import "Cell.h"
 
-
 @implementation Cell
 
 -(id)init {
     self = [super init];
     if (self) {
+        _DNA_length = 100; // задаем значение длины DNA массива
         // инициализация
-        _DNA = [[NSMutableArray alloc] init];
+        _DNA = [[NSMutableArray alloc] initWithCapacity:_DNA_length];
         NSArray *variant = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];// варианты заполнения массива
-        for (int i = 0 ; i < DNA_length; i++) {
+        for (int i = 0 ; i < _DNA_length; i++) {
             int elem = arc4random()%4;     // случайный выбор заполнения
             [_DNA addObject:[NSString stringWithFormat:@"%@",variant[elem]]]; // добавляем случайно выбраный елемент
         }
@@ -26,7 +26,7 @@
 }
 -(int) hammingDistance: (Cell*)newDNA_Obj {
     int hammingdistance = 0;
-    for (int i = 0;i < DNA_length; i++){
+    for (int i = 0;i < _DNA_length; i++){
         if (newDNA_Obj.DNA[i] != self.DNA[i]){ // сравниваем елементы массивов DNA
             hammingdistance++;        // если не совпадают
         }

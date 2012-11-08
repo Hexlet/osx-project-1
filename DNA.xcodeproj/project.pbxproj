@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28B1B01C164C4B1A002509B2 /* mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B1B01B164C4B1A002509B2 /* mutator.m */; };
 		28E38C3D164A722D0025785E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E38C3C164A722D0025785E /* Foundation.framework */; };
 		28E38C40164A722D0025785E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28E38C3F164A722D0025785E /* main.m */; };
 		28E38C44164A722D0025785E /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 28E38C43164A722D0025785E /* DNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28B1B01A164C4B1A002509B2 /* mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutator.h; sourceTree = "<group>"; };
+		28B1B01B164C4B1A002509B2 /* mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mutator.m; sourceTree = "<group>"; };
 		28E38C38164A722D0025785E /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E38C3C164A722D0025785E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28E38C3F164A722D0025785E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,11 +79,13 @@
 		28E38C3E164A722D0025785E /* DNA */ = {
 			isa = PBXGroup;
 			children = (
+				28E38C4A164A72BE0025785E /* Cell.h */,
+				28E38C4B164A72BE0025785E /* Cell.m */,
+				28B1B01A164C4B1A002509B2 /* mutator.h */,
+				28B1B01B164C4B1A002509B2 /* mutator.m */,
 				28E38C3F164A722D0025785E /* main.m */,
 				28E38C43164A722D0025785E /* DNA.1 */,
 				28E38C41164A722D0025785E /* Supporting Files */,
-				28E38C4A164A72BE0025785E /* Cell.h */,
-				28E38C4B164A72BE0025785E /* Cell.m */,
 			);
 			path = DNA;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			files = (
 				28E38C40164A722D0025785E /* main.m in Sources */,
 				28E38C4C164A72BE0025785E /* Cell.m in Sources */,
+				28B1B01C164C4B1A002509B2 /* mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				28E38C49164A722D0025785E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
