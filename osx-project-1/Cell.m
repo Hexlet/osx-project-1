@@ -63,14 +63,14 @@
     int replaceIndex;
     long replaceChars = lroundf(_dna.count * percent / 100.0f);
     for (int i = 0; i < replaceChars; i++) {
-        while (YES) {
+        while (YES) { // в этом цикле находим индекс, который еще не мутировал
             replaceIndex = arc4random()%_dna.count;
             if (![usedIndexes containsObject:[NSNumber numberWithInt:replaceIndex]]) {
                 [usedIndexes addObject:[NSNumber numberWithInt:replaceIndex]];
                 break;
             }
         }
-        while (YES) {
+        while (YES) { // в этом цикле находим символ, отличный от исходного, для мутации
             NSString *newChar = [Cell getRandomChar];
             if ([[_dna objectAtIndex:replaceIndex] isNotEqualTo: newChar]) {
                 [_dna replaceObjectAtIndex:replaceIndex withObject:newChar];
