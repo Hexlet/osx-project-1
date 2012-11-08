@@ -26,8 +26,8 @@
         [positions addObject:[NSNumber numberWithInt:arc4random() % [DNA count]]];
     }
     
-    for (int i=0; i<X; i++) {
-        [DNA replaceObjectAtIndex:[[[positions allObjects] objectAtIndex:i] integerValue] withObject:[Cell randomElementWithout:[DNA objectAtIndex:i]]];
+    for(NSNumber * pos in positions) {
+        [DNA replaceObjectAtIndex:[pos integerValue] withObject:[Cell randomElementWithout:[DNA objectAtIndex:[pos integerValue]]]];
     }
 }
 @end
