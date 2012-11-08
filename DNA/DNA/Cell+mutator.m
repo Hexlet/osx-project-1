@@ -13,15 +13,23 @@
 - (void)mutate:(int)percentages
 {
     NSMutableArray *replacedIndices = [NSMutableArray array];
-
-    for (NSUInteger i = 0; i < percentages; i++) {
+    NSUInteger DNACount = [self->DNA count];
+    NSUInteger iteratesCount = percentages * DNACount / 100.0;
+    
+    for (NSUInteger i = 0; i < iteratesCount; i++) {
         NSNumber *index;
         do {
-            index = [NSNumber numberWithInt:rand() % 100];
+            index = [NSNumber numberWithInt:rand() % DNACount];
         } while ([replacedIndices containsObject:index]);
+        [replacedIndices addObject:index];
         
+        NSString *oldChar = [self->DNA objectAtIndex:[index unsignedIntegerValue]];
+        NSString *newChar;
+        do {
+            newChar = [[self class] randomChar];
+        } while ([newChar isEqualToString:oldChar]);
         [self->DNA replaceObjectAtIndex:[index unsignedIntegerValue]
-                             withObject:[[self class] randomChar]];
+                             withObject:newChar];
     }
 }
 
