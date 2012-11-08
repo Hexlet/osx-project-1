@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
         [cell2 debugPrint];
         NSLog(@"First hammingDistance:\t%d", [cell1 hammingDistance:cell2]);
         
-        [cell1 mutate:10];
+        [cell1 mutate:20];
         [cell2 mutate:10];
         [cell1 debugPrint];
         [cell2 debugPrint];

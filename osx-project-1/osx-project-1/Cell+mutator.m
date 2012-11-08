@@ -10,16 +10,17 @@
 
 @implementation Cell (mutator)
 
--(void)mutate:(int)value
+-(void)mutate:(int)percent
 {
     NSArray *indexesToChange;
+	int count = [[self DNA] count] * percent / 100;
     
     //we can't change more values that we have
-    if ( value > [[self DNA] count] || value < 0)
+    if ( count > [[self DNA] count] || count < 0)
         @throw [NSException exceptionWithName:@"CellMutatorException1" reason:@"Incorrect input parameter" userInfo:nil];
     
     //indexesToChange is array of indexes for change objects in our DNA array
-    indexesToChange = [self getRandomIndexes:value];
+    indexesToChange = [self getRandomIndexes:count];
     
     //change cycle, were we change one value to enother
     for (NSNumber *changeIndex in indexesToChange )
