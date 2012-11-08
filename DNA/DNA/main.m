@@ -17,9 +17,9 @@ int test = 1;
 // метод установки массива DNA
 -(void) setDNA;
 // возврат значения массива DNA
--(NSMutableArray*) DNA;
+-(NSArray*) DNA;
 // инициализация массива DNA
--(id) initDNA;
+-(id) init;
 // метод сравнения двух массивов
 -(int) hammingDistance: (Cell *) cl;
 // печать массива
@@ -51,7 +51,7 @@ int test = 1;
 }
 
 // инициализация объекта Cell
--(id) initDNA
+-(id) init
 {
     self = [super init];
     if (self) {
@@ -61,7 +61,7 @@ int test = 1;
 }
 
 // метод возврата массива
--(NSMutableArray*) DNA
+-(NSArray*) DNA
 {
     return DNA;
 }
@@ -133,8 +133,8 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        Cell *cell1 = [[Cell alloc] initDNA];
-        Cell *cell2 = [[Cell alloc] initDNA];
+        Cell *cell1 = [[Cell alloc] init];
+        Cell *cell2 = [[Cell alloc] init];
         
         NSLog(@"Hamming distance между ДНК");
         NSLog(@"%i", [cell1 hammingDistance:cell2]);
