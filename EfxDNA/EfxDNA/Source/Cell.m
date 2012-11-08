@@ -21,7 +21,7 @@
 
     // init properties:
     _DNACapacity = aCapacity;
-    _DNAVariations = 3;
+    _DNAVariations = 4;
     
     DNA = [[NSMutableArray alloc] initWithCapacity: _DNACapacity];
     
