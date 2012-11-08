@@ -15,8 +15,8 @@
     NSArray *indexesToChange;
     
     //we can't change more values that we have
-    if ( value > [[self DNA] count] )
-        @throw [NSException exceptionWithName:@"CellMutatorException1" reason:@"To many values to mutate" userInfo:nil];
+    if ( value > [[self DNA] count] || value < 0)
+        @throw [NSException exceptionWithName:@"CellMutatorException1" reason:@"Incorrect input parameter" userInfo:nil];
     
     //indexesToChange is array of indexes for change objects in our DNA array
     indexesToChange = [self getRandomIndexes:value];
@@ -40,25 +40,12 @@
         NSInteger randomIndex;
         do {
             randomIndex = rand() % [_DNA count];
-        } while ([self isIntegerInArray:temp integer:randomIndex]);
+		} while ( [temp containsObject:[NSNumber numberWithInteger:randomIndex]] );
         [temp addObject:[NSNumber numberWithInteger:randomIndex]];
     }
     NSArray *result = [NSArray arrayWithArray:temp];
     [temp release];
     return result;
-}
-
-//Return YES - if an integer where found in array of numbers
--(BOOL)isIntegerInArray:(NSArray*)array integer:(NSInteger)integer
-{
-    for ( id object in array)
-    {
-        if ( ![object isKindOfClass:[NSNumber class]] )
-            continue;
-        if ( [(NSNumber*)object integerValue] == integer )
-            return YES;
-    }
-    return NO;
 }
 
 //Returns Node with another value from input paramether
