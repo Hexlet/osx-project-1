@@ -16,7 +16,7 @@
     
     if (self) {
         
-        dnaCapacity = 5;
+        dnaCapacity = 100;
         
         // initialization of possible DNA values
         _possibleDnaValues = [[NSArray alloc] initWithObjects: @"A", @"T", @"G", @"C", nil];
