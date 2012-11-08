@@ -25,9 +25,9 @@
     for (int i = 0; i< capacity*mutationRate/100; i++)
     {
         NSMutableArray *tmp2 = [self.nucleobase mutableCopy];
-        [tmp2 removeObject: [self.DNA objectAtIndex:[[arrShuffle objectAtIndex: i] integerValue]]];
+        [tmp2 removeObject: [self->DNA objectAtIndex:[[arrShuffle objectAtIndex: i] integerValue]]];
         [tmp2 shuffle];
-        [self.DNA replaceObjectAtIndex: [[arrShuffle objectAtIndex: i] integerValue]
+        [self->DNA replaceObjectAtIndex: [[arrShuffle objectAtIndex: i] integerValue]
                             withObject: [tmp2 objectAtIndex: 0]];
     }
 }
