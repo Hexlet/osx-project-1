@@ -17,7 +17,7 @@
     if (self) {     //добавлено после проверки
     array = [NSSet setWithObjects : @"C",@"T",@"G",@"A", nil];  // заполняем множество элементов буквами
     DNA = [NSMutableArray arrayWithCapacity:100]; // создаем массив с определенным количеством элементов
-        for (int i=0; i<=100; i++)
+        for (int i=0; i<=99; i++)   // исправил ошибку, теперь тут 100 элементов вместо 101-го :)
         {
             [DNA addObject:[[array allObjects] objectAtIndex:arc4random()%[array count]]]; // заполняем массив рандомными буквами
         }
