@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		797ECE9B164C7074008F2615 /* Cell+Evolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 797ECE9A164C7074008F2615 /* Cell+Evolution.m */; };
 		79A4898916453F8200D083BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A4898816453F8200D083BB /* Foundation.framework */; };
 		79A4898C16453F8200D083BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A4898B16453F8200D083BB /* main.m */; };
 		79A4899016453F8200D083BB /* _3_dna.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 79A4898F16453F8200D083BB /* _3_dna.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		797ECE99164C7074008F2615 /* Cell+Evolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Evolution.h"; sourceTree = "<group>"; };
+		797ECE9A164C7074008F2615 /* Cell+Evolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Evolution.m"; sourceTree = "<group>"; };
 		79A4898416453F8200D083BB /* 03_dna */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 03_dna; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A4898816453F8200D083BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		79A4898B16453F8200D083BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				79A4898B16453F8200D083BB /* main.m */,
+				797ECE99164C7074008F2615 /* Cell+Evolution.h */,
+				797ECE9A164C7074008F2615 /* Cell+Evolution.m */,
 				79A4899616453FA400D083BB /* Cell.h */,
 				79A4899716453FA400D083BB /* Cell.m */,
 				79A4898F16453F8200D083BB /* _3_dna.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				79A4898C16453F8200D083BB /* main.m in Sources */,
 				79A4899816453FA400D083BB /* Cell.m in Sources */,
+				797ECE9B164C7074008F2615 /* Cell+Evolution.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				79A4899516453F8200D083BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
