@@ -28,9 +28,15 @@
         
         if ([changedElements indexOfObject: randomIndex] == NSNotFound)
         {
-            Nucleotide *nucleotide = [[Nucleotide alloc] init];
-            [DNA replaceObjectAtIndex: randomInt withObject: nucleotide];
+            Nucleotide *currentNucletide = [DNA objectAtIndex: randomInt];
+            Nucleotide *newNucleotide;
+
+            do
+            {
+                newNucleotide = [[Nucleotide alloc] init];
+            } while([newNucleotide isEqual: currentNucletide]);
             
+            [DNA replaceObjectAtIndex: randomInt withObject: newNucleotide];
             [changedElements addObject: randomIndex];
             i++;
         }
