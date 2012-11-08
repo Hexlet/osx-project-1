@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'EfxDNA' target in the 'EfxDNA' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
