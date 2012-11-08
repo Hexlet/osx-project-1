@@ -12,6 +12,12 @@
 
 - (void)mutate:(int)percentages
 {
+    if (percentages <= 0 || percentages > 100) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException
+                                       reason:@"Percentages value must be in range (0..100]"
+                                     userInfo:nil];
+    }
+    
     NSMutableArray *replacedIndices = [NSMutableArray array];
     NSUInteger DNACount = [self->DNA count];
     NSUInteger iteratesCount = percentages * DNACount / 100.0;
