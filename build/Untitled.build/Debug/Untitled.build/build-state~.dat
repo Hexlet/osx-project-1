@@ -1,0 +1,93 @@
+TUntitled
+v7
+r0
+t373929923.355681
+cCheck dependencies
+cProcessPCH /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch.gch Untitled_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled normal x86_64
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004D5A274300000000000000EE
+t1297753923
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC401D100000000000013E6
+t1287913937
+s5094
+
+N/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004E5656FF0000000000B38E90
+t1314281215
+s11767440
+
+N/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m
+c0000000050997FE200000000000000EA
+t1352237026
+s234
+i<Foundation/Foundation.h>
+
+N/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled_Prefix.pch
+c0000000050997FE2000000000000009E
+t1352237026
+s158
+i<Foundation/Foundation.h>
+
+N/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled
+t1352237123
+s9296
+
+N/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.LinkFileList
+c000000005099801E000000000000007C
+t1352237086
+s124
+
+N/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o
+t1352237122
+s6988
+
+N/var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch.gch
+t1352237118
+s41429776
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies373929886#373929886#0(0"0(0#1#0"3343187568374212096#0"0#
+
+CCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s373929919.790089
+e373929922.091221
+r1
+xCompileC
+xbuild/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o
+x/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m373929919#373929922#0(0"0(0#0#59"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m8612513952#1588"    cd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/include -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m -o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o0#
+
+CLd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled normal x86_64
+s373929922.091415
+e373929923.355606
+r1
+xLd
+x/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled
+xnormal
+xx86_64
+lSLF07#2@74"Link /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled373929922#373929923#0(0"0(0#0#0"8613153856#574"    cd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -F/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -filelist /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled0#
+
+CProcessPCH /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch.gch Untitled_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s373929886.884570
+e373929919.788912
+r1
+xProcessPCH
+x/var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch.gch
+xUntitled_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@30"Precompile Untitled_Prefix.pch373929887#373929919#0(0"0(0#0#68"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled_Prefix.pch5791458032595789824#1475"    cd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/include -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources -c /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled_Prefix.pch -o /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch.gch0#
+
