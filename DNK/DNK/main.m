@@ -24,7 +24,7 @@
     
     for(int i=1; i<=countPercents; i++){
         
-     int randValue1 = (arc4random() % 99) + 1;
+     int randValue1 = arc4random() % [self.dnaarr count];
         
         if(![testArr containsObject:[NSNumber numberWithInt:randValue1]]){
             
