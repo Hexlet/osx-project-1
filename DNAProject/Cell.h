@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+//#define debug // директива для включения отладочных сообщений
 
 #define capacityOfDNA 100 //количество генов в последовательности ДНК
 
@@ -16,6 +17,7 @@
 
 @property (nonatomic,readonly) NSArray *DNA; // ридонли свойство для доступа извне
 
-+(NSString *)getRandomGene; // для формирования случайного символа
++(NSString *)getRandomGene:(id)replacingGene; // для формирования случайного символа
 -(int)hammingDistance:(Cell *)someCell; // подсчёт хэммингова числа
+-(id)geneAtIndex:(NSUInteger)index; // получить ген в определённой позиции ДНК
 @end

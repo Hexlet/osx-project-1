@@ -11,6 +11,7 @@
 		C27185FF163FA75C009EF9AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C27185FE163FA75C009EF9AA /* main.m */; };
 		C2718603163FA75C009EF9AA /* DNAProject.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C2718602163FA75C009EF9AA /* DNAProject.1 */; };
 		C271860B163FA7E0009EF9AA /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C271860A163FA7E0009EF9AA /* Cell.m */; };
+		C27FC5BB164B9017003AD2F6 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = C27FC5BA164B9017003AD2F6 /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		C2718602163FA75C009EF9AA /* DNAProject.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNAProject.1; sourceTree = "<group>"; };
 		C2718609163FA7E0009EF9AA /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		C271860A163FA7E0009EF9AA /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		C27FC5B9164B9017003AD2F6 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		C27FC5BA164B9017003AD2F6 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				C2718600163FA75C009EF9AA /* Supporting Files */,
 				C2718609163FA7E0009EF9AA /* Cell.h */,
 				C271860A163FA7E0009EF9AA /* Cell.m */,
+				C27FC5B9164B9017003AD2F6 /* Cell+Mutator.h */,
+				C27FC5BA164B9017003AD2F6 /* Cell+Mutator.m */,
 			);
 			path = DNAProject;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			files = (
 				C27185FF163FA75C009EF9AA /* main.m in Sources */,
 				C271860B163FA7E0009EF9AA /* Cell.m in Sources */,
+				C27FC5BB164B9017003AD2F6 /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				C2718608163FA75C009EF9AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
