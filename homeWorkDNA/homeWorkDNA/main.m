@@ -22,8 +22,14 @@
         NSUInteger x2, x3, x4;
         bool exNum = YES;
         
+        if (x <= 0)
+            return;
+        if(x > 100)
+            x =100;
+    
         NSMutableArray * indexes = [NSMutableArray arrayWithCapacity:(NSUInteger)x];
         for(int i = 0; i < x; i++) {
+            exNum = YES;
             do
             {
                 x1 = [NSString stringWithFormat:@"%i" ,arc4random() % x];
