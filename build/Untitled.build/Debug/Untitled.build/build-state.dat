@@ -1,7 +1,7 @@
 TUntitled
 v7
 r0
-t373937512.034975
+t374101609.284449
 cCheck dependencies
 cProcessPCH /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch.gch Untitled_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
 cCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o /Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
@@ -95,9 +95,9 @@ s640
 i"mutator.h"
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.h
-c0000000050999C210000000000000155
-t1352244257
-s341
+c00000000509C1D520000000000000157
+t1352408402
+s343
 i<Cocoa/Cocoa.h>
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m
@@ -122,12 +122,12 @@ s158
 i<Foundation/Foundation.h>
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/Untitled
-t1352244712
+t1352408809
 s15176
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Cell.o
-t1352244711
-s10864
+t1352408446
+s10744
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.LinkFileList
 c0000000050999DE10000000000000169
@@ -135,12 +135,12 @@ t1352244705
 s361
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o
-t1352244711
+t1352408446
 s7848
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/mutator.o
-t1352244712
-s7392
+t1352408809
+s7784
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.h
 c0000000050998E3000000000000000CA
@@ -149,9 +149,9 @@ s202
 i"Cell.h"
 
 N/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m
-c0000000050999C6D0000000000000280
-t1352244333
-s640
+c00000000509C1EE8000000000000032C
+t1352408808
+s812
 i"mutator.h"
 
 N/var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch.gch
@@ -164,7 +164,7 @@ s41429776
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies373937504#373937505#0(0"0(0#1#0"3343187568374212096#0"0#
+lSLF07#2@18"Check dependencies374101608#374101608#0(0"0(0#1#0"8616292544#0"0#
 
 CCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Cell.o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
 s373937124.186897
@@ -188,8 +188,8 @@ o/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m:30: warning: 'NSMutable
 lSLF07#2@63"Compile /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m373937124#373937126#0(868"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m: In function '-[Cell init]':/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m:22: warning: 'NSMutableSet' may not respond to '-insertObject:atIndex:'/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m:22: warning: (Messages without a matching method signature/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m:22: warning: will be assumed to return 'id' and accept/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m:22: warning: '...' as arguments.)/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m: In function '-[Cell hammingDistance:]':/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m:30: warning: 'NSMutableSet' may not respond to '-objectAtIndex:'/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m:30: warning: 'NSMutableSet' may not respond to '-objectAtIndex:'4(22@58"'NSMutableSet' may not respond to '-insertObject:atIndex:'373937126#85#128#0(6@55"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m373937092#22#0#22#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)373937126#213#115#0(6@55"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m373937092#22#0#22#0#0"0(22@51"'NSMutableSet' may not respond to '-objectAtIndex:'373937126#626#121#0(6@55"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m373937092#30#0#30#0#26"'*' may not respond to '*'0(22@51"'NSMutableSet' may not respond to '-objectAtIndex:'373937126#747#121#0(6@55"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m373937092#30#0#30#0#26"'*' may not respond to '*'0(0#0#55"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m8623713728#1580"    cd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/include -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Cell.m -o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Cell.o0#
 
 CCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Cell.o /Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-s373937511.304774
-e373937511.894750
+s374101218.614795
+e374101246.967558
 r1
 xCompileC
 xbuild/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Cell.o
@@ -198,15 +198,7 @@ xnormal
 xx86_64
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-o/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m: In function '-[Cell init]':
-o/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:21: warning: 'NSMutableSet' may not respond to '-insertObject:atIndex:'
-o/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:21: warning: (Messages without a matching method signature
-o/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:21: warning: will be assumed to return 'id' and accept
-o/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:21: warning: '...' as arguments.)
-o/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m: In function '-[Cell hammingDistance:]':
-o/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:29: warning: 'NSMutableSet' may not respond to '-objectAtIndex:'
-o/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:29: warning: 'NSMutableSet' may not respond to '-objectAtIndex:'
-lSLF07#2@61"Compile /Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m373937511#373937511#0(852"/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m: In function '-[Cell init]':/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:21: warning: 'NSMutableSet' may not respond to '-insertObject:atIndex:'/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:21: warning: (Messages without a matching method signature/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:21: warning: will be assumed to return 'id' and accept/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:21: warning: '...' as arguments.)/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m: In function '-[Cell hammingDistance:]':/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:29: warning: 'NSMutableSet' may not respond to '-objectAtIndex:'/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m:29: warning: 'NSMutableSet' may not respond to '-objectAtIndex:'4(22@58"'NSMutableSet' may not respond to '-insertObject:atIndex:'373937511#83#126#0(6@53"/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m373937164#21#0#21#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)373937511#209#113#0(6@53"/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m373937164#21#0#21#0#0"0(22@51"'NSMutableSet' may not respond to '-objectAtIndex:'373937511#614#119#0(6@53"/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m373937164#29#0#29#0#26"'*' may not respond to '*'0(22@51"'NSMutableSet' may not respond to '-objectAtIndex:'373937511#733#119#0(6@53"/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m373937164#29#0#29#0#26"'*' may not respond to '*'0(0#0#53"/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m8603846368#1558"    cd /Users/MacBook/Projects/edu/objc/osx-project-1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/include -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m -o /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Cell.o0#
+lSLF07#2@61"Compile /Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m374101218#374101246#0(0"0(0#0#53"/Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m8604694592#1558"    cd /Users/MacBook/Projects/edu/objc/osx-project-1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/include -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/osx-project-1/Cell.m -o /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Cell.o0#
 
 CCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
 s373937124.181670
@@ -222,8 +214,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@67"Compile /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m373937124#373937124#0(0"0(0#0#59"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m8623925760#1588"    cd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/include -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/Untitled.m -o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o0#
 
 CCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o /Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-s373937511.303426
-e373937511.681870
+s374101218.505938
+e374101246.967155
 r1
 xCompileC
 xbuild/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o
@@ -232,7 +224,7 @@ xnormal
 xx86_64
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@65"Compile /Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.m373937511#373937511#0(0"0(0#0#57"/Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.m8603930112#1566"    cd /Users/MacBook/Projects/edu/objc/osx-project-1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/include -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.m -o /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o0#
+lSLF07#2@65"Compile /Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.m374101218#374101246#0(0"0(0#0#57"/Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.m3917909816998063104#1566"    cd /Users/MacBook/Projects/edu/objc/osx-project-1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/include -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.m -o /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.o0#
 
 CCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/mutator.o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
 s373937133.311430
@@ -253,8 +245,8 @@ o/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m:33: warning: '...' a
 lSLF07#2@66"Compile /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m373937133#373937134#0(556"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m: In function '-[Cell(mutator) mutate:]':/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m:33: warning: 'NSMutableSet' may not respond to '-insertObject:atIndex:'/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m:33: warning: (Messages without a matching method signature/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m:33: warning: will be assumed to return 'id' and accept/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m:33: warning: '...' as arguments.)2(22@58"'NSMutableSet' may not respond to '-insertObject:atIndex:'373937133#100#131#0(6@58"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m373937133#33#0#33#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)373937133#231#118#0(6@58"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m373937133#33#0#33#0#0"0(0#0#58"/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m8622972736#1586"    cd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/include -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-gcqeabsfunrfxzcpntqvgkyimrpq/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/mutator.m -o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/mutator.o0#
 
 CCompileC build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/mutator.o /Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
-s373937511.681966
-e373937512.014141
+s374101608.900143
+e374101609.218403
 r1
 xCompileC
 xbuild/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/mutator.o
@@ -263,12 +255,7 @@ xnormal
 xx86_64
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-o/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m: In function '-[Cell(mutator) mutate:]':
-o/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m:33: warning: 'NSMutableSet' may not respond to '-insertObject:atIndex:'
-o/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m:33: warning: (Messages without a matching method signature
-o/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m:33: warning: will be assumed to return 'id' and accept
-o/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m:33: warning: '...' as arguments.)
-lSLF07#2@64"Compile /Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m373937511#373937512#0(546"/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m: In function '-[Cell(mutator) mutate:]':/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m:33: warning: 'NSMutableSet' may not respond to '-insertObject:atIndex:'/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m:33: warning: (Messages without a matching method signature/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m:33: warning: will be assumed to return 'id' and accept/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m:33: warning: '...' as arguments.)2(22@58"'NSMutableSet' may not respond to '-insertObject:atIndex:'373937511#98#129#0(6@56"/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m373937133#33#0#33#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)373937511#227#116#0(6@56"/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m373937133#33#0#33#0#0"0(0#0#56"/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m8603911168#1564"    cd /Users/MacBook/Projects/edu/objc/osx-project-1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/include -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m -o /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/mutator.o0#
+lSLF07#2@64"Compile /Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m374101608#374101609#0(0"0(0#0#56"/Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m8614694304#1564"    cd /Users/MacBook/Projects/edu/objc/osx-project-1    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-generated-files.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-own-target-headers.hmap -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-all-target-headers.hmap -iquote /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Untitled-project-headers.hmap -F/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/include -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources/x86_64 -I/Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/DerivedSources -include /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch -c /Users/MacBook/Projects/edu/objc/osx-project-1/mutator.m -o /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/mutator.o0#
 
 CLd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled normal x86_64
 s373937134.052965
@@ -281,14 +268,14 @@ xx86_64
 lSLF07#2@74"Link /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled373937134#373937134#0(0"0(0#0#0"8625419168#574"    cd /Users/MacBook/Projects/edu/objc/01_dnk/Untitled    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -F/Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug -filelist /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -o /Users/MacBook/Projects/edu/objc/01_dnk/Untitled/build/Debug/Untitled0#
 
 CLd /Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/Untitled normal x86_64
-s373937512.014237
-e373937512.034781
+s374101609.218492
+e374101609.284382
 r1
 xLd
 x/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/Untitled
 xnormal
 xx86_64
-lSLF07#2@72"Link /Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/Untitled373937512#373937512#0(0"0(0#0#0"8601295104#564"    cd /Users/MacBook/Projects/edu/objc/osx-project-1    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -F/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -filelist /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -o /Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/Untitled0#
+lSLF07#2@72"Link /Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/Untitled374101609#374101609#0(0"0(0#0#0"8614479264#564"    cd /Users/MacBook/Projects/edu/objc/osx-project-1    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -F/Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug -filelist /Users/MacBook/Projects/edu/objc/osx-project-1/build/Untitled.build/Debug/Untitled.build/Objects-normal/x86_64/Untitled.LinkFileList -mmacosx-version-min=10.6 -framework Foundation -o /Users/MacBook/Projects/edu/objc/osx-project-1/build/Debug/Untitled0#
 
 CProcessPCH /var/folders/or/orcWN56DGoGu4HCxkoUUSk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Untitled_Prefix-dpcsnipauqxapmeedquarywlleee/Untitled_Prefix.pch.gch Untitled_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
 s373937505.109597

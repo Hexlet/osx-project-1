@@ -16,5 +16,5 @@ extern NSString *chars[];
 }
 -(id)init;
 -(int)hammingDistance:(Cell *)cell;
-@property (readonly) NSMutableSet *DNA;
+@property (readonly) NSMutableArray *DNA;
 @end

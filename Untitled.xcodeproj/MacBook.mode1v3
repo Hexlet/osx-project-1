@@ -325,15 +325,15 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FA6A19711649D57500D5A530</string>
+										<string>FAF15A4E164C56BD00BF7AFB</string>
 										<key>history</key>
 										<array>
 											<string>FAD8C0C31649C0BB00055FE1</string>
-											<string>FAD8C19E1649D51600055FE1</string>
-											<string>FAD8C19F1649D51600055FE1</string>
-											<string>FAD8C1A01649D51600055FE1</string>
-											<string>FAD8C1A11649D51600055FE1</string>
-											<string>FAD8C1A21649D51600055FE1</string>
+											<string>FAF15A49164C56BD00BF7AFB</string>
+											<string>FAF15A4A164C56BD00BF7AFB</string>
+											<string>FAF15A4B164C56BD00BF7AFB</string>
+											<string>FAF15A4C164C56BD00BF7AFB</string>
+											<string>FAF15A4D164C56BD00BF7AFB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -345,14 +345,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1024, 490}}</string>
+								<string>{{0, 0}, {1024, 484}}</string>
 								<key>RubberWindowFrame</key>
 								<string>48 55 1232 723 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>490pt</string>
+							<string>484pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -365,14 +365,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 495}, {1024, 187}}</string>
+								<string>{{0, 489}, {1024, 193}}</string>
 								<key>RubberWindowFrame</key>
 								<string>48 55 1232 723 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>187pt</string>
+							<string>193pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -391,9 +391,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FA6A196D1649D57500D5A530</string>
+				<string>FAF15A4F164C56BD00BF7AFB</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FA6A196E1649D57500D5A530</string>
+				<string>FAF15A50164C56BD00BF7AFB</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -531,10 +531,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FA6A196F1649D57500D5A530</string>
-		<string>FA6A19701649D57500D5A530</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>FAD8C0A01649B77500055FE1</string>
 		<string>/Users/MacBook/Projects/edu/objc/osx-project-1/Untitled.xcodeproj</string>
 	</array>
@@ -616,7 +612,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FAD8C0A01649B77500055FE1</string>
-				<string>FA6A19621649D57000D5A530</string>
+				<string>FAF15A51164C56BD00BF7AFB</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

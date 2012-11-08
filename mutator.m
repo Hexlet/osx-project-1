@@ -29,7 +29,12 @@
 		indexes[j] = k;
 	}
 	// change
-	for (i = 0; i < x; ++i)
-		[self.DNA insertObject:chars[arc4random() % N_CHARSET] atIndex:indexes[i]];
+	for (i = 0; i < x; ++i) {
+		int index = indexes[i];
+		int newCharIndex = arc4random() % N_CHARSET;
+		if (chars[newCharIndex] == [self.DNA objectAtIndex:index])
+			newCharIndex = (newCharIndex + 1) % N_CHARSET;
+		[self.DNA insertObject:chars[newCharIndex] atIndex:index];
+	}
 }
 @end
