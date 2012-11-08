@@ -44,8 +44,6 @@
             mutated_elements_count ++;
         }
     }
-    // освобождаем память
-    free((void *)mutated_elements_indexes);
 }
 
 @end
