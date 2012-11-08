@@ -8,42 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Call.h"
-
-@interface Call (Mutator)
-
--(void)mutate: (int) x;
-
-@end
-
-@implementation Call (Mutator)
-
--(void)mutate: (int) x {
-    int i=0;
-    int j=100/x;
-    for (count=0 ; count<x; count++ ) {
-        i+=arc4random()%j;
-        switch (arc4random()%4) {
-            case 0:
-                [DNA replaceObjectAtIndex:i withObject:@"A"];
-                break;
-            case 1:
-                [DNA replaceObjectAtIndex:i withObject:@"T"];
-                break;
-            case 2:
-                [DNA replaceObjectAtIndex:i withObject:@"G"];
-                break;
-            case 3:
-                [DNA replaceObjectAtIndex:i withObject:@"C"];
-                break;
-                
-            default:
-                break;
-        }
-        i++;
-    }
-}
-
-@end
+#import "Call+Mutator.h"
 
 int main(int argc, const char * argv[])
 {
@@ -55,12 +20,15 @@ int main(int argc, const char * argv[])
         myDna2 = [[Call alloc] init];
         
         NSLog(@"%d",[myDna1 hammingDistance:myDna2]);
+        //[myDna1 print];
+        //[myDna2 print];
         
-        [myDna1 mutate:25];
+        [myDna1 mutate:100];
         [myDna2 mutate:25];
         
         NSLog(@"%d",[myDna1 hammingDistance:myDna2]);
-        
+        //[myDna1 print];
+        //[myDna2 print];
         
         
     }

@@ -11,7 +11,9 @@
 @interface Call : NSObject {
     NSMutableArray *DNA;
     int count;
+    int size;
 }
+
 
 -(int) hammingDistance: (Call *) newDNA;
 //-(void) print;

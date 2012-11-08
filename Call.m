@@ -10,11 +10,12 @@
 
 @implementation Call 
 -(id) init {
-    DNA=[NSMutableArray arrayWithCapacity:100];
+    size=100;
+    DNA=[NSMutableArray arrayWithCapacity:size];
     self = [super init];
     if (self) {
-        for (count=0; count<100; count++) {
-            switch (arc4random()%4) {
+        for (count=0; count<size; count++) {
+            switch (arc4random_uniform(4)) {
                 case 0:
                     [DNA addObject:@"A"];
                     break;
@@ -27,9 +28,6 @@
                 case 3:
                     [DNA addObject:@"C"];
                     break;
-                    
-                default:
-                    break;
             }            
         }
     }
@@ -38,7 +36,7 @@
 
 -(int) hammingDistance: (Call *) newDNA {
     int a = 0;
-    for (count=0; count<100; count++) {
+    for (count=0; count<size; count++) {
         if ([DNA objectAtIndex:count]!=[newDNA->DNA objectAtIndex:count]) {
             a++;
         }
