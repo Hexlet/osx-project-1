@@ -9,8 +9,7 @@
 
 // my class can init array of any size
 @property int DNACapacity;
-@property int DNAVariations; // currently only default value "3" is supported!
-
+@property int DNAVariations; // number of nucleotids for DNA item
 
 -(id) init;
 -(id) initWithCapacity: (int) aCapacity; // for debug: ability create small array of DNA
