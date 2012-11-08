@@ -17,7 +17,7 @@
     _DNA =[NSMutableArray arrayWithCapacity:100];
     
     for (int i=0; i<100; i++) {
-        [_DNA addObject: [Cell getRandomDNAPart]];
+        [_DNA addObject: [Cell getRandomDNAPart:nil]];
     }
     
     return self;
@@ -37,22 +37,32 @@
 }
 
 //Генерируем случайным образом буковку для последовательности ДНК
-+(NSString *) getRandomDNAPart
+//у slebedev подсмотрел фишечку, что удобно будет передавать в этот метод элемент, который будем менять.
++(NSString *) getRandomDNAPart:(id)replasingPart
 {
+    NSMutableArray *DNAParts = nil;
+    int randomCounter=0;
     
-    NSString * DNAParts=@"ATGC";
-    int randomCounter = SSRandomIntBetween(0, 3);
+    if (!DNAParts) {
+        DNAParts = [NSMutableArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
+    }
     
-    return [NSString stringWithFormat:@"%C",[DNAParts characterAtIndex:randomCounter]];
+    if (replasingPart==nil) {
+            randomCounter = SSRandomIntBetween(0, 3);
+    }
+    else
+    {
+        [DNAParts removeObject:replasingPart];
+        randomCounter = SSRandomIntBetween(0, 2);
+    }
+    
+    return [NSString stringWithFormat:@"%@",[DNAParts objectAtIndex:randomCounter]];
+
 
 }
 
 -(NSString *) description {
-    NSMutableString * result = [[NSMutableString alloc] init];;
-    for (NSString * obj in _DNA) {
-        [result appendString:[obj description]];
-    }
-    return result;
+    return [_DNA componentsJoinedByString:@""];
 }
 
 

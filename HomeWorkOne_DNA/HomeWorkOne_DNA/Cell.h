@@ -12,5 +12,5 @@
 
 @property NSMutableArray *DNA;
 -(int)hammingDistance:(Cell *)otherCell;
-+(NSString *) getRandomDNAPart;
++(NSString *) getRandomDNAPart:(id)replasingPart;
 @end
