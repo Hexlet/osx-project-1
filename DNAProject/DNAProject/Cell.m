@@ -20,11 +20,13 @@
 -(id)init {
     self = [super init];
     
-    dna = [NSMutableArray arrayWithCapacity:(SIZE_DNA)];
+    if( self) {
+        dna = [NSMutableArray arrayWithCapacity:(SIZE_DNA)];
     
-    sranddev();
-    for( int i = 0; i < SIZE_DNA; i++) {
-        [dna addObject: [self getRandomNucleotide]];
+        sranddev();
+        for( int i = 0; i < SIZE_DNA; i++) {
+            [dna addObject: [self getRandomNucleotide]];
+        }
     }
     
     return self;
