@@ -27,10 +27,13 @@ int main(int argc, const char * argv[])
         NSLog(@"distance: %ld", [cell1 hammingDistance:cell2]);
         
         [cell1 mutate:70];
+        [cell2 mutate:60];
         
-        NSLog(@"cell1 after mutation: %@", [cell1 toString]);
+        NSLog(@"after mutation:");
+        NSLog(@"cell1: %@", [cell1 toString]);
+        NSLog(@"cell2: %@", [cell2 toString]);
         
-        NSLog(@"distance after mutation: %ld", [cell1 hammingDistance:cell2]);
+        NSLog(@"distance: %ld", [cell1 hammingDistance:cell2]);
     }
     return 0;
 }
