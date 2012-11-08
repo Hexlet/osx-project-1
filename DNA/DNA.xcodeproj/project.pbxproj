@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09C45654164BCE2400091EF9 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C45653164BCE2400091EF9 /* Cell+Mutator.m */; };
 		09E8627A1645538A0041E457 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E862791645538A0041E457 /* Foundation.framework */; };
 		09E8627D1645538A0041E457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E8627C1645538A0041E457 /* main.m */; };
 		09E862811645538A0041E457 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09E862801645538A0041E457 /* DNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09C45652164BCE2400091EF9 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		09C45653164BCE2400091EF9 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 		09E862751645538A0041E457 /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E862791645538A0041E457 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09E8627C1645538A0041E457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				09E8627C1645538A0041E457 /* main.m */,
 				09E8628A16457E0F0041E457 /* Cell.h */,
 				09E8628B16457E210041E457 /* Cell.m */,
+				09C45652164BCE2400091EF9 /* Cell+Mutator.h */,
+				09C45653164BCE2400091EF9 /* Cell+Mutator.m */,
 				09E8627E1645538A0041E457 /* Supporting Files */,
 			);
 			path = DNA;
@@ -146,6 +151,7 @@
 			files = (
 				09E8627D1645538A0041E457 /* main.m in Sources */,
 				09E8628C16457E210041E457 /* Cell.m in Sources */,
+				09C45654164BCE2400091EF9 /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				09E862861645538A0041E457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
