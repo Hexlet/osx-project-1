@@ -33,10 +33,10 @@
 		47759921164C2C070039078F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47759924164C2C070039078F /* DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNA-Prefix.pch"; sourceTree = "<group>"; };
 		47759925164C2C070039078F /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
-		4775992C164C2C4C0039078F /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
-		4775992D164C2C4C0039078F /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		4775992F164C42540039078F /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
-		47759930164C42540039078F /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+		4775992C164C2C4C0039078F /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = ../Cell.h; sourceTree = "<group>"; };
+		4775992D164C2C4C0039078F /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = ../Cell.m; sourceTree = "<group>"; };
+		4775992F164C42540039078F /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+mutator.h"; path = "../Cell+mutator.h"; sourceTree = "<group>"; };
+		47759930164C42540039078F /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+mutator.m"; path = "../Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +54,6 @@
 		4775990F164C2C070039078F = {
 			isa = PBXGroup;
 			children = (
-				4775992F164C42540039078F /* Cell+mutator.h */,
-				47759930164C42540039078F /* Cell+mutator.m */,
-				4775992C164C2C4C0039078F /* Cell.h */,
-				4775992D164C2C4C0039078F /* Cell.m */,
 				47759920164C2C070039078F /* DNA */,
 				4775991D164C2C070039078F /* Frameworks */,
 				4775991B164C2C070039078F /* Products */,
@@ -83,6 +79,10 @@
 		47759920164C2C070039078F /* DNA */ = {
 			isa = PBXGroup;
 			children = (
+				4775992F164C42540039078F /* Cell+mutator.h */,
+				47759930164C42540039078F /* Cell+mutator.m */,
+				4775992C164C2C4C0039078F /* Cell.h */,
+				4775992D164C2C4C0039078F /* Cell.m */,
 				47759921164C2C070039078F /* main.m */,
 				47759925164C2C070039078F /* DNA.1 */,
 				47759923164C2C070039078F /* Supporting Files */,
