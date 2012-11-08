@@ -30,12 +30,18 @@
 
 -(int) hammingDistance:(Cell *)anotherCell {
     int counter = 0;
-    
-    for (int i = 0; i < 100; i++) {
-        if ([DNA objectAtIndex: i] != [[anotherCell DNA] objectAtIndex: i]) {
+    NSEnumerator *anothersEnum = [[anotherCell DNA] objectEnumerator];
+    for (NSString *nucleotide in DNA) {
+        if (nucleotide != [anothersEnum nextObject]) {
             counter++;
         }
     }
+    
+//    for (int i = 0; i < [DNA count]; i++) {
+//        if ([DNA objectAtIndex: i] != [[anotherCell DNA] objectAtIndex: i]) {
+//            counter++;
+//        }
+//    }
 
     return counter;
 }
