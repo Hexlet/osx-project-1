@@ -22,8 +22,8 @@ int main(int argc, const char * argv[])
         [DNA2 printDNA];
         NSLog(@"Current distance: %d", distance);
         
-        [DNA1 mutate:1];
-        [DNA2 mutate:1];
+        [DNA1 mutate:100];
+        [DNA2 mutate:100];
         distance = [DNA1 hammingDistance:DNA2];
         [DNA1 printDNA];
         [DNA2 printDNA];

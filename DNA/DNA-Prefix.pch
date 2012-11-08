@@ -5,3 +5,5 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
 #endif
+
+#define DNA_LENGTH 100

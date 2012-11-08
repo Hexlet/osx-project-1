@@ -11,17 +11,34 @@
 @implementation Cell (mutation)
 
 - (void)mutate:(int)percent {
-    NSMutableArray *storedIndexes = [[NSMutableArray alloc] init];
-    for (int i = 0; i < percent; i++) {
-        int rndIndex = arc4random()%100;
-        if ([storedIndexes containsObject:[NSNumber numberWithInt:rndIndex]]) {
-            i--;
+    if (percent > 100 || percent < 0) {
+        exit(EXIT_FAILURE);
+    }
+    int proteinsToReplace = abs(DNA_LENGTH*percent/100);
+    
+    NSMutableDictionary *usedIndexes = [[NSMutableDictionary alloc] initWithCapacity:proteinsToReplace];
+
+    int replacedProteins = 0;
+    while (replacedProteins != proteinsToReplace) {
+        int rndIndex = arc4random()%DNA_LENGTH;
+        NSNumber *currentIndex = [NSNumber numberWithInt:rndIndex];
+        if ([usedIndexes objectForKey:currentIndex]) {
+            continue;
         }
-        else {
-            [storedIndexes addObject:[NSNumber numberWithInt:rndIndex]];
-            [dna replaceObjectAtIndex:rndIndex withObject:[proteins objectAtIndex:(0+arc4random()%4)]];
+        [usedIndexes setObject:[NSNumber numberWithInt:1] forKey:[NSNumber numberWithInt:rndIndex]];
+        NSString *protein;
+        while (YES) {
+            protein = [proteins objectAtIndex:arc4random()%[proteins count]];
+            if ([protein isEqualToString:[dna objectAtIndex:rndIndex]]) {
+                continue;
+            }
+            break;
         }
+        [dna replaceObjectAtIndex:rndIndex withObject:protein];
+        replacedProteins++;
+
     }
 }
+
 
 @end

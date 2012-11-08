@@ -14,10 +14,10 @@
 
 - (id)init {
     self = [super init];
-    dna = [[NSMutableArray alloc] initWithCapacity:100];
+    dna = [[NSMutableArray alloc] initWithCapacity:DNA_LENGTH];
     proteins = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
     if (self) {
-        for (int i=0; i < 100; i++) {
+        for (int i=0; i < DNA_LENGTH; i++) {
             [dna addObject:[proteins objectAtIndex:(0+arc4random()%4)]];
         }
     }
