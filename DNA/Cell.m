@@ -40,7 +40,7 @@
     
     // increase the counter if the values at the same index are not equal in two DNA arrays
     for (int i = 0; i < dnaCapacity; i++) {
-        if ([[cell.dna objectAtIndex:i] isEqualToString:[_dna objectAtIndex:i]]) {
+        if (![[cell.dna objectAtIndex:i] isEqualToString:[_dna objectAtIndex:i]]) {
             counter++;
         }
     }
