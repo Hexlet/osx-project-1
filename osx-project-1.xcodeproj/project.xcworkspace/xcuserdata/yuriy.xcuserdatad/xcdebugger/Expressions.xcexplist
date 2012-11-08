@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[Cell(Mutator) mutate:]:Cell+Mutator.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[nucleotide type]">
+            </PersistentString>
+            <PersistentString
+               value = "[currentNucletide type]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Nucleotide isEqual:]:Nucleotide.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((Nucleotide*)other).type">
+            </PersistentString>
+            <PersistentString
+               value = "_type">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
