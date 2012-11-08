@@ -15,7 +15,7 @@
     //NSString *joinedStringFirst = [self.dna componentsJoinedByString:@""];
     //NSLog(@"До мутации ДНК: %@", joinedStringFirst);
     int i=0;
-    while (i<=percent){
+    while (i<percent){
         int numCell=arc4random()%percent;
         
         int letterIntValue=arc4random()%4;
@@ -32,7 +32,7 @@
         
         //Следим чтобы ячейки в старом массиве не совпадали с новым и за тем что Ячейка не совпадала с тем чем будем менять
         
-        if([[oldDNA objectAtIndex:numCell] isEqual: [self.dna objectAtIndex:numCell]] || [oldDNA objectAtIndex:numCell]!=newCell){
+        if([[oldDNA objectAtIndex:numCell] isEqual: [self.dna objectAtIndex:numCell]] && [oldDNA objectAtIndex:numCell]!=newCell){
             [self.dna replaceObjectAtIndex:numCell withObject:newCell];
             i++;
         }
