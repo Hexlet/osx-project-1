@@ -30,7 +30,7 @@
     int distance = 0;
     for (int i = 0; i< capacity; i++)
     {
-        if([_DNA objectAtIndex:i]!=[anotherCell.DNA objectAtIndex:i])
+        if(![[_DNA objectAtIndex:i] isEqualTo: [anotherCell.DNA objectAtIndex:i]])
             distance++;
     }
     return distance;
