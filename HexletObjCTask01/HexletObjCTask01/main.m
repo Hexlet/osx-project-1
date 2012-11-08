@@ -36,6 +36,8 @@ int main(int argc, const char * argv[])
         printDna([cellOne getDna]);
         printf(" - Cell clone DNA (should be same): \n");
         printDna([cellOneClone getDna]);
+        printf(" - Hamming distance with clone: %d\n\n", [cellOne hammingDistance:cellOneClone]);
+        
         [cellOne mutate:73];
         printf(" - Cell DNA after mutation 73 percent: \n");
         printDna([cellOne getDna]);
