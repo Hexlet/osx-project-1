@@ -15,7 +15,7 @@ int main(int argc, const char * argv[])
         //Mutate both Cells.
         //Percents were not specified in task. I choose 10 and 40.
         [cell1 mutate:10];
-        [cell2 mutate:40];
+        [cell2 mutate:100];
         
         //Print hamming distance for Cell1 and Cell2
         NSLog(@"After mutation hamming distance: %d", [cell1 hammingDistance:cell2]);        

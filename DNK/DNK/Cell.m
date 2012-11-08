@@ -9,18 +9,18 @@
 @implementation Cell
 
 //Array of possible DNA values
-NSMutableArray *DnaTypes;
+static NSArray *DnaTypes;
 
 
 //Overloaded init
 -(id) init{
     //Call base init method
-    self = [super init];
+     if ((self = [super init])) {
     
-    [self InitVariables];
+         [self InitVariables];
     
-    [self fillDna];
-    
+         [self fillDna];
+    }
     return self;
 }
 
@@ -38,7 +38,7 @@ NSMutableArray *DnaTypes;
     //Cell's DNA array
     _DNA = [[NSMutableArray alloc] initWithCapacity:_DNACount];
     //Possible DNA values
-    DnaTypes= [[NSMutableArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
+    DnaTypes= [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
 }
 
 //Returns random DNA value one of specified in DnaTypes array
