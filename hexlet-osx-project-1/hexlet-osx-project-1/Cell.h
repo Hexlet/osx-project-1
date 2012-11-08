@@ -14,6 +14,9 @@
 @property NSMutableArray *DNA;
 
 
+// prints contents of DNA
 -(void) print;
+// calculates hamming distance between specified cell
+-(int) hammingDistance: (Cell *) aCell;
 
 @end

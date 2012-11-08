@@ -10,11 +10,13 @@
 
 @implementation Cell
 
+// number of elements in a cell
+static const int ELEMENTS_COUNT = 100;
+
 -(id) init {
     self = [super init];
     if (self) {
-        // number of elements in a cell
-        const int ELEMENTS_COUNT = 100;
+       
         // symbols that are used to fill DNA
         const NSArray *dnaStrings = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         // instantiate mutable array object
@@ -29,6 +31,18 @@
 
 -(void) print {
     NSLog(@"%@", _DNA);
+}
+
+-(int) hammingDistance:(Cell *)aCell {
+    int result = 0;
+    
+    for (int i = 0; i < ELEMENTS_COUNT; i++) {
+        if ([self.DNA objectAtIndex:i] != [aCell.DNA objectAtIndex:i]) {
+            result++;
+        }
+    }
+    
+    return result;
 }
 
 @end
