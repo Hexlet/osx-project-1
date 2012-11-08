@@ -34,9 +34,13 @@
             [numbersUsedinRandomChange addObject:random_numAsObject];
             int random_num2 = arc4random()%4;
             [self.DNA replaceObjectAtIndex:random_num withObject:[codes objectAtIndex:random_num2]];
+//            NSLog(@"array count:%lu", [numbersUsedinRandomChange count]);// должно равнять заданному параметру percentage
             
         }
+        else
+            i--;// чтобы действительно изменить x заданных процентов 
     }
+
 }
 
 
@@ -53,8 +57,8 @@ int main(int argc, const char * argv[])
         Cell *anotherCell = [[Cell alloc] init];
 //       NSLog(@"%@",aCell.DNA);
         NSLog(@"%d",[aCell hammingDistance:anotherCell]);
-        [aCell mutateBy:30];
-        [anotherCell mutateBy:50];
+        [aCell mutateBy:70];
+        [anotherCell mutateBy:70];
 //        NSLog(@"%@",aCell.DNA);
         
          NSLog(@"%d",[aCell hammingDistance:anotherCell]);
