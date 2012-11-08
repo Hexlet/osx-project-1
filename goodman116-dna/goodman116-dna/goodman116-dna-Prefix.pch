@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'goodman116-dna' target in the 'goodman116-dna' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
