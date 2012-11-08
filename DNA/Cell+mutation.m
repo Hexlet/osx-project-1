@@ -27,9 +27,12 @@
         }
         [usedIndexes setObject:[NSNumber numberWithInt:1] forKey:[NSNumber numberWithInt:rndIndex]];
         NSString *protein;
+        NSMutableArray *tmpProteins = [[NSMutableArray alloc] initWithArray:proteins];
         while (YES) {
-            protein = [proteins objectAtIndex:arc4random()%[proteins count]];
+            int rndProteinIndex = arc4random()%[tmpProteins count];
+            protein = [tmpProteins objectAtIndex:rndProteinIndex];
             if ([protein isEqualToString:[dna objectAtIndex:rndIndex]]) {
+                [tmpProteins removeObjectAtIndex:rndProteinIndex];
                 continue;
             }
             break;
