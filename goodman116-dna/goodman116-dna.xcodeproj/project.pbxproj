@@ -10,6 +10,8 @@
 		FDA60EFE16484ADC00389CA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA60EFD16484ADC00389CA2 /* Foundation.framework */; };
 		FDA60F0116484ADC00389CA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA60F0016484ADC00389CA2 /* main.m */; };
 		FDA60F0516484ADC00389CA2 /* goodman116_dna.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FDA60F0416484ADC00389CA2 /* goodman116_dna.1 */; };
+		FDA60F0D16484B7300389CA2 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA60F0C16484B7300389CA2 /* Cell.m */; };
+		FDB35E0B1649A1510006A6F5 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB35E0A1649A1510006A6F5 /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		FDA60F0016484ADC00389CA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FDA60F0316484ADC00389CA2 /* goodman116-dna-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "goodman116-dna-Prefix.pch"; sourceTree = "<group>"; };
 		FDA60F0416484ADC00389CA2 /* goodman116_dna.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = goodman116_dna.1; sourceTree = "<group>"; };
+		FDA60F0B16484B7300389CA2 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		FDA60F0C16484B7300389CA2 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		FDB35E091649A1510006A6F5 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		FDB35E0A1649A1510006A6F5 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,10 @@
 				FDA60F0016484ADC00389CA2 /* main.m */,
 				FDA60F0416484ADC00389CA2 /* goodman116_dna.1 */,
 				FDA60F0216484ADC00389CA2 /* Supporting Files */,
+				FDA60F0B16484B7300389CA2 /* Cell.h */,
+				FDB35E091649A1510006A6F5 /* Cell+Mutator.h */,
+				FDB35E0A1649A1510006A6F5 /* Cell+Mutator.m */,
+				FDA60F0C16484B7300389CA2 /* Cell.m */,
 			);
 			path = "goodman116-dna";
 			sourceTree = "<group>";
@@ -114,8 +124,9 @@
 		FDA60EF016484ADC00389CA2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = com.gmail.goodman116;
 				LastUpgradeCheck = 0450;
-				ORGANIZATIONNAME = goodman116;
+				ORGANIZATIONNAME = "goodman116@gmail.com";
 			};
 			buildConfigurationList = FDA60EF316484ADC00389CA2 /* Build configuration list for PBXProject "goodman116-dna" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -140,6 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDA60F0116484ADC00389CA2 /* main.m in Sources */,
+				FDA60F0D16484B7300389CA2 /* Cell.m in Sources */,
+				FDB35E0B1649A1510006A6F5 /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +249,7 @@
 				FDA60F0A16484ADC00389CA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
