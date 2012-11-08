@@ -20,38 +20,43 @@
     
     NSMutableArray *testArr = [NSMutableArray array];
     
-    for(int i=1; i<=mut; i++){
+    int countPercents = [self.dnaarr count]*mut/100;
+    
+    for(int i=1; i<=countPercents; i++){
         
-     int randValue1 = (arc4random() % 100) + 1;
+     int randValue1 = (arc4random() % 99) + 1;
         
         if(![testArr containsObject:[NSNumber numberWithInt:randValue1]]){
             
             int randValue = (arc4random() % 4) + 1;
             //NSLog(@"%d", randValue);
-            if (randValue==1){
+            if (randValue==1 || ([self.dnaarr objectAtIndex:randValue1]!=@"A")){
                 
-                [self.dnaarr insertObject:@"A" atIndex:randValue1];
-                
-            }
-            
-            if (randValue==2){
-                
-                [self.dnaarr insertObject:@"T" atIndex:randValue1];
+                [self.dnaarr replaceObjectAtIndex:randValue1 withObject:@"A"];
                 
             }
             
-            if (randValue==3){
+           else if (randValue==2 || [self.dnaarr objectAtIndex:randValue1]!=@"T"){
                 
-                [self.dnaarr insertObject:@"G" atIndex:randValue1];
+                [self.dnaarr replaceObjectAtIndex:randValue1 withObject:@"T"];
                 
             }
             
-            if (randValue==4){
+           else if (randValue==3 || [self.dnaarr objectAtIndex:randValue1]!=@"G"){
                 
-                [self.dnaarr insertObject:@"C" atIndex:randValue1];
+                [self.dnaarr replaceObjectAtIndex:randValue1 withObject:@"G"];
                 
             }
- 
+            
+           else if (randValue==4 || [self.dnaarr objectAtIndex:randValue1]!=@"C"){
+                
+                [self.dnaarr replaceObjectAtIndex:randValue1 withObject:@"C"];
+                
+            }
+           else{
+               
+               i--;
+           }
             
             
         }
@@ -60,8 +65,8 @@
                  i--;
                  
              }
-             
-        [testArr addObject:[NSNumber numberWithInt:randValue1]];
+        if(![testArr containsObject:[NSNumber numberWithInt:randValue1]])  [testArr addObject:[NSNumber numberWithInt:randValue1]];
+        
         
         
         

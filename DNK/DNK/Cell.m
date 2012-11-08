@@ -25,19 +25,19 @@
                 
             }
             
-            if (randValue==2){
+            else if (randValue==2){
                 
                 [_dnaarr insertObject:@"T" atIndex:i];
                 
             }
             
-            if (randValue==3){
+            else if (randValue==3){
                 
                 [_dnaarr insertObject:@"G" atIndex:i];
                 
             }
             
-            if (randValue==4){
+            else if (randValue==4){
                 
                 [_dnaarr insertObject:@"C" atIndex:i];
                 
