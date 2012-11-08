@@ -10,7 +10,7 @@
 
 @implementation Cell (Mutator)
 -(void) mutate: (int) percent {
-    NSMutableArray *oldDNA=self.dna;
+    NSMutableArray *oldDNA=[NSMutableArray arrayWithArray: self.dna];
     
     //NSString *joinedStringFirst = [self.dna componentsJoinedByString:@""];
     //NSLog(@"До мутации ДНК: %@", joinedStringFirst);
@@ -32,7 +32,7 @@
         
         //Следим чтобы ячейки в старом массиве не совпадали с новым и за тем что Ячейка не совпадала с тем чем будем менять
         
-        if(![[oldDNA objectAtIndex:numCell] isEqual: [self.dna objectAtIndex:numCell]] || [oldDNA objectAtIndex:numCell]!=newCell){
+        if([[oldDNA objectAtIndex:numCell] isEqual: [self.dna objectAtIndex:numCell]] || [oldDNA objectAtIndex:numCell]!=newCell){
             [self.dna replaceObjectAtIndex:numCell withObject:newCell];
             i++;
         }

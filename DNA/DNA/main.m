@@ -22,7 +22,8 @@ int main(int argc, const char * argv[])
         dnaSecond=[[Cell alloc ] init];
         
         //Выводим 2 днк до мутации на экран
-        [dnaFirst printDnas: dnaSecond];
+        NSLog(@"Первая ДНК %@",[dnaFirst getString]);
+        NSLog(@"Первая ДНК %@",[dnaSecond getString]);
         
         //Выводим разницу между ними.
         NSLog(@"Разница %d",[dnaFirst hammingDistance:dnaSecond]);
@@ -32,9 +33,9 @@ int main(int argc, const char * argv[])
         NSLog(@"Мутация");
         [dnaFirst mutate:5];
         [dnaSecond mutate:5];
-        [dnaFirst printDnas: dnaSecond];
+        NSLog(@"Первая ДНК %@",[dnaFirst getString]);
+        NSLog(@"Первая ДНК %@",[dnaSecond getString]);
         NSLog(@"Разница %d",[dnaFirst hammingDistance:dnaSecond]);
-        
         
     }
     return 0;

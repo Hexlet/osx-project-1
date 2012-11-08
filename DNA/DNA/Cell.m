@@ -45,14 +45,12 @@
     return hammingDistance;
 }
  
--(void) printDnas:(Cell *)f{
+-(id) getString{
     //Превращаем в строки массивы
     NSString *joinedStringFirst = [self.dna componentsJoinedByString:@""];
-    NSString *joinedStringSecond = [f.dna componentsJoinedByString:@""];
     
     //Выводим
-    NSLog(@"Первая ДНК: %@", joinedStringFirst);
-    NSLog(@"Вторая ДНК: %@", joinedStringSecond);
+    return joinedStringFirst;
 }
 
 

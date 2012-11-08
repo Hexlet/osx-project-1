@@ -11,5 +11,5 @@
 @interface Cell : NSObject 
 @property NSMutableArray *dna;
 -(int)  hammingDistance: (Cell *)f;
--(void) printDnas:(Cell *)f;
+-(id) getString;
 @end
