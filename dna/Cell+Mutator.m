@@ -24,7 +24,9 @@
     
     for (int i = 0; i < mutations; i++) {
         int index = [[indexes objectAtIndex:i] intValue];
-        [self.DNA replaceObjectAtIndex:index withObject:[[Nucleotide alloc] initRandom]];
+        Nucleotide *old_nucleotide = [self.DNA objectAtIndex:index];
+        Nucleotide *new_nucleotide = [[Nucleotide alloc] initRandomNotAsNucleotide:old_nucleotide];
+        [self.DNA replaceObjectAtIndex:index withObject:new_nucleotide];
     }
 }
 

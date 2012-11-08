@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum nucleotide {A = 0, T, G, C} NucleotideCode;
+typedef enum nucleotide {A = 0, T, G, C, TOTAL_NUCLEOTIDS} NucleotideCode;
 
 @interface Nucleotide : NSObject
 
 @property (readonly) NucleotideCode nucleotideCode;
 
 - (Nucleotide *)initRandom;
+- (Nucleotide *)initRandomNotAsNucleotide:(Nucleotide *)nucleotide;
 - (BOOL)isEqualToNucleotide:(Nucleotide *)nucleotide;
 
 @end

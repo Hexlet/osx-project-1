@@ -13,7 +13,22 @@
 - (Nucleotide *)initRandom {
     self = [super init];
     
-    _nucleotideCode = (NucleotideCode)(arc4random() % (int)(C + 1));
+    _nucleotideCode = (NucleotideCode)(arc4random() % TOTAL_NUCLEOTIDS);
+    
+    return self;
+}
+
+- (Nucleotide *)initRandomNotAsNucleotide:(Nucleotide *)nucleotide {
+    self = [super init];
+    
+    NSMutableArray *usefullCodes = [[NSMutableArray alloc] init];
+    for (int i = 0; i < TOTAL_NUCLEOTIDS; i++) {
+        if (i != nucleotide.nucleotideCode) {
+            [usefullCodes addObject:[[NSNumber alloc] initWithInt:i]];
+        }
+    }
+    int randomIndex = arc4random() % [usefullCodes count];
+    _nucleotideCode = (NucleotideCode)[[usefullCodes objectAtIndex:randomIndex] intValue];
     
     return self;
 }
