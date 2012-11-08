@@ -51,18 +51,20 @@
 {
     
     int n = (int)floor(_dna.count*x/100); // n количество ячеек которые нужно заменить от x %
+    NSString  *mLeter = [gen objectAtIndex:arc4random()%4]; // буква на которую будем менять
    
     
-    for (int i = 0; i < n; i++)   
-    {
-        NSString *leter = [_dna objectAtIndex:i]; // определяем букву по индексу
+    for (int i = 0; i < n; i++)   {
+        int m = arc4random()%_dna.count; // выбираем случайный индекс
+        NSString *leter = [_dna objectAtIndex:m]; // определяем букву по индексу
 
        
-       if ( [leter isEqual:leter] )  // если одинаковые меняем
-        {
-            [_dna replaceObjectAtIndex:i withObject:[gen objectAtIndex:arc4random()%4]];
-        }
-    
+        if ([leter isEqual:mLeter]) {
+            [_dna replaceObjectAtIndex:m withObject:mLeter];
+        } else {
+            [_dna replaceObjectAtIndex:m withObject:mLeter];
+        } 
+
     }
     
 }
