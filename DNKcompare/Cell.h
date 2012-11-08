@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+//размерность ДНК
+#define sizeDNA 100 // НЕ задавать меньше 1 !
+
 @interface Cell : NSObject
 
 // Основной массив, создаем свойство с методами 
