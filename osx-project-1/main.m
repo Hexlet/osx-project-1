@@ -16,18 +16,16 @@ int main(int argc, const char * argv[])
         // init cells
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
-        [cell1 print];
-        [cell2 print];
+        NSLog(@"\n%@\n%@", cell1, cell2);
         
         // calculate hamming distance
         int hammingDistance = [cell1 hammingDistance:cell2];
         NSLog(@"%i", hammingDistance);
         
         // mutate
-        [cell1 mutator:83];
+        [cell1 mutator:86];
         [cell2 mutator:37];
-        [cell1 print];
-        [cell2 print];
+        NSLog(@"\n%@\n%@", cell1, cell2);
         
         // calculate hamming distance after mutate
         hammingDistance = [cell1 hammingDistance:cell2];

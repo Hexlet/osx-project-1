@@ -10,9 +10,8 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *dna;
+@property (readonly) NSMutableArray *dna;
 
-- (void)print;
 - (int)hammingDistance:(Cell *)cell;
 
 @end

@@ -23,8 +23,8 @@
     return self;
 }
 
-- (void)print {
-    NSLog(@"%@", [_dna componentsJoinedByString:@""]);
+-(NSString *)description {
+    return [_dna componentsJoinedByString:@""];
 }
 
 - (int)hammingDistance:(Cell *)cell {
@@ -35,7 +35,7 @@
     dna2 = [cell dna];
     
     for (i = 0; i < _dna.count; i++) {
-        if ([_dna objectAtIndex:i] != [dna2 objectAtIndex:i]) {
+        if ([[_dna objectAtIndex:i] isNotEqualTo: [dna2 objectAtIndex:i]]) {
             hammingDistance++;
         }
     }
@@ -60,9 +60,9 @@
     
     NSMutableArray *usedIndexes = [[NSMutableArray alloc] init];
     
-    int i, replaceIndex;
-    long replaceChars = lroundf(_dna.count * percent / 100);
-    for (i = 0; i < replaceChars; i++) {
+    int replaceIndex;
+    long replaceChars = lroundf(_dna.count * percent / 100.0f);
+    for (int i = 0; i < replaceChars; i++) {
         while (YES) {
             replaceIndex = arc4random()%_dna.count;
             if (![usedIndexes containsObject:[NSNumber numberWithInt:replaceIndex]]) {
@@ -72,13 +72,12 @@
         }
         while (YES) {
             NSString *newChar = [Cell getRandomChar];
-            if ([_dna objectAtIndex:replaceIndex] != newChar) {
+            if ([[_dna objectAtIndex:replaceIndex] isNotEqualTo: newChar]) {
                 [_dna replaceObjectAtIndex:replaceIndex withObject:newChar];
                 break;
             }
         }
     }
-    srand((unsigned)time(NULL));
 }
 
 @end
