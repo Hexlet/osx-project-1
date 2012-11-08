@@ -28,7 +28,7 @@
 -(int)hammingDistance:(Cell*) prob1 {
     int n = 0;
     for (int i = 0; i < 100; i++) {
-        if ([DNA[i] self] == [prob1 getCell:i]) {
+        if ([DNA[i] self] != [prob1 getCell:i]) {
             n++;
         }
     }
