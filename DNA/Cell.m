@@ -25,7 +25,7 @@
 -(int)hammingDistance:(Cell *)c{
     int result = 0;
     for (int i = 0; i < 100; i++) {
-        if ([_dna objectAtIndex:i] == [[c dna] objectAtIndex:i]) {
+        if ([_dna objectAtIndex:i] != [[c dna] objectAtIndex:i]) {
             result++;
         }
     }
