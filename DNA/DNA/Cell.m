@@ -24,9 +24,10 @@
             
         [self.dna addObject:[gen objectAtIndex:arc4random()%4]];
     }
-     
+    // NSLog(@"dna %@", _dna);
     
     return self;
+    
 }
 
 -(int)hammingDistance:(Cell *)cell
@@ -36,6 +37,7 @@
     {
         if ( ![[_dna objectAtIndex:i] isEqual:[cell.dna objectAtIndex:i]] ) count++;
     }
+    
     return count;
 }
 
@@ -66,7 +68,7 @@
         } 
 
     }
-    
+    //NSLog(@"mDna %@", _dna);
 }
 
 @end

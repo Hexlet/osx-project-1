@@ -16,10 +16,12 @@ int main(int argc, const char * argv[])
         Cell *cellDna = [[Cell alloc] init];
         Cell *cellDna2 = [[Cell alloc] init];
         
-        NSLog(@"Distance before mutation: %d", [cellDna hammingDistance:cellDna]);
+        NSLog(@"Distance before mutation: %d", [cellDna hammingDistance:cellDna2]);
         
         
+        [cellDna mutate:10];
         [cellDna2 mutate:100];
+        
         
         NSLog(@"Distance after mutation: %d", [cellDna hammingDistance:cellDna2]);
     
