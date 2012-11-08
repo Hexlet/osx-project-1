@@ -10,8 +10,12 @@
 #define capacity 100
 
 @interface Cell : NSObject
-@property (readonly, nonatomic, strong) NSMutableArray *DNA;
+{
+    NSMutableArray *DNA;
+}
+
 @property (readonly, nonatomic, strong) NSArray *nucleobase;
 
 - (int)hammingDistance: (Cell*)anotherCell;
+- (NSMutableArray*)DNA;
 @end
