@@ -19,14 +19,14 @@ int main(int argc, const char * argv[])
         Cell *oneCell = [[Cell alloc] init];
         Cell *twoCell = [[Cell alloc] init];
         
-        int numberOfDifferentSymbols= [oneCell hammingDistance:twoCell];
-        NSLog(@"Number of different symbol between oneCell and twoCell is %i", numberOfDifferentSymbols);
+        NSLog(@"Number of different symbol between oneCell and twoCell is %i",
+              [oneCell hammingDistance:twoCell]);
         
         [oneCell mutate:43];
         [twoCell mutate:71];
         
-        numberOfDifferentSymbols = [oneCell hammingDistance:twoCell];
-        NSLog(@"Number of different symbol between oneCell and twoCell is %i", numberOfDifferentSymbols);
+        NSLog(@"Number of different symbol between oneCell and twoCell is %i",
+              [oneCell hammingDistance:twoCell]);
         
     }
     return 0;
