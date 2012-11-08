@@ -19,7 +19,7 @@ NSArray const *SYMBOLS = nil;
     self = [super init];
     
     if (self) {
-        _dna = [NSMutableArray arrayWithCapacity:100];
+        self.dna = [NSMutableArray arrayWithCapacity:100];
         for (int i=0; i<100; i++) {
             [self.dna addObject:[SYMBOLS objectAtIndex:arc4random()%[SYMBOLS count]]];
         }
@@ -31,7 +31,7 @@ NSArray const *SYMBOLS = nil;
     
     unsigned int counter = 0;
     
-    for (int i=0; i<100; i++) {
+    for (int i=0; i<[self.dna count]; i++) {
         if (![[self.dna objectAtIndex:i] isEqual:[mas.dna objectAtIndex:i]]) {
             counter++;
         }
@@ -43,14 +43,18 @@ NSArray const *SYMBOLS = nil;
 
 @implementation Cell(mutator)
 
-- (void)mutate:(int)percent {
+- (void)mutate:(unsigned int)percent {
+    
+    if (percent > 100) {
+        [NSException raise:@"Wrong value for percent!" format:@"Percent should be in range of 0 to 100"];
+    }
     
     NSMutableArray *alreadyChanged = [NSMutableArray arrayWithCapacity:percent];
      
     for (int i=0; i<percent; i++) {
         BOOL complete = NO;
         do {
-            NSNumber *index = [NSNumber numberWithInt:arc4random()%100];
+            NSNumber *index = [NSNumber numberWithInt:arc4random()%[self.dna count]];
             if (![alreadyChanged containsObject:index]) {
                 
                 NSString *newElement = [SYMBOLS objectAtIndex:arc4random()%[SYMBOLS count]];

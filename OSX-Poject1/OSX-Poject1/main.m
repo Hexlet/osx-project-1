@@ -14,7 +14,7 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        int hamming_distance;
+        int hamming_distance = 0;
         
         Cell *dnk1 = [[Cell alloc] init];
         Cell *dnk2 = [[Cell alloc] init];

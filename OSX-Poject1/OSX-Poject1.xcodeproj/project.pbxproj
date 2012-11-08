@@ -211,6 +211,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OSX-Poject1/OSX-Poject1-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -220,6 +221,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OSX-Poject1/OSX-Poject1-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};

@@ -18,6 +18,6 @@
 
 @interface Cell(mutator)
 
-    - (void)mutate:(int)percent;
+    - (void)mutate:(unsigned int)percent;
 
 @end
