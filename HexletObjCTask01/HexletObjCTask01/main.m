@@ -13,7 +13,7 @@ void printDna(NSMutableArray* dna) {
     unsigned long dnaLength = [dna count];
     for(int i=0;i<dnaLength; i++) {
         const char *dnaStr = [[dna objectAtIndex:i] UTF8String];
-        printf(dnaStr);
+        printf("%s", dnaStr);
     }
     printf("\n");
 }
@@ -39,6 +39,11 @@ int main(int argc, const char * argv[])
         printf(" - Cell DNA after mutation 73 percent: \n");
         printDna([cellOne getDna]);
         printf(" - Hamming distance with 73 percent mutated self: %d\n", [cellOne hammingDistance:cellOneClone]);
+        Cell *cellOneCloneTwo = [cellOneClone clone];
+        [cellOneCloneTwo mutate:-10];
+        printf("\nNegative mutation percentage test:\n");
+        printDna([cellOneCloneTwo getDna]);
+        printf(" - Hamming distance with -10 percent mutated self: %d\n", [cellOneClone hammingDistance:cellOneCloneTwo]);
     }
     return 0;
 }

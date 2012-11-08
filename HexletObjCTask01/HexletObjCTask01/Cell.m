@@ -47,31 +47,33 @@
 }
 
 -(void)mutate:(int)percent {
-    if(percent==0) return;
-    percent = percent%100;
-    if(percent==0) percent = 100;
-    // Yeah, I assume 100 length for DNA 'cause I'm too lazy to handle other cases
-    int* indexes = malloc(sizeof(int)*percent);
-    indexes[0] = rand()%100;
-    int length = 1;
-    while(length<percent) {
-        unsigned int nextIdx = arc4random()%100;
-        bool present = false;
-        for(int f=0; f<length; f++) {
-            if(indexes[f]==nextIdx) {
-                present = true;
-                break;
+    @autoreleasepool {
+        if(percent<1) return;
+        percent = percent%100;
+        if(percent==0) percent = 100;
+        // Yeah, I assume 100 length for DNA 'cause I'm too lazy to handle other cases
+        int* indexes = malloc(sizeof(int)*percent);
+        indexes[0] = rand()%100;
+        int length = 1;
+        while(length<percent) {
+            unsigned int nextIdx = arc4random()%100;
+            bool present = false;
+            for(int f=0; f<length; f++) {
+                if(indexes[f]==nextIdx) {
+                    present = true;
+                    break;
+                }
+            }
+            if(!present) {
+                indexes[length]=nextIdx;
+                length++;
             }
         }
-        if(!present) {
-            indexes[length]=nextIdx;
-            length++;
+        //printf("Mutating at %d indexes\n", length);
+        for(int f=0; f<length; f++) {
+            //printf(" - index: %d\n", indexes[f]);
+            [self changeToRandomAt:indexes[f]];
         }
-    }
-    //printf("Mutating at %d indexes\n", length);
-    for(int f=0; f<length; f++) {
-        //printf(" - index: %d\n", indexes[f]);
-        [self changeToRandomAt:indexes[f]];
     }
 }
 
