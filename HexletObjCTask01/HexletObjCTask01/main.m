@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
+#import "Cell+mutation.h"
 
 void printDna(NSMutableArray* dna) {
     unsigned long dnaLength = [dna count];

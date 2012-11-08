@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletObjCTask01/Cell.m"
-         timestampString = "374079565.766707"
+         timestampString = "374080264.061181"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "82"
-         endingLineNumber = "82"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
          landmarkName = "-hammingDistance:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletObjCTask01/Cell.m"
-         timestampString = "374079565.766707"
+         timestampString = "374080264.061181"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "118"
-         endingLineNumber = "118"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
          landmarkName = "@implementation Cell"
          landmarkType = "3">
       </FileBreakpoint>
@@ -34,7 +34,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "HexletObjCTask01/Cell.h"
-         timestampString = "373937116.299215"
+         timestampString = "374080264.061181"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "13"
@@ -46,25 +46,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "HexletObjCTask01/Cell.h"
-         timestampString = "373937116.299215"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "17"
-         endingLineNumber = "17"
-         landmarkName = "@interface Cell(mutation)"
-         landmarkType = "2">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "HexletObjCTask01/main.m"
-         timestampString = "373938081.087023"
+         timestampString = "374080264.061181"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "33"
-         endingLineNumber = "33"
+         startingLineNumber = "34"
+         endingLineNumber = "34"
          landmarkName = "main()"
          landmarkType = "7">
       </FileBreakpoint>

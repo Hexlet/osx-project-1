@@ -11,9 +11,6 @@
 @interface Cell : NSObject
 -(int)hammingDistance:(Cell*)otherCell;
 -(NSMutableArray*)getDna;
++(char)getAsCharFromDna:(NSMutableArray*)theDna atIndex:(int)index;
 -(Cell*)clone;
-@end
-
-@interface Cell (mutation)
--(void)mutate:(int)percent;
 @end

@@ -11,6 +11,7 @@
 		1858AD4C1649C23000B1D059 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858AD4B1649C23000B1D059 /* main.m */; };
 		1858AD501649C23000B1D059 /* HexletObjCTask01.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1858AD4F1649C23000B1D059 /* HexletObjCTask01.1 */; };
 		1858AD581649C29600B1D059 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1858AD571649C29600B1D059 /* Cell.m */; };
+		18B04EB9164C01F6006C01DA /* Cell+mutation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B04EB8164C01F6006C01DA /* Cell+mutation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		1858AD4F1649C23000B1D059 /* HexletObjCTask01.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = HexletObjCTask01.1; sourceTree = "<group>"; };
 		1858AD561649C29600B1D059 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		1858AD571649C29600B1D059 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		18B04EB7164C01F6006C01DA /* Cell+mutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutation.h"; sourceTree = "<group>"; };
+		18B04EB8164C01F6006C01DA /* Cell+mutation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				1858AD4D1649C23000B1D059 /* Supporting Files */,
 				1858AD561649C29600B1D059 /* Cell.h */,
 				1858AD571649C29600B1D059 /* Cell.m */,
+				18B04EB7164C01F6006C01DA /* Cell+mutation.h */,
+				18B04EB8164C01F6006C01DA /* Cell+mutation.m */,
 			);
 			path = HexletObjCTask01;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			files = (
 				1858AD4C1649C23000B1D059 /* main.m in Sources */,
 				1858AD581649C29600B1D059 /* Cell.m in Sources */,
+				18B04EB9164C01F6006C01DA /* Cell+mutation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				1858AD551649C23000B1D059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
