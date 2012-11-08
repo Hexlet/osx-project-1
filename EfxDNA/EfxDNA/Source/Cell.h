@@ -12,7 +12,7 @@
 @property int DNAVariations; // number of nucleotids for DNA item
 
 -(id) init;
--(id) initWithCapacity: (int) aCapacity; // for debug: ability create small array of DNA
+-(id) initWithCapacity: (int) aCapacity; // for debug: ability create small array of DNA & 4 nucleotids variations
 // for future: (id) initWitCapacity: (int) aCapacity andVariations: (int) aVariations;
 
 -(int) hammingDistance:(Cell *) cell;
