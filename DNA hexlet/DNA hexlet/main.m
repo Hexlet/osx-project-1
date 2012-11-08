@@ -32,8 +32,8 @@
     for(int index=0;index<value;index++){
         randomIndex =(int)(arc4random() % dna.count);
         randomIndex2=(int)(arc4random() % lettersArray.count);
-        if(![usedIndexes containsObject:[NSNumber numberWithInt:randomIndex]]){
-           [self.dna replaceObjectAtIndex:randomIndex withObject:[lettersArray objectAtIndex:randomIndex2]];
+        if(![usedIndexes containsObject:[NSNumber numberWithInt:randomIndex]] && ![[self.dna objectAtIndex:index]isEqual:[lettersArray objectAtIndex:randomIndex2]]){
+            [self.dna replaceObjectAtIndex:randomIndex withObject:[lettersArray objectAtIndex:randomIndex2]];
             [usedIndexes addObject:[NSNumber numberWithInt:randomIndex]];
             //NSLog(@"New index");
         }else{
@@ -61,6 +61,20 @@ int main(int argc, const char * argv[])
         NSLog(@"hammingDistance after mutate=%d",[cell hammingDistance:cell2]);
         //[cell print];
         //[cell2 print];
+        
+        for (int i = 0; i < 100; i++) {
+        
+            
+                int changeIndex = arc4random() % (i + 1);
+               
+            NSLog(@"fisher sranj %d",changeIndex);
+            
+            
+        }
+        
+        
+        
+        
 
         
         

@@ -12,16 +12,20 @@
 @synthesize dna;
 
 -(id)init{
-    dna=[[NSMutableArray alloc]init];
-    NSArray *lettersArray=@[@"A",@"T",@"C",@"G"];
-    int randomIndex;
-    for(int i=0;i<100;i++){
-           randomIndex =(int)(arc4random() % lettersArray.count);
-        [dna addObject:[lettersArray objectAtIndex:randomIndex]];
-
-    }
+    
     self=[super init];
-    return  self;
+    if(self){
+        dna=[[NSMutableArray alloc]init];
+        NSArray *lettersArray=@[@"A",@"T",@"C",@"G"];
+        int randomIndex;
+        for(int i=0;i<100;i++){
+             randomIndex =(int)(arc4random() % lettersArray.count);
+             [dna addObject:[lettersArray objectAtIndex:randomIndex]];
+
+        }
+        return  self;
+    }
+    return 0;
 }
 
 -(int)hammingDistance:(Cell*)cell{
