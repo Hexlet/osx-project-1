@@ -37,9 +37,13 @@
     {
         NSNumber *letter = [DNA objectAtIndex:[[indexForMutate objectAtIndex:i] intValue]];
         int new_letter;
-        do {
+        
+        do
+        {
             new_letter = rand()%letterLast;
-        } while (new_letter == [letter intValue]);
+        }
+        while (new_letter == [letter intValue]);
+        
         letter = [NSNumber numberWithInt:new_letter];
         [DNA replaceObjectAtIndex:[[indexForMutate objectAtIndex:i] intValue] withObject:letter];
     }
