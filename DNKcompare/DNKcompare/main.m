@@ -34,13 +34,13 @@
     NSArray *arrayCode = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
     // Переменная для случайного номера ДНК
     int dnaIndex = 0;
-    
+
     //Цикл по нужному количество изменяемых элементов
     for (int j=1; j<=countMutator; j++) {
         //Генерим случайное число от 0 до количества еще не мутировавших элементов
-        dnaIndex = arc4random_uniform(countMutator-j+1);
+        dnaIndex = arc4random_uniform(sizeDNA-j+1);
         //Меняем
-        [[self DNA] replaceObjectAtIndex:dnaIndex withObject:[arrayCode objectAtIndex:arc4random_uniform(4)]];
+        [[self DNA] replaceObjectAtIndex:[[arrayCheck objectAtIndex:dnaIndex] intValue] withObject:[arrayCode objectAtIndex:arc4random_uniform(4)]];
         // Удаляем мутировавший элемент из архива
         [arrayCheck removeObjectAtIndex:dnaIndex];
     }
@@ -70,7 +70,6 @@ int main(int argc, const char * argv[])
         //for (int i=0; i<sizeDNA; i++) {
         //    NSLog(@"#%i : %@ : %@",i,[[myCell DNA] objectAtIndex:i],[[otherCell DNA] objectAtIndex:i]);
         //}
-        
     }
     return 0;
 }
