@@ -61,7 +61,7 @@
         [elements removeObjectIdenticalTo:currentElementInDNA];
 
         //случайный индекс для для выбора элемента из массива мутации
-        randomElementIndex = arc4random()%3;
+        randomElementIndex = arc4random()% [elements count];
         
         //замена элемента массива DNA с индексом indexOfDNAForMutation случайным элементом
         [self.DNA replaceObjectAtIndex:indexOfDNAForMutation withObject:[elements objectAtIndex:randomElementIndex]];

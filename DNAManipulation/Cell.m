@@ -27,7 +27,7 @@
 
         //заполнение массива DNA случайными элементами
         for (NSUInteger index=0; index<DNA_LENGTH; index++) {
-            randomElementIndex = arc4random()%4;
+            randomElementIndex = arc4random()% [elements count];
             [_DNA insertObject:[elements objectAtIndex:randomElementIndex] atIndex:index];
         }
     }
