@@ -55,7 +55,7 @@ const int dnaSize = 100;
     
     for (int i = 0; i < dnaSize; i++)
     {
-        if ([dna objectAtIndex:i] != [otherCell->dna objectAtIndex:i])
+        if (![[dna objectAtIndex:i] isEqual:[otherCell->dna objectAtIndex:i]])
         {
             result++;
         }
