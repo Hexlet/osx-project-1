@@ -34,6 +34,8 @@
 @implementation Cell (Mutator)
 
 -(void)mutate:(int)percentsToChange {
+    if (percentsToChange > 100 || percentsToChange < 0)
+        return;
     NSInteger size = [self.DNA count];
     NSMutableArray *range = [NSMutableArray array];
     for (int i = 0; i < size; i++)
