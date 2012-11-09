@@ -26,7 +26,7 @@
         if (percent <= CELL_DIMENTION ){
             while (percent){
                 int mutatePos = arc4random() % CELL_DIMENTION;
-                NSString *mutatedItem =[DNA_SRC objectAtIndex:arc4random()%3];
+                NSString *mutatedItem =[DNA_SRC objectAtIndex:arc4random()%4];
                 if ([[mutatedDNA objectAtIndex:mutatePos] isEqual:[NSNumber numberWithBool:NO]] && ![mutatedItem isEqual:[srcDNA objectAtIndex:mutatePos]]){
                     [srcDNA replaceObjectAtIndex:mutatePos withObject:mutatedItem];
                     [mutatedDNA replaceObjectAtIndex:mutatePos withObject:[NSNumber numberWithBool:YES]];

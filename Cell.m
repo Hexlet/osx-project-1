@@ -22,7 +22,7 @@ const int CELL_DIMENTION = 100;
             int i;
             NSArray *DNA_SRC = [NSArray arrayWithObjects:@"A", @"T", @"G",@"C", nil];
             for(i = 0; i < CELL_DIMENTION; i++){
-                [DNA insertObject:[DNA_SRC objectAtIndex:arc4random()%3] atIndex:i];
+                [DNA insertObject:[DNA_SRC objectAtIndex:arc4random()%4] atIndex:i];
             }
         }
         return self;
