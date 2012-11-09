@@ -25,7 +25,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming distance between two DNAs is %i", [myDNA1 hammingDistance: myDNA2]);
         
         [myDNA1 mutate:32];
-        [myDNA2 mutate:50];
+        [myDNA2 mutate:20];
         
         NSLog(@"Hamming distance between two mutated DNAs is %i", [myDNA1 hammingDistance: myDNA2]);
         

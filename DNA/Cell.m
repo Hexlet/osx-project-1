@@ -28,7 +28,6 @@
         for (int i = 0; i < dnaCapacity; i++) {
             [_dna addObject:[_possibleDnaValues objectAtIndex:(arc4random() % [_possibleDnaValues count])]];
         }
-        // NSLog(@"array: %@", _dna);
     }
     
     return self;
@@ -40,7 +39,7 @@
     
     // increase the counter if the values at the same index are not equal in two DNA arrays
     for (int i = 0; i < dnaCapacity; i++) {
-        if (![[cell.dna objectAtIndex:i] isEqualToString:[_dna objectAtIndex:i]]) {
+        if ([cell.dna objectAtIndex:i] != [_dna objectAtIndex:i]) {
             counter++;
         }
     }

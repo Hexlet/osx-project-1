@@ -51,6 +51,8 @@
                 // add position of mutated value to mutatedElements array
                 [mutatedElements addObject:[NSNumber numberWithInt:indexToMutate]];
                 
+            } else {
+                continue;
             }
         }
         
