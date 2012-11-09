@@ -48,10 +48,12 @@ NSArray const *SYMBOLS = nil;
     if (percent > 100) {
         [NSException raise:@"Wrong value for percent!" format:@"Percent should be in range of 0 to 100"];
     }
+
+    int replacement = [self.dna count]*percent/100;
     
-    NSMutableArray *alreadyChanged = [NSMutableArray arrayWithCapacity:percent];
+    NSMutableArray *alreadyChanged = [NSMutableArray arrayWithCapacity:replacement];
      
-    for (int i=0; i<percent; i++) {
+    for (int i=0; i<replacement; i++) {
         BOOL complete = NO;
         do {
             NSNumber *index = [NSNumber numberWithInt:arc4random()%[self.dna count]];
