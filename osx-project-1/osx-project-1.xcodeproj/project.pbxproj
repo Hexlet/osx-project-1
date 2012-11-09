@@ -10,6 +10,9 @@
 		6B834717164D5593002F0BA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B834716164D5593002F0BA5 /* Foundation.framework */; };
 		6B83471A164D5593002F0BA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B834719164D5593002F0BA5 /* main.m */; };
 		6B83471E164D5593002F0BA5 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B83471D164D5593002F0BA5 /* osx_project_1.1 */; };
+		6B834726164D5640002F0BA5 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B834725164D5640002F0BA5 /* Cell.m */; };
+		6B834729164D566C002F0BA5 /* NSString+Nucleotides.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B834728164D566C002F0BA5 /* NSString+Nucleotides.m */; };
+		6B83472C164D56C1002F0BA5 /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B83472B164D56C0002F0BA5 /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +34,12 @@
 		6B834719164D5593002F0BA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6B83471C164D5593002F0BA5 /* osx-project-1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-project-1-Prefix.pch"; sourceTree = "<group>"; };
 		6B83471D164D5593002F0BA5 /* osx_project_1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = osx_project_1.1; sourceTree = "<group>"; };
+		6B834724164D5640002F0BA5 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		6B834725164D5640002F0BA5 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		6B834727164D566C002F0BA5 /* NSString+Nucleotides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Nucleotides.h"; sourceTree = "<group>"; };
+		6B834728164D566C002F0BA5 /* NSString+Nucleotides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Nucleotides.m"; sourceTree = "<group>"; };
+		6B83472A164D56C0002F0BA5 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
+		6B83472B164D56C0002F0BA5 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +83,12 @@
 			isa = PBXGroup;
 			children = (
 				6B834719164D5593002F0BA5 /* main.m */,
+				6B83472A164D56C0002F0BA5 /* Cell+Mutator.h */,
+				6B83472B164D56C0002F0BA5 /* Cell+Mutator.m */,
+				6B834724164D5640002F0BA5 /* Cell.h */,
+				6B834725164D5640002F0BA5 /* Cell.m */,
+				6B834727164D566C002F0BA5 /* NSString+Nucleotides.h */,
+				6B834728164D566C002F0BA5 /* NSString+Nucleotides.m */,
 				6B83471D164D5593002F0BA5 /* osx_project_1.1 */,
 				6B83471B164D5593002F0BA5 /* Supporting Files */,
 			);
@@ -140,6 +155,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B83471A164D5593002F0BA5 /* main.m in Sources */,
+				6B834726164D5640002F0BA5 /* Cell.m in Sources */,
+				6B834729164D566C002F0BA5 /* NSString+Nucleotides.m in Sources */,
+				6B83472C164D56C1002F0BA5 /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

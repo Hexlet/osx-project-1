@@ -7,14 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Cell+Mutator.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        srandom((unsigned)time(NULL)); // запуск генератора псевдослучайных чисел по времени (из лекции №3)
+        
+        id cell1, cell2;
+        cell1 = [Cell new];
+        cell2 = [Cell new];
+        
+        NSLog(@"%@",cell1);
+        NSLog(@"%@",cell2);
+        NSLog(@"%i",[cell1 hammingDistance: cell2]);
+        
+        [cell1 mutate:10];
+        [cell2 mutate:90];
+        NSLog(@"%@",cell1);
+        NSLog(@"%@",cell2);
+        NSLog(@"%i",[cell1 hammingDistance: cell2]);
         
     }
     return 0;
