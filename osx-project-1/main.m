@@ -7,14 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Cell.h"
 
 int main (int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        Cell *cell1;
+        Cell *cell2;
+        cell1 = [[Cell alloc] init];
+        cell2 = [[Cell alloc] init];
+        
+        NSLog(@"Distance: %d", [cell1 hammingDistance:cell2]);
         
     }
     return 0;
