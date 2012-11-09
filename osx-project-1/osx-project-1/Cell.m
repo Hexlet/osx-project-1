@@ -35,7 +35,8 @@ const int dnaSize = 100;
 
 -(NucleotidesEnum)nucleotideAtIndex:(int)index
 {
-    return (NucleotidesEnum)[dna objectAtIndex:index];
+    NSNumber *result = (NSNumber*)[dna objectAtIndex:index];
+    return [result intValue];
 }
 
 -(void)replaceNucleotideAtIndex:(int)index with:(NucleotidesEnum)nucleotide

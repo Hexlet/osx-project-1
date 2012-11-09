@@ -19,7 +19,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming distance before mutation is %d", [cell1 hammingDistanceWith:cell2]);
         
         // Mutate both, and recalculate hamming distance
-        double mutationRate = 10.0;
+        int mutationRate = 10;
         [cell1 mutate:mutationRate];
         [cell2 mutate:mutationRate];
         NSLog(@"Hamming distance after mutation is %d", [cell1 hammingDistanceWith:cell2]);

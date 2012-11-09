@@ -12,7 +12,7 @@
 
 -(void)mutate:(int)rate
 {
-    if ((rate < 0.0) || (rate > 100.0))
+    if ((rate < 0) || (rate > 100))
     {
         @throw [NSException exceptionWithName:@"Out of range" reason:@"Rate must be specified in percents (betwееn 0% and 100%)" userInfo:nil];
     }
@@ -38,11 +38,11 @@
     {
         int n = indexesToChange[i];
         NucleotidesEnum old = [self nucleotideAtIndex:n];
-        NucleotidesEnum new = rand() % NucleotidesEnumMax;
+        NucleotidesEnum new = rand() % (NucleotidesEnumMax - 1);
         
-        if (new == old)
+        if (new >= old)
         {
-            new = (new + 1) % NucleotidesEnumMax;
+            new++;
         }
         
         [self replaceNucleotideAtIndex:n with:new];
