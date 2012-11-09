@@ -1,14 +1,14 @@
 //
-//  Call.m
+//  Cell.m
 //  DNK
 //
 //  Created by Администратор on 11/6/12.
 //  Copyright (c) 2012 witem.artem@gmail.com. All rights reserved.
 //
 
-#import "Call.h"
+#import "Cell.h"
 
-@implementation Call 
+@implementation Cell 
 -(id) init {
     size=100;
     DNA=[NSMutableArray arrayWithCapacity:size];
@@ -34,7 +34,7 @@
     return self;
 }
 
--(int) hammingDistance: (Call *) newDNA {
+-(int) hammingDistance: (Cell *) newDNA {
     int a = 0;
     for (count=0; count<size; count++) {
         if ([DNA objectAtIndex:count]!=[newDNA->DNA objectAtIndex:count]) {

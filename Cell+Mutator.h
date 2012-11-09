@@ -1,5 +1,5 @@
 //
-//  Call+Mutator.h
+//  Cell+Mutator.h
 //  DNK
 //
 //  Created by Администратор on 11/8/12.
@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Call.h"
+#import "Cell.h"
 
-@interface Call (Mutator)
+@interface Cell (Mutator)
 
 -(void)mutate: (int) x;
 

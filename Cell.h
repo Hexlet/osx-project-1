@@ -1,5 +1,5 @@
 //
-//  Call.h
+//  Cell.h
 //  DNK
 //
 //  Created by Администратор on 11/6/12.
@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Call : NSObject {
+@interface Cell : NSObject {
     NSMutableArray *DNA;
     int count;
     int size;
 }
 
 
--(int) hammingDistance: (Call *) newDNA;
+-(int) hammingDistance: (Cell *) newDNA;
 //-(void) print;
 
 @end

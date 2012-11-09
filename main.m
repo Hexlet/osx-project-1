@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Call.h"
-#import "Call+Mutator.h"
+#import "Cell.h"
+#import "Cell+Mutator.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
-        Call *myDna1,*myDna2;
-        myDna1 = [[Call alloc] init];
-        myDna2 = [[Call alloc] init];
+        Cell *myDna1,*myDna2;
+        myDna1 = [[Cell alloc] init];
+        myDna2 = [[Cell alloc] init];
         
         NSLog(@"%d",[myDna1 hammingDistance:myDna2]);
         //[myDna1 print];
