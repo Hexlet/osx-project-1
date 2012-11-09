@@ -63,7 +63,7 @@
     {
         switch ([self getLetterByIndex:i])
         {
-            case leterA:
+            case letterA:
                 str = [str stringByAppendingString:@"A"];
                 break;
             case letterC:

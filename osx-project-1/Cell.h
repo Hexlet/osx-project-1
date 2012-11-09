@@ -13,7 +13,7 @@
 {
     enum DNALetters
     {
-        leterA = 0,
+        letterA = 0,
         letterC,
         letterT,
         letterG,
