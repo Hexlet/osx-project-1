@@ -10,7 +10,6 @@
 
 @interface Cell : NSObject
 
-
 @property NSMutableArray *DNA;
 
 
@@ -18,5 +17,10 @@
 -(void) print;
 // calculates hamming distance between specified cell
 -(int) hammingDistance: (Cell *) aCell;
+/* 
+ static method used to produce random DNA letter
+ returns "A", "G", "C", or "T" string
+ */
++(NSString *) getRandomDNALetter;
 
 @end
