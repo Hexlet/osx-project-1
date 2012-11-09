@@ -8,6 +8,7 @@
 
 #import "Cell.h"
 
+
 @implementation Cell
 
 @synthesize DNA = _DNA;
@@ -16,7 +17,6 @@
     self = [super init];
     if (self) {
         self.DNA = [NSMutableArray arrayWithCapacity:CELLSIZE];
-        NSArray *nucleoBaseArray = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         for (int i = 0; i < CELLSIZE; i++) {
             [self.DNA addObject: [nucleoBaseArray objectAtIndex: arc4random_uniform([nucleoBaseArray count])]];
         }

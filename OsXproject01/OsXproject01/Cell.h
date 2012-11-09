@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define nucleoBaseArray [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil]
 #define CELLSIZE 100
 
 @interface Cell : NSObject

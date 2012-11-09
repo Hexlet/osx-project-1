@@ -20,23 +20,26 @@
 - (void)mutator: (int)percentageOfSymbolsToMutate{
     if ((percentageOfSymbolsToMutate >= 0)&&(percentageOfSymbolsToMutate<=100)) { //checking if percentage is correct
         int numberOfSymbolsToMutate = (CELLSIZE * percentageOfSymbolsToMutate)/100;
+        
         NSMutableSet *mutatedObjectSet = [[NSMutableSet alloc] init]; // set to store unique indexes of mutated symbols
+        
         while (numberOfSymbolsToMutate > 0) {
-            NSNumber *indexOfSymbolToMutate = [NSNumber numberWithInt:arc4random_uniform(CELLSIZE)]; //picking random index
-            if (![mutatedObjectSet containsObject:indexOfSymbolToMutate]) {
-                //implementing mutation
-                NSMutableArray *nucleoBaseArray = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-                NSString *nucleoBase = [self.DNA objectAtIndex:[indexOfSymbolToMutate intValue]]; //current symbol
-                [nucleoBaseArray removeObject:nucleoBase]; //removing current symbol from available array
-                int randomSymbol = arc4random_uniform([nucleoBaseArray count]); //picking new symbol from remaining
-                [self.DNA replaceObjectAtIndex:[indexOfSymbolToMutate intValue] 
-                                    withObject:[nucleoBaseArray objectAtIndex:randomSymbol]]; //replacing symbol
-                //end of implementation
-                [mutatedObjectSet addObject:indexOfSymbolToMutate];
+            NSNumber *index = [NSNumber numberWithInt:arc4random_uniform(CELLSIZE)]; //picking random index
+            if (![mutatedObjectSet containsObject:index]){  
+                [mutatedObjectSet addObject:index];
                 numberOfSymbolsToMutate--;
             }
-            
         }
+        
+        for (NSNumber *index in mutatedObjectSet){
+            NSMutableArray *baseArray = [nucleoBaseArray mutableCopy];
+            NSString *nucleoBase = [self.DNA objectAtIndex:[index intValue]]; //current symbol
+            [baseArray removeObject:nucleoBase]; //removing current symbol from available array
+            int randomSymbol = arc4random_uniform([baseArray count]); //picking new symbol from remaining
+            [self.DNA replaceObjectAtIndex:[index intValue] 
+                                withObject:[baseArray objectAtIndex:randomSymbol]]; //replacing symbol
+        }
+        
         
     }else {
         NSLog(@"Percent value is out of range");
