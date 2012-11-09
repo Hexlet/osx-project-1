@@ -8,19 +8,31 @@
 
 #import "Cell.h"
 
-@implementation Cell {
-    int sizeOfDNA;
-    NSArray *nucleotides;
-}
+static int sizeOfDNA = 100;
+static NSInteger numberOfNucleotides;
+static NSArray *nucleotides;
+
+@implementation Cell
 
 @synthesize DNA;
+
++(void) initialize
+{
+    if (!nucleotides)
+    {
+    	nucleotides = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
+        numberOfNucleotides = [nucleotides count];
+    }
+}
+
++(NSString *)getRandomNucleotide {
+    return [nucleotides objectAtIndex:random() % numberOfNucleotides];
+}
 
 -(id)init {
     self = [super init];
     if (self) {
-        sizeOfDNA = 100;
         DNA = [NSMutableArray arrayWithCapacity:sizeOfDNA];
-        nucleotides = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
         [self fillWithRandomNucleotides];
     }
     return self;
@@ -29,11 +41,8 @@
 -(void)fillWithRandomNucleotides {
     if ([DNA count] > 0)
         [DNA removeAllObjects];
-    NSInteger numberOfNucleotides = [nucleotides count];
-    NSInteger rand;
     for (int i = 0; i < sizeOfDNA; i++) {
-        rand = random() % numberOfNucleotides;
-        [DNA addObject:[nucleotides objectAtIndex:rand]];
+        [DNA addObject:[[self class] getRandomNucleotide]];
     }
 }
 

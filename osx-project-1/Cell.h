@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject
+
 @property (nonatomic, readonly) NSMutableArray *DNA;
+
 -(int)hammingDistance:(Cell *)cell;
 -(void)fillWithRandomNucleotides;
++(NSString *)getRandomNucleotide;
 -(void)print;
 @end
