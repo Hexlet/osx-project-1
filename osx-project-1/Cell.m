@@ -29,6 +29,12 @@ static NSArray *nucleotides;
     return [nucleotides objectAtIndex:random() % numberOfNucleotides];
 }
 
++(NSString *)getRandomNucleotideExclude:(NSString *)exclude {
+    NSMutableArray *restNucleotides = [nucleotides mutableCopy];
+    [restNucleotides removeObjectIdenticalTo:exclude];
+    return [nucleotides objectAtIndex:random() % numberOfNucleotides];
+}
+
 -(id)init {
     self = [super init];
     if (self) {

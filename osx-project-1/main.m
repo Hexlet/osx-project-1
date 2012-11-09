@@ -42,9 +42,9 @@
         [range addObject:[NSNumber numberWithInteger:i]];
     for (int i = 0; i < size; i++)
         [range exchangeObjectAtIndex:i withObjectAtIndex:(arc4random() % (size - i)) + i];
-    int numberOfNucleotidesToChange = (int)(percentsToChange / size / 100);
+    int numberOfNucleotidesToChange = (int)(percentsToChange * size / 100);
     for (int i = 0; i < numberOfNucleotidesToChange; i++) {
-        [self.DNA replaceObjectAtIndex:(int)[range objectAtIndex:i] withObject:[[self class] getRandomNucleotide]];
+        [self.DNA replaceObjectAtIndex:[[range objectAtIndex:i] intValue] withObject:[[self class] getRandomNucleotideExclude:[self.DNA objectAtIndex:i]]];
     }
 }
 @end
@@ -61,8 +61,8 @@ int main (int argc, const char * argv[])
         
         NSLog(@"Hamming distance before: %d", [cell1 hammingDistance:cell2]);
         
-        [cell1 mutate:11];
-        [cell2 mutate:55];
+        [cell1 mutate:10];
+        [cell2 mutate:80];
         
         NSLog(@"Hamming distance after: %d", [cell1 hammingDistance:cell2]);
         

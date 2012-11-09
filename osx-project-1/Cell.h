@@ -11,9 +11,9 @@
 @interface Cell : NSObject
 
 @property (nonatomic, readonly) NSMutableArray *DNA;
-
++(NSString *)getRandomNucleotide;
++(NSString *)getRandomNucleotideExclude:(NSString *)exclude;
 -(int)hammingDistance:(Cell *)cell;
 -(void)fillWithRandomNucleotides;
-+(NSString *)getRandomNucleotide;
 -(void)print;
 @end

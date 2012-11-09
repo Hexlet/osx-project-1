@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		548778A7164D955800D21256 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BFDDC5164541DE00DA7BD4 /* main.m */; };
 		54BFDDC3164541DE00DA7BD4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54BFDDC2164541DE00DA7BD4 /* Foundation.framework */; };
-		54BFDDC6164541DE00DA7BD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BFDDC5164541DE00DA7BD4 /* main.m */; };
 		54BFDDCA164541DE00DA7BD4 /* osx_project_1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54BFDDC9164541DE00DA7BD4 /* osx_project_1.1 */; };
 		54E07015164D2EA400FF0B2C /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E07014164D2EA400FF0B2C /* Cell.m */; };
 /* End PBXBuildFile section */
@@ -143,8 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54BFDDC6164541DE00DA7BD4 /* main.m in Sources */,
 				54E07015164D2EA400FF0B2C /* Cell.m in Sources */,
+				548778A7164D955800D21256 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
