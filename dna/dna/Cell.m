@@ -21,15 +21,11 @@ const int numberOfUsedGenes = 4;
         for (int i = 0; i < dnaSize; ++i) {
             [DNA setObject:[self getRandomGene] atIndexedSubscript:i];
         }
-        // NSLog(@"Array: %@", DNA);
     }
     return self;
 }
 -(int)hammingDistance:(Cell *)sample {
     int difference = 0;
-    for (int i = 0; i < dnaSize; ++i) {
-        NSLog(@"%i: %@ %@", i, self->DNA[i], sample->DNA[i]);
-    }
     if ([DNA isEqualTo:sample->DNA] == NO) {
         for (int i = 0; i < dnaSize; ++i) {
             if (DNA[i] != sample->DNA[i]) {
@@ -50,7 +46,6 @@ const int numberOfUsedGenes = 4;
 @implementation Cell (mutator)
 -(void)mutate:(int)percentOfMutations{
     BOOL replacePositions[dnaSize];
-    // NSMutableArray *replacePositions = [[NSMutableArray alloc] initWithCapacity:dnaSize];
     int mutatePosition;
     
     int defaultValue = (percentOfMutations < 100) ? NO : YES;
