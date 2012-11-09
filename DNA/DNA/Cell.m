@@ -12,20 +12,43 @@
 
 @synthesize DNA;
 
+/**
+ * Returns random character from set {A, T, G, C}.
+ */
++(NSString*) getRandomNucleotide {
+    int nextIndex = arc4random_uniform(4);
+    switch (nextIndex) {
+        case 1:
+            return @"T";
+            break;
+        case 2:
+            return @"G";
+            break;
+        case 3:
+            return @"C";
+            break;           
+        default:
+            return @"A";
+    }
+}
+
+/**
+ * Init DNA array with random nucleotides.
+ */
 -(id) init {
     self = [super init];
     if (self) {
-        NSMutableArray *characters = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         DNA = [[NSMutableArray alloc] initWithCapacity:DNA_SIZE];
         for (int i = 0; i < DNA_SIZE; i++) {
-            int nextIndex = arc4random_uniform(4);
-            NSString *nextObject = [characters objectAtIndex:nextIndex];
-            [DNA addObject:nextObject];
+            [DNA addObject: [Cell getRandomNucleotide]];
         }
     }
     return self;
 }
 
+/**
+ * Calculates hamming distance between self and Cell object from parameter. 
+ */
 -(int) hammingDistance: (Cell*) cell {
     int distance = 0;
     NSMutableArray* anotherDNA = cell.DNA;
@@ -35,6 +58,13 @@
         }
     }
     return distance;
+}
+
+/**
+ * Prints DNA on sceen in one string.
+ */
+-(void) printDNA {
+    NSLog(@"%@", [DNA componentsJoinedByString:@""]);
 }
 
 @end
