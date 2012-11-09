@@ -14,11 +14,13 @@
 // A, T, G, С
 @interface Cell : NSObject {
     NSMutableArray *DNA;
+    NSMutableArray * usedGenes;
 }
 -(int)hammingDistance:(Cell*)sample;
+-(id)getRandomGene;
 -(NSMutableArray*)getDna;
 @end
 
 @interface Cell (mutator)
--(void)mutate:(int)numberOfMutations;
+-(void)mutate:(int)percentOfMutations;
 @end

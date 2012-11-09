@@ -9,16 +9,17 @@
 #import "Cell.h"
 
 const int dnaSize = 100;
+const int numberOfUsedGenes = 4;
 
 @implementation Cell
 -(id) init {
     self = [super init];
     if (self) {
-        NSMutableArray * genes = [[NSMutableArray alloc] initWithObjects:@"A",@"T",@"G",@"C",nil];
+        usedGenes = [[NSMutableArray alloc] initWithObjects:@"A",@"T",@"G",@"C",nil];
         DNA = [[NSMutableArray alloc] initWithCapacity:dnaSize];
+        
         for (int i = 0; i < dnaSize; ++i) {
-            int geneNumber = arc4random_uniform(4);
-            [DNA setObject:genes[geneNumber] atIndexedSubscript:i];
+            [DNA setObject:[self getRandomGene] atIndexedSubscript:i];
         }
         // NSLog(@"Array: %@", DNA);
     }
@@ -38,13 +39,40 @@ const int dnaSize = 100;
     }
     return difference;
 }
+-(id)getRandomGene {
+    return usedGenes[arc4random_uniform(numberOfUsedGenes)];
+}
 -(NSMutableArray *)getDna {
     return self->DNA;
 }
 @end
 
 @implementation Cell (mutator)
--(void)mutate:(int)numberOfMutations{
+-(void)mutate:(int)percentOfMutations{
+    BOOL replacePositions[dnaSize];
+    // NSMutableArray *replacePositions = [[NSMutableArray alloc] initWithCapacity:dnaSize];
+    int mutatePosition;
     
+    int defaultValue = (percentOfMutations < 100) ? NO : YES;
+    for (int i = 0; i < dnaSize; ++i) {
+        replacePositions[i] = defaultValue;
+    }
+
+    if (percentOfMutations < 100) {
+        int mutations = 0;
+        while (mutations < percentOfMutations) {
+            mutatePosition = arc4random_uniform(100);
+            if (replacePositions[mutatePosition] == NO) {
+                replacePositions[mutatePosition] = YES;
+                ++mutations;
+            }
+        }
+    }
+    
+    for (int i = 0; i < dnaSize; ++i) {
+        if (replacePositions[i]) {
+            [DNA setObject:[self getRandomGene] atIndexedSubscript:i];
+        }
+    }
 }
 @end
