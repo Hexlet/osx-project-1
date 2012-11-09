@@ -20,10 +20,31 @@ const int dnaSize = 100;
             int geneNumber = arc4random_uniform(4);
             [DNA setObject:genes[geneNumber] atIndexedSubscript:i];
         }
-        NSLog(@"Array: %@", DNA);
+        // NSLog(@"Array: %@", DNA);
     }
-
-
     return self;
+}
+-(int)hammingDistance:(Cell *)sample {
+    int difference = 0;
+    for (int i = 0; i < dnaSize; ++i) {
+        NSLog(@"%i: %@ %@", i, self->DNA[i], sample->DNA[i]);
+    }
+    if ([DNA isEqualTo:sample->DNA] == NO) {
+        for (int i = 0; i < dnaSize; ++i) {
+            if (DNA[i] != sample->DNA[i]) {
+                ++difference;
+            }
+        }
+    }
+    return difference;
+}
+-(NSMutableArray *)getDna {
+    return self->DNA;
+}
+@end
+
+@implementation Cell (mutator)
+-(void)mutate:(int)numberOfMutations{
+    
 }
 @end

@@ -15,4 +15,10 @@
 @interface Cell : NSObject {
     NSMutableArray *DNA;
 }
+-(int)hammingDistance:(Cell*)sample;
+-(NSMutableArray*)getDna;
+@end
+
+@interface Cell (mutator)
+-(void)mutate:(int)numberOfMutations;
 @end

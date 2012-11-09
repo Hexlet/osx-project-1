@@ -14,6 +14,8 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         Cell *testCell = [[Cell alloc] init];
+        Cell *testCell2 = [[Cell alloc] init];
+        NSLog(@"Total diffs: %i", [testCell hammingDistance:testCell2]);
     }
     return 0;
 }
