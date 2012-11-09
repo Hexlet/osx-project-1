@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C3DFBC9164D3CE00025D4C3 /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DFBC8164D3CE00025D4C3 /* Cell+mutator.m */; };
 		2C6D7B36164848FB000C07AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C6D7B35164848FB000C07AA /* Foundation.framework */; };
 		2C6D7B39164848FB000C07AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6D7B38164848FB000C07AA /* main.m */; };
 		2C6D7B3D164848FB000C07AA /* Project_1___DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C6D7B3C164848FB000C07AA /* Project_1___DNA.1 */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C3DFBC7164D3CE00025D4C3 /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		2C3DFBC8164D3CE00025D4C3 /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
 		2C6D7B31164848FB000C07AA /* Project 1 - DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Project 1 - DNA"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6D7B35164848FB000C07AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2C6D7B38164848FB000C07AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				2C6D7B38164848FB000C07AA /* main.m */,
+				2C3DFBC7164D3CE00025D4C3 /* Cell+mutator.h */,
+				2C3DFBC8164D3CE00025D4C3 /* Cell+mutator.m */,
 				2C6D7B431648491A000C07AA /* Cell.h */,
 				2C6D7B441648491A000C07AA /* Cell.m */,
 				2C6D7B3C164848FB000C07AA /* Project_1___DNA.1 */,
@@ -146,6 +151,7 @@
 			files = (
 				2C6D7B39164848FB000C07AA /* main.m in Sources */,
 				2C6D7B451648491A000C07AA /* Cell.m in Sources */,
+				2C3DFBC9164D3CE00025D4C3 /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				2C6D7B42164848FB000C07AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -5,6 +5,8 @@
 //  Created by Дмитрий Кузнецов on 05.11.12.
 //  Copyright (c) 2012 Dmitriy Kuznetsov. All rights reserved.
 //
+
+//Длина цепочки ДНК
 #define DNA_LENGTH 100
 
 #import <Foundation/Foundation.h>
