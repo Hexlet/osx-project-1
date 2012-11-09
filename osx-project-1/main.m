@@ -21,7 +21,7 @@
     int forMutate =  (int)([DNA count] * percent / 100);
 
     NSMutableArray* indexForMutate = [NSMutableArray arrayWithCapacity:forMutate];
-    while (forMutate)
+    for (int i = 0; i < forMutate; i++)
     {
         NSNumber* wrapInt;
         do
@@ -29,9 +29,8 @@
             int index = rand()%forMutate;
             wrapInt = [NSNumber numberWithInt:index];        
         }
-        while ( ![indexForMutate containsObject:wrapInt]);
+        while ( [indexForMutate containsObject:wrapInt]);
         [indexForMutate addObject:wrapInt];
-        forMutate--;
     }
     
     for (int i = 0 ; i < [indexForMutate count]; i++)
@@ -40,7 +39,7 @@
         int new_letter;
         do {
             new_letter = rand()%letterLast;
-        } while (new_letter != [letter intValue]);
+        } while (new_letter == [letter intValue]);
         letter = [NSNumber numberWithInt:new_letter];
         [DNA replaceObjectAtIndex:[[indexForMutate objectAtIndex:i] intValue] withObject:letter];
     }
