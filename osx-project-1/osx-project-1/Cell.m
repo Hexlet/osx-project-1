@@ -19,10 +19,13 @@ const int dnaSize = 100;
 {
     self = [super init];
     
-    dna = [[NSMutableArray alloc] init];
-    for (int i = 0; i < dnaSize; i++)
+    if (self)
     {
-        [dna addObject:[NSNumber numberWithInt:(rand() % NucleotidesEnumMax)]];
+        dna = [[NSMutableArray alloc] init];
+        for (int i = 0; i < dnaSize; i++)
+        {
+            [dna addObject:[NSNumber numberWithInt:(rand() % NucleotidesEnumMax)]];
+        }
     }
     
     return self;
