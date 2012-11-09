@@ -53,7 +53,7 @@ static NSArray *nucleotides;
         distance = sizeOfDNA;
     else
         for (int i = 0; i < [DNA count]; i++)
-            if ([DNA objectAtIndex:i] != [cellDNA objectAtIndex:i])
+            if (![[DNA objectAtIndex:i] isEqualTo:[cellDNA objectAtIndex:i]])
                 distance++;
     return distance;
 }
