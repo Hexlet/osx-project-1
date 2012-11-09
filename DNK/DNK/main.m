@@ -43,7 +43,7 @@
         newIndex = [NSNumber numberWithInt: [intArr[i] intValue]];
         currentDNACell = self.DNA[ [newIndex intValue] ];
         newDNACell = self.DNA[ [newIndex intValue] ];
-        while (currentDNACell == newDNACell) {
+        while ([currentDNACell isEqualToString: newDNACell] == YES ) {
             newDNACell = arr[arc4random_uniform(4)];
         }
         self.DNA[ [newIndex intValue] ] = newDNACell;
@@ -73,6 +73,7 @@ int main(int argc, const char * argv[])
         
         NSLog(@"hamming distance между мутировавшими объектами = %i", [myDNA hammingDistance:newDNA]);
         
+
     }
     return 0;
 }

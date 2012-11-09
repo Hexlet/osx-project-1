@@ -56,4 +56,19 @@
     return dist;
 }
 
+
+
+//процедура для тестирования
+-(id)copyWithZone:(NSZone *)zone
+
+{
+    
+    Cell *another = [[Cell alloc] init];
+    
+    another.DNA = [[self DNA] copyWithZone: zone];
+    
+    return another;
+    
+}
+
 @end

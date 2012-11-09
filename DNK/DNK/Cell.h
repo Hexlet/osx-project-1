@@ -18,4 +18,6 @@
     //процедура вычисления разности
     - (int) hammingDistance : (Cell *) withCell;
 
+-(id)copyWithZone:(NSZone *)zone;
+
 @end
