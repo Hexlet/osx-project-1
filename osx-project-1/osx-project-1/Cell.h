@@ -15,5 +15,5 @@
 }
 
 -(int)hammingDistance: (Cell *)testCell;
-
+-(NSString *)getByIndex: (int)index;
 @end

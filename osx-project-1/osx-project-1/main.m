@@ -14,18 +14,19 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        srandom((unsigned)time(NULL)); // запуск генератора псевдослучайных чисел по времени (из лекции №3)
-        
         id cell1, cell2;
+        srandom((unsigned)time(NULL)); // запуск генератора псевдослучайных чисел
         cell1 = [Cell new];
+        srandom((unsigned)time(NULL)); // запуск генератора псевдослучайных чисел
+        // результат одинаковые DNA
         cell2 = [Cell new];
         
         NSLog(@"%@",cell1);
         NSLog(@"%@",cell2);
         NSLog(@"%i",[cell1 hammingDistance: cell2]);
         
-        [cell1 mutate:10];
-        [cell2 mutate:90];
+        [cell1 mutate:0];
+        [cell2 mutate:100];
         NSLog(@"%@",cell1);
         NSLog(@"%@",cell2);
         NSLog(@"%i",[cell1 hammingDistance: cell2]);

@@ -26,12 +26,16 @@
     int findDiff = 0;
     
     for (int i = 0; i < DNA_LENGTH; i++) {
-        if ([DNA objectAtIndex:i] != [testCell->DNA objectAtIndex:i]) {
+        if (![[DNA objectAtIndex: i] isEqualToString: [testCell getByIndex: i]]) {
             findDiff++;
         }
     }
     
     return findDiff;
+}
+
+-(NSString *) getByIndex:(int)index {
+    return [DNA objectAtIndex: index];
 }
 
 -(NSString *) description {
