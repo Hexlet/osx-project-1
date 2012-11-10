@@ -24,7 +24,7 @@
 
     // Generating list of mutating indices (DNA places)
     int i;
-    for (i=0; i<percentage; i++) {
+    for (i=0; i<percentage/DNA_LENGTH; i++) {
         int r = arc4random_uniform(DNA_LENGTH);
         while ([mutatingPlaces containsObject:[NSNumber numberWithInt:r]])
             r = arc4random_uniform(DNA_LENGTH);
