@@ -17,6 +17,10 @@
 -(void)mutate:(int)mutatingPercent {
     NSUInteger marker[100] = {0};                               //Создаю массив маркеров которые паказывают изменялся-ли элемент DNA массива.
     int randPnt;
+    
+    if (mutatingPercent <=   0) return;
+    if (mutatingPercent > 100) mutatingPercent = 100;
+    
     for (int i = 0; i < (mutatingPercent - 1); i++) {                               //Цикл "мутации"
         do {                                                                        //Цикл изменеия с проверкой, если пытаюсь изменить элемент
             randPnt = arc4random() % sizeofDNA - 1;                                            //который уже изменён, то рандомайземся заново.
@@ -47,8 +51,8 @@ int main(int argc, const char * argv[])
         
         NSLog(@"hamming distance = %i", [myCell hammingDistance:myCell2]);
         
-        [myCell mutate:50];
-        [myCell2 mutate:50];
+        [myCell mutate:0];
+        [myCell2 mutate:0];
  
         NSLog(@"hamming distance = %i", [myCell hammingDistance:myCell2]);
         
