@@ -11,7 +11,6 @@
 @interface Cell : NSObject {
     NSMutableArray *_DNA;
     NSMutableArray *_mutatedElements;
-    int CELL_LENGTH;
 }
 
 -(void) printArray;

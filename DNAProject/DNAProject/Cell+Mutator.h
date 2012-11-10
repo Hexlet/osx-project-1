@@ -11,5 +11,6 @@
 @interface Cell (Mutator)
 
 -(void) mutate: (int) howPrecent;
+-(NSString*) generateNewElement: (NSString*) oldElement;
 
 @end

@@ -8,16 +8,17 @@
 
 #import "Cell.h"
 #import <stdlib.h>
+#define DNA_LENGTH 100
 @implementation Cell
 
 -(id) init {
     self = [super init];
     if (self) {
-        _DNA = [NSMutableArray arrayWithCapacity:CELL_LENGTH];
+        _DNA = [NSMutableArray arrayWithCapacity:DNA_LENGTH];
     }
     
-    for (NSUInteger i = 0; i < 100; i++) {
-        [_DNA insertObject:[self generateElement] atIndex: CELL_LENGTH];
+    for (NSUInteger i = 0; i < DNA_LENGTH; i++) {
+        [_DNA insertObject:[self generateElement] atIndex: i];
     }
     return self;
     
@@ -59,10 +60,13 @@
 -(int) hammingDistance: (Cell*) c {
     int result = 0;
     NSMutableArray *compareWith = [c getArray];
-    for (int i = 0; i < 0; i++) {
-        if ([_DNA objectAtIndex: i] == [compareWith objectAtIndex: i]) {
+    for (int i = 0; i < DNA_LENGTH; i++) {
+        id element1 = [_DNA objectAtIndex: i];
+        id element2 =[compareWith objectAtIndex: i];
+        if (element1 != element2) {
             result++;
         }
+//        NSLog(@"Cell1: %@ Cell2: %@ TotalDistance: %i", element1, element2, result);
     }
     return result;
 }
