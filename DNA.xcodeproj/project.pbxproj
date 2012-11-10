@@ -35,7 +35,6 @@
 		5AEC437016458F8F008E56AE /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
 		5AEC437716458FA7008E56AE /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		5AEC437816458FA7008E56AE /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		5AEC437A164594E0008E56AE /* DNAElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNAElements.h; sourceTree = "<group>"; };
 		5AEC437D1645B37B008E56AE /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
 		5AEC437E1645B37B008E56AE /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +84,6 @@
 				5AEC436E16458F8F008E56AE /* Supporting Files */,
 				5AEC437716458FA7008E56AE /* Cell.h */,
 				5AEC437816458FA7008E56AE /* Cell.m */,
-				5AEC437A164594E0008E56AE /* DNAElements.h */,
 				5AEC437D1645B37B008E56AE /* Cell+Mutator.h */,
 				5AEC437E1645B37B008E56AE /* Cell+Mutator.m */,
 			);
@@ -248,6 +246,7 @@
 				5AEC437616458F8F008E56AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

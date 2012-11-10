@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#define NUMBER_OF_ELEMENTS 100
+
 @interface Cell : NSObject
 
-@property (assign) NSMutableArray *DNA;
+@property (nonatomic,readonly) NSMutableArray *DNA;
 
+-(NSString *) generateRandomGen;
 -(int) hammingDistance:(Cell *) anotherCell;
 
 @end
