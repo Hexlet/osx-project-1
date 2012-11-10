@@ -21,11 +21,11 @@
     int round = 0;
     while (round < percent)
     {
-        int p = arc4random() % percent;
+        int p = arc4random() % CELL_SIZE;
         if ([[mask objectAtIndex: p] intValue] == 0)
         {
-            [mask insertObject: [NSNumber numberWithInt: 1] atIndex: p];
-            [dna insertObject:[self nextMolecule: [dna objectAtIndex: p]] atIndex: p];
+            [mask replaceObjectAtIndex:p withObject: [NSNumber numberWithInt: 1]];
+            [dna replaceObjectAtIndex: p withObject: [self nextMolecule: [dna objectAtIndex: p]]];
             round = round + 1;
         }
     }

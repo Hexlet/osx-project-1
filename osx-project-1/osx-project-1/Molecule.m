@@ -69,7 +69,7 @@
 
 -(BOOL)equal: (Molecule *)molecule
 {
-    return [name compare: [molecule toString]] == 0;
+    return [[self toString] compare: [molecule toString]] == 0;
 }
 
 @end

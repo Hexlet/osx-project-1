@@ -26,6 +26,21 @@
     return self;
 }
 
+-(id)initWithCell:(Cell *)cell
+{
+    self = [super init];
+    if (self)
+    {
+        dna = [NSMutableArray arrayWithCapacity: CELL_SIZE];
+        for (int i = 0; i < CELL_SIZE; i++)
+        {
+            [dna insertObject:[cell moleculeAtIndex: i] atIndex: i];
+        }
+    }
+    
+    return self;
+}
+
 -(Molecule *)moleculeAtIndex: (NSUInteger)index
 {
     if (index < CELL_SIZE)
@@ -53,7 +68,7 @@
     {
         Molecule *a = [dna objectAtIndex: i];
         Molecule *b = [toCell moleculeAtIndex: i];
-        if ([a equal: b])
+        if (![a equal: b])
         {
             result = result + 1;
         }

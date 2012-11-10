@@ -24,8 +24,12 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Hamming distance from A to B is: %d", [a hammingDistance: b]);
         
-        [a mutate: 40];
-        [b mutate: 40];
+        [a mutate: 10];
+        NSLog(@"Cell A: %@", [a toString]);
+        
+        [b mutate: 25];
+        NSLog(@"Cell B: %@", [b toString]);
+        
         NSLog(@"Hamming distance (after mutation) from A to B is: %d",
               [a hammingDistance: b]);
     }

@@ -19,6 +19,8 @@
     
 }
 
+-(id)initWithCell: (Cell *)cell;
+
 -(Molecule *)moleculeAtIndex: (NSUInteger)index;
 
 -(NSString *)toString;
