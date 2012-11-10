@@ -20,7 +20,7 @@
     {
         int randomPlace = arc4random() % (int)self.dna.count;
         int randomMutation = arc4random() % 4;
-        NSLog(@"%i %i", randomPlace, randomMutation);
+        //NSLog(@"%i %i", randomPlace, randomMutation);
         
         
         [self.dna replaceObjectAtIndex:randomPlace withObject:[alphabet objectAtIndex:randomMutation]];

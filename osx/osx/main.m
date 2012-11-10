@@ -18,14 +18,14 @@ int main(int argc, const char * argv[])
         
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
-        [cell1 print];
-        [cell2 print];
+        //[cell1 print];
+        //[cell2 print];
         NSLog(@"distance=%i", [cell1 hammingDistace:cell2]);
         
-        [cell1 mutate:30];
+        [cell1 mutate:10];
         
-        [cell1 print];
-        [cell2 print];
+        //[cell1 print];
+        //[cell2 print];
         NSLog(@"distance=%i", [cell1 hammingDistace:cell2]);
         
         

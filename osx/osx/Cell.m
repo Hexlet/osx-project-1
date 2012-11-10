@@ -18,7 +18,7 @@
         
         NSArray *alphabet = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C",nil]; 
         
-        for(int i=0;i<10;i++){
+        for(int i=0;i<100;i++){
             int randomValue = arc4random() % 4;
             
             [_dna addObject:[alphabet objectAtIndex:randomValue]];
