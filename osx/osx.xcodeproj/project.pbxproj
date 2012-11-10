@@ -10,6 +10,8 @@
 		5A926B13164E629900AF7BB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A926B12164E629900AF7BB6 /* Foundation.framework */; };
 		5A926B16164E629900AF7BB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A926B15164E629900AF7BB6 /* main.m */; };
 		5A926B1A164E629900AF7BB6 /* osx.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5A926B19164E629900AF7BB6 /* osx.1 */; };
+		5A926B28164E644B00AF7BB6 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A926B25164E644B00AF7BB6 /* Cell.m */; };
+		5A926B29164E644B00AF7BB6 /* mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A926B27164E644B00AF7BB6 /* mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,10 @@
 		5A926B15164E629900AF7BB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5A926B18164E629900AF7BB6 /* osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-Prefix.pch"; sourceTree = "<group>"; };
 		5A926B19164E629900AF7BB6 /* osx.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = osx.1; sourceTree = "<group>"; };
+		5A926B24164E644B00AF7BB6 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		5A926B25164E644B00AF7BB6 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		5A926B26164E644B00AF7BB6 /* mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutator.h; sourceTree = "<group>"; };
+		5A926B27164E644B00AF7BB6 /* mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mutator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,10 @@
 		5A926B14164E629900AF7BB6 /* osx */ = {
 			isa = PBXGroup;
 			children = (
+				5A926B24164E644B00AF7BB6 /* Cell.h */,
+				5A926B25164E644B00AF7BB6 /* Cell.m */,
+				5A926B26164E644B00AF7BB6 /* mutator.h */,
+				5A926B27164E644B00AF7BB6 /* mutator.m */,
 				5A926B15164E629900AF7BB6 /* main.m */,
 				5A926B19164E629900AF7BB6 /* osx.1 */,
 				5A926B17164E629900AF7BB6 /* Supporting Files */,
@@ -140,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A926B16164E629900AF7BB6 /* main.m in Sources */,
+				5A926B28164E644B00AF7BB6 /* Cell.m in Sources */,
+				5A926B29164E644B00AF7BB6 /* mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +248,7 @@
 				5A926B1F164E629900AF7BB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
