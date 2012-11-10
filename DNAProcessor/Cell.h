@@ -15,7 +15,7 @@
 
 +(Cell *) cell;
 
--(void) print;
 -(int) hammingDistance:(Cell *) anotherCell;
+-(void) print;
 
 @end

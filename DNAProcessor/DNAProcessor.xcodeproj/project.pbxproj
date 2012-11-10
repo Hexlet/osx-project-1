@@ -11,6 +11,7 @@
 		70BD5AFF164E6E1800B4976E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BD5AFE164E6E1800B4976E /* main.m */; };
 		70BD5B03164E6E1800B4976E /* DNAProcessor.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70BD5B02164E6E1800B4976E /* DNAProcessor.1 */; };
 		70BD5B0B164E6E2600B4976E /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BD5B0A164E6E2600B4976E /* Cell.m */; };
+		70BD5B0E164ED05500B4976E /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BD5B0D164ED05500B4976E /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		70BD5B02164E6E1800B4976E /* DNAProcessor.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNAProcessor.1; sourceTree = "<group>"; };
 		70BD5B09164E6E2600B4976E /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		70BD5B0A164E6E2600B4976E /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		70BD5B0C164ED05500B4976E /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+mutator.h"; path = "DNAProcessor/Cell+mutator.h"; sourceTree = "<group>"; };
+		70BD5B0D164ED05500B4976E /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+mutator.m"; path = "DNAProcessor/Cell+mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,8 @@
 			children = (
 				70BD5B09164E6E2600B4976E /* Cell.h */,
 				70BD5B0A164E6E2600B4976E /* Cell.m */,
+				70BD5B0C164ED05500B4976E /* Cell+mutator.h */,
+				70BD5B0D164ED05500B4976E /* Cell+mutator.m */,
 				70BD5AFD164E6E1800B4976E /* DNAProcessor */,
 				70BD5AFA164E6E1800B4976E /* Frameworks */,
 				70BD5AF8164E6E1800B4976E /* Products */,
@@ -146,6 +151,7 @@
 			files = (
 				70BD5AFF164E6E1800B4976E /* main.m in Sources */,
 				70BD5B0B164E6E2600B4976E /* Cell.m in Sources */,
+				70BD5B0E164ED05500B4976E /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

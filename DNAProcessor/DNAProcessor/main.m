@@ -8,16 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
+#import "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
         Cell *cell = [Cell cell];
-        [cell print];
         Cell *anotherCell = [Cell cell];
+
+        [cell print];
         [anotherCell print];
         
-        NSLog(@"Distance: %i", [cell hammingDistance:anotherCell]);
+        NSLog(@"Initial distance: %i", [cell hammingDistance:anotherCell]);
+        
+        int countToMutate = 5;
+        
+        [cell mutate:countToMutate];
+        [anotherCell mutate:countToMutate];
+
+        NSLog(@"Distance after %i mutations: %i", countToMutate, [cell hammingDistance:anotherCell]);
     }
     return 0;
 }
