@@ -48,21 +48,12 @@ int main(int argc, const char * argv[])
         Cell *cell = [[Cell alloc]init];
         
         NSMutableArray *DNAArray = [NSMutableArray arrayWithCapacity:100];
-        for (int i = 0; i <100; i++) {
-            int letterIntValue;
-            letterIntValue = arc4random() %4;
-            if (letterIntValue == 0) {
-                [DNAArray addObject:@"A"];
-            }
-            else if (letterIntValue == 1) {
-                [DNAArray addObject:@"T"];
-            }
-            else if (letterIntValue == 2) {
-                [DNAArray addObject:@"G"];
-            }
-            else {
-                [DNAArray addObject:@"C"];
-            }
+        NSArray *lettersArray = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
+        int i;
+        for (i = 0; i <100; i++) {
+            int randomIndex = arc4random() %4;
+            [DNAArray insertObject:lettersArray[randomIndex] atIndex:i];
+            
         }
         [cell hammingDistance:DNAArray];
         [cell mutate:cell :DNAArray];

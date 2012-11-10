@@ -30,9 +30,7 @@
 -(int)hammingDistance: (id)cellObject{
     int i;
     for (i = 0; i<100; i++) {
-        if ([[cellObject objectAtIndex:i] isEqualTo:[_DNA objectAtIndex:i]]){
-        }
-        else {
+        if ([[cellObject objectAtIndex:i] isNotEqualTo:[_DNA objectAtIndex:i]]){
             _errorRows = _errorRows+1;
         }
     }
