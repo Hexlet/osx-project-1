@@ -22,7 +22,7 @@ int main(int argc, const char * argv[])
         //[cell2 print];
         NSLog(@"distance=%i", [cell1 hammingDistace:cell2]);
         
-        [cell1 mutate:10];
+        [cell1 mutate:50];
         
         //[cell1 print];
         //[cell2 print];
