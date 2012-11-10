@@ -25,11 +25,10 @@ int main(int argc, const char * argv[])
 //        NSLog(@"%@ %@", DNACell1->DNA, DNACell2->DNA);
         NSLog(@"Hamming Distance = %i", [DNACell1 hammingDistance:DNACell2]);
         
-        [DNACell1 mutate:20];
-        [DNACell2 mutate:39];
+        [DNACell1 mutate:4];
+        [DNACell2 mutate:4];
         
         NSLog(@"Hamming Distance = %i", [DNACell2 hammingDistance:DNACell1]);
-    
     }
     return 0;
 }

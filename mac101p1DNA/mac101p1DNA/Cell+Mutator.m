@@ -15,11 +15,12 @@
     NSUInteger num = floor(self->DNA.count*x/100); // кол-во изменяемых молекул ДНК
     // получаем номера изменяемых молекул случайным образом
     NSIndexSet *molnum = [[NSIndexSet alloc] initWithIndexSet:[self generateRandomIndexes:num]];
-    // Генерируем молекулы
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    array = [NSMutableArray arrayWithArray:[self makeDNA:num]];
-    // Внедряем в DNA новые элементы по их интексам 
-    [self->DNA replaceObjectsAtIndexes:molnum withObjects:array];
+    // генерируем новый нуклеотид
+    [molnum enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop){
+        NSString *nn = [self newNucleotide];
+        while (self->DNA[idx] == nn) { nn = [self newNucleotide]; }
+        NSLog(@"%@ ? %@", nn,self->DNA[idx]);
+        [self->DNA replaceObjectAtIndex:idx withObject:nn];}];
 }
 
     // Генерируем последовательность уникальных индексов в нужном колличестве
@@ -33,5 +34,5 @@
     }
     return places;
 }
-
+ 
 @end

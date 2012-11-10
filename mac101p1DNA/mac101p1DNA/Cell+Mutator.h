@@ -10,6 +10,7 @@
 
 @interface Cell (Mutator)
 -(void) mutate: (NSUInteger) x;
+//-(void) replaceMolsIn: (Cell *) dnacells To:(NSMutableArray *)newMoleculas AtIndexes:(NSIndexSet *)indexes;
 @end
 
 
