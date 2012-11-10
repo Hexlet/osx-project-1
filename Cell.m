@@ -1,6 +1,6 @@
 #import "Cell.h"
 
-#define DNALngth 10
+#define DNALngth 100
 
 @interface Cell()
 - (void)generateDNA;
