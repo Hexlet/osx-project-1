@@ -16,6 +16,8 @@ int main()
         Cell *DNA = [[Cell alloc] init];
         Cell *DNA2 = [[Cell alloc] init];
         
+        NSLog(@"\n%@\n%@", DNA, DNA2);
+        
         NSLog(@"HD1 = %d", [DNA hammingDistance:DNA2]);
         
         [DNA mutate:98];

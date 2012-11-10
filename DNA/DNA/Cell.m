@@ -8,18 +8,16 @@
 
 #import "Cell.h"
 
-@implementation Cell {
-    
-}
+@implementation Cell 
 
 -(id) init {
     if(self = [super init]) {
-        NSArray *cDNA = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
+        _cDNA = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
         
         _DNA = [NSMutableArray arrayWithCapacity:100];
         
         for (int i = 0; i < 100; i++) {
-            [_DNA addObject:[cDNA objectAtIndex:arc4random()%4]];
+            [_DNA addObject:[_cDNA objectAtIndex:arc4random()%4]];
         }
         
     }
@@ -29,8 +27,7 @@
 -(int) hammingDistance:(Cell*)nDNA {
     int hDistance = 0;
     for(int i= 0; i < 100; i++) {
-        if ([[nDNA DNA] objectAtIndex:i] != _DNA[i]) {
-            //NSLog(@"%@, %@", [[nDNA DNA] objectAtIndex:i], _DNA[i]);
+        if ([[[nDNA DNA] objectAtIndex:i] isEqual:[_DNA objectAtIndex:i]]) {
             hDistance++;
         }
     }

@@ -11,9 +11,8 @@
 @interface Cell : NSObject
 
 @property NSMutableArray *DNA;
+@property NSArray *cDNA; // тут будут 4 символа днк
 
--(void) printDNA;
 -(int) hammingDistance:(Cell*)nDNA;
-
 
 @end
