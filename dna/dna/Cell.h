@@ -11,7 +11,6 @@
 #define DNA_LENGTH 100
 
 @interface Cell : NSObject {
-//    NSMutableArray *DNA;
     NSString *dnaLetters[4];
 }
 

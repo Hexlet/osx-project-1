@@ -20,28 +20,36 @@
 
 - (void)mutate:(int)percentage
 {
-    NSMutableArray *mutatingPlaces = [NSMutableArray arrayWithCapacity:percentage];
-
-    // Generating list of mutating indices (DNA places)
-    int i;
-    for (i=0; i<percentage/DNA_LENGTH; i++) {
-        int r = arc4random_uniform(DNA_LENGTH);
-        while ([mutatingPlaces containsObject:[NSNumber numberWithInt:r]])
-            r = arc4random_uniform(DNA_LENGTH);
-        [mutatingPlaces addObject:[NSNumber numberWithInt:r]];
+    if (percentage < 0 || percentage > 100) {
+        // Неверное значение.
+        return;
     }
-//    NSLog (@"Will mutate indices: %@", [mutatingPlaces description]);
+
+    // Определяем кол-во мутирующих генов
+    int genesToMutate = percentage * self.DNA.count / 100;
+    NSUInteger dnaLength = self.DNA.count;
     
-    // Mutating generated places
-    for (i=0; i<percentage; i++) {
-        int index = [[mutatingPlaces objectAtIndex:i] intValue];
-        NSString *place = [self.DNA objectAtIndex:index];
-        NSString *newValue = place;
-        int r;
-        while ([newValue compare:place] == NSOrderedSame) {
-            r = arc4random_uniform(4);
-            newValue = dnaLetters[r];
-        }
+    // Строим два массива - индексы немутирующих генов (все индексы) и мутирующих (сначала пуст)
+    NSMutableArray *outstandingIndexes = [NSMutableArray arrayWithCapacity:dnaLength];
+    NSMutableArray *mutatingIndexes = [NSMutableArray arrayWithCapacity:dnaLength];
+    for (NSUInteger index = 0; index < dnaLength; index++)
+        [outstandingIndexes addObject:[NSNumber numberWithUnsignedInteger:index]];
+
+    // И в случайном порядке переносим genesToMutate индексов из первого массива во второй
+    for (int i = 0; i < genesToMutate; i++) {
+        int r = arc4random_uniform((u_int32_t)outstandingIndexes.count);
+        NSNumber *index = outstandingIndexes[r];
+        [mutatingIndexes addObject:index];
+        [outstandingIndexes removeObject:index];
+    }
+    
+    // Теперь для мутирующих генов подбираем случайное новое значение, не совпадающее с текущим
+    for (int i=0; i<mutatingIndexes.count; i++) {
+        NSUInteger index = [mutatingIndexes[i] unsignedIntegerValue];
+        NSString *place = self.DNA[index];
+        NSMutableArray *genesToSelect = [NSMutableArray arrayWithArray:@[@"A", @"T", @"G", @"C"]];
+        [genesToSelect removeObject:place];
+        NSString *newValue = genesToSelect[arc4random_uniform(genesToSelect.count)];
         [self.DNA replaceObjectAtIndex:index withObject:newValue];
     }
 }
@@ -53,20 +61,12 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        Cell *cell1 = [[[Cell alloc] init] autorelease];
-        Cell *cell2 = [[[Cell alloc] init] autorelease];
+        Cell *cell1 = [[Cell alloc] init];
+        Cell *cell2 = [[Cell alloc] init];
         
         NSLog (@"Old Hamming Distance: %d", [cell1 hammingDistance:cell2]);
-
-//        NSLog (@"DNA1 Before: %@", [cell1 description]);
         [cell1 mutate:2];
-//        NSLog (@"DNA1  After: %@", [cell1 description]);
-//        NSLog (@"");
-        
-//        NSLog (@"DNA2 Before: %@", [cell2 description]);
         [cell2 mutate:2];
-//        NSLog (@"DNA2  After: %@", [cell2 description]);
-
         NSLog (@"New Hamming Distance: %d", [cell1 hammingDistance:cell2]);
 }
 

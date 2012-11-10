@@ -51,7 +51,7 @@
     int i;
     int distance = 0;
     for (i=0; i<100; i++) {
-        if ([[DNA objectAtIndex:i] compare:[aCell.DNA objectAtIndex:i]] != NSOrderedSame)
+        if ([self.DNA[i] compare:aCell.DNA[i]] != NSOrderedSame)
             distance++;
     }
 
