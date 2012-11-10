@@ -10,6 +10,8 @@
 		637A763F1649938C00F9FBC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637A763E1649938C00F9FBC0 /* Foundation.framework */; };
 		637A76421649938C00F9FBC0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A76411649938C00F9FBC0 /* main.m */; };
 		637A76461649938C00F9FBC0 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 637A76451649938C00F9FBC0 /* DNA.1 */; };
+		637A7656164993FC00F9FBC0 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A7655164993FC00F9FBC0 /* Cell.m */; };
+		637A765A1649980300F9FBC0 /* Cell+Mutate.m in Sources */ = {isa = PBXBuildFile; fileRef = 637A76591649980300F9FBC0 /* Cell+Mutate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +31,12 @@
 		637A763A1649938C00F9FBC0 /* DNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA; sourceTree = BUILT_PRODUCTS_DIR; };
 		637A763E1649938C00F9FBC0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		637A76411649938C00F9FBC0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		637A76441649938C00F9FBC0 /* DNA-Prefix.pch */ = {isa = PBXFileReference; path = "DNA-Prefix.pch"; sourceTree = "<group>"; };
+		637A76441649938C00F9FBC0 /* DNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNA-Prefix.pch"; sourceTree = "<group>"; };
 		637A76451649938C00F9FBC0 /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
+		637A7654164993FC00F9FBC0 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		637A7655164993FC00F9FBC0 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		637A76581649980300F9FBC0 /* Cell+Mutate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutate.h"; sourceTree = "<group>"; };
+		637A76591649980300F9FBC0 /* Cell+Mutate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				637A76411649938C00F9FBC0 /* main.m */,
+				637A7654164993FC00F9FBC0 /* Cell.h */,
+				637A7655164993FC00F9FBC0 /* Cell.m */,
+				637A76581649980300F9FBC0 /* Cell+Mutate.h */,
+				637A76591649980300F9FBC0 /* Cell+Mutate.m */,
 				637A76451649938C00F9FBC0 /* DNA.1 */,
 				637A76431649938C00F9FBC0 /* Supporting Files */,
 			);
@@ -139,6 +149,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				637A76421649938C00F9FBC0 /* main.m in Sources */,
+				637A7656164993FC00F9FBC0 /* Cell.m in Sources */,
+				637A765A1649980300F9FBC0 /* Cell+Mutate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +205,7 @@
 		637A764A1649938C00F9FBC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNA/DNA-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -202,6 +215,7 @@
 		637A764B1649938C00F9FBC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DNA/DNA-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -227,6 +241,7 @@
 				637A764B1649938C00F9FBC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,21 +2,31 @@
 //  main.m
 //  DNA
 //
-//  Created by Mac User on 11/6/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by D_Unknown on 11/6/12.
+//  Copyright (c) 2012 D_Unknown. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "Cell.h"
+#import "Cell+Mutate.h"
 
 int main (int argc, const char * argv[])
 {
 
     @autoreleasepool {
+            
+        Cell *cell1 = [[Cell alloc] init];
+        Cell *cell2 = [[Cell alloc] init]; 
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        //NSLog(@"Hamming distance before mutation: %i.", [cell1 hammingDistance:cell2]);
         
+        NSLog(@"MUtating...");
+        [cell1 mutate:30];
+        [cell2 mutate:60];
+                
+        //NSLog(@"Hamming distance after mutation: %i.", [cell1 hammingDistance:cell2]);
     }
+    
     return 0;
 }
 
