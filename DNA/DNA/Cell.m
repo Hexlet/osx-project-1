@@ -32,9 +32,8 @@
 -(id) init {
     self = [super init];
     if (self) {
-        sizeofDNA = 100;
         DNA = [[NSMutableArray alloc]init];
-        for (int i= 1; i < sizeofDNA; i++)  [DNA addObject: self.randomNuclide]; //Заполняем массив при помощи метода randomNuclide,
+        for (int i= 1; i < 100; i++)  [DNA addObject: self.randomNuclide]; //Заполняем массив при помощи метода randomNuclide,
                                                                            //потому что использю этот код в двух разных местах.
     }
     return self;
@@ -42,7 +41,7 @@
 
 -(int)hammingDistance:(Cell *)foreignCell {
     int hd = 0;
-    for (NSUInteger i = 0; i < sizeofDNA - 1; i++) {
+    for (NSUInteger i = 0; i < 99; i++) {
         if (![[DNA objectAtIndex: i] isEqualToString:[foreignCell->DNA objectAtIndex: i]]) { //Сравниваю элемнтны массивов.
             hd++;
         }
