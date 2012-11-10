@@ -19,7 +19,6 @@
     [molnum enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop){
         NSString *nn = [self newNucleotide];
         while (self->DNA[idx] == nn) { nn = [self newNucleotide]; }
-        NSLog(@"%@ ? %@", nn,self->DNA[idx]);
         [self->DNA replaceObjectAtIndex:idx withObject:nn];}];
 }
 
