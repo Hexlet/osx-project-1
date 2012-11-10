@@ -13,5 +13,8 @@
     NSMutableArray *DNA;
 }
 
+-(NSString *)getNewSymbol;
+-(int)hammingDistance:(Cell *)toCell;
+-(NSArray *)getDNA;
 
 @end
