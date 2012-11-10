@@ -22,6 +22,7 @@ int main(int argc, const char * argv[])
         
         NSLog(@"hamming distance after mutation = %d", [c1 hammingDistance:c2]);
     }
+    
     return 0;
 }
 
