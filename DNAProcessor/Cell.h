@@ -10,4 +10,10 @@
 
 @interface Cell : NSObject
 
+@property NSArray *nucleicBases;
+@property NSMutableArray *dna;
+
++(Cell *) cell;
+-(void) print;
+
 @end
