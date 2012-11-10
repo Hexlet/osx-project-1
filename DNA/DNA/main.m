@@ -9,6 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
+// This category enhances NSMutableArray by providing
+// methods to randomly shuffle the elements.
+@interface NSMutableArray (Shuffling)
+- (void)shuffle;
+@end
+
+@implementation NSMutableArray (Shuffling)
+
+- (void)shuffle
+{
+    NSUInteger count = [self count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [self exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+}
+@end    
+
 @interface Cell (Mutation)
 -(void)mutateBy:(int)percentage;
 
@@ -17,29 +37,32 @@
 @implementation Cell (Mutation)
 
 - (void)mutateBy:(int)percentage {
+    
+    //чтобы менять одну букву только один раз - используем след алгоритм:
+    // Создаем корзину с номерками.
+    // Перемешиваем номерки в корзине
+    // берем первый номерок из корзины и смотрим какое число на нем написано
+    // Нуклеоид под этим номером и меняем в клетке
+    // Убираем номерок из корзины, чтоб боле не попадался
+    
     //подготовка к мутации
     int percentInNumbers = [self.DNA count]/100*percentage;
-    NSArray *codes = [[NSArray alloc]initWithObjects:@"A",@"T",@"G",@"C", nil];//похоже пора вынести из методов
-    NSMutableArray *numbersUsedinRandomChange = [[NSMutableArray alloc]init];//сюда будем складывать индексы кодов, которые поменяли
-    
-    
-    //мутируем и обеспечиваем рандомизацию
-    //чтобы менять один код только один раз используем след алгоритм: случайное число проверяем
-    //использовали ли мы его или нет. Если нет - то используем и складываем в спец. массив и тд
-    for (int i=0; i < percentInNumbers; i++) {
-        int random_num = arc4random()%[self.DNA count];
-        NSNumber *random_numAsObject = [NSNumber numberWithInt:random_num];//превращаем число в обЪект
-        
-        if (![numbersUsedinRandomChange containsObject:random_numAsObject]) {
-            [numbersUsedinRandomChange addObject:random_numAsObject];
-            int random_num2 = arc4random()%4;
-            [self.DNA replaceObjectAtIndex:random_num withObject:[codes objectAtIndex:random_num2]];
-//            NSLog(@"array count:%lu", [numbersUsedinRandomChange count]);// должно равнять заданному параметру percentage
-            
-        }
-        else
-            i--;// чтобы действительно изменить x заданных процентов 
+    NSMutableArray *basketWithNumbers = [[NSMutableArray alloc]initWithCapacity:[self.DNA count]];//корзина
+    //кладем номерки в корзину
+    for (int i=0; i<[self.DNA count]; i++) {
+        NSNumber *iAsAnObject = [NSNumber numberWithInt:i];//превращаем число в обЪект
+        [basketWithNumbers addObject:iAsAnObject];
     }
+    
+    //мутируем
+    for (int i=0; i < percentInNumbers; i++) {
+        [basketWithNumbers shuffle];//перемешиваем
+        NSInteger index = [[basketWithNumbers objectAtIndex:0]integerValue];//смотрим че попалось
+//        NSLog(@"номерок %d",index);
+        int random_num = arc4random()%[self.DNA count];//определяем порядк. номер буквы на которую будем менять
+        [self.DNA replaceObjectAtIndex:index withObject:[self.DNA objectAtIndex:random_num]];//меняем
+        [basketWithNumbers removeObjectAtIndex:0];//Убираем номерок из корзины
+        }
 
 }
 
@@ -57,8 +80,8 @@ int main(int argc, const char * argv[])
         Cell *anotherCell = [[Cell alloc] init];
 //       NSLog(@"%@",aCell.DNA);
         NSLog(@"%d",[aCell hammingDistance:anotherCell]);
-        [aCell mutateBy:70];
-        [anotherCell mutateBy:70];
+        [aCell mutateBy:99];
+        [anotherCell mutateBy:99];
 //        NSLog(@"%@",aCell.DNA);
         
          NSLog(@"%d",[aCell hammingDistance:anotherCell]);
