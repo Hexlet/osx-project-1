@@ -10,6 +10,7 @@
 		2A8FBC4D164642840006CF3F /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A8FBC47164642840006CF3F /* Cell+Mutator.m */; };
 		2A8FBC4E164642840006CF3F /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A8FBC49164642840006CF3F /* Cell.m */; };
 		2A8FBC4F164642840006CF3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A8FBC4C164642840006CF3F /* main.m */; };
+		2A981092164C398300933B81 /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A981091164C398300933B81 /* NSMutableArray+Shuffling.m */; };
 		2ACBD7951645491B0051B5FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ACBD7941645491B0051B5FA /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		2A8FBC4A164642840006CF3F /* DNAProject-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DNAProject-Prefix.pch"; sourceTree = "<group>"; };
 		2A8FBC4B164642840006CF3F /* DNAProject.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = DNAProject.1; sourceTree = "<group>"; };
 		2A8FBC4C164642840006CF3F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A981090164C398300933B81 /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
+		2A981091164C398300933B81 /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
 		2ACBD7901645491B0051B5FA /* DNAProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNAProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ACBD7941645491B0051B5FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -52,6 +55,8 @@
 		2A8FBC45164642840006CF3F /* DNAProject */ = {
 			isa = PBXGroup;
 			children = (
+				2A981090164C398300933B81 /* NSMutableArray+Shuffling.h */,
+				2A981091164C398300933B81 /* NSMutableArray+Shuffling.m */,
 				2A8FBC46164642840006CF3F /* Cell+Mutator.h */,
 				2A8FBC47164642840006CF3F /* Cell+Mutator.m */,
 				2A8FBC48164642840006CF3F /* Cell.h */,
@@ -142,6 +147,7 @@
 				2A8FBC4D164642840006CF3F /* Cell+Mutator.m in Sources */,
 				2A8FBC4E164642840006CF3F /* Cell.m in Sources */,
 				2A8FBC4F164642840006CF3F /* main.m in Sources */,
+				2A981092164C398300933B81 /* NSMutableArray+Shuffling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
