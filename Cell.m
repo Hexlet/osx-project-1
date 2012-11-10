@@ -1,5 +1,7 @@
 #import "Cell.h"
 
+#define DNALngth 10
+
 @interface Cell()
 - (void)generateDNA;
 @end
@@ -9,7 +11,7 @@
 -(id)init {
     self = [super init];
     if (self){
-        _DNALength = 10;
+        _DNALength = DNALngth;
         [self generateDNA];
     }
     return self;
@@ -33,12 +35,12 @@
     return hd;
 }
 
--(void) print {
+-(NSString *) description {
     NSString * dna = @"";
     for(int i=0; i< self.DNALength; i++){
-        dna = [dna  stringByAppendingString:[self.DNA objectAtIndex:i]];
+        dna = [dna stringByAppendingString:[self.DNA objectAtIndex:i]];
     }
-    NSLog(@"%@",dna);
+    return dna;
 }
 
 @end

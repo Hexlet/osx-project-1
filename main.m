@@ -25,17 +25,15 @@
         // Алгоритм замены такой:
         // заменяем с некой вероятностью, на каждом шаге вероятность меняется и мы её считаем
         // Исходя из того сколько мы заменили и сколько еще осталость пройти шагов
-        int rand = arc4random();
-        NSLog(@"Chance %i < %i, %i", x*self.DNALength/100, (rand % (self.DNALength-i)), rand);
-        bool replace = (x*self.DNALength/100 - mutated) <= (rand % (self.DNALength-i));
-        //NSLog(replace?@"Replace":@"Not replace");
+        // int rand = arc4random();
+        unsigned rand = arc4random();
+        bool replace = (x*self.DNALength/100 - mutated) > (rand % (self.DNALength-i));
         if( replace ){
             // Чуточку усложнения что бы символ был гарантированно другим
             while(true){
                 NSString *nucleotid = [nucleotids objectAtIndex:arc4random() % 4];
                 if( [self.DNA objectAtIndex:i] != nucleotid ){
                     [self.DNA replaceObjectAtIndex:i withObject:nucleotid];
-                    NSLog(@"Mutation %i %@", i, nucleotid);
                     mutated++;
                     break;
                 }
@@ -53,14 +51,14 @@ int main (int argc, const char * argv[])
         cellOne = [[Cell alloc] init];
         cellTwo = [[Cell alloc] init];
         
-        [cellOne print];
-        [cellTwo print];
+        NSLog(@"Cell one\t%@",cellOne);
+        NSLog(@"Cell two\t%@",cellTwo);
         NSLog(@"Initial hamming distance: %i", [cellOne hammingDistance:cellTwo]);
         
         [cellOne mutate:50];
         
-        [cellOne print];
-        [cellTwo print];
+        NSLog(@"Cell one\t%@",cellOne);
+        NSLog(@"Cell two\t%@",cellTwo);
         NSLog(@"Hamming distance after mutation: %i", [cellOne hammingDistance:cellTwo]);
     }
     return 0;
