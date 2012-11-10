@@ -14,6 +14,8 @@
 @property NSMutableArray *dna;
 
 +(Cell *) cell;
+
 -(void) print;
+-(int) hammingDistance:(Cell *) anotherCell;
 
 @end

@@ -20,7 +20,7 @@
         _nucleicBases = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
         _dna = [NSMutableArray array];
         for(int i = 0; i < 100; i++) {
-            [_dna addObject:[_nucleicBases objectAtIndex:random() % 4]];
+            [_dna addObject:[_nucleicBases objectAtIndex:arc4random() % 4]];
         }
     }
     return self;
@@ -34,6 +34,16 @@
     }
     
     NSLog(@"DNA: %@", result);
+}
+
+-(int) hammingDistance:(Cell *)anotherCell {
+    int distance = 0;
+    for(int i = 0; i < 100; i++) {
+        if (![[self.dna objectAtIndex:i] isEqualToString:[anotherCell.dna objectAtIndex:i]]) {
+            distance++;
+        }
+    }
+    return distance;
 }
 
 @end

@@ -16,6 +16,8 @@ int main(int argc, const char * argv[])
         [cell print];
         Cell *anotherCell = [Cell cell];
         [anotherCell print];
+        
+        NSLog(@"Distance: %i", [cell hammingDistance:anotherCell]);
     }
     return 0;
 }
