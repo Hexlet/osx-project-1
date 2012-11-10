@@ -15,25 +15,21 @@
     NSArray *array = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
     _DNA = [[NSMutableArray alloc] init];
     if(self){
-        for(int i = 0; i < 10; i++){
-            NSUInteger rChar = random()%3+1;
+        for(int i = 0; i < 100; i++){
+            NSUInteger rChar = arc4random_uniform(4);
             [_DNA addObject:[NSString stringWithFormat:@"%@",[array objectAtIndex: rChar]]];
         }
-       NSLog(@"%@", _DNA);
     }
     return self;
 }
 
 -(int) hammingDistance:(Cell *)cell{
     int j = 0;
-    for(int i = 0; i < 10; i++){
-        NSLog(@"1-%@",[self.DNA objectAtIndex:i]);
-        NSLog(@"2-%@",[cell.DNA objectAtIndex:i]);
+    for(int i = 0; i < 100; i++){
         if(![[self.DNA objectAtIndex:i] isEqual:[cell.DNA objectAtIndex:i]] ){
             j +=1;
         }
     }
-    NSLog(@"%i",j);
     return j;
 }
 
