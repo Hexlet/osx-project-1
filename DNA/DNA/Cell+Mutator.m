@@ -12,7 +12,7 @@
 
 -(void) mutate: (int) size
 {
-    if(100 < size){ size = 100; }
+    if(DNA_SIZE < size){ size = DNA_SIZE; }
     if(0 > size){ size = 0; }
     
     int mutatedPositions[size];
@@ -43,8 +43,8 @@
             } while ([oldValue isEqual:newValue]);
             
             [[self DNA] setObject:newValue atIndexedSubscript:rndpos];
-            mutatedPositions[size-1] = rndpos;
-            size--;
+            mutatedPositions[--size] = rndpos;
+            //size--;
         }
         
         //NSLog(@"%@ %@ %i", oldValue, newValue, rndpos);
