@@ -66,10 +66,7 @@ int main(int argc, const char * argv[])
         //Делаем сравнение двух ДНК
         i= [myCell hammingDistance:otherCell];
         NSLog(@"Разница ДНК после мутации: %i",i);
-        //тест
-        //for (int i=0; i<sizeDNA; i++) {
-        //    NSLog(@"#%i : %@ : %@",i,[[myCell DNA] objectAtIndex:i],[[otherCell DNA] objectAtIndex:i]);
-        //}
+        
     }
     return 0;
 }
