@@ -10,8 +10,7 @@
 #import "Cell.h"
 
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char * argv[]) {
 
     @autoreleasepool {
         Cell *dna1, *dna2;
@@ -20,11 +19,13 @@ int main(int argc, const char * argv[])
      
         [dna1 print];
         [dna2 print];
+
         
         NSLog(@"HammingDistance=%d\n\n",[dna1 hammingDistance:dna2]);
         
-        [dna1 mutate:10];
-        [dna2 mutate:20];
+        [dna1 mutate:20];
+        [dna2 mutate:30];
+        
         
         [dna1 print];
         [dna2 print];

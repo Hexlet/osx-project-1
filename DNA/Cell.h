@@ -12,9 +12,8 @@
 
 @property NSMutableArray *DNA;
 @property NSArray *dnaKeys;
-@property int Capacity;
 
--(void) setCapacity: (int) c;
+
 -(int) hammingDistance: (Cell *)cell;
 -(void) print;
 

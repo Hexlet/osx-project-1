@@ -10,26 +10,29 @@
 
 @implementation Cell (mutation)
 
--(void) mutate:(int)p {
-    NSUInteger dna = [self.DNA count];
-    NSUInteger dnaKeys = [self.dnaKeys count];
-    int dnaIndex;
-    int dnaKeysIndex;
-    NSMutableIndexSet *indexes;
-    NSUInteger index = [indexes firstIndex];
-    
-    for (int i=0; i<p; i++) {
-        dnaIndex = arc4random()%dna;
-        dnaKeysIndex = arc4random()%dnaKeys;
-        if (index != dnaIndex) {
-            if ([self.DNA objectAtIndex:dnaIndex] != [self.dnaKeys objectAtIndex:dnaKeysIndex]) {          
+-(void) mutate:(int)x {
+    NSUInteger index = [self.DNA count];
+    NSUInteger keyIndex = [self.dnaKeys count];
+    NSUInteger dnaIndex;
+    NSUInteger dnaKeysIndex;
+    NSUInteger i=0;
+    NSUInteger p=index*x/100;
+    NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
+
+
+
+        while (i!=p) {
+            dnaIndex = arc4random()%index; 
+            dnaKeysIndex = arc4random()%keyIndex;  
+                    if (![indexes containsIndex:dnaIndex] && [self.DNA objectAtIndex:dnaIndex]!=[self.dnaKeys objectAtIndex:dnaKeysIndex]) {
                     [self.DNA replaceObjectAtIndex:dnaIndex withObject:[self.dnaKeys objectAtIndex:dnaKeysIndex]];
-                    [indexes addIndex: dnaIndex];
-            }
+                    [indexes addIndex: dnaIndex]; 
+                    i++;
+                }
         }
-    }
 }
 
+ 
 @end
 
 @implementation Cell
@@ -37,9 +40,9 @@
 -(id) init {
     self = [super init];
     if (self) {
-        _dnaKeys = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
-        _DNA = [NSMutableArray arrayWithCapacity:100];
-        for (int i=0; i<100; i++) {
+        _dnaKeys = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil]; 
+        _DNA = [NSMutableArray arrayWithCapacity:100]; 
+        for (int i=0; i<100; i++) {                                             
             NSString *dnaKey = [self.dnaKeys objectAtIndex:arc4random()%4];
             [_DNA insertObject:dnaKey atIndex:i];
         }
