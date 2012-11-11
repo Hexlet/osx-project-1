@@ -44,7 +44,6 @@
             
             [[self DNA] setObject:newValue atIndexedSubscript:rndpos];
             mutatedPositions[--size] = rndpos;
-            //size--;
         }
         
         //NSLog(@"%@ %@ %i", oldValue, newValue, rndpos);
