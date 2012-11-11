@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
-@property NSMutableArray *DNA;
+@interface Cell : NSObject{
+    NSMutableArray* DNA;
+}
+@property (readonly, nonatomic) NSMutableArray *DNA;
 -(int)hammingDistance:(Cell*) otherCell;
 -(id)getRandomSymbol;
--(NSMutableString*)getString;
 @end

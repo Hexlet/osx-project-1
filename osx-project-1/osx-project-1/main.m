@@ -20,21 +20,19 @@
         NSLog(@"Value of percent must be in [0;100]");
         return;
     }
-    long countEl = lroundf([self.DNA count]*percent/100);
-//    percent /=100;
-//    countEl *=percent;//quantity elements for change;
-    BOOL checkReplace [[self.DNA count]];
+    long countEl = lroundf([self.DNA count]*percent/100);// quantity of DNA's elements for change
+    BOOL checkReplace [[self.DNA count]]; //auxilary array for check of visited elementss
     for(int i = 0; i < [self.DNA count]; i++)
         checkReplace[i] = YES;
     
     int count = 0;//counter of changed elements
     while (count < countEl) {
-        int index = arc4random()%[self.DNA count];
-        NSString *el = [self getRandomSymbol];
-        if(checkReplace[index] && ([self.DNA objectAtIndex:index] != el)){
-            checkReplace[index] = 0;
+        int index = arc4random()%[self.DNA count]; //generate random index of DNA's element
+        NSString *el = [self getRandomSymbol];     //generate random symbol for this element
+        if(checkReplace[index] && ([self.DNA objectAtIndex:index] != el)){ //check new generated element
+            checkReplace[index] = NO;
             count++;
-            [self.DNA replaceObjectAtIndex:index withObject:el];
+            [DNA replaceObjectAtIndex:index withObject:el];
         }
     }
         
@@ -49,14 +47,21 @@ int main(int argc, const char * argv[])
         Cell *cell_1 = [[Cell alloc] init];
         Cell *cell_2 = [[Cell alloc] init];
         
-//        NSLog(@"Cell_1: %@", [cell_1 getString]);
-//        NSLog(@"Cell_2: %@", [cell_2 getString]);
+        NSLog(@"Cell_1: %@\n", cell_1);
+        NSLog(@"Cell_2: %@\n", cell_2);
         
         NSLog(@"Hamming distance = %i", [cell_1 hammingDistance:cell_2]);
         
-        [cell_1 mutate:arc4random()%[[cell_1 DNA] count]];
-        [cell_2 mutate:arc4random()%[[cell_2 DNA] count]];
+        int mutateEl = arc4random()%[[cell_1 DNA] count];
+        [cell_1 mutate:mutateEl];
+        NSLog(@"In Cell_1 was mutate %i percent of chain.\n", mutateEl);
         
+        mutateEl = arc4random()%[[cell_2 DNA] count];
+        [cell_2 mutate:mutateEl];
+        NSLog(@"In Cell_2 was mutate %i percent of chain.\n", mutateEl);
+                
+        NSLog(@"New Cell_1: %@", cell_1);
+        NSLog(@"New Cell_2: %@", cell_2);      
         NSLog(@"Hamming distance = %i", [cell_1 hammingDistance:cell_2]);
 
         
