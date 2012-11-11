@@ -21,15 +21,16 @@
     return [elements objectAtIndex:arc4random() % [elements count]];          //возвращаем один элемент массива elements из оставшихся 
 }
 - (void)mutate:(int)percent { //надо добавить проверку что percent в пределах от 0 до 100    
-    NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:DNA_LENGTH];
+    NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:DNA_LENGTH]; //создаем массив для индексов
     for (int i = 0; i < DNA_LENGTH; i++) {
-        [indexes addObject:[NSNumber numberWithInt:i]];
+        [indexes addObject:[NSNumber numberWithInt:i]];                   //заполняем его
     }
-    int index;
-    int counter = round(DNA_LENGTH*percent / 100);
-    for(; counter > 0; counter--) {
-        index =  [[indexes objectAtIndex: arc4random() % [indexes count]] intValue];
-        [self.DNA replaceObjectAtIndex:index withObject: [Cell mutateDNAElement:[self.DNA objectAtIndex:index]]];
+    int index, index_index;
+    for(int counter = round(DNA_LENGTH*percent / 100); counter > 0; counter--) {           //запускаем цикл предварительно вычислив количество мутаций
+        index_index = arc4random() % [indexes count];    
+        index =  [[indexes objectAtIndex: index_index] intValue];       //выбираем случайным образов из массива индексов значение
+        [self.DNA replaceObjectAtIndex:index withObject: [Cell mutateDNAElement:[self.DNA objectAtIndex:index]]];    //мутируем DNA по выбранному индексу 
+        [indexes removeObjectAtIndex: index_index];               //удаляем использованное значение из массива индексов
     }
     return;
   }
@@ -42,8 +43,8 @@ int main(int argc, const char * argv[])
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
         NSLog(@"hamming distance before mutate: %d", [cell1 hammingDistance:cell2]);
-        [cell1 mutate:22];
-        [cell2 mutate:56];
+        [cell1 mutate:15];
+        [cell2 mutate:67];
         NSLog(@"hamming distance after mutate: %d", [cell1 hammingDistance:cell2]);
     }
     return 0;
