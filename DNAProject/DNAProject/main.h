@@ -10,22 +10,9 @@
 #define DNAProject_main_h
 
 #import <Foundation/Foundation.h>
+#import "cell.h"
+#import "cell+mutator.h"
 
-
-@interface Cell : NSObject
-
--(int)getRandomNumber:(int)from to:(int)to;
--(void)getRandomSequence:(int)from to:(int)to count:(int)count sequnce:(int *)sequence;
-
-- (NSString *) randomNucleotide;
-- (int) hammingDistance:(Cell *)other_cell;
--(NSString *) asString;
-@property NSMutableArray * DNA;
-@end
-
-
-@interface Cell (mutator)
-@end
 
 
 #endif
