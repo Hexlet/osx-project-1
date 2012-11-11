@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D804C7BD16501C6C00544DB2 /* Cell+DNAMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = D804C7BC16501C6C00544DB2 /* Cell+DNAMutator.m */; };
+		D804C7D31650463900544DB2 /* Cell+DNAMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = D804C7D21650463900544DB2 /* Cell+DNAMutator.m */; };
 		D8767F37164D6C51008E8B35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8767F36164D6C51008E8B35 /* Foundation.framework */; };
 		D8767F3A164D6C51008E8B35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8767F39164D6C51008E8B35 /* main.m */; };
 		D8767F3E164D6C51008E8B35 /* DNA_HW.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8767F3D164D6C51008E8B35 /* DNA_HW.1 */; };
@@ -28,8 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D804C7BB16501C6C00544DB2 /* Cell+DNAMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+DNAMutator.h"; path = "../Cell+DNAMutator.h"; sourceTree = "<group>"; };
-		D804C7BC16501C6C00544DB2 /* Cell+DNAMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+DNAMutator.m"; path = "../Cell+DNAMutator.m"; sourceTree = "<group>"; };
+		D804C7D11650463900544DB2 /* Cell+DNAMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+DNAMutator.h"; sourceTree = "<group>"; };
+		D804C7D21650463900544DB2 /* Cell+DNAMutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+DNAMutator.m"; sourceTree = "<group>"; };
 		D8767F32164D6C51008E8B35 /* DNA_HW */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNA_HW; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8767F36164D6C51008E8B35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D8767F39164D6C51008E8B35 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 		D8767F38164D6C51008E8B35 /* DNA_HW */ = {
 			isa = PBXGroup;
 			children = (
-				D804C7BB16501C6C00544DB2 /* Cell+DNAMutator.h */,
-				D804C7BC16501C6C00544DB2 /* Cell+DNAMutator.m */,
+				D804C7D11650463900544DB2 /* Cell+DNAMutator.h */,
+				D804C7D21650463900544DB2 /* Cell+DNAMutator.m */,
 				D8767F39164D6C51008E8B35 /* main.m */,
 				D8767F48164D9BD8008E8B35 /* Cell.h */,
 				D8767F49164D9BD8008E8B35 /* Cell.m */,
@@ -151,7 +151,7 @@
 			files = (
 				D8767F3A164D6C51008E8B35 /* main.m in Sources */,
 				D8767F4A164D9BD8008E8B35 /* Cell.m in Sources */,
-				D804C7BD16501C6C00544DB2 /* Cell+DNAMutator.m in Sources */,
+				D804C7D31650463900544DB2 /* Cell+DNAMutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
