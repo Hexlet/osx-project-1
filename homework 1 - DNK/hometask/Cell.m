@@ -17,19 +17,18 @@ static int _randNumber; // статическая переменная для с
 -(int)hammingDistance:(Cell *)c
 {
 
-    int distance = 0;
+    int count = 0;
     for (int i = 0; i < DNAEL; i++) {
         
         if ([self.DNA objectAtIndex:i] != [c.DNA objectAtIndex:i]) // если ячейки разные, пишим номер ячейки
                                                                    // в distance и прирываем цыкл
         {
-            distance = i;
-            break;
+            count++;
         
         };
     }
     
-    return distance; // возращаем результат
+    return count; // возращаем результат
 }
 
 
