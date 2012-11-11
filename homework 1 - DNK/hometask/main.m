@@ -20,6 +20,10 @@
 
 -(void)mutate:(int)X
 {
+    if (X > 100) // если кол-во процентов больше 100 сообщаем пользователю и завершаем программу с ошибкой -1
+    {
+        NSLog(@"The number of cells is less than or equal to 100"); exit(-1); 
+    }
     
     NSMutableArray * replace = [NSMutableArray arrayWithCapacity:X]; // уникальный массив для замены клеток размером X
     

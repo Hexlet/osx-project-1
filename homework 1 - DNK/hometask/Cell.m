@@ -14,18 +14,15 @@
 static int _randNumber; // статическая переменная для создания разного результата рандома
 
 
+
 -(int)hammingDistance:(Cell *)c
 {
 
     int count = 0;
     for (int i = 0; i < DNAEL; i++) {
         
-        if ([self.DNA objectAtIndex:i] != [c.DNA objectAtIndex:i]) // если ячейки разные, пишим номер ячейки
-                                                                   // в distance и прирываем цыкл
-        {
-            count++;
+        if ([self.DNA objectAtIndex:i] != [c.DNA objectAtIndex:i]) count++; // если расходяться ячейки увеличиваем счетчик
         
-        };
     }
     
     return count; // возращаем результат
