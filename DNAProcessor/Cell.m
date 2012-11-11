@@ -37,13 +37,7 @@
 }
 
 -(void) print {
-    NSMutableString *result = [NSMutableString stringWithCapacity:100];
-    
-    for(NSString *element in _dna) {
-        [result appendString:element];
-    }
-    
-    NSLog(@"DNA: %@", result);
+    NSLog(@"DNA: %@", [_dna componentsJoinedByString:@""]);
 }
 
 @end
