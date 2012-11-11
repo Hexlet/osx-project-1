@@ -16,9 +16,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DB6BBC4C1648CAD200CA68E4"
-               BuildableName = "UnitTest.octest"
-               BlueprintName = "UnitTest"
+               BlueprintIdentifier = "DBD5B9441647EED6006AD657"
+               BuildableName = "DnaTest.octest"
+               BlueprintName = "DnaTest"
                ReferencedContainer = "container:DNAProject.xcodeproj">
             </BuildableReference>
          </TestableReference>

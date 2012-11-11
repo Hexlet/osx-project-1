@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB6BBC4E1648CAD200CA68E4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD5B9461647EED6006AD657 /* SenTestingKit.framework */; };
-		DB6BBC4F1648CAD200CA68E4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD5B9481647EED6006AD657 /* Cocoa.framework */; };
-		DB6BBC551648CAD200CA68E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB6BBC531648CAD200CA68E4 /* InfoPlist.strings */; };
-		DB6BBC581648CAD200CA68E4 /* UnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6BBC571648CAD200CA68E4 /* UnitTest.m */; };
 		DBD5B93216479E3A006AD657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD5B93116479E3A006AD657 /* Foundation.framework */; };
 		DBD5B93516479E3A006AD657 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD5B93416479E3A006AD657 /* main.m */; };
 		DBD5B93916479E3B006AD657 /* DNAProject.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBD5B93816479E3B006AD657 /* DNAProject.1 */; };
@@ -32,12 +28,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DB6BBC4D1648CAD200CA68E4 /* UnitTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB6BBC521648CAD200CA68E4 /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
-		DB6BBC541648CAD200CA68E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DB6BBC561648CAD200CA68E4 /* UnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitTest.h; sourceTree = "<group>"; };
-		DB6BBC571648CAD200CA68E4 /* UnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitTest.m; sourceTree = "<group>"; };
-		DB6BBC591648CAD200CA68E4 /* UnitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTest-Prefix.pch"; sourceTree = "<group>"; };
 		DBD5B92D16479E3A006AD657 /* DNAProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DNAProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD5B93116479E3A006AD657 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DBD5B93416479E3A006AD657 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,15 +43,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DB6BBC491648CAD200CA68E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB6BBC4E1648CAD200CA68E4 /* SenTestingKit.framework in Frameworks */,
-				DB6BBC4F1648CAD200CA68E4 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DBD5B92A16479E3A006AD657 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,31 +63,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DB6BBC501648CAD200CA68E4 /* UnitTest */ = {
-			isa = PBXGroup;
-			children = (
-				DB6BBC561648CAD200CA68E4 /* UnitTest.h */,
-				DB6BBC571648CAD200CA68E4 /* UnitTest.m */,
-				DB6BBC511648CAD200CA68E4 /* Supporting Files */,
-			);
-			path = UnitTest;
-			sourceTree = "<group>";
-		};
-		DB6BBC511648CAD200CA68E4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DB6BBC521648CAD200CA68E4 /* UnitTest-Info.plist */,
-				DB6BBC531648CAD200CA68E4 /* InfoPlist.strings */,
-				DB6BBC591648CAD200CA68E4 /* UnitTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		DBD5B92216479E3A006AD657 = {
 			isa = PBXGroup;
 			children = (
 				DBD5B93316479E3A006AD657 /* DNAProject */,
-				DB6BBC501648CAD200CA68E4 /* UnitTest */,
 				DBD5B93016479E3A006AD657 /* Frameworks */,
 				DBD5B92E16479E3A006AD657 /* Products */,
 			);
@@ -117,7 +77,6 @@
 			children = (
 				DBD5B92D16479E3A006AD657 /* DNAProject */,
 				DBD5B9451647EED6006AD657 /* DnaTest.octest */,
-				DB6BBC4D1648CAD200CA68E4 /* UnitTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,24 +124,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DB6BBC4C1648CAD200CA68E4 /* UnitTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DB6BBC5C1648CAD200CA68E4 /* Build configuration list for PBXNativeTarget "UnitTest" */;
-			buildPhases = (
-				DB6BBC481648CAD200CA68E4 /* Sources */,
-				DB6BBC491648CAD200CA68E4 /* Frameworks */,
-				DB6BBC4A1648CAD200CA68E4 /* Resources */,
-				DB6BBC4B1648CAD200CA68E4 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = UnitTest;
-			productName = UnitTest;
-			productReference = DB6BBC4D1648CAD200CA68E4 /* UnitTest.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 		DBD5B92C16479E3A006AD657 /* DNAProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBD5B93C16479E3B006AD657 /* Build configuration list for PBXNativeTarget "DNAProject" */;
@@ -241,20 +182,11 @@
 			targets = (
 				DBD5B92C16479E3A006AD657 /* DNAProject */,
 				DBD5B9441647EED6006AD657 /* DnaTest */,
-				DB6BBC4C1648CAD200CA68E4 /* UnitTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DB6BBC4A1648CAD200CA68E4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB6BBC551648CAD200CA68E4 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DBD5B9421647EED6006AD657 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,19 +197,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DB6BBC4B1648CAD200CA68E4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		DBD5B9431647EED6006AD657 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,14 +213,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DB6BBC481648CAD200CA68E4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB6BBC581648CAD200CA68E4 /* UnitTest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DBD5B92916479E3A006AD657 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,44 +230,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		DB6BBC531648CAD200CA68E4 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB6BBC541648CAD200CA68E4 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		DB6BBC5A1648CAD200CA68E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UnitTest/UnitTest-Prefix.pch";
-				INFOPLIST_FILE = "UnitTest/UnitTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		DB6BBC5B1648CAD200CA68E4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UnitTest/UnitTest-Prefix.pch";
-				INFOPLIST_FILE = "UnitTest/UnitTest-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 		DBD5B93A16479E3B006AD657 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -457,14 +331,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB6BBC5C1648CAD200CA68E4 /* Build configuration list for PBXNativeTarget "UnitTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DB6BBC5A1648CAD200CA68E4 /* Debug */,
-				DB6BBC5B1648CAD200CA68E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		DBD5B92716479E3A006AD657 /* Build configuration list for PBXProject "DNAProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -481,7 +347,6 @@
 				DBD5B93E16479E3B006AD657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		DBD5B9581647EED7006AD657 /* Build configuration list for PBXNativeTarget "DnaTest" */ = {
 			isa = XCConfigurationList;
@@ -490,7 +355,6 @@
 				DBD5B95A1647EED7006AD657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
