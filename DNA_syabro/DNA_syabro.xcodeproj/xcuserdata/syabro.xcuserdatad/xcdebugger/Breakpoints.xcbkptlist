@@ -26,7 +26,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "43"
          endingLineNumber = "43"
-         landmarkName = "-hammingDistance:"
+         landmarkName = "-getRandomCell"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

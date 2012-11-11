@@ -15,5 +15,6 @@
 - (int) hammingDistance: (Cell *) c;
 - (void) generateDNA: (int) len;
 - (NSString*) getRandomCell;
+- (NSString*) getRandomCell: (NSString*) exclude;
 - (void) printDNA;
 @end

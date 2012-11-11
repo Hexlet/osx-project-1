@@ -18,7 +18,7 @@
 }
 
 - (id) init {
-    return [self init:100];
+    return [self init:20];
 }
 
 - (void) generateDNA: (int)len {
@@ -29,10 +29,17 @@
     }
 }
 
-- (NSString*) getRandomCell {
+- (NSString*) getRandomCell: (NSString*) exclude  {
     NSString *bricks = @"ATGC";
+    if (exclude!=NULL) {
+        bricks = [bricks stringByReplacingOccurrencesOfString: exclude withString: @""];
+    }
     int r = arc4random() % ((unsigned)[bricks length]);
     return [NSString stringWithFormat:@"%c", [bricks characterAtIndex:r]];
+}
+
+- (NSString *) getRandomCell {
+    return [self getRandomCell: NULL];
 }
 
 - (void) printDNA {

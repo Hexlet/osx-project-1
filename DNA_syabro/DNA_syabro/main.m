@@ -15,24 +15,43 @@
 
 @implementation Cell(mutator)
 - (void) mutate:(int)percents {
-    int amount = [self.DNA count] * percents / 100;
-
-    // Replacing cells with #
-    // We can't replace it with random cell directly, because we can replace one cell twice
-    while (amount > 0) {
-        int random_cell = arc4random() % ((unsigned)[self.DNA count]);
-
-        if (self.DNA[random_cell]!=@"#") {
-            self.DNA[random_cell]=@"#";
-            amount--;
-        }
+    if (percents<0) {
+        return ;
     }
 
-    // Replacing # with random cell
+    if (percents>100) {
+        percents = 100;
+    }
+
+
+
+    int amount = [self.DNA count] * percents / 100;
+
+//    NSLog(@"Replacing %d", amount);
+
+    NSMutableArray *avalailableIndexes = [[NSMutableArray alloc] init];
+    NSMutableArray *indexesForReplace = [[NSMutableArray alloc] init];
     for (int i=0; i<[self.DNA count]; i++) {
-        if (self.DNA[i]==@"#"){
-            self.DNA[i] = [self getRandomCell];
-        }
+        [avalailableIndexes addObject:[NSNumber numberWithInt:i]];
+    }
+
+    while (amount > 0) {
+        // Selecting random available index
+        int i = arc4random() % ((unsigned)[avalailableIndexes count]);
+
+        // Saving it for replace
+        [indexesForReplace addObject:avalailableIndexes[i]];
+
+        // Removing it from available
+        [avalailableIndexes removeObjectAtIndex:i];
+        amount--;
+    }
+//    NSLog([indexesForReplace componentsJoinedByString:@", "]);
+
+    // Replacing selected indexes with random cell;
+    for (int i=0; i<[indexesForReplace count]; i++) {
+        int index = [indexesForReplace[i] intValue];
+        self.DNA[index] = [self getRandomCell:self.DNA[index]];
     }
 }
 @end
@@ -50,6 +69,9 @@ int main(int argc, const char * argv[])
 
         [cell mutate:20];
         [cell mutate:20];
+
+//        [cell printDNA];
+//        [cell2 printDNA];
 
         NSLog(@"%d", [cell hammingDistance: cell2]);
     }
