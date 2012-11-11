@@ -12,7 +12,8 @@
 
 -(int) hammingDistance: (Cell *) cell;
 
-@property  NSMutableArray *DNA;
-@property  NSArray *letters;
+@property NSMutableArray *DNA;
+@property NSArray *letters;
+@property int dnaLength;
 
 @end

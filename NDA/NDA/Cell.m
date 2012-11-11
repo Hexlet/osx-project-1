@@ -13,10 +13,11 @@
 @implementation Cell 
 -(id) init {
     self = [super init];
+    self.dnaLength = 100;
     if (self) {
-        self.DNA = [NSMutableArray arrayWithCapacity: 100];
+        self.DNA = [NSMutableArray arrayWithCapacity: self.dnaLength];
         self.letters = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < self.dnaLength; i++) {
             int x = arc4random() % 4;
             [self.DNA addObject:self.letters[x]];
         }
@@ -26,7 +27,7 @@
 
 -(int) hammingDistance: (Cell*) cell {
     int distance = 0;
-    for (int i=0; i<100; i++) {
+    for (int i=0; i<self.dnaLength; i++) {
         if (self.DNA[i] != cell.DNA[i]) {
             distance++;
         }

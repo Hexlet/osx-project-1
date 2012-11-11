@@ -19,10 +19,10 @@
 -(void) mutate: (int) x {    
     NSMutableArray *tmpArray;
     for (NSUInteger i = 0; i < x; i++) {
-        NSNumber *randomIndex = [NSNumber numberWithInt:(arc4random() % 100)];
+        NSNumber *randomIndex = [NSNumber numberWithInt:(arc4random() % self.dnaLength)];
         
         while([tmpArray indexOfObject:randomIndex] > 0) {
-           randomIndex = [NSNumber numberWithInt:(arc4random() % 100)];
+           randomIndex = [NSNumber numberWithInt:(arc4random() % self.dnaLength)];
         }
         
         [tmpArray addObject: randomIndex];
