@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'NDA' target in the 'NDA' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
