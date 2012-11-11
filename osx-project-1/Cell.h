@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#define CAPACITY 100
 
 @interface Cell : NSObject
 
 @property NSMutableArray *dna;
 
-- (id) setRandomValues: (NSArray*) dna forDna:(NSMutableArray*) validDnaSymbols;
+- (void) setRandomValues;
 
 - (int) hammingDistance: (Cell*) cell;
 

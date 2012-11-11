@@ -16,10 +16,40 @@
 @implementation Cell (mutator)
 
 - (void) mutate: (int) val {
-    NSArray *validDnaSymbols = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-    for (int i = 1; i <= val; i++) {
-        [[self dna] replaceObjectAtIndex:i withObject:[validDnaSymbols objectAtIndex:(arc4random() % [validDnaSymbols count])]];
+    NSCAssert((val >= 0 && val <= 100), @"Invalid x value for mutating!");
+
+    NSMutableArray *indexForChange = [NSMutableArray arrayWithCapacity:CAPACITY];
+    
+    for (int i = 0; i < CAPACITY; i++) {
+        [indexForChange insertObject: [NSNumber numberWithInt:i] atIndex:i];
     }
+    
+    //shuffle array: via http://stackoverflow.com/questions/56648/whats-the-best-way-to-shuffle-an-nsmutablearray
+    
+    NSUInteger count = CAPACITY;
+    for (NSUInteger i = 0; i < count; ++i) {
+        
+        NSInteger nElements = count - i;
+        NSInteger n = (arc4random() % nElements) + i;
+        [indexForChange exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+    
+    int countsForChange = (int) lroundf((CAPACITY * val) / 100.0f);
+    
+    for (int i = 0; i < countsForChange; i++) {
+        int randIndex = (int) [[indexForChange objectAtIndex:i] integerValue];        
+        NSString *newVal = [self getRandomValueExcept:[[self dna] objectAtIndex:randIndex]];
+        [[self dna] replaceObjectAtIndex:randIndex withObject:newVal];
+    }
+    
+}
+
+- (NSString*) getRandomValueExcept: (NSString*) val {
+    NSMutableArray *values = [NSMutableArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
+    [values removeObject:val];
+    int randIndex = arc4random() % [values count];
+    
+    return [values objectAtIndex:randIndex];
 }
 
 @end
