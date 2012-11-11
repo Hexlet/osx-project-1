@@ -2,7 +2,7 @@
 //  main.c
 //  DNA
 //
-//  Created by sx on 08.11.12.
+//  Created by sx on 09.11.12.
 //  Copyright (c) 2012 sx. All rights reserved.
 //
 
