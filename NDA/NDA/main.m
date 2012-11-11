@@ -15,20 +15,19 @@
 @end
 
 @implementation Cell (mutator)
--(void) mutate: (int) x {
-    // shuffling array
-    NSUInteger count = [self.DNA count];   
-    
-    for (NSUInteger i = 0; i < count; ++i) {
-        long nElements = count - i;
-        long n = (arc4random() % nElements) + i;
-        [self.DNA exchangeObjectAtIndex:i withObjectAtIndex:n];
-    }
-    
-    
+
+-(void) mutate: (int) x {    
+    NSMutableArray *tmpArray;
     for (NSUInteger i = 0; i < x; i++) {
+        NSNumber *randomIndex = [NSNumber numberWithInt:(arc4random() % 100)];
+        
+        while([tmpArray indexOfObject:randomIndex] > 0) {
+           randomIndex = [NSNumber numberWithInt:(arc4random() % 100)];
+        }
+        
+        [tmpArray addObject: randomIndex];
         int index = arc4random() % 4;
-        self.DNA[i] = self.letters[index];
+        self.DNA[[randomIndex intValue]] = self.letters[index];
     }
     
 }
