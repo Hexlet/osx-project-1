@@ -11,30 +11,28 @@
 
 @interface Cell(mutator)
 
-- (void) mutate:(int)x;
+- (void) mutate:(int)percent;
 
 @end
 
 @implementation Cell(mutator)
 
--(void)mutator:(int)x
+-(void)mutate:(int)percent
 {
-    NSMutableArray *unicNumbers = [NSMutableArray array];
-    for(int i = 0; i < 100; i++)
-        [unicNumbers addObject: [NSNumber numberWithInt:i]];
+    NSMutableArray *elementIndex = [NSMutableArray array];
+    NSNumber *index = [NSNumber numberWithInt:0];
     
-    NSUInteger size, position;
-    for (int i = 0; i < x; i++) {
-        size = [unicNumbers count];
-        if (size > 0)
-            
-            position = (arc4random() % size);
-        NSNumber *unicRandomNumber = [unicNumbers objectAtIndex:position];
+    do {
+        index = [NSNumber numberWithInt:(arc4random() % 100)];
         
-        [self.dna replaceObjectAtIndex:[unicRandomNumber intValue]
-                            withObject:[self.dnaSimbols objectAtIndex:arc4random() % [self.dnaSimbols count]]];
-        
-        [unicNumbers removeObjectAtIndex:position];
+        if ([elementIndex indexOfObject:index] == NSNotFound) {
+            [elementIndex addObject:index];
+        }
+    } while (percent > [elementIndex count]);
+    
+    for (NSInteger i = 0; i<percent; i++) {
+        [[self dna] replaceObjectAtIndex:[[elementIndex objectAtIndex:i] integerValue]
+                              withObject:[[self dnaSimbols] objectAtIndex:(arc4random() % [[self dnaSimbols] count])]];
     }
 }
 
@@ -50,8 +48,8 @@ int main(int argc, const char * argv[])
         
         NSLog(@"result 1 = %i", [cell1 hammingDistance:cell2]);
         
-        [cell1 mutator:14];
-        [cell2 mutator:86];
+        [cell1 mutate:14];
+        [cell2 mutate:86];
         
         NSLog(@"result 2 = %i", [cell1 hammingDistance:cell2]);
         
