@@ -10,26 +10,41 @@
 
 @implementation Cell
 
+int sizeArray = 100;
+
 -(id) init {
     self = [super init];
     if (self) {
         
-        //задаем эллементы массива
-        NSMutableArray *charsDNA = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
         
-        
-        //задаем размер массива
+        _types = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
         _DNA = [NSMutableArray arrayWithCapacity:100];
         
-        for (int count=0; count<100; count++) {
-            int R_andom = random ()%4;
-            [_DNA addObject:[charsDNA objectAtIndex:R_andom]];
+        for (sizeArray = 0; sizeArray < 100; sizeArray++) {
+            [_DNA addObject:_types[arc4random() %4]];
         }
     }
     return self;
 }
--(void) print {
-    NSLog(@"%@", _DNA);
+
+
+-(int) hammingDistance:(Cell *)cell {
+    int hamming = 0;
+    
+    for (sizeArray = 0; sizeArray < 100; sizeArray++) {
+        if (_DNA [sizeArray] != cell.DNA[sizeArray]) {
+            hamming++;
+        }
+    }
+    return hamming;
+}
+
+- (NSString *) findGenNot:(NSString *)current {
+    NSString *gen = [[NSString alloc] init];
+        while (gen != current){
+            gen = self.types[arc4random() % 4];
+        }
+    return gen;
 }
 
 @end

@@ -8,16 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
+#import "Mutate.h"
 
-int main(int argc, const char * argv[])
-{
-
+int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        Cell *dnaTest = [[Cell alloc] init];
-       
-        [dnaTest print];
+        int hamming;
         
+        Cell *myCell = [[Cell alloc] init];
+        Cell *hammingCell = [[Cell alloc] init];
+        
+        hamming = [myCell hammingDistance: hammingCell];
+        
+        NSLog(@"hamming: %i", hamming);
+        
+        [myCell mutate: 20];
+        [hammingCell mutate: 40];
+        hamming = [myCell hammingDistance: hammingCell];
+        
+        NSLog(@"hammingDistanceAfterMutate: %i", hamming);
     }
     return 0;
 }
