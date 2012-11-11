@@ -8,43 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
-
-@interface Cell (MUTATOR)
--(void)mutate;
-@end
-
-@implementation Cell (Mutator)
-
--(void)mutate:(int)percentsForMutator {
-    // Массив для хранения случайных индексов
-    NSMutableArray *rangeOfIndex = [NSMutableArray arrayWithCapacity:percentsForMutator];
-    // Так как массив у нас из 100 символов, то кол-во итераций равно кол-ву процентов
-    for (int i=0; i<percentsForMutator; i++) {
-        // Получаем символ, который хотим заменить
-        NSString *symbolOfDNA = [self.dna objectAtIndex:i];
-        // Получаем рандомный символ
-        NSString *symbolToReplace = [self randomSymbol];
-        // Если рандомный символ равен текущему, получаем еще...
-        while (symbolOfDNA == symbolToReplace) {
-            symbolToReplace = [self randomSymbol];
-        }
-        // Получаем случайный индекс для замены в нашей днк
-        int index = arc4random()%100;
-        // Переведем этот этот индекс в NSNumber, чтобы найти его в нашем массиве
-        NSNumber *indexNumber = [NSNumber numberWithInt:index];
-        /* Смотрим, содержит ли наш массив случайные индекс, есди да -
-         получаем новый случайный индекс и т.д.*/
-        while ([rangeOfIndex containsObject:indexNumber]) {
-            index = arc4random()%100;
-            indexNumber = [NSNumber numberWithInt:index];
-        }
-        // Заменяем на радномный символ по случайному индексу
-        [self.dna replaceObjectAtIndex:index withObject:symbolToReplace];
-        [rangeOfIndex addObject:[NSNumber numberWithInt:index]];
-        
-    }
-}
-@end
+#import "Cell+Mutator.h"
 
 int main(int argc, const char * argv[])
 {
