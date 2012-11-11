@@ -8,15 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-const int DNA_SIZE = 100;
-const char N_BASES[4] = {'A', 'T', 'G', 'C'};
+#define DNA_SIZE 100
 
 @interface Cell : NSObject
 {
-    NSMutableArray *_DNA;
+//    NSMutableArray *_DNA;
 }
-- (id)init;
+
+@property (nonatomic, strong) NSMutableArray *DNA;
+
 + (NSString*)getRandNBase;
+- (int)hammingDistance:(Cell *)aCell;
 - (void)result;
 
 @end

@@ -11,6 +11,7 @@
 		3C585DA41649987300B772B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C585DA31649987300B772B9 /* main.m */; };
 		3C585DA81649987300B772B9 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C585DA71649987300B772B9 /* DNA.1 */; };
 		3C585DB0164998EC00B772B9 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C585DAF164998EC00B772B9 /* Cell.m */; };
+		3C7C1480164EC0F2007E6E1E /* Cell+mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7C147F164EC0F2007E6E1E /* Cell+mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,9 @@
 		3C585DA71649987300B772B9 /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
 		3C585DAE164998EC00B772B9 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		3C585DAF164998EC00B772B9 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		3C7C147E164EC0F2007E6E1E /* Cell+mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutator.h"; sourceTree = "<group>"; };
+		3C7C147F164EC0F2007E6E1E /* Cell+mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutator.m"; sourceTree = "<group>"; };
+		3C8E582A164AFCB600EF5422 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		3C585D911649987300B772B9 = {
 			isa = PBXGroup;
 			children = (
+				3C8E582A164AFCB600EF5422 /* .gitignore */,
 				3C585DA21649987300B772B9 /* DNA */,
 				3C585D9F1649987300B772B9 /* Frameworks */,
 				3C585D9D1649987300B772B9 /* Products */,
@@ -81,6 +86,8 @@
 				3C585DAF164998EC00B772B9 /* Cell.m */,
 				3C585DA71649987300B772B9 /* DNA.1 */,
 				3C585DA51649987300B772B9 /* Supporting Files */,
+				3C7C147E164EC0F2007E6E1E /* Cell+mutator.h */,
+				3C7C147F164EC0F2007E6E1E /* Cell+mutator.m */,
 			);
 			path = DNA;
 			sourceTree = "<group>";
@@ -103,6 +110,7 @@
 				3C585D981649987300B772B9 /* Sources */,
 				3C585D991649987300B772B9 /* Frameworks */,
 				3C585D9A1649987300B772B9 /* CopyFiles */,
+				3C8E5825164AEFED00EF5422 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -139,6 +147,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C8E5825164AEFED00EF5422 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3C585D981649987300B772B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -146,6 +170,7 @@
 			files = (
 				3C585DA41649987300B772B9 /* main.m in Sources */,
 				3C585DB0164998EC00B772B9 /* Cell.m in Sources */,
+				3C7C1480164EC0F2007E6E1E /* Cell+mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +267,7 @@
 				3C585DAD1649987300B772B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

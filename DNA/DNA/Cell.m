@@ -8,24 +8,40 @@
 
 #import "Cell.h"
 
+const char N_BASES[4] = {'A', 'T', 'G', 'C'};
+
 @implementation Cell
 
-- (id)init {
-    if ((self = [super init])) {
+- (id)init
+{
+    if ((self = [super init]))
+	{
+//		self.DNA = [[NSMutableArray alloc] init];
         _DNA = [NSMutableArray arrayWithCapacity:DNA_SIZE];
-        for (int i = 0; i < DNA_SIZE; i++) {
-            [_DNA addObject:[Cell getRandNBase]];
-        }
-    
+        for (int i = 0; i < DNA_SIZE; i++) 
+            [_DNA addObject:[Cell getRandNBase]];    
     }
     return self;
 }
 
-+(NSString*)getRandNBase {
++ (NSString*)getRandNBase
+{
     return [NSString stringWithFormat:@"%c" , (N_BASES[arc4random() % 4])];
 }
 
-- (void)result {
+- (int)hammingDistance:(Cell *)aCell
+{
+	int dif = 0;
+	for(int i = 0; i < DNA_SIZE; i++)
+	{
+		if([[self.DNA objectAtIndex:i] isEqual:[aCell.DNA objectAtIndex:i]])
+			dif++;
+	}
+	return dif;
+}
+
+- (void)result
+{
     NSLog(@"%@", _DNA);
 }
 
