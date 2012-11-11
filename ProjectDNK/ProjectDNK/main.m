@@ -5,6 +5,7 @@
 //  Created by Сергей Сергеевич on 11.11.12.
 //  Copyright (c) 2012 Сергей Сергеевич. All rights reserved.
 //
+//final
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
