@@ -9,19 +9,19 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject
-
-//declare class variable
 {
-    NSUInteger arrayCapacity;
-    NSArray *dnaArray;
-    
+    NSArray *DNAElements;
+    NSMutableArray *DNA;
 }
+@property NSMutableArray *secondDNA;
 
-@property NSMutableArray *dna;
+-(id)init;
+-(int)hammingDistance:(Cell *) cell;
+//-(NSMutableArray *)getDNA;
 
+@end
 
-
-//-(int)hammingDistance: (Cell*) objectCell ;
-
-
+//создаем категорию mutator класса Cell
+@interface Cell(mutator)
+-(void)mutate: (int)x;
 @end

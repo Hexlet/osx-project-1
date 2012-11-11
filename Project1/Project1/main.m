@@ -15,7 +15,14 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         //
-    
-    return 0;
+        Cell *cell1 = [[Cell alloc]init];
+        Cell *cell2 = [[Cell alloc]init];
+        NSLog(@"hamming distance: %i", [cell1 hammingDistance:cell2]);
+        
+        [cell1 mutate:50];
+        [cell2 mutate:50];
+        NSLog(@"hamming distance after mutation: %i", [cell1 hammingDistance:cell2]);
+        
+           return 0;
 }
 }
