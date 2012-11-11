@@ -26,7 +26,7 @@
     int mutCounter = 0; // количество совершенных мутаций
     int mutIndex;       // индекс ячейки текущей мутации
     while (mutCounter < x) {
-        mutIndex = random() % 100;  // случайный выбор индекса
+        mutIndex = random() % (100 - mutCounter);  // случайный выбор индекса
         while ([old getDNACodeAtIndex:mutIndex] != [self getDNACodeAtIndex:mutIndex]) {
             // если по выбранному индексу мутация уже сделана, выбор следующего по порядку
             // индекса, по которому мутаций еще не было
@@ -68,10 +68,8 @@ int main(int argc, const char * argv[])
         // insert code here...
         srandom((int) time(NULL));
         NSLog(@"DNA");
-        Cell *myCellA;
-        Cell *myCellB;
-        myCellA = [[Cell alloc] init];
-        myCellB = [[Cell alloc] init];
+        Cell *myCellA = [[Cell alloc] init];
+        Cell *myCellB = [[Cell alloc] init];
         NSLog(@"Cell A");
         [myCellA print];
         NSLog(@"Cell B");
@@ -84,7 +82,6 @@ int main(int argc, const char * argv[])
         NSLog(@"Cell B 20%% mutated");
         [myCellB print];
         NSLog(@"A-B hamming distance after 20%% mutation: %i",[myCellA hammingDistance:myCellB]);
-       
     }
     return 0;
 }

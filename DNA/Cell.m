@@ -14,6 +14,9 @@
 
 -(id) init {
     self = [super init];
+    if (!self) {
+        return self;
+    }
     DNA = [[NSMutableArray alloc] init];
     NSString* s;
     int j;
