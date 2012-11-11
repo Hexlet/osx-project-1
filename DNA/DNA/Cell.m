@@ -38,7 +38,7 @@
 -(id) init {
     self = [super init];
     if (self) {
-        DNA = [[NSMutableArray alloc] initWithCapacity:DNA_SIZE];
+        DNA = [NSMutableArray arrayWithCapacity:DNA_SIZE];
         for (int i = 0; i < DNA_SIZE; i++) {
             [DNA addObject: [Cell getRandomNucleotide]];
         }
