@@ -53,8 +53,8 @@
 }
 
 //создаем второй массив для сравнения
--(NSMutableArray *)getDNA {
-    return DNA;
+-(NSMutableArray *)secondDNA {
+    return DNA; 
 }
 
 //переписываем метод init

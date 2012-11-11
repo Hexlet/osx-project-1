@@ -13,11 +13,11 @@
     NSArray *DNAElements;
     NSMutableArray *DNA;
 }
-@property NSMutableArray *secondDNA;
+
 
 -(id)init;
 -(int)hammingDistance:(Cell *) cell;
-//-(NSMutableArray *)getDNA;
+-(NSMutableArray*)secondDNA;
 
 @end
 
