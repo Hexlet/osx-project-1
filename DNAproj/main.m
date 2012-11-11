@@ -17,6 +17,7 @@
 -(void)mutate:(int)n{
     
     int k;
+    
     NSMutableArray *N = [[NSMutableArray alloc] init];
     [self.wDNA setArray:self.DNA];
     
@@ -43,18 +44,15 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
     
-        // insert code here...
         Cell *cell1, *cell2;
         cell1 = [[Cell alloc] init];
         cell2 = [[Cell alloc] init];
-        //cell1 = cell2;
-        //[cell1 printDNA];
-        //[cell2 printDNA];
-        
+            
         [cell1.DNA setArray:cell2.DNA];
         [cell1 mutate:78];
+        
         NSLog(@"Hamming distance: %d", [cell1 hammingDistance:cell2]);
-        //NSLog(@"Hello, World!");
+       
                                         
     }
     return 0;

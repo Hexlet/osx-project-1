@@ -10,9 +10,10 @@
 
 @implementation Cell
 
--(id) init{
-    NSString const *x = @"f";
+-(id) init{  
+ 
     self = [super init];
+    
     if(self){
         _wElements = [NSMutableArray arrayWithObjects: @"A",@"T",@"G",@"C", nil];
         _DNA = [NSMutableArray arrayWithCapacity:100];
@@ -26,13 +27,16 @@
 }
 
 -(void)printDNA{
+    
     NSLog(@"%@", [_DNA componentsJoinedByString:@""]);
 }
 
 -(int)hammingDistance:(Cell *)c{
+    
     int k=0;
+    
     for (int i = 0; i<100; i++) {
-        NSLog(@"%@   -   %@  -  %@", [_DNA objectAtIndex:i], [c.DNA objectAtIndex:i], [_wDNA objectAtIndex:i]);
+        
         if (![[_DNA objectAtIndex:i] isEqual:[c.DNA objectAtIndex:i]])
             k++;
             

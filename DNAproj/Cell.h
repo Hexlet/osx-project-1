@@ -10,12 +10,9 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA, *wDNA, *wElements; //work DNA and elements *wDNA and *wElements for mark changed values in mutate method
-
+@property NSMutableArray *DNA, *wDNA, *wElements; 
 
 -(void) printDNA;
 -(int) hammingDistance: (Cell*)c;
-
-    
 
 @end
