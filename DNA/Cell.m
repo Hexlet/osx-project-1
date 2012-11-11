@@ -8,8 +8,6 @@
 
 #import "Cell.h"
 
-#define NUMBER_OF_ELEMENTS 100
-
 @implementation Cell
 
 @synthesize DNA;
