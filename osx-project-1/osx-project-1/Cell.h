@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#define DNA_LENGTH 10
+#define DNA_LENGTH 100
 #define DNA_ELEMENTS (@[@"A", @"T", @"G", @"C"])
 
 @interface Cell : NSObject
