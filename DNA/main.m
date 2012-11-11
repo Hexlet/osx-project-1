@@ -18,13 +18,13 @@ int main (int argc, const char * argv[])
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init]; 
         
-        //NSLog(@"Hamming distance before mutation: %i.", [cell1 hammingDistance:cell2]);
+        NSLog(@"Hamming distance before mutation: %i.\n", [cell1 hammingDistance:cell2]);
         
-        NSLog(@"MUtating...");
+        NSLog(@"Mutating...\n");
         [cell1 mutate:30];
-        [cell2 mutate:60];
+        [cell2 mutate:70];
                 
-        //NSLog(@"Hamming distance after mutation: %i.", [cell1 hammingDistance:cell2]);
+        NSLog(@"Hamming distance after mutation: %i.\n", [cell1 hammingDistance:cell2]);
     }
     
     return 0;
