@@ -23,8 +23,8 @@ int main(int argc, const char * argv[])
         
         NSLog(@"Hamming Distance = %i",[leeloo hammingDistance:korben]);
         
-        [leeloo print];
-        [korben mutator:1];
+        [korben print];
+        [korben mutator:10];
 /*        for (int i=0; i<100; i++) {
          NSLog(@"%li",random()%5 );
          }

@@ -15,7 +15,7 @@
     // если объявить в Cell.m - то до vars уже не достучаться
     NSMutableArray *DNA;
     NSString *DNA_bases;
-    unsigned int i; //, j;
+    NSInteger i; //, j;
 }
 
 - (int) hammingDistance: (Cell*) partner;

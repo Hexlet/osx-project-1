@@ -23,12 +23,18 @@
 //            NSLog (@"Конструктор инициирует ДНК: %li", [DNA count ]); //debug
         // почему цикл не крутится никак не пойму ... ага [DNA count] виноват, он же пока 0!
         // 10 для начала - так легче дебагить, для FINAL не забыть поменять на 100
+        
         for (i=0; i<10; i++) {
+            
 //            j=arc4random();
 //            NSLog(@"rand %i & %i", j, j%4);
 // arc4random рандомнее, чем просто random - по крайней мере, с каждым run выдает новые значения
 //            NSLog(@"%i",arc4random());
-             [DNA addObject:[NSString stringWithFormat:@"%c",[DNA_bases characterAtIndex:(unsigned int) arc4random()%4 ]]];
+//            unichar hz2=[DNA_bases characterAtIndex:1];
+            // characterAtIndex returns unichar
+            [DNA addObject:[NSString stringWithFormat:@"%c",[DNA_bases characterAtIndex:(unsigned int) arc4random()%4 ]]];
+//             [DNA addObject:[DNA_bases characterAtIndex:(unsigned int) arc4random()%4 ]];
+            
             // напишу, пожалуй, весь проект в одно строчку. Потом ради смеха сразу в кексах.
 //            NSLog (@"Конструктор заполняет ДНК: %li", [DNA count ]); //debug
         }
@@ -62,8 +68,8 @@
     
     //NSLog (@"Two");
     //NSLog (@"%@", DNA_bases);
-    NSLog (@"%@%@%@", [DNA objectAtIndex:0],[DNA objectAtIndex:5],[DNA objectAtIndex:9]); //[DNA count ]
-    //NSLog (@"%@", DNA);
+    //NSLog (@"%@%@%@", [DNA objectAtIndex:0],[DNA objectAtIndex:5],[DNA objectAtIndex:9]); //[DNA count ]
+    NSLog (@"%@", DNA);
 }
 
 @end
