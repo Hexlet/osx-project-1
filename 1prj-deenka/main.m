@@ -27,8 +27,8 @@ int main(int argc, const char * argv[])
         
        // [korben print];
         
-        [leeloo mutator:20];
-        [korben mutator:10];
+//        [leeloo mutator:90];
+        [korben mutator:99];
 
         hdposle = [leeloo hammingDistance:korben];
         NSLog(@"Hamming Distance after mutations = %i",hdposle);
