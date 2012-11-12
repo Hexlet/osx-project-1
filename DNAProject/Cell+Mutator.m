@@ -11,6 +11,10 @@
 @implementation Cell (Mutator)
 
 - (void) mutate:(int)x {
+    
+    if (x<0 || x>100)
+        [NSException raise:@"X should be between 0 and 100" format:@"x of %d is invalid", x];
+    
     NSMutableArray* indexes = [NSMutableArray arrayWithCapacity:self.DNALength];
     
     for (NSInteger i = 0; i<self.DNALength; i++) {

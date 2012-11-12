@@ -19,6 +19,7 @@ int main(int argc, const char * argv[])
         Cell* c2 = [[Cell alloc] init];
         
         NSLog(@"%d", [c1 hammingDistance:c2]);
+        [c1 mutate:101];
         
     }
     return 0;

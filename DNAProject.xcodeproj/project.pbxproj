@@ -35,7 +35,6 @@
 		861BFC841646895600F9DB9A /* DNAProject.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNAProject.1; sourceTree = "<group>"; };
 		861BFC8B1646897800F9DB9A /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		861BFC8C1646897800F9DB9A /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
-		86C2B4D0164D366B00F5307C /* main */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = main; path = "../../../osx-project-1/main"; sourceTree = "<group>"; };
 		86F4B4431646B962008781F4 /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+Mutator.h"; sourceTree = "<group>"; };
 		86F4B4441646B962008781F4 /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				861BFC801646895600F9DB9A /* main.m */,
-				86C2B4D0164D366B00F5307C /* main */,
 				861BFC841646895600F9DB9A /* DNAProject.1 */,
 				861BFC821646895600F9DB9A /* Supporting Files */,
 				861BFC8B1646897800F9DB9A /* Cell.h */,
