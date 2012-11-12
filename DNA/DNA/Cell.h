@@ -7,17 +7,16 @@
 
 @interface Cell : NSObject
 {
-
 @protected
-    NSMutableArray *_dna;
     NSArray *_elements;
-    int _count;
 }
 
-- (Cell*) init;
-- (int) getCount;
-- (NSArray*) getDna;
+@property NSMutableArray *dna;
+
+- (id) init;
+- (id) initWithCount: (int)count;
 
 - (int) hammingDistance: (Cell*) dna;
+- (void) fillDNA: (int) capacity;
 
 @end
