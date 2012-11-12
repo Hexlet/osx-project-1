@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
+@interface Cell : NSObject {
+    NSMutableArray *objects;
+    int Length;
+}
 @property NSMutableArray *DNA;
 -(int)hammingDistance: (Cell*) hamm;
+-(NSString*) getRandom;
 @end

@@ -12,11 +12,12 @@
 - (id)init {
     self = [super init];
     if (self) {
-        _DNA = [[NSMutableArray alloc] initWithCapacity:100];
-        NSMutableArray *objects = [[NSMutableArray alloc] initWithObjects:@"A", @"T", @"G", @"С", nil];
+        Length = 100;
+        _DNA = [[NSMutableArray alloc] initWithCapacity:Length];
+        objects = [[NSMutableArray alloc] initWithObjects:@"A", @"T", @"G", @"С", nil];
         int i;
-        for (i = 0; i < 100; i++) {
-            [_DNA addObject: [objects objectAtIndex:arc4random() % 4]];
+        for (i = 0; i < Length; i++) {
+            [_DNA addObject: [self getRandom]];
         }
     }
     return self;
@@ -24,11 +25,17 @@
 
 - (int) hammingDistance:(Cell *)hamm {
     int count = 0;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < Length; i++) {
         if ([_DNA objectAtIndex:i] == [[hamm DNA] objectAtIndex:i]) {
             count++;
         }
     }
     return count;
 }
+
+-(NSString*) getRandom {
+    int random_id = arc4random() % 3;
+    return [objects objectAtIndex:random_id];
+}
+
 @end
