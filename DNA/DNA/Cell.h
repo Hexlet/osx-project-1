@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject
-{  //Member Declaretion
-    NSMutableArray *DNA;
-}
+ //Member Declaretion
+   @property NSMutableArray *DNA;
+
 //Method Definition
 -(id) init;
--(int) hammingDistance :(Cell*) newCell;
+-(int) hammingDistance :(Cell*) myCell;
 
 @end
