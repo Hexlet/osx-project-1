@@ -13,6 +13,7 @@
     // если объявить переменные здесь (Cell.h), то они будут доступны как self->var
     // из категории в main.m
     // если объявить в Cell.m - то до vars уже не достучаться
+    
     NSMutableArray *DNA;
     NSString *DNA_bases;
     NSInteger i; //, j;

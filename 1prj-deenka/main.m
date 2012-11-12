@@ -15,23 +15,28 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
+        int hddo, hdposle;
+        
         //create 2 elements
         Cell *leeloo, *korben;
         leeloo = [[Cell alloc] init];
         korben = [[Cell alloc] init];
 
+        hddo = [leeloo hammingDistance:korben];
+        NSLog(@"Hamming Distance = %i",hddo);
         
-        NSLog(@"Hamming Distance = %i",[leeloo hammingDistance:korben]);
+       // [korben print];
         
-        [korben print];
+        [leeloo mutator:20];
         [korben mutator:10];
-/*        for (int i=0; i<100; i++) {
-         NSLog(@"%li",random()%5 );
-         }
-*/
+
+        hdposle = [leeloo hammingDistance:korben];
+        NSLog(@"Hamming Distance after mutations = %i",hdposle);
+        
+        if (hddo == hdposle) NSLog(@"Мутатор мыть нужно!!!");
+        
  }
     
-    // ToDo: не забыть помыть мутатор
     return 0;
 }
 
