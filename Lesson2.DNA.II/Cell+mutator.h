@@ -2,7 +2,7 @@
 //  Cell+mutator.h
 //  Lesson2.DNA.II
 //
-//  Created by Администратор on 11/10/12.
+//  Created by DS on 11/10/12.
 //  Copyright (c) 2012 DS. All rights reserved.
 //
 
