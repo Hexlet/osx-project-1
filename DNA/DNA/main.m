@@ -26,15 +26,7 @@
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
-<<<<<<< HEAD
-        
-        Cell *runCell = [[Cell alloc] init];
-        [runCell init];
-        [runCell hammingDistance:DNA]; // I do cknow is it right !?
-        
-       
-    }
-=======
+
         Cell *runCell1 = [[Cell alloc] init];
         Cell *runCell2 = [[Cell alloc] init];
         int mismatchCount =[runCell1 hammingDistance:runCell2];
@@ -43,7 +35,6 @@ int main(int argc, const char * argv[])
         [runCell2 mutate:20];
         mismatchCount = [runCell1 hammingDistance: runCell2];
 }
->>>>>>> FINAL
     return 0;
 } 
 
