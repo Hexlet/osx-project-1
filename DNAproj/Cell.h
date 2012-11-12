@@ -10,9 +10,9 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA, *wDNA, *wElements; 
+@property NSMutableArray *dna, *dnaInsertMask, *dnaElements;
 
--(void) printDNA;
+-(void) printDna;
 -(int) hammingDistance: (Cell*)c;
 
 @end

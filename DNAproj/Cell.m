@@ -15,20 +15,21 @@
     self = [super init];
     
     if(self){
-        _wElements = [NSMutableArray arrayWithObjects: @"A",@"T",@"G",@"C", nil];
-        _DNA = [NSMutableArray arrayWithCapacity:100];
-        _wDNA = [NSMutableArray arrayWithCapacity:100];
+        _dnaElements = [NSMutableArray arrayWithObjects: @"A",@"T",@"G",@"C", nil];
+        _dna = [NSMutableArray arrayWithCapacity:100];
+        _dnaInsertMask = [NSMutableArray arrayWithCapacity:100];
         for (int i=0; i<100; i++)
-                [_DNA addObject: [_wElements objectAtIndex: random() % 4]];
+                [_dna addObject: [_dnaElements objectAtIndex: arc4random() % 4]];
+
         
 
     }
     return self;
 }
 
--(void)printDNA{
+-(void)printDna{
     
-    NSLog(@"%@", [_DNA componentsJoinedByString:@""]);
+    NSLog(@"%@", [self.dna componentsJoinedByString:@""]);
 }
 
 -(int)hammingDistance:(Cell *)c{
@@ -37,7 +38,7 @@
     
     for (int i = 0; i<100; i++) {
         
-        if (![[_DNA objectAtIndex:i] isEqual:[c.DNA objectAtIndex:i]])
+        if (![[_dna objectAtIndex:i] isEqual:[c.dna objectAtIndex:i]])
             k++;
             
         

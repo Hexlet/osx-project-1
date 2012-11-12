@@ -14,27 +14,30 @@
 @end
 
 @implementation Cell (mutator)
--(void)mutate:(int)n{
+-(void)mutate:(int)percent{
     
-    int k;
-    
-    NSMutableArray *N = [[NSMutableArray alloc] init];
-    [self.wDNA setArray:self.DNA];
-    
-    for (int i =0; i<100/100*n; i++) {
-        k = random()%100;
+    if (percent>=0 && percent<=100) {
+        int randomIndex;
         
-        if ([self.wDNA objectAtIndex:k] != @"x") {
-            
-            [N setArray: self.wElements];
-            [ N removeObject: [[self DNA] objectAtIndex:k ] ];
-            [ [self DNA] replaceObjectAtIndex:k withObject:  [N  objectAtIndex: random()%3]  ];
-            [self.wDNA replaceObjectAtIndex:k withObject:@"x"];
-            
-            
-        }else {i--;}
+        NSMutableArray *insertElementsArray = [[NSMutableArray alloc] initWithCapacity:4];
+        [self.dnaInsertMask setArray:self.dna];
         
+        for (int i =0; i<100/100*percent; i++) {
+            randomIndex = arc4random()%100;
+            if ([self.dnaInsertMask objectAtIndex:randomIndex] != @"x") {
+                
+                [insertElementsArray setArray: self.dnaElements];
+                [insertElementsArray removeObject: [[self dna] objectAtIndex:randomIndex ] ];
+                [[self dna] replaceObjectAtIndex:randomIndex withObject:  [insertElementsArray  objectAtIndex: arc4random()%3]];
+                [self.dnaInsertMask replaceObjectAtIndex:randomIndex withObject:@"x"];
+                
+                
+            }else {i--;}
+            
+        }
+
     }
+    
 }
 
 @end
@@ -44,16 +47,21 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
     
-        Cell *cell1, *cell2;
-        cell1 = [[Cell alloc] init];
-        cell2 = [[Cell alloc] init];
-            
-        [cell1.DNA setArray:cell2.DNA];
-        [cell1 mutate:78];
+        Cell *myCell1, *myCell2;
         
-        NSLog(@"Hamming distance: %d", [cell1 hammingDistance:cell2]);
-       
-                                        
+        myCell1 = [[Cell alloc] init];
+        myCell2 = [[Cell alloc] init];
+        
+        [myCell1 printDna];
+        [myCell2 printDna];
+        
+        NSLog(@"Hamming distance: %d", [myCell1 hammingDistance:myCell2]);
+        
+        [myCell1 mutate:-3];
+        [myCell2 mutate:101];
+        
+        NSLog(@"Hamming distance: %d", [myCell1 hammingDistance:myCell2]);
+        
     }
     return 0;
 }
