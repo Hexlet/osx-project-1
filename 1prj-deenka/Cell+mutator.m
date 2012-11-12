@@ -15,16 +15,17 @@
 
 /************* DEFINE & INIT VARIABLES ****************************/
     
-    // индекс случайной ячейки - мутанта
-//    NSInteger j;
+    // индекс и значение случайной ячейки - мутанта
+    NSInteger m,k;
+    NSString *j; // для преобразования string2int
 
-    // вектор индексов для ДНК
+    // вектор индексов для ДНК (список доступных ячеек)
     NSMutableArray *indexDNA;
     indexDNA = [[NSMutableArray alloc] initWithCapacity:100];
     // заполняем значениями от 0 до 99
     for (i=0; i<100; i++) [indexDNA addObject:[NSNumber numberWithInteger:i]];
     
-    //    NSLog(@"indexDNA at 87: @@", indexDNA[87]);
+//    NSLog(@"indexDNA at 87: %@", [indexDNA objectAtIndex:87]);
     
     // сюда будем записывать значение звена-мутанта
     NSString *mutant;
@@ -41,35 +42,32 @@
     
 /******** END OF DEFINE & INIT VARIABLES ****************************/    
     
-    // подготовка вектора - создание индекса мутаций
+
+    
+    // крутим mutants раз
+    // из индексного вектора каждый раз будет выбираться случайный индекс для мутации
+    // и после мутации удаляться из списка "доступных"
     for (i=0; i<mutants; i++){
 
-        // случайная ячейка 0-99
-        do j=(unsigned int) arc4random()%100;
-        // рандомим, пока не найдем непомеченную (co значениме NO)
-        while (indexDNA[j] == YES);
-        
-        // пометить для мутации
-        indexDNA[j] = YES;
-    }
-    
-    // мутации по "списку" из индекса
-    // перебираем весь индексный вектор
-    for (j=0; j<100; j++){
-
-        // для каждой помеченной для мутации ячейки
-        if (indexDNA[j] == YES) {
+        // случайная индексная ячейка
+        k=arc4random()%[indexDNA count];
+        // считываем и преобразовываем индекс
+        j=[indexDNA objectAtIndex:(unsigned int) k];
+        m=[j integerValue];
 
         // DNA возвращает NSString
-        mutant=[DNA objectAtIndex:j];
+        mutant=[DNA objectAtIndex:m];
 
         // ищем значение мутации, отличное от текущего значения
         do aberrare=[DNA_bases characterAtIndex:(unsigned int) arc4random()%4];
         while ([mutant characterAtIndex:0] == aberrare); // достаем первый и единственный символ из строки mutant и сравниваем
 
         // собственно мутация текущего звена/ячейки
-        [DNA replaceObjectAtIndex:j withObject:[NSString stringWithFormat:@"%c",aberrare]];
-        }
+        [DNA replaceObjectAtIndex:m withObject:[NSString stringWithFormat:@"%c",aberrare]];
+        
+        // убиваем использованный индекс
+        [indexDNA removeObjectAtIndex:(unsigned int) k];
+    
     }
 }
 
