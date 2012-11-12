@@ -20,8 +20,8 @@ int main()
         
         NSLog(@"HD1 = %d", [DNA hammingDistance:DNA2]);
         
-        [DNA mutate:98];
-        [DNA2 mutate:66];
+        [DNA mutate:5];
+        [DNA2 mutate:0];
         
         NSLog(@"HD2 = %d", [DNA hammingDistance:DNA2]);
         
