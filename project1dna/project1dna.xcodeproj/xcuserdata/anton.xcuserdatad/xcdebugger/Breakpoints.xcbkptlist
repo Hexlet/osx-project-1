@@ -8,33 +8,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "project1dna/Cell.m"
-         timestampString = "373890049.874694"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "15"
-         endingLineNumber = "15"
-         landmarkName = "-init"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "project1dna/Cell.m"
-         timestampString = "373890049.874694"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16"
-         landmarkName = "-init"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "project1dna/Cell.m"
-         timestampString = "373890049.874694"
+         timestampString = "374454321.471067"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "14"
@@ -47,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "project1dna/Cell.m"
-         timestampString = "373890049.874694"
+         timestampString = "374454321.471067"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "17"
-         endingLineNumber = "17"
+         startingLineNumber = "15"
+         endingLineNumber = "15"
          landmarkName = "-init"
          landmarkType = "5">
       </FileBreakpoint>
@@ -59,14 +33,40 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "project1dna/main.m"
-         timestampString = "373890049.874694"
+         filePath = "project1dna/Cell.m"
+         timestampString = "374454321.471067"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "5"
-         endingLineNumber = "5"
-         landmarkName = "@interface Cell(mutator)"
-         landmarkType = "2">
+         startingLineNumber = "13"
+         endingLineNumber = "13"
+         landmarkName = "-init"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "project1dna/Cell.m"
+         timestampString = "374454321.471067"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
+         landmarkName = "-init"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "project1dna/Cell+Mutator.m"
+         timestampString = "374454001.375876"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "21"
+         endingLineNumber = "21"
+         landmarkName = "-mutate:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

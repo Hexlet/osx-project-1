@@ -3,8 +3,7 @@
 
 @implementation Cell
 
-- (id)init
-{
+- (id)init {
     //Initilizing DNA array with capacity 100.
     
     self = [super init];
@@ -21,17 +20,16 @@
     return self;
 }
 
--(int) hammingDistance:(Cell *)cellObject
-{
+-(int) hammingDistance:(Cell *)cellObject {
     // Checks if two literals at the same index are not equal, then increments count.
+    
     int count = 0;
     NSInteger len = [_DNA count];
     cellDna = [cellObject DNA];
+    
     for (int i = 0; i < len; i++) {
         if ([cellDna objectAtIndex:i] != [_DNA objectAtIndex:i])
             count += 1;
-        else
-            continue;
     }
     return count;
 }
