@@ -10,6 +10,7 @@
 
 @interface Cell : NSObject{
     NSMutableArray * DNA;
+    int sizeofDNA;
 }
 - (int)hammingDistance:(Cell*)foreinCell;
 - (NSString*)randomNuclide;
