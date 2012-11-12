@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'prj1-DNA' target in the 'prj1-DNA' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
