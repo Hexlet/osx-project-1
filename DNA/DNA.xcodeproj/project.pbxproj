@@ -248,6 +248,7 @@
 				C3CA4DB616491E1800C2E2B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

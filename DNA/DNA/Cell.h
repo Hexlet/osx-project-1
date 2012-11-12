@@ -12,6 +12,7 @@
 
 @property NSMutableArray *DNA;
 @property NSArray *cDNA; // тут будут 4 символа днк
+@property NSMutableArray *idx;
 
 -(int) hammingDistance:(Cell*)nDNA;
 

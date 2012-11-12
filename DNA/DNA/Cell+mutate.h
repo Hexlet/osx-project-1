@@ -9,7 +9,7 @@
 #import "Cell.h"
 
 @interface Cell (mutate)
-
 -(void) mutate:(int)p;
-
+-(int) next;
 @end
+
