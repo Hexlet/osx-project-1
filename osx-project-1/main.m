@@ -17,7 +17,7 @@
 
 @implementation Cell (mutator)
 
--(void) mutate:(int)ms {
+-(void) mutate:(int) ms {
     NSMutableArray* mutateArray = [NSMutableArray arrayWithCapacity:100];
     
     for (int i = 0; i < 100; i++) {
@@ -30,8 +30,11 @@
     }
     
     for (NSUInteger i = 0; i < ms; i++) {
+        NSMutableArray* nbForReplace = [NSMutableArray arrayWithArray:self.NB];
+        [nbForReplace removeObjectIdenticalTo:[self.DNA objectAtIndex:[[mutateArray objectAtIndex:i] integerValue]]];
+        
         [self.DNA replaceObjectAtIndex:[[mutateArray objectAtIndex:i] integerValue]
-                            withObject:[self.NB objectAtIndex:[[NSNumber numberWithInt:arc4random() & 3] integerValue]]];
+                            withObject:[nbForReplace objectAtIndex:[[NSNumber numberWithInt:arc4random() & 2] integerValue]]];
     }
 }
 
@@ -47,8 +50,8 @@ int main(int argc, const char * argv[])
         
         NSLog(@"%i", [herpCell hammingDistance:derpCell]);
         
-        [herpCell mutate:30];
-        [derpCell mutate:30];
+        [herpCell mutate:100];
+        [derpCell mutate:100];
         
         NSLog(@"%i", [herpCell hammingDistance:derpCell]);
     }
