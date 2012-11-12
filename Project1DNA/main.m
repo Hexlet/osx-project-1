@@ -2,7 +2,7 @@
 //  main.m
 //  Project1DNA
 //
-//  Created by Администратор on 11/8/12.
+//  Created by ky391 on 11/8/12.
 //  Copyright (c) 2012 ky391. All rights reserved.
 //
 
