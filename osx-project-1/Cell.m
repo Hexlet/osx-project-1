@@ -16,7 +16,7 @@
 
 @synthesize DNA = _DNA;
 @synthesize atcgArray = _atcgArray;
-
+int DNASize = 100;
 
 
 - (id)init
@@ -24,10 +24,10 @@
     self = [super init];
     if (self)
     {
-        _DNA = [[NSMutableArray alloc] initWithCapacity:100];
+        _DNA = [[NSMutableArray alloc] initWithCapacity:DNASize];
         atcgArray = [[NSArray alloc]initWithObjects:@"A",@"T",@"C",@"G", nil];
     
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < DNASize; i++)
         {
             int randomIndex = arc4random_uniform(4);
             NSString *objectToAdd = [atcgArray objectAtIndex:randomIndex];

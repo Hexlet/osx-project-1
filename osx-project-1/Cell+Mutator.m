@@ -11,7 +11,24 @@
 @implementation Cell (Mutator)
 
 - (void)mutateDNA:(int)percentToMutate
-{   
+{
+    //---Check for percent to be in range of 0 to 100---
+    if (percentToMutate <= 0)
+    {
+        NSLog(@"Nothing to mutate");
+        return;
+    }
+    
+    //---If percent more than 100 then we mutate whole cell---
+    if (percentToMutate > 100)
+    {
+        percentToMutate = 100;
+    }
+    
+    //---Get number of cells to mutate from percent---
+    percentToMutate = (percentToMutate * [self.DNA count]) / 100;
+    NSLog(@"Cells to mutate: %i", percentToMutate);
+    
     //---Method which makes changes to DNA replacing some acids with new one
     //percentToMutate is quantity of acids to replace---
     
