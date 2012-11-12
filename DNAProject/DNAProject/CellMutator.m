@@ -26,12 +26,18 @@
                         @"G",
                         @"C",
                         nil];
+    NSObject* newsymbol;
     while (percent > 0) {
         do {
-            i = arc4random() % 100;
+            i = arc4random() % [self.DNA count];
         } while ([indices containsObject:[NSNumber numberWithInt:i]]);
+        
+        do {
+            newsymbol = [symbols getRandomObject];
+        } while ([self.DNA objectAtIndex:i] == newsymbol);
             
-        [self.DNA replaceObjectAtIndex:i withObject:[symbols getRandomObject]];
+        [self.DNA replaceObjectAtIndex:i withObject:newsymbol];
+        
         [indices addObject:[NSNumber numberWithInt:i]];
         percent--;
     }

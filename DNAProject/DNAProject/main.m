@@ -27,7 +27,10 @@ int main(int argc, const char * argv[])
 
         [c1 mutate:mutatePercent];
         [c2 mutate:mutatePercent];
-
+#ifndef DNA_DEBUG
+        NSLog(@"%@", [c1.DNA componentsJoinedByString:@""]);
+        NSLog(@"%@", [c2.DNA componentsJoinedByString:@""]);
+#endif
         NSLog(@"humming distance %i", [c1 hummingDistance:c2]);
         
     }

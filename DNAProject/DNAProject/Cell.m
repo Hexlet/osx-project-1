@@ -28,14 +28,11 @@
     return self;
 }
 
--(NSMutableArray*) getDNA {
-    return _DNA;
-}
 
 -(int) hummingDistance:(Cell*)c {
     int n = 0;
-    for (int i=0; i < 100; i++) {
-        if ([[self getDNA] objectAtIndex:i]  != [[c getDNA] objectAtIndex:i]) n++;
+    for (int i=0; i < _DNA.count; i++) {
+        if ([self.DNA objectAtIndex:i]  != [c.DNA objectAtIndex:i]) n++;
     }
     return n;
 }
