@@ -3,82 +3,86 @@
 //  Project1_DNA
 //
 //  Created by Vladimir Koltunov on 04.11.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 XCode 4.2.1. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
-
 @interface Cell (Mutate)
 
--(void) mutate:(int) percent;
+    -(void) mutate:(int) percent;
+
 @end
 
 @implementation Cell (Mutate)
 
--(void) mutate:(int)percent{
-    
-    NSLog(@"----------------MUTATION START--------------------");
+-(void) mutate:(int)percents{
+    // Check for entered percents number
+    if(percents<0 || percents>100){
+        NSLog(@"You entered %i percents which is incorrect.", percents);
+        return;
+    }
     int rndIndex=0;
-    int repeat = 0;
     int rnd;
     
-    
     NSString *tmpString;
-    NSMutableArray *links = [NSMutableArray arrayWithCapacity: percent];
+    // Array which contain all indexes of elements already mutated
+    NSMutableArray *mutatedIndexes = [NSMutableArray arrayWithCapacity: percents];
     
-    for (int i=0; i<percent; i++) {
-        rndIndex = arc4random()%100;
-        
+    for (int i=0; i<percents; i++) {
+        // Generate random index for element that should be mutated
+        rndIndex = arc4random()%DNA_CAPACITY;
+        // Actually I don't know how to save int to array correctly
+        // so I convert it to NSString before check and save
         tmpString = [NSString stringWithFormat:@"%i", rndIndex];
         
-        if([links containsObject:tmpString]){
-            //NSLog(@"Recompile");
-            repeat++;
+        if([mutatedIndexes containsObject:tmpString]){
+            // Item with index rndIndex was already mutated
+            // so we do nothing and decrease i by 1 to repeat
+            // this iteration of for loop 
             i--;
         } else {
+            // Generate random index to create new value of mutated
+            // DNA element
             rnd = arc4random()%4;
-            if([DNA objectAtIndex:rndIndex] != [template objectAtIndex:rnd]){
-                //NSLog(@"Old value = %@ ==> %@",
-                //      [DNA objectAtIndex:rndIndex],
-                //      [template objectAtIndex:rnd]);
-                [DNA replaceObjectAtIndex:rndIndex withObject:[template objectAtIndex:rnd]];
-                [links addObject:tmpString];                
+            // Check whether new value are equal to old value of
+            // DNA element
+            if([DNA objectAtIndex:rndIndex] != [[Cell getDNATemplate] objectAtIndex:rnd]){
+                // Mutate DNA element: set new value
+                [DNA replaceObjectAtIndex:rndIndex withObject:[[Cell getDNATemplate] objectAtIndex:rnd]];
+                // Add converted index of mutated element ot array
+                [mutatedIndexes addObject:tmpString];                
             }else{
-                repeat++;
+                // if new value are equal to old one
+                // repeat iteration one more time
                 i--;
             }
-            
         }
-        
-        //NSLog(@"Increment %i",i);
-        
     }
-    NSLog(@"REPEATS = %i", repeat);
-    NSLog(@"----------------MUTATION FINISHED-----------------");
 }
 
 @end
-    
-
 
 int main (int argc, const char * argv[])
 {
 
     @autoreleasepool {
+        // create and initialize 2 different cells
         Cell *cell = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
-        [cell printDNA];
-        [cell2 printDNA];
         
-        int mutIndex = [cell hummingDistance:cell2];
-        NSLog(@"RESULT = %i",mutIndex);
+        int hammingDistance = [cell hammingDistance:cell2];
+        NSLog(@"Hamming distance = %i",hammingDistance);
         
-        [cell mutate:50];
-        [cell2 mutate:50];
+        // Mutate both cells on 50 percent
+        int mutationPercent = 50;
+        [cell mutate:mutationPercent];
+        [cell2 mutate:mutationPercent];
+        NSLog(@"Both cells were mutated on %i percents", mutationPercent);
         
-        NSLog(@"NEW RESULT = %i", [cell hummingDistance:cell2]);
+        
+        NSLog(@"Hamming distance after mutation = %i", [cell hammingDistance:cell2]);
     }
     return 0;
 }
