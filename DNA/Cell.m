@@ -8,26 +8,24 @@
 
 #import "Cell.h"
 
-int const CELL_SIZE = 10;
-
 @implementation Cell
+
+// Как правильно создать переменную класса? Или константу класса?
++(NSArray *) cellValues {
+    return [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
+}
+
++(NSString *) generateCellValue {
+    return [[self cellValues] objectAtIndex:arc4random_uniform(CELL_VALUE_SIZE)];
+}
 
 -(id) init {
     self = [super init];
     
-    NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:3];
-
-    [tmp addObject:@"A"];
-    [tmp addObject:@"T"];
-    [tmp addObject:@"G"];
-    [tmp addObject:@"C"];
-    
     if (self) {
-        int i;
-        NSLog(@"Init %d", arc4random_uniform(3));
         _DNA = [NSMutableArray arrayWithCapacity:CELL_SIZE];
-        for (i = 0; i < CELL_SIZE; i++) {
-            [_DNA addObject:[tmp objectAtIndex:arc4random_uniform(4)]];
+        for (int i = 0; i < CELL_SIZE; i++) {
+            [_DNA addObject:[Cell generateCellValue]];
         }
     }
     
@@ -51,4 +49,7 @@ int const CELL_SIZE = 10;
     }
     return distance;
 }
+
 @end
+
+

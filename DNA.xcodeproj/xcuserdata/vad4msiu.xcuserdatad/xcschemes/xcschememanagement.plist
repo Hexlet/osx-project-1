@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>osx-project-1.xcscheme</key>
+		<key>DNA.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>503A0DFF16496AF600EC2608</key>
+		<key>50B54B08164BAEC90044243E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

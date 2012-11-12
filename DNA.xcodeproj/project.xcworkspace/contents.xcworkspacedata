@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:osx-project-1.xcodeproj">
+      location = "self:DNA.xcodeproj">
    </FileRef>
 </Workspace>

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "503A0DFF16496AF600EC2608"
-               BuildableName = "osx-project-1"
-               BlueprintName = "osx-project-1"
-               ReferencedContainer = "container:osx-project-1.xcodeproj">
+               BlueprintIdentifier = "50B54B08164BAEC90044243E"
+               BuildableName = "DNA"
+               BlueprintName = "DNA"
+               ReferencedContainer = "container:DNA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "503A0DFF16496AF600EC2608"
-            BuildableName = "osx-project-1"
-            BlueprintName = "osx-project-1"
-            ReferencedContainer = "container:osx-project-1.xcodeproj">
+            BlueprintIdentifier = "50B54B08164BAEC90044243E"
+            BuildableName = "DNA"
+            BlueprintName = "DNA"
+            ReferencedContainer = "container:DNA.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "503A0DFF16496AF600EC2608"
-            BuildableName = "osx-project-1"
-            BlueprintName = "osx-project-1"
-            ReferencedContainer = "container:osx-project-1.xcodeproj">
+            BlueprintIdentifier = "50B54B08164BAEC90044243E"
+            BuildableName = "DNA"
+            BlueprintName = "DNA"
+            ReferencedContainer = "container:DNA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "503A0DFF16496AF600EC2608"
-            BuildableName = "osx-project-1"
-            BlueprintName = "osx-project-1"
-            ReferencedContainer = "container:osx-project-1.xcodeproj">
+            BlueprintIdentifier = "50B54B08164BAEC90044243E"
+            BuildableName = "DNA"
+            BlueprintName = "DNA"
+            ReferencedContainer = "container:DNA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
