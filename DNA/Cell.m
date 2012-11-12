@@ -21,7 +21,7 @@
         
         // Fill DNA chain
         for (int i = 0; i < NUMBER_OF_ELEMENTS; i++) {
-            NSString *generatdGen = [self generateRandomGen];
+            NSString *generatdGen = [Cell generateRandomGen];
             [DNA addObject:generatdGen];
             
         } //for
@@ -30,7 +30,7 @@
     return self;
 }
 
--(NSString *) generateRandomGen
++(NSString *) generateRandomGen
 {
     NSArray *dnaElements = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
     // Generate numbers form 0 to 3

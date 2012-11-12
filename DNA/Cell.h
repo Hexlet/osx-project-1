@@ -14,7 +14,7 @@
 
 @property (nonatomic,readonly) NSMutableArray *DNA;
 
--(NSString *) generateRandomGen;
+//-(NSString *) generateRandomGen;
 -(int) hammingDistance:(Cell *) anotherCell;
 
 @end
