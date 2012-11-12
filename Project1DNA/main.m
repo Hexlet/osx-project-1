@@ -18,12 +18,8 @@ int main(int argc, const char * argv[])
         // first cell
         Cell *cell1 = [[Cell alloc] init];
         
-        //[cell1 print];
-        
         // second cell
         Cell *cell2 = [[Cell alloc] init];
-        
-        //[cell2 print];
         
         // print hamming distance
         NSLog(@"%i", [cell1 hammingDistance:cell2]);
