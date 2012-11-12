@@ -13,7 +13,7 @@
     @property NSMutableArray *DNA;
 
     //процедура вывода
-    - (void) print;
+   // - (void) print;
 
     //процедура вычисления разности
     - (int) hammingDistance : (Cell *) withCell;

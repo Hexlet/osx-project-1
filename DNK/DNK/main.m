@@ -19,11 +19,9 @@
 
 //процедура для мутации ДНК
 - (void) mutate: (int) X{
-    int i;
     NSNumber *newIndex = [NSNumber numberWithInt:0];
     NSArray *arr = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
     NSMutableArray *intArr = [[NSMutableArray alloc] init];
-    NSString *currentDNACell, *newDNACell;
     
     //определяем массив из Х уникальных чисел - индексов элементов для мутации
     if (X != 0) {
@@ -31,7 +29,7 @@
         [intArr insertObject:newIndex atIndex: 0];
     }
     
-    for (i = 1; i < X; i++) {
+    for (int i = 1; i < X; i++) {
         while ([intArr containsObject: newIndex] == YES) {
             newIndex = [NSNumber numberWithInt: arc4random_uniform(100)];
         }
@@ -39,10 +37,10 @@
     }
     
     //мутируем Х элементов
-    for (i = 0; i < X; i++) {
+    for (int i = 0; i < X; i++) {
         newIndex = [NSNumber numberWithInt: [intArr[i] intValue]];
-        currentDNACell = self.DNA[ [newIndex intValue] ];
-        newDNACell = self.DNA[ [newIndex intValue] ];
+        NSString * currentDNACell = self.DNA[ [newIndex intValue] ];
+        NSString * newDNACell = self.DNA[ [newIndex intValue] ];
         while ([currentDNACell isEqualToString: newDNACell] == YES ) {
             newDNACell = arr[arc4random_uniform(4)];
         }
@@ -56,13 +54,9 @@
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
-        
-        Cell *myDNA;
-        Cell *newDNA;
-        
         //создаем два объекта
-        myDNA = [[Cell alloc] init];
-        newDNA = [[Cell alloc] init];
+        Cell * myDNA = [[Cell alloc] init];
+        Cell * newDNA = [[Cell alloc] init];
         
         //их разность
         NSLog(@"hamming distance между объектами = %i", [myDNA hammingDistance:newDNA]);
@@ -73,7 +67,6 @@ int main(int argc, const char * argv[])
         
         NSLog(@"hamming distance между мутировавшими объектами = %i", [myDNA hammingDistance:newDNA]);
         
-
     }
     return 0;
 }
