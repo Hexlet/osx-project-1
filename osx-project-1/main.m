@@ -19,10 +19,16 @@ int main(int argc, const char * argv[])
         Cell *myDNACell1 = [[Cell alloc] initWithMoleculeLength:100];
         Cell *myDNACell2 = [[Cell alloc] initWithMoleculeLength:100];
         
+        NSLog(@"%@",myDNACell1);
+        NSLog(@"%@",myDNACell2);
+        
         NSLog(@"First hamming distance = %i",[myDNACell1 hammingDistance:myDNACell2]);
         
         [myDNACell1 mutate:10];
         [myDNACell2 mutate:15];
+        
+        NSLog(@"%@",myDNACell1);
+        NSLog(@"%@",myDNACell2);
         
         NSLog(@"Second hamming distance = %i",[myDNACell1 hammingDistance:myDNACell2]);
         

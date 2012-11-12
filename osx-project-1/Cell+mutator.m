@@ -11,15 +11,25 @@
 @implementation Cell (mutator)
 
 -(void) mutate:(int) withPercent {
+    // проверка границ
+    if (withPercent < 0) {
+        withPercent = 0;
+    }
+    
+    if (withPercent > 100) {
+        withPercent = 100;
+    }
+    
     // вычисляю количество изменяемых молекул
     long int length = lroundf(self->DNA.count * withPercent / 100);
     
     // генерирую индексы меняемых молекул
     NSIndexSet *indexes = [[NSIndexSet alloc] initWithIndexSet:[self generateIndexes:length]];
-    // генерирую случайные молекулы
-    NSMutableArray *array = [NSMutableArray arrayWithArray: [self generateDNA:length]];
     
-    [self->DNA replaceObjectsAtIndexes:indexes withObjects:array];
+    // мутирую гены по уникальным индексам
+    [indexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+        [self->DNA replaceObjectAtIndex:idx withObject:[self getRandomMoleculeWithoutCurrent:[self->DNA objectAtIndex:idx]]];
+    }];
 }
 
 -(NSIndexSet *) generateIndexes:(long int) withLength {
@@ -35,6 +45,13 @@
     } while (indexes.count<withLength);
     
     return indexes;
+}
+
+// случайным образом возвращаем одну из возможных молекул, за исключением текущей
+-(NSString *) getRandomMoleculeWithoutCurrent:(id) mol {
+    NSMutableArray *molecule = [NSMutableArray arrayWithObjects: @"A",@"T",@"G",@"C",nil];
+    [molecule removeObject:mol];
+    return [molecule objectAtIndex:[self getRandomNumber:[molecule count]]];
 }
 
 @end
