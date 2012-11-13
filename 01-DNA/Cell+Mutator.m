@@ -1,21 +1,23 @@
 #import <Foundation/Foundation.h>
 #import <math.h>
+#import <stdlib.h>
 
 #import "Cell+Mutator.h"
 
 @implementation Cell (Mutator)
 
-- (NSMutableObject*) generateRandomIndexesPermutation:(NSUInteger)base {
+- (NSMutableArray*) generateRandomIndexesPermutation:(NSUInteger)base {
 
-  NSMutableObject* indexes = [[NSMutableObject alloc] initWithCapacity:base];
+  NSMutableArray* indexes = [[NSMutableArray alloc] initWithCapacity:base];
+  NSUInteger i;
 
   // inital sequence
-  for(NSUInteger i = 0; i < base; ++i)
-    [indexes addObject:@i];
+  for(i = 0; i < base; ++i)
+    [indexes addObject:[NSNumber numberWithInt:i]];
 
   // shuffle
   NSUInteger shuffleIndex;
-  for(NSUInteger i = 0; i < base; ++i) {
+  for(i = 0; i < base; ++i) {
     shuffleIndex = arc4random() % base;
     if (shuffleIndex != i)
       [indexes exchangeObjectAtIndex:i withObjectAtIndex:shuffleIndex];
@@ -25,7 +27,7 @@
 }
 
 
-- (void) mutate(int mutationLevelPercent) {
+- (void) mutate:(int) mutationLevelPercent {
 
   NSInteger length = [dna_ count];
   NSInteger mutantProteinCount = round((mutationLevelPercent * length) / 100.0);
@@ -38,14 +40,15 @@
     return;
   }
 
-  NSMutableObject* indexes = [self generateRandomIndexesPermutation:length];
+  NSMutableArray* indexes = [self generateRandomIndexesPermutation:length];
   NSString* oldProtein;
   NSString* newProtein;
   int index;
-  for(NSInteger i = 0; i < mutantProteinCount; ++i) {
+  NSInteger i;
+  for(i = 0; i < mutantProteinCount; ++i) {
     index = [[indexes objectAtIndex:i] intValue];
-    oldProtein = [dna_ getObjectAtIndex:index];
-    while ((newProtein = [self randomProtein]) == oldProtein);
+    oldProtein = [dna_ objectAtIndex:index];
+    while ([(newProtein = [self randomProtein]) compare:oldProtein] == NSOrderedSame);
     [dna_ replaceObjectAtIndex:index withObject:newProtein];
   }
   [indexes removeAllObjects];
