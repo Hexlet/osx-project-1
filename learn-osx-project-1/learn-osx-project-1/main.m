@@ -24,14 +24,18 @@
         percents=0;
     }
     int countLetters = kLengthOfDNA * percents / 100;
-    NSMutableSet *changedLetters = [NSMutableSet set];
+    
+    NSMutableArray *availableIndexes = [NSMutableArray arrayWithCapacity:kLengthOfDNA];
+    for (int i=0; i<kLengthOfDNA; i++) {
+        [availableIndexes addObject:[[NSNumber alloc] initWithInt: arc4random_uniform(kLengthOfDNA)]];
+    }
+    
     NSNumber *randomIndex;
-    while (changedLetters.count<countLetters) {
-        randomIndex = [[NSNumber alloc] initWithInt: arc4random_uniform(kLengthOfDNA-1)];
-        if (![changedLetters containsObject:randomIndex]) {
-            [changedLetters addObject:randomIndex];
-            [self.DNA setObject:[kLetters objectAtIndex:arc4random_uniform(kLettersCount)] atIndexedSubscript:[randomIndex integerValue]];
-        }
+    while ([availableIndexes count]>kLengthOfDNA - countLetters) {
+        randomIndex = [[NSNumber alloc] initWithInt: arc4random_uniform((int)[availableIndexes count])];
+        [self.DNA setObject:[kLetters objectAtIndex:arc4random_uniform(kLettersCount)]
+         atIndexedSubscript:[[availableIndexes objectAtIndex:[randomIndex integerValue]] integerValue]];
+        [availableIndexes removeObjectAtIndex:[randomIndex integerValue]];
     }
     NSLog(@"Cell mutated. DNA: %@",[self.DNA componentsJoinedByString:@""]);
 }
