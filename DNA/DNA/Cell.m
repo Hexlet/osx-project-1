@@ -10,8 +10,6 @@
 
 @implementation Cell 
 
-@synthesize DNA;
-
 /**
  * Returns random character from set {A, T, G, C}.
  */
@@ -51,13 +49,19 @@
  */
 -(int) hammingDistance: (Cell*) cell {
     int distance = 0;
-    NSMutableArray* anotherDNA = cell.DNA;
     for (int i = 0; i < DNA_SIZE; i++) {
-        if ([DNA objectAtIndex:i] != [anotherDNA objectAtIndex:i]) {
+        if ([DNA objectAtIndex:i] != [cell nucleotideAtIndex:i]) {
             distance++;
         }
     }
     return distance;
+}
+
+/**
+ * Returns nucleotides at specified index
+ */
+-(NSString*) nucleotideAtIndex:(int)index {
+    return [DNA objectAtIndex:index];
 }
 
 /**

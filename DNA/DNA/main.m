@@ -33,7 +33,7 @@
     for (int i = 0; i < count; i++) {
         int randomIndex = arc4random_uniform([indexArray count]);
         int indexToMutate = [[indexArray objectAtIndex:randomIndex] intValue];
-        [self.DNA replaceObjectAtIndex:indexToMutate withObject:[Cell getRandomNucleotide]];
+        [DNA replaceObjectAtIndex:indexToMutate withObject:[Cell getRandomNucleotide]];
         [indexArray removeObjectAtIndex:randomIndex];
     }
 }
