@@ -1,6 +1,9 @@
+#import <Foundation/Foundation.h>
+#import <math.h>
+
 #import "Cell+Mutator.h"
 
-@implementation Cell (Mutable)
+@implementation Cell (Mutator)
 
 - (NSMutableObject*) generateRandomIndexesPermutation:(NSUInteger)base {
 
@@ -13,13 +16,14 @@
   // shuffle
   NSUInteger shuffleIndex;
   for(NSUInteger i = 0; i < base; ++i) {
-    shuffleIndex = random % base;
+    shuffleIndex = arc4random() % base;
     if (shuffleIndex != i)
       [indexes exchangeObjectAtIndex:i withObjectAtIndex:shuffleIndex];
   }
 
   return indexes;
 }
+
 
 - (void) mutate(int mutationLevelPercent) {
 
@@ -35,20 +39,16 @@
   }
 
   NSMutableObject* indexes = [self generateRandomIndexesPermutation:length];
-  NSString* oldPeptide;
-  NSString* newPeptide;
+  NSString* oldProtein;
+  NSString* newProtein;
   int index;
-  @try {
-    for(NSInteger i = 0; i < mutantProteinCount; ++i) {
-      index = [[indexes objectAtIndex:i] intValue];
-      oldPeptide = [dna_ getObjectAtIndex:index];
-      while ((newPeptide = [self randomProtein]) == oldPeptide);
-      [dna_ replaceObjectAtIndex:index withObject:newPeptide];
-    }
+  for(NSInteger i = 0; i < mutantProteinCount; ++i) {
+    index = [[indexes objectAtIndex:i] intValue];
+    oldProtein = [dna_ getObjectAtIndex:index];
+    while ((newProtein = [self randomProtein]) == oldProtein);
+    [dna_ replaceObjectAtIndex:index withObject:newProtein];
   }
-  @finally {
-    [indexes dealloc];
-  }
+  [indexes removeAllObjects];
 }
 
 @end

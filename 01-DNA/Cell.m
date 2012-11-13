@@ -1,7 +1,7 @@
 #import "Cell.h"
 
 const MSUInteger kDefDnaLength = 100;
-NSString* const kProteins = {@"A",@"T",@"G",@"C"};
+NSString const* kProteins = @"ATGC";
 
 @implementation Cell {
   NSMutableArray* dna_;
@@ -11,7 +11,6 @@ NSString* const kProteins = {@"A",@"T",@"G",@"C"};
 -(id) init {
   self = [super init];
   if (self) {
-    proteins_ = [[NSMutableArray alloc] initWithValues:@"A", @"T", @"G", @"C"];
     dna_ = [[NSMutableArray alloc] initWithCapacity:kDefDnaLength];
     [self generateRandomDna];
   }
@@ -20,20 +19,14 @@ NSString* const kProteins = {@"A",@"T",@"G",@"C"};
 
 
 -(NSString*) randomProtein {
-  return kProteins_[random % [kProteins_ count]];
+  return [kProteins substringWithRange:NSMakeRange(arc4random() % [kProteins length], 1)];
 }
 
 
 -(void) generateRandomDna {
-  NSInteger size = [dna_ count];
-  for(NSInteger i = 0; i < size; ++i)
+  [dna_ removeAllObjects];
+  for(NSInteger i = 0; i < kDefDnaLength; ++i)
     [dna_ addObject:[self randomProtein]];
-}
-
-
--(void)dealloc {
-  [dna_ dealloc];
-  [super dealloc];
 }
 
 
@@ -45,9 +38,11 @@ NSString* const kProteins = {@"A",@"T",@"G",@"C"};
   NSUInteger sizeB = [cell.dna_ count];
 
   if (sizeB != sizeA) {
-    distance += abs(sizeB - sizeA);
-    if (sizeA > sizeB)
+    distance = sizeB - sizeA;
+    if (sizeA > sizeB) {
       sizeA = sizeB;
+      distance = -distance;
+    }
   }
 
   for(NSUInteger i; i < sizeA; ++i)
