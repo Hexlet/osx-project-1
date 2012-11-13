@@ -11,7 +11,7 @@
 @interface Cell : NSObject {
     NSMutableArray *DNA;
 }
-@property NSMutableArray *DNA;
-- (int) hammingDistance: (Cell*) dna;
+@property (readonly) NSMutableArray *DNA;
+- (int) hammingDistance: (Cell*) insertCell;
 @end
 
