@@ -12,7 +12,7 @@
 int main(int argc, const char * argv[])
 {
 
-    @autoreleasepool {        
+    @autoreleasepool {
         Cell *Cell1, *Cell2;
         Cell1 = [[Cell alloc] initWithLenght:100];
         Cell2 = [[Cell alloc] init]; // по-умолчанию инициализируем масив из 100 символов

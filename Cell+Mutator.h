@@ -7,12 +7,11 @@
 //
 
 @interface Cell : NSObject 
-   @property   NSMutableArray *DNA;
+   @property NSMutableArray *DNA;
 
 - (id)   initWithLenght: (int) length;
 - (int)  hammingDistance: (Cell*) aCell;
-- (NSString* ) randomCharacter;
-- (NSString* ) replaceCharacter: (NSString*) exclude ;
+- (NSString* ) randomCharacterExcluding: (NSString*) exclude ;
 
 @end
 
