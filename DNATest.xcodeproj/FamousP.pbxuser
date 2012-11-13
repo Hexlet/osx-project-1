@@ -1,0 +1,234 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 945CED2A1650741100BD7257 /* DNATest */;
+		activeTarget = 8DD76F960486AA7600D96B5E /* DNATest */;
+		addToTargets = (
+			8DD76F960486AA7600D96B5E /* DNATest */,
+		);
+		codeSenseManager = 945CED361650743000BD7257 /* Code sense */;
+		executables = (
+			945CED2A1650741100BD7257 /* DNATest */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					416,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 374371345;
+			PBXWorkspaceStateSaveDate = 374371345;
+		};
+		perUserProjectItems = {
+			945CEE1D16509E6700BD7257 /* PBXTextBookmark */ = 945CEE1D16509E6700BD7257 /* PBXTextBookmark */;
+			945CEE1E16509E6700BD7257 /* PBXTextBookmark */ = 945CEE1E16509E6700BD7257 /* PBXTextBookmark */;
+			945CEE1F16509E6700BD7257 /* PBXTextBookmark */ = 945CEE1F16509E6700BD7257 /* PBXTextBookmark */;
+			945CEE2016509E6700BD7257 /* PBXTextBookmark */ = 945CEE2016509E6700BD7257 /* PBXTextBookmark */;
+			945CEE2116509E6700BD7257 /* PBXTextBookmark */ = 945CEE2116509E6700BD7257 /* PBXTextBookmark */;
+			945CEE2216509E6700BD7257 /* PBXTextBookmark */ = 945CEE2216509E6700BD7257 /* PBXTextBookmark */;
+			945CEE2316509E6700BD7257 /* PBXTextBookmark */ = 945CEE2316509E6700BD7257 /* PBXTextBookmark */;
+			945CEE2416509E6700BD7257 /* PBXTextBookmark */ = 945CEE2416509E6700BD7257 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 945CED351650743000BD7257 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	08FB7796FE84155DC02AAC07 /* DNATest.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {594, 934}}";
+			sepNavSelRange = "{349, 0}";
+			sepNavVisRange = "{0, 472}";
+			sepNavWindowFrame = "{{15, 1015}, {750, 558}}";
+		};
+	};
+	32A70AAB03705E1F00C91783 /* DNATest_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {621, 934}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 156}";
+		};
+	};
+	8DD76F960486AA7600D96B5E /* DNATest */ = {
+		activeExec = 0;
+		executables = (
+			945CED2A1650741100BD7257 /* DNATest */,
+		);
+	};
+	945CED2A1650741100BD7257 /* DNATest */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = DNATest;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	945CED351650743000BD7257 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	945CED361650743000BD7257 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	945CED371650743300BD7257 /* Cell.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {594, 934}}";
+			sepNavSelRange = "{155, 0}";
+			sepNavVisRange = "{0, 210}";
+		};
+	};
+	945CED381650743300BD7257 /* Cell.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {670, 934}}";
+			sepNavSelRange = "{388, 0}";
+			sepNavVisRange = "{0, 639}";
+		};
+	};
+	945CED67165080A800BD7257 /* Cell+Mutator.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {594, 934}}";
+			sepNavSelRange = "{36, 7}";
+			sepNavVisRange = "{0, 92}";
+		};
+	};
+	945CED68165080A800BD7257 /* Cell+Mutator.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {656, 934}}";
+			sepNavSelRange = "{820, 0}";
+			sepNavVisRange = "{0, 1071}";
+		};
+	};
+	945CEE1D16509E6700BD7257 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C6859EA3029092ED04C91782 /* DNATest.1 */;
+		name = "DNATest.1: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2849;
+		vrLoc = 0;
+	};
+	945CEE1E16509E6700BD7257 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32A70AAB03705E1F00C91783 /* DNATest_Prefix.pch */;
+		name = "DNATest_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 156;
+		vrLoc = 0;
+	};
+	945CEE1F16509E6700BD7257 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* DNATest.m */;
+		name = "DNATest.m: 13";
+		rLen = 0;
+		rLoc = 349;
+		rType = 0;
+		vrLen = 472;
+		vrLoc = 0;
+	};
+	945CEE2016509E6700BD7257 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 945CED371650743300BD7257 /* Cell.h */;
+		name = "Cell.h: 9";
+		rLen = 0;
+		rLoc = 155;
+		rType = 0;
+		vrLen = 210;
+		vrLoc = 0;
+	};
+	945CEE2116509E6700BD7257 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 945CED381650743300BD7257 /* Cell.m */;
+		name = "Cell.m: 18";
+		rLen = 0;
+		rLoc = 388;
+		rType = 0;
+		vrLen = 639;
+		vrLoc = 0;
+	};
+	945CEE2216509E6700BD7257 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 945CED67165080A800BD7257 /* Cell+Mutator.h */;
+		name = "Cell+Mutator.h: 4";
+		rLen = 7;
+		rLoc = 36;
+		rType = 0;
+		vrLen = 92;
+		vrLoc = 0;
+	};
+	945CEE2316509E6700BD7257 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 945CED68165080A800BD7257 /* Cell+Mutator.m */;
+		name = "Cell+Mutator.m: 27";
+		rLen = 0;
+		rLoc = 820;
+		rType = 0;
+		vrLen = 1071;
+		vrLoc = 0;
+	};
+	945CEE2416509E6700BD7257 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 945CED68165080A800BD7257 /* Cell+Mutator.m */;
+		name = "Cell+Mutator.m: 27";
+		rLen = 0;
+		rLoc = 820;
+		rType = 0;
+		vrLen = 1071;
+		vrLoc = 0;
+	};
+	C6859EA3029092ED04C91782 /* DNATest.1 */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {635, 1027}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 2849}";
+		};
+	};
+}
