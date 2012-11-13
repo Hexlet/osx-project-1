@@ -16,5 +16,6 @@
 -(void) setDNA: (NSString *) nucluotide atIndex: (NSInteger)index;
 -(void) printDNA;
 -(void) copyDNAfrom: (Cell *) cell;
+-(NSString *) randomNucleotide;
 
 @end

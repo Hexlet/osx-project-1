@@ -13,10 +13,8 @@
 
 -(void) mutate: (int) percentToReplace
 {
-    NSInteger replace = percentToReplace;
-    
     // Explicit number of element to replace.
-    replace = replace * [self DNAsize] / 100;
+    NSInteger replace = percentToReplace * [self DNAsize] / 100;
     
     // Some preparation in case of data out of range.
     if (replace < 0)
@@ -24,6 +22,7 @@
     if (replace > [self DNAsize])
         replace = [self DNAsize];
     
+    // Nothing to do here.
     if (replace == 0)
         return;
     
@@ -36,8 +35,7 @@
     // Shuffle it!
     [indicesToReplace shuffle];
     
-    // Possible elements of DNA.
-    NSArray *nucleotide = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
+    // To store generated nucleotide.
     NSString *tempNucleotide = [[NSString alloc] init];
     NSInteger DNAindex = 0;
     
@@ -48,7 +46,7 @@
         // Generate string different from that in DNA array.
         do
         {
-            tempNucleotide = [nucleotide objectAtIndex:arc4random_uniform((int)[nucleotide count])];
+            tempNucleotide = [self randomNucleotide];
         }
         while ([[self getDNAatIndex:DNAindex] isEqualToString:tempNucleotide]);
         

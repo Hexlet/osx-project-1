@@ -12,6 +12,7 @@
 @implementation Cell
 {
     NSMutableArray *DNA;
+    NSArray *nucleotide;
 }
 
 -(id) init
@@ -24,7 +25,7 @@
         int DNAsize = 100;
         
         // Possible elements.
-        NSArray *nucleotide = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
+        nucleotide = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
         
         // First init of DNA array.
         DNA = [[NSMutableArray alloc] initWithCapacity:DNAsize];
@@ -32,7 +33,7 @@
         // Fill with random nucleotides from corresponding array.
         for (NSInteger i=0; i < DNAsize; i++)
         {
-            [DNA setObject:[nucleotide objectAtIndex:arc4random_uniform((int)[nucleotide count])] atIndexedSubscript:i];
+            [DNA setObject:[self randomNucleotide] atIndexedSubscript:i];
         }
     }
     
@@ -62,11 +63,13 @@
     return dist;
 }
 
+// Returns the size of DNA array.
 -(NSInteger) DNAsize
 {
     return [DNA count];
 }
 
+// Gets nucleotide at given index.
 -(NSString *) getDNAatIndex: (NSInteger)index
 {
     if ((index < 0) || (index >= [self DNAsize]))
@@ -74,6 +77,7 @@
     return [DNA objectAtIndex:index];
 }
 
+// Sets DNA nucleotide at given index.
 -(void) setDNA: (NSString *) nucluotide atIndex: (NSInteger)index
 {
     if ((index >= 0) && (index < [self DNAsize]))
@@ -82,6 +86,16 @@
     }
 }
 
+// Return random nucleotide from corresponding array.
+-(NSString *) randomNucleotide
+{
+    if ([nucleotide count] > 0)
+        return [nucleotide objectAtIndex:arc4random_uniform((int)[nucleotide count])];
+    else
+        return @"";
+}
+
+// Copies DNA array from given cell.
 -(void) copyDNAfrom: (Cell *) cell
 {
     NSInteger minDNAsize = MIN([cell DNAsize], [self DNAsize]);
@@ -91,6 +105,7 @@
     }
 }
 
+// Print DNA array as a string.
 -(void) printDNA
 {
     NSMutableString *output = [[NSMutableString alloc] init];
