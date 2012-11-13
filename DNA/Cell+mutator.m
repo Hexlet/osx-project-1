@@ -11,6 +11,10 @@
 
 @implementation Cell (mutator)
 -(void) mutate : (int) percent {
+    if ( percent < 0 || percent > 100 ) {
+        [NSException raise:@"Invalid percent exception" format:@"percent value of %d is invalid", percent];
+    }
+    
     // Create array [0, 1, 2, 3, 4 ... 99] and shuffle it.
     // First N elements of this array will be N random indexes.
     
