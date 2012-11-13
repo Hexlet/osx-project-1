@@ -65,7 +65,7 @@ static int const dnaLength = 100;
 
     // Filling array
     for (i=0;i<dnaLength;i++){
-        [indexes addObject:[NSNumber numberWithInt:arc4random()%100]];
+        [indexes addObject:[NSNumber numberWithInt:i]];
     }
 
     // Randomizing array
