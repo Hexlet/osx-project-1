@@ -11,10 +11,10 @@
 @implementation Cell (mutator)
 -(void) mutate:(int) percentage {
     if (percentage<101 && percentage>0){ //check for right percentage input value
+        
         int n = self.dna.count*percentage/100; //convert percentage into quantity
         NSMutableArray *arrayOfRandIndex = [NSMutableArray arrayWithCapacity:n]; //array of n random indexes
-        
-        while (arrayOfRandIndex.count<(n+1)) { //filling arrayOfRandIndex with 0<randIndex<dna.count
+        while (arrayOfRandIndex.count<n) { //filling arrayOfRandIndex with 0<randIndex<dna.count
             int range = (int)self.dna.count;
             NSNumber *randIndex = [NSNumber numberWithInt: arc4random_uniform(range) ];
             if ([arrayOfRandIndex containsObject:randIndex]==NO){
@@ -23,13 +23,11 @@
         }
         
         NSArray *setOfSymb = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
-        
         int i=0;
         while (i<arrayOfRandIndex.count) {     //mutating
-            NSInteger randomIndex = arc4random_uniform(4);  //generating random char (A,G,T,C)
-            NSString *randomChar = [setOfSymb objectAtIndex:randomIndex];
-            NSInteger randReplaceIndex = [[arrayOfRandIndex objectAtIndex:i] integerValue]; //getting index value from arrayOfRandIndex
-            if ([[self.dna objectAtIndex:randReplaceIndex] isEqualTo:randomChar]==NO){
+            NSUInteger randReplaceIndex = [[arrayOfRandIndex objectAtIndex:i] integerValue]; //getting index value from arrayOfRandIndexˆ
+            NSString *randomChar = [setOfSymb objectAtIndex:arc4random_uniform(4)];
+            if ([[self.dna objectAtIndex:randReplaceIndex] isEqualTo:randomChar] == NO){ //if generated randChar != previous char
                 [self.dna replaceObjectAtIndex:randReplaceIndex withObject:randomChar]; //placing char to dna[index]
                 i++;
             }
