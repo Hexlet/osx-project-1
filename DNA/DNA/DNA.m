@@ -10,7 +10,14 @@
 
 @implementation DNA
 
-@synthesize molecules;
+@synthesize molecules = _molecules;
+
+
+-(NSMutableArray *)molecules {
+    if (!_molecules)
+        _molecules = [[NSMutableArray alloc] init];
+    return _molecules;
+}
 
 -(id)init
 {
@@ -19,10 +26,12 @@
     self = [super init];
     
     if (self) {
-        for (int i = 0; i < molecules.count; ++i)
+        //[[_molecules alloc] init];
+        for (int i = 0; i < 100; ++i)
         {
             NSString *rndType = [types objectAtIndex:(rand() % types.count)];
-            [molecules insertObject:rndType atIndex:i];
+            [self.molecules addObject:rndType];
+            NSLog(@"Inserted a string %@ at index %i", rndType, i);
         }
     }
     

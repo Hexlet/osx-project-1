@@ -15,8 +15,10 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        DNA * firstCell = [[DNA alloc]init];
+        DNA * secondCell = [[DNA alloc]init];
+        
+        NSLog(@"%i", [firstCell hammingDistance:secondCell]);
         
     }
     return 0;

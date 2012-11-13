@@ -10,7 +10,7 @@
 
 @interface DNA : NSObject
 
-@property NSMutableArray * molecules;
+@property (nonatomic, strong) NSMutableArray * molecules;
 
 -(int)hammingDistance: (DNA *) compareDNA;
 
