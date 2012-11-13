@@ -25,10 +25,10 @@
         NSArray *setOfSymb = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
         int i=0;
         while (i<arrayOfRandIndex.count) {     //mutating
-            NSUInteger randReplaceIndex = [[arrayOfRandIndex objectAtIndex:i] integerValue]; //getting index value from arrayOfRandIndexˆ
+            NSUInteger replaceIndex = [[arrayOfRandIndex objectAtIndex:i] integerValue]; //getting index value from arrayOfRandIndexˆ
             NSString *randomChar = [setOfSymb objectAtIndex:arc4random_uniform(4)];
-            if ([[self.dna objectAtIndex:randReplaceIndex] isEqualTo:randomChar] == NO){ //if generated randChar != previous char
-                [self.dna replaceObjectAtIndex:randReplaceIndex withObject:randomChar]; //placing char to dna[index]
+            if ([[self.dna objectAtIndex:replaceIndex] isEqualTo:randomChar] == NO){ //if generated randChar != previous char
+                [self.dna replaceObjectAtIndex:replaceIndex withObject:randomChar]; //placing char to dna[index]
                 i++;
             }
         }
