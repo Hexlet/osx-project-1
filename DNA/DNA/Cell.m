@@ -7,6 +7,7 @@
 //
 
 #import "Cell.h"
+#import "NSMutableArray+Shuffle.h"
 
 @implementation Cell
 {
@@ -78,6 +79,15 @@
     if ((index >= 0) && (index < [self DNAsize]))
     {
         [DNA setObject:nucluotide atIndexedSubscript:index];
+    }
+}
+
+-(void) copyDNAfrom: (Cell *) cell
+{
+    NSInteger minDNAsize = MIN([cell DNAsize], [self DNAsize]);
+    for (NSInteger i=0; i<minDNAsize;i++)
+    {
+        [self setDNA:[cell getDNAatIndex:i] atIndex:i];
     }
 }
 

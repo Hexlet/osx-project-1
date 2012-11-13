@@ -15,5 +15,6 @@
 -(NSString *) getDNAatIndex: (NSInteger)index;
 -(void) setDNA: (NSString *) nucluotide atIndex: (NSInteger)index;
 -(void) printDNA;
+-(void) copyDNAfrom: (Cell *) cell;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "Cell+Mutator.h"
+#import "NSMutableArray+Shuffle.h"
 
 @implementation Cell (Mutator)
 
@@ -26,32 +27,21 @@
     if (replace == 0)
         return;
     
-    // Array to store the indices to replace.
-    NSMutableArray *indicesToReplace = [[NSMutableArray alloc] initWithCapacity:replace];
-    
-    // Temporary var to store generated index to add to indicesToReplace.
-    NSNumber *tempIndex = [[NSNumber alloc] init];
     NSInteger i = 0;
     
-    while (i < replace)
-    {
-        // Generate next index.
-        tempIndex = [NSNumber numberWithInteger:arc4random() % [self DNAsize]];
-        // Avoiding repeating indices.
-        // I know that it's very time consuming but for this task it's OK.
-        if (![indicesToReplace containsObject:tempIndex])
-        {
-            [indicesToReplace setObject:tempIndex atIndexedSubscript:i];
-            i++;
-        }
-    }
+    // Array that stores indices to replace.
+    NSMutableArray *indicesToReplace = [[NSMutableArray alloc] initWithCapacity:[self DNAsize]];
+    for (i = 0; i < [self DNAsize]; i++)
+        [indicesToReplace setObject:[NSNumber numberWithInteger:i] atIndexedSubscript:i];
+    // Shuffle it!
+    [indicesToReplace shuffle];
     
     // Possible elements of DNA.
     NSArray *nucleotide = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
     NSString *tempNucleotide = [[NSString alloc] init];
     NSInteger DNAindex = 0;
     
-    for (i = 0; i<[indicesToReplace count]; i++)
+    for (i = 0; i < replace; i++)
     {
         // Index of DNA array.
         DNAindex = [[indicesToReplace objectAtIndex:i] integerValue];
