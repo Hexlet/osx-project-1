@@ -9,6 +9,9 @@
 #import "Cell.h"
 
 @implementation Cell
+{
+    NSMutableArray *DNA;
+}
 
 -(id) init
 {
@@ -17,18 +20,18 @@
     if (self)
     {
         // Size of DNA array.
-        NSInteger DNAsize = 100;
+        int DNAsize = 100;
         
         // Possible elements.
         NSArray *nucleotide = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
         
         // First init of DNA array.
-        _DNA = [[NSMutableArray alloc] initWithCapacity:DNAsize];
+        DNA = [[NSMutableArray alloc] initWithCapacity:DNAsize];
         
         // Fill with random nucleotides from corresponding array.
         for (NSInteger i=0; i < DNAsize; i++)
         {
-            [_DNA setObject:[nucleotide objectAtIndex:arc4random() % [nucleotide count]] atIndexedSubscript:i];
+            [DNA setObject:[nucleotide objectAtIndex:arc4random() % [nucleotide count]] atIndexedSubscript:i];
         }
     }
     
@@ -40,13 +43,13 @@
     int dist = 0;
     
     // In case DNA size of two cells are differents.
-    NSInteger minDNAsize = MIN([cell.DNA count], [self.DNA count]);
-    NSInteger maxDNAsize = MAX([cell.DNA count], [self.DNA count]);
+    NSInteger minDNAsize = MIN([cell DNAsize], [self DNAsize]);
+    NSInteger maxDNAsize = MAX([cell DNAsize], [self DNAsize]);
  
     // Comparing elements.
     for (NSInteger i=0; i<minDNAsize; i++)
     {
-        if (![[cell.DNA objectAtIndex:i] isEqualToString:[self.DNA objectAtIndex:i]])
+        if (![[cell getDNAatIndex:i] isEqualToString:[self getDNAatIndex:i]])
         {
             dist++;
         }
@@ -56,6 +59,36 @@
     dist += (maxDNAsize - minDNAsize);
     
     return dist;
+}
+
+-(NSInteger) DNAsize
+{
+    return [DNA count];
+}
+
+-(NSString *) getDNAatIndex: (NSInteger)index
+{
+    if ((index < 0) || (index >= [self DNAsize]))
+        return nil;
+    return [DNA objectAtIndex:index];
+}
+
+-(void) setDNA: (NSString *) nucluotide atIndex: (NSInteger)index
+{
+    if ((index >= 0) && (index < [self DNAsize]))
+    {
+        [DNA setObject:nucluotide atIndexedSubscript:index];
+    }
+}
+
+-(void) printDNA
+{
+    NSMutableString *output = [[NSMutableString alloc] init];
+    for (NSInteger i = 0; i < [self DNAsize]; i++)
+    {
+        [output appendString: [self getDNAatIndex:i]];
+    }
+    NSLog(@"%@", output);
 }
 
 @end

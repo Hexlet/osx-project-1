@@ -15,13 +15,13 @@
     NSInteger replace = percentToReplace;
     
     // Explicit number of element to replace.
-    replace = replace * [self.DNA count] / 100;
+    replace = replace * [self DNAsize] / 100;
     
     // Some preparation in case of data out of range.
     if (replace < 0)
         replace = 0;
-    if (replace > [self.DNA count])
-        replace = [self.DNA count];
+    if (replace > [self DNAsize])
+        replace = [self DNAsize];
     
     if (replace == 0)
         return;
@@ -36,7 +36,7 @@
     while (i < replace)
     {
         // Generate next index.
-        tempIndex = [NSNumber numberWithInteger:arc4random() % [self.DNA count]];
+        tempIndex = [NSNumber numberWithInteger:arc4random() % [self DNAsize]];
         // Avoiding repeating indices.
         // I know that it's very time consuming but for this task it's OK.
         if (![indicesToReplace containsObject:tempIndex])
@@ -60,9 +60,9 @@
         {
             tempNucleotide = [nucleotide objectAtIndex:arc4random() % [nucleotide count]];
         }
-        while ([[self.DNA objectAtIndex:DNAindex] isEqualToString:tempNucleotide]);
+        while ([[self getDNAatIndex:DNAindex] isEqualToString:tempNucleotide]);
         
-        [self.DNA setObject:tempNucleotide atIndexedSubscript:DNAindex];
+        [self setDNA:tempNucleotide atIndex:DNAindex];
     }
 }
 

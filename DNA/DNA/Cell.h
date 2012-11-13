@@ -10,8 +10,10 @@
 
 @interface Cell : NSObject
 
-@property NSMutableArray *DNA;
-
 -(int) hammingDistance: (Cell *) cell;
+-(NSInteger) DNAsize;
+-(NSString *) getDNAatIndex: (NSInteger)index;
+-(void) setDNA: (NSString *) nucluotide atIndex: (NSInteger)index;
+-(void) printDNA;
 
 @end
