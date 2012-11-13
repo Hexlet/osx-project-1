@@ -17,14 +17,18 @@
     
     self = [super init];
     
-    if (!_DNA) {
-        _DNA = [[NSMutableArray alloc] init];
-    }
-    
-    _characters = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
-    
-    for (int i = 0; i < 100; ++i) {
-        [_DNA insertObject:[_characters objectAtIndex:arc4random() % 4] atIndex:i];
+    if (!self) {
+        
+        if (!_DNA) {
+            _DNA = [[NSMutableArray alloc] init];
+        }
+        
+        _characters = [[NSArray alloc] initWithObjects:@"A", @"T", @"G", @"C", nil];
+        
+        for (int i = 0; i < 100; ++i) {
+            [_DNA insertObject:[_characters objectAtIndex:arc4random() % 4] atIndex:i];
+        }
+        
     }
     
     return self;
