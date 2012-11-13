@@ -13,10 +13,11 @@
 
 int main(int argc, const char * argv[])
 {
-
+    
     @autoreleasepool {
         Cell *c1 = [[Cell alloc] init];
         Cell *c2 = [[Cell alloc]init];
+        c2.dna = [c1.dna copy];
         NSLog(@"Cell #1: %@", [c1 dna]);
         NSLog(@"Cell #2: %@", [c2 dna]);
         NSLog(@"hammingDistance: %i",[c1 hammingDistance:c2]);
@@ -24,10 +25,8 @@ int main(int argc, const char * argv[])
         [c2 mutate:50];
         NSLog(@"After mutation");
         NSLog(@"Cell #1: %@", [c1 dna]);
-        NSLog(@"Cell #2: %@", [c2 dna]);
+//        NSLog(@"Cell #2: %@", [c2 dna]);
         NSLog(@"hammingDistance: %i",[c1 hammingDistance:c2]);
-        
-        
         
     }
     return 0;
