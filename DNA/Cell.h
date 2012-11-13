@@ -20,4 +20,6 @@
 @interface Cell (mutator)
 
 -(void) mutate:(int) perc;
+-(NSString *) nucleide:(int) i;
+
 @end

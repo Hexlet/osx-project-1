@@ -59,22 +59,47 @@
 
 @implementation Cell(mutator)
 
-//Метод mutate не дописан, подключился к проекту только сегодня(
+//Метод mutate не дописан, подключился к проекту только 12  ноября
 -(void) mutate:(int)perc {
+    NSMutableArray *mutateIndex;
+    mutateIndex = [NSMutableArray arrayWithCapacity:[[self dna] count]];
+    NSNumber *index;
+    NSUInteger rndIndex;
     //Подсчитываем количество мутирующих элементов массива
     perc = perc * [[self dna] count] / 100;
     
     //Иницилизируем массив индексов
-    unsigned index[[[self dna] count]];
-    for (int i = 0; i < [[self dna] count] - 1; i++)
-        index[i] = i;
-    
+    for(int i = 0; i < [[self dna] count]; i++) {
+        index = [NSNumber numberWithInt:i];
+        [mutateIndex addObject:index];
+    }    
     //Заменяем элементы мутирующего массива
-    for(int i = 0; i < perc; i++) {
-        [[self dna] objectAtIndex:(index[arc4random() % [[self dna] count]])];
-        
+    int random;
+    for(int i = 0; i < perc;) {
+        rndIndex =  [mutateIndex indexOfObject:[mutateIndex objectAtIndex:(arc4random() % [mutateIndex count])]];
+        random = arc4random() %4;
+        NSLog(@"%i %li %li %@ %i %@",i, [mutateIndex count], rndIndex, [[self dna] objectAtIndex:rndIndex], random, [self nucleide:random]);
+        if([[self dna] objectAtIndex:rndIndex] != [self nucleide:random]) {
+            i++;
+            [[self dna] replaceObjectAtIndex:rndIndex withObject:[self nucleide:random]];
+            [mutateIndex removeObjectAtIndex:rndIndex];
+        }
+            
     }
 
+}
+
+-(NSString *) nucleide:(int)i {
+    if(i == 0)
+        return @"A";
+    else if(i == 1)
+        return @"T";
+    else if(i == 2)
+        return @"G";
+    else if(i == 3)
+        return @"C";
+    else
+        return @"";
 }
 
 @end
