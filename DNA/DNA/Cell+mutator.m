@@ -13,7 +13,7 @@
 - (void)mutate:(int)xPercent
 {
 	// Количество мутировавших оснований
-	int iNBases = (int)round((DNA_SIZE*(xPercent/100)));
+	int iNBases = (int)round((DNA_SIZE*(xPercent/100.0f)));
 	// индексы, по которым будут мутировать составляющие ДНК
 	NSMutableArray *rand_indexes = [[NSMutableArray alloc] initWithCapacity:iNBases];
 	
