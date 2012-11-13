@@ -42,7 +42,7 @@
     return iter;
 }
 
-
+//Тестовый метод для самопроверки
 -(id)copyWithZone:(NSZone *)zone
 
 {
@@ -59,30 +59,34 @@
 
 @implementation Cell(mutator)
 
-//Метод mutate не дописан, подключился к проекту только 12  ноября
 -(void) mutate:(int)perc {
+    //Массив mutateIndex содержит индексы немутирующих элементов
     NSMutableArray *mutateIndex;
     mutateIndex = [NSMutableArray arrayWithCapacity:[[self dna] count]];
-    NSNumber *index;
-    NSUInteger rndIndex;
+    
     //Подсчитываем количество мутирующих элементов массива
     perc = perc * [[self dna] count] / 100;
     
     //Иницилизируем массив индексов
-    for(int i = 0; i < [[self dna] count]; i++) {
-        index = [NSNumber numberWithInt:i];
-        [mutateIndex addObject:index];
-    }    
-    //Заменяем элементы мутирующего массива
+    for(int i = 0; i < [[self dna] count]; i++)
+        [mutateIndex addObject:[NSNumber numberWithInt:i]];
+    
+    //rndIndex - случайный индекс для выбора элемента из массива mutateIndex
+    NSUInteger rndIndex;
+    //random - случайное значение от 0 до 3
     int random;
+    
+    //Заменяем элементы мутирующего массива
     for(int i = 0; i < perc;) {
         rndIndex =  [mutateIndex indexOfObject:[mutateIndex objectAtIndex:(arc4random() % [mutateIndex count])]];
         random = arc4random() %4;
-        NSLog(@"%i %li %li %@ %i %@",i, [mutateIndex count], rndIndex, [[self dna] objectAtIndex:rndIndex], random, [self nucleide:random]);
-        if([[self dna] objectAtIndex:rndIndex] != [self nucleide:random]) {
-            i++;
+        //NSLog(@"%i %li %li %@ %i %@",i, [mutateIndex count], rndIndex, [[self dna] objectAtIndex:rndIndex], random, [self nucleide:random]);
+        
+        //Проверка на то, что подаваемый элемент dna не совпадает с подставляемым и не использовался ранее
+        if( ([[self dna] objectAtIndex:rndIndex] != [self nucleide:random]) && ([mutateIndex objectAtIndex:rndIndex] != @"")) {
             [[self dna] replaceObjectAtIndex:rndIndex withObject:[self nucleide:random]];
-            [mutateIndex removeObjectAtIndex:rndIndex];
+            [mutateIndex setObject:@"" atIndexedSubscript:rndIndex];
+            i++;
         }
             
     }
