@@ -11,15 +11,7 @@
 @implementation Cell 
 
 - (id)init {
-   if ( self = [super init]) {
-      _DNA = [NSMutableArray arrayWithCapacity:100];
-       for (int i=0; i<100; i++) {
-           [_DNA insertObject:[self randomCharacterExcluding:nil] atIndex:i];
-       }
-       
-   }
-    
-    return self;
+   return [self initWithLenght:100]; 
 }
 
 - (id)initWithLenght:(int)length {
