@@ -13,7 +13,7 @@
 
 - (void)mutate:(int)mutationPercentages
 {
-    if (mutationPercentages < 0 && mutationPercentages > 100)
+    if (mutationPercentages < 0 || mutationPercentages > 100)
     {
         NSLog(@"Error: Mutation percentage must be in range 0 to 100.");
         return;
@@ -26,16 +26,17 @@
     for (NSUInteger i = 0; i < mutatedGenesCount; i++)
     {
         NSNumber *index;
+        NSString *newGene;
         do
         {
             index = [NSNumber numberWithInt:rand() % 100];
+            newGene = [Cell randomGene];
         }
-        while ([mutatedGenes containsObject:index]);
+        while ([mutatedGenes containsObject:index] || [[self->DNA objectAtIndex:[index unsignedIntegerValue]] isEqualToString:newGene]);
         
         [mutatedGenes addObject:index];
-        
         [self->DNA replaceObjectAtIndex:[index unsignedIntegerValue]
-                             withObject:[Cell randomGene]];
+                             withObject:newGene];
     }
 }
 
