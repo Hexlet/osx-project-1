@@ -32,7 +32,7 @@
         // Fill with random nucleotides from corresponding array.
         for (NSInteger i=0; i < DNAsize; i++)
         {
-            [DNA setObject:[nucleotide objectAtIndex:arc4random() % [nucleotide count]] atIndexedSubscript:i];
+            [DNA setObject:[nucleotide objectAtIndex:arc4random_uniform((int)[nucleotide count])] atIndexedSubscript:i];
         }
     }
     

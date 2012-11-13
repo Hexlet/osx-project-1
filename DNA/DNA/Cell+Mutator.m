@@ -48,7 +48,7 @@
         // Generate string different from that in DNA array.
         do
         {
-            tempNucleotide = [nucleotide objectAtIndex:arc4random() % [nucleotide count]];
+            tempNucleotide = [nucleotide objectAtIndex:arc4random_uniform((int)[nucleotide count])];
         }
         while ([[self getDNAatIndex:DNAindex] isEqualToString:tempNucleotide]);
         
