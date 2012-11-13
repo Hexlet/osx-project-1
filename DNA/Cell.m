@@ -17,7 +17,7 @@ static int const dnaLength = 100;
 
 @implementation Cell
 -(NSString*)getRandomGene{
-    return [availableGenes substringWithRange:NSMakeRange(arc4random()%4, 1)];
+    return [availableGenes substringWithRange:NSMakeRange(arc4random()%[availableGenes length], 1)];
 }
 -(id)init {
     self = [super init];
