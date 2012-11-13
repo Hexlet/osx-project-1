@@ -12,21 +12,24 @@
 
 -(id) init
 {
-    // Size of DNA array.
-    NSInteger DNAsize = 100;
-    
-    // Possible elements.
-    NSArray *nucleotide = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
-    
     self = [super init];
     
-    // First init of DNA array.
-    _DNA = [[NSMutableArray alloc] initWithCapacity:DNAsize];
-    
-    // Fill with random nucleotides from corresponding array.
-    for (NSInteger i=0; i < DNAsize; i++)
+    if (self)
     {
-        [_DNA setObject:[nucleotide objectAtIndex:arc4random() % [nucleotide count]] atIndexedSubscript:i];
+        // Size of DNA array.
+        NSInteger DNAsize = 100;
+        
+        // Possible elements.
+        NSArray *nucleotide = [[NSArray alloc] initWithObjects:@"A", @"C", @"G", @"T", nil];
+        
+        // First init of DNA array.
+        _DNA = [[NSMutableArray alloc] initWithCapacity:DNAsize];
+        
+        // Fill with random nucleotides from corresponding array.
+        for (NSInteger i=0; i < DNAsize; i++)
+        {
+            [_DNA setObject:[nucleotide objectAtIndex:arc4random() % [nucleotide count]] atIndexedSubscript:i];
+        }
     }
     
     return self;
