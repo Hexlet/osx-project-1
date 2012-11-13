@@ -53,6 +53,17 @@
     return self;
 }
 
+-(void)Print
+{
+    NSString* sum = [[NSString alloc] init];
+    for (int i = 0; i < 100; ++i)
+    {
+        sum = [sum stringByAppendingString:[_DNA objectAtIndex:i]];
+    }
+         
+    NSLog(@"%@", sum);
+}
+
 -(int) hammingDistance: (Cell*)other
 {
     int diff = 0;
@@ -76,7 +87,7 @@
 {
     NSUInteger length = [_DNA count];
     
-    int toReplace = 100.0 * length / count;
+    int toReplace = 1.0 * length * count / 100.0;
     
     for (int i = 0; i < toReplace; ++i)
     {

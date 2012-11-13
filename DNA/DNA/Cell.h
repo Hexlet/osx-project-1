@@ -14,6 +14,7 @@
 
 -(int) hammingDistance: (Cell*)other;
 -(NSString*) getRandomGenom;
+-(void)Print;
 
 @end
 

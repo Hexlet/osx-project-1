@@ -20,6 +20,8 @@ int main(int argc, const char * argv[])
         Cell *cell1 = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
         
+        [cell1 Print];
+        [cell2 Print];
         int distance1 = [cell1 hammingDistance:cell2];
         
         NSLog(@"%i", distance1);
@@ -27,6 +29,8 @@ int main(int argc, const char * argv[])
         [cell1 mutate:5];
         [cell2 mutate:5];
         
+        [cell1 Print];
+        [cell2 Print];
         int distance2 = [cell1 hammingDistance:cell2];
         
         NSLog(@"%i", distance2);
