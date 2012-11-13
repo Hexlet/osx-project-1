@@ -33,7 +33,11 @@
     for (int i = 0; i < count; i++) {
         int randomIndex = arc4random_uniform([indexArray count]);
         int indexToMutate = [[indexArray objectAtIndex:randomIndex] intValue];
-        [DNA replaceObjectAtIndex:indexToMutate withObject:[Cell getRandomNucleotide]];
+        NSString *newNucleotide;
+        do {
+            newNucleotide = [Cell getRandomNucleotide];
+        } while ([newNucleotide isEqualTo: [DNA objectAtIndex: indexToMutate]]);
+        [DNA replaceObjectAtIndex:indexToMutate withObject:newNucleotide];
         [indexArray removeObjectAtIndex:randomIndex];
     }
 }
