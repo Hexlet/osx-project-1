@@ -10,18 +10,20 @@
 
 @implementation Cell
 
--(id) init{
+-(id) initWhisLenghtDna: (int) LenghtDNA {
     self = [super init];
     if (self) {
         
+        numLenghtDNA = LenghtDNA;
+        
         // массив возможных  кислот
-        acids = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C",nil];
+        acids = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
         
         // массив ДНК
-        DNA = [NSMutableArray arrayWithCapacity:100];
+        DNA = [NSMutableArray arrayWithCapacity: LenghtDNA];
         
-        // заполняем ДКН
-        for (int i=0; i<100; i++) {
+        // заполняем ДНК
+        for (int i=0; i<LenghtDNA; i++) {
             int randomAcid = arc4random()%4;
             [DNA addObject:[acids objectAtIndex:randomAcid]];
         }
@@ -40,17 +42,21 @@
     NSArray *cellDNA;
     cellDNA = [cell getDNA];
     
-    int collisionCount = 0;
+    int collisionCount = numLenghtDNA;
     
     // сравниваем DNA 
     for (int i=0; i < [DNA count]; i++) {
         if ([[DNA objectAtIndex:i] isEqualToString: [cellDNA objectAtIndex: i]]) {
-            collisionCount++;
+            collisionCount--;
         }
     }
     
     return  collisionCount;
 }
+
+//-(int)lDNA{
+//    return [DNA count];
+//}
 
 @end
 

@@ -19,7 +19,9 @@
 
 -(void) mutate: (int) mutateFactor{
     
-    int numPositionToChange = [DNA count]*mutateFactor/100;
+    int DNAcount = [DNA count];
+    
+    int numPositionToChange = DNAcount*mutateFactor/100;
     
     // создаем массив для хранения индексов элементов которые будут заменены в ДНК
     NSMutableArray *pullIndex;
@@ -28,7 +30,7 @@
     // получаем этот массив
     while ([pullIndex count] < numPositionToChange) {
         // генерим индекс
-        int index = arc4random()%100;
+        int index = arc4random()%DNAcount;
         
         int collision = 0;
         
@@ -59,10 +61,24 @@
         
         NSNumber *index = [pullIndex objectAtIndex:i];
         
-        int indexAcids = arc4random()%4;
+        int collision = 0;
         
-        [DNA removeObjectAtIndex:[index integerValue]];
-        [DNA insertObject:[acids objectAtIndex:indexAcids] atIndex:[index integerValue]];
+        while (collision == 0) {
+            int indexAcids = arc4random()%4;
+
+            // заменяем значение нуклеотида только после проверки на не совпадение его значения
+            if ([[DNA objectAtIndex:i] isEqualToString:[acids objectAtIndex: indexAcids]]) {
+//                NSLog(@"Collision");
+            } else{
+                [DNA removeObjectAtIndex:[index integerValue]];
+                [DNA insertObject:[acids objectAtIndex:indexAcids] atIndex:[index integerValue]];
+                collision++;
+            }
+            
+            
+
+        }
+        
     }
 
 }
@@ -77,8 +93,8 @@ int main(int argc, const char * argv[])
         Cell *cell1;
         Cell *cell2;
         
-        cell1 = [[Cell alloc] init ];
-        cell2 = [[Cell alloc] init ];
+        cell1 = [[Cell alloc] initWhisLenghtDna: 100 ];
+        cell2 = [[Cell alloc] initWhisLenghtDna: 100 ];
         
         int resultHD1 = [cell1 hammingDistance: cell2];
         
@@ -94,6 +110,8 @@ int main(int argc, const char * argv[])
         int resultHD2 = [cell1 hammingDistance: cell2];
         
         NSLog(@"hamming distance after mytation - %d", resultHD2 );
+        
+//        NSLog(@"%d", [cell1 lDNA]);
         
         
     }
