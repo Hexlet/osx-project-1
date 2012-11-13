@@ -30,7 +30,7 @@
 -(int) hammingDistance:(Cell *) cellToCompare {
     int count =0;
     for (int i=0; i<dnaCapacity; i++){
-        if ([[self.dna objectAtIndex:i] isEqualTo:[cellToCompare.dna objectAtIndex:i]]){
+        if ([[self.dna objectAtIndex:i] isEqualTo:[cellToCompare.dna objectAtIndex:i]]==NO){
             count++;
         }
     }
