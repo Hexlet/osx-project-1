@@ -66,7 +66,7 @@ int main(int argc, const char * argv[])
 //        [cell printDNA];
 //        [cell2 printDNA];
 
-        NSLog(@"%d", [cell hammingDistance: cell2]);
+        NSLog(@"Hamming distance before: %d", [cell hammingDistance: cell2]);
 
         [cell mutate:20];
         [cell mutate:20];
@@ -74,7 +74,7 @@ int main(int argc, const char * argv[])
 //        [cell printDNA];
 //        [cell2 printDNA];
 
-        NSLog(@"%d", [cell hammingDistance: cell2]);
+        NSLog(@"Hamming distance after: %d", [cell hammingDistance: cell2]);
     }
     return 0;
 }

@@ -18,7 +18,7 @@
 }
 
 - (id) init {
-    return [self init:20];
+    return [self init:100];
 }
 
 - (void) generateDNA: (int)len {
