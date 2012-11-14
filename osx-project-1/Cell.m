@@ -58,7 +58,17 @@
         if (![usedIndexes indexOfObject:index]) {
             continue;
         }
-        [_DNA replaceObjectAtIndex:[index unsignedIntValue] withObject:[self getRandomLetter]];
+        
+        NSString *oldLetter = [_DNA objectAtIndex:[index unsignedIntValue]];
+        NSString *newLetter;
+        while (true) {
+            newLetter = [self getRandomLetter];
+            if (![newLetter isEqualToString:oldLetter]) {
+                break;
+            }
+        }
+        
+        [_DNA replaceObjectAtIndex:[index unsignedIntValue] withObject:newLetter];
         [usedIndexes addObject:index];
         replaceCount--;
     }
