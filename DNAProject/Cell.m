@@ -76,6 +76,13 @@
     }
 }
 
+/* Так как я переписал геттер, чтобы тот делал копию ДНК, решил написать этот геттер,
+ чтобы не из копии брать количество символов экземпляра класса. Используется он только
+ для внутренних целей, так что в интерфейсе класса я его не объявил.*/
+-(NSUInteger)capacity {
+    return [DNA count];
+}
+
 /* Обратите внимание на этот метод - он мне помогает не создавать лишнюю копию
  DNA у обекта someCell метода hammingDistance*/
 -(id)geneAtIndex:(NSUInteger)index {
@@ -88,8 +95,9 @@
 }
 
 -(int)hammingDistance:(Cell *)someCell {
-    int ham = 0;
-    for (int i=0; i<capacityOfDNA; i++) {
+    NSCAssert([DNA count]==[someCell capacity], @"Seems cells has different capacity"); // две ДНК должны быть одинаковой длины
+    int ham = 0; // хэммингово число
+    for (int i=0; i<[DNA count]; i++) {
         if ([[DNA objectAtIndex:i] isNotEqualTo:[someCell geneAtIndex:i]]) ham++;
     }
     return ham;

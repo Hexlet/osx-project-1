@@ -15,8 +15,9 @@
     if (x) {
         NSMutableArray *indexes = [[NSMutableArray alloc] initWithCapacity:capacityOfDNA]; // здесь будем хранить индексы
         NSUInteger randomKey = 0; //случайный ключ индекса заменяемого символа
-        NSUInteger amount = lroundf((capacityOfDNA*x)/100.0f); // кол-во символов для изменения (x - процентный показатель)
-        for (int i=0; i<capacityOfDNA; i++) {
+        NSUInteger cnt = [DNA count]; // думаю, менять лучше стоит не по глобавильной переменной, а по действительному количеству
+        NSUInteger amount = lroundf((cnt*x)/100.0f); // кол-во символов для изменения (x - процентный показатель)
+        for (int i=0; i<cnt; i++) {
             [indexes addObject:[NSNumber numberWithInt:i]];
         }
         for (int modified=0;modified<amount;modified++) {
