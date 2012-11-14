@@ -35,7 +35,15 @@ int main(int argc, const char * argv[])
         NSLog(@"%@",myCell2);
         NSLog(@"done");
         NSLog(@"Hamming distance: %d",[myCell hammingDistance:myCell2]);
-        
+        NSLog(@"Сформируем третью последовательность как копию первой:");
+        Cell *myCell3 = [[Cell alloc] initWithCell:myCell];
+        NSLog(@"%@",myCell3);
+        NSLog(@"Hamming distance myCell1 to myCell3: %d",[myCell hammingDistance:myCell3]);
+        NSLog(@"Модифицируем новую последовательность на 100%%");
+        [myCell3 mutate:100];
+        NSLog(@"done");
+        NSLog(@"%@",myCell3);
+        NSLog(@"Hamming distance myCell1 to myCell3: %d",[myCell hammingDistance:myCell3]);
     }
     return 0;
 }
