@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#define DNA_CAPACITY 100
+
 
 @interface Cell : NSObject{
     NSMutableArray *DNA;
-    int const DNA_CAPACITY;
 }
 
 
