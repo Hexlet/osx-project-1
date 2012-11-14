@@ -17,12 +17,12 @@ int main(int argc, const char * argv[])
         first = [[Cell alloc] init];
         second = [[Cell alloc] init];
         
-        NSLog(@"Before: %i vs %i", [first hammingDistance:second], [second hammingDistance:first] );
+        NSLog(@"Before: %i", [first hammingDistance:second] );
         
         [first mutator:3];
         [second mutator:5];
         
-        NSLog(@"After mutation (3,5): %i vs %i", [first hammingDistance:second], [second hammingDistance:first] );
+        NSLog(@"After mutation (3,5): %i", [first hammingDistance:second] );
         
     }
     return 0;

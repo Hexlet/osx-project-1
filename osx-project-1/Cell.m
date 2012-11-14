@@ -13,16 +13,16 @@
     self = [super init];
     if (self) {
         _DNA = [[NSMutableArray alloc] initWithCapacity:100];
-        values = @"ATGC";
+        values = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
         for (int i = 0; i<100; i++){
-            _DNA[i] = [values substringFromIndex:(arc4random()%3+1)];
+            _DNA[i] = [values objectAtIndex: (arc4random()%3)];
         }
     }
     return self;
 }
 - (int) hammingDistance: (Cell *) toComp{
     int diffs =0;
-    for (int i=0; i<100; i++) if ([_DNA[i] isEqualTo: [toComp.DNA objectAtIndex:(i)]]) diffs++;
+    for (int i=0; i<100; i++) if (![_DNA[i] isEqualTo: [toComp.DNA objectAtIndex:(i)]]) diffs++;
     return diffs;
 }
 @end
@@ -40,7 +40,7 @@
     };
     NSMutableArray *gens;
     gens = [[NSMutableArray alloc] init];
-    for (int i=0; i<percent; i++) gens[i]=[values substringFromIndex:(arc4random()%3+1)];
+    for (int i=0; i<percent; i++) gens[i]=[values objectAtIndex: (arc4random()%3)];
     [_DNA replaceObjectsAtIndexes: ind withObjects:gens];
 }
 @end

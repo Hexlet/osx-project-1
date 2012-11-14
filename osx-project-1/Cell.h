@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Cell : NSObject {
-    NSString *values;
+    NSArray* values;
 }
 @property NSMutableArray *DNA;
 - (int) hammingDistance: (Cell *) toComp;
