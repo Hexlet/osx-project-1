@@ -27,7 +27,7 @@ int main(int argc, const char * argv[])
         NSLog(@"Hamming distance: %d",[myCell hammingDistance:myCell2]);
         // модифицируем обе ДНК
         NSLog(@"Модифицируем первую последовательность");
-        [myCell mutate:0];
+        [myCell mutate:15];
         NSLog(@"%@",myCell);
         NSLog(@"done");
         NSLog(@"Модифицируем вторую последовательность");
