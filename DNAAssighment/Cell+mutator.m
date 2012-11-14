@@ -11,7 +11,7 @@
 @implementation Cell (mutator)
 
 - (void) mutate:(int)percent {
-    NSAssert(percent <= 100 && percent > 0, @"percentage outside the boundaries 0 till 100");
+    NSAssert(percent <= 100 && percent >= 0, @"percentage outside the boundaries 0 till 100");
     int X = SIZE_OF_DNA_ARRAY * percent / 100;
     NSMutableArray *replacedPositions = [NSMutableArray arrayWithCapacity:X];
     int randNumber;

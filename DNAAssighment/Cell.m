@@ -30,7 +30,7 @@
     NSAssert(cell.dna.count == self.dna.count, @"The length of dna array has to be identic");
     int distance = 0;
     for (int i = 0; i < cell.dna.count; i++) {
-        if ([cell.dna[i] isEqualToString:self.dna[i]] )
+        if (![cell.dna[i] isEqualToString:self.dna[i]] )
             distance++;
     }
     return distance;
