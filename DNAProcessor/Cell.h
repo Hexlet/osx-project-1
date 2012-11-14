@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+#define DNA_DEFAULT_LENGTH 100
+
 @interface Cell : NSObject
 
-@property NSArray *nucleicBases;
 @property NSMutableArray *dna;
 
 +(Cell *) cell;
++(Cell *) cellWithLength:(int) length;
++(NSString *) randomNucleicBase;
 
+-(id) initWithLength:(int) length;
 -(int) hammingDistance:(Cell *) anotherCell;
 -(void) print;
 

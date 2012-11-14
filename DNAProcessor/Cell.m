@@ -11,24 +11,40 @@
 @implementation Cell
 
 +(Cell *) cell {
-    return [[Cell alloc] init];
+    return [Cell cellWithLength:DNA_DEFAULT_LENGTH];
+}
+
++(Cell *) cellWithLength:(int)length {
+    return [[Cell alloc] initWithLength:length];
+}
+
++(NSString *) randomNucleicBase {
+    switch (arc4random_uniform(4)) {
+        case 0: return @"A";
+        case 1: return @"T";
+        case 2: return @"G";
+        default: return @"C";
+    }
 }
 
 -(id) init {
-    self = [super init];
-    if (self) {
-        _nucleicBases = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-        _dna = [NSMutableArray arrayWithCapacity:100];
-        while (_dna.count < 100) {
-            [_dna addObject:[_nucleicBases objectAtIndex:arc4random_uniform(4)]];
+    return [self initWithLength:DNA_DEFAULT_LENGTH];
+}
+
+-(id) initWithLength:(int) length {
+    if (self = [super init]) {
+        _dna = [NSMutableArray arrayWithCapacity:length];
+        while (_dna.count < length) {
+            [_dna addObject:[Cell randomNucleicBase]];
         }
     }
     return self;
+    
 }
 
 -(int) hammingDistance:(Cell *)anotherCell {
     int distance = 0;
-    for(int i = 0; i < 100; i++) {
+    for(int i = 0; i < [self.dna count] && i < [anotherCell.dna count]; i++) {
         if (![[self.dna objectAtIndex:i] isEqualToString:[anotherCell.dna objectAtIndex:i]]) {
             distance++;
         }

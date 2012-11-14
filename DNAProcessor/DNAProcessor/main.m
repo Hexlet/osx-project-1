@@ -13,20 +13,23 @@
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
-        Cell *cell = [Cell cell];
-        Cell *anotherCell = [Cell cell];
+        Cell *cell = [Cell cellWithLength:5];
+        Cell *anotherCell = [Cell cellWithLength:5];
 
         [cell print];
         [anotherCell print];
         
         NSLog(@"Initial distance: %i", [cell hammingDistance:anotherCell]);
         
-        int countToMutate = 5;
+        int percentToMutate = 40;
         
-        [cell mutate:countToMutate];
-        [anotherCell mutate:countToMutate];
+        [cell mutate:percentToMutate];
+        [anotherCell mutate:percentToMutate];
 
-        NSLog(@"Distance after %i mutations: %i", countToMutate, [cell hammingDistance:anotherCell]);
+        [cell print];
+        [anotherCell print];
+
+        NSLog(@"Distance after %i%% mutations: %i", percentToMutate, [cell hammingDistance:anotherCell]);
     }
     return 0;
 }

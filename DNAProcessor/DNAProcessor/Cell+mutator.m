@@ -13,15 +13,17 @@
 -(void) mutate:(int)percents {
     NSMutableSet *positions = [NSMutableSet set];
     
-    while ([positions count] < percents) {
-        [positions addObject:[NSNumber numberWithInt: arc4random_uniform(100)]];
+    int countToMutate = ([self.dna count] * percents) / 100.0;
+    
+    while ([positions count] < countToMutate) {
+        [positions addObject:[NSNumber numberWithInt: arc4random_uniform((unsigned int)[self.dna count])]];
     }
     
     for (NSNumber *position in positions) {
         NSString *originalNucleicBase = [self.dna objectAtIndex:[position integerValue]];
-        NSString *mutatedNucleicBase = [self.nucleicBases objectAtIndex:arc4random_uniform(4)];
+        NSString *mutatedNucleicBase = [Cell randomNucleicBase];
         while ([mutatedNucleicBase isEqual:originalNucleicBase]) {
-            mutatedNucleicBase = [self.nucleicBases objectAtIndex:arc4random_uniform(4)];
+            mutatedNucleicBase = [Cell randomNucleicBase];
         }
         [self.dna replaceObjectAtIndex:[position integerValue] withObject:mutatedNucleicBase];
     }
