@@ -18,10 +18,29 @@
     if (self) {
         DNA = [[NSMutableArray alloc] initWithCapacity:capacityOfDNA]; // готовим массив для ДНК
         for (int i=0; i<capacityOfDNA; i++) {
-            [DNA addObject:[[self class] getRandomGene:nil]];
+            [DNA addObject:[[self class] getRandomGene]];
         }
     }
     return self;
+}
+
+/* Для удобства проверки сделаем копирующий конструктор. */
+-(id)initWithCell:(Cell *)cell {
+    self = [super init];
+    if (self) {
+        DNA = [NSMutableArray arrayWithArray:[cell DNA]];
+        if ([DNA count]<capacityOfDNA) {    // эту проверку можно не делать, но мало ли...
+            for (int i=(int)[DNA count];i<capacityOfDNA;[DNA addObject:[[self class] getRandomGene]],i++);
+        }
+        else if ([DNA count]>capacityOfDNA) {
+            for (;[DNA count]==capacityOfDNA;[DNA removeLastObject]);
+        }
+    }
+    return self;
+}
+
++(NSString *)getRandomGene {
+    return [[self class] getRandomGene:nil];
 }
 
 /* Следующий метод нужен для того, чтобы можно было заполнять
@@ -79,6 +98,15 @@
 // мне необходимо переопределить геттер, иначе он всё равно будет выдавать NSMutableArray, что мне не нужно
 -(NSArray *)DNA {
     return (NSArray *)[DNA copy];
+}
+
+/* Objective-C поддерживает довольно-таки интересную возможность Key-Value Coding, с которой, 
+ уверен, мы ещё столкнёмся. Методы, используемые KVC можно изучить в informal protocol NSKeyValueCoding.
+ Здесь переопределю единственный метод, который ставит "под удар" мою приватную переменную - ДНК.
+ Так как никаких больше NSMutableArray у меня в классе не используется, можно сделать так, чтобы 
+ не было доступа к состоянию класса, когда речь касается DNA. */
++(BOOL)accessInstanceVariablesDirectly {
+    return NO;
 }
 
 @end
