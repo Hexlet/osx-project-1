@@ -16,12 +16,12 @@
 @implementation Cell (MutateCell)
 
 -(void)mutate:(int)percent {
-    int count = 0;
-    while (count < percent) {
-        int random100 = arc4random() % 99;
+    int count = 1;
+    while (count <= percent) {
+        int random100 = arc4random() % 100;
         if ([[checkDNA objectAtIndex:random100] isEqualToString:@"NO"])  {
             [checkDNA setObject:@"YES" atIndexedSubscript:random100];
-            int random4 = arc4random() % 3;
+            int random4 = arc4random() % 4;
             [[self DNA] setObject:[letterArray objectAtIndex:random4] atIndexedSubscript:random100];
             count++;
         }
@@ -41,7 +41,7 @@ int main(int argc, const char * argv[])
 
         NSLog(@"Hamming distance before mutate:%i",[firstCell hammingDistance:secondCell]);
         
-        [firstCell mutate:10];
+        [firstCell mutate:100];
         [secondCell mutate:35];
         
         NSLog(@"Hamming distance after mutate:%i",[firstCell hammingDistance:secondCell]);
