@@ -13,21 +13,28 @@
 - (id) init{
     self = [super init];
     if (self){
-        
+        DNA = [[NSMutableArray alloc] initWithCapacity:100];
+        NSArray *chrome = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C",nil];
+        srandom((unsigned)(mach_absolute_time()&0xFFFFFFFF));
+        for (int i=0;i<100;i++)
+           [DNA insertObject:[chrome  objectAtIndex:random()%4] atIndex:i ];
+        NSLog(@"%@",DNA);
     }
+    return self;
+}
+
+- (int) hammingDistance:(Cell*) nbr{
+    int hdCounter=0;
+    for (int i=0;i<100;i++){
+        if ([self getElement:i]!=[nbr getElement:i])
+            hdCounter++;
+    }
+    return hdCounter;
     
+}
+
+- (id) getElement: (int) i{
+    return [DNA objectAtIndex:i];
 }
 @end
 
-/*
- Создайте новое консольное приложение в XCode.
- Создайте класс Cell, который наследуется от NSObject.
- В классе создайте переменную DNA типа NSMutableArray – массив из 100 символов. Этот массив будет представлять ДНК. Вам нужно самостоятельно разобраться с созданием массива и выбрать класс или тип для использования для символов.
- Создайте собственный метод init. Не забудьте в нем вызвать [super init] (см. Self и перегрузка Init). В этом методе задайте значение каждого из 100 символов в случайном порядке из множества A, T, G и С. Иными словами, каждая ячейка вашего массива должна быть одним из этих четырех символов.
- Создайте метод hammingDistance, который возвращает int и принимает объект класса Cell. Этот метод должен сравнивать свой ДНК и ДНК переданного в качестве аргумента объекта и возвращать количество позиций где символы ДНК не совпадают. Например:
- ATGGCATTTAGC
- ATAGCTTTTCGC
- На трех позициях ДНК не совпадают, значит hamming distance = 3.
- Создайте категорию mutator класса Cell. В ней опишите метод mutate, который возвращает void и принимает int.
- Создайте имплементацию (реализацию) метода mutate. Метод должен заменить X процентов символов в массиве DNA в случайном порядке; Х – значение переданной переменной типа int. Нужно заменить строго Х процентов, то есть заменять одну ячейку можно максимум один раз.
- В main-функции создайте два объекта класса Cell, выведите на экран hamming distance между их ДНК, потом мутируйте каждый из объектов и выведите на экран новый hamming distance.*/

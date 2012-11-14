@@ -11,9 +11,12 @@
 @interface Cell : NSObject{
     
     NSMutableArray *DNA;
+    
 }
 
 - (id) init;
+- (int) hammingDistance:(Cell*) nbr;
+- (id) getElement: (int) i;
 
 
 @end
