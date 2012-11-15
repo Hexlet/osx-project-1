@@ -119,7 +119,7 @@
 		F242DCEB1647092F008E38D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = F242DCEE1647092F008E38D3 /* Build configuration list for PBXProject "Project1_DNA" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -235,6 +235,7 @@
 				F242DD0516470930008E38D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

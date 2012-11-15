@@ -71,6 +71,8 @@ int main (int argc, const char * argv[])
         // create and initialize 2 different cells
         Cell *cell = [[Cell alloc] init];
         Cell *cell2 = [[Cell alloc] init];
+        [cell printDNA];
+        [cell2 printDNA];
         
         int hammingDistance = [cell hammingDistance:cell2];
         NSLog(@"Hamming distance = %i",hammingDistance);
@@ -81,6 +83,8 @@ int main (int argc, const char * argv[])
         [cell2 mutate:mutationPercent];
         NSLog(@"Both cells were mutated on %i percents", mutationPercent);
         
+        [cell printDNA];
+        [cell2 printDNA];
         
         NSLog(@"Hamming distance after mutation = %i", [cell hammingDistance:cell2]);
     }

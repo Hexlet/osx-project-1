@@ -8,11 +8,10 @@
 
 #import "Cell.h"
 
-
 @implementation Cell{
     long rnd;
+    
 }
-int const DNA_CAPACITY = 100;
 
 /**
  * Returns array with all possible DNA elements
@@ -79,7 +78,7 @@ int const DNA_CAPACITY = 100;
  * Print DNA elements to NSLog
  */
 -(void) printDNA{
-   NSLog(@"%@", DNA);
+    NSLog(@"%@", [DNA componentsJoinedByString:@""]);
 }
 
 @end
