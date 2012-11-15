@@ -12,48 +12,27 @@
 
 - (void) mutate:(int)percent {
     
-    if ((0 < percent) && ( 100 >= percent )) {
-    
-        NSMutableArray *arrayMutableMembersDna = [NSMutableArray arrayWithCapacity:percent];
-        //NSNumber *num = NULL;
-        /*int count = 0;
-        int count2 = 0;
-        int count3 = 0;
-        int count4 = 0;*/
+    //NSUInteger s = (sizeDna / 100)* percent;
+
+    if (0 < percent < 100) {
+        
+        NSArray *nucliotids = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
         
         for (int i = 0;i<percent; i++) {
-            //count2++;
-            NSNumber *choseRandomMemberDna = [NSNumber numberWithUnsignedInt: arc4random() % 100];
-            NSNumber *mutateMemberDna = [NSNumber numberWithUnsignedInt: arc4random() % 100];
             
-            if ([arrayMutableMembersDna containsObject:mutateMemberDna]) {
+            NSString *randNucliotid = [[self DNA] objectAtIndex:((int)arc4random() % [nucliotids count])];
+            int randIndexDna = ((int) arc4random() % [DNA count]);
+           
+            if ([randNucliotid isNotEqualTo: [[self DNA] objectAtIndex: randIndexDna]]) {
+                
+                [DNA insertObject:randNucliotid atIndex:randIndexDna];
+                
+            } else {
                 i--;
-            //    count++;
-                continue;
             }
-            
-            NSString *memberDna = [DNA objectAtIndex:[choseRandomMemberDna unsignedIntegerValue]];
-            NSString *givenMemberDna = [DNA objectAtIndex:[mutateMemberDna unsignedIntegerValue]];
-            
-            if (memberDna == givenMemberDna) {
-                i--;
-            //    count4++;
-                continue;
-            }
-            //count3++;
-            [DNA replaceObjectAtIndex:[mutateMemberDna unsignedIntegerValue] withObject:memberDna];
-            
-            [arrayMutableMembersDna addObject:mutateMemberDna];
-            //NSLog(@"%u",[dst intValue]);
         }
     } else {
         NSLog(@"Value percent define over 100");
     }
-    /*for (int i = 0 ; i<m; i++) {
-        num = [arrayMutableMembersDna objectAtIndex:i];
-        //NSLog(@"%d",[num intValue]);
-    }*/
-   //r NSLog(@"%d %d %d %d",count,count2,count3,count4);
 }
 @end
-

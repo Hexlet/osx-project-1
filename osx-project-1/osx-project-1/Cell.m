@@ -18,11 +18,10 @@
     if (self) {
         
         DNA = [NSMutableArray arrayWithCapacity:100];
+        NSArray *nucliotids = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
         
         for (int i=0; i<100; i++) {
             
-            NSArray *nucliotids = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
-                    
             [DNA addObject:[nucliotids objectAtIndex:(int)(arc4random() % [nucliotids count])]];
             //NSLog(@"Addition NSSring object str: %@",str);
         }
