@@ -11,8 +11,7 @@
 @implementation Cell
 @synthesize DNA; // мне необходимо _обязательно_ синтезировать свою переменную, не полагаясь на автоматику моей версии Xcode. Иначе свойство и переменная будут жить отдельно друг от друга
 
-#pragma mark -
-#pragma mark Initialisation
+#pragma mark - Initialisation
 
 -(id)init // переписываем метод для нашего класса, т.к. необходима инициализация собственных переменных
 {
@@ -41,8 +40,7 @@
     return self;
 }
 
-#pragma mark -
-#pragma mark Class methods
+#pragma mark - Class methods
 
 +(NSString *)getRandomGene {
     return [[self class] getRandomGene:nil];
@@ -90,8 +88,7 @@
     return NO;
 }
 
-#pragma mark -
-#pragma mark Instance methods
+#pragma mark - Instance methods
 
 -(NSString *)description //этот метод позволит выводить ДНК в виде NSLog(@"%@",myCell)
 {
@@ -115,16 +112,14 @@
     return DNA[index]; // работаем с private NSMutableArray *DNA
 }
 
-#pragma mark -
-#pragma mark Getters
+#pragma mark - Getters
 
 // мне необходимо переопределить геттер, иначе он всё равно будет выдавать NSMutableArray, что мне не нужно
 -(NSArray *)DNA {
     return (NSArray *)[DNA copy];
 }
 
-#pragma mark -
-#pragma mark Private methods
+#pragma mark - Private methods
 
 /* Так как я переписал геттер, чтобы тот делал копию ДНК, решил написать этот геттер,
  чтобы не из копии брать количество символов экземпляра класса. Используется он только
