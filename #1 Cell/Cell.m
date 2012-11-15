@@ -34,7 +34,7 @@
 - (int) getHammingDistance: (Cell *) cell { //получить дистанцию хамминга
     int count = 0;
     for (int i=0; i<100; i++) {
-        if ([self->DNA objectAtIndex:i]==[cell->DNA objectAtIndex:i]) count++;
+        if ([self->DNA objectAtIndex:i]!=[cell->DNA objectAtIndex:i]) count++;
         };
     return count;
 }
