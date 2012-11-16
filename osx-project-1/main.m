@@ -28,9 +28,9 @@
         [range exchangeObjectAtIndex:i withObjectAtIndex:arc4random() % (size - i - 1) + i + 1];
     int numberOfNucleotidesToChange = (int)(percentsToChange * size / 100);
     for (int i = 0; i < numberOfNucleotidesToChange; i++) {
-        int replaceIndex = [[range objectAtIndex:i] intValue];
-        NSString *randomNucleotide = [[self class] getRandomNucleotideExclude:[self.DNA objectAtIndex:replaceIndex]];
-        [self.DNA replaceObjectAtIndex:replaceIndex withObject:randomNucleotide];
+        int replacementIndex = [[range objectAtIndex:i] intValue];
+        NSString *randomNucleotide = [[self class] getRandomNucleotideExclude:[self.DNA objectAtIndex:replacementIndex]];
+        [self.DNA replaceObjectAtIndex:replacementIndex withObject:randomNucleotide];
     }
 }
 @end
