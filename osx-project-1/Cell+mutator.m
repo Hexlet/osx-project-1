@@ -38,8 +38,14 @@
         // Получение случайного индекса из массива случайных индексов
         int randomIndex = [objRandomIndex intValue];
         
+        // Получение текущей буквы по случайному индексу
+        NSString *currentLetter = [self.DNA objectAtIndex: randomIndex];
+        
+        // Исключение полученной буквы из списка возможных букв
+        NSString *availableLetters = [LETTERS stringByReplacingOccurrencesOfString: currentLetter withString:@""];
+        
         // Получение случайной буквы
-        NSString *randomLetter = [NSString stringWithFormat:@"%C", [LETTERS characterAtIndex: arc4random() % [LETTERS length]]];
+        NSString *randomLetter = [NSString stringWithFormat:@"%C", [availableLetters characterAtIndex: arc4random() % [availableLetters length]]];
         
         // Замена полученной случайной буквы по полученному случайному индексу
         [self.DNA replaceObjectAtIndex: randomIndex withObject: randomLetter];

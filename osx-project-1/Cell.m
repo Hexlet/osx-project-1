@@ -50,7 +50,7 @@
         NSString *letter2 = [cell->_DNA objectAtIndex: i];
         
         // Проверка на неравенство и увеличение расстояния Хэмминга
-        if (letter1 != letter2) hammingDistance++;
+        if (![letter1 isEqualToString: letter2]) hammingDistance++;
         
     }
     
