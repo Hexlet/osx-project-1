@@ -10,6 +10,6 @@
 
 @interface NSString (Nucleotides)
 
--(NSString *) randomNucleotide;
+-(NSString *) randomNucleotide: (NSString *) excludeAt;
 
 @end

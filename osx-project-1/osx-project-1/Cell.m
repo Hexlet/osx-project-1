@@ -16,7 +16,7 @@
     DNA = [NSMutableArray arrayWithCapacity:DNA_LENGTH];
     // заполняем массив ДНК случайными нуклеотидами
     for (int i = 0; i < DNA_LENGTH; i++) {
-        [DNA addObject:[@"" randomNucleotide]];
+        [DNA addObject:[@"" randomNucleotide:nil]];
     }
     
     return self;

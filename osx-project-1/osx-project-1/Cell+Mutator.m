@@ -30,7 +30,7 @@
             // удаляем ячейку из списка замены
             [indexAtDNA removeObjectAtIndex:randomIndex];
             // заменяем в выбраной ячейке случайным нуклеотидом
-            [DNA replaceObjectAtIndex:randomIndexAtDNA withObject:[@"" randomNucleotide]];
+            [DNA replaceObjectAtIndex:randomIndexAtDNA withObject:[@"" randomNucleotide:[DNA objectAtIndex:randomIndexAtDNA]]];
         }
     }
 }

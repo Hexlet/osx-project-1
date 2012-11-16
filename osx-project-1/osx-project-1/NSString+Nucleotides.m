@@ -10,9 +10,11 @@
 
 @implementation NSString (Nucleotides)
 
--(NSString *) randomNucleotide {
-    NSArray *arrayATGC = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
-    // возвращаем случайный нуклеотид из 4 возможных
+-(NSString *) randomNucleotide: (NSString *) excludeAt {
+    NSMutableArray *arrayATGC = [NSMutableArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+    // возвращаем случайный нуклеотид из возможных за исключением повторного
+    if (excludeAt)
+        [arrayATGC removeObjectIdenticalTo:excludeAt];
     return [arrayATGC objectAtIndex: random() % [arrayATGC count]];
 }
 

@@ -21,14 +21,14 @@ int main(int argc, const char * argv[])
         // результат одинаковые DNA
         cell2 = [Cell new];
         
-        NSLog(@"%@",cell1);
-        NSLog(@"%@",cell2);
+//        NSLog(@"%@",cell1);
+//        NSLog(@"%@",cell2);
         NSLog(@"%i",[cell1 hammingDistance: cell2]);
         
         [cell1 mutate:0];
         [cell2 mutate:100];
-        NSLog(@"%@",cell1);
-        NSLog(@"%@",cell2);
+//        NSLog(@"%@",cell1);
+//        NSLog(@"%@",cell2);
         NSLog(@"%i",[cell1 hammingDistance: cell2]);
         
     }
