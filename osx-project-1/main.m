@@ -18,17 +18,19 @@
 @implementation Cell (Mutator)
 
 -(void)mutate:(int)percentsToChange {
-    if (percentsToChange > 100 || percentsToChange < 0)
+    if (percentsToChange > 100 || percentsToChange <= 0)
         return;
     NSInteger size = [self.DNA count];
     NSMutableArray *range = [NSMutableArray array];
     for (int i = 0; i < size; i++)
         [range addObject:[NSNumber numberWithInteger:i]];
-    for (int i = 0; i < size; i++)
-        [range exchangeObjectAtIndex:i withObjectAtIndex:(arc4random() % (size - i)) + i];
+    for (int i = 0; i < size - 1; i++)
+        [range exchangeObjectAtIndex:i withObjectAtIndex:arc4random() % (size - i - 1) + i + 1];
     int numberOfNucleotidesToChange = (int)(percentsToChange * size / 100);
     for (int i = 0; i < numberOfNucleotidesToChange; i++) {
-        [self.DNA replaceObjectAtIndex:[[range objectAtIndex:i] intValue] withObject:[[self class] getRandomNucleotideExclude:[self.DNA objectAtIndex:i]]];
+        int replaceIndex = [[range objectAtIndex:i] intValue];
+        NSString *randomNucleotide = [[self class] getRandomNucleotideExclude:[self.DNA objectAtIndex:replaceIndex]];
+        [self.DNA replaceObjectAtIndex:replaceIndex withObject:randomNucleotide];
     }
 }
 @end
@@ -46,7 +48,7 @@ int main (int argc, const char * argv[])
         NSLog(@"Hamming distance before mutation: %d", [cell1 hammingDistance:cell2]);
         
         [cell1 mutate:10];
-        [cell2 mutate:80];
+        [cell2 mutate:100];
         
         NSLog(@"Hamming distance after mutation: %d", [cell1 hammingDistance:cell2]);
         
