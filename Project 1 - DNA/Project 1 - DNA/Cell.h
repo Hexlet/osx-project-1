@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+// Укажем длину массива
+#define lenthOfDna 100
+
 @interface Cell : NSObject
 @property NSMutableArray *dna;
 -(NSString *) randomSymbol;

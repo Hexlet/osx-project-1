@@ -18,9 +18,9 @@
     self = [super init];
     if (self) {
         // Создаю массив из 100 символов
-        self.dna = [NSMutableArray arrayWithCapacity:100];
+        self.dna = [NSMutableArray arrayWithCapacity:lenthOfDna];
         // Заполняю рандомными значениями
-        for (int i=0; i<100; i++) {
+        for (int i=0; i<lenthOfDna; i++) {
             [self.dna addObject:[self randomSymbol]];
         }
     }
@@ -36,7 +36,9 @@
 -(int) hammingDistance:(Cell *)cell{
     // Переменная для хранения позиций, где ДНК не совпадают
     int distance = 0;
-    for (int i = 0; i < 100; i++) {
+    
+    // Сравниваем ДНК
+    for (int i = 0; i < lenthOfDna; i++) {
         if (![[self.dna objectAtIndex:i] isEqualTo:[cell.dna objectAtIndex:i]]){
             distance++;
         }
