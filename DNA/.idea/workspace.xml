@@ -20,28 +20,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="macos_x86_64" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Cell.h" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DNA/Entities/Cell.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="20" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cell.m" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Cell.m" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DNA/Entities/Cell.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="9" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0">
+            <state line="17" column="37" selection-start="401" selection-end="401" vertical-scroll-proportion="0.23523985">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.m" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.m" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DNA/main.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="29" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.73426574">
+            <state line="29" column="73" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -58,8 +49,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/DNA/Entities/Cell.h" />
-        <option value="$PROJECT_DIR$/DNA/Entities/Cell.m" />
         <option value="$PROJECT_DIR$/DNA/main.m" />
+        <option value="$PROJECT_DIR$/DNA/Entities/Cell.m" />
       </list>
     </option>
   </component>
@@ -192,11 +183,11 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980111" sideWeight="0.67045456" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980111" sideWeight="0.84166664" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15833333" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -264,21 +255,21 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DNA/Entities/Cell.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DNA/Entities/Cell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="9" selection-start="761" selection-end="761" vertical-scroll-proportion="0.0">
+        <state line="19" column="20" selection-start="362" selection-end="362" vertical-scroll-proportion="0.3146853">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DNA/main.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="29" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.73426574">
+        <state line="29" column="73" selection-start="753" selection-end="753" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DNA/Entities/Cell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="37" selection-start="401" selection-end="401" vertical-scroll-proportion="0.23523985">
           <folding />
         </state>
       </provider>

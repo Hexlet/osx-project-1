@@ -15,7 +15,7 @@
     _DNA = [[NSMutableArray alloc] init];
     letterArray = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
     for (int i = 0; i < 100; i++) {
-        int random = arc4random() % 3;
+        int random = arc4random() % 4;
         [_DNA addObject:[letterArray objectAtIndex:random]];
     }
     [self initCheckDNA];
