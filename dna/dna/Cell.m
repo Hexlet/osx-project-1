@@ -26,7 +26,7 @@ const int numberOfUsedGenes = 4;
 }
 -(int)hammingDistance:(Cell *)sample {
     int difference = 0;
-    if ([DNA isEqualTo:sample->DNA] == NO) {
+    if ([DNA isEqualToArray:sample->DNA] == NO) {
         for (int i = 0; i < dnaSize; ++i) {
             if (DNA[i] != sample->DNA[i]) {
                 ++difference;
@@ -40,6 +40,9 @@ const int numberOfUsedGenes = 4;
 }
 -(NSMutableArray *)getDna {
     return self->DNA;
+}
+-(NSString *)description {
+    return [DNA componentsJoinedByString:@" "];
 }
 @end
 
@@ -64,8 +67,13 @@ const int numberOfUsedGenes = 4;
         }
     }
     
+    id substitute;
     for (int i = 0; i < dnaSize; ++i) {
         if (replacePositions[i]) {
+            substitute = [self getRandomGene];
+            while ([substitute isEqualToString:[DNA objectAtIndex:i]]) {
+                substitute = [self getRandomGene];
+            }
             [DNA setObject:[self getRandomGene] atIndexedSubscript:i];
         }
     }

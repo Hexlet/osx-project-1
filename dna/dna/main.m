@@ -19,6 +19,7 @@ int main(int argc, const char * argv[])
         [a mutate:50];
         [b mutate:50];
         NSLog(@"%i", [a hammingDistance:b]);
+        NSLog(@"DNA: %@", a);
     }
     return 0;
 }
