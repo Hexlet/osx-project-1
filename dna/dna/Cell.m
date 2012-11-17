@@ -56,10 +56,10 @@ const int numberOfUsedGenes = 4;
         replacePositions[i] = defaultValue;
     }
 
-    if (percentOfMutations < 100) {
+    if (percentOfMutations <= 100) {
         int mutations = 0;
         while (mutations < percentOfMutations) {
-            mutatePosition = arc4random_uniform(100);
+            mutatePosition = arc4random_uniform(dnaSize);
             if (replacePositions[mutatePosition] == NO) {
                 replacePositions[mutatePosition] = YES;
                 ++mutations;
