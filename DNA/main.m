@@ -9,6 +9,35 @@
 #import <Foundation/Foundation.h>
 #import "Cell.h"
 
+@interface Cell (Mutator)
+- (void) mutate:(int) percent;
+@end
+
+@implementation Cell (Mutator)
+
+- (void) mutate:(int) percent {
+    int number = CELL_SIZE / 100.0 * percent;
+    
+    NSMutableArray * indexes = [NSMutableArray arrayWithCapacity:number];
+    
+    for (int i = 0; i < number; i++) {
+        [indexes addObject: [[NSNumber alloc] initWithInt:arc4random_uniform(CELL_SIZE)]];
+    }
+    
+    for (int i = 0; i < number; i++) {
+        NSInteger index = [[indexes objectAtIndex:i] integerValue];
+        NSString *new_value = [Cell generateCellValue];
+        
+        while([[self.DNA objectAtIndex:index] isEqualToString:new_value]) {
+            new_value = [Cell generateCellValue];
+        }
+        
+        [self.DNA replaceObjectAtIndex:index withObject:new_value];
+    }
+}
+
+@end
+
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {

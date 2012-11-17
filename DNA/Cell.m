@@ -10,13 +10,17 @@
 
 @implementation Cell
 
-// Как правильно создать переменную класса? Или константу класса?
-+(NSArray *) cellValues {
-    return [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-}
-
 +(NSString *) generateCellValue {
-    return [[self cellValues] objectAtIndex:arc4random_uniform(CELL_VALUE_SIZE)];
+    switch (arc4random_uniform(4)) {
+        case 0:
+            return @"A";
+        case 1:
+            return @"T";
+        case 2:
+            return @"G";
+        case 3:
+            return @"C";
+    }
 }
 
 -(id) init {
