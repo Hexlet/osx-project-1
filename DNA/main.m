@@ -35,8 +35,7 @@
     }
     
     for (int i = 0; i < number; i++) {
-//        Как правильно приводить типы?
-        NSInteger randonNumber = arc4random_uniform([indexes count]);
+        NSInteger randonNumber = arc4random_uniform((int)[indexes count]);
         NSInteger index = [[indexes objectAtIndex:randonNumber] integerValue];
         NSString *new_value = [Cell generateCellValue];
         
