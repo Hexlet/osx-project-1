@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#define CELL_SIZE 100
+#define CELL_SIZE 10
 #define CELL_VALUE_SIZE 4
 
 @interface Cell : NSObject
