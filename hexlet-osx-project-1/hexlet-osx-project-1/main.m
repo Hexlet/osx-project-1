@@ -18,6 +18,11 @@
 @implementation Cell (mutator)
 
 -(void) mutate:(int)percent {
+    // validate specified percentage
+    if (percent < 0 || percent > 100) {
+        [NSException raise: @"Invalid Mutation Percent" format: @"Specified mutation percent %i is invalid", percent];
+    }
+    
     // instantiate array of indices
     NSMutableArray *indices = [NSMutableArray arrayWithCapacity:[self.DNA count]];
     for (int i = 0; i < self.DNA.count; i++) {
@@ -32,7 +37,8 @@
         // find index in DNA array
         NSNumber *indexInDNAarray = [indices objectAtIndex:nextIndexOfIndex];
         // mutate!
-        [self.DNA setObject: [Cell getRandomDNALetter] atIndexedSubscript:[indexInDNAarray integerValue]];
+        NSString* oldLetter = [self.DNA objectAtIndex: [indexInDNAarray intValue]];
+        [self.DNA replaceObjectAtIndex: [indexInDNAarray intValue] withObject: [Cell getRandomDNALetter: oldLetter]];
         // remove mutated index
         [indices removeObjectAtIndex:nextIndexOfIndex];
     }
@@ -54,6 +60,7 @@ int main(int argc, const char * argv[])
         // mutate
         const int MUTATION_PERCENT = 25;
         [c1 mutate:MUTATION_PERCENT];
+        [c2 mutate:MUTATION_PERCENT];
         // calculate hamming distance and print it
         NSLog(@"Hamming distance is %i after %i percent mutation", [c1 hammingDistance:c2], MUTATION_PERCENT);
     }

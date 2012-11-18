@@ -20,7 +20,9 @@
 /* 
  static method used to produce random DNA letter
  returns "A", "G", "C", or "T" string
+ 
+ excludingLetter parameter defines which letter must be excluded from generation, if null - no letter is excluded
  */
-+(NSString *) getRandomDNALetter;
++(NSString *) getRandomDNALetter: (NSString*) excludingLetter;
 
 @end

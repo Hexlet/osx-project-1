@@ -22,7 +22,7 @@ static NSString * const dnaStrings = @"ATGC";
         _DNA = [NSMutableArray arrayWithCapacity:ELEMENTS_COUNT];
         // initialize array
         for (int i = 0; i < ELEMENTS_COUNT; i++) {
-            [_DNA addObject: [Cell getRandomDNALetter]];
+            [_DNA addObject: [Cell getRandomDNALetter: nil]];
         }
     }
     return self;
@@ -44,9 +44,15 @@ static NSString * const dnaStrings = @"ATGC";
     return result;
 }
 
-+(NSString *)getRandomDNALetter {
-    int index = arc4random() % dnaStrings.length;
-    return [[dnaStrings substringFromIndex:index] substringToIndex:1];
++(NSString *)getRandomDNALetter: (NSString *) excludingLetter {
+    NSString* stringsToUse = dnaStrings;
+    // exclude specified letter from the DNA letters string
+    if (excludingLetter != nil) {
+        stringsToUse = [dnaStrings stringByReplacingOccurrencesOfString: excludingLetter withString: @""];
+    }
+    
+    int index = arc4random() % stringsToUse.length;
+    return [[stringsToUse substringFromIndex:index] substringToIndex:1];
 }
 
 @end
