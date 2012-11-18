@@ -30,7 +30,7 @@ const NSString *DNA_SYMBOLS  = @"ATGC";
         return -1;
     }
     for(int i=0; i< DNA_SIZE; i++)
-        if([DNA objectAtIndex:i] != [otherCell.DNA objectAtIndex:i])
+        if(![[DNA objectAtIndex:i] isEqual:[otherCell.DNA objectAtIndex:i ]])
             distance++;
     return distance;
 }
