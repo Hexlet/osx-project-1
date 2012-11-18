@@ -28,7 +28,7 @@ const int numberOfUsedGenes = 4;
     int difference = 0;
     if ([DNA isEqualToArray:sample->DNA] == NO) {
         for (int i = 0; i < dnaSize; ++i) {
-            if ([DNA[i] isEqualToString: sample->DNA[i]]) {
+            if ([DNA[i] isEqualToString: sample->DNA[i]] == NO) {
                 ++difference;
             }
         }
