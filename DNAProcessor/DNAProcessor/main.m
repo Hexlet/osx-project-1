@@ -13,11 +13,11 @@
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
-        Cell *cell = [Cell cellWithLength:5];
-        Cell *anotherCell = [Cell cellWithLength:5];
+        Cell *cell = [Cell cellWithLength:100];
+        Cell *anotherCell = [Cell cellWithLength:100];
 
-        [cell print];
-        [anotherCell print];
+        NSLog(@"Cell 1 before mutation: %@", cell);
+        NSLog(@"Cell 2 before mutation: %@", anotherCell);
         
         NSLog(@"Initial distance: %i", [cell hammingDistance:anotherCell]);
         
@@ -26,8 +26,8 @@ int main(int argc, const char * argv[])
         [cell mutate:percentToMutate];
         [anotherCell mutate:percentToMutate];
 
-        [cell print];
-        [anotherCell print];
+        NSLog(@"Cell 1 after mutation: %@", cell);
+        NSLog(@"Cell 2 after mutation: %@", anotherCell);
 
         NSLog(@"Distance after %i%% mutations: %i", percentToMutate, [cell hammingDistance:anotherCell]);
     }

@@ -20,6 +20,5 @@
 
 -(id) initWithLength:(int) length;
 -(int) hammingDistance:(Cell *) anotherCell;
--(void) print;
 
 @end

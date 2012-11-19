@@ -52,8 +52,8 @@
     return distance;
 }
 
--(void) print {
-    NSLog(@"DNA: %@", [_dna componentsJoinedByString:@""]);
+-(NSString *) description {
+    return [_dna componentsJoinedByString:@""];
 }
 
 @end
