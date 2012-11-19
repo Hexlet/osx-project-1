@@ -10,20 +10,22 @@
 
 @implementation Cell (Mutator)
 
-- (void)mutate:(int)Factor
+- (void)mutate:(int)factorPercents
 {
-    if (Factor < 0) {
-        NSLog(@"Mutate factor cannot be negative");
+    if (factorPercents < 0) {
+        NSLog(@"Mutate factor percents cannot be negative");
         return;
     }
     
-    if (Factor > LENGTH_OF_DNA) {
-        NSLog(@"Mutate factor must be less or equal that length of the DNA");
+    if (factorPercents > LENGTH_OF_DNA) {
+        NSLog(@"Mutate factor percents must be less or equal that length of the DNA");
         return;
     }
+    
+    long factor = lround(LENGTH_OF_DNA * 0.01 * factorPercents);
     
     // we need replace entire DNA
-    if (Factor == LENGTH_OF_DNA) {
+    if (factor == LENGTH_OF_DNA) {
         for (int i = 0; i < LENGTH_OF_DNA; i++) {
             char *nucleicAcidBases[4] = {"A", "T", "G", "C"};
             int b = arc4random() % 4;
@@ -39,7 +41,7 @@
     }
     
     
-    for (int i = 0; i < Factor; i++) {
+    for (int i = 0; i < factor; i++) {
         int index;
         
         // Get new random unused index for mutate
