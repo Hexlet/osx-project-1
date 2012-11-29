@@ -8,6 +8,7 @@
 
 #import "Cell.h"
 
+
 @implementation Cell
 
 
@@ -16,8 +17,8 @@
     if (self){
         self.DNA = [ [NSMutableArray alloc] init];
         dict = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
-        for(int i = 0; i < 100; i++){
-            int r = arc4random() % 4;
+        for(int i = 0; i < DNA_LEN; i++){
+            int r = arc4random_uniform([dict count]);
             [self.DNA addObject:[dict objectAtIndex:r]];
         }
     }
@@ -34,6 +35,17 @@
         }
     }
     return distance;
+}
+
+-(void)print{
+    NSString *toPrint = @"";
+    
+    for (int i = 0; i < [self.DNA count]; i++)
+    {
+        toPrint = [toPrint stringByAppendingString:@","];
+        toPrint = [toPrint stringByAppendingString:[self.DNA objectAtIndex:i]];
+    }
+    NSLog(@"%@",toPrint);
 }
 
 

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define DNA_LEN 100
+
 @interface Cell : NSObject
 {
         NSArray *dict;
@@ -16,6 +18,6 @@
 @property NSMutableArray *DNA;
 
 -(int)hammingDistance:(Cell *) foreignCell;
-
+-(void)print;
 
 @end

@@ -8,29 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
-
-@interface Cell(mutator)
-
--(void)mutate:(int)x;
-@end
-
-@implementation Cell(mutator)
-
--(void)mutate:(int)x{
-    int percent = x *([self.DNA count] / 100);
-    NSMutableDictionary * usedIndexes = [[NSMutableDictionary alloc] init];
-    for (int i = 0; i <= percent; i++){
-        int randomEl = arc4random() % [self.DNA count];
-        NSString *randomElStr = [NSString stringWithFormat:@"%d",randomEl];
-        if (![usedIndexes objectForKey:randomElStr]){
-            [usedIndexes setValue:@"ELEMENT_EXIST" forKey:randomElStr];
-            int randomLetter = arc4random() % 4;
-            [self.DNA replaceObjectAtIndex:randomEl withObject:[dict objectAtIndex:randomLetter]];
-        }
-    }
-}
-
-@end
+#import "Cell+mutator.h"
 
 int main(int argc, const char * argv[])
 {
@@ -40,8 +18,20 @@ int main(int argc, const char * argv[])
         Cell *cell2 = [[Cell alloc] init];
         int distance1 = [cell2 hammingDistance:cell1];
         NSLog(@"HAMMING DISTANCE1 %d",distance1);
-        [cell1 mutate:distance1];
-        [cell2 mutate:distance1];
+        NSLog(@"Cell1 before mutate");
+        [cell1 print];
+        NSLog(@"Cell2 before mutate");
+        [cell2 print];
+        
+        [cell1 mutate:72];
+        [cell2 mutate:53];
+        
+        NSLog(@"Cell1 after mutate");
+        [cell1 print];
+        
+        NSLog(@"Cell2 after mutate");
+        [cell2 print];
+        
         int distance2 = [cell2 hammingDistance:cell1];
         NSLog(@"HAMMING DISTANCE2 %d",distance2);
         
