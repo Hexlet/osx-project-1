@@ -15,16 +15,17 @@
     int x = percent *( DNA_LEN / 100);
     NSMutableDictionary * usedIndexes = [[NSMutableDictionary alloc] init];
     for (int i = 0; i <= x; i++){
-        int randomEl = arc4random_uniform([self.DNA count]);
-        NSString *randomElStr = [NSString stringWithFormat:@"%d",randomEl];
-        if (![usedIndexes objectForKey:randomElStr]){
-            [usedIndexes setValue:@"ELEMENT_EXIST" forKey:randomElStr];
-            int randomLetter;
-            do{
-                randomLetter = arc4random_uniform(4);
-            }while ([[dict objectAtIndex:randomLetter] isEqualToString:[self.DNA objectAtIndex:randomEl]]);
-            [self.DNA replaceObjectAtIndex:randomEl withObject:[dict objectAtIndex:randomLetter]];
-        }
+        int randomEl;
+        do{
+            randomEl = arc4random_uniform([self.DNA count]);
+            //randomElStr = [NSString stringWithFormat:@"%d",randomEl];
+        }while ([usedIndexes objectForKey:[NSNumber numberWithInt:randomEl]]);
+        [usedIndexes setValue:@"ELEMENT_EXIST" forKey:[NSNumber numberWithInt:randomEl]];
+        int randomLetter;
+        do{
+            randomLetter = arc4random_uniform(4);
+        }while ([[dict objectAtIndex:randomLetter] isEqualToString:[self.DNA objectAtIndex:randomEl]]);
+        [self.DNA replaceObjectAtIndex:randomEl withObject:[dict objectAtIndex:randomLetter]];
     }
 }
 

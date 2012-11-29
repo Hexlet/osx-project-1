@@ -37,10 +37,10 @@
     return distance;
 }
 
--(void)print{
+-(void)print:(NSArray *) arr{
     NSString *toPrint = @"";
     
-    for (int i = 0; i < [self.DNA count]; i++)
+    for (int i = 0; i < [arr count]; i++)
     {
         toPrint = [toPrint stringByAppendingString:@","];
         toPrint = [toPrint stringByAppendingString:[self.DNA objectAtIndex:i]];

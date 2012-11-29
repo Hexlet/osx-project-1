@@ -18,6 +18,6 @@
 @property NSMutableArray *DNA;
 
 -(int)hammingDistance:(Cell *) foreignCell;
--(void)print;
+-(void)print:(NSArray *) arr;
 
 @end
