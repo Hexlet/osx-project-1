@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CashCount' target in the 'CashCount' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
