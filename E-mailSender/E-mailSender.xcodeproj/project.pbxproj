@@ -446,6 +446,7 @@
 				876267DF166D341C003DC9B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		876267E0166D341C003DC9B5 /* Build configuration list for PBXNativeTarget "E-mailSenderTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +455,7 @@
 				876267E2166D341C003DC9B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
