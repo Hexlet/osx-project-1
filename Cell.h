@@ -11,10 +11,10 @@
 @interface Cell : NSObject
 
 {
-  NSMutableArray *DNA;
-  NSArray *values;
+  NSMutableArray * DNA;
+  NSArray * values;
 }
 
--(int)hammingDistance: (Cell *) c;
+- (int) hammingDistance: (Cell *) c;
 
 @end

@@ -10,8 +10,8 @@
 
 @implementation Cell (Mutator)
 
--(void) mutate:(int)percentage {
-  values = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
+- (void) mutate: (int) percentage {
+  values = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
   
   for (int i = 0; i < percentage; i++) {
     [self->DNA replaceObjectAtIndex:i withObject:[values objectAtIndex:arc4random() % [values count]]];

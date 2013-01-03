@@ -10,10 +10,10 @@
 
 @implementation Cell
 
--(id) init {
+- (id) init {
   self = [super init];
   DNA = [[NSMutableArray alloc] initWithCapacity:100];
-  values = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
+  values = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
 
   for (int i = 0; i < 100; i++) {
     [DNA addObject:[values objectAtIndex:arc4random() % [values count]]];
@@ -22,7 +22,7 @@
   return self;
 }
 
--(int) hammingDistance:(Cell *)c {
+- (int) hammingDistance: (Cell *)c {
   int distance = 0;
 
   for (int i = 0; i < 100; i++) {
