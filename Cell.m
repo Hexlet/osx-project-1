@@ -26,24 +26,12 @@
   int distance = 0;
 
   for (int i = 0; i < 100; i++) {
-    if ([self->DNA objectAtIndex:i] != [c->DNA objectAtIndex:i]) {
-      distance += 1;
+    if ([DNA objectAtIndex:i] != [c->DNA objectAtIndex:i]) {
+      ++distance;
     }
   }
 
   return distance;
-}
-
-@end
-
-@implementation Cell (mutator)
-
--(void) mutate:(int)percentage {
-  values = [NSArray arrayWithObjects: @"A", @"T", @"G", @"C", nil];
-  
-  for (int i = 0; i < percentage; i++) {
-    [self->DNA replaceObjectAtIndex:i withObject:[values objectAtIndex:arc4random() % [values count]]];
-  }
 }
 
 @end

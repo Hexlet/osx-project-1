@@ -1,5 +1,5 @@
 //
-//  Cell.h
+//  NSObject+Mutator.h
 //  DNA
 //
 //  Created by Olexandr Skrypnyk on 03.01.13.
@@ -8,13 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject
-
-{
-  NSMutableArray *DNA;
-  NSArray *values;
-}
-
--(int)hammingDistance: (Cell *) c;
+@interface NSObject (Mutator)
 
 @end

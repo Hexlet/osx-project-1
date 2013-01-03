@@ -11,6 +11,7 @@
 		4E3934BE1695071100CB341C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3934BD1695071100CB341C /* main.m */; };
 		4E3934C21695071100CB341C /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4E3934C11695071100CB341C /* DNA.1 */; };
 		4E3934CA1695072900CB341C /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3934C91695072900CB341C /* Cell.m */; };
+		4E39352A1695976F00CB341C /* Cell+Mutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3935291695976F00CB341C /* Cell+Mutator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		4E3934C11695071100CB341C /* DNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DNA.1; sourceTree = "<group>"; };
 		4E3934C81695072900CB341C /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cell.h; path = ../Cell.h; sourceTree = "<group>"; };
 		4E3934C91695072900CB341C /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cell.m; path = ../Cell.m; sourceTree = "<group>"; };
+		4E3935281695976F00CB341C /* Cell+Mutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Cell+Mutator.h"; path = "../Cell+Mutator.h"; sourceTree = "<group>"; };
+		4E3935291695976F00CB341C /* Cell+Mutator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Cell+Mutator.m"; path = "../Cell+Mutator.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 				4E3934BD1695071100CB341C /* main.m */,
 				4E3934C81695072900CB341C /* Cell.h */,
 				4E3934C91695072900CB341C /* Cell.m */,
+				4E3935281695976F00CB341C /* Cell+Mutator.h */,
+				4E3935291695976F00CB341C /* Cell+Mutator.m */,
 				4E3934C11695071100CB341C /* DNA.1 */,
 				4E3934BF1695071100CB341C /* Supporting Files */,
 			);
@@ -146,6 +151,7 @@
 			files = (
 				4E3934BE1695071100CB341C /* main.m in Sources */,
 				4E3934CA1695072900CB341C /* Cell.m in Sources */,
+				4E39352A1695976F00CB341C /* Cell+Mutator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +248,7 @@
 				4E3934C71695071100CB341C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
