@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Olexandr Skrypnyk. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Cell.h"
 #import "Cell+Mutator.h"
 
@@ -23,7 +22,7 @@ int main(int argc, const char * argv[])
 
     [cell mutate:20];
     [cell2 mutate:20];
-    
+
     NSLog(@"%i", [cell hammingDistance:cell2]);
   }
 

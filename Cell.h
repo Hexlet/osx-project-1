@@ -6,15 +6,14 @@
 //  Copyright (c) 2013 Olexandr Skrypnyk. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <Foundation/NSObject.h>
+#import <Foundation/NSArray.h>
 
 @interface Cell : NSObject
 
-{
-  NSMutableArray * DNA;
-  NSArray * values;
-}
+@property NSArray * values;
+@property NSMutableArray * DNA;
 
-- (int) hammingDistance: (Cell *) c;
+- (int) hammingDistance: (Cell *) cell;
 
 @end

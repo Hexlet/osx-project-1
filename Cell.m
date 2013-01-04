@@ -12,21 +12,22 @@
 
 - (id) init {
   self = [super init];
-  DNA = [[NSMutableArray alloc] initWithCapacity:100];
-  values = [NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil];
+
+  [self setValues:[NSArray arrayWithObjects:@"A", @"T", @"G", @"C", nil]];
+  [self setDNA:[[NSMutableArray alloc] initWithCapacity:100]];
 
   for (int i = 0; i < 100; i++) {
-    [DNA addObject:[values objectAtIndex:arc4random() % [values count]]];
+    [_DNA addObject:[_values objectAtIndex:arc4random() % [_values count]]];
   }
 
   return self;
 }
 
-- (int) hammingDistance: (Cell *)c {
+- (int) hammingDistance: (Cell *) cell {
   int distance = 0;
 
   for (int i = 0; i < 100; i++) {
-    if ([DNA objectAtIndex:i] != [c->DNA objectAtIndex:i]) {
+    if ([_DNA objectAtIndex:i] != [[cell DNA] objectAtIndex:i]) {
       ++distance;
     }
   }
