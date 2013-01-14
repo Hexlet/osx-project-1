@@ -12,6 +12,7 @@
 		C3CA4DB116491E1800C2E2B6 /* DNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3CA4DB016491E1800C2E2B6 /* DNA.1 */; };
 		C3CA4DB916491EEB00C2E2B6 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CA4DB816491EEB00C2E2B6 /* Cell.m */; };
 		C3CA4DBC16491F7300C2E2B6 /* Cell+mutate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CA4DBB16491F7300C2E2B6 /* Cell+mutate.m */; };
+		E7B00A4916A4925900D32D90 /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B00A4816A4925900D32D90 /* NSMutableArray+Shuffling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		C3CA4DB816491EEB00C2E2B6 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 		C3CA4DBA16491F7300C2E2B6 /* Cell+mutate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cell+mutate.h"; sourceTree = "<group>"; };
 		C3CA4DBB16491F7300C2E2B6 /* Cell+mutate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Cell+mutate.m"; sourceTree = "<group>"; };
+		E7B00A4716A4925900D32D90 /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
+		E7B00A4816A4925900D32D90 /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 				C3CA4DB816491EEB00C2E2B6 /* Cell.m */,
 				C3CA4DBA16491F7300C2E2B6 /* Cell+mutate.h */,
 				C3CA4DBB16491F7300C2E2B6 /* Cell+mutate.m */,
+				E7B00A4716A4925900D32D90 /* NSMutableArray+Shuffling.h */,
+				E7B00A4816A4925900D32D90 /* NSMutableArray+Shuffling.m */,
 				C3CA4DB016491E1800C2E2B6 /* DNA.1 */,
 				C3CA4DAE16491E1800C2E2B6 /* Supporting Files */,
 			);
@@ -152,6 +157,7 @@
 				C3CA4DAD16491E1800C2E2B6 /* main.m in Sources */,
 				C3CA4DB916491EEB00C2E2B6 /* Cell.m in Sources */,
 				C3CA4DBC16491F7300C2E2B6 /* Cell+mutate.m in Sources */,
+				E7B00A4916A4925900D32D90 /* NSMutableArray+Shuffling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,43 +1,43 @@
 //
 //  Cell.m
-//  DNA
+//  arrayRandoom
 //
-//  Created by Администратор on 11/6/12.
-//  Copyright (c) 2012 Администратор. All rights reserved.
+//  Created by vladimir on 14.01.13.
+//  Copyright (c) 2013 Владимир Ковалев. All rights reserved.
 //
 
 #import "Cell.h"
 
-@implementation Cell 
+@implementation Cell
 
 -(id) init {
     if(self = [super init]) {
-        _cDNA = [[NSArray alloc] initWithObjects:@"A",@"T",@"G",@"C", nil];
-        
-        _DNA = [NSMutableArray arrayWithCapacity:100];
-        
-        for (int i = 0; i < 100; i++) {
-            [_DNA addObject:[_cDNA objectAtIndex:arc4random()%4]];
+        NSArray * n = [NSArray arrayWithObjects:@"A",@"T",@"G",@"C", nil];
+        DNA = [[NSMutableArray alloc] initWithCapacity:100];
+        for(int i = 0; i < 100; i++) {
+            [DNA addObject:[n objectAtIndex:arc4random()%4]];
         }
-        
     }
     return self;
 }
 
--(int) hammingDistance:(Cell*)nDNA {
-    int hDistance = 0;
-    for(int i= 0; i < 100; i++) {
-        if ([[[nDNA DNA] objectAtIndex:i] isEqual:[_DNA objectAtIndex:i]]) {
-            hDistance++;
+-(int) hammingDistance:(Cell *)obj {
+    NSMutableArray * objDNA = [[obj returnDNA] mutableCopy];
+    int distance = 0;
+    for (int i = 0; i < 100; i++) {
+        if([[DNA objectAtIndex:i] isNotEqualTo:[objDNA objectAtIndex:i]]) {
+            distance++;
         }
     }
-    return hDistance;
+    return distance;
 }
 
--(NSString *) description {
-    return [_DNA componentsJoinedByString:@""];
+-(NSMutableArray*) returnDNA {
+    return DNA;
 }
 
+-(NSString *)description {
+    return [DNA componentsJoinedByString:@""];
+}
 
 @end
-

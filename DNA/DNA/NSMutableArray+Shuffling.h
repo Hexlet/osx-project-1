@@ -1,5 +1,5 @@
 //
-//  Cell.h
+//  NSMutableArray+Shuffling.h
 //  arrayRandoom
 //
 //  Created by vladimir on 14.01.13.
@@ -8,11 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Cell : NSObject {
-    NSMutableArray * DNA;
-}
-
-- (int) hammingDistance:(Cell*) obj;
-- (NSMutableArray*) returnDNA;
-
+@interface NSMutableArray (Shuffling)
+- (void)shuffle;
 @end
