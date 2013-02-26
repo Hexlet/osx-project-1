@@ -18,14 +18,14 @@
 -(void)mutate:(int)percent {              // Создаем имплементацию метода mutate
     
     if (percent > 100 || percent < 0) {   // Проверяем величину процентов
-        NSLog(@"Wrong mutate percent");
+        NSLog(@"Wrong mutate percent value");
     } else {
     
         NSMutableArray *tmpArray = [NSMutableArray array];  // Временный массив для хранения использованных индексов
         NSString *symbol = [NSString string];               // Переменная для хранения символа для замены
         NSNumber *num = [NSNumber alloc];
         int rndIndex;
-        int replaceSymbols = (int)((float)[self.DNA count] / (float)100 * (float)percent); // Количество заменяемых символов
+        int replaceSymbols = [self.DNA count] * percent / 100; // Количество заменяемых символов
         
         for (int i = 0; i < replaceSymbols; i++) {          // Цикл замены {replaceSymbols} случайных символов в массиве DNA
             do {                                            // Случайным образом находим уникальный индекс
@@ -54,12 +54,12 @@ int main(int argc, const char * argv[])
         
         Cell *dna1 = [[Cell alloc] init:dnaItems]; // Создаем объект dna1 класса Cell (ДНК-1)
         Cell *dna2 = [[Cell alloc] init:dnaItems]; // Создаем объект dna2 класса Cell (ДНК-2)
-
+        
         NSLog(@"Hamming distance before mutator: %i", [dna1 hammingDistance:dna2]); // Выводим результат сравнения ДНК-1 и ДНК-2
         
         [dna1 mutate:40]; // Производим мутацию ДНК-1
         [dna2 mutate:60]; // Производим мутацию ДНК-2
-
+        
         NSLog(@"Hamming distance after mutator: %i", [dna1 hammingDistance:dna2]); // Выводим результат сравнения ДНК-1 и ДНК-2
         
     }
