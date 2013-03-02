@@ -1,0 +1,249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2891DC2169B563A00B4A0E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2891DC1169B563A00B4A0E3 /* Foundation.framework */; };
+		A2891DC5169B563B00B4A0E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2891DC4169B563B00B4A0E3 /* main.m */; };
+		A2891DC9169B563B00B4A0E3 /* aproDNA.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2891DC8169B563B00B4A0E3 /* aproDNA.1 */; };
+		A2891DD9169B5A8E00B4A0E3 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = A2891DD8169B5A8E00B4A0E3 /* Cell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2891DBB169B563A00B4A0E3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				A2891DC9169B563B00B4A0E3 /* aproDNA.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A2891DBD169B563A00B4A0E3 /* aproDNA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = aproDNA; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2891DC1169B563A00B4A0E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A2891DC4169B563B00B4A0E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2891DC7169B563B00B4A0E3 /* aproDNA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "aproDNA-Prefix.pch"; sourceTree = "<group>"; };
+		A2891DC8169B563B00B4A0E3 /* aproDNA.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = aproDNA.1; sourceTree = "<group>"; };
+		A2891DD7169B5A8E00B4A0E3 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		A2891DD8169B5A8E00B4A0E3 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2891DBA169B563A00B4A0E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2891DC2169B563A00B4A0E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2891DB2169B563900B4A0E3 = {
+			isa = PBXGroup;
+			children = (
+				A2891DC3169B563A00B4A0E3 /* aproDNA */,
+				A2891DC0169B563A00B4A0E3 /* Frameworks */,
+				A2891DBE169B563A00B4A0E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2891DBE169B563A00B4A0E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2891DBD169B563A00B4A0E3 /* aproDNA */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2891DC0169B563A00B4A0E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2891DC1169B563A00B4A0E3 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2891DC3169B563A00B4A0E3 /* aproDNA */ = {
+			isa = PBXGroup;
+			children = (
+				A2891DC4169B563B00B4A0E3 /* main.m */,
+				A2891DD7169B5A8E00B4A0E3 /* Cell.h */,
+				A2891DD8169B5A8E00B4A0E3 /* Cell.m */,
+				A2891DC8169B563B00B4A0E3 /* aproDNA.1 */,
+				A2891DC6169B563B00B4A0E3 /* Supporting Files */,
+			);
+			path = aproDNA;
+			sourceTree = "<group>";
+		};
+		A2891DC6169B563B00B4A0E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2891DC7169B563B00B4A0E3 /* aproDNA-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2891DBC169B563A00B4A0E3 /* aproDNA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2891DCC169B563B00B4A0E3 /* Build configuration list for PBXNativeTarget "aproDNA" */;
+			buildPhases = (
+				A2891DB9169B563A00B4A0E3 /* Sources */,
+				A2891DBA169B563A00B4A0E3 /* Frameworks */,
+				A2891DBB169B563A00B4A0E3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = aproDNA;
+			productName = aproDNA;
+			productReference = A2891DBD169B563A00B4A0E3 /* aproDNA */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2891DB4169B563900B4A0E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = apro;
+			};
+			buildConfigurationList = A2891DB7169B563900B4A0E3 /* Build configuration list for PBXProject "aproDNA" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A2891DB2169B563900B4A0E3;
+			productRefGroup = A2891DBE169B563A00B4A0E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2891DBC169B563A00B4A0E3 /* aproDNA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2891DB9169B563A00B4A0E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2891DC5169B563B00B4A0E3 /* main.m in Sources */,
+				A2891DD9169B5A8E00B4A0E3 /* Cell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A2891DCA169B563B00B4A0E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A2891DCB169B563B00B4A0E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A2891DCD169B563B00B4A0E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "aproDNA/aproDNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A2891DCE169B563B00B4A0E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "aproDNA/aproDNA-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2891DB7169B563900B4A0E3 /* Build configuration list for PBXProject "aproDNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2891DCA169B563B00B4A0E3 /* Debug */,
+				A2891DCB169B563B00B4A0E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2891DCC169B563B00B4A0E3 /* Build configuration list for PBXNativeTarget "aproDNA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2891DCD169B563B00B4A0E3 /* Debug */,
+				A2891DCE169B563B00B4A0E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2891DB4169B563900B4A0E3 /* Project object */;
+}
