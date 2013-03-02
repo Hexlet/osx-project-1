@@ -5,6 +5,8 @@
 //  Created by apro on 07.01.13.
 //  Copyright (c) 2013 apro. All rights reserved.
 //
+// Test comment
+
 
 #import <Foundation/Foundation.h>
 #import "Cell.h"
